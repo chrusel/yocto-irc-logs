@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2014-11-10</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2014-11-10</h1>
+<div class="navigation"> <a href="%23yocto.2014-11-09.log.html">&#171; Sunday, 2014-11-09</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-11.log.html">Tuesday, 2014-11-11 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-11-10T08:31:05"><td class="nickchange" colspan="2">*** jbrianceau_away is now known as jbrianceau</td><td><a href="#t2014-11-10T08:31:05" class="time">08:31</a></td></tr>
+<tr id="t2014-11-10T08:49:16"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2014-11-10T08:49:16" class="time">08:49</a></td></tr>
+<tr id="t2014-11-10T09:33:15"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2014-11-10T09:33:15" class="time">09:33</a></td></tr>
+<tr id="t2014-11-10T09:33:20"><th class="nick" style="background: #407a40">mckoan</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2014-11-10T09:33:20" class="time">09:33</a></td></tr>
+<tr id="t2014-11-10T10:07:08"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">morning all</td><td class="time"><a href="#t2014-11-10T10:07:08" class="time">10:07</a></td></tr>
+<tr id="t2014-11-10T10:10:04"><th class="nick" style="background: #818144">_qwerty_</th><td class="text" style="color: #818144">Hi All, I need to apply git://gitorious.org/~kurt-vd/linux-can/linux-can-j1939.git kernel patch what is it best way to apply?</td><td class="time"><a href="#t2014-11-10T10:10:04" class="time">10:10</a></td></tr>
+<tr id="t2014-11-10T10:27:08"><td class="part" colspan="2">*** stor &lt;stor!~stor@unaffiliated/stor&gt; has left #yocto</td><td><a href="#t2014-11-10T10:27:08" class="time">10:27</a></td></tr>
+<tr id="t2014-11-10T13:07:22"><th class="nick" style="background: #854685">T0mW</th><td class="text" style="color: #854685">it appears that the recent shellshock patches have now disabled the 'bitbake -c devshell' ?</td><td class="time"><a href="#t2014-11-10T13:07:22" class="time">13:07</a></td></tr>
+<tr id="t2014-11-10T13:07:38"><th class="nick" style="background: #854685">T0mW</th><td class="text" style="color: #854685">Is there a work-around?</td><td class="time"><a href="#t2014-11-10T13:07:38" class="time">13:07</a></td></tr>
+<tr id="t2014-11-10T13:17:44"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">there's a bug filed, let me check whether we've made any progress on it</td><td class="time"><a href="#t2014-11-10T13:17:44" class="time">13:17</a></td></tr>
+<tr id="t2014-11-10T13:18:14"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e"><a href="https://bugzilla.yoctoproject.org/show_bug.cgi?id=6880" rel="nofollow">https://bugzilla.yoctoproject.org/show_bug.cgi?id=6880</a></td><td class="time"><a href="#t2014-11-10T13:18:14" class="time">13:18</a></td></tr>
+<tr id="t2014-11-10T13:18:14"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">Bug 6880: normal, Medium+, 1.8 M1, richard.purdie, NEW , Redhat/Fedora Shellshock Fix Leads To oe_terminal breakage</td><td class="time"><a href="#t2014-11-10T13:18:14" class="time">13:18</a></td></tr>
+<tr id="t2014-11-10T13:28:42"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">doesn't look like we have a fix / workaround yet unfortunately :(</td><td class="time"><a href="#t2014-11-10T13:28:42" class="time">13:28</a></td></tr>
+<tr id="t2014-11-10T13:29:11"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">one workaround might be to unset the offending functions before running bitbake</td><td class="time"><a href="#t2014-11-10T13:29:11" class="time">13:29</a></td></tr>
+<tr id="t2014-11-10T13:29:26"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">T0mW: ^</td><td class="time"><a href="#t2014-11-10T13:29:26" class="time">13:29</a></td></tr>
+<tr id="t2014-11-10T13:32:11"><th class="nick" style="background: #854685">T0mW</th><td class="text" style="color: #854685">bluelightning: ok, thanks</td><td class="time"><a href="#t2014-11-10T13:32:11" class="time">13:32</a></td></tr>
+<tr id="t2014-11-10T13:56:07"><td class="other" colspan="2">-YoctoAutoBuilder- build #96 of nightly-ipk is complete: Failure [failed BuildImages Running Sanity Tests_2]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/96" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/96</a></td><td><a href="#t2014-11-10T13:56:07" class="time">13:56</a></td></tr>
+<tr id="t2014-11-10T14:14:42"><td class="nickchange" colspan="2">*** simonl_ is now known as simonl</td><td><a href="#t2014-11-10T14:14:42" class="time">14:14</a></td></tr>
+<tr id="t2014-11-10T14:40:18"><td class="nickchange" colspan="2">*** phantone is now known as phantoxe</td><td><a href="#t2014-11-10T14:40:18" class="time">14:40</a></td></tr>
+<tr id="t2014-11-10T15:18:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #97 of nightly-ipk is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/97" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/97</a></td><td><a href="#t2014-11-10T15:18:19" class="time">15:18</a></td></tr>
+<tr id="t2014-11-10T15:32:31"><td class="nickchange" colspan="2">*** fitzsim` is now known as fitzsim</td><td><a href="#t2014-11-10T15:32:31" class="time">15:32</a></td></tr>
+<tr id="t2014-11-10T17:40:01"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2014-11-10T17:40:01" class="time">17:40</a></td></tr>
+<tr id="t2014-11-10T17:47:26"><td class="nickchange" colspan="2">*** jbrianceau is now known as jbrianceau_away</td><td><a href="#t2014-11-10T17:47:26" class="time">17:47</a></td></tr>
+<tr id="t2014-11-10T17:50:02"><td class="nickchange" colspan="2">*** edwin is now known as Guest89723</td><td><a href="#t2014-11-10T17:50:02" class="time">17:50</a></td></tr>
+<tr id="t2014-11-10T17:50:16"><td class="part" colspan="2">*** Guest89723 &lt;Guest89723!d8a5f142@gateway/web/freenode/ip.216.165.241.66&gt; has left #yocto</td><td><a href="#t2014-11-10T17:50:16" class="time">17:50</a></td></tr>
+<tr id="t2014-11-10T17:54:01"><th class="nick" style="background: #8c4a4a">ekw</th><td class="text" style="color: #8c4a4a">I can boot a default core-image-minimal build on a zedboard successfully.&nbsp;&nbsp;When I build an image with IMAGE_INSTALL += "python-core", the image boots, but I get "Cannot read inode bitmap" errors.</td><td class="time"><a href="#t2014-11-10T17:54:01" class="time">17:54</a></td></tr>
+<tr id="t2014-11-10T17:55:23"><th class="nick" style="background: #8c4a4a">ekw</th><td class="text" style="color: #8c4a4a">the core-image-minimal u-boot image is 2,503,370 bytes. The new image is 4,041,921 bytes.&nbsp;&nbsp;I think it should still fit in RAM reserved for ramdisk (0x2000000 - 0x2A00000).</td><td class="time"><a href="#t2014-11-10T17:55:23" class="time">17:55</a></td></tr>
+<tr id="t2014-11-10T17:56:43"><th class="nick" style="background: #8c4a4a">ekw</th><td class="text" style="color: #8c4a4a">The error message I get anytime I try to do anything (ls, cat, cd) is "EXT2-fs (ram0): error: read_inode_bitmap: Cannot read inode bitmap - block_group = 2, inode_bitmap = 16386" (with different numbers each time)</td><td class="time"><a href="#t2014-11-10T17:56:43" class="time">17:56</a></td></tr>
+<tr id="t2014-11-10T17:59:40"><th class="nick" style="background: #8c4a4a">ekw</th><td class="text" style="color: #8c4a4a">I get this error, but the operation succeeds (ls shows listing, cat shows the file, etc.)&nbsp;&nbsp;But any writes to ramdisk won't succeed.&nbsp;&nbsp;Does anybody know what's wrong?&nbsp;&nbsp;Do I need to tweak some ramdisk setting to account for larger image?</td><td class="time"><a href="#t2014-11-10T17:59:40" class="time">17:59</a></td></tr>
+<tr id="t2014-11-10T19:53:33"><th class="nick" style="background: #4b904b">grma</th><td class="text" style="color: #4b904b">hi, does someone have bb file for libwebsockets around ?</td><td class="time"><a href="#t2014-11-10T19:53:33" class="time">19:53</a></td></tr>
+<tr id="t2014-11-10T19:55:37"><th class="nick" style="background: #4d4d93">kergoth</th><td class="text" style="color: #4d4d93">grma: <a href="http://layers.openembedded.org/layerindex/branch/master/recipes/?q=websocket" rel="nofollow">http://layers.openembedded.org/layerindex/branch/master/recipes/?q=websocket</a></td><td class="time"><a href="#t2014-11-10T19:55:37" class="time">19:55</a></td></tr>
+<tr id="t2014-11-10T19:56:26"><th class="nick" style="background: #4b904b">grma</th><td class="text" style="color: #4b904b">thx</td><td class="time"><a href="#t2014-11-10T19:56:26" class="time">19:56</a></td></tr>
+<tr id="t2014-11-10T19:57:55"><th class="nick" style="background: #4b904b">grma</th><td class="text" style="color: #4b904b">does not look to be able to dowload ... strange</td><td class="time"><a href="#t2014-11-10T19:57:55" class="time">19:57</a></td></tr>
+<tr id="t2014-11-10T19:59:58"><th class="nick" style="background: #4b904b">grma</th><td class="text" style="color: #4b904b">ah, i have to use <a href="http://layers.openembedded.org/layerindex/branch/master/layer/meta-tizen," rel="nofollow">http://layers.openembedded.org/layerindex/branch/master/layer/meta-tizen,</a> thx</td><td class="time"><a href="#t2014-11-10T19:59:58" class="time">19:59</a></td></tr>
+<tr id="t2014-11-10T20:02:18"><th class="nick" style="background: #4d4d93">kergoth</th><td class="text" style="color: #4d4d93">the metadata index is just that — an index of existing layers, it doesn't hold the content itself :)</td><td class="time"><a href="#t2014-11-10T20:02:18" class="time">20:02</a></td></tr>
+<tr id="t2014-11-10T21:39:29"><td class="part" colspan="2">*** Siecje &lt;Siecje!~Siecje@128.224.252.2&gt; has left #yocto</td><td><a href="#t2014-11-10T21:39:29" class="time">21:39</a></td></tr>
+<tr id="t2014-11-10T22:03:12"><td class="nickchange" colspan="2">*** munch_ is now known as Guest43480</td><td><a href="#t2014-11-10T22:03:12" class="time">22:03</a></td></tr>
+<tr id="t2014-11-10T22:41:14"><td class="part" colspan="2">*** pabigot &lt;pabigot!~pab@c-75-72-225-8.hsd1.mn.comcast.net&gt; has left #yocto</td><td><a href="#t2014-11-10T22:41:14" class="time">22:41</a></td></tr>
+<tr id="t2014-11-10T23:32:45"><th class="nick" style="background: #97974f">Crofton|work</th><td class="text" style="color: #97974f">I really want to see what is up with mckoan|away power thing</td><td class="time"><a href="#t2014-11-10T23:32:45" class="time">23:32</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-11-09.log.html">&#171; Sunday, 2014-11-09</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-11.log.html">Tuesday, 2014-11-11 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-10-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-10-26</h1>
+<div class="navigation"> <a href="%23yocto.2014-10-25.log.html">&#171; Saturday, 2014-10-25</a> <a href="index.html">Index</a> <a href="%23yocto.2014-10-27.log.html">Monday, 2014-10-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-10-26T00:11:56"><th class="nick" style="background: #407a40">cravista</th><td class="text" style="color: #407a40">good night, im asking help to create a Yocto customized image following the <a href="http://flummox-engineering.blogspot.com.br/2014/03/building-image-for-intel-galileo-on-osx.html?_escaped_fragment_#!" rel="nofollow">http://flummox-engineering.blogspot.com.br/2014/03/building-image-for-intel-galileo-on-osx.html?_escaped_fragment_#!</a> with Yocto image 1.0.1</td><td class="time"><a href="#t2014-10-26T00:11:56" class="time">00:11</a></td></tr>
+<tr id="t2014-10-26T00:13:16"><th class="nick" style="background: #407a40">cravista</th><td class="text" style="color: #407a40">during "bitbake image-custom" my console returns ERROR: Unable to parse ./poky/meta/conf/layer.conf: file ./poky/meta/conf/layer.conf not found in ./meta-clanton_v1.0.1/yocto_build</td><td class="time"><a href="#t2014-10-26T00:13:16" class="time">00:13</a></td></tr>
+<tr id="t2014-10-26T00:14:27"><th class="nick" style="background: #407a40">cravista</th><td class="text" style="color: #407a40">and i found problem on line 53 BDIR=`echo $BDIR | sed -re 's|/+$||'`</td><td class="time"><a href="#t2014-10-26T00:14:27" class="time">00:14</a></td></tr>
+<tr id="t2014-10-26T00:14:44"><th class="nick" style="background: #407a40">cravista</th><td class="text" style="color: #407a40">during compilation on OSX system</td><td class="time"><a href="#t2014-10-26T00:14:44" class="time">00:14</a></td></tr>
+<tr id="t2014-10-26T00:15:37"><th class="nick" style="background: #407a40">cravista</th><td class="text" style="color: #407a40">in file oe-buildenv-internal</td><td class="time"><a href="#t2014-10-26T00:15:37" class="time">00:15</a></td></tr>
+<tr id="t2014-10-26T00:39:16"><td class="part" colspan="2">*** cravista &lt;cravista!~Adium@201.46.155.13&gt; has left #yocto</td><td><a href="#t2014-10-26T00:39:16" class="time">00:39</a></td></tr>
+<tr id="t2014-10-26T00:50:53"><td class="part" colspan="2">*** cravista &lt;cravista!~aavtcris@201.46.155.13&gt; has left #yocto</td><td><a href="#t2014-10-26T00:50:53" class="time">00:50</a></td></tr>
+<tr id="t2014-10-26T01:08:12"><th class="nick" style="background: #42427e">cravista1</th><td class="text" style="color: #42427e"><a href="http://www.flashesofpanic.com/panic/002596.php" rel="nofollow">http://www.flashesofpanic.com/panic/002596.php</a></td><td class="time"><a href="#t2014-10-26T01:08:12" class="time">01:08</a></td></tr>
+<tr id="t2014-10-26T01:14:56"><td class="part" colspan="2">*** cravista &lt;cravista!~aavtcris@201.46.155.13&gt; has left #yocto</td><td><a href="#t2014-10-26T01:14:56" class="time">01:14</a></td></tr>
+<tr id="t2014-10-26T07:02:02"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-10-26T07:02:02" class="time">07:02</a></td></tr>
+<tr id="t2014-10-26T07:11:05"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-10-26T07:11:05" class="time">07:11</a></td></tr>
+<tr id="t2014-10-26T09:11:19"><th class="nick" style="background: #818144">pascal-bach</th><td class="text" style="color: #818144">Hi guys. I would like to contribute something to yocto-docs. Could someone point me to the correct mailing list for this?</td><td class="time"><a href="#t2014-10-26T09:11:19" class="time">09:11</a></td></tr>
+<tr id="t2014-10-26T09:19:37"><td class="part" colspan="2">*** lexszero &lt;lexszero!~lexszero@195.19.225.242&gt; has left #yocto</td><td><a href="#t2014-10-26T09:19:37" class="time">09:19</a></td></tr>
+<tr id="t2014-10-26T09:39:48"><td class="part" colspan="2">*** lexszero &lt;lexszero!~lexszero@195.19.225.242&gt; has left #yocto</td><td><a href="#t2014-10-26T09:39:48" class="time">09:39</a></td></tr>
+<tr id="t2014-10-26T11:24:14"><td class="nickchange" colspan="2">*** DarkKnight_ is now known as DarkKnight</td><td><a href="#t2014-10-26T11:24:14" class="time">11:24</a></td></tr>
+<tr id="t2014-10-26T11:24:23"><td class="nickchange" colspan="2">*** DarkKnight is now known as DarkKnight_</td><td><a href="#t2014-10-26T11:24:23" class="time">11:24</a></td></tr>
+<tr id="t2014-10-26T12:09:43"><td class="part" colspan="2">*** lexszero &lt;lexszero!~lexszero@195.19.225.242&gt; has left #yocto</td><td><a href="#t2014-10-26T12:09:43" class="time">12:09</a></td></tr>
+<tr id="t2014-10-26T12:15:14"><td class="part" colspan="2">*** lexszero &lt;lexszero!~lexszero@195.19.225.242&gt; has left #yocto</td><td><a href="#t2014-10-26T12:15:14" class="time">12:15</a></td></tr>
+<tr id="t2014-10-26T12:38:26"><td class="nickchange" colspan="2">*** phantoneD is now known as phantoxeD</td><td><a href="#t2014-10-26T12:38:26" class="time">12:38</a></td></tr>
+<tr id="t2014-10-26T13:39:54"><td class="nickchange" colspan="2">*** xnox_ is now known as xnox</td><td><a href="#t2014-10-26T13:39:54" class="time">13:39</a></td></tr>
+<tr id="t2014-10-26T16:55:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #88 of nightly is complete: Failure [failed]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/88" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/88</a></td><td><a href="#t2014-10-26T16:55:03" class="time">16:55</a></td></tr>
+<tr id="t2014-10-26T17:09:25"><td class="other" colspan="2">-YoctoAutoBuilder- build #80 of eclipse-plugin-kepler is complete: Failure [failed Building Eclipse Plugin Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-kepler/builds/80" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-kepler/builds/80</a></td><td><a href="#t2014-10-26T17:09:25" class="time">17:09</a></td></tr>
+<tr id="t2014-10-26T17:21:53"><td class="nickchange" colspan="2">*** balister_ is now known as Crofton|work</td><td><a href="#t2014-10-26T17:21:53" class="time">17:21</a></td></tr>
+<tr id="t2014-10-26T19:40:14"><td class="part" colspan="2">*** Siecje &lt;Siecje!~Siecje@CPEbc1401239133-CMbc1401239130.cpe.net.cable.rogers.com&gt; has left #yocto</td><td><a href="#t2014-10-26T19:40:14" class="time">19:40</a></td></tr>
+<tr id="t2014-10-26T22:13:05"><td class="nickchange" colspan="2">*** munch_ is now known as Guest17666</td><td><a href="#t2014-10-26T22:13:05" class="time">22:13</a></td></tr>
+<tr id="t2014-10-26T22:57:07"><td class="nickchange" colspan="2">*** dzoe_ is now known as dzoe</td><td><a href="#t2014-10-26T22:57:07" class="time">22:57</a></td></tr>
+<tr id="t2014-10-26T23:05:46"><th class="nick" style="background: #854685">junland</th><td class="text" style="color: #854685">Even thought AMD CPU's are not listed as yocto compatible, can I still use the generic-x86/x86-64 kernel?</td><td class="time"><a href="#t2014-10-26T23:05:46" class="time">23:05</a></td></tr>
+<tr id="t2014-10-26T23:07:29"><th class="nick" style="background: #854685">junland</th><td class="text" style="color: #854685">I mean BSP...</td><td class="time"><a href="#t2014-10-26T23:07:29" class="time">23:07</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-10-25.log.html">&#171; Saturday, 2014-10-25</a> <a href="index.html">Index</a> <a href="%23yocto.2014-10-27.log.html">Monday, 2014-10-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

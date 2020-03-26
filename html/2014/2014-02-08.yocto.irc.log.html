@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-02-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-02-08</h1>
+<div class="navigation"> <a href="%23yocto.2014-02-07.log.html">&#171; Friday, 2014-02-07</a> <a href="index.html">Index</a> <a href="%23yocto.2014-02-09.log.html">Sunday, 2014-02-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-02-08T00:21:16"><td class="nickchange" colspan="2">*** behanw_ is now known as behanw</td><td><a href="#t2014-02-08T00:21:16" class="time">00:21</a></td></tr>
+<tr id="t2014-02-08T02:17:39"><td class="nickchange" colspan="2">*** akbennett is now known as zz_akbennett</td><td><a href="#t2014-02-08T02:17:39" class="time">02:17</a></td></tr>
+<tr id="t2014-02-08T02:46:20"><td class="nickchange" colspan="2">*** zz_akbennett is now known as akbennett</td><td><a href="#t2014-02-08T02:46:20" class="time">02:46</a></td></tr>
+<tr id="t2014-02-08T02:46:58"><td class="nickchange" colspan="2">*** akbennett is now known as zz_akbennett</td><td><a href="#t2014-02-08T02:46:58" class="time">02:46</a></td></tr>
+<tr id="t2014-02-08T05:51:44"><td class="nickchange" colspan="2">*** silviof1 is now known as silviof</td><td><a href="#t2014-02-08T05:51:44" class="time">05:51</a></td></tr>
+<tr id="t2014-02-08T10:29:31"><td class="nickchange" colspan="2">*** onoffon is now known as khem`</td><td><a href="#t2014-02-08T10:29:31" class="time">10:29</a></td></tr>
+<tr id="t2014-02-08T10:35:43"><td class="nickchange" colspan="2">*** onoffon is now known as khem`</td><td><a href="#t2014-02-08T10:35:43" class="time">10:35</a></td></tr>
+<tr id="t2014-02-08T12:06:11"><th class="nick" style="background: #407a40">LetoThe2nd</th><td class="text" style="color: #407a40">is there a way to find out which DISTRO_FEATURES are available for selection?</td><td class="time"><a href="#t2014-02-08T12:06:11" class="time">12:06</a></td></tr>
+<tr id="t2014-02-08T12:08:56"><th class="nick" style="background: #42427e">lpapp</th><td class="text" style="color: #42427e">LetoThe2nd: script source. :)</td><td class="time"><a href="#t2014-02-08T12:08:56" class="time">12:08</a></td></tr>
+<tr id="t2014-02-08T12:09:41"><th class="nick" style="background: #42427e">lpapp</th><td class="text" style="color: #42427e">LetoThe2nd: <a href="http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#ref-features-distro" rel="nofollow">http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#ref-features-distro</a></td><td class="time"><a href="#t2014-02-08T12:09:41" class="time">12:09</a></td></tr>
+<tr id="t2014-02-08T12:10:22"><th class="nick" style="background: #407a40">LetoThe2nd</th><td class="text" style="color: #407a40">lpapp: ah thanks. i searched the dev-manual instead of the ref-manual</td><td class="time"><a href="#t2014-02-08T12:10:22" class="time">12:10</a></td></tr>
+<tr id="t2014-02-08T12:17:15"><th class="nick" style="background: #42427e">lpapp</th><td class="text" style="color: #42427e">LetoThe2nd: ok. :)</td><td class="time"><a href="#t2014-02-08T12:17:15" class="time">12:17</a></td></tr>
+<tr id="t2014-02-08T13:23:31"><td class="nickchange" colspan="2">*** silviof2 is now known as silviof</td><td><a href="#t2014-02-08T13:23:31" class="time">13:23</a></td></tr>
+<tr id="t2014-02-08T16:37:04"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">Hi !</td><td class="time"><a href="#t2014-02-08T16:37:04" class="time">16:37</a></td></tr>
+<tr id="t2014-02-08T16:37:07"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">I build angstrom with the command "MACHINE="qemuarm" bitbake console-image" and I got this error <a href="http://pastebin.com/X6QW4L0d" rel="nofollow">http://pastebin.com/X6QW4L0d</a> . What I m doing wrong ?</td><td class="time"><a href="#t2014-02-08T16:37:07" class="time">16:37</a></td></tr>
+<tr id="t2014-02-08T16:54:33"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">MatthieuG: try systemd-image</td><td class="time"><a href="#t2014-02-08T16:54:33" class="time">16:54</a></td></tr>
+<tr id="t2014-02-08T16:56:01"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">Ok, the command is running, but why testing with systemd-image ?</td><td class="time"><a href="#t2014-02-08T16:56:01" class="time">16:56</a></td></tr>
+<tr id="t2014-02-08T16:57:15"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144"></td><td class="time"><a href="#t2014-02-08T16:57:15" class="time">16:57</a></td></tr>
+<tr id="t2014-02-08T16:57:17"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">khem`: I got the same error</td><td class="time"><a href="#t2014-02-08T16:57:17" class="time">16:57</a></td></tr>
+<tr id="t2014-02-08T17:03:52"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">hmm</td><td class="time"><a href="#t2014-02-08T17:03:52" class="time">17:03</a></td></tr>
+<tr id="t2014-02-08T17:04:02"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">is it with 2013.12 ?</td><td class="time"><a href="#t2014-02-08T17:04:02" class="time">17:04</a></td></tr>
+<tr id="t2014-02-08T17:04:19"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">yes</td><td class="time"><a href="#t2014-02-08T17:04:19" class="time">17:04</a></td></tr>
+<tr id="t2014-02-08T17:06:47"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">what is your /bin/sh pointing to</td><td class="time"><a href="#t2014-02-08T17:06:47" class="time">17:06</a></td></tr>
+<tr id="t2014-02-08T17:07:30"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">bash</td><td class="time"><a href="#t2014-02-08T17:07:30" class="time">17:07</a></td></tr>
+<tr id="t2014-02-08T17:23:42"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">I dont see this error on my end</td><td class="time"><a href="#t2014-02-08T17:23:42" class="time">17:23</a></td></tr>
+<tr id="t2014-02-08T17:23:52"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">hard to figure</td><td class="time"><a href="#t2014-02-08T17:23:52" class="time">17:23</a></td></tr>
+<tr id="t2014-02-08T17:25:08"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">sure, how can I debug the script "update_font_cache" ?</td><td class="time"><a href="#t2014-02-08T17:25:08" class="time">17:25</a></td></tr>
+<tr id="t2014-02-08T17:26:13"><th class="nick" style="background: #818144">MatthieuG</th><td class="text" style="color: #818144">the script need $D and $libdir, $bindir for running, what I have to put in this variables ?</td><td class="time"><a href="#t2014-02-08T17:26:13" class="time">17:26</a></td></tr>
+<tr id="t2014-02-08T20:00:04"><td class="part" colspan="2">*** MatthieuG &lt;MatthieuG!~bigbowser@2a01:e35:8a71:6c20:9c8e:e09:e7d:da7a&gt; has left #yocto</td><td><a href="#t2014-02-08T20:00:04" class="time">20:00</a></td></tr>
+<tr id="t2014-02-08T20:21:31"><td class="part" colspan="2">*** MatthieuG &lt;MatthieuG!~bigbowser@vai87-1-88-167-22-194.fbx.proxad.net&gt; has left #yocto</td><td><a href="#t2014-02-08T20:21:31" class="time">20:21</a></td></tr>
+<tr id="t2014-02-08T21:16:58"><td class="other" colspan="2">-YoctoAutoBuilder- build #21 of nightly-fsl-arm-lsb is complete: Failure [failed BuildImages BuildImages_1 BuildImages_2 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm-lsb/builds/21" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm-lsb/builds/21</a></td><td><a href="#t2014-02-08T21:16:58" class="time">21:16</a></td></tr>
+<tr id="t2014-02-08T21:17:20"><td class="other" colspan="2">-YoctoAutoBuilder- build #20 of nightly-fsl-arm is complete: Failure [failed BuildImages Building Toolchain Images Building Toolchain Images_1 BuildImages_1 BuildImages_2 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm/builds/20" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm/builds/20</a></td><td><a href="#t2014-02-08T21:17:20" class="time">21:17</a></td></tr>
+<tr id="t2014-02-08T21:43:11"><td class="other" colspan="2">-YoctoAutoBuilder- build #40 of buildtools is complete: Failure [failed BuildImages Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/buildtools/builds/40" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/buildtools/builds/40</a></td><td><a href="#t2014-02-08T21:43:11" class="time">21:43</a></td></tr>
+<tr id="t2014-02-08T22:28:14"><th class="nick" style="background: #42427e">lpapp</th><td class="text" style="color: #42427e">bluelightning: hi</td><td class="time"><a href="#t2014-02-08T22:28:14" class="time">22:28</a></td></tr>
+<tr id="t2014-02-08T22:28:34"><th class="nick" style="background: #42427e">lpapp</th><td class="text" style="color: #42427e">you mentioned that debug-tweaks would not be needed if I set a root password, but without that, I cannot login as root on the generated image.</td><td class="time"><a href="#t2014-02-08T22:28:34" class="time">22:28</a></td></tr>
+<tr id="t2014-02-08T23:02:33"><td class="other" colspan="2">-YoctoAutoBuilder- build #21 of nightly-x32 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x32/builds/21" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x32/builds/21</a></td><td><a href="#t2014-02-08T23:02:33" class="time">23:02</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-02-07.log.html">&#171; Friday, 2014-02-07</a> <a href="index.html">Index</a> <a href="%23yocto.2014-02-09.log.html">Sunday, 2014-02-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

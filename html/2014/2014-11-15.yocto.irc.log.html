@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-11-15</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-11-15</h1>
+<div class="navigation"> <a href="%23yocto.2014-11-14.log.html">&#171; Friday, 2014-11-14</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-16.log.html">Sunday, 2014-11-16 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-11-15T03:12:56"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">So I'm adding a cross compiler: how do I get packages to properly depend on it?</td><td class="time"><a href="#t2014-11-15T03:12:56" class="time">03:12</a></td></tr>
+<tr id="t2014-11-15T06:00:50"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-11-15T06:00:50" class="time">06:00</a></td></tr>
+<tr id="t2014-11-15T06:02:10"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-11-15T06:02:10" class="time">06:02</a></td></tr>
+<tr id="t2014-11-15T16:44:44"><th class="nick" style="background: #42427e">CromFr</th><td class="text" style="color: #42427e">sorry for join/quit spamming, shout has gone mad...</td><td class="time"><a href="#t2014-11-15T16:44:44" class="time">16:44</a></td></tr>
+<tr id="t2014-11-15T16:44:50"><th class="nick" style="background: #42427e">CromFr</th><td class="text" style="color: #42427e">I prevented him from automatically rejoin if it crashes</td><td class="time"><a href="#t2014-11-15T16:44:50" class="time">16:44</a></td></tr>
+<tr id="t2014-11-15T18:54:44"><td class="part" colspan="2">*** Siecje1 &lt;Siecje1!~Siecje@CPEbc1401239133-CMbc1401239130.cpe.net.cable.rogers.com&gt; has left #yocto</td><td><a href="#t2014-11-15T18:54:44" class="time">18:54</a></td></tr>
+<tr id="t2014-11-15T19:19:05"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">If I'm adding a package with -native and -cross variants, do I need it to generate executables named like foo-${TARGET}?</td><td class="time"><a href="#t2014-11-15T19:19:05" class="time">19:19</a></td></tr>
+<tr id="t2014-11-15T19:37:32"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">Also, how do I have foo depend on foo-cross depend on foo-native?</td><td class="time"><a href="#t2014-11-15T19:37:32" class="time">19:37</a></td></tr>
+<tr id="t2014-11-15T19:43:00"><th class="nick" style="background: #818144">gorjanc4</th><td class="text" style="color: #818144">Hello, I'm new to Yocto. I have an intel edison board, trying to install pybluez on it, but it seems I need to install the libbluetooth-dev first. Can sombodey point me in the right direction how I can achive this?</td><td class="time"><a href="#t2014-11-15T19:43:00" class="time">19:43</a></td></tr>
+<tr id="t2014-11-15T20:26:41"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">looks like i need to do the same thing base_dep_prepend() in base.bbclass does, and then set up the appropriate provides and inhibit in the -cross</td><td class="time"><a href="#t2014-11-15T20:26:41" class="time">20:26</a></td></tr>
+<tr id="t2014-11-15T20:42:05"><td class="part" colspan="2">*** Siecje &lt;Siecje!~Siecje@CPEbc1401239133-CMbc1401239130.cpe.net.cable.rogers.com&gt; has left #yocto</td><td><a href="#t2014-11-15T20:42:05" class="time">20:42</a></td></tr>
+<tr id="t2014-11-15T22:09:06"><th class="nick" style="background: #854685">volker</th><td class="text" style="color: #854685">hi!</td><td class="time"><a href="#t2014-11-15T22:09:06" class="time">22:09</a></td></tr>
+<tr id="t2014-11-15T22:09:14"><th class="nick" style="background: #854685">volker</th><td class="text" style="color: #854685">Is there an easy way to enable the serial console?</td><td class="time"><a href="#t2014-11-15T22:09:14" class="time">22:09</a></td></tr>
+<tr id="t2014-11-15T22:09:21"><th class="nick" style="background: #854685">volker</th><td class="text" style="color: #854685">like one flag?</td><td class="time"><a href="#t2014-11-15T22:09:21" class="time">22:09</a></td></tr>
+<tr id="t2014-11-15T22:09:46"><th class="nick" style="background: #854685">volker</th><td class="text" style="color: #854685">Is this usually set in the BSP layer or in the yocto core?</td><td class="time"><a href="#t2014-11-15T22:09:46" class="time">22:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-11-14.log.html">&#171; Friday, 2014-11-14</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-16.log.html">Sunday, 2014-11-16 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

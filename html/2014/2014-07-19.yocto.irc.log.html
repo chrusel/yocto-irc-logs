@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-07-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-07-19</h1>
+<div class="navigation"> <a href="%23yocto.2014-07-18.log.html">&#171; Friday, 2014-07-18</a> <a href="index.html">Index</a> <a href="%23yocto.2014-07-20.log.html">Sunday, 2014-07-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-07-19T01:53:43"><td class="part" colspan="2">*** LCyrin &lt;LCyrin!~lynn@172.56.39.98&gt; has left #yocto</td><td><a href="#t2014-07-19T01:53:43" class="time">01:53</a></td></tr>
+<tr id="t2014-07-19T06:42:34"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: I took that pseudo patch but it looks like the tarball isn't there yet? :/</td><td class="time"><a href="#t2014-07-19T06:42:34" class="time">06:42</a></td></tr>
+<tr id="t2014-07-19T06:43:00"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">That's possible. I emailed it to pidge, I think? If not, it should be up on ftp.windriver.com/ftp/pub/pseebach/pseudo-1.6.2.tar.bz2</td><td class="time"><a href="#t2014-07-19T06:43:00" class="time">06:43</a></td></tr>
+<tr id="t2014-07-19T06:43:23"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: ok, cool, I'll see if I can add it</td><td class="time"><a href="#t2014-07-19T06:43:23" class="time">06:43</a></td></tr>
+<tr id="t2014-07-19T06:46:01"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: is that url correct?</td><td class="time"><a href="#t2014-07-19T06:46:01" class="time">06:46</a></td></tr>
+<tr id="t2014-07-19T06:46:18"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">... I am pretty sure the /ftp/ is wrong.</td><td class="time"><a href="#t2014-07-19T06:46:18" class="time">06:46</a></td></tr>
+<tr id="t2014-07-19T06:46:35"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">It's almost 2AM and I'm trying to debug unfamiliar C++ rendering code. :P</td><td class="time"><a href="#t2014-07-19T06:46:35" class="time">06:46</a></td></tr>
+<tr id="t2014-07-19T06:46:50"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">(Trivia point: I don't really know C++.)</td><td class="time"><a href="#t2014-07-19T06:46:50" class="time">06:46</a></td></tr>
+<tr id="t2014-07-19T06:47:47"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: there is a <a href="ftp://ftp.windriver.com/pub/pseebach/" rel="nofollow">ftp://ftp.windriver.com/pub/pseebach/</a> but no pseudo tarball...</td><td class="time"><a href="#t2014-07-19T06:47:47" class="time">06:47</a></td></tr>
+<tr id="t2014-07-19T06:48:13"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">...</td><td class="time"><a href="#t2014-07-19T06:48:13" class="time">06:48</a></td></tr>
+<tr id="t2014-07-19T06:48:33"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">soooo it turns out that the tarball for pseudo 1.6.*1* is not actually named 1.6.*2*.</td><td class="time"><a href="#t2014-07-19T06:48:33" class="time">06:48</a></td></tr>
+<tr id="t2014-07-19T06:48:36"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: ah, its 1.6.1, not 2 :)</td><td class="time"><a href="#t2014-07-19T06:48:36" class="time">06:48</a></td></tr>
+<tr id="t2014-07-19T06:51:14"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: thanks, got it in place</td><td class="time"><a href="#t2014-07-19T06:51:14" class="time">06:51</a></td></tr>
+<tr id="t2014-07-19T06:51:20"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">Awesome.</td><td class="time"><a href="#t2014-07-19T06:51:20" class="time">06:51</a></td></tr>
+<tr id="t2014-07-19T06:56:07"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">seebs: I was kind of surprised you were still up. C++ isn't a strong point of mine either, I've just pretended to code in it occasionally :)</td><td class="time"><a href="#t2014-07-19T06:56:07" class="time">06:56</a></td></tr>
+<tr id="t2014-07-19T07:21:29"><th class="nick" style="background: #42427e">seebs</th><td class="text" style="color: #42427e">I tend towards late nights (and mornings), for whatever reason.</td><td class="time"><a href="#t2014-07-19T07:21:29" class="time">07:21</a></td></tr>
+<tr id="t2014-07-19T10:13:57"><td class="nickchange" colspan="2">*** _dv_ is now known as dv_</td><td><a href="#t2014-07-19T10:13:57" class="time">10:13</a></td></tr>
+<tr id="t2014-07-19T11:18:12"><td class="other" colspan="2">-YoctoAutoBuilder- build #177 of build-appliance is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/177" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/177</a></td><td><a href="#t2014-07-19T11:18:12" class="time">11:18</a></td></tr>
+<tr id="t2014-07-19T15:26:54"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">ERROR: Fetcher failure: Fetch command failed with exit code 8, output:</td><td class="time"><a href="#t2014-07-19T15:26:54" class="time">15:26</a></td></tr>
+<tr id="t2014-07-19T15:26:54"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144"><a href="http://downloads.yoctoproject.org/releases/pseudo/pseudo-1.6.1.tar.bz2:" rel="nofollow">http://downloads.yoctoproject.org/releases/pseudo/pseudo-1.6.1.tar.bz2:</a></td><td class="time"><a href="#t2014-07-19T15:26:54" class="time">15:26</a></td></tr>
+<tr id="t2014-07-19T15:26:54"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">2014-07-18 20:36:47 ERROR 404: Not Found.</td><td class="time"><a href="#t2014-07-19T15:26:54" class="time">15:26</a></td></tr>
+<tr id="t2014-07-19T15:27:06"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">Oh my</td><td class="time"><a href="#t2014-07-19T15:27:06" class="time">15:27</a></td></tr>
+<tr id="t2014-07-19T15:27:27"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">seebs: ^</td><td class="time"><a href="#t2014-07-19T15:27:27" class="time">15:27</a></td></tr>
+<tr id="t2014-07-19T15:27:32"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">RP: ^</td><td class="time"><a href="#t2014-07-19T15:27:32" class="time">15:27</a></td></tr>
+<tr id="t2014-07-19T15:28:08"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">RP: why pseudo patch has been merged in 2 or 3 hours after been send? no time for testing.</td><td class="time"><a href="#t2014-07-19T15:28:08" class="time">15:28</a></td></tr>
+<tr id="t2014-07-19T16:07:03"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">otavio: it looked safe and fixed other issues, I didn't realise the tarball wasn't up. That was corrected as soon as it was realised it was missing</td><td class="time"><a href="#t2014-07-19T16:07:03" class="time">16:07</a></td></tr>
+<tr id="t2014-07-19T16:09:03"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: I have a nasty feeling we have hung bitbake processes on the autobuilder :(</td><td class="time"><a href="#t2014-07-19T16:09:03" class="time">16:09</a></td></tr>
+<tr id="t2014-07-19T16:09:16"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: build times look like they're taking way too long :(</td><td class="time"><a href="#t2014-07-19T16:09:16" class="time">16:09</a></td></tr>
+<tr id="t2014-07-19T16:10:44"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, I can take a look in twenty minutes.</td><td class="time"><a href="#t2014-07-19T16:10:44" class="time">16:10</a></td></tr>
+<tr id="t2014-07-19T16:15:49"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: I'm guessing we should just stop the current build, clean out any processes still running and then restart a new master build</td><td class="time"><a href="#t2014-07-19T16:15:49" class="time">16:15</a></td></tr>
+<tr id="t2014-07-19T16:15:59"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: If you have other things to do, I can find time later on</td><td class="time"><a href="#t2014-07-19T16:15:59" class="time">16:15</a></td></tr>
+<tr id="t2014-07-19T16:40:15"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">Actually I'll need a little longer than I thought. I'll let you know when I'm at a proper computer.</td><td class="time"><a href="#t2014-07-19T16:40:15" class="time">16:40</a></td></tr>
+<tr id="t2014-07-19T17:45:20"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">At a full speed connection now.</td><td class="time"><a href="#t2014-07-19T17:45:20" class="time">17:45</a></td></tr>
+<tr id="t2014-07-19T18:02:39"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, The autobuilders are ready for a new attempt.</td><td class="time"><a href="#t2014-07-19T18:02:39" class="time">18:02</a></td></tr>
+<tr id="t2014-07-19T18:10:37"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">RP: when you can merge alsa-tools? I want to let a full build run in our autobuilder</td><td class="time"><a href="#t2014-07-19T18:10:37" class="time">18:10</a></td></tr>
+<tr id="t2014-07-19T18:10:48"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">(was out for lunch sorry)</td><td class="time"><a href="#t2014-07-19T18:10:48" class="time">18:10</a></td></tr>
+<tr id="t2014-07-19T18:12:34"><th class="nick" style="background: #818144">otavio</th><td class="text" style="color: #818144">RP: seebs: tarball worked</td><td class="time"><a href="#t2014-07-19T18:12:34" class="time">18:12</a></td></tr>
+<tr id="t2014-07-19T18:37:11"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">did alsa-lib get the -brokensep or other fix in master yet?</td><td class="time"><a href="#t2014-07-19T18:37:11" class="time">18:37</a></td></tr>
+<tr id="t2014-07-19T18:38:09"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">think it was alsa-lib anyway, and specific to do_populate_sdk...</td><td class="time"><a href="#t2014-07-19T18:38:09" class="time">18:38</a></td></tr>
+<tr id="t2014-07-19T19:14:32"><td class="nickchange" colspan="2">*** jero is now known as Guest93214</td><td><a href="#t2014-07-19T19:14:32" class="time">19:14</a></td></tr>
+<tr id="t2014-07-19T20:46:20"><td class="nickchange" colspan="2">*** manuel__ is now known as manuel_</td><td><a href="#t2014-07-19T20:46:20" class="time">20:46</a></td></tr>
+<tr id="t2014-07-19T21:11:17"><td class="part" colspan="2">*** milky &lt;milky!~discovery@textual/developer/mikeym&gt; has left #yocto</td><td><a href="#t2014-07-19T21:11:17" class="time">21:11</a></td></tr>
+<tr id="t2014-07-19T22:38:21"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: there is something wrong, its sitting in checkout for 4 hours :/</td><td class="time"><a href="#t2014-07-19T22:38:21" class="time">22:38</a></td></tr>
+<tr id="t2014-07-19T22:39:16"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP,&nbsp;&nbsp;I'll check it out.</td><td class="time"><a href="#t2014-07-19T22:39:16" class="time">22:39</a></td></tr>
+<tr id="t2014-07-19T22:51:26"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, All builders are idle. I'm going to test with a single build'</td><td class="time"><a href="#t2014-07-19T22:51:26" class="time">22:51</a></td></tr>
+<tr id="t2014-07-19T22:52:36"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, <a href="https://autobuilder.yoctoproject.org/main/builders/poky-tiny/builds/171" rel="nofollow">https://autobuilder.yoctoproject.org/main/builders/poky-tiny/builds/171</a> made it past git checkout right away.</td><td class="time"><a href="#t2014-07-19T22:52:36" class="time">22:52</a></td></tr>
+<tr id="t2014-07-19T22:59:29"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: centos6 builder has processes like 2801</td><td class="time"><a href="#t2014-07-19T22:59:29" class="time">22:59</a></td></tr>
+<tr id="t2014-07-19T23:09:41"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">halstead: I need to sleep, am not awake enough to look at this right now, sorry</td><td class="time"><a href="#t2014-07-19T23:09:41" class="time">23:09</a></td></tr>
+<tr id="t2014-07-19T23:10:48"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, Thanks for pointing that out. I'll see what I can do. Get some rest.</td><td class="time"><a href="#t2014-07-19T23:10:48" class="time">23:10</a></td></tr>
+<tr id="t2014-07-19T23:15:57"><td class="part" colspan="2">*** maxtothemax &lt;maxtothemax!~maxtothem@73.180.43.126&gt; has left #yocto</td><td><a href="#t2014-07-19T23:15:57" class="time">23:15</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-07-18.log.html">&#171; Friday, 2014-07-18</a> <a href="index.html">Index</a> <a href="%23yocto.2014-07-20.log.html">Sunday, 2014-07-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

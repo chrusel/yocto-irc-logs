@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-05-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-05-25</h1>
+<div class="navigation"> <a href="%23yocto.2014-05-24.log.html">&#171; Saturday, 2014-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2014-05-26.log.html">Monday, 2014-05-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-05-25T17:44:09"><td class="nickchange" colspan="2">*** kroon is now known as jkroon</td><td><a href="#t2014-05-25T17:44:09" class="time">17:44</a></td></tr>
+<tr id="t2014-05-25T18:19:40"><td class="nickchange" colspan="2">*** khem` is now known as khem</td><td><a href="#t2014-05-25T18:19:40" class="time">18:19</a></td></tr>
+<tr id="t2014-05-25T19:25:17"><th class="nick" style="background: #407a40">Krampus</th><td class="text" style="color: #407a40">grr.... got everything built, but it gets as far as [Initrd, addr=&lt;addr&gt;, size=&lt;size&gt;] and then nothing further comes out the serial port.</td><td class="time"><a href="#t2014-05-25T19:25:17" class="time">19:25</a></td></tr>
+<tr id="t2014-05-25T20:04:47"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">Krampus: you get u-boot output prior to that, right?</td><td class="time"><a href="#t2014-05-25T20:04:47" class="time">20:04</a></td></tr>
+<tr id="t2014-05-25T20:05:43"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">did you try loading things manually from u-boot?&nbsp;&nbsp;it sounds like maybe your initrd script is crapping out...</td><td class="time"><a href="#t2014-05-25T20:05:43" class="time">20:05</a></td></tr>
+<tr id="t2014-05-25T20:06:25"><td class="action" colspan="2">* nerdboy hacked genkernel once to build a custom initramfs, but hasn't messed with it since</td><td><a href="#t2014-05-25T20:06:25" class="time">20:06</a></td></tr>
+<tr id="t2014-05-25T20:07:41"><td class="other" colspan="2">-YoctoAutoBuilder- build #110 of nightly-fsl-ppc-lsb is complete: Failure [failed BuildImages Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-ppc-lsb/builds/110" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-ppc-lsb/builds/110</a></td><td><a href="#t2014-05-25T20:07:41" class="time">20:07</a></td></tr>
+<tr id="t2014-05-25T20:07:45"><td class="nickchange" colspan="2">*** seebs_ is now known as seebs</td><td><a href="#t2014-05-25T20:07:45" class="time">20:07</a></td></tr>
+<tr id="t2014-05-25T21:29:28"><td class="other" colspan="2">-YoctoAutoBuilder- build #110 of nightly-qa-skeleton is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-skeleton/builds/110" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-skeleton/builds/110</a></td><td><a href="#t2014-05-25T21:29:28" class="time">21:29</a></td></tr>
+<tr id="t2014-05-25T21:38:15"><th class="nick" style="background: #407a40">Krampus</th><td class="text" style="color: #407a40">nerdboy: No uboot, this is a Galileo board.&nbsp;&nbsp;I used their BSP defaults.</td><td class="time"><a href="#t2014-05-25T21:38:15" class="time">21:38</a></td></tr>
+<tr id="t2014-05-25T21:40:38"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">ah</td><td class="time"><a href="#t2014-05-25T21:40:38" class="time">21:40</a></td></tr>
+<tr id="t2014-05-25T21:40:50"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">never played with one of those</td><td class="time"><a href="#t2014-05-25T21:40:50" class="time">21:40</a></td></tr>
+<tr id="t2014-05-25T21:41:08"><td class="action" colspan="2">* nerdboy not even sure what a "quark" processor is...</td><td><a href="#t2014-05-25T21:41:08" class="time">21:41</a></td></tr>
+<tr id="t2014-05-25T21:41:42"><th class="nick" style="background: #407a40">Krampus</th><td class="text" style="color: #407a40">nerdboy: teeny tiny pentiumish.&nbsp;&nbsp;Their attempt to get into the microcontroller space.</td><td class="time"><a href="#t2014-05-25T21:41:42" class="time">21:41</a></td></tr>
+<tr id="t2014-05-25T21:44:44"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">yeah, i suspected it was x86</td><td class="time"><a href="#t2014-05-25T21:44:44" class="time">21:44</a></td></tr>
+<tr id="t2014-05-25T21:46:55"><th class="nick" style="background: #407a40">Krampus</th><td class="text" style="color: #407a40">nerdboy: they've got an arduino layer that can run sketches on it and the board is designed to accept a shield.</td><td class="time"><a href="#t2014-05-25T21:46:55" class="time">21:46</a></td></tr>
+<tr id="t2014-05-25T22:54:56"><td class="other" colspan="2">-YoctoAutoBuilder- build #109 of nightly-fsl-ppc is complete: Failure [failed BuildImages Building Toolchain Images Building Toolchain Images_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-ppc/builds/109" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-ppc/builds/109</a></td><td><a href="#t2014-05-25T22:54:56" class="time">22:54</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-05-24.log.html">&#171; Saturday, 2014-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2014-05-26.log.html">Monday, 2014-05-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

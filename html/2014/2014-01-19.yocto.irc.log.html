@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-01-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-01-19</h1>
+<div class="navigation"> <a href="%23yocto.2014-01-18.log.html">&#171; Saturday, 2014-01-18</a> <a href="index.html">Index</a> <a href="%23yocto.2014-01-20.log.html">Monday, 2014-01-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-01-19T01:22:02"><td class="part" colspan="2">*** mulhern &lt;mulhern!~mulhern@c-67-186-188-203.hsd1.ma.comcast.net&gt; has left #yocto</td><td><a href="#t2014-01-19T01:22:02" class="time">01:22</a></td></tr>
+<tr id="t2014-01-19T05:00:39"><td class="nickchange" colspan="2">*** khem` is now known as kraj</td><td><a href="#t2014-01-19T05:00:39" class="time">05:00</a></td></tr>
+<tr id="t2014-01-19T05:04:56"><td class="nickchange" colspan="2">*** khem` is now known as khem</td><td><a href="#t2014-01-19T05:04:56" class="time">05:04</a></td></tr>
+<tr id="t2014-01-19T05:05:42"><td class="nickchange" colspan="2">*** kraj is now known as khem</td><td><a href="#t2014-01-19T05:05:42" class="time">05:05</a></td></tr>
+<tr id="t2014-01-19T05:06:11"><td class="nickchange" colspan="2">*** khem is now known as Guest94580</td><td><a href="#t2014-01-19T05:06:11" class="time">05:06</a></td></tr>
+<tr id="t2014-01-19T05:09:05"><td class="nickchange" colspan="2">*** onoffon is now known as khem</td><td><a href="#t2014-01-19T05:09:05" class="time">05:09</a></td></tr>
+<tr id="t2014-01-19T10:15:14"><th class="nick" style="background: #407a40">tkil</th><td class="text" style="color: #407a40">does anyone have a usbip recipe they could share?</td><td class="time"><a href="#t2014-01-19T10:15:14" class="time">10:15</a></td></tr>
+<tr id="t2014-01-19T10:16:34"><th class="nick" style="background: #407a40">tkil</th><td class="text" style="color: #407a40">i think i want to somehow derive from the minimal image, but i need to update the kernel config (to enable usbip in the kernel) and also build the usbip userspace bits (which are shipped with the kernel).</td><td class="time"><a href="#t2014-01-19T10:16:34" class="time">10:16</a></td></tr>
+<tr id="t2014-01-19T10:33:58"><td class="nickchange" colspan="2">*** ploppy_ is now known as ploppy</td><td><a href="#t2014-01-19T10:33:58" class="time">10:33</a></td></tr>
+<tr id="t2014-01-19T14:20:36"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2014-01-19T14:20:36" class="time">14:20</a></td></tr>
+<tr id="t2014-01-19T16:12:58"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">zeddii_home: hey, we have a brand new issue :/</td><td class="time"><a href="#t2014-01-19T16:12:58" class="time">16:12</a></td></tr>
+<tr id="t2014-01-19T16:13:34"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e"> /linux-yocto-dev/3.10++gitAUTOINC+0580cffb6f_e88817ea52-r0/linux/fs/yaffs2/yaffs_vfs.c:1812:2: error: unknown field 'readdir' specified in initializer</td><td class="time"><a href="#t2014-01-19T16:13:34" class="time">16:13</a></td></tr>
+<tr id="t2014-01-19T16:23:08"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e"><a href="https://dev.openwrt.org/browser/trunk/target/linux/generic/patches-3.12/503-yaffs-3.12-convert-readdir-to-iterate.patch?rev=39084#L1911" rel="nofollow">https://dev.openwrt.org/browser/trunk/target/linux/generic/patches-3.12/503-yaffs-3.12-convert-readdir-to-iterate.patch?rev=39084#L1911</a></td><td class="time"><a href="#t2014-01-19T16:23:08" class="time">16:23</a></td></tr>
+<tr id="t2014-01-19T16:23:15"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">fwiw</td><td class="time"><a href="#t2014-01-19T16:23:15" class="time">16:23</a></td></tr>
+<tr id="t2014-01-19T16:59:37"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">ant_home: interesting. I'll fix that tonight.</td><td class="time"><a href="#t2014-01-19T16:59:37" class="time">16:59</a></td></tr>
+<tr id="t2014-01-19T17:00:10"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">I fought with aufs enough on the up rev to 3.13, it is now yaffs's turn :)</td><td class="time"><a href="#t2014-01-19T17:00:10" class="time">17:00</a></td></tr>
+<tr id="t2014-01-19T17:03:43"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii_home: looking forward to those speedups you mentioned :)</td><td class="time"><a href="#t2014-01-19T17:03:43" class="time">17:03</a></td></tr>
+<tr id="t2014-01-19T17:06:18"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">RP: I have a couple more, but I'm going to send the first one tomorrow, since it is standalone.</td><td class="time"><a href="#t2014-01-19T17:06:18" class="time">17:06</a></td></tr>
+<tr id="t2014-01-19T17:06:25"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">the other ones I'm still poking at.</td><td class="time"><a href="#t2014-01-19T17:06:25" class="time">17:06</a></td></tr>
+<tr id="t2014-01-19T17:07:46"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii_home: fair enough</td><td class="time"><a href="#t2014-01-19T17:07:46" class="time">17:07</a></td></tr>
+<tr id="t2014-01-19T17:14:01"><td class="other" colspan="2">-YoctoAutoBuilder- build #12 of poky-tiny is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/poky-tiny/builds/12" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/poky-tiny/builds/12</a></td><td><a href="#t2014-01-19T17:14:01" class="time">17:14</a></td></tr>
+<tr id="t2014-01-19T17:22:45"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">zeddii_home: I didn't bother to verify but...do the extra yaffs patches we carry along add any bonus?</td><td class="time"><a href="#t2014-01-19T17:22:45" class="time">17:22</a></td></tr>
+<tr id="t2014-01-19T17:29:03"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">ant_home: only very specific cases, boot, but they just rejected yaffs2 yet again for mainline, so I'll have the core of it for a while :)</td><td class="time"><a href="#t2014-01-19T17:29:03" class="time">17:29</a></td></tr>
+<tr id="t2014-01-19T17:29:31"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">heh</td><td class="time"><a href="#t2014-01-19T17:29:31" class="time">17:29</a></td></tr>
+<tr id="t2014-01-19T17:37:26"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">zeddii_home: hm.. past that... | ERROR: "clk_set_rate" [drivers/usb/phy/phy-generic.ko] undefined!</td><td class="time"><a href="#t2014-01-19T17:37:26" class="time">17:37</a></td></tr>
+<tr id="t2014-01-19T17:42:04"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">zeddii_home: fix posted by Greg KH 3 mins ago in -linux-arm-kernel ;)</td><td class="time"><a href="#t2014-01-19T17:42:04" class="time">17:42</a></td></tr>
+<tr id="t2014-01-19T17:42:48"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">woo. I'll grab it tonight as well.</td><td class="time"><a href="#t2014-01-19T17:42:48" class="time">17:42</a></td></tr>
+<tr id="t2014-01-19T17:43:19"><td class="action" colspan="2">* zeddii_home sees it</td><td><a href="#t2014-01-19T17:43:19" class="time">17:43</a></td></tr>
+<tr id="t2014-01-19T17:44:49"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">it's not the very same... need to follow the ML</td><td class="time"><a href="#t2014-01-19T17:44:49" class="time">17:44</a></td></tr>
+<tr id="t2014-01-19T17:52:24"><th class="nick" style="background: #818144">zeddii_home</th><td class="text" style="color: #818144">yep. and I noticed the question about the fix. I'll have a go at it myself if nothing pops up.</td><td class="time"><a href="#t2014-01-19T17:52:24" class="time">17:52</a></td></tr>
+<tr id="t2014-01-19T17:53:41"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">reading&nbsp;&nbsp;<a href="http://patchwork.linux-mips.org/patch/5576/" rel="nofollow">http://patchwork.linux-mips.org/patch/5576/</a></td><td class="time"><a href="#t2014-01-19T17:53:41" class="time">17:53</a></td></tr>
+<tr id="t2014-01-19T17:53:53"><th class="nick" style="background: #42427e">ant_home</th><td class="text" style="color: #42427e">and comparing with&nbsp;&nbsp;<a href="http://lxr.free-electrons.com/ident?i=clk_set_rate" rel="nofollow">http://lxr.free-electrons.com/ident?i=clk_set_rate</a></td><td class="time"><a href="#t2014-01-19T17:53:53" class="time">17:53</a></td></tr>
+<tr id="t2014-01-19T18:55:28"><td class="other" colspan="2">-YoctoAutoBuilder- build #12 of nightly-arm is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/12" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/12</a></td><td><a href="#t2014-01-19T18:55:28" class="time">18:55</a></td></tr>
+<tr id="t2014-01-19T20:41:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #7 of build-appliance is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/build-appliance/builds/7" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/build-appliance/builds/7</a></td><td><a href="#t2014-01-19T20:41:19" class="time">20:41</a></td></tr>
+<tr id="t2014-01-19T21:15:49"><td class="other" colspan="2">-YoctoAutoBuilder- build #7 of nightly-world is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/7" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/7</a></td><td><a href="#t2014-01-19T21:15:49" class="time">21:15</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-01-18.log.html">&#171; Saturday, 2014-01-18</a> <a href="index.html">Index</a> <a href="%23yocto.2014-01-20.log.html">Monday, 2014-01-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

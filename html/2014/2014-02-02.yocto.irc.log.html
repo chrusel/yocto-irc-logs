@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-02-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-02-02</h1>
+<div class="navigation"> <a href="%23yocto.2014-02-01.log.html">&#171; Saturday, 2014-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2014-02-03.log.html">Monday, 2014-02-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-02-02T03:20:32"><th class="nick" style="background: #407a40">thirtythreeforty</th><td class="text" style="color: #407a40">I have built a Yocto "dora" image for the first time today.&nbsp;&nbsp;A small image builds fine ("custom-production"), but a larger image ("custom-production-dev") doesn't--the root fs is corrupted!</td><td class="time"><a href="#t2014-02-02T03:20:32" class="time">03:20</a></td></tr>
+<tr id="t2014-02-02T03:21:19"><th class="nick" style="background: #407a40">thirtythreeforty</th><td class="text" style="color: #407a40">I've rebuilt it a few times, and get the same issue each time.&nbsp;&nbsp;I never had this problem with "dylan."&nbsp;&nbsp;How would I debug this?</td><td class="time"><a href="#t2014-02-02T03:21:19" class="time">03:21</a></td></tr>
+<tr id="t2014-02-02T03:30:32"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">You haven't actually given any real information about what happened to you. what do you mean by "corrupted"? post logs of failures or error messages</td><td class="time"><a href="#t2014-02-02T03:30:32" class="time">03:30</a></td></tr>
+<tr id="t2014-02-02T10:40:59"><td class="nickchange" colspan="2">*** denix0 is now known as denix</td><td><a href="#t2014-02-02T10:40:59" class="time">10:40</a></td></tr>
+<tr id="t2014-02-02T11:10:57"><td class="nickchange" colspan="2">*** seebs_ is now known as seebs</td><td><a href="#t2014-02-02T11:10:57" class="time">11:10</a></td></tr>
+<tr id="t2014-02-02T11:25:14"><td class="nickchange" colspan="2">*** Squt is now known as Sput</td><td><a href="#t2014-02-02T11:25:14" class="time">11:25</a></td></tr>
+<tr id="t2014-02-02T11:36:13"><td class="other" colspan="2">-YoctoAutoBuilder- build #10 of nightly-multilib is complete: Failure [failed BuildImages Running Sanity Tests BuildImages_1 Running Sanity Tests_1 BuildImages_2 Running Sanity Tests_2 BuildImages_3 Running Sanity Tests_3 BuildImages_4]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-multilib/builds/10" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-multilib/builds/10</a></td><td><a href="#t2014-02-02T11:36:13" class="time">11:36</a></td></tr>
+<tr id="t2014-02-02T13:20:06"><td class="part" colspan="2">*** MatthieuG &lt;MatthieuG!~bigbowser@2a01:e35:8a71:6c20:6523:3724:2bad:8e54&gt; has left #yocto</td><td><a href="#t2014-02-02T13:20:06" class="time">13:20</a></td></tr>
+<tr id="t2014-02-02T14:37:22"><td class="other" colspan="2">-YoctoAutoBuilder- build #10 of nightly-x32 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x32/builds/10" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x32/builds/10</a></td><td><a href="#t2014-02-02T14:37:22" class="time">14:37</a></td></tr>
+<tr id="t2014-02-02T18:17:36"><td class="part" colspan="2">*** mansano &lt;mansano!~marcelo@177.40.49.38&gt; has left #yocto</td><td><a href="#t2014-02-02T18:17:36" class="time">18:17</a></td></tr>
+<tr id="t2014-02-02T18:31:30"><td class="nickchange" colspan="2">*** balister_ is now known as Crofton</td><td><a href="#t2014-02-02T18:31:30" class="time">18:31</a></td></tr>
+<tr id="t2014-02-02T18:46:07"><td class="other" colspan="2">-YoctoAutoBuilder- build #10 of nightly-fsl-arm is complete: Failure [failed BuildImages_1 BuildImages_2]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm/builds/10" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm/builds/10</a></td><td><a href="#t2014-02-02T18:46:07" class="time">18:46</a></td></tr>
+<tr id="t2014-02-02T19:04:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #10 of nightly-arm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/10" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/10</a></td><td><a href="#t2014-02-02T19:04:21" class="time">19:04</a></td></tr>
+<tr id="t2014-02-02T19:05:01"><td class="other" colspan="2">-YoctoAutoBuilder- build #9 of nightly-world is complete: Failure [failed BuildImages Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/9" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/9</a></td><td><a href="#t2014-02-02T19:05:01" class="time">19:05</a></td></tr>
+<tr id="t2014-02-02T19:31:33"><td class="other" colspan="2">-YoctoAutoBuilder- build #9 of nightly-non-gpl3 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-non-gpl3/builds/9" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-non-gpl3/builds/9</a></td><td><a href="#t2014-02-02T19:31:33" class="time">19:31</a></td></tr>
+<tr id="t2014-02-02T22:14:21"><td class="nickchange" colspan="2">*** onoffon is now known as khem</td><td><a href="#t2014-02-02T22:14:21" class="time">22:14</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-02-01.log.html">&#171; Saturday, 2014-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2014-02-03.log.html">Monday, 2014-02-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

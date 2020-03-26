@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-04-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-04-06</h1>
+<div class="navigation"> <a href="%23yocto.2014-04-05.log.html">&#171; Saturday, 2014-04-05</a> <a href="index.html">Index</a> <a href="%23yocto.2014-04-07.log.html">Monday, 2014-04-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-04-06T01:15:41"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-arm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/34</a></td><td><a href="#t2014-04-06T01:15:41" class="time">01:15</a></td></tr>
+<tr id="t2014-04-06T03:06:08"><td class="other" colspan="2">-YoctoAutoBuilder- build #33 of nightly-x86 is complete: Failure [failed Running Sanity Tests BuildImages_1 Building Toolchain Images Building Toolchain Images_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/33" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/33</a></td><td><a href="#t2014-04-06T03:06:08" class="time">03:06</a></td></tr>
+<tr id="t2014-04-06T03:07:52"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-ppc is complete: Failure [failed Running Sanity Tests BuildImages_1 Building Toolchain Images Building Toolchain Images_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/34</a></td><td><a href="#t2014-04-06T03:07:52" class="time">03:07</a></td></tr>
+<tr id="t2014-04-06T04:49:13"><th class="nick" style="background: #407a40">yenal</th><td class="text" style="color: #407a40">hey, can somebody help me.. the mesa package in poky dora seems to be broken when used with the fsl layers (gpu-viv/mx6) ..the install task trys to "sed -i -e 's/^#ifdef MESA_EGL_NO_X11_HEADERS/#if 0/' .../mesa/2_9.1.6-r0/image/usr/include/EGL/eglplatform.h" but EGL isnt build because of gpu-viv-bin-mx6q package.. dora worked some day ago ..any idea?</td><td class="time"><a href="#t2014-04-06T04:49:13" class="time">04:49</a></td></tr>
+<tr id="t2014-04-06T05:20:47"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">yenal: see [meta-freescale] [dora][regression] mesa failed to build on the meta-freescale mailing list</td><td class="time"><a href="#t2014-04-06T05:20:47" class="time">05:20</a></td></tr>
+<tr id="t2014-04-06T05:21:01"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">yenal: doesn't look like there a resolution, at least in that thread, but clearly you're not alone :)</td><td class="time"><a href="#t2014-04-06T05:21:01" class="time">05:21</a></td></tr>
+<tr id="t2014-04-06T10:11:30"><th class="nick" style="background: #818144">dv_</th><td class="text" style="color: #818144">kergoth: speaking of mesa, is it finally possible to finetune which parts of mesa shall be provided and which ones shall not? mesa has always collided with vendor drivers for opengl ES etc</td><td class="time"><a href="#t2014-04-06T10:11:30" class="time">10:11</a></td></tr>
+<tr id="t2014-04-06T10:52:44"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">hmm, has google mail servers been blocked by yocto spam filters ?</td><td class="time"><a href="#t2014-04-06T10:52:44" class="time">10:52</a></td></tr>
+<tr id="t2014-04-06T12:52:54"><td class="other" colspan="2">-YoctoAutoBuilder- build #35 of nightly-ppc is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/35" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/35</a></td><td><a href="#t2014-04-06T12:52:54" class="time">12:52</a></td></tr>
+<tr id="t2014-04-06T13:50:12"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-fsl-arm-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm-lsb/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm-lsb/builds/34</a></td><td><a href="#t2014-04-06T13:50:12" class="time">13:50</a></td></tr>
+<tr id="t2014-04-06T13:54:07"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-x86 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/34</a></td><td><a href="#t2014-04-06T13:54:07" class="time">13:54</a></td></tr>
+<tr id="t2014-04-06T15:11:14"><td class="other" colspan="2">-YoctoAutoBuilder- build #35 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/35" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/35</a></td><td><a href="#t2014-04-06T15:11:14" class="time">15:11</a></td></tr>
+<tr id="t2014-04-06T18:17:53"><td class="part" colspan="2">*** LenSamuelson &lt;LenSamuelson!ae666b58@gateway/web/freenode/ip.174.102.107.88&gt; has left #yocto</td><td><a href="#t2014-04-06T18:17:53" class="time">18:17</a></td></tr>
+<tr id="t2014-04-06T18:32:01"><td class="nickchange" colspan="2">*** JaMa is now known as JaMaAway</td><td><a href="#t2014-04-06T18:32:01" class="time">18:32</a></td></tr>
+<tr id="t2014-04-06T19:58:35"><td class="other" colspan="2">-YoctoAutoBuilder- build #37 of nightly-multilib is complete: Failure [failed Running Sanity Tests_2]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/37" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/37</a></td><td><a href="#t2014-04-06T19:58:35" class="time">19:58</a></td></tr>
+<tr id="t2014-04-06T20:27:26"><td class="other" colspan="2">-YoctoAutoBuilder- build #36 of nightly is complete: Failure [failed]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/36" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/36</a></td><td><a href="#t2014-04-06T20:27:26" class="time">20:27</a></td></tr>
+<tr id="t2014-04-06T20:48:28"><td class="nickchange" colspan="2">*** denix0 is now known as denix</td><td><a href="#t2014-04-06T20:48:28" class="time">20:48</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-04-05.log.html">&#171; Saturday, 2014-04-05</a> <a href="index.html">Index</a> <a href="%23yocto.2014-04-07.log.html">Monday, 2014-04-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

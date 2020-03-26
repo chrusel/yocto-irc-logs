@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-08-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-08-24</h1>
+<div class="navigation"> <a href="%23yocto.2014-08-23.log.html">&#171; Saturday, 2014-08-23</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-25.log.html">Monday, 2014-08-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-08-24T06:02:28"><th class="nick" style="background: #407a40">sm_</th><td class="text" style="color: #407a40">hi, how can add &amp; install new packages in a built image? is it possible or not? (I do't want to build new image.)</td><td class="time"><a href="#t2014-08-24T06:02:28" class="time">06:02</a></td></tr>
+<tr id="t2014-08-24T06:17:20"><td class="nickchange" colspan="2">*** _dv_ is now known as dv_</td><td><a href="#t2014-08-24T06:17:20" class="time">06:17</a></td></tr>
+<tr id="t2014-08-24T06:17:31"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">sm_: you should be able to provided your image includes some online package manager like opkg or rpm</td><td class="time"><a href="#t2014-08-24T06:17:31" class="time">06:17</a></td></tr>
+<tr id="t2014-08-24T06:23:57"><th class="nick" style="background: #407a40">sm_</th><td class="text" style="color: #407a40">khem: thanks. I didn't work with opkg or rpm before... Is there any guideline or tutorial teaching these package manager?</td><td class="time"><a href="#t2014-08-24T06:23:57" class="time">06:23</a></td></tr>
+<tr id="t2014-08-24T08:57:18"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">JaMa: gah. Its part of the previous commit, just had issues applying it :/</td><td class="time"><a href="#t2014-08-24T08:57:18" class="time">08:57</a></td></tr>
+<tr id="t2014-08-24T08:59:19"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP, JaMa, is this about the "fixup" commit ?</td><td class="time"><a href="#t2014-08-24T08:59:19" class="time">08:59</a></td></tr>
+<tr id="t2014-08-24T08:59:57"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">kroon: yes</td><td class="time"><a href="#t2014-08-24T08:59:57" class="time">08:59</a></td></tr>
+<tr id="t2014-08-24T09:00:08"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">ok</td><td class="time"><a href="#t2014-08-24T09:00:08" class="time">09:00</a></td></tr>
+<tr id="t2014-08-24T12:38:31"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">Hi!</td><td class="time"><a href="#t2014-08-24T12:38:31" class="time">12:38</a></td></tr>
+<tr id="t2014-08-24T12:38:44"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">I'm getting an error message when I run bitbake with SPDX.</td><td class="time"><a href="#t2014-08-24T12:38:44" class="time">12:38</a></td></tr>
+<tr id="t2014-08-24T12:38:59"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">Here's my command; bitbake -c spdx foo</td><td class="time"><a href="#t2014-08-24T12:38:59" class="time">12:38</a></td></tr>
+<tr id="t2014-08-24T12:39:03"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">and here's the error;</td><td class="time"><a href="#t2014-08-24T12:39:03" class="time">12:39</a></td></tr>
+<tr id="t2014-08-24T12:40:34"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">ERROR: Task do_spdx does not exist for target</td><td class="time"><a href="#t2014-08-24T12:40:34" class="time">12:40</a></td></tr>
+<tr id="t2014-08-24T12:40:47"><th class="nick" style="background: #488888">jeremiah</th><td class="text" style="color: #488888">Google gives me only three hits when I google for it.</td><td class="time"><a href="#t2014-08-24T12:40:47" class="time">12:40</a></td></tr>
+<tr id="t2014-08-24T16:32:10"><th class="nick" style="background: #8c4a4a">otavio</th><td class="text" style="color: #8c4a4a">have people see my patch to add newer Debian releases as tested distros?</td><td class="time"><a href="#t2014-08-24T16:32:10" class="time">16:32</a></td></tr>
+<tr id="t2014-08-24T16:33:30"><th class="nick" style="background: #4b904b">JaMa</th><td class="text" style="color: #4b904b">I've seen something like that</td><td class="time"><a href="#t2014-08-24T16:33:30" class="time">16:33</a></td></tr>
+<tr id="t2014-08-24T19:08:17"><td class="nickchange" colspan="2">*** khem` is now known as khem</td><td><a href="#t2014-08-24T19:08:17" class="time">19:08</a></td></tr>
+<tr id="t2014-08-24T20:48:25"><td class="other" colspan="2">-YoctoAutoBuilder- build #7 of nightly-qa-systemd is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/7" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/7</a></td><td><a href="#t2014-08-24T20:48:25" class="time">20:48</a></td></tr>
+<tr id="t2014-08-24T21:23:32"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">hi keh</td><td class="time"><a href="#t2014-08-24T21:23:32" class="time">21:23</a></td></tr>
+<tr id="t2014-08-24T21:23:36"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">argh</td><td class="time"><a href="#t2014-08-24T21:23:36" class="time">21:23</a></td></tr>
+<tr id="t2014-08-24T21:23:40"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">hi khem</td><td class="time"><a href="#t2014-08-24T21:23:40" class="time">21:23</a></td></tr>
+<tr id="t2014-08-24T21:24:00"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">hi ant__</td><td class="time"><a href="#t2014-08-24T21:24:00" class="time">21:24</a></td></tr>
+<tr id="t2014-08-24T21:24:23"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">khem, the v4bx strikes again, klibc armv4 binaries are broken</td><td class="time"><a href="#t2014-08-24T21:24:23" class="time">21:24</a></td></tr>
+<tr id="t2014-08-24T21:24:47"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93"><a href="http://pastebin.com/eXR2Cbt1" rel="nofollow">http://pastebin.com/eXR2Cbt1</a></td><td class="time"><a href="#t2014-08-24T21:24:47" class="time">21:24</a></td></tr>
+<tr id="t2014-08-24T21:24:49"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">hmm</td><td class="time"><a href="#t2014-08-24T21:24:49" class="time">21:24</a></td></tr>
+<tr id="t2014-08-24T21:25:38"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">what options are used to compile kexecboot</td><td class="time"><a href="#t2014-08-24T21:25:38" class="time">21:25</a></td></tr>
+<tr id="t2014-08-24T21:25:46"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">and ld options</td><td class="time"><a href="#t2014-08-24T21:25:46" class="time">21:25</a></td></tr>
+<tr id="t2014-08-24T21:25:50"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">klibc carries the patch since v2.02</td><td class="time"><a href="#t2014-08-24T21:25:50" class="time">21:25</a></td></tr>
+<tr id="t2014-08-24T21:27:20"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93"><a href="http://pastebin.com/eXR2Cbt1" rel="nofollow">http://pastebin.com/eXR2Cbt1</a></td><td class="time"><a href="#t2014-08-24T21:27:20" class="time">21:27</a></td></tr>
+<tr id="t2014-08-24T21:27:29"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">sry</td><td class="time"><a href="#t2014-08-24T21:27:29" class="time">21:27</a></td></tr>
+<tr id="t2014-08-24T21:27:31"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">arm-oe-linux-gnueabi-klcc -march=armv4 -mthumb-interwork -Wall&nbsp;&nbsp;&nbsp;&nbsp;-o kexecboot util.o cfgparser.o devicescan.o evdevs.o fb.o gui.o menu.o xpm.o rgb.o tui.o kexecboot.o fstype/fstype.o machine/zaurus.o</td><td class="time"><a href="#t2014-08-24T21:27:31" class="time">21:27</a></td></tr>
+<tr id="t2014-08-24T21:28:01"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">it lacks the part in the&nbsp;&nbsp;'if CONFIG_EABI '</td><td class="time"><a href="#t2014-08-24T21:28:01" class="time">21:28</a></td></tr>
+<tr id="t2014-08-24T21:28:42"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93"> ifeq ($(CONFIG_AEABI),y)</td><td class="time"><a href="#t2014-08-24T21:28:42" class="time">21:28</a></td></tr>
+<tr id="t2014-08-24T21:28:42"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93"> KLIBCREQFLAGS += -mabi=aapcs-linux -mno-thumb-interwork</td><td class="time"><a href="#t2014-08-24T21:28:42" class="time">21:28</a></td></tr>
+<tr id="t2014-08-24T21:28:42"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">+KLIBCLDFLAGS += $(FIX_ARMV4_EABI_BX)</td><td class="time"><a href="#t2014-08-24T21:28:42" class="time">21:28</a></td></tr>
+<tr id="t2014-08-24T21:30:02"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">the fun is, the previous applied patch does</td><td class="time"><a href="#t2014-08-24T21:30:02" class="time">21:30</a></td></tr>
+<tr id="t2014-08-24T21:30:04"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">-# CONFIG_AEABI is not set</td><td class="time"><a href="#t2014-08-24T21:30:04" class="time">21:30</a></td></tr>
+<tr id="t2014-08-24T21:30:04"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">+CONFIG_AEABI=y</td><td class="time"><a href="#t2014-08-24T21:30:04" class="time">21:30</a></td></tr>
+<tr id="t2014-08-24T21:31:08"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">(you fixed that long ago :)</td><td class="time"><a href="#t2014-08-24T21:31:08" class="time">21:31</a></td></tr>
+<tr id="t2014-08-24T21:35:28"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">somehow '--fix-v4bx' is not passed</td><td class="time"><a href="#t2014-08-24T21:35:28" class="time">21:35</a></td></tr>
+<tr id="t2014-08-24T21:36:47"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">and instead we get&nbsp;&nbsp;'-mthumb-interwork'</td><td class="time"><a href="#t2014-08-24T21:36:47" class="time">21:36</a></td></tr>
+<tr id="t2014-08-24T21:39:47"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">I dont's see any particular change in klibc so I suspect gcc or gold</td><td class="time"><a href="#t2014-08-24T21:39:47" class="time">21:39</a></td></tr>
+<tr id="t2014-08-24T21:39:57"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">or binutils?</td><td class="time"><a href="#t2014-08-24T21:39:57" class="time">21:39</a></td></tr>
+<tr id="t2014-08-24T21:58:42"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">wrt klcc, looking at the produced klibc.config I see indeed LDFLAGS= --fix-v4bx</td><td class="time"><a href="#t2014-08-24T21:58:42" class="time">21:58</a></td></tr>
+<tr id="t2014-08-24T22:01:30"><th class="nick" style="background: #4d4d93">ant__</th><td class="text" style="color: #4d4d93">and that goes in&nbsp;&nbsp;*arm-oe-linux-gnueabi-klcc</td><td class="time"><a href="#t2014-08-24T22:01:30" class="time">22:01</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-08-23.log.html">&#171; Saturday, 2014-08-23</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-25.log.html">Monday, 2014-08-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-09-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-09-06</h1>
+<div class="navigation"> <a href="%23yocto.2014-09-05.log.html">&#171; Friday, 2014-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2014-09-07.log.html">Sunday, 2014-09-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-09-06T03:34:07"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-09-06T03:34:07" class="time">03:34</a></td></tr>
+<tr id="t2014-09-06T03:58:43"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-09-06T03:58:43" class="time">03:58</a></td></tr>
+<tr id="t2014-09-06T04:04:28"><th class="nick" style="background: #407a40">joran_</th><td class="text" style="color: #407a40">anyone around that can help me get udev to automount a usb drive?</td><td class="time"><a href="#t2014-09-06T04:04:28" class="time">04:04</a></td></tr>
+<tr id="t2014-09-06T12:20:07"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">Hi, it’s so many days that I have problem with qt4-x11-free package &amp; say it here, but no useful recommendation... my OS is Gentoo. the errors happened in do_package and do_compile task. ath this link, I do paste Output log of "bitbake qt4-x11-free" command. <a href="http://tny.cz/54073979" rel="nofollow">http://tny.cz/54073979</a></td><td class="time"><a href="#t2014-09-06T12:20:07" class="time">12:20</a></td></tr>
+<tr id="t2014-09-06T12:20:37"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">When I searched, I found that this error may happened by python. {By the way, bitbake doesn’t work with python version 3 on Gentoo, so I change it to python2.7 version.}</td><td class="time"><a href="#t2014-09-06T12:20:37" class="time">12:20</a></td></tr>
+<tr id="t2014-09-06T12:23:27"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">so, what's the problem? what can I do to solve this error?</td><td class="time"><a href="#t2014-09-06T12:23:27" class="time">12:23</a></td></tr>
+<tr id="t2014-09-06T14:33:42"><th class="nick" style="background: #818144">panpan</th><td class="text" style="color: #818144">Execution of event handler 'check_sanity_eventhandler' failed</td><td class="time"><a href="#t2014-09-06T14:33:42" class="time">14:33</a></td></tr>
+<tr id="t2014-09-06T14:34:01"><th class="nick" style="background: #818144">panpan</th><td class="text" style="color: #818144">who can help me to solve the problem</td><td class="time"><a href="#t2014-09-06T14:34:01" class="time">14:34</a></td></tr>
+<tr id="t2014-09-06T15:52:53"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">good morning</td><td class="time"><a href="#t2014-09-06T15:52:53" class="time">15:52</a></td></tr>
+<tr id="t2014-09-06T15:54:11"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">so i need to compile the uinput kernel module for my galileo</td><td class="time"><a href="#t2014-09-06T15:54:11" class="time">15:54</a></td></tr>
+<tr id="t2014-09-06T15:54:38"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">but i'm not quite sure how to do it</td><td class="time"><a href="#t2014-09-06T15:54:38" class="time">15:54</a></td></tr>
+<tr id="t2014-09-06T16:08:21"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">anybody home?</td><td class="time"><a href="#t2014-09-06T16:08:21" class="time">16:08</a></td></tr>
+<tr id="t2014-09-06T16:08:37"><th class="nick" style="background: #488888">Crofton|work</th><td class="text" style="color: #488888">yeah, but not sure what the answer is</td><td class="time"><a href="#t2014-09-06T16:08:37" class="time">16:08</a></td></tr>
+<tr id="t2014-09-06T16:08:48"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">me neither</td><td class="time"><a href="#t2014-09-06T16:08:48" class="time">16:08</a></td></tr>
+<tr id="t2014-09-06T16:09:45"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">i'm running the debian install on to of a yocto kernel (3.8.7-yocto-standard) so i was hoping i would be able to build using the debian tools</td><td class="time"><a href="#t2014-09-06T16:09:45" class="time">16:09</a></td></tr>
+<tr id="t2014-09-06T16:11:28"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">but apparently there is no such thing as linux-headers-3.8.7-yocto-standard (lierally the only post contianing this is my post to intel)</td><td class="time"><a href="#t2014-09-06T16:11:28" class="time">16:11</a></td></tr>
+<tr id="t2014-09-06T16:14:29"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">and i'm not finding anything on builing modules for yocto, i found some references to modules in the yocto docs, but they are all talking about selecting modules</td><td class="time"><a href="#t2014-09-06T16:14:29" class="time">16:14</a></td></tr>
+<tr id="t2014-09-06T16:14:45"><th class="nick" style="background: #854685">gravspeed</th><td class="text" style="color: #854685">uinput is not available for selection on my galileo</td><td class="time"><a href="#t2014-09-06T16:14:45" class="time">16:14</a></td></tr>
+<tr id="t2014-09-06T16:43:17"><th class="nick" style="background: #8c4a4a">gabrbedd</th><td class="text" style="color: #8c4a4a">suppose I have a team working on a board that needs several layers. What's the best practice on sharing the `build' directory (or creating it in a deterministic, one-liner kind of way)?</td><td class="time"><a href="#t2014-09-06T16:43:17" class="time">16:43</a></td></tr>
+<tr id="t2014-09-06T20:33:42"><th class="nick" style="background: #4b904b">Marex</th><td class="text" style="color: #4b904b">Hi</td><td class="time"><a href="#t2014-09-06T20:33:42" class="time">20:33</a></td></tr>
+<tr id="t2014-09-06T20:34:04"><th class="nick" style="background: #4b904b">Marex</th><td class="text" style="color: #4b904b">with yocto 1.6 , when I run 'bitbake kbd-native' , I get dependency issues with libpam-native</td><td class="time"><a href="#t2014-09-06T20:34:04" class="time">20:34</a></td></tr>
+<tr id="t2014-09-06T20:34:07"><th class="nick" style="background: #4b904b">Marex</th><td class="text" style="color: #4b904b">is that known ?</td><td class="time"><a href="#t2014-09-06T20:34:07" class="time">20:34</a></td></tr>
+<tr id="t2014-09-06T20:38:30"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-09-06T20:38:30" class="time">20:38</a></td></tr>
+<tr id="t2014-09-06T22:37:14"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-09-06T22:37:14" class="time">22:37</a></td></tr>
+<tr id="t2014-09-06T22:47:10"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-09-06T22:47:10" class="time">22:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-09-05.log.html">&#171; Friday, 2014-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2014-09-07.log.html">Sunday, 2014-09-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

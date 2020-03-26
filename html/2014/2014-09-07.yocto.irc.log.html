@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-09-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-09-07</h1>
+<div class="navigation"> <a href="%23yocto.2014-09-06.log.html">&#171; Saturday, 2014-09-06</a> <a href="index.html">Index</a> <a href="%23yocto.2014-09-08.log.html">Monday, 2014-09-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-09-07T04:03:42"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-intel-gpl is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/34</a></td><td><a href="#t2014-09-07T04:03:42" class="time">04:03</a></td></tr>
+<tr id="t2014-09-07T04:26:08"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of build-appliance is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/34</a></td><td><a href="#t2014-09-07T04:26:08" class="time">04:26</a></td></tr>
+<tr id="t2014-09-07T04:41:51"><td class="other" colspan="2">-YoctoAutoBuilder- build #33 of nightly-rpm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/33" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/33</a></td><td><a href="#t2014-09-07T04:41:51" class="time">04:41</a></td></tr>
+<tr id="t2014-09-07T04:46:00"><td class="other" colspan="2">-YoctoAutoBuilder- build #34 of nightly-multilib is complete: Failure [failed Running Sanity Tests Running Sanity Tests_1 Running Sanity Tests_2 Running Sanity Tests_3]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/34" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/34</a></td><td><a href="#t2014-09-07T04:46:00" class="time">04:46</a></td></tr>
+<tr id="t2014-09-07T04:46:37"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-09-07T04:46:37" class="time">04:46</a></td></tr>
+<tr id="t2014-09-07T05:23:31"><td class="other" colspan="2">-YoctoAutoBuilder- build #35 of nightly-mips is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/35" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/35</a></td><td><a href="#t2014-09-07T05:23:31" class="time">05:23</a></td></tr>
+<tr id="t2014-09-07T08:02:44"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2014-09-07T08:02:44" class="time">08:02</a></td></tr>
+<tr id="t2014-09-07T08:05:54"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">i am quite puzzled with how KERNEL_FEATURES works</td><td class="time"><a href="#t2014-09-07T08:05:54" class="time">08:05</a></td></tr>
+<tr id="t2014-09-07T08:06:00"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">_really puzzled_</td><td class="time"><a href="#t2014-09-07T08:06:00" class="time">08:06</a></td></tr>
+<tr id="t2014-09-07T08:06:24"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">basically what i'm trying to do doesn't seem to fully affect the resulting .config</td><td class="time"><a href="#t2014-09-07T08:06:24" class="time">08:06</a></td></tr>
+<tr id="t2014-09-07T08:10:49"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">hm... so some of it applies and some of it doesn't</td><td class="time"><a href="#t2014-09-07T08:10:49" class="time">08:10</a></td></tr>
+<tr id="t2014-09-07T08:11:19"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">may be some of the features i'm trying to enabled had been renamed or whatever... damn</td><td class="time"><a href="#t2014-09-07T08:11:19" class="time">08:11</a></td></tr>
+<tr id="t2014-09-07T08:30:01"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">ah, forgot that i can do `-c menuconfig` :)</td><td class="time"><a href="#t2014-09-07T08:30:01" class="time">08:30</a></td></tr>
+<tr id="t2014-09-07T11:17:39"><th class="nick" style="background: #42427e">auke-</th><td class="text" style="color: #42427e">I'm trying to get bluetooth working on my CuBox-i4. It seems linux-firmware-bcm4329 is missing in the machine firmware configuration cubox-i.conf (maybe because it's optional). What would be the best way to add linux-firmware-bcm4329 to my build? Add it somehow to my local.conf?</td><td class="time"><a href="#t2014-09-07T11:17:39" class="time">11:17</a></td></tr>
+<tr id="t2014-09-07T11:20:27"><th class="nick" style="background: #407a40">errordeveloper</th><td class="text" style="color: #407a40">auke-: IMAGE_INSTALL += " linux-firmware-bcm4329"</td><td class="time"><a href="#t2014-09-07T11:20:27" class="time">11:20</a></td></tr>
+<tr id="t2014-09-07T11:22:46"><th class="nick" style="background: #42427e">auke-</th><td class="text" style="color: #42427e">ah... ok, thats easy. It doesn't matter that it's not defined as MACHINE_FIRMWARE += ..?</td><td class="time"><a href="#t2014-09-07T11:22:46" class="time">11:22</a></td></tr>
+<tr id="t2014-09-07T23:12:08"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-09-07T23:12:08" class="time">23:12</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-09-06.log.html">&#171; Saturday, 2014-09-06</a> <a href="index.html">Index</a> <a href="%23yocto.2014-09-08.log.html">Monday, 2014-09-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

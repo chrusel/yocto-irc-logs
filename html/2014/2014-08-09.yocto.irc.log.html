@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-08-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-08-09</h1>
+<div class="navigation"> <a href="%23yocto.2014-08-08.log.html">&#171; Friday, 2014-08-08</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-10.log.html">Sunday, 2014-08-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-08-09T12:45:49"><td class="action" colspan="2">* ajtag is away: off with the faries</td><td><a href="#t2014-08-09T12:45:49" class="time">12:45</a></td></tr>
+<tr id="t2014-08-09T13:38:10"><td class="nickchange" colspan="2">*** Nilesh is now known as Guest63195</td><td><a href="#t2014-08-09T13:38:10" class="time">13:38</a></td></tr>
+<tr id="t2014-08-09T17:03:50"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">In a bbappend, is it possible to apply patches from the SRC_URI, depending on the ${PV} ?</td><td class="time"><a href="#t2014-08-09T17:03:50" class="time">17:03</a></td></tr>
+<tr id="t2014-08-09T17:06:47"><th class="nick" style="background: #42427e">JaMa</th><td class="text" style="color: #42427e">yes</td><td class="time"><a href="#t2014-08-09T17:06:47" class="time">17:06</a></td></tr>
+<tr id="t2014-08-09T17:09:02"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">JaMa: how can I do that?</td><td class="time"><a href="#t2014-08-09T17:09:02" class="time">17:09</a></td></tr>
+<tr id="t2014-08-09T18:01:41"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">ok I found it, SRC_URI_X.Y (with X.Y the version, it's also possible to do X.Y+)</td><td class="time"><a href="#t2014-08-09T18:01:41" class="time">18:01</a></td></tr>
+<tr id="t2014-08-09T18:27:31"><th class="nick" style="background: #818144">luc4</th><td class="text" style="color: #818144">Hello! When building with yocto I see the tune preference callconvention-hard. Is that hardfp?</td><td class="time"><a href="#t2014-08-09T18:27:31" class="time">18:27</a></td></tr>
+<tr id="t2014-08-09T18:39:55"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">Anarky: pretty sure _X.Y will only work when using BBVERSIONS, which nobody ever uses</td><td class="time"><a href="#t2014-08-09T18:39:55" class="time">18:39</a></td></tr>
+<tr id="t2014-08-09T18:39:56"><td class="action" colspan="2">* kergoth shrugs</td><td><a href="#t2014-08-09T18:39:56" class="time">18:39</a></td></tr>
+<tr id="t2014-08-09T18:42:54"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">kergoth: ok, actually I only tested when the version doesn't match</td><td class="time"><a href="#t2014-08-09T18:42:54" class="time">18:42</a></td></tr>
+<tr id="t2014-08-09T18:43:08"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">otherwise, how can I do that?</td><td class="time"><a href="#t2014-08-09T18:43:08" class="time">18:43</a></td></tr>
+<tr id="t2014-08-09T18:43:10"><td class="action" colspan="2">* kergoth chuckles</td><td><a href="#t2014-08-09T18:43:10" class="time">18:43</a></td></tr>
+<tr id="t2014-08-09T18:44:09"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">I thought using a python function but it seems overkill :/</td><td class="time"><a href="#t2014-08-09T18:44:09" class="time">18:44</a></td></tr>
+<tr id="t2014-08-09T18:50:44"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">worst case just use inline python</td><td class="time"><a href="#t2014-08-09T18:50:44" class="time">18:50</a></td></tr>
+<tr id="t2014-08-09T18:50:54"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">${@'file://foo.patch' if '${PV}' == '1.0' else ''}</td><td class="time"><a href="#t2014-08-09T18:50:54" class="time">18:50</a></td></tr>
+<tr id="t2014-08-09T18:51:32"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">damnit, this is irritating. I have a circular dependency problem, but i can't use the graph to diagnose, because the circular dep breaks graphviz generation</td><td class="time"><a href="#t2014-08-09T18:51:32" class="time">18:51</a></td></tr>
+<tr id="t2014-08-09T18:51:40"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">that's pretty stupid</td><td class="time"><a href="#t2014-08-09T18:51:40" class="time">18:51</a></td></tr>
+<tr id="t2014-08-09T18:54:20"><th class="nick" style="background: #407a40">Anarky</th><td class="text" style="color: #407a40">kergoth: thanks, I'll keep you updated</td><td class="time"><a href="#t2014-08-09T18:54:20" class="time">18:54</a></td></tr>
+<tr id="t2014-08-09T18:54:24"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">np</td><td class="time"><a href="#t2014-08-09T18:54:24" class="time">18:54</a></td></tr>
+<tr id="t2014-08-09T19:43:59"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">kergoth: it's all your fault, you know...</td><td class="time"><a href="#t2014-08-09T19:43:59" class="time">19:43</a></td></tr>
+<tr id="t2014-08-09T19:44:18"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">hm?</td><td class="time"><a href="#t2014-08-09T19:44:18" class="time">19:44</a></td></tr>
+<tr id="t2014-08-09T19:44:30"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">should i ever get a chance to teach the yocto foundation course...</td><td class="time"><a href="#t2014-08-09T19:44:30" class="time">19:44</a></td></tr>
+<tr id="t2014-08-09T19:45:24"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">*if rudi and whoever else have conflicts, it might happen</td><td class="time"><a href="#t2014-08-09T19:45:24" class="time">19:45</a></td></tr>
+<tr id="t2014-08-09T19:47:36"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">i got to audit the one last week so in theory i'm available</td><td class="time"><a href="#t2014-08-09T19:47:36" class="time">19:47</a></td></tr>
+<tr id="t2014-08-09T20:50:50"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">whew, fixed the libc rebuild support in the broken-up meta-sourcery, and confirmed that multilib functions. still not using TUNEABI stuff yet though</td><td class="time"><a href="#t2014-08-09T20:50:50" class="time">20:50</a></td></tr>
+<tr id="t2014-08-09T20:52:58"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">now to refactor the sysroot extraction stuff so it can in theory be used to support a better native MACHINE, with extraction of bits from the host sysroot</td><td class="time"><a href="#t2014-08-09T20:52:58" class="time">20:52</a></td></tr>
+<tr id="t2014-08-09T20:53:26"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">also need to better split the general external support from the sourcery specifics. almost done with that</td><td class="time"><a href="#t2014-08-09T20:53:26" class="time">20:53</a></td></tr>
+<tr id="t2014-08-09T21:25:37"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-08-09T21:25:37" class="time">21:25</a></td></tr>
+<tr id="t2014-08-09T21:47:52"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-08-09T21:47:52" class="time">21:47</a></td></tr>
+<tr id="t2014-08-09T22:09:36"><td class="action" colspan="2">* ajtag is back (gone 04:16:26)</td><td><a href="#t2014-08-09T22:09:36" class="time">22:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-08-08.log.html">&#171; Friday, 2014-08-08</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-10.log.html">Sunday, 2014-08-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

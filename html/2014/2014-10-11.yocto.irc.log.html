@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-10-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-10-11</h1>
+<div class="navigation"> <a href="%23yocto.2014-10-10.log.html">&#171; Friday, 2014-10-10</a> <a href="index.html">Index</a> <a href="%23yocto.2014-10-12.log.html">Sunday, 2014-10-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-10-11T00:14:35"><td class="part" colspan="2">*** aikidoka &lt;aikidoka!~aikidokat@pool-74-103-33-152.bltmmd.fios.verizon.net&gt; has left #yocto</td><td><a href="#t2014-10-11T00:14:35" class="time">00:14</a></td></tr>
+<tr id="t2014-10-11T01:07:58"><td class="other" colspan="2">-YoctoAutoBuilder- build #70 of nightly-qa-systemd is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/70" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/70</a></td><td><a href="#t2014-10-11T01:07:58" class="time">01:07</a></td></tr>
+<tr id="t2014-10-11T02:03:34"><td class="other" colspan="2">-YoctoAutoBuilder- build #78 of nightly is complete: Failure [failed]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/78" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/78</a></td><td><a href="#t2014-10-11T02:03:34" class="time">02:03</a></td></tr>
+<tr id="t2014-10-11T04:19:12"><td class="other" colspan="2">-YoctoAutoBuilder- build #73 of nightly-mips is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/73" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/73</a></td><td><a href="#t2014-10-11T04:19:12" class="time">04:19</a></td></tr>
+<tr id="t2014-10-11T06:37:30"><td class="other" colspan="2">-YoctoAutoBuilder- build #70 of nightly-arm-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm-lsb/builds/70" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm-lsb/builds/70</a></td><td><a href="#t2014-10-11T06:37:30" class="time">06:37</a></td></tr>
+<tr id="t2014-10-11T07:15:19"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2014-10-11T07:15:19" class="time">07:15</a></td></tr>
+<tr id="t2014-10-11T07:15:39"><th class="nick" style="background: #407a40">mckoan</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2014-10-11T07:15:39" class="time">07:15</a></td></tr>
+<tr id="t2014-10-11T08:58:10"><td class="other" colspan="2">-YoctoAutoBuilder- build #79 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/79" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/79</a></td><td><a href="#t2014-10-11T08:58:10" class="time">08:58</a></td></tr>
+<tr id="t2014-10-11T10:40:52"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2014-10-11T10:40:52" class="time">10:40</a></td></tr>
+<tr id="t2014-10-11T12:04:07"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">hey, is this a known problem:</td><td class="time"><a href="#t2014-10-11T12:04:07" class="time">12:04</a></td></tr>
+<tr id="t2014-10-11T12:04:07"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">tar: --same-order option cannot be used with -c</td><td class="time"><a href="#t2014-10-11T12:04:07" class="time">12:04</a></td></tr>
+<tr id="t2014-10-11T12:04:22"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">I'm just trying to build poky-denzil-7.0</td><td class="time"><a href="#t2014-10-11T12:04:22" class="time">12:04</a></td></tr>
+<tr id="t2014-10-11T12:04:35"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">basically by following line-by-line from a blog post</td><td class="time"><a href="#t2014-10-11T12:04:35" class="time">12:04</a></td></tr>
+<tr id="t2014-10-11T12:06:20"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">I wonder where this recipe is which is trying to mis-use tar's arguments?</td><td class="time"><a href="#t2014-10-11T12:06:20" class="time">12:06</a></td></tr>
+<tr id="t2014-10-11T12:07:31"><th class="nick" style="background: #42427e">topi`</th><td class="text" style="color: #42427e">grep won't find it in the whole tree</td><td class="time"><a href="#t2014-10-11T12:07:31" class="time">12:07</a></td></tr>
+<tr id="t2014-10-11T12:45:15"><th class="nick" style="background: #818144">macbug</th><td class="text" style="color: #818144">Saturday!</td><td class="time"><a href="#t2014-10-11T12:45:15" class="time">12:45</a></td></tr>
+<tr id="t2014-10-11T13:02:02"><td class="nickchange" colspan="2">*** phantoneD is now known as phantoxeD</td><td><a href="#t2014-10-11T13:02:02" class="time">13:02</a></td></tr>
+<tr id="t2014-10-11T14:52:58"><td class="part" colspan="2">*** Nilesh_ &lt;Nilesh_!~nilesh@1.39.14.172&gt; has left #yocto</td><td><a href="#t2014-10-11T14:52:58" class="time">14:52</a></td></tr>
+<tr id="t2014-10-11T22:40:01"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-10-11T22:40:01" class="time">22:40</a></td></tr>
+<tr id="t2014-10-11T22:59:33"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-10-11T22:59:33" class="time">22:59</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-10-10.log.html">&#171; Friday, 2014-10-10</a> <a href="index.html">Index</a> <a href="%23yocto.2014-10-12.log.html">Sunday, 2014-10-12 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-03-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-03-16</h1>
+<div class="navigation"> <a href="%23yocto.2014-03-15.log.html">&#171; Saturday, 2014-03-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-03-17.log.html">Monday, 2014-03-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-03-16T02:18:58"><th class="nick" style="background: #407a40">aalt</th><td class="text" style="color: #407a40">Marex: I've checked both. Neither shows up, but I wasn't sure if that was normal behavior.</td><td class="time"><a href="#t2014-03-16T02:18:58" class="time">02:18</a></td></tr>
+<tr id="t2014-03-16T02:20:27"><th class="nick" style="background: #407a40">aalt</th><td class="text" style="color: #407a40">i can find it in lsusb, but lsmod and dmesg don't have entries, so it doesnt seem the minnowboard conf is setup for it.</td><td class="time"><a href="#t2014-03-16T02:20:27" class="time">02:20</a></td></tr>
+<tr id="t2014-03-16T02:50:01"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">aalt_: check your kernel recipe and see if uses a custom defconfig</td><td class="time"><a href="#t2014-03-16T02:50:01" class="time">02:50</a></td></tr>
+<tr id="t2014-03-16T02:51:05"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">the default rpi recipe copies it from the kernel source tree so i hacked it a little to use my own config</td><td class="time"><a href="#t2014-03-16T02:51:05" class="time">02:51</a></td></tr>
+<tr id="t2014-03-16T02:52:56"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">you can do a "bitbake virtual/kernel -c menuconfig" to make your custom config</td><td class="time"><a href="#t2014-03-16T02:52:56" class="time">02:52</a></td></tr>
+<tr id="t2014-03-16T03:43:12"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">JaMa: got it fixed for lxdm</td><td class="time"><a href="#t2014-03-16T03:43:12" class="time">03:43</a></td></tr>
+<tr id="t2014-03-16T03:58:16"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e"><a href="https://github.com/sarnold/meta-alt-desktop-extras/commits/master" rel="nofollow">https://github.com/sarnold/meta-alt-desktop-extras/commits/master</a>&nbsp;&nbsp;&lt;=&nbsp;&nbsp;top commit here</td><td class="time"><a href="#t2014-03-16T03:58:16" class="time">03:58</a></td></tr>
+<tr id="t2014-03-16T04:15:18"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">so along the lines of using the github issue trackers, is there any plan to add meta-openembedded to the oe github project?</td><td class="time"><a href="#t2014-03-16T04:15:18" class="time">04:15</a></td></tr>
+<tr id="t2014-03-16T04:18:43"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">oh, it's meta-oe on github</td><td class="time"><a href="#t2014-03-16T04:18:43" class="time">04:18</a></td></tr>
+<tr id="t2014-03-16T04:18:47"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">nm...</td><td class="time"><a href="#t2014-03-16T04:18:47" class="time">04:18</a></td></tr>
+<tr id="t2014-03-16T07:48:12"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">nerdboy: please send patch to oe-devel ML</td><td class="time"><a href="#t2014-03-16T07:48:12" class="time">07:48</a></td></tr>
+<tr id="t2014-03-16T07:49:31"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">i need to move the main bits from my bbappend to the main recipe</td><td class="time"><a href="#t2014-03-16T07:49:31" class="time">07:49</a></td></tr>
+<tr id="t2014-03-16T07:49:52"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">i was also thinking github pull request maybe?</td><td class="time"><a href="#t2014-03-16T07:49:52" class="time">07:49</a></td></tr>
+<tr id="t2014-03-16T07:50:16"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">please no, read README in layer root and follow it</td><td class="time"><a href="#t2014-03-16T07:50:16" class="time">07:50</a></td></tr>
+<tr id="t2014-03-16T07:53:05"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">says both fork gihub and send pull request to ML?</td><td class="time"><a href="#t2014-03-16T07:53:05" class="time">07:53</a></td></tr>
+<tr id="t2014-03-16T07:53:23"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">that's not quite so clear...</td><td class="time"><a href="#t2014-03-16T07:53:23" class="time">07:53</a></td></tr>
+<tr id="t2014-03-16T07:54:44"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">fork and do a git email patch?&nbsp;&nbsp;so filter through ML instead of a direct pull request on github?</td><td class="time"><a href="#t2014-03-16T07:54:44" class="time">07:54</a></td></tr>
+<tr id="t2014-03-16T07:57:55"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">you can fork anywhere you want, but the review is on ML so git send-email or create-pull-request+send-pull-request scripts from oe-core for sending it</td><td class="time"><a href="#t2014-03-16T07:57:55" class="time">07:57</a></td></tr>
+<tr id="t2014-03-16T09:12:27"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">.away</td><td class="time"><a href="#t2014-03-16T09:12:27" class="time">09:12</a></td></tr>
+<tr id="t2014-03-16T15:46:24"><td class="nickchange" colspan="2">*** Jin|away is now known as Jin^eLD</td><td><a href="#t2014-03-16T15:46:24" class="time">15:46</a></td></tr>
+<tr id="t2014-03-16T20:52:16"><td class="nickchange" colspan="2">*** darknighte is now known as Guest67741</td><td><a href="#t2014-03-16T20:52:16" class="time">20:52</a></td></tr>
+<tr id="t2014-03-16T23:22:51"><td class="other" colspan="2">-YoctoAutoBuilder- build #89 of minnow-lsb is complete: Failure [failed BuildImages Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/minnow-lsb/builds/89" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/minnow-lsb/builds/89</a></td><td><a href="#t2014-03-16T23:22:51" class="time">23:22</a></td></tr>
+<tr id="t2014-03-16T23:25:46"><td class="other" colspan="2">-YoctoAutoBuilder- build #93 of nightly-fsl-ppc-lsb is complete: Failure [failed BuildImages Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/93" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/93</a></td><td><a href="#t2014-03-16T23:25:46" class="time">23:25</a></td></tr>
+<tr id="t2014-03-16T23:28:53"><td class="other" colspan="2">-YoctoAutoBuilder- build #90 of nightly-x86-64-lsb is complete: Failure [failed BuildImages BuildImages_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-64-lsb/builds/90" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-64-lsb/builds/90</a></td><td><a href="#t2014-03-16T23:28:53" class="time">23:28</a></td></tr>
+<tr id="t2014-03-16T23:29:34"><td class="other" colspan="2">-YoctoAutoBuilder- build #91 of nightly-x86-lsb is complete: Failure [failed BuildImages BuildImages_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-lsb/builds/91" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-lsb/builds/91</a></td><td><a href="#t2014-03-16T23:29:34" class="time">23:29</a></td></tr>
+<tr id="t2014-03-16T23:31:30"><td class="other" colspan="2">-YoctoAutoBuilder- build #89 of minnow is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/minnow/builds/89" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/minnow/builds/89</a></td><td><a href="#t2014-03-16T23:31:30" class="time">23:31</a></td></tr>
+<tr id="t2014-03-16T23:38:25"><td class="other" colspan="2">-YoctoAutoBuilder- build #98 of nightly-arm-lsb is complete: Failure [failed BuildImages BuildImages_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-arm-lsb/builds/98" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-arm-lsb/builds/98</a></td><td><a href="#t2014-03-16T23:38:25" class="time">23:38</a></td></tr>
+<tr id="t2014-03-16T23:39:41"><td class="other" colspan="2">-YoctoAutoBuilder- build #90 of nightly-ppc-lsb is complete: Failure [failed BuildImages BuildImages_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-ppc-lsb/builds/90" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-ppc-lsb/builds/90</a></td><td><a href="#t2014-03-16T23:39:41" class="time">23:39</a></td></tr>
+<tr id="t2014-03-16T23:43:07"><td class="other" colspan="2">-YoctoAutoBuilder- build #90 of nightly-mips-lsb is complete: Failure [failed BuildImages BuildImages_1 Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-mips-lsb/builds/90" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-mips-lsb/builds/90</a></td><td><a href="#t2014-03-16T23:43:07" class="time">23:43</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-03-15.log.html">&#171; Saturday, 2014-03-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-03-17.log.html">Monday, 2014-03-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

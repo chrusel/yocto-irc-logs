@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-11-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-11-16</h1>
+<div class="navigation"> <a href="%23yocto.2014-11-15.log.html">&#171; Saturday, 2014-11-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-17.log.html">Monday, 2014-11-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-11-16T01:16:07"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">volker: not sure, but it might be an IMAGE_FEATURE</td><td class="time"><a href="#t2014-11-16T01:16:07" class="time">01:16</a></td></tr>
+<tr id="t2014-11-16T01:16:32"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">Anyone know an easy way to have the qemux86 target be i686 vs i586?</td><td class="time"><a href="#t2014-11-16T01:16:32" class="time">01:16</a></td></tr>
+<tr id="t2014-11-16T01:56:06"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-11-16T01:56:06" class="time">01:56</a></td></tr>
+<tr id="t2014-11-16T06:08:31"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-11-16T06:08:31" class="time">06:08</a></td></tr>
+<tr id="t2014-11-16T08:08:03"><td class="nickchange" colspan="2">*** wto_ is now known as wto</td><td><a href="#t2014-11-16T08:08:03" class="time">08:08</a></td></tr>
+<tr id="t2014-11-16T10:29:49"><td class="nickchange" colspan="2">*** zbr is now known as zibri</td><td><a href="#t2014-11-16T10:29:49" class="time">10:29</a></td></tr>
+<tr id="t2014-11-16T15:35:42"><th class="nick" style="background: #42427e">JustasMika</th><td class="text" style="color: #42427e">Hi, anyone has experience with cryptodev on beaglebone black (am335x). I did append cryptodev-linux and cryptodev-module, however, when i use openssl with loaded cryptodev module and with -engine cryptodev flag in lsmod it does not show that it was/being used by any application, where it should be used by openssl. I have suspection that it is not being used because there is no speed increase. Anyone?</td><td class="time"><a href="#t2014-11-16T15:35:42" class="time">15:35</a></td></tr>
+<tr id="t2014-11-16T15:43:39"><td class="part" colspan="2">*** Siecje &lt;Siecje!~Siecje@CPEbc1401239133-CMbc1401239130.cpe.net.cable.rogers.com&gt; has left #yocto</td><td><a href="#t2014-11-16T15:43:39" class="time">15:43</a></td></tr>
+<tr id="t2014-11-16T15:52:31"><td class="nickchange" colspan="2">*** bluelightning_ is now known as bluelightning</td><td><a href="#t2014-11-16T15:52:31" class="time">15:52</a></td></tr>
+<tr id="t2014-11-16T16:53:23"><td class="nickchange" colspan="2">*** rperier_ is now known as rperier</td><td><a href="#t2014-11-16T16:53:23" class="time">16:53</a></td></tr>
+<tr id="t2014-11-16T19:25:01"><td class="part" colspan="2">*** denix &lt;denix!~denix@pool-108-18-33-160.washdc.fios.verizon.net&gt; has left #yocto</td><td><a href="#t2014-11-16T19:25:01" class="time">19:25</a></td></tr>
+<tr id="t2014-11-16T20:34:50"><td class="part" colspan="2">*** Siecje &lt;Siecje!~Siecje@CPEbc1401239133-CMbc1401239130.cpe.net.cable.rogers.com&gt; has left #yocto</td><td><a href="#t2014-11-16T20:34:50" class="time">20:34</a></td></tr>
+<tr id="t2014-11-16T21:29:53"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">Is there a correct way to refer to the sysroot libdir from all native, target, and cross packages? ie: use plain native libdir for -native and -cross, and use the native sysroot with target specific libdir for -target?</td><td class="time"><a href="#t2014-11-16T21:29:53" class="time">21:29</a></td></tr>
+<tr id="t2014-11-16T21:30:50"><th class="nick" style="background: #407a40">fishey</th><td class="text" style="color: #407a40">JustasMika: lsmod doesn't show application usage of kernel api by userspace (afaik)</td><td class="time"><a href="#t2014-11-16T21:30:50" class="time">21:30</a></td></tr>
+<tr id="t2014-11-16T21:37:39"><th class="nick" style="background: #42427e">JustasMika</th><td class="text" style="color: #42427e">yup, now i am aware of that, however cant force openssl to use cryptodev, if it does "use", speed falls a lot</td><td class="time"><a href="#t2014-11-16T21:37:39" class="time">21:37</a></td></tr>
+<tr id="t2014-11-16T21:52:35"><th class="nick" style="background: #42427e">JustasMika</th><td class="text" style="color: #42427e">but then also comes question how to make sure that hardware accelerator is used?</td><td class="time"><a href="#t2014-11-16T21:52:35" class="time">21:52</a></td></tr>
+<tr id="t2014-11-16T22:04:40"><td class="part" colspan="2">*** tomz1 &lt;tomz1!~trz@134.134.139.72&gt; has left #yocto</td><td><a href="#t2014-11-16T22:04:40" class="time">22:04</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-11-15.log.html">&#171; Saturday, 2014-11-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-11-17.log.html">Monday, 2014-11-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

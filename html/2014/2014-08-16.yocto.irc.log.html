@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2014-08-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2014-08-16</h1>
+<div class="navigation"> <a href="%23yocto.2014-08-15.log.html">&#171; Friday, 2014-08-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-17.log.html">Sunday, 2014-08-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-08-16T01:09:01"><td class="other" colspan="2">-YoctoAutoBuilder- build #203 of nightly-x86 is complete: Failure [failed BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/203" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/203</a></td><td><a href="#t2014-08-16T01:09:01" class="time">01:09</a></td></tr>
+<tr id="t2014-08-16T01:20:46"><td class="other" colspan="2">-YoctoAutoBuilder- build #202 of nightly-mips is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/202" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips/builds/202</a></td><td><a href="#t2014-08-16T01:20:46" class="time">01:20</a></td></tr>
+<tr id="t2014-08-16T02:08:51"><td class="other" colspan="2">-YoctoAutoBuilder- build #205 of nightly-x86-lsb is complete: Failure [failed BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86-lsb/builds/205" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86-lsb/builds/205</a></td><td><a href="#t2014-08-16T02:08:51" class="time">02:08</a></td></tr>
+<tr id="t2014-08-16T09:24:08"><th class="nick" style="background: #407a40">sm_</th><td class="text" style="color: #407a40">hi, I use "PACKAGE_EXCLUDE" variable in "local.conf" &amp; the image recipe to exclude some packages in building the image. but it doesn't work. and packages exist in that image. how can I solve this problem?</td><td class="time"><a href="#t2014-08-16T09:24:08" class="time">09:24</a></td></tr>
+<tr id="t2014-08-16T09:29:17"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2014-08-16T09:29:17" class="time">09:29</a></td></tr>
+<tr id="t2014-08-16T09:55:32"><th class="nick" style="background: #407a40">sm_</th><td class="text" style="color: #407a40">anybody knows anything about my question?</td><td class="time"><a href="#t2014-08-16T09:55:32" class="time">09:55</a></td></tr>
+<tr id="t2014-08-16T10:33:33"><td class="nickchange" colspan="2">*** jero is now known as Guest20729</td><td><a href="#t2014-08-16T10:33:33" class="time">10:33</a></td></tr>
+<tr id="t2014-08-16T12:13:32"><td class="nickchange" colspan="2">*** jero is now known as Guest70649</td><td><a href="#t2014-08-16T12:13:32" class="time">12:13</a></td></tr>
+<tr id="t2014-08-16T13:14:11"><th class="nick" style="background: #42427e">fenrig</th><td class="text" style="color: #42427e">Hi, I'd like to know how to properly modify the boardconfig (for an spi kernel module) from within the recipe of the kernel module itself :)</td><td class="time"><a href="#t2014-08-16T13:14:11" class="time">13:14</a></td></tr>
+<tr id="t2014-08-16T13:14:27"><th class="nick" style="background: #42427e">fenrig</th><td class="text" style="color: #42427e">or de I have to prepare a custom recipe for my kernel ?</td><td class="time"><a href="#t2014-08-16T13:14:27" class="time">13:14</a></td></tr>
+<tr id="t2014-08-16T13:30:12"><th class="nick" style="background: #42427e">fenrig</th><td class="text" style="color: #42427e">I mean modifying the device tree :p</td><td class="time"><a href="#t2014-08-16T13:30:12" class="time">13:30</a></td></tr>
+<tr id="t2014-08-16T14:18:44"><th class="nick" style="background: #42427e">fenrig</th><td class="text" style="color: #42427e">Is there any way to easily modify the devicetree?</td><td class="time"><a href="#t2014-08-16T14:18:44" class="time">14:18</a></td></tr>
+<tr id="t2014-08-16T14:22:22"><th class="nick" style="background: #818144">T0mW</th><td class="text" style="color: #818144">ls</td><td class="time"><a href="#t2014-08-16T14:22:22" class="time">14:22</a></td></tr>
+<tr id="t2014-08-16T17:46:46"><td class="nickchange" colspan="2">*** paowz is now known as PaowZ_</td><td><a href="#t2014-08-16T17:46:46" class="time">17:46</a></td></tr>
+<tr id="t2014-08-16T18:55:06"><td class="other" colspan="2">-YoctoAutoBuilder- build #206 of nightly-x86-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86-lsb/builds/206" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86-lsb/builds/206</a></td><td><a href="#t2014-08-16T18:55:06" class="time">18:55</a></td></tr>
+<tr id="t2014-08-16T18:57:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #203 of nightly-qa-systemd is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/203" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/203</a></td><td><a href="#t2014-08-16T18:57:21" class="time">18:57</a></td></tr>
+<tr id="t2014-08-16T19:34:06"><td class="other" colspan="2">-YoctoAutoBuilder- build #204 of nightly-ppc is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/204" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ppc/builds/204</a></td><td><a href="#t2014-08-16T19:34:06" class="time">19:34</a></td></tr>
+<tr id="t2014-08-16T20:02:16"><td class="other" colspan="2">-YoctoAutoBuilder- build #202 of nightly-world is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/202" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/202</a></td><td><a href="#t2014-08-16T20:02:16" class="time">20:02</a></td></tr>
+<tr id="t2014-08-16T20:09:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #204 of nightly-fsl-arm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm/builds/204" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm/builds/204</a></td><td><a href="#t2014-08-16T20:09:55" class="time">20:09</a></td></tr>
+<tr id="t2014-08-16T20:37:49"><td class="other" colspan="2">-YoctoAutoBuilder- build #204 of nightly-x86 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/204" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/204</a></td><td><a href="#t2014-08-16T20:37:49" class="time">20:37</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-08-15.log.html">&#171; Friday, 2014-08-15</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-17.log.html">Sunday, 2014-08-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-07-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-07-20</h1>
+<div class="navigation"> <a href="%23yocto.2014-07-19.log.html">&#171; Saturday, 2014-07-19</a> <a href="index.html">Index</a> <a href="%23yocto.2014-07-21.log.html">Monday, 2014-07-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-07-20T01:35:37"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">I think I have vlc building correctly B!=S</td><td class="time"><a href="#t2014-07-20T01:35:37" class="time">01:35</a></td></tr>
+<tr id="t2014-07-20T01:35:40"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">phew!</td><td class="time"><a href="#t2014-07-20T01:35:40" class="time">01:35</a></td></tr>
+<tr id="t2014-07-20T01:36:06"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">waiting for core-image-sato to test it</td><td class="time"><a href="#t2014-07-20T01:36:06" class="time">01:36</a></td></tr>
+<tr id="t2014-07-20T06:31:03"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">Hi. I have a question about built images. How can I change built image file Systems? For example I can’t change the image background or its hostname…!? And my 2nd question is how can I add &amp; install an application to a built image?</td><td class="time"><a href="#t2014-07-20T06:31:03" class="time">06:31</a></td></tr>
+<tr id="t2014-07-20T07:16:38"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">anybody know anything about my questions?</td><td class="time"><a href="#t2014-07-20T07:16:38" class="time">07:16</a></td></tr>
+<tr id="t2014-07-20T07:24:54"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: any luck with the autobuilders?</td><td class="time"><a href="#t2014-07-20T07:24:54" class="time">07:24</a></td></tr>
+<tr id="t2014-07-20T07:27:23"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP: no. I do see several deferred exceptions in the ab controller log.</td><td class="time"><a href="#t2014-07-20T07:27:23" class="time">07:27</a></td></tr>
+<tr id="t2014-07-20T07:27:46"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP something to do with the changes this week?</td><td class="time"><a href="#t2014-07-20T07:27:46" class="time">07:27</a></td></tr>
+<tr id="t2014-07-20T07:28:46"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: I don't know. I've stopped the build on opensuse131 since it was also hung :/</td><td class="time"><a href="#t2014-07-20T07:28:46" class="time">07:28</a></td></tr>
+<tr id="t2014-07-20T07:30:17"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP it does seem to hang reliably though.</td><td class="time"><a href="#t2014-07-20T07:30:17" class="time">07:30</a></td></tr>
+<tr id="t2014-07-20T07:30:34"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: there are a ton of hung processes on that AB</td><td class="time"><a href="#t2014-07-20T07:30:34" class="time">07:30</a></td></tr>
+<tr id="t2014-07-20T07:32:13"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: I think the easiest thing may just be to reboot all the slaves. Any objection to doing that?</td><td class="time"><a href="#t2014-07-20T07:32:13" class="time">07:32</a></td></tr>
+<tr id="t2014-07-20T07:33:12"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: I will dig into why build processes re hanging around but meanwhile I'd like to try and get the builder running again</td><td class="time"><a href="#t2014-07-20T07:33:12" class="time">07:33</a></td></tr>
+<tr id="t2014-07-20T07:33:19"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, I've already restarted all the worker services. I'd love to do a complete server reboot though if that's what you are suggesting. We can get the new kernels in early.</td><td class="time"><a href="#t2014-07-20T07:33:19" class="time">07:33</a></td></tr>
+<tr id="t2014-07-20T07:33:35"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: I mean a server reboot</td><td class="time"><a href="#t2014-07-20T07:33:35" class="time">07:33</a></td></tr>
+<tr id="t2014-07-20T07:33:52"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: the problem is there are processed hanging around which shouldn't be there, likely holding locks</td><td class="time"><a href="#t2014-07-20T07:33:52" class="time">07:33</a></td></tr>
+<tr id="t2014-07-20T07:34:19"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, I run the pending updates and reboot them right away.</td><td class="time"><a href="#t2014-07-20T07:34:19" class="time">07:34</a></td></tr>
+<tr id="t2014-07-20T07:34:37"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">We could go through each and manually try and find the things to kill but this is perhaps easier and looks like it fits in with your needs anyway :)</td><td class="time"><a href="#t2014-07-20T07:34:37" class="time">07:34</a></td></tr>
+<tr id="t2014-07-20T07:34:47"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">s/I/I will/</td><td class="time"><a href="#t2014-07-20T07:34:47" class="time">07:34</a></td></tr>
+<tr id="t2014-07-20T07:34:50"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: thanks</td><td class="time"><a href="#t2014-07-20T07:34:50" class="time">07:34</a></td></tr>
+<tr id="t2014-07-20T07:35:33"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">I have a question about built images. How can I change built image file Systems? For example I can’t change the image background or its hostname…!? And my 2nd question is how can I add &amp; install an application to a built image?</td><td class="time"><a href="#t2014-07-20T07:35:33" class="time">07:35</a></td></tr>
+<tr id="t2014-07-20T07:37:27"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sm_: the logo comes from psplash, it can be customised and look at the IMAGE_INSTALL variable for the latter</td><td class="time"><a href="#t2014-07-20T07:37:27" class="time">07:37</a></td></tr>
+<tr id="t2014-07-20T07:39:44"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">RP: thanks for responding. psplash is for boot time, Am I right?</td><td class="time"><a href="#t2014-07-20T07:39:44" class="time">07:39</a></td></tr>
+<tr id="t2014-07-20T07:41:15"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sm_: yes, its the boot splash screen</td><td class="time"><a href="#t2014-07-20T07:41:15" class="time">07:41</a></td></tr>
+<tr id="t2014-07-20T07:41:16"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">I want to change my image hostnam &amp; so on... but it seem that my images are just readable!!!! &amp; unchangeable!</td><td class="time"><a href="#t2014-07-20T07:41:16" class="time">07:41</a></td></tr>
+<tr id="t2014-07-20T07:43:08"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">RP: I do't want change psplash...</td><td class="time"><a href="#t2014-07-20T07:43:08" class="time">07:43</a></td></tr>
+<tr id="t2014-07-20T07:48:55"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, All ready except ubuntu12.04. Just a few minutes on that one.</td><td class="time"><a href="#t2014-07-20T07:48:55" class="time">07:48</a></td></tr>
+<tr id="t2014-07-20T07:52:28"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: np, thanks</td><td class="time"><a href="#t2014-07-20T07:52:28" class="time">07:52</a></td></tr>
+<tr id="t2014-07-20T07:52:38"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, All clean.</td><td class="time"><a href="#t2014-07-20T07:52:38" class="time">07:52</a></td></tr>
+<tr id="t2014-07-20T07:53:07"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP, And ready for a test. I kind of expect the same result.</td><td class="time"><a href="#t2014-07-20T07:53:07" class="time">07:53</a></td></tr>
+<tr id="t2014-07-20T07:56:28"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">*readOnly!! ;)</td><td class="time"><a href="#t2014-07-20T07:56:28" class="time">07:56</a></td></tr>
+<tr id="t2014-07-20T08:01:05"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: let me start a build</td><td class="time"><a href="#t2014-07-20T08:01:05" class="time">08:01</a></td></tr>
+<tr id="t2014-07-20T08:01:20"><td class="action" colspan="2">* halstead nods.</td><td><a href="#t2014-07-20T08:01:20" class="time">08:01</a></td></tr>
+<tr id="t2014-07-20T08:04:35"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: so far so good...</td><td class="time"><a href="#t2014-07-20T08:04:35" class="time">08:04</a></td></tr>
+<tr id="t2014-07-20T08:06:24"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">Hopefully updates and reboots are all we need.</td><td class="time"><a href="#t2014-07-20T08:06:24" class="time">08:06</a></td></tr>
+<tr id="t2014-07-20T08:06:40"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: I'll keep an eye on the build, thanks</td><td class="time"><a href="#t2014-07-20T08:06:40" class="time">08:06</a></td></tr>
+<tr id="t2014-07-20T08:10:43"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">:)</td><td class="time"><a href="#t2014-07-20T08:10:43" class="time">08:10</a></td></tr>
+<tr id="t2014-07-20T08:58:04"><td class="nickchange" colspan="2">*** seezer_ is now known as devffs</td><td><a href="#t2014-07-20T08:58:04" class="time">08:58</a></td></tr>
+<tr id="t2014-07-20T11:25:16"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">how can I add &amp; install an application to a built image?</td><td class="time"><a href="#t2014-07-20T11:25:16" class="time">11:25</a></td></tr>
+<tr id="t2014-07-20T11:38:20"><th class="nick" style="background: #488888">kroon</th><td class="text" style="color: #488888">sm_, if you built the image with package-management in IMAGE_FEATURES, you can use the chosen package-manager for installing additional packages</td><td class="time"><a href="#t2014-07-20T11:38:20" class="time">11:38</a></td></tr>
+<tr id="t2014-07-20T12:09:01"><th class="nick" style="background: #42427e">sm_</th><td class="text" style="color: #42427e">kroon: thanks for responding. I should try it :)</td><td class="time"><a href="#t2014-07-20T12:09:01" class="time">12:09</a></td></tr>
+<tr id="t2014-07-20T15:44:35"><td class="part" colspan="2">*** coldnew &lt;coldnew!~user@27.105.50.30&gt; has left #yocto</td><td><a href="#t2014-07-20T15:44:35" class="time">15:44</a></td></tr>
+<tr id="t2014-07-20T20:10:54"><td class="part" colspan="2">*** armpit &lt;armpit!~akuster@c-98-239-95-55.hsd1.ca.comcast.net&gt; has left #yocto</td><td><a href="#t2014-07-20T20:10:54" class="time">20:10</a></td></tr>
+<tr id="t2014-07-20T20:46:57"><td class="nickchange" colspan="2">*** manuel__ is now known as manuel_</td><td><a href="#t2014-07-20T20:46:57" class="time">20:46</a></td></tr>
+<tr id="t2014-07-20T22:32:03"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">halstead: builds look much better :)</td><td class="time"><a href="#t2014-07-20T22:32:03" class="time">22:32</a></td></tr>
+<tr id="t2014-07-20T22:36:18"><th class="nick" style="background: #854685">halstead</th><td class="text" style="color: #854685">RP. I'm glad to see that. I checked this morning and was pleasantly surprised.</td><td class="time"><a href="#t2014-07-20T22:36:18" class="time">22:36</a></td></tr>
+<tr id="t2014-07-20T22:36:59"><td class="part" colspan="2">*** maxtothemax &lt;maxtothemax!~maxtothem@73.180.43.126&gt; has left #yocto</td><td><a href="#t2014-07-20T22:36:59" class="time">22:36</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-07-19.log.html">&#171; Saturday, 2014-07-19</a> <a href="index.html">Index</a> <a href="%23yocto.2014-07-21.log.html">Monday, 2014-07-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

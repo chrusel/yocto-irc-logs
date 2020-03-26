@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-08-10</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-08-10</h1>
+<div class="navigation"> <a href="%23yocto.2014-08-09.log.html">&#171; Saturday, 2014-08-09</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-11.log.html">Monday, 2014-08-11 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-08-10T01:43:08"><td class="part" colspan="2">*** neodypsis &lt;neodypsis!c4280a85@gateway/web/freenode/ip.196.40.10.133&gt; has left #yocto</td><td><a href="#t2014-08-10T01:43:08" class="time">01:43</a></td></tr>
+<tr id="t2014-08-10T01:46:13"><th class="nick" style="background: #407a40">neodypsis</th><td class="text" style="color: #407a40">Hello, how should I package an AMD Catalyst installer,&nbsp;&nbsp;which is interactive?</td><td class="time"><a href="#t2014-08-10T01:46:13" class="time">01:46</a></td></tr>
+<tr id="t2014-08-10T01:49:41"><th class="nick" style="background: #407a40">neodypsis</th><td class="text" style="color: #407a40">I need that package to use the fglrx drivers.</td><td class="time"><a href="#t2014-08-10T01:49:41" class="time">01:49</a></td></tr>
+<tr id="t2014-08-10T03:00:07"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2014-08-10T03:00:07" class="time">03:00</a></td></tr>
+<tr id="t2014-08-10T04:41:29"><td class="part" colspan="2">*** neodypsis &lt;neodypsis!c4280a85@gateway/web/freenode/ip.196.40.10.133&gt; has left #yocto</td><td><a href="#t2014-08-10T04:41:29" class="time">04:41</a></td></tr>
+<tr id="t2014-08-10T14:33:51"><th class="nick" style="background: #42427e">Anarky</th><td class="text" style="color: #42427e">kergoth: so BBVERSIONS was a bit tricky to use</td><td class="time"><a href="#t2014-08-10T14:33:51" class="time">14:33</a></td></tr>
+<tr id="t2014-08-10T14:34:04"><th class="nick" style="background: #42427e">Anarky</th><td class="text" style="color: #42427e">I ended up making an anonymous python function</td><td class="time"><a href="#t2014-08-10T14:34:04" class="time">14:34</a></td></tr>
+<tr id="t2014-08-10T14:34:35"><th class="nick" style="background: #42427e">Anarky</th><td class="text" style="color: #42427e">the ternary operator wasn't a good success too</td><td class="time"><a href="#t2014-08-10T14:34:35" class="time">14:34</a></td></tr>
+<tr id="t2014-08-10T15:20:15"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">bbversions is used to create a build of multuiuple versions of a piece of software. it results in creating multiple recipe variants, much like MULTILIBS and BBCLASSEXTEND, so thatdoesn't surprise me</td><td class="time"><a href="#t2014-08-10T15:20:15" class="time">15:20</a></td></tr>
+<tr id="t2014-08-10T16:04:31"><td class="nickchange" colspan="2">*** bluelightning1 is now known as bluelightning</td><td><a href="#t2014-08-10T16:04:31" class="time">16:04</a></td></tr>
+<tr id="t2014-08-10T19:11:47"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2014-08-10T19:11:47" class="time">19:11</a></td></tr>
+<tr id="t2014-08-10T21:10:57"><th class="nick" style="background: #854685">joranb</th><td class="text" style="color: #854685">hello?</td><td class="time"><a href="#t2014-08-10T21:10:57" class="time">21:10</a></td></tr>
+<tr id="t2014-08-10T21:11:23"><th class="nick" style="background: #854685">joranb</th><td class="text" style="color: #854685">does anyone know how to tell what conf file is being used by bitbake?</td><td class="time"><a href="#t2014-08-10T21:11:23" class="time">21:11</a></td></tr>
+<tr id="t2014-08-10T21:11:58"><th class="nick" style="background: #854685">joranb</th><td class="text" style="color: #854685">i set the TEMPLATECONF variable but the changes in local.conf arent being used (namely the MACHINE= bit)</td><td class="time"><a href="#t2014-08-10T21:11:58" class="time">21:11</a></td></tr>
+<tr id="t2014-08-10T21:15:47"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">templateconf is used when the build dir is initially set up when sourcing oe-init-build-env.</td><td class="time"><a href="#t2014-08-10T21:15:47" class="time">21:15</a></td></tr>
+<tr id="t2014-08-10T21:16:09"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">i doubt it does anything at all if the files already exist</td><td class="time"><a href="#t2014-08-10T21:16:09" class="time">21:16</a></td></tr>
+<tr id="t2014-08-10T21:17:35"><th class="nick" style="background: #854685">joranb</th><td class="text" style="color: #854685">yeah I think i figured it out just a minute ago</td><td class="time"><a href="#t2014-08-10T21:17:35" class="time">21:17</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-08-09.log.html">&#171; Saturday, 2014-08-09</a> <a href="index.html">Index</a> <a href="%23yocto.2014-08-11.log.html">Monday, 2014-08-11 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

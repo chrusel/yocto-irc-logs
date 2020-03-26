@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2014-05-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2014-05-11</h1>
+<div class="navigation"> <a href="%23yocto.2014-05-10.log.html">&#171; Saturday, 2014-05-10</a> <a href="index.html">Index</a> <a href="%23yocto.2014-05-12.log.html">Monday, 2014-05-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2014-05-11T12:07:27"><th class="nick" style="background: #407a40">skfax</th><td class="text" style="color: #407a40">I'm trying to get the meta-netmodule layer to work with meta-openembedded and poky. Since these are stored in three separate git repositories; what is the strategy for ensuring that I checkout a compatible set of repository versions?</td><td class="time"><a href="#t2014-05-11T12:07:27" class="time">12:07</a></td></tr>
+<tr id="t2014-05-11T12:32:19"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">skfax: usually matching the branch names (e.g. master or daisy)</td><td class="time"><a href="#t2014-05-11T12:32:19" class="time">12:32</a></td></tr>
+<tr id="t2014-05-11T12:33:36"><th class="nick" style="background: #407a40">skfax</th><td class="text" style="color: #407a40">RP: Ok cool. That was what the guide recommended as well. I just ran into an issue with using Ubuntu 14.04 since tar 1.27 broke this Yocto setup due to the way it was being invoked</td><td class="time"><a href="#t2014-05-11T12:33:36" class="time">12:33</a></td></tr>
+<tr id="t2014-05-11T12:33:47"><th class="nick" style="background: #407a40">skfax</th><td class="text" style="color: #407a40">Installing Ubuntu 12.04 now just as an easy fix</td><td class="time"><a href="#t2014-05-11T12:33:47" class="time">12:33</a></td></tr>
+<tr id="t2014-05-11T12:36:21"><th class="nick" style="background: #818144">bluelightning</th><td class="text" style="color: #818144">skfax: we have a fix for that in the dylan (1.4) branch and newer</td><td class="time"><a href="#t2014-05-11T12:36:21" class="time">12:36</a></td></tr>
+<tr id="t2014-05-11T12:37:02"><th class="nick" style="background: #407a40">skfax</th><td class="text" style="color: #407a40">Yeah, but the meta-netmodule at least doesn't seem to be updated against 1.4</td><td class="time"><a href="#t2014-05-11T12:37:02" class="time">12:37</a></td></tr>
+<tr id="t2014-05-11T12:37:59"><th class="nick" style="background: #407a40">skfax</th><td class="text" style="color: #407a40">I tried patching it last night to work against 1.4, and got most of it working. But I just wanted to try to see if it would work out of the box if I use the branches they recommend</td><td class="time"><a href="#t2014-05-11T12:37:59" class="time">12:37</a></td></tr>
+<tr id="t2014-05-11T16:08:09"><td class="other" colspan="2">-YoctoAutoBuilder- build #67 of nightly-ipk is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/67" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ipk/builds/67</a></td><td><a href="#t2014-05-11T16:08:09" class="time">16:08</a></td></tr>
+<tr id="t2014-05-11T16:53:36"><td class="other" colspan="2">-YoctoAutoBuilder- build #85 of nightly-world is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/85" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/85</a></td><td><a href="#t2014-05-11T16:53:36" class="time">16:53</a></td></tr>
+<tr id="t2014-05-11T17:29:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #67 of nightly-rpm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/67" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/67</a></td><td><a href="#t2014-05-11T17:29:21" class="time">17:29</a></td></tr>
+<tr id="t2014-05-11T18:02:53"><td class="other" colspan="2">-YoctoAutoBuilder- build #66 of nightly-deb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-deb/builds/66" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-deb/builds/66</a></td><td><a href="#t2014-05-11T18:02:53" class="time">18:02</a></td></tr>
+<tr id="t2014-05-11T18:58:57"><th class="nick" style="background: #854685">jfkelly</th><td class="text" style="color: #854685">Thanks nerdboy!</td><td class="time"><a href="#t2014-05-11T18:58:57" class="time">18:58</a></td></tr>
+<tr id="t2014-05-11T18:59:57"><th class="nick" style="background: #488888">nerdboy</th><td class="text" style="color: #488888">sure, but i have no idea what for...</td><td class="time"><a href="#t2014-05-11T18:59:57" class="time">18:59</a></td></tr>
+<tr id="t2014-05-11T19:29:11"><td class="other" colspan="2">-YoctoAutoBuilder- build #85 of nightly-x86 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/85" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/85</a></td><td><a href="#t2014-05-11T19:29:11" class="time">19:29</a></td></tr>
+<tr id="t2014-05-11T21:09:42"><td class="other" colspan="2">-YoctoAutoBuilder- build #85 of nightly-ppc-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ppc-lsb/builds/85" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ppc-lsb/builds/85</a></td><td><a href="#t2014-05-11T21:09:42" class="time">21:09</a></td></tr>
+<tr id="t2014-05-11T21:25:15"><th class="nick" style="background: #854685">jfkelly</th><td class="text" style="color: #854685">Are there any conf file variable settings that would cause bitbake to build and package only those packages that will be used in producing an image?&nbsp;&nbsp;It would be nice to get to a running image quickly and start tests there while -dev, -doc and -dbg packages (optionally) get packaged later.</td><td class="time"><a href="#t2014-05-11T21:25:15" class="time">21:25</a></td></tr>
+<tr id="t2014-05-11T23:25:15"><td class="other" colspan="2">-YoctoAutoBuilder- build #92 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/92" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/92</a></td><td><a href="#t2014-05-11T23:25:15" class="time">23:25</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2014-05-10.log.html">&#171; Saturday, 2014-05-10</a> <a href="index.html">Index</a> <a href="%23yocto.2014-05-12.log.html">Monday, 2014-05-12 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
