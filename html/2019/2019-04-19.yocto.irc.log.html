@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Friday, 2019-04-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Friday, 2019-04-19</h1>
+<div class="navigation"> <a href="%23yocto.2019-04-18.log.html">&#171; Thursday, 2019-04-18</a> <a href="index.html">Index</a> <a href="%23yocto.2019-04-20.log.html">Saturday, 2019-04-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-04-19T03:14:42"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-04-19T03:14:42" class="time">03:14</a></td></tr>
+<tr id="t2019-04-19T07:55:08"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: What are the differences between inheriting nativesdk and BBLASSEXTEND=nativesdk? &lt;<a href="https://stackoverflow.com/questions/55758306/what-are-the-differences-between-inheriting-nativesdk-and-bblassextend-nativesdk&gt;" rel="nofollow">https://stackoverflow.com/questions/55758306/what-are-the-differences-between-inheriting-nativesdk-and-bblassextend-nativesdk&gt;</a></td><td class="time"><a href="#t2019-04-19T07:55:08" class="time">07:55</a></td></tr>
+<tr id="t2019-04-19T10:25:55"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">hello guys, did you ever try to clone an SRC URI git with spaces in the url?</td><td class="time"><a href="#t2019-04-19T10:25:55" class="time">10:25</a></td></tr>
+<tr id="t2019-04-19T10:26:28"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">I tried to put %20 instead of spaces, but somewhere the resolver is changing them to real spaces, and then I get Too many arguments.</td><td class="time"><a href="#t2019-04-19T10:26:28" class="time">10:26</a></td></tr>
+<tr id="t2019-04-19T10:26:28"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">usage: git clone [options] [--] &lt;repo&gt; [&lt;dir&gt;]</td><td class="time"><a href="#t2019-04-19T10:26:28" class="time">10:26</a></td></tr>
+<tr id="t2019-04-19T10:27:11"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2019-04-19T10:27:11" class="time">10:27</a></td></tr>
+<tr id="t2019-04-19T10:27:48"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">LocutusOfBorg&gt; hi, did you try with plain space?</td><td class="time"><a href="#t2019-04-19T10:27:48" class="time">10:27</a></td></tr>
+<tr id="t2019-04-19T10:28:53"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">yes</td><td class="time"><a href="#t2019-04-19T10:28:53" class="time">10:28</a></td></tr>
+<tr id="t2019-04-19T10:29:12"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">different error, even worse</td><td class="time"><a href="#t2019-04-19T10:29:12" class="time">10:29</a></td></tr>
+<tr id="t2019-04-19T10:29:30"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">: bb.fetch2.MalformedUrl: The URL: 'foo/bar' is invalid and cannot be interpreted</td><td class="time"><a href="#t2019-04-19T10:29:30" class="time">10:29</a></td></tr>
+<tr id="t2019-04-19T10:29:43"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">also trying to escape the spaces doesn't help</td><td class="time"><a href="#t2019-04-19T10:29:43" class="time">10:29</a></td></tr>
+<tr id="t2019-04-19T10:32:16"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">great idea to put the space into both project name and group name</td><td class="time"><a href="#t2019-04-19T10:32:16" class="time">10:32</a></td></tr>
+<tr id="t2019-04-19T10:32:19"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">LOL</td><td class="time"><a href="#t2019-04-19T10:32:19" class="time">10:32</a></td></tr>
+<tr id="t2019-04-19T10:46:22"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">reimplementing do_fetch is the way, nice</td><td class="time"><a href="#t2019-04-19T10:46:22" class="time">10:46</a></td></tr>
+<tr id="t2019-04-19T12:04:32"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">LocutusOfBorg&gt; or clone it somewhere else :)</td><td class="time"><a href="#t2019-04-19T12:04:32" class="time">12:04</a></td></tr>
+<tr id="t2019-04-19T12:06:27"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">nayfe, ehm how... you mean clone in /tmp and then put /tmp as URL in src_uri?</td><td class="time"><a href="#t2019-04-19T12:06:27" class="time">12:06</a></td></tr>
+<tr id="t2019-04-19T12:06:33"><th class="nick" style="background: #42427e">LocutusOfBorg</th><td class="text" style="color: #42427e">like a do_fetch_prepend task?</td><td class="time"><a href="#t2019-04-19T12:06:33" class="time">12:06</a></td></tr>
+<tr id="t2019-04-19T12:09:23"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">sort of, or outside Yocto, in a script or if you're using bitbucket a synchronized fork etc :)</td><td class="time"><a href="#t2019-04-19T12:09:23" class="time">12:09</a></td></tr>
+<tr id="t2019-04-19T15:17:53"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2019-04-19T15:17:53" class="time">15:17</a></td></tr>
+<tr id="t2019-04-19T20:11:39"><th class="nick" style="background: #854685">keith</th><td class="text" style="color: #854685">in building libevent in my sdk, unlike with libssl and others, it didnt create .so symlinks.. any idea why?</td><td class="time"><a href="#t2019-04-19T20:11:39" class="time">20:11</a></td></tr>
+<tr id="t2019-04-19T20:11:42"><th class="nick" style="background: #854685">keith</th><td class="text" style="color: #854685"><a href="https://www.irccloud.com/pastebin/Ht8MuE6U/" rel="nofollow">https://www.irccloud.com/pastebin/Ht8MuE6U/</a></td><td class="time"><a href="#t2019-04-19T20:11:42" class="time">20:11</a></td></tr>
+<tr id="t2019-04-19T20:16:32"><th class="nick" style="background: #854685">keith</th><td class="text" style="color: #854685">i can manually create them in the sdk, but was curious if im doing something wrong</td><td class="time"><a href="#t2019-04-19T20:16:32" class="time">20:16</a></td></tr>
+<tr id="t2019-04-19T21:42:10"><td class="nickchange" colspan="2">*** BCMM_ is now known as BCMM</td><td><a href="#t2019-04-19T21:42:10" class="time">21:42</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-04-18.log.html">&#171; Thursday, 2019-04-18</a> <a href="index.html">Index</a> <a href="%23yocto.2019-04-20.log.html">Saturday, 2019-04-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

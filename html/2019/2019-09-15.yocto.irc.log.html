@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-09-15</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-09-15</h1>
+<div class="navigation"> <a href="%23yocto.2019-09-14.log.html">&#171; Saturday, 2019-09-14</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-16.log.html">Monday, 2019-09-16 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-09-15T04:49:49"><td class="nickchange" colspan="2">*** Hauke is now known as Guest25472</td><td><a href="#t2019-09-15T04:49:49" class="time">04:49</a></td></tr>
+<tr id="t2019-09-15T15:15:25"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">hello :)</td><td class="time"><a href="#t2019-09-15T15:15:25" class="time">15:15</a></td></tr>
+<tr id="t2019-09-15T15:16:25"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">I am building a core-image-minimal image for a pocketbeagle. I added IMAGE_FEATURES = "ssh-server-dropbear", but I can't access it over USB...</td><td class="time"><a href="#t2019-09-15T15:16:25" class="time">15:16</a></td></tr>
+<tr id="t2019-09-15T15:16:57"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">It seems to me that the core setup enables usbgadget at the "machine" level, but I guess I may need more than that?</td><td class="time"><a href="#t2019-09-15T15:16:57" class="time">15:16</a></td></tr>
+<tr id="t2019-09-15T15:17:08"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">(I'm new to Yocto, trying to understand the basics of setting up a system)</td><td class="time"><a href="#t2019-09-15T15:17:08" class="time">15:17</a></td></tr>
+<tr id="t2019-09-15T15:57:50"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">Could it be that I just need to load `cdc_ether`? My BSP sets CONFIG_USB_NET_CDCETHER=m already...</td><td class="time"><a href="#t2019-09-15T15:57:50" class="time">15:57</a></td></tr>
+<tr id="t2019-09-15T16:09:29"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">I added KERNEL_MODULE_AUTOLOAD += "cdc_ether" to my image, rebuilt and reflashed it, but still, my pocketbeagle is not recognized at all when plugged to my computer over usb</td><td class="time"><a href="#t2019-09-15T16:09:29" class="time">16:09</a></td></tr>
+<tr id="t2019-09-15T16:09:34"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">(it is powered, though)</td><td class="time"><a href="#t2019-09-15T16:09:34" class="time">16:09</a></td></tr>
+<tr id="t2019-09-15T16:16:09"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">maybe use serial debug port to see whats going on</td><td class="time"><a href="#t2019-09-15T16:16:09" class="time">16:16</a></td></tr>
+<tr id="t2019-09-15T16:17:33"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: ahem, not sure what that would mean. Would I need to solder stuff on my pocketbeagle and connect my computer to that over USB?</td><td class="time"><a href="#t2019-09-15T16:17:33" class="time">16:17</a></td></tr>
+<tr id="t2019-09-15T17:02:57"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">palate: <a href="https://github.com/beagleboard/pocketbeagle/wiki/System-Reference-Manual#56_Serial_Debug_Port" rel="nofollow">https://github.com/beagleboard/pocketbeagle/wiki/System-Reference-Manual#56_Serial_Debug_Port</a></td><td class="time"><a href="#t2019-09-15T17:02:57" class="time">17:02</a></td></tr>
+<tr id="t2019-09-15T19:01:34"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: right</td><td class="time"><a href="#t2019-09-15T19:01:34" class="time">19:01</a></td></tr>
+<tr id="t2019-09-15T19:02:27"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: but on the principle, am I right in what I'm trying to do? -&gt; enable CONFIG_USB_NET_CDCETHER as a module in the kernel config, and then autoload cdc_ether?</td><td class="time"><a href="#t2019-09-15T19:02:27" class="time">19:02</a></td></tr>
+<tr id="t2019-09-15T19:02:32"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">Or am I missing something?</td><td class="time"><a href="#t2019-09-15T19:02:32" class="time">19:02</a></td></tr>
+<tr id="t2019-09-15T19:04:21"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">that seems to be right</td><td class="time"><a href="#t2019-09-15T19:04:21" class="time">19:04</a></td></tr>
+<tr id="t2019-09-15T19:35:47"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: hmm so I'll have to solder those cables, hoping not to break anything xD</td><td class="time"><a href="#t2019-09-15T19:35:47" class="time">19:35</a></td></tr>
+<tr id="t2019-09-15T20:47:47"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">yeah another option is to look for a working published images</td><td class="time"><a href="#t2019-09-15T20:47:47" class="time">20:47</a></td></tr>
+<tr id="t2019-09-15T21:18:58"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: well, the point is to learn how to do it with yocto :D</td><td class="time"><a href="#t2019-09-15T21:18:58" class="time">21:18</a></td></tr>
+<tr id="t2019-09-15T21:19:31"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">And many people use a board that has an ethernet socket, I guess. I want to learn how to do it with USB.</td><td class="time"><a href="#t2019-09-15T21:19:31" class="time">21:19</a></td></tr>
+<tr id="t2019-09-15T21:30:39"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">palate: sure, you need a mechanism to see the early console</td><td class="time"><a href="#t2019-09-15T21:30:39" class="time">21:30</a></td></tr>
+<tr id="t2019-09-15T21:30:49"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">so its better to attach uart0</td><td class="time"><a href="#t2019-09-15T21:30:49" class="time">21:30</a></td></tr>
+<tr id="t2019-09-15T21:52:47"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: How to setup bootargs to load nfs in beaglebone through eth0 &lt;<a href="https://stackoverflow.com/questions/57948311/how-to-setup-bootargs-to-load-nfs-in-beaglebone-through-eth0&gt;" rel="nofollow">https://stackoverflow.com/questions/57948311/how-to-setup-bootargs-to-load-nfs-in-beaglebone-through-eth0&gt;</a></td><td class="time"><a href="#t2019-09-15T21:52:47" class="time">21:52</a></td></tr>
+<tr id="t2019-09-15T22:02:29"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: say I get the uart connection over FTDI. What can I do with that from my computer?</td><td class="time"><a href="#t2019-09-15T22:02:29" class="time">22:02</a></td></tr>
+<tr id="t2019-09-15T22:02:52"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: I guess I just need a keyword to google it :/</td><td class="time"><a href="#t2019-09-15T22:02:52" class="time">22:02</a></td></tr>
+<tr id="t2019-09-15T22:06:46"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: should it just appear as like /dev/ttyS0, and then I could just `cat &lt; /dev/ttyS0` for instance?</td><td class="time"><a href="#t2019-09-15T22:06:46" class="time">22:06</a></td></tr>
+<tr id="t2019-09-15T22:26:00"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">you can connect to it via minicom or screen or some such yes it should appear as /dev/ttyX</td><td class="time"><a href="#t2019-09-15T22:26:00" class="time">22:26</a></td></tr>
+<tr id="t2019-09-15T22:34:58"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">khem: right, I've seen `screen` in the past</td><td class="time"><a href="#t2019-09-15T22:34:58" class="time">22:34</a></td></tr>
+<tr id="t2019-09-15T22:35:21"><th class="nick" style="background: #407a40">palate</th><td class="text" style="color: #407a40">I'll see tomorrow if I get to solder that FTDI :)</td><td class="time"><a href="#t2019-09-15T22:35:21" class="time">22:35</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-09-14.log.html">&#171; Saturday, 2019-09-14</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-16.log.html">Monday, 2019-09-16 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

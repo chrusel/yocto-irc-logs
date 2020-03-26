@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-12-22</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-12-22</h1>
+<div class="navigation"> <a href="%23yocto.2019-12-21.log.html">&#171; Saturday, 2019-12-21</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-23.log.html">Monday, 2019-12-23 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-12-22T02:10:57"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How do I write a yocto/bitbake recipe to copy a directory to the target root file system &lt;<a href="https://stackoverflow.com/questions/40722637/how-do-i-write-a-yocto-bitbake-recipe-to-copy-a-directory-to-the-target-root-fil&gt;" rel="nofollow">https://stackoverflow.com/questions/40722637/how-do-i-write-a-yocto-bitbake-recipe-to-copy-a-directory-to-the-target-root-fil&gt;</a></td><td class="time"><a href="#t2019-12-22T02:10:57" class="time">02:10</a></td></tr>
+<tr id="t2019-12-22T03:11:06"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Yocto / OE : recipe with CMake install a shared library .so &lt;<a href="https://stackoverflow.com/questions/59091938/yocto-oe-recipe-with-cmake-install-a-shared-library-so&gt;" rel="nofollow">https://stackoverflow.com/questions/59091938/yocto-oe-recipe-with-cmake-install-a-shared-library-so&gt;</a></td><td class="time"><a href="#t2019-12-22T03:11:06" class="time">03:11</a></td></tr>
+<tr id="t2019-12-22T08:29:58"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">I have a directory that I want to copy as is into rootfs of the image. I tried many variations to do so under "do_install()", but keep getting errors. The directory resides in the same folder of the recipe. Any help?</td><td class="time"><a href="#t2019-12-22T08:29:58" class="time">08:29</a></td></tr>
+<tr id="t2019-12-22T08:30:27"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">SRC_URI += "file://my_dir"</td><td class="time"><a href="#t2019-12-22T08:30:27" class="time">08:30</a></td></tr>
+<tr id="t2019-12-22T08:31:11"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">TARGET_FOLDER="/opt/python_3.6.8"do_install() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;install -d ${D}${TARGET_FOLDER}</td><td class="time"><a href="#t2019-12-22T08:31:11" class="time">08:31</a></td></tr>
+<tr id="t2019-12-22T08:31:14"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">oops</td><td class="time"><a href="#t2019-12-22T08:31:14" class="time">08:31</a></td></tr>
+<tr id="t2019-12-22T08:32:04"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">SRC_URI += "file://my_dir"TARGET_FOLDER="/target_dir"do_install() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;install -d ${D}${TARGET_FOLDER}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cp -r /my_dir ${D}${TARGET_FOLDER}}FILES_${PN} += "${TARGET_FOLDER}"</td><td class="time"><a href="#t2019-12-22T08:32:04" class="time">08:32</a></td></tr>
+<tr id="t2019-12-22T08:32:17"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">here is what I've tried</td><td class="time"><a href="#t2019-12-22T08:32:17" class="time">08:32</a></td></tr>
+<tr id="t2019-12-22T08:32:29"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">If you manage to read it</td><td class="time"><a href="#t2019-12-22T08:32:29" class="time">08:32</a></td></tr>
+<tr id="t2019-12-22T12:18:01"><th class="nick" style="background: #818144">LetoThe2nd</th><td class="text" style="color: #818144">nacknick: <a href="https://stackoverflow.com/questions/39980145/how-to-install-recursively-my-directories-and-files-in-bitbake-recipe/47084404#47084404" rel="nofollow">https://stackoverflow.com/questions/39980145/how-to-install-recursively-my-directories-and-files-in-bitbake-recipe/47084404#47084404</a></td><td class="time"><a href="#t2019-12-22T12:18:01" class="time">12:18</a></td></tr>
+<tr id="t2019-12-22T12:18:40"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Finally it worked. I have no idea why... thanks LetoThe2nd</td><td class="time"><a href="#t2019-12-22T12:18:40" class="time">12:18</a></td></tr>
+<tr id="t2019-12-22T12:19:49"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">And yes, I used 'cp -r' from the very beginning of tries</td><td class="time"><a href="#t2019-12-22T12:19:49" class="time">12:19</a></td></tr>
+<tr id="t2019-12-22T12:20:47"><th class="nick" style="background: #818144">LetoThe2nd</th><td class="text" style="color: #818144">no idea what did or where you went wrong. the linked answer is the current best practise. :)</td><td class="time"><a href="#t2019-12-22T12:20:47" class="time">12:20</a></td></tr>
+<tr id="t2019-12-22T12:22:04"><td class="action" colspan="2">* LetoThe2nd is of again</td><td><a href="#t2019-12-22T12:22:04" class="time">12:22</a></td></tr>
+<tr id="t2019-12-22T12:31:09"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Another question please, Yocto image comes with "BusyBox" that has many basic commands but a lot of their options are missing. Is there any way to install more "extended" version of BusyBox? Or alternatively, install the full binaries instead of BusyBox?</td><td class="time"><a href="#t2019-12-22T12:31:09" class="time">12:31</a></td></tr>
+<tr id="t2019-12-22T13:12:04"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">One more: if I have missing Perl modules in the image, such this one <a href="https://metacpan.org/pod/release/SHAY/perl-5.24.1-RC5/lib/FileHandle.pm" rel="nofollow">https://metacpan.org/pod/release/SHAY/perl-5.24.1-RC5/lib/FileHandle.pm</a> (That I can't find a way to download) - How should I install it?</td><td class="time"><a href="#t2019-12-22T13:12:04" class="time">13:12</a></td></tr>
+<tr id="t2019-12-22T14:29:56"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">I need to restart the computer. If someone has answers to my question, please wait awhile so I won't miss them</td><td class="time"><a href="#t2019-12-22T14:29:56" class="time">14:29</a></td></tr>
+<tr id="t2019-12-22T21:47:34"><th class="nick" style="background: #854685">sander44</th><td class="text" style="color: #854685">Hi</td><td class="time"><a href="#t2019-12-22T21:47:34" class="time">21:47</a></td></tr>
+<tr id="t2019-12-22T21:49:15"><th class="nick" style="background: #854685">sander44</th><td class="text" style="color: #854685">sorry, but I'll come back tomorrow with a question.</td><td class="time"><a href="#t2019-12-22T21:49:15" class="time">21:49</a></td></tr>
+<tr id="t2019-12-22T21:50:02"><th class="nick" style="background: #854685">sander44</th><td class="text" style="color: #854685">only good to be, peace :)</td><td class="time"><a href="#t2019-12-22T21:50:02" class="time">21:50</a></td></tr>
+<tr id="t2019-12-22T23:50:32"><th class="nick" style="background: #488888">Crofton|road</th><td class="text" style="color: #488888">We need to mention reduced service on irc over the horror days ...</td><td class="time"><a href="#t2019-12-22T23:50:32" class="time">23:50</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-12-21.log.html">&#171; Saturday, 2019-12-21</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-23.log.html">Monday, 2019-12-23 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

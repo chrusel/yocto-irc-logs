@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-02-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-02-02</h1>
+<div class="navigation"> <a href="%23yocto.2019-02-01.log.html">&#171; Friday, 2019-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2019-02-03.log.html">Sunday, 2019-02-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-02-02T01:17:05"><th class="nick" style="background: #407a40">halstead</th><td class="text" style="color: #407a40">The scheduler kicked another build before the cluster went idle. I'm pushing maintenance until later this weekend. Queuing a master-next now.</td><td class="time"><a href="#t2019-02-02T01:17:05" class="time">01:17</a></td></tr>
+<tr id="t2019-02-02T01:30:41"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">halstead, thanks. Should we have formal maint window so that you don't need to work the weekend?</td><td class="time"><a href="#t2019-02-02T01:30:41" class="time">01:30</a></td></tr>
+<tr id="t2019-02-02T02:13:51"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">glibc and llvm upgrade doesnt help build time</td><td class="time"><a href="#t2019-02-02T02:13:51" class="time">02:13</a></td></tr>
+<tr id="t2019-02-02T02:13:57"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">:)</td><td class="time"><a href="#t2019-02-02T02:13:57" class="time">02:13</a></td></tr>
+<tr id="t2019-02-02T11:09:09"><td class="nickchange" colspan="2">*** jkroon_ is now known as kroon</td><td><a href="#t2019-02-02T11:09:09" class="time">11:09</a></td></tr>
+<tr id="t2019-02-02T12:46:28"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">Does Anuj Mittal hang aroung in here ?</td><td class="time"><a href="#t2019-02-02T12:46:28" class="time">12:46</a></td></tr>
+<tr id="t2019-02-02T13:00:55"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: How to edit source codes on Yocto project, and rebuild it? &lt;<a href="https://stackoverflow.com/questions/39654090/how-to-edit-source-codes-on-yocto-project-and-rebuild-it&gt;" rel="nofollow">https://stackoverflow.com/questions/39654090/how-to-edit-source-codes-on-yocto-project-and-rebuild-it&gt;</a></td><td class="time"><a href="#t2019-02-02T13:00:55" class="time">13:00</a></td></tr>
+<tr id="t2019-02-02T13:06:01"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">Hey - is there a proper version of git anywhere? the meta-openembedded version doesn't seem to include submodule support</td><td class="time"><a href="#t2019-02-02T13:06:01" class="time">13:06</a></td></tr>
+<tr id="t2019-02-02T13:23:45"><th class="nick" style="background: #4b904b">JoshDeWeese[m]</th><td class="text" style="color: #4b904b">Is it just a matter of the version of git being too old?</td><td class="time"><a href="#t2019-02-02T13:23:45" class="time">13:23</a></td></tr>
+<tr id="t2019-02-02T13:34:37"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">i don't think so, i think it's a stripped down version. Git has had submodules for a long long time</td><td class="time"><a href="#t2019-02-02T13:34:37" class="time">13:34</a></td></tr>
+<tr id="t2019-02-02T13:40:08"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2019-02-02T13:40:08" class="time">13:40</a></td></tr>
+<tr id="t2019-02-02T13:48:19"><th class="nick" style="background: #4d4d93">RP</th><td class="text" style="color: #4d4d93">cslcm: the git recipe is in oe-core, not meta-oe?</td><td class="time"><a href="#t2019-02-02T13:48:19" class="time">13:48</a></td></tr>
+<tr id="t2019-02-02T13:51:06"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">ah ok</td><td class="time"><a href="#t2019-02-02T13:51:06" class="time">13:51</a></td></tr>
+<tr id="t2019-02-02T13:51:57"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP: any thoughts about <a href="http://lists.openembedded.org/pipermail/openembedded-core/2019-January/278599.html" rel="nofollow">http://lists.openembedded.org/pipermail/openembedded-core/2019-January/278599.html</a> ?</td><td class="time"><a href="#t2019-02-02T13:51:57" class="time">13:51</a></td></tr>
+<tr id="t2019-02-02T13:52:14"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">the git version in oe-core is 2.18, submodules have been in git since 2.3</td><td class="time"><a href="#t2019-02-02T13:52:14" class="time">13:52</a></td></tr>
+<tr id="t2019-02-02T13:52:16"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">so idk</td><td class="time"><a href="#t2019-02-02T13:52:16" class="time">13:52</a></td></tr>
+<tr id="t2019-02-02T13:53:12"><th class="nick" style="background: #4d4d93">RP</th><td class="text" style="color: #4d4d93">kroon: I guess I wondered why debian doesn't have a kvm group and why we have the mismatch :/</td><td class="time"><a href="#t2019-02-02T13:53:12" class="time">13:53</a></td></tr>
+<tr id="t2019-02-02T13:54:41"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP: Maybe its because base-passwd is currently not being updated in oe-core</td><td class="time"><a href="#t2019-02-02T13:54:41" class="time">13:54</a></td></tr>
+<tr id="t2019-02-02T13:54:46"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">but I dunno..</td><td class="time"><a href="#t2019-02-02T13:54:46" class="time">13:54</a></td></tr>
+<tr id="t2019-02-02T13:54:58"><th class="nick" style="background: #4d4d93">RP</th><td class="text" style="color: #4d4d93">kroon: perhaps we should update it instead of patching it then?</td><td class="time"><a href="#t2019-02-02T13:54:58" class="time">13:54</a></td></tr>
+<tr id="t2019-02-02T13:55:42"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP: yeah</td><td class="time"><a href="#t2019-02-02T13:55:42" class="time">13:55</a></td></tr>
+<tr id="t2019-02-02T13:56:29"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">ill give it a shot</td><td class="time"><a href="#t2019-02-02T13:56:29" class="time">13:56</a></td></tr>
+<tr id="t2019-02-02T13:57:30"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">Is there a recipe for perl-cpan?</td><td class="time"><a href="#t2019-02-02T13:57:30" class="time">13:57</a></td></tr>
+<tr id="t2019-02-02T14:06:12"><th class="nick" style="background: #4b904b">JoshDeWeese[m]</th><td class="text" style="color: #4b904b">Regarding git, id check the bb file. Maybe there is a confirmation setting or error in the do_install function.</td><td class="time"><a href="#t2019-02-02T14:06:12" class="time">14:06</a></td></tr>
+<tr id="t2019-02-02T14:06:53"><th class="nick" style="background: #8c4a4a">cslcm</th><td class="text" style="color: #8c4a4a">i've looked in there and can't see anything relevant</td><td class="time"><a href="#t2019-02-02T14:06:53" class="time">14:06</a></td></tr>
+<tr id="t2019-02-02T14:13:07"><th class="nick" style="background: #4b904b">JoshDeWeese[m]</th><td class="text" style="color: #4b904b">It might be a compile time option for git. May check there as well.</td><td class="time"><a href="#t2019-02-02T14:13:07" class="time">14:13</a></td></tr>
+<tr id="t2019-02-02T14:16:23"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP: assuming im looking at the correct place, base-passwd master in debian still doesn't contain the groups we patch in OE-Core (shutdown/input/kvm)</td><td class="time"><a href="#t2019-02-02T14:16:23" class="time">14:16</a></td></tr>
+<tr id="t2019-02-02T14:16:41"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">RP: <a href="https://salsa.debian.org/debian/base-passwd" rel="nofollow">https://salsa.debian.org/debian/base-passwd</a></td><td class="time"><a href="#t2019-02-02T14:16:41" class="time">14:16</a></td></tr>
+<tr id="t2019-02-02T14:52:40"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">Maybe systemd creates those groups in debian</td><td class="time"><a href="#t2019-02-02T14:52:40" class="time">14:52</a></td></tr>
+<tr id="t2019-02-02T16:09:35"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: with OE-Core I dont see the llvm failure, I guess its rpm finding something more</td><td class="time"><a href="#t2019-02-02T16:09:35" class="time">16:09</a></td></tr>
+<tr id="t2019-02-02T16:09:45"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">let me see if thats what it is</td><td class="time"><a href="#t2019-02-02T16:09:45" class="time">16:09</a></td></tr>
+<tr id="t2019-02-02T17:49:17"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2019-02-02T17:49:17" class="time">17:49</a></td></tr>
+<tr id="t2019-02-02T18:59:09"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2019-02-02T18:59:09" class="time">18:59</a></td></tr>
+<tr id="t2019-02-02T19:20:43"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: I think I have handle over the llvm8/mesa issue</td><td class="time"><a href="#t2019-02-02T19:20:43" class="time">19:20</a></td></tr>
+<tr id="t2019-02-02T19:21:25"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: this time running testimage for qemux86_64 and see if its finally fixed</td><td class="time"><a href="#t2019-02-02T19:21:25" class="time">19:21</a></td></tr>
+<tr id="t2019-02-02T19:21:30"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">with poky</td><td class="time"><a href="#t2019-02-02T19:21:30" class="time">19:21</a></td></tr>
+<tr id="t2019-02-02T19:35:09"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2019-02-02T19:35:09" class="time">19:35</a></td></tr>
+<tr id="t2019-02-02T21:48:50"><td class="nickchange" colspan="2">*** Crofton_ is now known as Crofton|work</td><td><a href="#t2019-02-02T21:48:50" class="time">21:48</a></td></tr>
+<tr id="t2019-02-02T23:02:50"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: Yocto build crashing at gcc and hard fpu problem &lt;<a href="https://stackoverflow.com/questions/54498309/yocto-build-crashing-at-gcc-and-hard-fpu-problem&gt;" rel="nofollow">https://stackoverflow.com/questions/54498309/yocto-build-crashing-at-gcc-and-hard-fpu-problem&gt;</a></td><td class="time"><a href="#t2019-02-02T23:02:50" class="time">23:02</a></td></tr>
+<tr id="t2019-02-02T23:40:29"><td class="part" colspan="2">*** kroon &lt;kroon!~jkroon@37-247-29-68.customers.ownit.se&gt; has left #yocto</td><td><a href="#t2019-02-02T23:40:29" class="time">23:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-02-01.log.html">&#171; Friday, 2019-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2019-02-03.log.html">Sunday, 2019-02-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

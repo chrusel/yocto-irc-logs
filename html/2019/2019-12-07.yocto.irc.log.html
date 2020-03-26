@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-12-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-12-07</h1>
+<div class="navigation"> <a href="%23yocto.2019-12-06.log.html">&#171; Friday, 2019-12-06</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-08.log.html">Sunday, 2019-12-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-12-07T00:01:55"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">roussinm: meta-clang would not add gcc on the contrary it would punt it when possible</td><td class="time"><a href="#t2019-12-07T00:01:55" class="time">00:01</a></td></tr>
+<tr id="t2019-12-07T00:02:17"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">so you might want to do bitbake -g &lt;image&gt; and see who is pulling it in</td><td class="time"><a href="#t2019-12-07T00:02:17" class="time">00:02</a></td></tr>
+<tr id="t2019-12-07T03:42:48"><td class="part" colspan="2">*** roussinm40 &lt;roussinm40!459c73ba@qubcpq0336w-lp130-03-69-156-115-186.dsl.bell.ca&gt; has left #yocto</td><td><a href="#t2019-12-07T03:42:48" class="time">03:42</a></td></tr>
+<tr id="t2019-12-07T03:42:51"><td class="part" colspan="2">*** roussinm &lt;roussinm!459c73ba@qubcpq0336w-lp130-03-69-156-115-186.dsl.bell.ca&gt; has left #yocto</td><td><a href="#t2019-12-07T03:42:51" class="time">03:42</a></td></tr>
+<tr id="t2019-12-07T03:44:41"><td class="part" colspan="2">*** roussinm11 &lt;roussinm11!459c73ba@qubcpq0336w-lp130-03-69-156-115-186.dsl.bell.ca&gt; has left #yocto</td><td><a href="#t2019-12-07T03:44:41" class="time">03:44</a></td></tr>
+<tr id="t2019-12-07T03:45:35"><th class="nick" style="background: #42427e">roussinm</th><td class="text" style="color: #42427e">khem: One of the recipe has a runtime dependeny on cpp `python-pycparser`</td><td class="time"><a href="#t2019-12-07T03:45:35" class="time">03:45</a></td></tr>
+<tr id="t2019-12-07T11:15:34"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: Unable to start bitbake server &lt;<a href="https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;" rel="nofollow">https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;</a></td><td class="time"><a href="#t2019-12-07T11:15:34" class="time">11:15</a></td></tr>
+<tr id="t2019-12-07T12:45:46"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: Draw call returned Invalid argument. Expect corruption Raspberry pi 4 GPU &lt;<a href="https://stackoverflow.com/questions/59225854/draw-call-returned-invalid-argument-expect-corruption-raspberry-pi-4-gpu&gt;" rel="nofollow">https://stackoverflow.com/questions/59225854/draw-call-returned-invalid-argument-expect-corruption-raspberry-pi-4-gpu&gt;</a></td><td class="time"><a href="#t2019-12-07T12:45:46" class="time">12:45</a></td></tr>
+<tr id="t2019-12-07T20:22:24"><th class="nick" style="background: #854685">Ad0</th><td class="text" style="color: #854685">it seems like bitbake is not reading machine configuration in conf/machine/xxx. if I specify machine xxx, it does not fail but it's contents are ignored. if I rename xxx to xxxy then it fails, so it detects that the file is there</td><td class="time"><a href="#t2019-12-07T20:22:24" class="time">20:22</a></td></tr>
+<tr id="t2019-12-07T22:52:09"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">Ad0: somewhere in bitbake -e output it lists the files its looking at (BBINCLUDED?)</td><td class="time"><a href="#t2019-12-07T22:52:09" class="time">22:52</a></td></tr>
+<tr id="t2019-12-07T22:52:19"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">Ad0: take a look at that</td><td class="time"><a href="#t2019-12-07T22:52:19" class="time">22:52</a></td></tr>
+<tr id="t2019-12-07T22:58:33"><th class="nick" style="background: #854685">Ad0</th><td class="text" style="color: #854685">thanks RP</td><td class="time"><a href="#t2019-12-07T22:58:33" class="time">22:58</a></td></tr>
+<tr id="t2019-12-07T23:52:42"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: you could keep sysklogd patch combined with my addendum to it that I sent today</td><td class="time"><a href="#t2019-12-07T23:52:42" class="time">23:52</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-12-06.log.html">&#171; Friday, 2019-12-06</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-08.log.html">Sunday, 2019-12-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

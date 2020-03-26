@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-03-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-03-16</h1>
+<div class="navigation"> <a href="%23yocto.2019-03-15.log.html">&#171; Friday, 2019-03-15</a> <a href="index.html">Index</a> <a href="%23yocto.2019-03-17.log.html">Sunday, 2019-03-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-03-16T03:53:11"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-03-16T03:53:11" class="time">03:53</a></td></tr>
+<tr id="t2019-03-16T04:44:21"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Unable to start bitbake server &lt;<a href="https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;" rel="nofollow">https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;</a></td><td class="time"><a href="#t2019-03-16T04:44:21" class="time">04:44</a></td></tr>
+<tr id="t2019-03-16T15:44:10"><td class="action" colspan="2">* RP is pleased to make it home</td><td><a href="#t2019-03-16T15:44:10" class="time">15:44</a></td></tr>
+<tr id="t2019-03-16T15:52:32"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">glad to hear you got home in one piece</td><td class="time"><a href="#t2019-03-16T15:52:32" class="time">15:52</a></td></tr>
+<tr id="t2019-03-16T15:58:11"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">Hi everyone</td><td class="time"><a href="#t2019-03-16T15:58:11" class="time">15:58</a></td></tr>
+<tr id="t2019-03-16T15:58:20"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">I have a question to make</td><td class="time"><a href="#t2019-03-16T15:58:20" class="time">15:58</a></td></tr>
+<tr id="t2019-03-16T15:58:40"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">if I build an image, core-image-sato for example</td><td class="time"><a href="#t2019-03-16T15:58:40" class="time">15:58</a></td></tr>
+<tr id="t2019-03-16T15:59:19"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">Then I'll get an *gpt.img file in /build/tmp/deploy/</td><td class="time"><a href="#t2019-03-16T15:59:19" class="time">15:59</a></td></tr>
+<tr id="t2019-03-16T16:00:17"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">but if I do a single packet build, example "bitbake git" will it be added to the image automatically? How could I recreate the .img file with the new package?</td><td class="time"><a href="#t2019-03-16T16:00:17" class="time">16:00</a></td></tr>
+<tr id="t2019-03-16T16:00:20"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">Thank you</td><td class="time"><a href="#t2019-03-16T16:00:20" class="time">16:00</a></td></tr>
+<tr id="t2019-03-16T16:08:36"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">add IMAGE_INSTALL_append = " git" and build your image</td><td class="time"><a href="#t2019-03-16T16:08:36" class="time">16:08</a></td></tr>
+<tr id="t2019-03-16T16:08:46"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">that will include git</td><td class="time"><a href="#t2019-03-16T16:08:46" class="time">16:08</a></td></tr>
+<tr id="t2019-03-16T16:09:32"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">local.conf... forgot that part</td><td class="time"><a href="#t2019-03-16T16:09:32" class="time">16:09</a></td></tr>
+<tr id="t2019-03-16T16:09:43"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">I'm trying</td><td class="time"><a href="#t2019-03-16T16:09:43" class="time">16:09</a></td></tr>
+<tr id="t2019-03-16T16:10:48"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">git is the recipe being built when you run bitbake git so you might need to double check out it splits out the packages</td><td class="time"><a href="#t2019-03-16T16:10:48" class="time">16:10</a></td></tr>
+<tr id="t2019-03-16T16:11:24"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">the problem is that I have already an&nbsp;&nbsp;IMAGE_INSTALL_append entry in local.conf and even if I change it, when I do bitbake core-image-sato it doesn't seem to compile/add anything</td><td class="time"><a href="#t2019-03-16T16:11:24" class="time">16:11</a></td></tr>
+<tr id="t2019-03-16T16:12:00"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">if I check the packages in the .manifest file in the same directory as the .img file, the new packages are not listed</td><td class="time"><a href="#t2019-03-16T16:12:00" class="time">16:12</a></td></tr>
+<tr id="t2019-03-16T16:15:10"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">you might need to look in tmp/work/{arch}/git/{version}/package-splits to see the name of the package needing to be add to the IMAGE_INSTALL*</td><td class="time"><a href="#t2019-03-16T16:15:10" class="time">16:15</a></td></tr>
+<tr id="t2019-03-16T16:16:57"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">armpit: thank you. I found the package-splits directory. Should all the packages in there be listed in local.conf?</td><td class="time"><a href="#t2019-03-16T16:16:57" class="time">16:16</a></td></tr>
+<tr id="t2019-03-16T16:19:48"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">SimoneNascivera, only the ones that contain the binaries you want to install</td><td class="time"><a href="#t2019-03-16T16:19:48" class="time">16:19</a></td></tr>
+<tr id="t2019-03-16T16:20:08"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">you can start with all and then scale back</td><td class="time"><a href="#t2019-03-16T16:20:08" class="time">16:20</a></td></tr>
+<tr id="t2019-03-16T16:23:56"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">armpit: even if I added all the package-splits nothing changed</td><td class="time"><a href="#t2019-03-16T16:23:56" class="time">16:23</a></td></tr>
+<tr id="t2019-03-16T16:25:24"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">armpit: I'm sure if I clean build everything it'll work, it happened also weeks ago but I would like to learn how to add packages without clean buildingthe image every time</td><td class="time"><a href="#t2019-03-16T16:25:24" class="time">16:25</a></td></tr>
+<tr id="t2019-03-16T16:39:04"><th class="nick" style="background: #42427e">armpit</th><td class="text" style="color: #42427e">SimoneNascivera, you may want to look in the image itself, maybe the binaries are there just not showing up in the manafest</td><td class="time"><a href="#t2019-03-16T16:39:04" class="time">16:39</a></td></tr>
+<tr id="t2019-03-16T16:46:35"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">armpit: I tried mounting the img but there isn't any git binaries in the path specified in package_splits</td><td class="time"><a href="#t2019-03-16T16:46:35" class="time">16:46</a></td></tr>
+<tr id="t2019-03-16T16:49:10"><th class="nick" style="background: #854685">aduskett</th><td class="text" style="color: #854685">Quick question: For cross-compiled python libraries, how does Yocto handle the cross compile? For example: Using Buildroot, I am porting gst-python, and it makes _gi_gst.cpython-37m-x86_64-linux-gnu.so, which is actually a ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, not stripped file.</td><td class="time"><a href="#t2019-03-16T16:49:10" class="time">16:49</a></td></tr>
+<tr id="t2019-03-16T16:49:37"><th class="nick" style="background: #854685">aduskett</th><td class="text" style="color: #854685">So I guess a better question is, how does Yocto prevent the x86_64-linux-gnu naming schema from happening?</td><td class="time"><a href="#t2019-03-16T16:49:37" class="time">16:49</a></td></tr>
+<tr id="t2019-03-16T16:49:56"><th class="nick" style="background: #818144">SimoneNascivera</th><td class="text" style="color: #818144">armpit: it does also make sense, since the last modification to the .img file&nbsp;&nbsp;seems to be very old</td><td class="time"><a href="#t2019-03-16T16:49:56" class="time">16:49</a></td></tr>
+<tr id="t2019-03-16T16:54:57"><th class="nick" style="background: #854685">aduskett</th><td class="text" style="color: #854685">ah, there's a qemu wrapper involved</td><td class="time"><a href="#t2019-03-16T16:54:57" class="time">16:54</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-03-15.log.html">&#171; Friday, 2019-03-15</a> <a href="index.html">Index</a> <a href="%23yocto.2019-03-17.log.html">Sunday, 2019-03-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

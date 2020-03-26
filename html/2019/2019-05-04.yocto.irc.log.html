@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-05-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-05-04</h1>
+<div class="navigation"> <a href="%23yocto.2019-05-03.log.html">&#171; Friday, 2019-05-03</a> <a href="index.html">Index</a> <a href="%23yocto.2019-05-05.log.html">Sunday, 2019-05-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-05-04T15:08:23"><td class="nickchange" colspan="2">*** wto_ is now known as wto</td><td><a href="#t2019-05-04T15:08:23" class="time">15:08</a></td></tr>
+<tr id="t2019-05-04T15:18:10"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">I guess everyone already knows git.yoctoproject.org server certificate has expired?</td><td class="time"><a href="#t2019-05-04T15:18:10" class="time">15:18</a></td></tr>
+<tr id="t2019-05-04T15:19:25"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">Freescale's 'repo' tool setup won't tolerate,&nbsp;&nbsp;billions of programmers around the world are tearing their hair out.</td><td class="time"><a href="#t2019-05-04T15:19:25" class="time">15:19</a></td></tr>
+<tr id="t2019-05-04T15:19:31"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">Ok, maybe it's just me.</td><td class="time"><a href="#t2019-05-04T15:19:31" class="time">15:19</a></td></tr>
+<tr id="t2019-05-04T15:20:59"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40"> '<a href="https://git.yoctoproject.org/git/poky/" rel="nofollow">https://git.yoctoproject.org/git/poky/</a>': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none</td><td class="time"><a href="#t2019-05-04T15:20:59" class="time">15:20</a></td></tr>
+<tr id="t2019-05-04T15:25:55"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">'export GIT_SSL_NO_VERIFY=true'&nbsp;&nbsp;will allow the checkouts to proceed for casual use but certain environments require verification</td><td class="time"><a href="#t2019-05-04T15:25:55" class="time">15:25</a></td></tr>
+<tr id="t2019-05-04T16:58:09"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">hickswgjr: yes, we know, we'll sort as soon as we can</td><td class="time"><a href="#t2019-05-04T16:58:09" class="time">16:58</a></td></tr>
+<tr id="t2019-05-04T17:29:08"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">RP: thx :)</td><td class="time"><a href="#t2019-05-04T17:29:08" class="time">17:29</a></td></tr>
+<tr id="t2019-05-04T17:48:41"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">I have a vendor bsp that won't update their Yocto layers.&nbsp;&nbsp;All I really need from them is their Linux kernel which has been cherry picked out of that older Yocto build and used standalone successfully.</td><td class="time"><a href="#t2019-05-04T17:48:41" class="time">17:48</a></td></tr>
+<tr id="t2019-05-04T17:49:02"><th class="nick" style="background: #407a40">hickswgjr</th><td class="text" style="color: #407a40">Isn't there some mechanism in poky to reference an external kernel tree?</td><td class="time"><a href="#t2019-05-04T17:49:02" class="time">17:49</a></td></tr>
+<tr id="t2019-05-04T17:55:37"><th class="nick" style="background: #818144">Crofton</th><td class="text" style="color: #818144">vendor kernels are the worst</td><td class="time"><a href="#t2019-05-04T17:55:37" class="time">17:55</a></td></tr>
+<tr id="t2019-05-04T18:02:43"><td class="nickchange" colspan="2">*** kroon_ is now known as kroon</td><td><a href="#t2019-05-04T18:02:43" class="time">18:02</a></td></tr>
+<tr id="t2019-05-04T20:40:02"><td class="action" colspan="2">* armpit Arrg yp cert issue </td><td><a href="#t2019-05-04T20:40:02" class="time">20:40</a></td></tr>
+<tr id="t2019-05-04T21:09:40"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: should be fixed now</td><td class="time"><a href="#t2019-05-04T21:09:40" class="time">21:09</a></td></tr>
+<tr id="t2019-05-04T21:10:10"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">AB had some failures</td><td class="time"><a href="#t2019-05-04T21:10:10" class="time">21:10</a></td></tr>
+<tr id="t2019-05-04T21:10:24"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">re-running test to double check</td><td class="time"><a href="#t2019-05-04T21:10:24" class="time">21:10</a></td></tr>
+<tr id="t2019-05-04T21:11:20"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: my -next build had the same issue :/</td><td class="time"><a href="#t2019-05-04T21:11:20" class="time">21:11</a></td></tr>
+<tr id="t2019-05-04T21:11:22"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">may be a timing thing</td><td class="time"><a href="#t2019-05-04T21:11:22" class="time">21:11</a></td></tr>
+<tr id="t2019-05-04T21:11:42"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">hehe, AB is a cert selftest</td><td class="time"><a href="#t2019-05-04T21:11:42" class="time">21:11</a></td></tr>
+<tr id="t2019-05-04T21:20:46"><td class="action" colspan="2">* armpit just doing weekly thud build for base line</td><td><a href="#t2019-05-04T21:20:46" class="time">21:20</a></td></tr>
+<tr id="t2019-05-04T21:21:29"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2019-05-04T21:21:29" class="time">21:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-05-03.log.html">&#171; Friday, 2019-05-03</a> <a href="index.html">Index</a> <a href="%23yocto.2019-05-05.log.html">Sunday, 2019-05-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Tuesday, 2019-12-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Tuesday, 2019-12-24</h1>
+<div class="navigation"> <a href="%23yocto.2019-12-23.log.html">&#171; Monday, 2019-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-25.log.html">Wednesday, 2019-12-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-12-24T05:19:54"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How to set i.p for usb0 before imx board boots? &lt;<a href="https://stackoverflow.com/questions/58592145/how-to-set-i-p-for-usb0-before-imx-board-boots&gt;" rel="nofollow">https://stackoverflow.com/questions/58592145/how-to-set-i-p-for-usb0-before-imx-board-boots&gt;</a></td><td class="time"><a href="#t2019-12-24T05:19:54" class="time">05:19</a></td></tr>
+<tr id="t2019-12-24T07:45:19"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Hi. I tried to build python in my image (after deploying) and I get the following error:</td><td class="time"><a href="#t2019-12-24T07:45:19" class="time">07:45</a></td></tr>
+<tr id="t2019-12-24T07:45:32"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Python build finished, but the necessary bits to build these modules were not found:_bsddb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _curses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_curses_panel&nbsp;&nbsp; _sqlite3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ssl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _tkinter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsddb185&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bz2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dbm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gdbm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sunaudiodev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zlib</td><td class="time"><a href="#t2019-12-24T07:45:32" class="time">07:45</a></td></tr>
+<tr id="t2019-12-24T07:45:45"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">After running "make" command</td><td class="time"><a href="#t2019-12-24T07:45:45" class="time">07:45</a></td></tr>
+<tr id="t2019-12-24T07:48:53"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">The problem is that I have installed sqlite3, zlib, etc. on the image (and it still warns about them), and in addition, I can't find some packages, such as "bsddb"</td><td class="time"><a href="#t2019-12-24T07:48:53" class="time">07:48</a></td></tr>
+<tr id="t2019-12-24T07:49:35"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Any help?</td><td class="time"><a href="#t2019-12-24T07:49:35" class="time">07:49</a></td></tr>
+<tr id="t2019-12-24T14:37:22"><th class="nick" style="background: #42427e">nacknick</th><td class="text" style="color: #42427e">Did someone answer my previous question? Unfortunately I realized that (again) I've been disconnected from the channel</td><td class="time"><a href="#t2019-12-24T14:37:22" class="time">14:37</a></td></tr>
+<tr id="t2019-12-24T16:04:35"><th class="nick" style="background: #818144">marble_visions</th><td class="text" style="color: #818144">milloni: re: distro vs machine for rel/dev.. thanks for the input! i'll ping LetoThe2nd in the following weeks.. in the meantime, happy holidays everyone!</td><td class="time"><a href="#t2019-12-24T16:04:35" class="time">16:04</a></td></tr>
+<tr id="t2019-12-24T16:04:54"><th class="nick" style="background: #854685">milloni</th><td class="text" style="color: #854685">thanks, happy holidays to you too!</td><td class="time"><a href="#t2019-12-24T16:04:54" class="time">16:04</a></td></tr>
+<tr id="t2019-12-24T16:22:29"><th class="nick" style="background: #854685">milloni</th><td class="text" style="color: #854685">nacknick: no one did, sorry</td><td class="time"><a href="#t2019-12-24T16:22:29" class="time">16:22</a></td></tr>
+<tr id="t2019-12-24T16:23:14"><th class="nick" style="background: #854685">milloni</th><td class="text" style="color: #854685">nacknick: how are you trying to build python "in your image"</td><td class="time"><a href="#t2019-12-24T16:23:14" class="time">16:23</a></td></tr>
+<tr id="t2019-12-24T16:23:38"><th class="nick" style="background: #854685">milloni</th><td class="text" style="color: #854685">i would recommend against building anything "in the image" if i understand your intention correctly</td><td class="time"><a href="#t2019-12-24T16:23:38" class="time">16:23</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-12-23.log.html">&#171; Monday, 2019-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-25.log.html">Wednesday, 2019-12-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-12-01</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-12-01</h1>
+<div class="navigation"> <a href="%23yocto.2019-11-30.log.html">&#171; Saturday, 2019-11-30</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-02.log.html">Monday, 2019-12-02 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-12-01T14:18:38"><th class="nick" style="background: #407a40">tgamblin</th><td class="text" style="color: #407a40">morning</td><td class="time"><a href="#t2019-12-01T14:18:38" class="time">14:18</a></td></tr>
+<tr id="t2019-12-01T15:43:09"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2019-12-01T15:43:09" class="time">15:43</a></td></tr>
+<tr id="t2019-12-01T16:44:44"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">khem: finally successfully build gcc-9.2.0</td><td class="time"><a href="#t2019-12-01T16:44:44" class="time">16:44</a></td></tr>
+<tr id="t2019-12-01T17:22:46"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: bitbake-layers add-layer meta-python meta-raspberrypi failed &lt;<a href="https://stackoverflow.com/questions/59127987/bitbake-layers-add-layer-meta-python-meta-raspberrypi-failed&gt;" rel="nofollow">https://stackoverflow.com/questions/59127987/bitbake-layers-add-layer-meta-python-meta-raspberrypi-failed&gt;</a></td><td class="time"><a href="#t2019-12-01T17:22:46" class="time">17:22</a></td></tr>
+<tr id="t2019-12-01T17:44:53"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">another one: <a href="https://pastebin.com/gQS9kEd5" rel="nofollow">https://pastebin.com/gQS9kEd5</a></td><td class="time"><a href="#t2019-12-01T17:44:53" class="time">17:44</a></td></tr>
+<tr id="t2019-12-01T17:44:55"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">darkice</td><td class="time"><a href="#t2019-12-01T17:44:55" class="time">17:44</a></td></tr>
+<tr id="t2019-12-01T17:46:55"><th class="nick" style="background: #854685">xtron</th><td class="text" style="color: #854685">bitbaking image recipe with IMAGE_INSTALL_append "systemd-analyze" gives me error 'nothing RPROVIDES systemd-analyze' but works when added in conf/local.conf, is it about sequence of parsing DISTRO_FEATURE and IMAGE_INSTALL ?</td><td class="time"><a href="#t2019-12-01T17:46:55" class="time">17:46</a></td></tr>
+<tr id="t2019-12-01T18:22:54"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: How to run ksize.py tool of Yocto when build a core-image-minimal image? &lt;<a href="https://stackoverflow.com/questions/48161581/how-to-run-ksize-py-tool-of-yocto-when-build-a-core-image-minimal-image&gt;" rel="nofollow">https://stackoverflow.com/questions/48161581/how-to-run-ksize-py-tool-of-yocto-when-build-a-core-image-minimal-image&gt;</a></td><td class="time"><a href="#t2019-12-01T18:22:54" class="time">18:22</a></td></tr>
+<tr id="t2019-12-01T20:34:27"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">LFSVeteran:good progress</td><td class="time"><a href="#t2019-12-01T20:34:27" class="time">20:34</a></td></tr>
+<tr id="t2019-12-01T20:34:39"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e"> :D</td><td class="time"><a href="#t2019-12-01T20:34:39" class="time">20:34</a></td></tr>
+<tr id="t2019-12-01T20:35:05"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">but now trouble with the packages I all ready had build...</td><td class="time"><a href="#t2019-12-01T20:35:05" class="time">20:35</a></td></tr>
+<tr id="t2019-12-01T20:35:35"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">you need to add --sysroot=/opt/aarch64-unknown-linux-gnu/aarch64-unknown-linux-gnu/sysroot to your CFLAGS</td><td class="time"><a href="#t2019-12-01T20:35:35" class="time">20:35</a></td></tr>
+<tr id="t2019-12-01T20:36:22"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">somehow I feel, if you used Yocto/Openembedded project then you wont have to fight these things, they are already taken care of</td><td class="time"><a href="#t2019-12-01T20:36:22" class="time">20:36</a></td></tr>
+<tr id="t2019-12-01T20:36:39"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">is there particular reason you are doing your own ?</td><td class="time"><a href="#t2019-12-01T20:36:39" class="time">20:36</a></td></tr>
+<tr id="t2019-12-01T20:39:05"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">I'm used to do it like this before, however never had so much trouble with it. It was always creating the cross compiler in a few steps, then build your packages and done...</td><td class="time"><a href="#t2019-12-01T20:39:05" class="time">20:39</a></td></tr>
+<tr id="t2019-12-01T20:48:29"><th class="nick" style="background: #42427e">LFSVeteran</th><td class="text" style="color: #42427e">for example: I have "checking for xmlInitParser in -lxml2... no" with libarchive now, but actually it can't find some glibc libs</td><td class="time"><a href="#t2019-12-01T20:48:29" class="time">20:48</a></td></tr>
+<tr id="t2019-12-01T20:53:15"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: Installing multiple folders &lt;<a href="https://stackoverflow.com/questions/59129849/installing-multiple-folders&gt;" rel="nofollow">https://stackoverflow.com/questions/59129849/installing-multiple-folders&gt;</a></td><td class="time"><a href="#t2019-12-01T20:53:15" class="time">20:53</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-11-30.log.html">&#171; Saturday, 2019-11-30</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-02.log.html">Monday, 2019-12-02 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

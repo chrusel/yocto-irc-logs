@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-08-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-08-04</h1>
+<div class="navigation"> <a href="%23yocto.2019-08-03.log.html">&#171; Saturday, 2019-08-03</a> <a href="index.html">Index</a> <a href="%23yocto.2019-08-05.log.html">Monday, 2019-08-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-08-04T02:01:20"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2019-08-04T02:01:20" class="time">02:01</a></td></tr>
+<tr id="t2019-08-04T17:53:33"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">so i have just had a wacky thought. one of the things i noticed while debugging the O_NOFOLLOW stuff is that part of the reason it can be hard to catch things in pseudo is that it keeps automatically fixing stuff. which is *usually* what we want, I think.</td><td class="time"><a href="#t2019-08-04T17:53:33" class="time">17:53</a></td></tr>
+<tr id="t2019-08-04T17:54:15"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">but i think it might be useful to have a compile flag which makes it stop doing the fastop optimization, and instead, whenever an op would cause a database fixup to happen, return a diagnostic to the client *which causes it to abort with a diagnostic message*.</td><td class="time"><a href="#t2019-08-04T17:54:15" class="time">17:54</a></td></tr>
+<tr id="t2019-08-04T17:54:46"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">so the first op that comes in with the wrong file type, or a mismatched inode, or something, would instantly abort and say "this path looks wrong, what we have in the database is..."</td><td class="time"><a href="#t2019-08-04T17:54:46" class="time">17:54</a></td></tr>
+<tr id="t2019-08-04T17:55:06"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">and my guess is that a couple of builds with that would shake out a handful of bugs and probably fix a lot of strange but sporadic behavior.</td><td class="time"><a href="#t2019-08-04T17:55:06" class="time">17:55</a></td></tr>
+<tr id="t2019-08-04T18:42:12"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">seebs: probably a runtime option</td><td class="time"><a href="#t2019-08-04T18:42:12" class="time">18:42</a></td></tr>
+<tr id="t2019-08-04T18:42:37"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">and maybe send them as warnings all the time</td><td class="time"><a href="#t2019-08-04T18:42:37" class="time">18:42</a></td></tr>
+<tr id="t2019-08-04T18:45:18"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">possible. it's harder in some cases because we also want to send the actual responses. the issue is partially that there's a bit of protocol change; right now, for a lot of ops that are only telling the server thing, the response happens instantly, before the server looks at the database.</td><td class="time"><a href="#t2019-08-04T18:45:18" class="time">18:45</a></td></tr>
+<tr id="t2019-08-04T22:01:34"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">seebs: I'd happily try some builds with such a config</td><td class="time"><a href="#t2019-08-04T22:01:34" class="time">22:01</a></td></tr>
+<tr id="t2019-08-04T23:10:54"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">seebs: if it can collect the responses and inform it might still be useful for post checks</td><td class="time"><a href="#t2019-08-04T23:10:54" class="time">23:10</a></td></tr>
+<tr id="t2019-08-04T23:11:21"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">it's on the list of things i will get to in my Copious Free Time</td><td class="time"><a href="#t2019-08-04T23:11:21" class="time">23:11</a></td></tr>
+<tr id="t2019-08-04T23:36:15"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">do you need that 25th hr in the day ?</td><td class="time"><a href="#t2019-08-04T23:36:15" class="time">23:36</a></td></tr>
+<tr id="t2019-08-04T23:36:27"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">secrets !!</td><td class="time"><a href="#t2019-08-04T23:36:27" class="time">23:36</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-08-03.log.html">&#171; Saturday, 2019-08-03</a> <a href="index.html">Index</a> <a href="%23yocto.2019-08-05.log.html">Monday, 2019-08-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

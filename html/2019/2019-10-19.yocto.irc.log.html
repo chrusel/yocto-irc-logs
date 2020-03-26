@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-10-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-10-19</h1>
+<div class="navigation"> <a href="%23yocto.2019-10-18.log.html">&#171; Friday, 2019-10-18</a> <a href="index.html">Index</a> <a href="%23yocto.2019-10-20.log.html">Sunday, 2019-10-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-10-19T08:24:34"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2019-10-19T08:24:34" class="time">08:24</a></td></tr>
+<tr id="t2019-10-19T08:32:04"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How to enable aarch64-linux-gnu-binutils in linaro toolchain &lt;<a href="https://stackoverflow.com/questions/58461794/how-to-enable-aarch64-linux-gnu-binutils-in-linaro-toolchain&gt;" rel="nofollow">https://stackoverflow.com/questions/58461794/how-to-enable-aarch64-linux-gnu-binutils-in-linaro-toolchain&gt;</a></td><td class="time"><a href="#t2019-10-19T08:32:04" class="time">08:32</a></td></tr>
+<tr id="t2019-10-19T10:06:52"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2019-10-19T10:06:52" class="time">10:06</a></td></tr>
+<tr id="t2019-10-19T11:32:27"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Optimizing the footprint of Python Installation for Embedded System &lt;<a href="https://stackoverflow.com/questions/58463122/optimizing-the-footprint-of-python-installation-for-embedded-system&gt;" rel="nofollow">https://stackoverflow.com/questions/58463122/optimizing-the-footprint-of-python-installation-for-embedded-system&gt;</a></td><td class="time"><a href="#t2019-10-19T11:32:27" class="time">11:32</a></td></tr>
+<tr id="t2019-10-19T12:02:32"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How to deploy files to /boot partition with Yocto &lt;<a href="https://stackoverflow.com/questions/56914301/how-to-deploy-files-to-boot-partition-with-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/56914301/how-to-deploy-files-to-boot-partition-with-yocto&gt;</a></td><td class="time"><a href="#t2019-10-19T12:02:32" class="time">12:02</a></td></tr>
+<tr id="t2019-10-19T14:33:49"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">How can I find what these do? IMAGE_INSTALL_append =</td><td class="time"><a href="#t2019-10-19T14:33:49" class="time">14:33</a></td></tr>
+<tr id="t2019-10-19T14:33:49"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;python3</td><td class="time"><a href="#t2019-10-19T14:33:49" class="time">14:33</a></td></tr>
+<tr id="t2019-10-19T14:33:49"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;python3-core</td><td class="time"><a href="#t2019-10-19T14:33:49" class="time">14:33</a></td></tr>
+<tr id="t2019-10-19T14:33:49"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;python3-misc</td><td class="time"><a href="#t2019-10-19T14:33:49" class="time">14:33</a></td></tr>
+<tr id="t2019-10-19T14:34:08"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">Like what packages python3-misc installs?</td><td class="time"><a href="#t2019-10-19T14:34:08" class="time">14:34</a></td></tr>
+<tr id="t2019-10-19T14:49:21"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">Pardon for dumb question but I am new. Where I can find such packages?</td><td class="time"><a href="#t2019-10-19T14:49:21" class="time">14:49</a></td></tr>
+<tr id="t2019-10-19T16:00:45"><th class="nick" style="background: #42427e">abhiarora44</th><td class="text" style="color: #42427e">Is python3-manifest.json right file to look for?</td><td class="time"><a href="#t2019-10-19T16:00:45" class="time">16:00</a></td></tr>
+<tr id="t2019-10-19T18:48:07"><th class="nick" style="background: #818144">LetoThe2nd</th><td class="text" style="color: #818144">abhiarora44: the various manifest files that are created right next to your image are usually good starting points. the command oe-pkgdata-util can tell you which files a package brings, and also which recipe provides it</td><td class="time"><a href="#t2019-10-19T18:48:07" class="time">18:48</a></td></tr>
+<tr id="t2019-10-19T21:49:18"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2019-10-19T21:49:18" class="time">21:49</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-10-18.log.html">&#171; Friday, 2019-10-18</a> <a href="index.html">Index</a> <a href="%23yocto.2019-10-20.log.html">Sunday, 2019-10-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

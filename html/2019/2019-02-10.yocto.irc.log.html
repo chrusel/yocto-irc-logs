@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-02-10</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-02-10</h1>
+<div class="navigation"> <a href="%23yocto.2019-02-09.log.html">&#171; Saturday, 2019-02-09</a> <a href="index.html">Index</a> <a href="%23yocto.2019-02-11.log.html">Monday, 2019-02-11 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-02-10T09:29:35"><th class="nick" style="background: #407a40">angelo_ts</th><td class="text" style="color: #407a40">what are exactly doing the linux "clrset" bit funcs ? They work with a mask so not totally clear to me</td><td class="time"><a href="#t2019-02-10T09:29:35" class="time">09:29</a></td></tr>
+<tr id="t2019-02-10T09:29:58"><th class="nick" style="background: #407a40">angelo_ts</th><td class="text" style="color: #407a40">ops wrong chan sry</td><td class="time"><a href="#t2019-02-10T09:29:58" class="time">09:29</a></td></tr>
+<tr id="t2019-02-10T10:05:44"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: hey, did you use qtwebengine recently ?</td><td class="time"><a href="#t2019-02-10T10:05:44" class="time">10:05</a></td></tr>
+<tr id="t2019-02-10T10:06:07"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: seems I'm not getting input events to the simplebrowser webengine part, but the UI gets them ...</td><td class="time"><a href="#t2019-02-10T10:06:07" class="time">10:06</a></td></tr>
+<tr id="t2019-02-10T10:06:25"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: it worked on sumo, doesn't work on thud</td><td class="time"><a href="#t2019-02-10T10:06:25" class="time">10:06</a></td></tr>
+<tr id="t2019-02-10T18:14:36"><th class="nick" style="background: #818144">no_such_user</th><td class="text" style="color: #818144">Heya, can anyone tell me about the autobuilder? Im looking to set up a local installation here but it looks like the yocto-autobuilder repo has been static for 12 months and theres a new yocto-autobuilder2 (which is on the public server) which doesnt have much documentation as far as I can see? Which should I be using? I had a crack at installing 2 via the notes in README-WALKTHROUGHS.md but had all manner</td><td class="time"><a href="#t2019-02-10T18:14:36" class="time">18:14</a></td></tr>
+<tr id="t2019-02-10T18:14:36"><th class="nick" style="background: #818144">no_such_user</th><td class="text" style="color: #818144">of problems with bugs. I guess I need to know the specific s/w environment on the working machine to reproduce it?</td><td class="time"><a href="#t2019-02-10T18:14:36" class="time">18:14</a></td></tr>
+<tr id="t2019-02-10T19:13:27"><th class="nick" style="background: #854685">tgoodwin</th><td class="text" style="color: #854685">I'm trying to understand how to use the populate-volatiles.sh script for a read-only-rootfs.&nbsp;&nbsp;Is there a way to have the resulting tmpfs be populated with the original configuration file?&nbsp;&nbsp;For example, I create a link and file reference in my volatiles configuration for /etc/my.cfg.&nbsp;&nbsp;On boot, that my.cfg file is empty.</td><td class="time"><a href="#t2019-02-10T19:13:27" class="time">19:13</a></td></tr>
+<tr id="t2019-02-10T20:12:17"><th class="nick" style="background: #854685">tgoodwin</th><td class="text" style="color: #854685">looks like the way you would do that is to store the read-only version of the configuration file somewhere else in the system and then have populate-volatiles copy that to a tmpfs location as well as setup a link from a more canonical location like etc to point to the tmpfs version.&nbsp;&nbsp;That way your config is restored on startup but can be tweaked at runtime.</td><td class="time"><a href="#t2019-02-10T20:12:17" class="time">20:12</a></td></tr>
+<tr id="t2019-02-10T20:13:16"><th class="nick" style="background: #854685">tgoodwin</th><td class="text" style="color: #854685">the 'f' line of one's volatile configuration would be immutable version of the config file in place of 'none' in all the provided examples.</td><td class="time"><a href="#t2019-02-10T20:13:16" class="time">20:13</a></td></tr>
+<tr id="t2019-02-10T20:49:31"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">Marex: I use libinput and it works ok</td><td class="time"><a href="#t2019-02-10T20:49:31" class="time">20:49</a></td></tr>
+<tr id="t2019-02-10T20:49:45"><td class="nickchange" colspan="2">*** vmesons is now known as vmeson</td><td><a href="#t2019-02-10T20:49:45" class="time">20:49</a></td></tr>
+<tr id="t2019-02-10T21:02:30"><th class="nick" style="background: #818144">no_such_user</th><td class="text" style="color: #818144">Does anyone have SSH access to the autobuilder machine and willing to get me the output from "pip list", "npm -v", "nodejs -v" and "yarn -v"? Thanks!</td><td class="time"><a href="#t2019-02-10T21:02:30" class="time">21:02</a></td></tr>
+<tr id="t2019-02-10T21:02:44"><th class="nick" style="background: #818144">no_such_user</th><td class="text" style="color: #818144">(Im assuming its not running in venv mind...!)</td><td class="time"><a href="#t2019-02-10T21:02:44" class="time">21:02</a></td></tr>
+<tr id="t2019-02-10T21:37:05"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: on sumo or thud ?</td><td class="time"><a href="#t2019-02-10T21:37:05" class="time">21:37</a></td></tr>
+<tr id="t2019-02-10T21:37:22"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: on sumo it works fine, on thud I only get input events to the UI, not the "webengine" part</td><td class="time"><a href="#t2019-02-10T21:37:22" class="time">21:37</a></td></tr>
+<tr id="t2019-02-10T22:05:37"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">i think its master 5.12 that i have</td><td class="time"><a href="#t2019-02-10T22:05:37" class="time">22:05</a></td></tr>
+<tr id="t2019-02-10T22:26:40"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: might as well try that ... although, could it be broken in thud ?</td><td class="time"><a href="#t2019-02-10T22:26:40" class="time">22:26</a></td></tr>
+<tr id="t2019-02-10T22:30:38"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">i dont think it should be broken since when thud was master it worked ok too</td><td class="time"><a href="#t2019-02-10T22:30:38" class="time">22:30</a></td></tr>
+<tr id="t2019-02-10T22:37:57"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">khem: why would it work on sumo and not on thud then ?</td><td class="time"><a href="#t2019-02-10T22:37:57" class="time">22:37</a></td></tr>
+<tr id="t2019-02-10T22:38:28"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">the change in qt version is the only thing I can think of</td><td class="time"><a href="#t2019-02-10T22:38:28" class="time">22:38</a></td></tr>
+<tr id="t2019-02-10T22:38:55"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">and since the UI elements react, except for the html website, I suspect it has to do with the webengine part only</td><td class="time"><a href="#t2019-02-10T22:38:55" class="time">22:38</a></td></tr>
+<tr id="t2019-02-10T22:43:41"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">Marex: this is what I use as a bbappend for qtbase PACKAGECONFIG_append = " libinput eglfs examples linuxfb tslib xkb xkbcommon-evdev"</td><td class="time"><a href="#t2019-02-10T22:43:41" class="time">22:43</a></td></tr>
+<tr id="t2019-02-10T22:43:56"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">if you dont need eglfs you can remove it</td><td class="time"><a href="#t2019-02-10T22:43:56" class="time">22:43</a></td></tr>
+<tr id="t2019-02-10T23:53:33"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">no_such_user: definitely go for autobuilder2. Its standard upstream buildbot, nothing special about that</td><td class="time"><a href="#t2019-02-10T23:53:33" class="time">23:53</a></td></tr>
+<tr id="t2019-02-10T23:57:04"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">no_such_user: hopefully you're around tomorrow and we can discuss</td><td class="time"><a href="#t2019-02-10T23:57:04" class="time">23:57</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-02-09.log.html">&#171; Saturday, 2019-02-09</a> <a href="index.html">Index</a> <a href="%23yocto.2019-02-11.log.html">Monday, 2019-02-11 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

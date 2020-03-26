@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-01-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-01-26</h1>
+<div class="navigation"> <a href="%23yocto.2019-01-25.log.html">&#171; Friday, 2019-01-25</a> <a href="index.html">Index</a> <a href="%23yocto.2019-01-27.log.html">Sunday, 2019-01-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-01-26T02:45:55"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2019-01-26T02:45:55" class="time">02:45</a></td></tr>
+<tr id="t2019-01-26T03:44:10"><th class="nick" style="background: #407a40">Josh_</th><td class="text" style="color: #407a40">Is it possible, when splitting a recipe into two packages, to change the arch of only one package? (example: setting foopackage-doc arch to "all") I can't seem to find a way to set PACKAGE_ARCH for a single package.</td><td class="time"><a href="#t2019-01-26T03:44:10" class="time">03:44</a></td></tr>
+<tr id="t2019-01-26T03:45:19"><th class="nick" style="background: #407a40">Josh_</th><td class="text" style="color: #407a40">I've tried PACKAGE_ARCH_${PN}-doc which didn't work.</td><td class="time"><a href="#t2019-01-26T03:45:19" class="time">03:45</a></td></tr>
+<tr id="t2019-01-26T03:54:45"><th class="nick" style="background: #407a40">Josh_</th><td class="text" style="color: #407a40">grepping for "PACKAGE_ARCH_" seems to indicate overriding is possible for machine names at least.</td><td class="time"><a href="#t2019-01-26T03:54:45" class="time">03:54</a></td></tr>
+<tr id="t2019-01-26T03:57:16"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Yocto recipe for PostgreSQL server &lt;<a href="https://stackoverflow.com/questions/54375483/yocto-recipe-for-postgresql-server&gt;" rel="nofollow">https://stackoverflow.com/questions/54375483/yocto-recipe-for-postgresql-server&gt;</a></td><td class="time"><a href="#t2019-01-26T03:57:16" class="time">03:57</a></td></tr>
+<tr id="t2019-01-26T16:39:34"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: i am seeing this error on several builds now <a href="http://errors.yoctoproject.org/Errors/Details/218982/" rel="nofollow">http://errors.yoctoproject.org/Errors/Details/218982/</a> ideas ? musl or glibc does not matter arches also dont matter</td><td class="time"><a href="#t2019-01-26T16:39:34" class="time">16:39</a></td></tr>
+<tr id="t2019-01-26T17:47:55"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: the recent -src package change?</td><td class="time"><a href="#t2019-01-26T17:47:55" class="time">17:47</a></td></tr>
+<tr id="t2019-01-26T17:49:54"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: if that was -next there was a patch in there which I temporally removed again</td><td class="time"><a href="#t2019-01-26T17:49:54" class="time">17:49</a></td></tr>
+<tr id="t2019-01-26T18:12:36"><th class="nick" style="background: #488888">everclear</th><td class="text" style="color: #488888">join #BBB</td><td class="time"><a href="#t2019-01-26T18:12:36" class="time">18:12</a></td></tr>
+<tr id="t2019-01-26T18:18:46"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: ok that might be it. It was based on master-next of 2 days old</td><td class="time"><a href="#t2019-01-26T18:18:46" class="time">18:18</a></td></tr>
+<tr id="t2019-01-26T22:40:11"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">guys, how is perf audit mode supposed to work in thud?</td><td class="time"><a href="#t2019-01-26T22:40:11" class="time">22:40</a></td></tr>
+<tr id="t2019-01-26T22:40:17"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">when i set: PACKAGECONFIG_append_pn-perf = " audit"</td><td class="time"><a href="#t2019-01-26T22:40:17" class="time">22:40</a></td></tr>
+<tr id="t2019-01-26T22:40:32"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">bitbake fails because nothing provides audit</td><td class="time"><a href="#t2019-01-26T22:40:32" class="time">22:40</a></td></tr>
+<tr id="t2019-01-26T22:40:54"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">do i need to add meta-selinux for this? :(</td><td class="time"><a href="#t2019-01-26T22:40:54" class="time">22:40</a></td></tr>
+<tr id="t2019-01-26T22:43:48"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">oh joy, meta-selinux is not compatible with thud</td><td class="time"><a href="#t2019-01-26T22:43:48" class="time">22:43</a></td></tr>
+<tr id="t2019-01-26T22:44:00"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">let's hack...</td><td class="time"><a href="#t2019-01-26T22:44:00" class="time">22:44</a></td></tr>
+<tr id="t2019-01-26T23:07:54"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">derRichard: maybe its in another layer?</td><td class="time"><a href="#t2019-01-26T23:07:54" class="time">23:07</a></td></tr>
+<tr id="t2019-01-26T23:11:28"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">RP: <a href="http://layers.openembedded.org/layerindex/branch/master/recipes/?q=audit" rel="nofollow">http://layers.openembedded.org/layerindex/branch/master/recipes/?q=audit</a></td><td class="time"><a href="#t2019-01-26T23:11:28" class="time">23:11</a></td></tr>
+<tr id="t2019-01-26T23:11:31"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">looks all not good</td><td class="time"><a href="#t2019-01-26T23:11:31" class="time">23:11</a></td></tr>
+<tr id="t2019-01-26T23:11:40"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">so far meta-selinux seems to work</td><td class="time"><a href="#t2019-01-26T23:11:40" class="time">23:11</a></td></tr>
+<tr id="t2019-01-26T23:11:54"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">but i find it odd that something on oe-core depends on it...</td><td class="time"><a href="#t2019-01-26T23:11:54" class="time">23:11</a></td></tr>
+<tr id="t2019-01-26T23:16:49"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">derRichard: its not a default option. It makes more sense to have the PACKAGECONFIG in the recipes than not</td><td class="time"><a href="#t2019-01-26T23:16:49" class="time">23:16</a></td></tr>
+<tr id="t2019-01-26T23:18:48"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">hm, ok</td><td class="time"><a href="#t2019-01-26T23:18:48" class="time">23:18</a></td></tr>
+<tr id="t2019-01-26T23:19:09"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">derRichard: What is the alternative? All possible dependencies must be in core?</td><td class="time"><a href="#t2019-01-26T23:19:09" class="time">23:19</a></td></tr>
+<tr id="t2019-01-26T23:19:28"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">well, audit is core stuff IMHO</td><td class="time"><a href="#t2019-01-26T23:19:28" class="time">23:19</a></td></tr>
+<tr id="t2019-01-26T23:19:36"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">We have half written PACKAGECONFIG lines which only disable things?</td><td class="time"><a href="#t2019-01-26T23:19:36" class="time">23:19</a></td></tr>
+<tr id="t2019-01-26T23:20:03"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">derRichard: everyones definition of core is different. I do agree that I think we're missing a few things</td><td class="time"><a href="#t2019-01-26T23:20:03" class="time">23:20</a></td></tr>
+<tr id="t2019-01-26T23:21:00"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">without audit, perf does not have the "trace" command which is something very useful</td><td class="time"><a href="#t2019-01-26T23:21:00" class="time">23:21</a></td></tr>
+<tr id="t2019-01-26T23:23:36"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">derRichard: that would make a case for adding it...</td><td class="time"><a href="#t2019-01-26T23:23:36" class="time">23:23</a></td></tr>
+<tr id="t2019-01-26T23:28:00"><th class="nick" style="background: #8c4a4a">derRichard</th><td class="text" style="color: #8c4a4a">good :)</td><td class="time"><a href="#t2019-01-26T23:28:00" class="time">23:28</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-01-25.log.html">&#171; Friday, 2019-01-25</a> <a href="index.html">Index</a> <a href="%23yocto.2019-01-27.log.html">Sunday, 2019-01-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

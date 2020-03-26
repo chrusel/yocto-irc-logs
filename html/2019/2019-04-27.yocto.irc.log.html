@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-04-27</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-04-27</h1>
+<div class="navigation"> <a href="%23yocto.2019-04-26.log.html">&#171; Friday, 2019-04-26</a> <a href="index.html">Index</a> <a href="%23yocto.2019-04-28.log.html">Sunday, 2019-04-28 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-04-27T10:30:28"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">what exactly can i share between different build directories, to save time? for example, can i just symlink downloads/?</td><td class="time"><a href="#t2019-04-27T10:30:28" class="time">10:30</a></td></tr>
+<tr id="t2019-04-27T10:35:08"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">BCMM: sstate-cache too</td><td class="time"><a href="#t2019-04-27T10:35:08" class="time">10:35</a></td></tr>
+<tr id="t2019-04-27T10:35:39"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">depends on the archs you're attempting to share things for</td><td class="time"><a href="#t2019-04-27T10:35:39" class="time">10:35</a></td></tr>
+<tr id="t2019-04-27T11:01:24"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">yann: probably trying to share between raspberrypi and raspberrypi3</td><td class="time"><a href="#t2019-04-27T11:01:24" class="time">11:01</a></td></tr>
+<tr id="t2019-04-27T11:01:31"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">yann: what *is* sstate-cache?</td><td class="time"><a href="#t2019-04-27T11:01:31" class="time">11:01</a></td></tr>
+<tr id="t2019-04-27T11:02:39"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">BCMM: it's a cache of build artifacts</td><td class="time"><a href="#t2019-04-27T11:02:39" class="time">11:02</a></td></tr>
+<tr id="t2019-04-27T11:03:17"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">yann: meaning what? binaries and so on?</td><td class="time"><a href="#t2019-04-27T11:03:17" class="time">11:03</a></td></tr>
+<tr id="t2019-04-27T11:04:07"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">yes - if you're sharing between 32bit and 64bit arm platforms, you can't hope to share much more than host binaries</td><td class="time"><a href="#t2019-04-27T11:04:07" class="time">11:04</a></td></tr>
+<tr id="t2019-04-27T11:08:19"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">well that would be a good start</td><td class="time"><a href="#t2019-04-27T11:08:19" class="time">11:08</a></td></tr>
+<tr id="t2019-04-27T11:08:32"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">yann: so it would never be actually *harmful* to share sstate-cache, then?</td><td class="time"><a href="#t2019-04-27T11:08:32" class="time">11:08</a></td></tr>
+<tr id="t2019-04-27T11:08:49"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">I think so</td><td class="time"><a href="#t2019-04-27T11:08:49" class="time">11:08</a></td></tr>
+<tr id="t2019-04-27T11:09:05"><th class="nick" style="background: #407a40">BCMM</th><td class="text" style="color: #407a40">i'll give that a try; thanks</td><td class="time"><a href="#t2019-04-27T11:09:05" class="time">11:09</a></td></tr>
+<tr id="t2019-04-27T11:09:16"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">that's what I'm doing myself anyway :)</td><td class="time"><a href="#t2019-04-27T11:09:16" class="time">11:09</a></td></tr>
+<tr id="t2019-04-27T11:10:07"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">I only switch sstate-cache on major changes that trigger near-full rebuilds</td><td class="time"><a href="#t2019-04-27T11:10:07" class="time">11:10</a></td></tr>
+<tr id="t2019-04-27T14:34:56"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">how can util-linux-script, util-linux-scriptreplay, and probably others creep into an image, when --graphviz does not show them ?</td><td class="time"><a href="#t2019-04-27T14:34:56" class="time">14:34</a></td></tr>
+<tr id="t2019-04-27T14:35:34"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">could that come eg. from something IMAGE_FEATURES ?</td><td class="time"><a href="#t2019-04-27T14:35:34" class="time">14:35</a></td></tr>
+<tr id="t2019-04-27T14:37:10"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">that's a bit unfortunate, as those are not alternative-managed and conflict with busybox applets :)</td><td class="time"><a href="#t2019-04-27T14:37:10" class="time">14:37</a></td></tr>
+<tr id="t2019-04-27T16:00:44"><th class="nick" style="background: #818144">justanotherboy</th><td class="text" style="color: #818144">yann: It might be because of RDEPENDS or RRECOMMENDS of an installed package</td><td class="time"><a href="#t2019-04-27T16:00:44" class="time">16:00</a></td></tr>
+<tr id="t2019-04-27T16:01:02"><th class="nick" style="background: #818144">justanotherboy</th><td class="text" style="color: #818144">yann: What are the conflicts with busybox?</td><td class="time"><a href="#t2019-04-27T16:01:02" class="time">16:01</a></td></tr>
+<tr id="t2019-04-27T19:20:27"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2019-04-27T19:20:27" class="time">19:20</a></td></tr>
+<tr id="t2019-04-27T22:10:27"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">justanotherboy: busybox postinstall fails because /usr/bin/script and scriptreplay are not symlinks - that is, because those binaries are not managed as alternative in util-linux</td><td class="time"><a href="#t2019-04-27T22:10:27" class="time">22:10</a></td></tr>
+<tr id="t2019-04-27T22:11:06"><th class="nick" style="background: #42427e">yann</th><td class="text" style="color: #42427e">justanotherboy: and if they were simply in RDEPENDS/RRECOMMENDS, they would appear in the --graphviz output</td><td class="time"><a href="#t2019-04-27T22:11:06" class="time">22:11</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-04-26.log.html">&#171; Friday, 2019-04-26</a> <a href="index.html">Index</a> <a href="%23yocto.2019-04-28.log.html">Sunday, 2019-04-28 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

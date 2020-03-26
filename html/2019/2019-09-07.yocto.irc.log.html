@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2019-09-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2019-09-07</h1>
+<div class="navigation"> <a href="%23yocto.2019-09-06.log.html">&#171; Friday, 2019-09-06</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-08.log.html">Sunday, 2019-09-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-09-07T12:58:29"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: sorted out those selftest changes. I skipped splitting binutils because the -j does not reuse sstate so the time to build all the pieces is actually longer than the tests themselves</td><td class="time"><a href="#t2019-09-07T12:58:29" class="time">12:58</a></td></tr>
+<tr id="t2019-09-07T13:02:01"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: I was just reading the series, thanks!</td><td class="time"><a href="#t2019-09-07T13:02:01" class="time">13:02</a></td></tr>
+<tr id="t2019-09-07T13:02:22"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: one question,&nbsp;&nbsp;I think we perhaps want toolchain-user without machine as the tags?</td><td class="time"><a href="#t2019-09-07T13:02:22" class="time">13:02</a></td></tr>
+<tr id="t2019-09-07T13:03:07"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: If I run -t machine, would it run the toolchain tests?</td><td class="time"><a href="#t2019-09-07T13:03:07" class="time">13:03</a></td></tr>
+<tr id="t2019-09-07T13:03:13"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: i was not quite sure so i kept the machine tag there</td><td class="time"><a href="#t2019-09-07T13:03:13" class="time">13:03</a></td></tr>
+<tr id="t2019-09-07T13:03:41"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: I think -j does reuse sstate depending on how you configure it?</td><td class="time"><a href="#t2019-09-07T13:03:41" class="time">13:03</a></td></tr>
+<tr id="t2019-09-07T13:04:05"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: if I run "oe-selftest -t machine" what runs?</td><td class="time"><a href="#t2019-09-07T13:04:05" class="time">13:04</a></td></tr>
+<tr id="t2019-09-07T13:04:32"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: everything tagged machine, so yes toolchain tests</td><td class="time"><a href="#t2019-09-07T13:04:32" class="time">13:04</a></td></tr>
+<tr id="t2019-09-07T13:04:53"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: Right, that isn't what we want on the autobuilder</td><td class="time"><a href="#t2019-09-07T13:04:53" class="time">13:04</a></td></tr>
+<tr id="t2019-09-07T13:05:16"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">We'll need to tweak this to drop the machine bit</td><td class="time"><a href="#t2019-09-07T13:05:16" class="time">13:05</a></td></tr>
+<tr id="t2019-09-07T13:05:44"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: sure, will also need to fixup the binutils tags since it is just machine atm</td><td class="time"><a href="#t2019-09-07T13:05:44" class="time">13:05</a></td></tr>
+<tr id="t2019-09-07T13:05:55"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: (not criticism, just trying to ensure we get over the final hurdle with this)</td><td class="time"><a href="#t2019-09-07T13:05:55" class="time">13:05</a></td></tr>
+<tr id="t2019-09-07T13:09:11"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: really appreciate getting these patches btw. I was pondering where we're at earlier and how to proceed</td><td class="time"><a href="#t2019-09-07T13:09:11" class="time">13:09</a></td></tr>
+<tr id="t2019-09-07T13:10:00"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: sorry i thought i was the only one that works outside "office hours" :)</td><td class="time"><a href="#t2019-09-07T13:10:00" class="time">13:10</a></td></tr>
+<tr id="t2019-09-07T13:10:30"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: I can't afford the autobuilder idle time at ths point in the release!</td><td class="time"><a href="#t2019-09-07T13:10:30" class="time">13:10</a></td></tr>
+<tr id="t2019-09-07T13:13:00"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: merged into next with a tweak and quick/full builds fired together. Lets see what that does</td><td class="time"><a href="#t2019-09-07T13:13:00" class="time">13:13</a></td></tr>
+<tr id="t2019-09-07T13:13:21"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">autobuilder sstate should be hot</td><td class="time"><a href="#t2019-09-07T13:13:21" class="time">13:13</a></td></tr>
+<tr id="t2019-09-07T13:13:58"><td class="action" colspan="2">* RP -&gt; afk for a bit</td><td><a href="#t2019-09-07T13:13:58" class="time">13:13</a></td></tr>
+<tr id="t2019-09-07T13:17:35"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: oooppps oh noes python 3.4 vs python 3.7 syntax issue :(</td><td class="time"><a href="#t2019-09-07T13:17:35" class="time">13:17</a></td></tr>
+<tr id="t2019-09-07T13:35:01"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">RP: oh it has always been there :| minor fix (<a href="https://github.com/nathanrossi/openembedded-core/commit/8bb339653335fbe56e317bc6bf3e7e1d6c2007d4" rel="nofollow">https://github.com/nathanrossi/openembedded-core/commit/8bb339653335fbe56e317bc6bf3e7e1d6c2007d4</a>)</td><td class="time"><a href="#t2019-09-07T13:35:01" class="time">13:35</a></td></tr>
+<tr id="t2019-09-07T15:47:01"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: I messed up the AB config so retrying</td><td class="time"><a href="#t2019-09-07T15:47:01" class="time">15:47</a></td></tr>
+<tr id="t2019-09-07T16:08:47"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">nrossi: there are the test cross wrapper in gcc/glibc recipes I think they are redundant now we should remove them</td><td class="time"><a href="#t2019-09-07T16:08:47" class="time">16:08</a></td></tr>
+<tr id="t2019-09-07T16:12:52"><th class="nick" style="background: #407a40">nrossi</th><td class="text" style="color: #407a40">khem: you are talking about the -testgcc script generated by gcc-cross and the glibc-testing.inc which i assume were used for manual testing yes?</td><td class="time"><a href="#t2019-09-07T16:12:52" class="time">16:12</a></td></tr>
+<tr id="t2019-09-07T16:19:39"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem, nrossi: I was wondering if we needed those now</td><td class="time"><a href="#t2019-09-07T16:19:39" class="time">16:19</a></td></tr>
+<tr id="t2019-09-07T16:55:50"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/73/builds/1013" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/73/builds/1013</a> :/</td><td class="time"><a href="#t2019-09-07T16:55:50" class="time">16:55</a></td></tr>
+<tr id="t2019-09-07T17:21:23"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">nrossi:correct, I was probably the only occasional user so we can remove them now</td><td class="time"><a href="#t2019-09-07T17:21:23" class="time">17:21</a></td></tr>
+<tr id="t2019-09-07T18:18:53"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: found and pushed a fix</td><td class="time"><a href="#t2019-09-07T18:18:53" class="time">18:18</a></td></tr>
+<tr id="t2019-09-07T21:00:15"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: merged with a few tweaks and patch rearranging :)</td><td class="time"><a href="#t2019-09-07T21:00:15" class="time">21:00</a></td></tr>
+<tr id="t2019-09-07T21:16:33"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP:I like that my patches are also going in along with oeqa, I guess I should have sent patches to add runit init system today instead of them :)</td><td class="time"><a href="#t2019-09-07T21:16:33" class="time">21:16</a></td></tr>
+<tr id="t2019-09-07T21:17:50"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: its only as it was a simple typo ;-)</td><td class="time"><a href="#t2019-09-07T21:17:50" class="time">21:17</a></td></tr>
+<tr id="t2019-09-07T21:18:02"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: more complex and it would have been defferred</td><td class="time"><a href="#t2019-09-07T21:18:02" class="time">21:18</a></td></tr>
+<tr id="t2019-09-07T21:29:38"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: I plan to add toolchain oeqa to my regular testing</td><td class="time"><a href="#t2019-09-07T21:29:38" class="time">21:29</a></td></tr>
+<tr id="t2019-09-07T22:18:29"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">wat is the suggest approach to install an image into a image? i want an initramfs file in my image</td><td class="time"><a href="#t2019-09-07T22:18:29" class="time">22:18</a></td></tr>
+<tr id="t2019-09-07T22:18:35"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">*what</td><td class="time"><a href="#t2019-09-07T22:18:35" class="time">22:18</a></td></tr>
+<tr id="t2019-09-07T22:46:50"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">look into INITRAMFS_IMAGE_BUNDLE and INITRAMFS_IMAGE</td><td class="time"><a href="#t2019-09-07T22:46:50" class="time">22:46</a></td></tr>
+<tr id="t2019-09-07T23:03:28"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">thx</td><td class="time"><a href="#t2019-09-07T23:03:28" class="time">23:03</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-09-06.log.html">&#171; Friday, 2019-09-06</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-08.log.html">Sunday, 2019-09-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Friday, 2019-05-31</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Friday, 2019-05-31</h1>
+<div class="navigation"> <a href="%23yocto.2019-05-30.log.html">&#171; Thursday, 2019-05-30</a> <a href="index.html">Index</a> <a href="%23yocto.2019-06-01.log.html">Saturday, 2019-06-01 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-05-31T02:51:02"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: What is the difference between Linux Modules, Linux Drivers, and packages &lt;<a href="https://stackoverflow.com/questions/56387961/what-is-the-difference-between-linux-modules-linux-drivers-and-packages&gt;" rel="nofollow">https://stackoverflow.com/questions/56387961/what-is-the-difference-between-linux-modules-linux-drivers-and-packages&gt;</a></td><td class="time"><a href="#t2019-05-31T02:51:02" class="time">02:51</a></td></tr>
+<tr id="t2019-05-31T06:59:25"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2019-05-31T06:59:25" class="time">06:59</a></td></tr>
+<tr id="t2019-05-31T12:25:53"><td class="nickchange" colspan="2">*** georgem_home_ is now known as georgem_home</td><td><a href="#t2019-05-31T12:25:53" class="time">12:25</a></td></tr>
+<tr id="t2019-05-31T12:25:53"><td class="nickchange" colspan="2">*** basic`_ is now known as basic`</td><td><a href="#t2019-05-31T12:25:53" class="time">12:25</a></td></tr>
+<tr id="t2019-05-31T12:52:43"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How to configure multiple I/O Expander PCF8574a in a device tree? &lt;<a href="https://stackoverflow.com/questions/56395077/how-to-configure-multiple-i-o-expander-pcf8574a-in-a-device-tree&gt;" rel="nofollow">https://stackoverflow.com/questions/56395077/how-to-configure-multiple-i-o-expander-pcf8574a-in-a-device-tree&gt;</a></td><td class="time"><a href="#t2019-05-31T12:52:43" class="time">12:52</a></td></tr>
+<tr id="t2019-05-31T13:17:41"><td class="nickchange" colspan="2">*** erakis_ is now known as erakis</td><td><a href="#t2019-05-31T13:17:41" class="time">13:17</a></td></tr>
+<tr id="t2019-05-31T14:53:03"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: do_compile fails when building an image using the yocto-project "no such file or directory" &lt;<a href="https://stackoverflow.com/questions/56397224/do-compile-fails-when-building-an-image-using-the-yocto-project-no-such-file-or&gt;" rel="nofollow">https://stackoverflow.com/questions/56397224/do-compile-fails-when-building-an-image-using-the-yocto-project-no-such-file-or&gt;</a></td><td class="time"><a href="#t2019-05-31T14:53:03" class="time">14:53</a></td></tr>
+<tr id="t2019-05-31T16:08:40"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-05-31T16:08:40" class="time">16:08</a></td></tr>
+<tr id="t2019-05-31T16:14:40"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2019-05-31T16:14:40" class="time">16:14</a></td></tr>
+<tr id="t2019-05-31T17:08:33"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: even if you have a partial patch please do send it out btw</td><td class="time"><a href="#t2019-05-31T17:08:33" class="time">17:08</a></td></tr>
+<tr id="t2019-05-31T17:29:48"><th class="nick" style="background: #818144">litb</th><td class="text" style="color: #818144">hello folks</td><td class="time"><a href="#t2019-05-31T17:29:48" class="time">17:29</a></td></tr>
+<tr id="t2019-05-31T17:31:09"><th class="nick" style="background: #818144">litb</th><td class="text" style="color: #818144">I'm confused that the conditional-assignment syntax is the same as some other "normal" assignments, such as LAYERDEPENDS_layername = ...</td><td class="time"><a href="#t2019-05-31T17:31:09" class="time">17:31</a></td></tr>
+<tr id="t2019-05-31T17:31:20"><th class="nick" style="background: #818144">litb</th><td class="text" style="color: #818144">why do they use the same syntax?</td><td class="time"><a href="#t2019-05-31T17:31:20" class="time">17:31</a></td></tr>
+<tr id="t2019-05-31T17:31:52"><th class="nick" style="background: #818144">litb</th><td class="text" style="color: #818144">i.e talking about that, and conditional-assignments such as&nbsp;&nbsp;DEPENDS_pn-foo = ...</td><td class="time"><a href="#t2019-05-31T17:31:52" class="time">17:31</a></td></tr>
+<tr id="t2019-05-31T17:32:36"><th class="nick" style="background: #818144">litb</th><td class="text" style="color: #818144">those that are controlled by OVERRIDES. my understanding is that things like LAYERDEPENDS_&nbsp;&nbsp;or the FILES_... things that control package generation aren't OVERRIDES-controlld</td><td class="time"><a href="#t2019-05-31T17:32:36" class="time">17:32</a></td></tr>
+<tr id="t2019-05-31T17:53:25"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: packagegroup-core-full-cmdline : Depends: packagegroup-core-full-cmdline-initscripts but it is not going to be installed &lt;<a href="https://stackoverflow.com/questions/56399674/packagegroup-core-full-cmdline-depends-packagegroup-core-full-cmdline-initscr&gt;" rel="nofollow">https://stackoverflow.com/questions/56399674/packagegroup-core-full-cmdline-depends-packagegroup-core-full-cmdline-initscr&gt;</a></td><td class="time"><a href="#t2019-05-31T17:53:25" class="time">17:53</a></td></tr>
+<tr id="t2019-05-31T17:56:28"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">litb: historical artifact. the original syntax was determined back in 2002/2003, based on gentoo's portage, which was shell based. we made it directly parsed, but didn't change all the syntax. looking back, overrides, append, prepend, and remove should have used separate operators, but it's a bit late now without breaking file format compatibility.</td><td class="time"><a href="#t2019-05-31T17:56:28" class="time">17:56</a></td></tr>
+<tr id="t2019-05-31T17:57:31"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">RP: soon. there were a few more hidden dependencies, but I think I have them sorted now</td><td class="time"><a href="#t2019-05-31T17:57:31" class="time">17:57</a></td></tr>
+<tr id="t2019-05-31T17:58:02"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">RP: for libxml-parser-perl. I haven't started quilt-ptest yet</td><td class="time"><a href="#t2019-05-31T17:58:02" class="time">17:58</a></td></tr>
+<tr id="t2019-05-31T18:02:06"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">RP: the fixes for libxml-parser-perl will also enable the libmodule-build-perl move needed by cpan_build.bbclass</td><td class="time"><a href="#t2019-05-31T18:02:06" class="time">18:02</a></td></tr>
+<tr id="t2019-05-31T19:15:53"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">RP: perl-rdepends.txt needs a v2 for quilt-ptest</td><td class="time"><a href="#t2019-05-31T19:15:53" class="time">19:15</a></td></tr>
+<tr id="t2019-05-31T19:24:49"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">RP: quilt-ptest still has other failures, but I have the perl dependencies sorted</td><td class="time"><a href="#t2019-05-31T19:24:49" class="time">19:24</a></td></tr>
+<tr id="t2019-05-31T19:37:18"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">halstead or RP, AB ok for weekend builds?</td><td class="time"><a href="#t2019-05-31T19:37:18" class="time">19:37</a></td></tr>
+<tr id="t2019-05-31T19:58:15"><th class="nick" style="background: #488888">moto-timo</th><td class="text" style="color: #488888">armpit: the patches I just sent for perl dependencies should be backported to warrior (once the review is done)</td><td class="time"><a href="#t2019-05-31T19:58:15" class="time">19:58</a></td></tr>
+<tr id="t2019-05-31T19:58:38"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">k</td><td class="time"><a href="#t2019-05-31T19:58:38" class="time">19:58</a></td></tr>
+<tr id="t2019-05-31T20:22:29"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: halstead is waiting on the current build to do maint, but yes</td><td class="time"><a href="#t2019-05-31T20:22:29" class="time">20:22</a></td></tr>
+<tr id="t2019-05-31T20:22:55"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: sounds like a god improvement, I'll test and rerun my local tests, see how they look, thanks!</td><td class="time"><a href="#t2019-05-31T20:22:55" class="time">20:22</a></td></tr>
+<tr id="t2019-05-31T20:22:58"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">k, wasn't sure if working going off-line for updates</td><td class="time"><a href="#t2019-05-31T20:22:58" class="time">20:22</a></td></tr>
+<tr id="t2019-05-31T20:23:25"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">nice, RP&nbsp;&nbsp;thinks moto-timo is god</td><td class="time"><a href="#t2019-05-31T20:23:25" class="time">20:23</a></td></tr>
+<tr id="t2019-05-31T20:23:30"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: we may be down on a couple of workers but it can still be used</td><td class="time"><a href="#t2019-05-31T20:23:30" class="time">20:23</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-05-30.log.html">&#171; Thursday, 2019-05-30</a> <a href="index.html">Index</a> <a href="%23yocto.2019-06-01.log.html">Saturday, 2019-06-01 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

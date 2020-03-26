@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-12-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-12-08</h1>
+<div class="navigation"> <a href="%23yocto.2019-12-07.log.html">&#171; Saturday, 2019-12-07</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-09.log.html">Monday, 2019-12-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-12-08T00:01:53"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">RP, that was a life saver, it gives me more detailed errors</td><td class="time"><a href="#t2019-12-08T00:01:53" class="time">00:01</a></td></tr>
+<tr id="t2019-12-08T00:14:18"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">RP, it did show it during first build but not anymore, how do I make it parse recipies again?</td><td class="time"><a href="#t2019-12-08T00:14:18" class="time">00:14</a></td></tr>
+<tr id="t2019-12-08T08:44:02"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: the files in the tmp/cache and cache directories control that</td><td class="time"><a href="#t2019-12-08T08:44:02" class="time">08:44</a></td></tr>
+<tr id="t2019-12-08T10:54:09"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">ok RP. I think the cache is messed up, I changed from qemuarm to qemu86-64 and it shows MACHINE&nbsp;&nbsp;"qemux86-64" but TARGET_SYS "arm-oe-linux-gnueabi"</td><td class="time"><a href="#t2019-12-08T10:54:09" class="time">10:54</a></td></tr>
+<tr id="t2019-12-08T11:03:03"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: that is quite unusual as we've not had any other reports of that...</td><td class="time"><a href="#t2019-12-08T11:03:03" class="time">11:03</a></td></tr>
+<tr id="t2019-12-08T11:03:44"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">haha</td><td class="time"><a href="#t2019-12-08T11:03:44" class="time">11:03</a></td></tr>
+<tr id="t2019-12-08T11:04:11"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I have struggled for &gt; day with this issue . the other issue is that it just doesn't read the conf/machine contents (but it finds the files)</td><td class="time"><a href="#t2019-12-08T11:04:11" class="time">11:04</a></td></tr>
+<tr id="t2019-12-08T11:04:32"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I can type &lt;&lt;&gt;&lt;&lt;&gt;&lt;&lt; inside the file, trying to break it but it doesn't react on it</td><td class="time"><a href="#t2019-12-08T11:04:32" class="time">11:04</a></td></tr>
+<tr id="t2019-12-08T11:05:38"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">is there a way to reset without nuking the whole build directory in this case?</td><td class="time"><a href="#t2019-12-08T11:05:38" class="time">11:05</a></td></tr>
+<tr id="t2019-12-08T11:09:34"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: its sounds like there is something wrong with your setup but I can't say what that is</td><td class="time"><a href="#t2019-12-08T11:09:34" class="time">11:09</a></td></tr>
+<tr id="t2019-12-08T11:10:12"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: most of the work in the build directory is saved into the sstate-cache so you can wipe out and rebuild using that and as long as nothing has changed, it will reuse those objects</td><td class="time"><a href="#t2019-12-08T11:10:12" class="time">11:10</a></td></tr>
+<tr id="t2019-12-08T11:10:39"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: That case is almost certainly not where your issues are so its safe to preserve</td><td class="time"><a href="#t2019-12-08T11:10:39" class="time">11:10</a></td></tr>
+<tr id="t2019-12-08T11:11:09"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: you could try a build in a new directory/setup leaving the existing and just sharing sstate-cache between them?</td><td class="time"><a href="#t2019-12-08T11:11:09" class="time">11:11</a></td></tr>
+<tr id="t2019-12-08T11:11:29"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">hm ok</td><td class="time"><a href="#t2019-12-08T11:11:29" class="time">11:11</a></td></tr>
+<tr id="t2019-12-08T11:12:54"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">thanks. is it possible to force a full re-parse of the recipes only</td><td class="time"><a href="#t2019-12-08T11:12:54" class="time">11:12</a></td></tr>
+<tr id="t2019-12-08T11:21:45"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I guess it's the combination I have... it silently stops parsing or something</td><td class="time"><a href="#t2019-12-08T11:21:45" class="time">11:21</a></td></tr>
+<tr id="t2019-12-08T11:22:31"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40"> nothing provides kernel-devicetree needed by packagegroup-core-boot-1.0-r17.qemux86_64 - I KNOW I have kernel-devicetree, it's right there in poky/meta</td><td class="time"><a href="#t2019-12-08T11:22:31" class="time">11:22</a></td></tr>
+<tr id="t2019-12-08T15:57:23"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: sent a binutils upgrade, it will need some AB time. See if you can stage it soon</td><td class="time"><a href="#t2019-12-08T15:57:23" class="time">15:57</a></td></tr>
+<tr id="t2019-12-08T17:28:56"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: struggling to keep up with patches :(</td><td class="time"><a href="#t2019-12-08T17:28:56" class="time">17:28</a></td></tr>
+<tr id="t2019-12-08T17:50:53"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">what dermines TARGET_SYS ?</td><td class="time"><a href="#t2019-12-08T17:50:53" class="time">17:50</a></td></tr>
+<tr id="t2019-12-08T17:53:38"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">"${TRANSLATED_TARGET_ARCH}:${MACHINEOVERRIDES}:${DISTROOVERRIDES}"</td><td class="time"><a href="#t2019-12-08T17:53:38" class="time">17:53</a></td></tr>
+<tr id="t2019-12-08T17:54:42"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">TRANSLATED_TARGET_ARCH="arm" - that's wrong when I pick qemu86-64 as target machine</td><td class="time"><a href="#t2019-12-08T17:54:42" class="time">17:54</a></td></tr>
+<tr id="t2019-12-08T18:03:08"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I guess my config is messed up somewhere</td><td class="time"><a href="#t2019-12-08T18:03:08" class="time">18:03</a></td></tr>
+<tr id="t2019-12-08T18:05:30"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I wanted my distro conf to dictate the machine</td><td class="time"><a href="#t2019-12-08T18:05:30" class="time">18:05</a></td></tr>
+<tr id="t2019-12-08T18:08:01"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">I guess it was not as simple as just setting MACHINE in it</td><td class="time"><a href="#t2019-12-08T18:08:01" class="time">18:08</a></td></tr>
+<tr id="t2019-12-08T18:57:21"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">RP: np I understand that, but wanted to let you know, since toolchain pices are quite basic and will need a bit more testing time as you know</td><td class="time"><a href="#t2019-12-08T18:57:21" class="time">18:57</a></td></tr>
+<tr id="t2019-12-08T18:59:09"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">arm64/arm/x86 world builds are clean on my end with these</td><td class="time"><a href="#t2019-12-08T18:59:09" class="time">18:59</a></td></tr>
+<tr id="t2019-12-08T20:50:12"><th class="nick" style="background: #854685">yocti</th><td class="text" style="color: #854685">New news from stackoverflow: Building an embedded linux yocto &lt;<a href="https://stackoverflow.com/questions/59239653/building-an-embedded-linux-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/59239653/building-an-embedded-linux-yocto&gt;</a></td><td class="time"><a href="#t2019-12-08T20:50:12" class="time">20:50</a></td></tr>
+<tr id="t2019-12-08T21:38:50"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: right, fair enough</td><td class="time"><a href="#t2019-12-08T21:38:50" class="time">21:38</a></td></tr>
+<tr id="t2019-12-08T21:42:03"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: ah, now if you'd said that earlier...</td><td class="time"><a href="#t2019-12-08T21:42:03" class="time">21:42</a></td></tr>
+<tr id="t2019-12-08T21:42:13"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">haha</td><td class="time"><a href="#t2019-12-08T21:42:13" class="time">21:42</a></td></tr>
+<tr id="t2019-12-08T21:42:22"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">my mission is to have as little as possible in local.conf</td><td class="time"><a href="#t2019-12-08T21:42:22" class="time">21:42</a></td></tr>
+<tr id="t2019-12-08T21:42:36"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">and have preferably as much as possible in the image recipe</td><td class="time"><a href="#t2019-12-08T21:42:36" class="time">21:42</a></td></tr>
+<tr id="t2019-12-08T21:42:55"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: have a read of meta/conf/bitbake.conf</td><td class="time"><a href="#t2019-12-08T21:42:55" class="time">21:42</a></td></tr>
+<tr id="t2019-12-08T21:43:16"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: note in particular how it uses MACHINE before DISTRO</td><td class="time"><a href="#t2019-12-08T21:43:16" class="time">21:43</a></td></tr>
+<tr id="t2019-12-08T21:43:30"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">for the include/conf/XXX.conf lines</td><td class="time"><a href="#t2019-12-08T21:43:30" class="time">21:43</a></td></tr>
+<tr id="t2019-12-08T21:44:05"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">ok</td><td class="time"><a href="#t2019-12-08T21:44:05" class="time">21:44</a></td></tr>
+<tr id="t2019-12-08T21:44:13"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">would be niuce with a flowchart showing which comes first etc</td><td class="time"><a href="#t2019-12-08T21:44:13" class="time">21:44</a></td></tr>
+<tr id="t2019-12-08T21:44:19"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">thanks</td><td class="time"><a href="#t2019-12-08T21:44:19" class="time">21:44</a></td></tr>
+<tr id="t2019-12-08T21:44:23"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Ad0: just read the file!</td><td class="time"><a href="#t2019-12-08T21:44:23" class="time">21:44</a></td></tr>
+<tr id="t2019-12-08T21:45:06"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">maintaining documentation which just lists what the file says is a pain...</td><td class="time"><a href="#t2019-12-08T21:45:06" class="time">21:45</a></td></tr>
+<tr id="t2019-12-08T21:45:17"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">haha yes</td><td class="time"><a href="#t2019-12-08T21:45:17" class="time">21:45</a></td></tr>
+<tr id="t2019-12-08T22:10:46"><th class="nick" style="background: #407a40">Ad0</th><td class="text" style="color: #407a40">RP, yeah according to bitbake.conf it has to the very least know machine before anything else</td><td class="time"><a href="#t2019-12-08T22:10:46" class="time">22:10</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-12-07.log.html">&#171; Saturday, 2019-12-07</a> <a href="index.html">Index</a> <a href="%23yocto.2019-12-09.log.html">Monday, 2019-12-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

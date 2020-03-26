@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-09-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-09-08</h1>
+<div class="navigation"> <a href="%23yocto.2019-09-07.log.html">&#171; Saturday, 2019-09-07</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-09.log.html">Monday, 2019-09-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-09-08T01:24:55"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: YOCTO : Modify Linux OS features by editing it's device tree &lt;<a href="https://stackoverflow.com/questions/57838460/yocto-modify-linux-os-features-by-editing-its-device-tree&gt;" rel="nofollow">https://stackoverflow.com/questions/57838460/yocto-modify-linux-os-features-by-editing-its-device-tree&gt;</a></td><td class="time"><a href="#t2019-09-08T01:24:55" class="time">01:24</a></td></tr>
+<tr id="t2019-09-08T05:51:52"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: very cool :)</td><td class="time"><a href="#t2019-09-08T05:51:52" class="time">05:51</a></td></tr>
+<tr id="t2019-09-08T05:55:11"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: Looks like there are now two remaining issues, reports are showing failures which I think are related to that bug with the headers or similar (<a href="https://autobuilder.yocto.io/pub/non-release/20190907-15/testresults/testresult-report.txt" rel="nofollow">https://autobuilder.yocto.io/pub/non-release/20190907-15/testresults/testresult-report.txt</a>)</td><td class="time"><a href="#t2019-09-08T05:55:11" class="time">05:55</a></td></tr>
+<tr id="t2019-09-08T05:55:55"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: some results are also disappearing or corrupting, e/g/ <a href="https://autobuilder.yocto.io/pub/non-release/20190907-13/testresults/testresult-report.txt" rel="nofollow">https://autobuilder.yocto.io/pub/non-release/20190907-13/testresults/testresult-report.txt</a> has qemuppc ptest disapear and the x86-64 normal results are masked.</td><td class="time"><a href="#t2019-09-08T05:55:55" class="time">05:55</a></td></tr>
+<tr id="t2019-09-08T05:56:06"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: great progress though :)</td><td class="time"><a href="#t2019-09-08T05:56:06" class="time">05:56</a></td></tr>
+<tr id="t2019-09-08T06:17:52"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: yer saw the failures, looks like its not specific to user/sys or a machine. Have not been able to reproduce it locally yet</td><td class="time"><a href="#t2019-09-08T06:17:52" class="time">06:17</a></td></tr>
+<tr id="t2019-09-08T06:18:24"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: for the test results, i think its a case of "merge" across runs but prevent merging the exact same test</td><td class="time"><a href="#t2019-09-08T06:18:24" class="time">06:18</a></td></tr>
+<tr id="t2019-09-08T06:24:26"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: i think the test failures might be build host related. Looks like ubuntu 16.04,centos7 fails, but others like ubuntu 18.04 dont.</td><td class="time"><a href="#t2019-09-08T06:24:26" class="time">06:24</a></td></tr>
+<tr id="t2019-09-08T06:32:44"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: ah, that is a good insight, yes, could be</td><td class="time"><a href="#t2019-09-08T06:32:44" class="time">06:32</a></td></tr>
+<tr id="t2019-09-08T06:33:19"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: I think I also don't have the core selftest exclusion quite right, will fix that tomorrow</td><td class="time"><a href="#t2019-09-08T06:33:19" class="time">06:33</a></td></tr>
+<tr id="t2019-09-08T06:33:45"><td class="action" colspan="2">* RP is not around much today</td><td><a href="#t2019-09-08T06:33:45" class="time">06:33</a></td></tr>
+<tr id="t2019-09-08T06:34:07"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: yes i was confused by that :). I will install ubuntu on my spare machine and see if i can reproduce the failures</td><td class="time"><a href="#t2019-09-08T06:34:07" class="time">06:34</a></td></tr>
+<tr id="t2019-09-08T06:34:28"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: no problem, have a good sunday :)</td><td class="time"><a href="#t2019-09-08T06:34:28" class="time">06:34</a></td></tr>
+<tr id="t2019-09-08T06:34:36"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-09-08T06:34:36" class="time">06:34</a></td></tr>
+<tr id="t2019-09-08T06:57:54"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">nrossi: ab configuration looks right so perhaps there isn't a problem with that config. FWIW my local autobuilder I debugged the issue on is ubuntu (a recent one)</td><td class="time"><a href="#t2019-09-08T06:57:54" class="time">06:57</a></td></tr>
+<tr id="t2019-09-08T07:21:13"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-09-08T07:21:13" class="time">07:21</a></td></tr>
+<tr id="t2019-09-08T11:26:13"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: how to do yocto testing like weekly test full pass test and release test? &lt;<a href="https://stackoverflow.com/questions/57841438/how-to-do-yocto-testing-like-weekly-test-full-pass-test-and-release-test&gt;" rel="nofollow">https://stackoverflow.com/questions/57841438/how-to-do-yocto-testing-like-weekly-test-full-pass-test-and-release-test&gt;</a></td><td class="time"><a href="#t2019-09-08T11:26:13" class="time">11:26</a></td></tr>
+<tr id="t2019-09-08T12:45:19"><th class="nick" style="background: #854685">luckywho</th><td class="text" style="color: #854685">Hi, I'm adding a new recipe in my yocto setup for npm packages. I'm getting following error: do_fetch: Fetcher failure for URL: 'npm://registry.npmjs.org;name=@fluent/bundle;version=0.14.0;subdir=node_modules/@fluent/bundle'. Unable to fetch URL from any source.</td><td class="time"><a href="#t2019-09-08T12:45:19" class="time">12:45</a></td></tr>
+<tr id="t2019-09-08T13:07:21"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2019-09-08T13:07:21" class="time">13:07</a></td></tr>
+<tr id="t2019-09-08T15:01:57"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">RP: couldn't seem to reproduce locally with ubuntu 16.04. will have to look at setting up log collection. I did however sort out a patch for ptestresults across multiple series, <a href="https://github.com/nathanrossi/openembedded-core/commit/4abbf420cc66f314b7e0818f579d70e3d80bb47e" rel="nofollow">https://github.com/nathanrossi/openembedded-core/commit/4abbf420cc66f314b7e0818f579d70e3d80bb47e</a></td><td class="time"><a href="#t2019-09-08T15:01:57" class="time">15:01</a></td></tr>
+<tr id="t2019-09-08T18:03:53"><th class="nick" style="background: #488888">JaMa</th><td class="text" style="color: #488888">Crofton|work: ping</td><td class="time"><a href="#t2019-09-08T18:03:53" class="time">18:03</a></td></tr>
+<tr id="t2019-09-08T19:40:57"><td class="nickchange" colspan="2">*** rubdos_ is now known as rubdos</td><td><a href="#t2019-09-08T19:40:57" class="time">19:40</a></td></tr>
+<tr id="t2019-09-08T23:57:54"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: How to build a working TPM2 image for Raspberry Pi with Yocto? &lt;<a href="https://stackoverflow.com/questions/57693130/how-to-build-a-working-tpm2-image-for-raspberry-pi-with-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/57693130/how-to-build-a-working-tpm2-image-for-raspberry-pi-with-yocto&gt;</a></td><td class="time"><a href="#t2019-09-08T23:57:54" class="time">23:57</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-09-07.log.html">&#171; Saturday, 2019-09-07</a> <a href="index.html">Index</a> <a href="%23yocto.2019-09-09.log.html">Monday, 2019-09-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

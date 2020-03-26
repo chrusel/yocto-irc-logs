@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2019-01-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2019-01-06</h1>
+<div class="navigation"> <a href="%23yocto.2019-01-05.log.html">&#171; Saturday, 2019-01-05</a> <a href="index.html">Index</a> <a href="%23yocto.2019-01-07.log.html">Monday, 2019-01-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2019-01-06T00:00:22"><th class="nick" style="background: #407a40">robbawebba</th><td class="text" style="color: #407a40">Is there one in particular that you recommend? I've never used one before</td><td class="time"><a href="#t2019-01-06T00:00:22" class="time">00:00</a></td></tr>
+<tr id="t2019-01-06T00:01:23"><th class="nick" style="background: #42427e">neverpanic</th><td class="text" style="color: #42427e">pretty much any of them are fine.</td><td class="time"><a href="#t2019-01-06T00:01:23" class="time">00:01</a></td></tr>
+<tr id="t2019-01-06T00:06:06"><th class="nick" style="background: #407a40">robbawebba</th><td class="text" style="color: #407a40">derRichard: Once more, with a pastebin: <a href="https://pastebin.com/BhpgEjif" rel="nofollow">https://pastebin.com/BhpgEjif</a></td><td class="time"><a href="#t2019-01-06T00:06:06" class="time">00:06</a></td></tr>
+<tr id="t2019-01-06T10:41:02"><th class="nick" style="background: #818144">kroon</th><td class="text" style="color: #818144">For a shell function declared in a recipe, do I need to export it in some special way for it to be available in a command run under pseudo ?</td><td class="time"><a href="#t2019-01-06T10:41:02" class="time">10:41</a></td></tr>
+<tr id="t2019-01-06T16:58:35"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">robbawebba: thanks! indeed, i'm currently messing with the go dep tool, not nice but still..</td><td class="time"><a href="#t2019-01-06T16:58:35" class="time">16:58</a></td></tr>
+<tr id="t2019-01-06T19:35:14"><td class="nickchange" colspan="2">*** kroon_ is now known as kroon</td><td><a href="#t2019-01-06T19:35:14" class="time">19:35</a></td></tr>
+<tr id="t2019-01-06T21:57:41"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: bitbake: adding php-intl support to php recipe &lt;<a href="https://stackoverflow.com/questions/50034282/bitbake-adding-php-intl-support-to-php-recipe&gt;" rel="nofollow">https://stackoverflow.com/questions/50034282/bitbake-adding-php-intl-support-to-php-recipe&gt;</a></td><td class="time"><a href="#t2019-01-06T21:57:41" class="time">21:57</a></td></tr>
+<tr id="t2019-01-06T23:08:03"><th class="nick" style="background: #407a40">robbawebba</th><td class="text" style="color: #407a40">derRichard: sounds good! if you find that that it's easier with go dep, please report back! I haven't messed around with go dep support in OE yet</td><td class="time"><a href="#t2019-01-06T23:08:03" class="time">23:08</a></td></tr>
+<tr id="t2019-01-06T23:08:53"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">robbawebba: i went back to "go get". but i can share my hackish bb file if you want to see</td><td class="time"><a href="#t2019-01-06T23:08:53" class="time">23:08</a></td></tr>
+<tr id="t2019-01-06T23:10:32"><th class="nick" style="background: #407a40">robbawebba</th><td class="text" style="color: #407a40">derRichard: yes please!</td><td class="time"><a href="#t2019-01-06T23:10:32" class="time">23:10</a></td></tr>
+<tr id="t2019-01-06T23:13:31"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">robbawebba: <a href="http://paste.debian.net/plainh/6c6b21b8" rel="nofollow">http://paste.debian.net/plainh/6c6b21b8</a></td><td class="time"><a href="#t2019-01-06T23:13:31" class="time">23:13</a></td></tr>
+<tr id="t2019-01-06T23:14:05"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">i had to set GOPATH manually because the git repo hosts multiple go commands and i didn't figure how to teach go.bbclass...</td><td class="time"><a href="#t2019-01-06T23:14:05" class="time">23:14</a></td></tr>
+<tr id="t2019-01-06T23:14:32"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">the key point is calling "go get" in do_compile_prepend()</td><td class="time"><a href="#t2019-01-06T23:14:32" class="time">23:14</a></td></tr>
+<tr id="t2019-01-06T23:56:54"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">can it be that the go toolchain in yocto is buggy? running a non-trival go program causes very odd crashes.</td><td class="time"><a href="#t2019-01-06T23:56:54" class="time">23:56</a></td></tr>
+<tr id="t2019-01-06T23:57:08"><th class="nick" style="background: #854685">derRichard</th><td class="text" style="color: #854685">they happen only if i run it in a vm with a single cpu or set GOMAXPROCS=1</td><td class="time"><a href="#t2019-01-06T23:57:08" class="time">23:57</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2019-01-05.log.html">&#171; Saturday, 2019-01-05</a> <a href="index.html">Index</a> <a href="%23yocto.2019-01-07.log.html">Monday, 2019-01-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
