@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-05-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-05-25</h1>
+<div class="navigation"> <a href="%23yocto.2013-05-24.log.html">&#171; Friday, 2013-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2013-05-26.log.html">Sunday, 2013-05-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-05-25T02:31:57"><td class="nickchange" colspan="2">*** darknighte_znc is now known as darknighte</td><td><a href="#t2013-05-25T02:31:57" class="time">02:31</a></td></tr>
+<tr id="t2013-05-25T05:27:48"><td class="nickchange" colspan="2">*** awafaa_ is now known as awafaa</td><td><a href="#t2013-05-25T05:27:48" class="time">05:27</a></td></tr>
+<tr id="t2013-05-25T06:58:43"><th class="nick" style="background: #407a40">panda84kde</th><td class="text" style="color: #407a40">otavio: Hi. I've seen the fail, not after a cleanall, but after upgrading to master. I'll investigate.</td><td class="time"><a href="#t2013-05-25T06:58:43" class="time">06:58</a></td></tr>
+<tr id="t2013-05-25T07:19:59"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-away</td><td><a href="#t2013-05-25T07:19:59" class="time">07:19</a></td></tr>
+<tr id="t2013-05-25T07:32:57"><th class="nick" style="background: #407a40">panda84kde</th><td class="text" style="color: #407a40">mmm... looks like a whitespaces problem. Applying with "git apply --whitespace=fix" works. Maybe the mail broke some whitespace</td><td class="time"><a href="#t2013-05-25T07:32:57" class="time">07:32</a></td></tr>
+<tr id="t2013-05-25T07:44:57"><th class="nick" style="background: #407a40">panda84kde</th><td class="text" style="color: #407a40">yeah. Problem with added ending "^M" in the patches; mail corrupted the patches.</td><td class="time"><a href="#t2013-05-25T07:44:57" class="time">07:44</a></td></tr>
+<tr id="t2013-05-25T07:57:02"><th class="nick" style="background: #407a40">panda84kde</th><td class="text" style="color: #407a40">generic question to anyone. Is it possible to put checksum for files other than the first one? Can I force the buildsystem to check patches checksum?</td><td class="time"><a href="#t2013-05-25T07:57:02" class="time">07:57</a></td></tr>
+<tr id="t2013-05-25T08:32:35"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">hello :) if I enable systemd on my poky dylan build the board doesn't show login prompt it freeze at "Reached target Graphical Interface." is that something known ?</td><td class="time"><a href="#t2013-05-25T08:32:35" class="time">08:32</a></td></tr>
+<tr id="t2013-05-25T09:06:43"><th class="nick" style="background: #818144">mihai</th><td class="text" style="color: #818144">tida: have you set DISTRO_FEATURES_append = " systemd" and VIRTUAL-RUNTIME_init_manager = "systemd" ?</td><td class="time"><a href="#t2013-05-25T09:06:43" class="time">09:06</a></td></tr>
+<tr id="t2013-05-25T09:08:20"><th class="nick" style="background: #407a40">panda84kde</th><td class="text" style="color: #407a40">tida: as long as I know only core-image-minimal has been tested by dylan release: <a href="https://bugzilla.yoctoproject.org/tr_show_case.cgi?case_id=549" rel="nofollow">https://bugzilla.yoctoproject.org/tr_show_case.cgi?case_id=549</a></td><td class="time"><a href="#t2013-05-25T09:08:20" class="time">09:08</a></td></tr>
+<tr id="t2013-05-25T09:15:06"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">hum</td><td class="time"><a href="#t2013-05-25T09:15:06" class="time">09:15</a></td></tr>
+<tr id="t2013-05-25T09:15:10"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">mihai : yes</td><td class="time"><a href="#t2013-05-25T09:15:10" class="time">09:15</a></td></tr>
+<tr id="t2013-05-25T09:15:53"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">it's set like that</td><td class="time"><a href="#t2013-05-25T09:15:53" class="time">09:15</a></td></tr>
+<tr id="t2013-05-25T09:16:07"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">and oki panda.. i'm building exactly that</td><td class="time"><a href="#t2013-05-25T09:16:07" class="time">09:16</a></td></tr>
+<tr id="t2013-05-25T09:16:49"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">the image works with classic systemV and no login when enabling the systemd</td><td class="time"><a href="#t2013-05-25T09:16:49" class="time">09:16</a></td></tr>
+<tr id="t2013-05-25T09:54:07"><th class="nick" style="background: #818144">mihai</th><td class="text" style="color: #818144">tida: are you mixing oe-core with meta-oe/meta-systemd?</td><td class="time"><a href="#t2013-05-25T09:54:07" class="time">09:54</a></td></tr>
+<tr id="t2013-05-25T09:54:17"><th class="nick" style="background: #818144">mihai</th><td class="text" style="color: #818144">bug 4214</td><td class="time"><a href="#t2013-05-25T09:54:17" class="time">09:54</a></td></tr>
+<tr id="t2013-05-25T09:54:17"><th class="nick" style="background: #854685">yocti</th><td class="text" style="color: #854685">Bug <a href="https://bugzilla.yoctoproject.org/show_bug.cgi?id=4214" rel="nofollow">https://bugzilla.yoctoproject.org/show_bug.cgi?id=4214</a> normal, Medium+, 1.4 M6, scott.m.rifenbark, RESOLVED FIXED, systemd[1]: Failed to mount /run: No such file or directory</td><td class="time"><a href="#t2013-05-25T09:54:17" class="time">09:54</a></td></tr>
+<tr id="t2013-05-25T10:24:37"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">mihai i've tried not to. but perhaps there is a pb like that.</td><td class="time"><a href="#t2013-05-25T10:24:37" class="time">10:24</a></td></tr>
+<tr id="t2013-05-25T10:46:08"><th class="nick" style="background: #42427e">tida</th><td class="text" style="color: #42427e">well meta-oe/meta-systemd is not in bblayer.conf</td><td class="time"><a href="#t2013-05-25T10:46:08" class="time">10:46</a></td></tr>
+<tr id="t2013-05-25T11:38:11"><th class="nick" style="background: #488888">otavio</th><td class="text" style="color: #488888"></td><td class="time"><a href="#t2013-05-25T11:38:11" class="time">11:38</a></td></tr>
+<tr id="t2013-05-25T12:50:11"><th class="nick" style="background: #8c4a4a">eren</th><td class="text" style="color: #8c4a4a">halstead: hey</td><td class="time"><a href="#t2013-05-25T12:50:11" class="time">12:50</a></td></tr>
+<tr id="t2013-05-25T12:50:34"><th class="nick" style="background: #8c4a4a">eren</th><td class="text" style="color: #8c4a4a">halstead: where is the hw for commit lists? will they be moved as well?</td><td class="time"><a href="#t2013-05-25T12:50:34" class="time">12:50</a></td></tr>
+<tr id="t2013-05-25T16:08:43"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox</td><td><a href="#t2013-05-25T16:08:43" class="time">16:08</a></td></tr>
+<tr id="t2013-05-25T17:22:34"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-farfarawa</td><td><a href="#t2013-05-25T17:22:34" class="time">17:22</a></td></tr>
+<tr id="t2013-05-25T19:34:08"><td class="nickchange" colspan="2">*** beagle_jkridner is now known as jkridner</td><td><a href="#t2013-05-25T19:34:08" class="time">19:34</a></td></tr>
+<tr id="t2013-05-25T19:34:21"><td class="nickchange" colspan="2">*** jkridner is now known as jkridner|afk</td><td><a href="#t2013-05-25T19:34:21" class="time">19:34</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-05-24.log.html">&#171; Friday, 2013-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2013-05-26.log.html">Sunday, 2013-05-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

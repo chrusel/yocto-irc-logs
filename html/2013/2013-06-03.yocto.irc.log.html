@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2013-06-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2013-06-03</h1>
+<div class="navigation"> <a href="%23yocto.2013-06-02.log.html">&#171; Sunday, 2013-06-02</a> <a href="index.html">Index</a> <a href="%23yocto.2013-06-04.log.html">Tuesday, 2013-06-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-06-03T01:33:36"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox</td><td><a href="#t2013-06-03T01:33:36" class="time">01:33</a></td></tr>
+<tr id="t2013-06-03T06:47:30"><td class="nickchange" colspan="2">*** tsjsieb_afk is now known as tsjsieb</td><td><a href="#t2013-06-03T06:47:30" class="time">06:47</a></td></tr>
+<tr id="t2013-06-03T07:48:12"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2013-06-03T07:48:12" class="time">07:48</a></td></tr>
+<tr id="t2013-06-03T07:48:16"><th class="nick" style="background: #407a40">mckoan</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2013-06-03T07:48:16" class="time">07:48</a></td></tr>
+<tr id="t2013-06-03T08:09:06"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2013-06-03T08:09:06" class="time">08:09</a></td></tr>
+<tr id="t2013-06-03T08:20:30"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">morning all</td><td class="time"><a href="#t2013-06-03T08:20:30" class="time">08:20</a></td></tr>
+<tr id="t2013-06-03T09:45:35"><td class="part" colspan="2">*** zeeblex &lt;zeeblex!apalalax@nat/intel/x-wifzdrvuwekhrmax&gt; has left #yocto</td><td><a href="#t2013-06-03T09:45:35" class="time">09:45</a></td></tr>
+<tr id="t2013-06-03T11:07:19"><th class="nick" style="background: #818144">Net147</th><td class="text" style="color: #818144">is there a way to manually bump the pr in the pr server database for a package?</td><td class="time"><a href="#t2013-06-03T11:07:19" class="time">11:07</a></td></tr>
+<tr id="t2013-06-03T11:20:59"><td class="nickchange" colspan="2">*** otavio_ is now known as otavio</td><td><a href="#t2013-06-03T11:20:59" class="time">11:20</a></td></tr>
+<tr id="t2013-06-03T11:21:07"><th class="nick" style="background: #854685">RagBal</th><td class="text" style="color: #854685">I've build a meta-toolchain but I can't figure out how to configure Eclipse/Netbeans to work with the generated toolchain, is there any guide available?</td><td class="time"><a href="#t2013-06-03T11:21:07" class="time">11:21</a></td></tr>
+<tr id="t2013-06-03T12:02:48"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">RagBal: have you looked at the ADT manual?</td><td class="time"><a href="#t2013-06-03T12:02:48" class="time">12:02</a></td></tr>
+<tr id="t2013-06-03T12:03:07"><th class="nick" style="background: #854685">RagBal</th><td class="text" style="color: #854685">I'm actually trying it right as we speak thanks</td><td class="time"><a href="#t2013-06-03T12:03:07" class="time">12:03</a></td></tr>
+<tr id="t2013-06-03T12:11:22"><th class="nick" style="background: #818144">Net147</th><td class="text" style="color: #818144">why is mesa llvmpipe less than 1 fps if cross compiled but 160 fps if natively compiled... hmm...</td><td class="time"><a href="#t2013-06-03T12:11:22" class="time">12:11</a></td></tr>
+<tr id="t2013-06-03T12:24:09"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">Net147: maybe the configuration is not the same in both instances?</td><td class="time"><a href="#t2013-06-03T12:24:09" class="time">12:24</a></td></tr>
+<tr id="t2013-06-03T12:25:44"><th class="nick" style="background: #818144">Net147</th><td class="text" style="color: #818144">bluelightning: it's not the same yes, but I can't see how the differences are causing it</td><td class="time"><a href="#t2013-06-03T12:25:44" class="time">12:25</a></td></tr>
+<tr id="t2013-06-03T12:26:08"><th class="nick" style="background: #818144">Net147</th><td class="text" style="color: #818144">bluelightning: I am checking if it's related to patches applied or whether some things are being compiled differently if cross compiling vs native</td><td class="time"><a href="#t2013-06-03T12:26:08" class="time">12:26</a></td></tr>
+<tr id="t2013-06-03T12:31:00"><th class="nick" style="background: #854685">RagBal</th><td class="text" style="color: #854685">bluelightning, ADT works perfectly. Was hoping I could also setup the project manually instead of using all these autotools utilities</td><td class="time"><a href="#t2013-06-03T12:31:00" class="time">12:31</a></td></tr>
+<tr id="t2013-06-03T13:11:04"><th class="nick" style="background: #818144">Net147</th><td class="text" style="color: #818144">is there a reason why there is a lot of doubling of lines in log.do_configure?</td><td class="time"><a href="#t2013-06-03T13:11:04" class="time">13:11</a></td></tr>
+<tr id="t2013-06-03T13:15:18"><td class="part" colspan="2">*** addu &lt;addu!~addu@94.234.170.184&gt; has left #yocto</td><td><a href="#t2013-06-03T13:15:18" class="time">13:15</a></td></tr>
+<tr id="t2013-06-03T13:58:32"><td class="nickchange" colspan="2">*** darknighte_znc is now known as darknighte</td><td><a href="#t2013-06-03T13:58:32" class="time">13:58</a></td></tr>
+<tr id="t2013-06-03T15:01:50"><td class="nickchange" colspan="2">*** tsjsieb is now known as tsjsieb_afk</td><td><a href="#t2013-06-03T15:01:50" class="time">15:01</a></td></tr>
+<tr id="t2013-06-03T16:01:00"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2013-06-03T16:01:00" class="time">16:01</a></td></tr>
+<tr id="t2013-06-03T16:55:47"><th class="nick" style="background: #488888">dtran11</th><td class="text" style="color: #488888">Hi can someone help me with cross compiling gfortran for my Gumstix Overo</td><td class="time"><a href="#t2013-06-03T16:55:47" class="time">16:55</a></td></tr>
+<tr id="t2013-06-03T17:02:09"><td class="other" colspan="2">-YoctoAutoBuilder- build #5 of minnow is complete: Exception [exception interrupted]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/minnow/builds/5" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/minnow/builds/5</a></td><td><a href="#t2013-06-03T17:02:09" class="time">17:02</a></td></tr>
+<tr id="t2013-06-03T17:41:33"><th class="nick" style="background: #8c4a4a">eren</th><td class="text" style="color: #8c4a4a">rburton: ping</td><td class="time"><a href="#t2013-06-03T17:41:33" class="time">17:41</a></td></tr>
+<tr id="t2013-06-03T17:45:23"><td class="part" colspan="2">*** addu &lt;addu!~addu@c-31-209-5-136.cust.bredband2.com&gt; has left #yocto</td><td><a href="#t2013-06-03T17:45:23" class="time">17:45</a></td></tr>
+<tr id="t2013-06-03T17:58:41"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">eren: he's on holiday atm</td><td class="time"><a href="#t2013-06-03T17:58:41" class="time">17:58</a></td></tr>
+<tr id="t2013-06-03T17:58:50"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">eren: funnily enough, in Turkey I think :)</td><td class="time"><a href="#t2013-06-03T17:58:50" class="time">17:58</a></td></tr>
+<tr id="t2013-06-03T17:59:13"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">bbl</td><td class="time"><a href="#t2013-06-03T17:59:13" class="time">17:59</a></td></tr>
+<tr id="t2013-06-03T17:59:19"><th class="nick" style="background: #8c4a4a">eren</th><td class="text" style="color: #8c4a4a">bluelightning: yeah, I read it on twitter</td><td class="time"><a href="#t2013-06-03T17:59:19" class="time">17:59</a></td></tr>
+<tr id="t2013-06-03T18:55:17"><td class="part" colspan="2">*** addu &lt;addu!~addu@c-31-209-5-136.cust.bredband2.com&gt; has left #yocto</td><td><a href="#t2013-06-03T18:55:17" class="time">18:55</a></td></tr>
+<tr id="t2013-06-03T19:54:12"><th class="nick" style="background: #4b904b">wlindaue</th><td class="text" style="color: #4b904b">I am attempting to boot up with the IMAGE_FEATURES += read-only-rootfs. I am encountering a failing serivce "Failed to start Run pending postinsts." Can anyone help me on how to keep this service from failing? Should this service even be attempting to start on a RO rootfs?</td><td class="time"><a href="#t2013-06-03T19:54:12" class="time">19:54</a></td></tr>
+<tr id="t2013-06-03T20:13:15"><td class="other" colspan="2">-YoctoAutoBuilder- build #129 of nightly-fsl-ppc is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/129" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/129</a></td><td><a href="#t2013-06-03T20:13:15" class="time">20:13</a></td></tr>
+<tr id="t2013-06-03T20:21:08"><td class="other" colspan="2">-YoctoAutoBuilder- build #126 of nightly-fsl-ppc-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/126" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/126</a></td><td><a href="#t2013-06-03T20:21:08" class="time">20:21</a></td></tr>
+<tr id="t2013-06-03T22:17:48"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">guys.. how do I set correctly a path in a file that will be installed in the build system sysroot and sdk sysroot?</td><td class="time"><a href="#t2013-06-03T22:17:48" class="time">22:17</a></td></tr>
+<tr id="t2013-06-03T22:17:57"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">this path is the include path for example</td><td class="time"><a href="#t2013-06-03T22:17:57" class="time">22:17</a></td></tr>
+<tr id="t2013-06-03T22:23:54"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">huh. FOO_append ?= "bar" seems to behave identically to FOO_append = "bar", yet FOO_append ??= "bar" works just like FOO ??= "bar"....</td><td class="time"><a href="#t2013-06-03T22:23:54" class="time">22:23</a></td></tr>
+<tr id="t2013-06-03T22:24:20"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">ftonello: do you mean that the path is literally inside a file that is installed into the sysroot?</td><td class="time"><a href="#t2013-06-03T22:24:20" class="time">22:24</a></td></tr>
+<tr id="t2013-06-03T22:25:21"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">evanp: yes.. imagine a prf file from Qt..</td><td class="time"><a href="#t2013-06-03T22:25:21" class="time">22:25</a></td></tr>
+<tr id="t2013-06-03T22:25:35"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">its a file that tells qmake where include path etc is</td><td class="time"><a href="#t2013-06-03T22:25:35" class="time">22:25</a></td></tr>
+<tr id="t2013-06-03T22:28:20"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">ftonello: have you tried just baking the install path (without ${D}) into the file? RP once told me there's magic sed stuff which rewrites occurrences of the install path in packaged files automatically....</td><td class="time"><a href="#t2013-06-03T22:28:20" class="time">22:28</a></td></tr>
+<tr id="t2013-06-03T22:29:24"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">evanp: what do you mean by that?</td><td class="time"><a href="#t2013-06-03T22:29:24" class="time">22:29</a></td></tr>
+<tr id="t2013-06-03T22:29:34"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">just use ${includedir} for example?</td><td class="time"><a href="#t2013-06-03T22:29:34" class="time">22:29</a></td></tr>
+<tr id="t2013-06-03T22:29:42"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">yep</td><td class="time"><a href="#t2013-06-03T22:29:42" class="time">22:29</a></td></tr>
+<tr id="t2013-06-03T22:30:11"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">but ${includedir} will be expanded to /usr/include only</td><td class="time"><a href="#t2013-06-03T22:30:11" class="time">22:30</a></td></tr>
+<tr id="t2013-06-03T22:30:26"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">thats why we add the ${D} before, right?!</td><td class="time"><a href="#t2013-06-03T22:30:26" class="time">22:30</a></td></tr>
+<tr id="t2013-06-03T22:32:07"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">supposedly there's some code which does a blind search-and-replace on "/usr/include" for any packaged file</td><td class="time"><a href="#t2013-06-03T22:32:07" class="time">22:32</a></td></tr>
+<tr id="t2013-06-03T22:33:28"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">hm</td><td class="time"><a href="#t2013-06-03T22:33:28" class="time">22:33</a></td></tr>
+<tr id="t2013-06-03T22:36:32"><th class="nick" style="background: #97974f">evanp</th><td class="text" style="color: #97974f">ftonello: it is possible I misunderstood RP, or am not remembering this right, but if you haven't tried it, give it a go. I might be right.</td><td class="time"><a href="#t2013-06-03T22:36:32" class="time">22:36</a></td></tr>
+<tr id="t2013-06-03T22:38:40"><th class="nick" style="background: #4d4d93">ftonello</th><td class="text" style="color: #4d4d93">ill try</td><td class="time"><a href="#t2013-06-03T22:38:40" class="time">22:38</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-06-02.log.html">&#171; Sunday, 2013-06-02</a> <a href="index.html">Index</a> <a href="%23yocto.2013-06-04.log.html">Tuesday, 2013-06-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

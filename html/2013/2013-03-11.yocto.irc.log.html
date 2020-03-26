@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2013-03-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2013-03-11</h1>
+<div class="navigation"> <a href="%23yocto.2013-03-10.log.html">&#171; Sunday, 2013-03-10</a> <a href="index.html">Index</a> <a href="%23yocto.2013-03-12.log.html">Tuesday, 2013-03-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-03-11T00:08:05"><td class="part" colspan="2">*** betafive &lt;betafive!~paul@94-192-12-83.zone6.bethere.co.uk&gt; has quit IRC</td><td><a href="#t2013-03-11T00:08:05" class="time">00:08</a></td></tr>
+<tr id="t2013-03-11T00:18:35"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-work</td><td><a href="#t2013-03-11T00:18:35" class="time">00:18</a></td></tr>
+<tr id="t2013-03-11T00:29:51"><td class="part" colspan="2">*** davest &lt;davest!Adium@nat/intel/x-tcdsblhoepuhvyfx&gt; has quit IRC</td><td><a href="#t2013-03-11T00:29:51" class="time">00:29</a></td></tr>
+<tr id="t2013-03-11T00:36:24"><td class="join" colspan="2">*** ndec__ &lt;ndec__!~ndec@192.91.66.186&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:36:24" class="time">00:36</a></td></tr>
+<tr id="t2013-03-11T00:37:02"><td class="part" colspan="2">*** tinti &lt;tinti!~tinti@pdpc/supporter/student/tinti&gt; has quit IRC</td><td><a href="#t2013-03-11T00:37:02" class="time">00:37</a></td></tr>
+<tr id="t2013-03-11T00:38:01"><td class="join" colspan="2">*** otavio_ &lt;otavio_!~otavio@debian/developer/otavio&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:38:01" class="time">00:38</a></td></tr>
+<tr id="t2013-03-11T00:38:01"><td class="part" colspan="2">*** sameo_ &lt;sameo_!~samuel@192.55.54.36&gt; has quit IRC</td><td><a href="#t2013-03-11T00:38:01" class="time">00:38</a></td></tr>
+<tr id="t2013-03-11T00:44:16"><td class="part" colspan="2">*** ndec &lt;ndec!~ndec@192.91.66.189&gt; has quit IRC</td><td><a href="#t2013-03-11T00:44:16" class="time">00:44</a></td></tr>
+<tr id="t2013-03-11T00:44:16"><td class="part" colspan="2">*** ubik3000 &lt;ubik3000!cristianio@nat/intel/x-tqmnvgdmejuekbbl&gt; has quit IRC</td><td><a href="#t2013-03-11T00:44:16" class="time">00:44</a></td></tr>
+<tr id="t2013-03-11T00:44:16"><td class="part" colspan="2">*** lh &lt;lh!~lhawthor@osuosl/staff/lh&gt; has quit IRC</td><td><a href="#t2013-03-11T00:44:16" class="time">00:44</a></td></tr>
+<tr id="t2013-03-11T00:44:16"><td class="part" colspan="2">*** otavio &lt;otavio!~otavio@debian/developer/otavio&gt; has quit IRC</td><td><a href="#t2013-03-11T00:44:16" class="time">00:44</a></td></tr>
+<tr id="t2013-03-11T00:47:16"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:47:16" class="time">00:47</a></td></tr>
+<tr id="t2013-03-11T00:50:10"><td class="join" colspan="2">*** lh &lt;lh!~lhawthor@c-98-246-241-202.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:50:10" class="time">00:50</a></td></tr>
+<tr id="t2013-03-11T00:50:10"><td class="join" colspan="2">*** lh &lt;lh!~lhawthor@osuosl/staff/lh&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:50:10" class="time">00:50</a></td></tr>
+<tr id="t2013-03-11T00:50:32"><td class="part" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@46.2.51.177&gt; has quit IRC</td><td><a href="#t2013-03-11T00:50:32" class="time">00:50</a></td></tr>
+<tr id="t2013-03-11T00:59:18"><td class="join" colspan="2">*** rogerzhou &lt;rogerzhou!~rogerzhou@61.148.56.138&gt; has joined #yocto</td><td><a href="#t2013-03-11T00:59:18" class="time">00:59</a></td></tr>
+<tr id="t2013-03-11T01:56:01"><td class="join" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@46.2.51.177&gt; has joined #yocto</td><td><a href="#t2013-03-11T01:56:01" class="time">01:56</a></td></tr>
+<tr id="t2013-03-11T02:19:11"><td class="join" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T02:19:11" class="time">02:19</a></td></tr>
+<tr id="t2013-03-11T02:24:42"><td class="part" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has quit IRC</td><td><a href="#t2013-03-11T02:24:42" class="time">02:24</a></td></tr>
+<tr id="t2013-03-11T02:25:30"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T02:25:30" class="time">02:25</a></td></tr>
+<tr id="t2013-03-11T02:25:44"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T02:25:44" class="time">02:25</a></td></tr>
+<tr id="t2013-03-11T02:30:14"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T02:30:14" class="time">02:30</a></td></tr>
+<tr id="t2013-03-11T02:31:55"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T02:31:55" class="time">02:31</a></td></tr>
+<tr id="t2013-03-11T02:32:38"><td class="join" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T02:32:38" class="time">02:32</a></td></tr>
+<tr id="t2013-03-11T02:34:19"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T02:34:19" class="time">02:34</a></td></tr>
+<tr id="t2013-03-11T02:35:25"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T02:35:25" class="time">02:35</a></td></tr>
+<tr id="t2013-03-11T02:36:47"><td class="part" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has quit IRC</td><td><a href="#t2013-03-11T02:36:47" class="time">02:36</a></td></tr>
+<tr id="t2013-03-11T02:49:01"><td class="part" colspan="2">*** bluelightning_ &lt;bluelightning_!~paul@pdpc/supporter/professional/bluelightning&gt; has quit IRC</td><td><a href="#t2013-03-11T02:49:01" class="time">02:49</a></td></tr>
+<tr id="t2013-03-11T03:02:56"><td class="part" colspan="2">*** Crofton|work &lt;Crofton|work!~balister@pool-96-240-188-95.ronkva.east.verizon.net&gt; has quit IRC</td><td><a href="#t2013-03-11T03:02:56" class="time">03:02</a></td></tr>
+<tr id="t2013-03-11T03:03:21"><td class="join" colspan="2">*** Crofton|work &lt;Crofton|work!~balister@pool-96-240-188-95.ronkva.east.verizon.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T03:03:21" class="time">03:03</a></td></tr>
+<tr id="t2013-03-11T03:05:22"><td class="join" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T03:05:22" class="time">03:05</a></td></tr>
+<tr id="t2013-03-11T03:06:30"><td class="part" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has quit IRC</td><td><a href="#t2013-03-11T03:06:30" class="time">03:06</a></td></tr>
+<tr id="t2013-03-11T03:09:28"><td class="join" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T03:09:28" class="time">03:09</a></td></tr>
+<tr id="t2013-03-11T03:26:27"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T03:26:27" class="time">03:26</a></td></tr>
+<tr id="t2013-03-11T03:28:16"><td class="part" colspan="2">*** EddyLaiWin &lt;EddyLaiWin!~vicom@59-124-170-50.HINET-IP.hinet.net&gt; has quit IRC</td><td><a href="#t2013-03-11T03:28:16" class="time">03:28</a></td></tr>
+<tr id="t2013-03-11T03:28:42"><td class="join" colspan="2">*** EddyLaiWin &lt;EddyLaiWin!~vicom@59-124-170-50.HINET-IP.hinet.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T03:28:42" class="time">03:28</a></td></tr>
+<tr id="t2013-03-11T03:28:54"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T03:28:54" class="time">03:28</a></td></tr>
+<tr id="t2013-03-11T03:38:07"><td class="nickchange" colspan="2">*** ka6sox-work is now known as ka6sox</td><td><a href="#t2013-03-11T03:38:07" class="time">03:38</a></td></tr>
+<tr id="t2013-03-11T03:55:48"><td class="part" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@46.2.51.177&gt; has quit IRC</td><td><a href="#t2013-03-11T03:55:48" class="time">03:55</a></td></tr>
+<tr id="t2013-03-11T04:15:06"><td class="part" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has quit IRC</td><td><a href="#t2013-03-11T04:15:06" class="time">04:15</a></td></tr>
+<tr id="t2013-03-11T04:15:48"><td class="join" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T04:15:48" class="time">04:15</a></td></tr>
+<tr id="t2013-03-11T04:48:33"><td class="part" colspan="2">*** iwamatsu &lt;iwamatsu!~iwamatsu@www1015ue.sakura.ne.jp&gt; has quit IRC</td><td><a href="#t2013-03-11T04:48:33" class="time">04:48</a></td></tr>
+<tr id="t2013-03-11T04:49:02"><td class="join" colspan="2">*** iwamatsu &lt;iwamatsu!~iwamatsu@www1015ue.sakura.ne.jp&gt; has joined #yocto</td><td><a href="#t2013-03-11T04:49:02" class="time">04:49</a></td></tr>
+<tr id="t2013-03-11T04:57:44"><td class="join" colspan="2">*** Jefro &lt;Jefro!~jefro@mail.bonnevilleresort.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T04:57:44" class="time">04:57</a></td></tr>
+<tr id="t2013-03-11T05:04:16"><td class="part" colspan="2">*** andyross &lt;andyross!~andy@c-67-171-188-207.hsd1.or.comcast.net&gt; has quit IRC</td><td><a href="#t2013-03-11T05:04:16" class="time">05:04</a></td></tr>
+<tr id="t2013-03-11T05:51:38"><td class="join" colspan="2">*** markos_ &lt;markos_!~markos@athedsl-4384870.home.otenet.gr&gt; has joined #yocto</td><td><a href="#t2013-03-11T05:51:38" class="time">05:51</a></td></tr>
+<tr id="t2013-03-11T06:18:44"><td class="part" colspan="2">*** roxell &lt;roxell!~roxell@sestofw01.enea.se&gt; has quit IRC</td><td><a href="#t2013-03-11T06:18:44" class="time">06:18</a></td></tr>
+<tr id="t2013-03-11T07:10:01"><td class="part" colspan="2">*** ScriptRipper &lt;ScriptRipper!~ScriptRip@opensuse/member/MartinMohring&gt; has quit IRC</td><td><a href="#t2013-03-11T07:10:01" class="time">07:10</a></td></tr>
+<tr id="t2013-03-11T07:10:42"><td class="part" colspan="2">*** Bagder &lt;Bagder!~daniel@www.haxx.se&gt; has quit IRC</td><td><a href="#t2013-03-11T07:10:42" class="time">07:10</a></td></tr>
+<tr id="t2013-03-11T07:13:03"><td class="part" colspan="2">*** sakoman &lt;sakoman!~steve@static-74-41-60-154.dsl1.pco.ca.frontiernet.net&gt; has quit IRC</td><td><a href="#t2013-03-11T07:13:03" class="time">07:13</a></td></tr>
+<tr id="t2013-03-11T07:16:47"><td class="join" colspan="2">*** Bagder &lt;Bagder!~daniel@www.haxx.se&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:16:47" class="time">07:16</a></td></tr>
+<tr id="t2013-03-11T07:18:24"><td class="join" colspan="2">*** sakoman &lt;sakoman!~steve@static-74-41-60-154.dsl1.pco.ca.frontiernet.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:18:24" class="time">07:18</a></td></tr>
+<tr id="t2013-03-11T07:25:23"><td class="join" colspan="2">*** ScriptRipper &lt;ScriptRipper!~ScriptRip@opensuse/member/MartinMohring&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:25:23" class="time">07:25</a></td></tr>
+<tr id="t2013-03-11T07:25:47"><td class="join" colspan="2">*** jchonig &lt;jchonig!~jch@firewall.honig.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:25:47" class="time">07:25</a></td></tr>
+<tr id="t2013-03-11T07:28:29"><td class="join" colspan="2">*** tor &lt;tor!~tor@c-ef66e655.125-1-64736c10.cust.bredbandsbolaget.se&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:28:29" class="time">07:28</a></td></tr>
+<tr id="t2013-03-11T07:28:49"><td class="join" colspan="2">*** eballetbo &lt;eballetbo!~eballetbo@43.Red-2-139-180.staticIP.rima-tde.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:28:49" class="time">07:28</a></td></tr>
+<tr id="t2013-03-11T07:29:33"><td class="join" colspan="2">*** shoragan &lt;shoragan!~jlu@debian/developer/shoragan&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:29:33" class="time">07:29</a></td></tr>
+<tr id="t2013-03-11T07:36:40"><td class="join" colspan="2">*** mihai &lt;mihai!~mihai@80.97.15.149&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:36:40" class="time">07:36</a></td></tr>
+<tr id="t2013-03-11T07:38:11"><td class="join" colspan="2">*** dlewin &lt;dlewin!~davidl@217.108.116.29&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:38:11" class="time">07:38</a></td></tr>
+<tr id="t2013-03-11T07:38:52"><td class="part" colspan="2">*** eballetbo &lt;eballetbo!~eballetbo@43.Red-2-139-180.staticIP.rima-tde.net&gt; has quit IRC</td><td><a href="#t2013-03-11T07:38:52" class="time">07:38</a></td></tr>
+<tr id="t2013-03-11T07:40:15"><td class="join" colspan="2">*** eballetbo &lt;eballetbo!~eballetbo@43.Red-2-139-180.staticIP.rima-tde.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:40:15" class="time">07:40</a></td></tr>
+<tr id="t2013-03-11T07:48:11"><td class="part" colspan="2">*** W1N9Zr0 &lt;W1N9Zr0!~W1N9Zr0@24.212.193.98&gt; has quit IRC</td><td><a href="#t2013-03-11T07:48:11" class="time">07:48</a></td></tr>
+<tr id="t2013-03-11T07:51:24"><td class="join" colspan="2">*** bluelightning &lt;bluelightning!~paul@or-67-237-97-32.sta.embarqhsd.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:51:24" class="time">07:51</a></td></tr>
+<tr id="t2013-03-11T07:51:24"><td class="join" colspan="2">*** bluelightning &lt;bluelightning!~paul@pdpc/supporter/professional/bluelightning&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:51:24" class="time">07:51</a></td></tr>
+<tr id="t2013-03-11T07:51:55"><td class="join" colspan="2">*** elmi82 &lt;elmi82!~timo@mail.bmw-carit.de&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:51:55" class="time">07:51</a></td></tr>
+<tr id="t2013-03-11T07:59:18"><td class="part" colspan="2">*** EddyLaiWin &lt;EddyLaiWin!~vicom@59-124-170-50.HINET-IP.hinet.net&gt; has quit IRC</td><td><a href="#t2013-03-11T07:59:18" class="time">07:59</a></td></tr>
+<tr id="t2013-03-11T07:59:42"><td class="join" colspan="2">*** EddyLaiWin &lt;EddyLaiWin!~vicom@59-124-167-225.HINET-IP.hinet.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T07:59:42" class="time">07:59</a></td></tr>
+<tr id="t2013-03-11T08:01:17"><td class="join" colspan="2">*** francois99 &lt;francois99!~francois9@78.33.60.3&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:01:17" class="time">08:01</a></td></tr>
+<tr id="t2013-03-11T08:01:28"><td class="join" colspan="2">*** francois99_ &lt;francois99_!~francois9@78.33.60.3&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:01:28" class="time">08:01</a></td></tr>
+<tr id="t2013-03-11T08:01:45"><td class="join" colspan="2">*** francois99 &lt;francois99!~francois9@78.33.60.3&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:01:45" class="time">08:01</a></td></tr>
+<tr id="t2013-03-11T08:01:48"><td class="join" colspan="2">*** smartin &lt;smartin!~smartin@140-85-190-109.dsl.ovh.fr&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:01:48" class="time">08:01</a></td></tr>
+<tr id="t2013-03-11T08:03:22"><td class="join" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@188.3.61.14&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:03:22" class="time">08:03</a></td></tr>
+<tr id="t2013-03-11T08:13:26"><td class="part" colspan="2">*** bluelightning &lt;bluelightning!~paul@pdpc/supporter/professional/bluelightning&gt; has quit IRC</td><td><a href="#t2013-03-11T08:13:26" class="time">08:13</a></td></tr>
+<tr id="t2013-03-11T08:18:51"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2013-03-11T08:18:51" class="time">08:18</a></td></tr>
+<tr id="t2013-03-11T08:18:57"><th class="nick" style="background: #407a40">mckoan</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2013-03-11T08:18:57" class="time">08:18</a></td></tr>
+<tr id="t2013-03-11T08:19:13"><td class="join" colspan="2">*** eren &lt;eren!~eren@unaffiliated/eren&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:19:13" class="time">08:19</a></td></tr>
+<tr id="t2013-03-11T08:31:19"><td class="join" colspan="2">*** sameo_ &lt;sameo_!samuel@nat/intel/x-atkelfawxdilqcpa&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:31:19" class="time">08:31</a></td></tr>
+<tr id="t2013-03-11T08:36:24"><td class="join" colspan="2">*** ant_work &lt;ant_work!~ant@host6-80-static.42-85-b.business.telecomitalia.it&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:36:24" class="time">08:36</a></td></tr>
+<tr id="t2013-03-11T08:38:14"><td class="join" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:38:14" class="time">08:38</a></td></tr>
+<tr id="t2013-03-11T08:40:00"><td class="join" colspan="2">*** imolit &lt;imolit!edwardd@nat/axis/x-nldlsudhaudzpbel&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:40:00" class="time">08:40</a></td></tr>
+<tr id="t2013-03-11T08:41:41"><td class="join" colspan="2">*** florian_kc &lt;florian_kc!~fuchs@port-217-146-132-69.static.qsc.de&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:41:41" class="time">08:41</a></td></tr>
+<tr id="t2013-03-11T08:41:41"><td class="join" colspan="2">*** florian_kc &lt;florian_kc!~fuchs@Maemo/community/contributor/florian&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:41:41" class="time">08:41</a></td></tr>
+<tr id="t2013-03-11T08:42:00"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2013-03-11T08:42:00" class="time">08:42</a></td></tr>
+<tr id="t2013-03-11T08:46:05"><td class="join" colspan="2">*** roric_ &lt;roric_!~roric@194-237-7-146.customer.telia.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:46:05" class="time">08:46</a></td></tr>
+<tr id="t2013-03-11T08:47:30"><td class="part" colspan="2">*** mebrown &lt;mebrown!~michael_e@99-23-198-227.lightspeed.austtx.sbcglobal.net&gt; has quit IRC</td><td><a href="#t2013-03-11T08:47:30" class="time">08:47</a></td></tr>
+<tr id="t2013-03-11T08:47:34"><td class="join" colspan="2">*** Corneliu &lt;Corneliu!c0c6972b@gateway/web/freenode/ip.192.198.151.43&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:47:34" class="time">08:47</a></td></tr>
+<tr id="t2013-03-11T08:54:17"><td class="part" colspan="2">*** ericben &lt;ericben!~ebenard@pac33-2-82-240-38-71.fbx.proxad.net&gt; has quit IRC</td><td><a href="#t2013-03-11T08:54:17" class="time">08:54</a></td></tr>
+<tr id="t2013-03-11T08:56:00"><td class="join" colspan="2">*** ericben &lt;ericben!~ebenard@pac33-2-82-240-38-71.fbx.proxad.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T08:56:00" class="time">08:56</a></td></tr>
+<tr id="t2013-03-11T08:58:20"><td class="part" colspan="2">*** eren &lt;eren!~eren@unaffiliated/eren&gt; has quit IRC</td><td><a href="#t2013-03-11T08:58:20" class="time">08:58</a></td></tr>
+<tr id="t2013-03-11T09:01:18"><td class="join" colspan="2">*** mebrown &lt;mebrown!~michael_e@99-23-198-227.lightspeed.austtx.sbcglobal.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:01:18" class="time">09:01</a></td></tr>
+<tr id="t2013-03-11T09:02:53"><td class="join" colspan="2">*** eren &lt;eren!~eren@unaffiliated/eren&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:02:53" class="time">09:02</a></td></tr>
+<tr id="t2013-03-11T09:05:33"><td class="part" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has quit IRC</td><td><a href="#t2013-03-11T09:05:33" class="time">09:05</a></td></tr>
+<tr id="t2013-03-11T09:07:35"><td class="nickchange" colspan="2">*** Jin|away is now known as Jin^eLD</td><td><a href="#t2013-03-11T09:07:35" class="time">09:07</a></td></tr>
+<tr id="t2013-03-11T09:09:01"><td class="join" colspan="2">*** honschu &lt;honschu!~honschu@shackspace/j4fun&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:09:01" class="time">09:09</a></td></tr>
+<tr id="t2013-03-11T09:10:50"><th class="nick" style="background: #42427e">honschu</th><td class="text" style="color: #42427e">Hi, I need to flash a bootloader to an omap3-board. The Docu suggests evmflash3530_v2_0_bin.exe. Is there a linux alternative? Or do you know where to download this EVM_FlashTool so that I can try it with wine?</td><td class="time"><a href="#t2013-03-11T09:10:50" class="time">09:10</a></td></tr>
+<tr id="t2013-03-11T09:15:40"><td class="part" colspan="2">*** tor &lt;tor!~tor@c-ef66e655.125-1-64736c10.cust.bredbandsbolaget.se&gt; has quit IRC</td><td><a href="#t2013-03-11T09:15:40" class="time">09:15</a></td></tr>
+<tr id="t2013-03-11T09:17:15"><td class="join" colspan="2">*** tor &lt;tor!~tor@c-ef66e655.125-1-64736c10.cust.bredbandsbolaget.se&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:17:15" class="time">09:17</a></td></tr>
+<tr id="t2013-03-11T09:18:27"><td class="join" colspan="2">*** jackmitchell &lt;jackmitchell!~Thunderbi@195.171.99.130&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:18:27" class="time">09:18</a></td></tr>
+<tr id="t2013-03-11T09:19:32"><td class="part" colspan="2">*** pirut &lt;pirut!~Pirut@134.134.139.76&gt; has quit IRC</td><td><a href="#t2013-03-11T09:19:32" class="time">09:19</a></td></tr>
+<tr id="t2013-03-11T09:27:32"><td class="join" colspan="2">*** jbaxter &lt;jbaxter!~jbaxter@jimbax.plus.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:27:32" class="time">09:27</a></td></tr>
+<tr id="t2013-03-11T09:30:16"><td class="join" colspan="2">*** pirut &lt;pirut!~Pirut@134.134.139.76&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:30:16" class="time">09:30</a></td></tr>
+<tr id="t2013-03-11T09:32:01"><td class="join" colspan="2">*** Net147 &lt;Net147!~Net147@60-242-179-244.static.tpgi.com.au&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:32:01" class="time">09:32</a></td></tr>
+<tr id="t2013-03-11T09:34:57"><td class="part" colspan="2">*** eren &lt;eren!~eren@unaffiliated/eren&gt; has quit IRC</td><td><a href="#t2013-03-11T09:34:57" class="time">09:34</a></td></tr>
+<tr id="t2013-03-11T09:38:17"><td class="part" colspan="2">*** pirut &lt;pirut!~Pirut@134.134.139.76&gt; has quit IRC</td><td><a href="#t2013-03-11T09:38:17" class="time">09:38</a></td></tr>
+<tr id="t2013-03-11T09:41:00"><td class="nickchange" colspan="2">*** mthalmei_away is now known as mthalmei</td><td><a href="#t2013-03-11T09:41:00" class="time">09:41</a></td></tr>
+<tr id="t2013-03-11T09:43:35"><td class="join" colspan="2">*** pirut &lt;pirut!~Pirut@134.134.139.76&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:43:35" class="time">09:43</a></td></tr>
+<tr id="t2013-03-11T09:55:44"><td class="join" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has joined #yocto</td><td><a href="#t2013-03-11T09:55:44" class="time">09:55</a></td></tr>
+<tr id="t2013-03-11T10:03:09"><td class="part" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@188.3.61.14&gt; has quit IRC</td><td><a href="#t2013-03-11T10:03:09" class="time">10:03</a></td></tr>
+<tr id="t2013-03-11T10:03:46"><td class="join" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@188.3.61.14&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:03:46" class="time">10:03</a></td></tr>
+<tr id="t2013-03-11T10:07:56"><td class="join" colspan="2">*** panda84kde &lt;panda84kde!~diego@static-217-133-170-65.clienti.tiscali.it&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:07:56" class="time">10:07</a></td></tr>
+<tr id="t2013-03-11T10:15:58"><td class="join" colspan="2">*** teox &lt;teox!~teox@5.157.100.102&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:15:58" class="time">10:15</a></td></tr>
+<tr id="t2013-03-11T10:18:07"><th class="nick" style="background: #818144">teox</th><td class="text" style="color: #818144"> featch openration linux-libc-headers-raspberrypi-3.6.y-r0 doesn't finish... why?</td><td class="time"><a href="#t2013-03-11T10:18:07" class="time">10:18</a></td></tr>
+<tr id="t2013-03-11T10:22:42"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T10:22:42" class="time">10:22</a></td></tr>
+<tr id="t2013-03-11T10:23:52"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:23:52" class="time">10:23</a></td></tr>
+<tr id="t2013-03-11T10:28:19"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T10:28:19" class="time">10:28</a></td></tr>
+<tr id="t2013-03-11T10:33:52"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:33:52" class="time">10:33</a></td></tr>
+<tr id="t2013-03-11T10:35:32"><td class="part" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has quit IRC</td><td><a href="#t2013-03-11T10:35:32" class="time">10:35</a></td></tr>
+<tr id="t2013-03-11T10:38:29"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T10:38:29" class="time">10:38</a></td></tr>
+<tr id="t2013-03-11T10:55:56"><td class="part" colspan="2">*** markos_ &lt;markos_!~markos@athedsl-4384870.home.otenet.gr&gt; has quit IRC</td><td><a href="#t2013-03-11T10:55:56" class="time">10:55</a></td></tr>
+<tr id="t2013-03-11T10:57:18"><td class="join" colspan="2">*** markos_ &lt;markos_!~markos@athedsl-4384870.home.otenet.gr&gt; has joined #yocto</td><td><a href="#t2013-03-11T10:57:18" class="time">10:57</a></td></tr>
+<tr id="t2013-03-11T11:06:30"><td class="join" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has joined #yocto</td><td><a href="#t2013-03-11T11:06:30" class="time">11:06</a></td></tr>
+<tr id="t2013-03-11T11:12:14"><td class="part" colspan="2">*** khohm_ &lt;khohm_!~quassel@share.basyskom.com&gt; has quit IRC</td><td><a href="#t2013-03-11T11:12:14" class="time">11:12</a></td></tr>
+<tr id="t2013-03-11T11:15:07"><td class="part" colspan="2">*** lh &lt;lh!~lhawthor@osuosl/staff/lh&gt; has quit IRC</td><td><a href="#t2013-03-11T11:15:07" class="time">11:15</a></td></tr>
+<tr id="t2013-03-11T11:24:31"><td class="nickchange" colspan="2">*** mthalmei is now known as mthalmei_away</td><td><a href="#t2013-03-11T11:24:31" class="time">11:24</a></td></tr>
+<tr id="t2013-03-11T11:43:13"><td class="part" colspan="2">*** fp &lt;fp!~fp@115.119.134.194&gt; has quit IRC</td><td><a href="#t2013-03-11T11:43:13" class="time">11:43</a></td></tr>
+<tr id="t2013-03-11T11:43:53"><td class="join" colspan="2">*** joeythesaint &lt;joeythesaint!~jjm@206-248-190-39.dsl.teksavvy.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T11:43:53" class="time">11:43</a></td></tr>
+<tr id="t2013-03-11T11:45:37"><td class="join" colspan="2">*** tinti &lt;tinti!~tinti@pdpc/supporter/student/tinti&gt; has joined #yocto</td><td><a href="#t2013-03-11T11:45:37" class="time">11:45</a></td></tr>
+<tr id="t2013-03-11T11:55:44"><td class="nickchange" colspan="2">*** otavio_ is now known as otavio</td><td><a href="#t2013-03-11T11:55:44" class="time">11:55</a></td></tr>
+<tr id="t2013-03-11T12:03:33"><td class="part" colspan="2">*** JDuke128 &lt;JDuke128!~kadirbaso@188.3.61.14&gt; has quit IRC</td><td><a href="#t2013-03-11T12:03:33" class="time">12:03</a></td></tr>
+<tr id="t2013-03-11T12:04:07"><td class="part" colspan="2">*** Crofton|work &lt;Crofton|work!~balister@pool-96-240-188-95.ronkva.east.verizon.net&gt; has quit IRC</td><td><a href="#t2013-03-11T12:04:07" class="time">12:04</a></td></tr>
+<tr id="t2013-03-11T12:04:08"><td class="join" colspan="2">*** W1N9Zr0 &lt;W1N9Zr0!~W1N9Zr0@24-246-93-30.cable.teksavvy.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:04:08" class="time">12:04</a></td></tr>
+<tr id="t2013-03-11T12:13:16"><td class="join" colspan="2">*** khohm &lt;khohm!~quassel@share.basyskom.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:13:16" class="time">12:13</a></td></tr>
+<tr id="t2013-03-11T12:22:55"><td class="part" colspan="2">*** Net147 &lt;Net147!~Net147@60-242-179-244.static.tpgi.com.au&gt; has quit IRC</td><td><a href="#t2013-03-11T12:22:55" class="time">12:22</a></td></tr>
+<tr id="t2013-03-11T12:24:27"><td class="part" colspan="2">*** teox &lt;teox!~teox@5.157.100.102&gt; has quit IRC</td><td><a href="#t2013-03-11T12:24:27" class="time">12:24</a></td></tr>
+<tr id="t2013-03-11T12:31:47"><td class="join" colspan="2">*** Zagor &lt;Zagor!~bjst@rockbox/developer/Zagor&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:31:47" class="time">12:31</a></td></tr>
+<tr id="t2013-03-11T12:33:04"><td class="part" colspan="2">*** markos_ &lt;markos_!~markos@athedsl-4384870.home.otenet.gr&gt; has quit IRC</td><td><a href="#t2013-03-11T12:33:04" class="time">12:33</a></td></tr>
+<tr id="t2013-03-11T12:33:57"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:33:57" class="time">12:33</a></td></tr>
+<tr id="t2013-03-11T12:38:20"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T12:38:20" class="time">12:38</a></td></tr>
+<tr id="t2013-03-11T12:45:02"><td class="join" colspan="2">*** markos_ &lt;markos_!~markos@athedsl-4384992.home.otenet.gr&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:45:02" class="time">12:45</a></td></tr>
+<tr id="t2013-03-11T12:50:25"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T12:50:25" class="time">12:50</a></td></tr>
+<tr id="t2013-03-11T12:55:13"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T12:55:13" class="time">12:55</a></td></tr>
+<tr id="t2013-03-11T13:00:27"><td class="join" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has joined #yocto</td><td><a href="#t2013-03-11T13:00:27" class="time">13:00</a></td></tr>
+<tr id="t2013-03-11T13:05:00"><td class="part" colspan="2">*** seebs &lt;seebs!~seebs@home.seebs.net&gt; has quit IRC</td><td><a href="#t2013-03-11T13:05:00" class="time">13:05</a></td></tr>
+<tr id="t2013-03-11T13:09:21"><td class="join" colspan="2">*** khohm &lt;khohm!~quassel@share.basyskom.com&gt; has joined #yocto</td><td><a href="#t2013-03-11T13:09:21" class="time">13:09</a></td></tr>
+<tr id="t2013-03-11T13:18:26"><td class="join" colspan="2">*** ronanguirec_ &lt;ronanguirec_!~ronanguir@46.18.96.46&gt; has joined #yocto</td><td><a href="#t2013-03-11T13:18:26" class="time">13:18</a></td></tr>
+<tr id="t2013-03-11T13:19:58"><td class="part" colspan="2">*** araujo &lt;araujo!~araujo@gentoo/developer/araujo&gt; has quit IRC</td><td><a href="#t2013-03-11T13:19:58" class="time">13:19</a></td></tr>
+<tr id="t2013-03-11T13:20:52"><td class="part" colspan="2">*** tinti &lt;tinti!~tinti@pdpc/supporter/student/tinti&gt; has quit IRC</td><td><a href="#t2013-03-11T13:20:52" class="time">13:20</a></td></tr>
+<tr id="t2013-03-11T13:25:19"><th class="nick" style="background: #854685">ronanguirec_</th><td class="text" style="color: #854685">Hi all,</td><td class="time"><a href="#t2013-03-11T13:25:19" class="time">13:25</a></td></tr>
+<tr id="t2013-03-11T13:25:25"><th class="nick" style="background: #854685">ronanguirec_</th><td class="text" style="color: #854685">I've got a little problem.</td><td class="time"><a href="#t2013-03-11T13:25:25" class="time">13:25</a></td></tr>
+<tr id="t2013-03-11T13:25:33"><th class="nick" style="background: #854685">ronanguirec_</th><td class="text" style="color: #854685">- I Want to create a .bb file.</td><td class="time"><a href="#t2013-03-11T13:25:33" class="time">13:25</a></td></tr>
+<tr id="t2013-03-11T13:25:46"><th class="nick" style="background: #854685">ronanguirec_</th><td class="text" style="color: #854685">during the do_compile() I've got a dependency to a bash function "foo".</td><td class="time"><a href="#t2013-03-11T13:25:46" class="time">13:25</a></td></tr>
+<tr id="t2013-03-11T13:26:00"><th class="nick" style="background: #854685">ronanguirec_</th><td class="text" style="color: 

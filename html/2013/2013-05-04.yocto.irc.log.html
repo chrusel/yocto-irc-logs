@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-05-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-05-04</h1>
+<div class="navigation"> <a href="%23yocto.2013-05-03.log.html">&#171; Friday, 2013-05-03</a> <a href="index.html">Index</a> <a href="%23yocto.2013-05-05.log.html">Sunday, 2013-05-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-05-04T07:20:44"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-away</td><td><a href="#t2013-05-04T07:20:44" class="time">07:20</a></td></tr>
+<tr id="t2013-05-04T08:51:05"><th class="nick" style="background: #407a40">mattnie</th><td class="text" style="color: #407a40">Does someone tested yocto for the raspberrypi in the last days? If someone tested it does ist work?</td><td class="time"><a href="#t2013-05-04T08:51:05" class="time">08:51</a></td></tr>
+<tr id="t2013-05-04T11:47:30"><td class="part" colspan="2">*** ScriptRipper &lt;ScriptRipper!~ScriptRip@opensuse/member/MartinMohring&gt; has left #yocto</td><td><a href="#t2013-05-04T11:47:30" class="time">11:47</a></td></tr>
+<tr id="t2013-05-04T13:58:28"><td class="nickchange" colspan="2">*** mthalmei_away is now known as mthalmei</td><td><a href="#t2013-05-04T13:58:28" class="time">13:58</a></td></tr>
+<tr id="t2013-05-04T14:02:10"><td class="nickchange" colspan="2">*** mthalmei is now known as mthalmei_away</td><td><a href="#t2013-05-04T14:02:10" class="time">14:02</a></td></tr>
+<tr id="t2013-05-04T14:07:49"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">Hello there. I have a small problem with a i.MX6 board. Each time I move the mouse, it hangs for a while, and gives an "AXI BUS ERROR" message with a lot of exclamation signs. Anyone know what could be causing this?</td><td class="time"><a href="#t2013-05-04T14:07:49" class="time">14:07</a></td></tr>
+<tr id="t2013-05-04T14:44:42"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox</td><td><a href="#t2013-05-04T14:44:42" class="time">14:44</a></td></tr>
+<tr id="t2013-05-04T15:06:14"><th class="nick" style="background: #818144">silviof</th><td class="text" style="color: #818144">kspr: I think it is not yocto related but have you a screenshoot or a paste of the messages? And have you looked to imxcommunity.org ?</td><td class="time"><a href="#t2013-05-04T15:06:14" class="time">15:06</a></td></tr>
+<tr id="t2013-05-04T15:08:52"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">silviof, Well, it might not be. It is a kernel message in the syslog, just saying "!!!!!!!!!! AXI BUS ERROR !!!!!!!!!!!!!". Nothing else. I have checked imxcommunity.org, but I'll ask there instead, if that is a better place for the question.</td><td class="time"><a href="#t2013-05-04T15:08:52" class="time">15:08</a></td></tr>
+<tr id="t2013-05-04T15:09:47"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">silviof, the reason I thourght it might be yocto related, is that I haven't seen the message with any other linux distributions on the board.</td><td class="time"><a href="#t2013-05-04T15:09:47" class="time">15:09</a></td></tr>
+<tr id="t2013-05-04T15:11:21"><th class="nick" style="background: #818144">silviof</th><td class="text" style="color: #818144">kspr: without screenshot i cannot say which is the best place to ask :-)</td><td class="time"><a href="#t2013-05-04T15:11:21" class="time">15:11</a></td></tr>
+<tr id="t2013-05-04T15:12:27"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">I'll make a screenshot :)</td><td class="time"><a href="#t2013-05-04T15:12:27" class="time">15:12</a></td></tr>
+<tr id="t2013-05-04T15:18:36"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">silviof, <a href="http://screencloud.net/v/5yur" rel="nofollow">http://screencloud.net/v/5yur</a></td><td class="time"><a href="#t2013-05-04T15:18:36" class="time">15:18</a></td></tr>
+<tr id="t2013-05-04T15:31:36"><th class="nick" style="background: #854685">madhura</th><td class="text" style="color: #854685">hi I am a CS undergrad interested in working under yocto for the GNOME-OPW. I only came to know of it today!</td><td class="time"><a href="#t2013-05-04T15:31:36" class="time">15:31</a></td></tr>
+<tr id="t2013-05-04T15:32:06"><th class="nick" style="background: #854685">madhura</th><td class="text" style="color: #854685">Any pointers on issues I can tackle to get started</td><td class="time"><a href="#t2013-05-04T15:32:06" class="time">15:32</a></td></tr>
+<tr id="t2013-05-04T15:37:43"><th class="nick" style="background: #488888">dv_</th><td class="text" style="color: #488888">kspr: you may want to ask otavio on that</td><td class="time"><a href="#t2013-05-04T15:37:43" class="time">15:37</a></td></tr>
+<tr id="t2013-05-04T15:38:03"><th class="nick" style="background: #42427e">kspr</th><td class="text" style="color: #42427e">dv_, okay, thanks!</td><td class="time"><a href="#t2013-05-04T15:38:03" class="time">15:38</a></td></tr>
+<tr id="t2013-05-04T15:38:42"><th class="nick" style="background: #854685">madhura</th><td class="text" style="color: #854685">pidge: Could you give me some pointers where I could start contributing for opw?</td><td class="time"><a href="#t2013-05-04T15:38:42" class="time">15:38</a></td></tr>
+<tr id="t2013-05-04T16:11:05"><td class="other" colspan="2">-YoctoAutoBuilder- build #99 of nightly-fsl-ppc is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/99" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/99</a></td><td><a href="#t2013-05-04T16:11:05" class="time">16:11</a></td></tr>
+<tr id="t2013-05-04T16:16:35"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-away</td><td><a href="#t2013-05-04T16:16:35" class="time">16:16</a></td></tr>
+<tr id="t2013-05-04T16:55:47"><td class="other" colspan="2">-YoctoAutoBuilder- build #96 of nightly-oecore is complete: Exception [exception CreateAutoConf]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-oecore/builds/96" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-oecore/builds/96</a></td><td><a href="#t2013-05-04T16:55:47" class="time">16:55</a></td></tr>
+<tr id="t2013-05-04T17:17:37"><td class="other" colspan="2">-YoctoAutoBuilder- build #96 of nightly-fsl-ppc-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/96" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc-lsb/builds/96</a></td><td><a href="#t2013-05-04T17:17:37" class="time">17:17</a></td></tr>
+<tr id="t2013-05-04T17:47:51"><td class="other" colspan="2">-YoctoAutoBuilder- build #4 of nightly-qa-systemd is complete: Failure [failed Building Images Running Sanity Tests Building Images_1 Running Sanity Tests_1 Building Images_2 Running Sanity Tests_2]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-qa-systemd/builds/4" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-qa-systemd/builds/4</a></td><td><a href="#t2013-05-04T17:47:51" class="time">17:47</a></td></tr>
+<tr id="t2013-05-04T17:59:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #125 of nightly-world is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/125" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-world/builds/125</a></td><td><a href="#t2013-05-04T17:59:21" class="time">17:59</a></td></tr>
+<tr id="t2013-05-04T18:01:15"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox-farfarawa</td><td><a href="#t2013-05-04T18:01:15" class="time">18:01</a></td></tr>
+<tr id="t2013-05-04T18:41:50"><td class="nickchange" colspan="2">*** ka6sox-farfarawa is now known as ka6sox-away</td><td><a href="#t2013-05-04T18:41:50" class="time">18:41</a></td></tr>
+<tr id="t2013-05-04T20:32:10"><th class="nick" style="background: #8c4a4a">lh</th><td class="text" style="color: #8c4a4a">++</td><td class="time"><a href="#t2013-05-04T20:32:10" class="time">20:32</a></td></tr>
+<tr id="t2013-05-04T22:43:41"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox</td><td><a href="#t2013-05-04T22:43:41" class="time">22:43</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-05-03.log.html">&#171; Friday, 2013-05-03</a> <a href="index.html">Index</a> <a href="%23yocto.2013-05-05.log.html">Sunday, 2013-05-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-06-01</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-06-01</h1>
+<div class="navigation"> <a href="%23yocto.2013-05-31.log.html">&#171; Friday, 2013-05-31</a> <a href="index.html">Index</a> <a href="%23yocto.2013-06-02.log.html">Sunday, 2013-06-02 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-06-01T08:12:13"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">I am writing recipe for LLVM 3.2 and it generates a llvm-config executable (it used to be a script in LLVM 2.9) for the build host to compile for the target. should I place it in ${bindir_crossscripts} or is there a more suitable directory for it?</td><td class="time"><a href="#t2013-06-01T08:12:13" class="time">08:12</a></td></tr>
+<tr id="t2013-06-01T08:43:43"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">hi bluelightning</td><td class="time"><a href="#t2013-06-01T08:43:43" class="time">08:43</a></td></tr>
+<tr id="t2013-06-01T08:44:41"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">hi Net147</td><td class="time"><a href="#t2013-06-01T08:44:41" class="time">08:44</a></td></tr>
+<tr id="t2013-06-01T08:45:10"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">is there a ${bindir_crossscripts} equivalent for executables rather than scripts?</td><td class="time"><a href="#t2013-06-01T08:45:10" class="time">08:45</a></td></tr>
+<tr id="t2013-06-01T08:50:00"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">Net147: would that be STAGING_BINDIR_CROSS ?</td><td class="time"><a href="#t2013-06-01T08:50:00" class="time">08:50</a></td></tr>
+<tr id="t2013-06-01T08:50:54"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">bluelightning: STAGING_BINDIR_CROSS = "${STAGING_BINDIR}/crossscripts"</td><td class="time"><a href="#t2013-06-01T08:50:54" class="time">08:50</a></td></tr>
+<tr id="t2013-06-01T08:52:17"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">bluelightning: so it's fine to put executables in crossscripts?</td><td class="time"><a href="#t2013-06-01T08:52:17" class="time">08:52</a></td></tr>
+<tr id="t2013-06-01T08:52:37"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">Net147: I would assume so</td><td class="time"><a href="#t2013-06-01T08:52:37" class="time">08:52</a></td></tr>
+<tr id="t2013-06-01T08:52:59"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">bluelightning: okay, I will try. thanks</td><td class="time"><a href="#t2013-06-01T08:52:59" class="time">08:52</a></td></tr>
+<tr id="t2013-06-01T10:38:50"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">Net147: sorry I was working on something else yesterday..</td><td class="time"><a href="#t2013-06-01T10:38:50" class="time">10:38</a></td></tr>
+<tr id="t2013-06-01T10:39:04"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">Net147: btw can you update status on some of your patches? <a href="http://patchwork.openembedded.org/project/oe/list/?submitter=10737&amp;q=llvm&amp;archive=both" rel="nofollow">http://patchwork.openembedded.org/project/oe/list/?submitter=10737&amp;q=llvm&amp;archive=both</a></td><td class="time"><a href="#t2013-06-01T10:39:04" class="time">10:39</a></td></tr>
+<tr id="t2013-06-01T10:41:01"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">also allow and fix PARALLEL_MAKE should be probably squashed together or applied in right order</td><td class="time"><a href="#t2013-06-01T10:41:01" class="time">10:41</a></td></tr>
+<tr id="t2013-06-01T10:47:44"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">JaMa: do I need a login?</td><td class="time"><a href="#t2013-06-01T10:47:44" class="time">10:47</a></td></tr>
+<tr id="t2013-06-01T10:48:50"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">JaMa: where do I register for patchwork?</td><td class="time"><a href="#t2013-06-01T10:48:50" class="time">10:48</a></td></tr>
+<tr id="t2013-06-01T10:49:37"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">ah, registrations are disabled, ping khem</td><td class="time"><a href="#t2013-06-01T10:49:37" class="time">10:49</a></td></tr>
+<tr id="t2013-06-01T10:49:55"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">khem: ping</td><td class="time"><a href="#t2013-06-01T10:49:55" class="time">10:49</a></td></tr>
+<tr id="t2013-06-01T10:50:53"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">JaMa: I have a work in progress recipe for LLVM 3.2 - <a href="http://pastebin.com/xqcHHW1T" rel="nofollow">http://pastebin.com/xqcHHW1T</a></td><td class="time"><a href="#t2013-06-01T10:50:53" class="time">10:50</a></td></tr>
+<tr id="t2013-06-01T10:51:17"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">khem: there is request form for wiki accounts, maybe we need something like that for patchwork accounts <a href="http://www.openembedded.org/wiki/Special:RequestAccount" rel="nofollow">http://www.openembedded.org/wiki/Special:RequestAccount</a></td><td class="time"><a href="#t2013-06-01T10:51:17" class="time">10:51</a></td></tr>
+<tr id="t2013-06-01T10:54:19"><th class="nick" style="background: #407a40">Net147</th><td class="text" style="color: #407a40">JaMa: still need to adapt it to the multiple version handling system</td><td class="time"><a href="#t2013-06-01T10:54:19" class="time">10:54</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-05-31.log.html">&#171; Friday, 2013-05-31</a> <a href="index.html">Index</a> <a href="%23yocto.2013-06-02.log.html">Sunday, 2013-06-02 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

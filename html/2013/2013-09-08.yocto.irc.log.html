@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2013-09-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2013-09-08</h1>
+<div class="navigation"> <a href="%23yocto.2013-09-07.log.html">&#171; Saturday, 2013-09-07</a> <a href="index.html">Index</a> <a href="%23yocto.2013-09-09.log.html">Monday, 2013-09-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-09-08T00:24:15"><td class="other" colspan="2">-YoctoAutoBuilder- build #286 of nightly-x86 is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x86/builds/286" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x86/builds/286</a></td><td><a href="#t2013-09-08T00:24:15" class="time">00:24</a></td></tr>
+<tr id="t2013-09-08T00:41:38"><td class="other" colspan="2">-YoctoAutoBuilder- build #286 of nightly-mips is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-mips/builds/286" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-mips/builds/286</a></td><td><a href="#t2013-09-08T00:41:38" class="time">00:41</a></td></tr>
+<tr id="t2013-09-08T02:53:02"><td class="part" colspan="2">*** gcoville &lt;gcoville!~ghc@c-174-62-65-63.hsd1.ca.comcast.net&gt; has left #yocto</td><td><a href="#t2013-09-08T02:53:02" class="time">02:53</a></td></tr>
+<tr id="t2013-09-08T03:32:24"><td class="other" colspan="2">-YoctoAutoBuilder- build #280 of nightly-x86-64 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-64/builds/280" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-x86-64/builds/280</a></td><td><a href="#t2013-09-08T03:32:24" class="time">03:32</a></td></tr>
+<tr id="t2013-09-08T07:20:43"><td class="other" colspan="2">-YoctoAutoBuilder- build #259 of nightly-fsl-arm-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm-lsb/builds/259" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-arm-lsb/builds/259</a></td><td><a href="#t2013-09-08T07:20:43" class="time">07:20</a></td></tr>
+<tr id="t2013-09-08T13:28:09"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2013-09-08T13:28:09" class="time">13:28</a></td></tr>
+<tr id="t2013-09-08T14:02:20"><th class="nick" style="background: #407a40">imphil</th><td class="text" style="color: #407a40">hi. I have built a SDK using bitbake populate_sdk, and now I tried to built some software with it and figured out that the (native) python inside comes without the filecmp module. the nativesdk-python-misc package contains this module, but seems to be not installed. where do I need to add the dependency on this?</td><td class="time"><a href="#t2013-09-08T14:02:20" class="time">14:02</a></td></tr>
+<tr id="t2013-09-08T14:02:51"><th class="nick" style="background: #407a40">imphil</th><td class="text" style="color: #407a40">somewhere inside the image which I use to build the SDK?</td><td class="time"><a href="#t2013-09-08T14:02:51" class="time">14:02</a></td></tr>
+<tr id="t2013-09-08T14:23:24"><th class="nick" style="background: #42427e">n01</th><td class="text" style="color: #42427e">Hi, if I set LINUX_VERSION to 3.8.13 and SRCREV to AUTOREV is this enough to download that specific kernel version using linux-yocto-custom?</td><td class="time"><a href="#t2013-09-08T14:23:24" class="time">14:23</a></td></tr>
+<tr id="t2013-09-08T14:28:42"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">RP: do you have a sec?</td><td class="time"><a href="#t2013-09-08T14:28:42" class="time">14:28</a></td></tr>
+<tr id="t2013-09-08T14:33:17"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">I've another test-case for <a href="https://bugzilla.yoctoproject.org/show_bug.cgi?id=5132" rel="nofollow">https://bugzilla.yoctoproject.org/show_bug.cgi?id=5132</a> and it seems like reverting 556dee0c4d6d8a87c0cddbd2f60fe5917d009f18 (cachedpath.py) helps</td><td class="time"><a href="#t2013-09-08T14:33:17" class="time">14:33</a></td></tr>
+<tr id="t2013-09-08T14:33:18"><th class="nick" style="background: #854685">yocti</th><td class="text" style="color: #854685">Bug 5132: normal, Undecided, ---, peter.seebach, NEW , pseudo: Different file attributes detected by buildhistory</td><td class="time"><a href="#t2013-09-08T14:33:18" class="time">14:33</a></td></tr>
+<tr id="t2013-09-08T14:37:20"><th class="nick" style="background: #818144">JaMa</th><td class="text" style="color: #818144">looks like some cpath.updatecache() calls are missing, trying now</td><td class="time"><a href="#t2013-09-08T14:37:20" class="time">14:37</a></td></tr>
+<tr id="t2013-09-08T15:10:05"><td class="nickchange" colspan="2">*** silviof1 is now known as silviof</td><td><a href="#t2013-09-08T15:10:05" class="time">15:10</a></td></tr>
+<tr id="t2013-09-08T16:24:48"><th class="nick" style="background: #42427e">n01</th><td class="text" style="color: #42427e">what's wrong with this recipe? <a href="http://pastebin.com/iBY7kBFu" rel="nofollow">http://pastebin.com/iBY7kBFu</a></td><td class="time"><a href="#t2013-09-08T16:24:48" class="time">16:24</a></td></tr>
+<tr id="t2013-09-08T16:25:05"><th class="nick" style="background: #42427e">n01</th><td class="text" style="color: #42427e">I have an error in do_validate_branches</td><td class="time"><a href="#t2013-09-08T16:25:05" class="time">16:25</a></td></tr>
+<tr id="t2013-09-08T19:34:12"><td class="nickchange" colspan="2">*** oscailt is now known as azzurra</td><td><a href="#t2013-09-08T19:34:12" class="time">19:34</a></td></tr>
+<tr id="t2013-09-08T20:16:48"><td class="nickchange" colspan="2">*** azzurra is now known as oscailt</td><td><a href="#t2013-09-08T20:16:48" class="time">20:16</a></td></tr>
+<tr id="t2013-09-08T21:05:59"><td class="nickchange" colspan="2">*** zeddii_home_ is now known as zeddii_home</td><td><a href="#t2013-09-08T21:05:59" class="time">21:05</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-09-07.log.html">&#171; Saturday, 2013-09-07</a> <a href="index.html">Index</a> <a href="%23yocto.2013-09-09.log.html">Monday, 2013-09-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

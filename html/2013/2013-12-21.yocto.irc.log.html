@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-12-21</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-12-21</h1>
+<div class="navigation"> <a href="%23yocto.2013-12-20.log.html">&#171; Friday, 2013-12-20</a> <a href="index.html">Index</a> <a href="%23yocto.2013-12-22.log.html">Sunday, 2013-12-22 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-12-21T00:53:04"><td class="part" colspan="2">*** paulbarker &lt;paulbarker!~pbarker@94-192-12-83.zone6.bethere.co.uk&gt; has left #yocto</td><td><a href="#t2013-12-21T00:53:04" class="time">00:53</a></td></tr>
+<tr id="t2013-12-21T01:00:29"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">bluelightning: solved it, went side-ways: added a package with PACKAGES+="linux-extra", then FILES_linux-extra="${includedir}/*"</td><td class="time"><a href="#t2013-12-21T01:00:29" class="time">01:00</a></td></tr>
+<tr id="t2013-12-21T01:01:07"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">bluelightning: then, added "linux-extra" to IMAGE_EXTRAS</td><td class="time"><a href="#t2013-12-21T01:01:07" class="time">01:01</a></td></tr>
+<tr id="t2013-12-21T01:02:57"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">T0mW: right, that would work</td><td class="time"><a href="#t2013-12-21T01:02:57" class="time">01:02</a></td></tr>
+<tr id="t2013-12-21T01:03:12"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">T0mW: I would have thought kernel-dev would have been the package to put this kind of thing in though</td><td class="time"><a href="#t2013-12-21T01:03:12" class="time">01:03</a></td></tr>
+<tr id="t2013-12-21T01:03:38"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">bluelightning: I'll still make a bug-report about it, let someone in the know possibly just close the bug as extraneous.</td><td class="time"><a href="#t2013-12-21T01:03:38" class="time">01:03</a></td></tr>
+<tr id="t2013-12-21T01:04:34"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">T0mW: good stuff, I'd like to have a clear statement of whether or not we should support this kind of thing out of the box (it seems to me we should, but I'm no kind of kernel expert)</td><td class="time"><a href="#t2013-12-21T01:04:34" class="time">01:04</a></td></tr>
+<tr id="t2013-12-21T01:04:50"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">bluelightning: well, no, it is a file that describes the IOCTL interface to some modules.&nbsp;&nbsp;It really doesn't qualify as a kernel-dev as that implies you need the whole kernel source.&nbsp;&nbsp;Just the headers should be enough, that is what I was trying to export: a header file.</td><td class="time"><a href="#t2013-12-21T01:04:50" class="time">01:04</a></td></tr>
+<tr id="t2013-12-21T01:05:15"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">hmm ok</td><td class="time"><a href="#t2013-12-21T01:05:15" class="time">01:05</a></td></tr>
+<tr id="t2013-12-21T01:07:39"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">the hardware in both my target systems (arm920t and ATOM N450) have custom PLD driven elements.&nbsp;&nbsp;That would only necessitate exposing the IO interface of the modules, you wouldn't need the whole kernel source.&nbsp;&nbsp;AAMOF, forcing someone to install the dev kernel would be obfusicating things, to a degree.</td><td class="time"><a href="#t2013-12-21T01:07:39" class="time">01:07</a></td></tr>
+<tr id="t2013-12-21T01:08:47"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">anyway, bug report, later.</td><td class="time"><a href="#t2013-12-21T01:08:47" class="time">01:08</a></td></tr>
+<tr id="t2013-12-21T01:09:04"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">I think I don't know enough about this to offer a coherent response, but filing the bug should prompt it to be handled by folks that do</td><td class="time"><a href="#t2013-12-21T01:09:04" class="time">01:09</a></td></tr>
+<tr id="t2013-12-21T01:09:13"><th class="nick" style="background: #407a40">T0mW</th><td class="text" style="color: #407a40">nod</td><td class="time"><a href="#t2013-12-21T01:09:13" class="time">01:09</a></td></tr>
+<tr id="t2013-12-21T01:11:47"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">thanks</td><td class="time"><a href="#t2013-12-21T01:11:47" class="time">01:11</a></td></tr>
+<tr id="t2013-12-21T08:07:22"><td class="part" colspan="2">*** nerdboy &lt;nerdboy!~sarnold@gentoo/developer/nerdboy&gt; has left #yocto</td><td><a href="#t2013-12-21T08:07:22" class="time">08:07</a></td></tr>
+<tr id="t2013-12-21T08:07:50"><th class="nick" style="background: #818144">nerdboy</th><td class="text" style="color: #818144">Crofton: there's lovely sed hack in your email...</td><td class="time"><a href="#t2013-12-21T08:07:50" class="time">08:07</a></td></tr>
+<tr id="t2013-12-21T20:28:55"><th class="nick" style="background: #854685">ccube</th><td class="text" style="color: #854685">pidge, there?</td><td class="time"><a href="#t2013-12-21T20:28:55" class="time">20:28</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-12-20.log.html">&#171; Friday, 2013-12-20</a> <a href="index.html">Index</a> <a href="%23yocto.2013-12-22.log.html">Sunday, 2013-12-22 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

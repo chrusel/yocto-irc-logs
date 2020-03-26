@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2013-09-22</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2013-09-22</h1>
+<div class="navigation"> <a href="%23yocto.2013-09-21.log.html">&#171; Saturday, 2013-09-21</a> <a href="index.html">Index</a> <a href="%23yocto.2013-09-23.log.html">Monday, 2013-09-23 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-09-22T00:57:32"><td class="other" colspan="2">-YoctoAutoBuilder- build #311 of nightly-mips-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-mips-lsb/builds/311" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-mips-lsb/builds/311</a></td><td><a href="#t2013-09-22T00:57:32" class="time">00:57</a></td></tr>
+<tr id="t2013-09-22T14:23:58"><td class="other" colspan="2">-YoctoAutoBuilder- build #270 of nightly-fsl-ppc is complete: Failure [failed Building Images]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/270" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-fsl-ppc/builds/270</a></td><td><a href="#t2013-09-22T14:23:58" class="time">14:23</a></td></tr>
+<tr id="t2013-09-22T16:33:28"><td class="nickchange" colspan="2">*** drasko is now known as Guest94954</td><td><a href="#t2013-09-22T16:33:28" class="time">16:33</a></td></tr>
+<tr id="t2013-09-22T16:37:56"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">I have a recipe + two bbappends, first bbappend does 'SRC_URI += "file1 gile2", now second bbappend is supposed just to replace file1 with different version</td><td class="time"><a href="#t2013-09-22T16:37:56" class="time">16:37</a></td></tr>
+<tr id="t2013-09-22T16:38:44"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">can I replace something from SRC_URI ?</td><td class="time"><a href="#t2013-09-22T16:38:44" class="time">16:38</a></td></tr>
+<tr id="t2013-09-22T16:39:22"><th class="nick" style="background: #42427e">JaMa</th><td class="text" style="color: #42427e">yes, see FILESEXTRAPATH variable</td><td class="time"><a href="#t2013-09-22T16:39:22" class="time">16:39</a></td></tr>
+<tr id="t2013-09-22T16:40:31"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">yes in my first bbappend I use 'FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"</td><td class="time"><a href="#t2013-09-22T16:40:31" class="time">16:40</a></td></tr>
+<tr id="t2013-09-22T16:41:48"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">what do I do in second bbappend? I cant do 'SRC_URI =', since it will totally erase contents of that variable</td><td class="time"><a href="#t2013-09-22T16:41:48" class="time">16:41</a></td></tr>
+<tr id="t2013-09-22T16:42:07"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">and I cannot do 'SRC_URI +=', since it will then include both files I think</td><td class="time"><a href="#t2013-09-22T16:42:07" class="time">16:42</a></td></tr>
+<tr id="t2013-09-22T16:42:33"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">actually... the file name is exactly the same, so probably the second bbappend will just overwrite first file</td><td class="time"><a href="#t2013-09-22T16:42:33" class="time">16:42</a></td></tr>
+<tr id="t2013-09-22T16:42:36"><th class="nick" style="background: #42427e">JaMa</th><td class="text" style="color: #42427e">FILESEXTRAPATHS_prepend is all you need in 2nd bbappend</td><td class="time"><a href="#t2013-09-22T16:42:36" class="time">16:42</a></td></tr>
+<tr id="t2013-09-22T16:42:47"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">the recipe does only copy file to image</td><td class="time"><a href="#t2013-09-22T16:42:47" class="time">16:42</a></td></tr>
+<tr id="t2013-09-22T16:43:18"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">so in second bbappend I takie just the variable + i put my file to ./files/</td><td class="time"><a href="#t2013-09-22T16:43:18" class="time">16:43</a></td></tr>
+<tr id="t2013-09-22T16:43:21"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">right?</td><td class="time"><a href="#t2013-09-22T16:43:21" class="time">16:43</a></td></tr>
+<tr id="t2013-09-22T16:47:48"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">works for me!</td><td class="time"><a href="#t2013-09-22T16:47:48" class="time">16:47</a></td></tr>
+<tr id="t2013-09-22T16:47:59"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">how do I determine the order of bbappends?</td><td class="time"><a href="#t2013-09-22T16:47:59" class="time">16:47</a></td></tr>
+<tr id="t2013-09-22T16:48:19"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">I was just lucky the second bbappend was second, since it didn't do anything to make it really 'second'</td><td class="time"><a href="#t2013-09-22T16:48:19" class="time">16:48</a></td></tr>
+<tr id="t2013-09-22T16:48:53"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">is it the BBFILE_PRIORITY in conf/layer.conf</td><td class="time"><a href="#t2013-09-22T16:48:53" class="time">16:48</a></td></tr>
+<tr id="t2013-09-22T16:48:54"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">?</td><td class="time"><a href="#t2013-09-22T16:48:54" class="time">16:48</a></td></tr>
+<tr id="t2013-09-22T17:03:02"><td class="nickchange" colspan="2">*** silviof1 is now known as silviof</td><td><a href="#t2013-09-22T17:03:02" class="time">17:03</a></td></tr>
+<tr id="t2013-09-22T18:30:35"><th class="nick" style="background: #818144">bluelightning</th><td class="text" style="color: #818144">Krz: yes, they will be applied in layer priority order (lowest to highest)</td><td class="time"><a href="#t2013-09-22T18:30:35" class="time">18:30</a></td></tr>
+<tr id="t2013-09-22T18:37:05"><th class="nick" style="background: #407a40">Krz</th><td class="text" style="color: #407a40">bluelightning: cheers!</td><td class="time"><a href="#t2013-09-22T18:37:05" class="time">18:37</a></td></tr>
+<tr id="t2013-09-22T19:37:11"><th class="nick" style="background: #854685">abelloni</th><td class="text" style="color: #854685">Hi, I can't get wifi to work on my FRI2, am I doing something wrong ?</td><td class="time"><a href="#t2013-09-22T19:37:11" class="time">19:37</a></td></tr>
+<tr id="t2013-09-22T19:40:24"><th class="nick" style="background: #854685">abelloni</th><td class="text" style="color: #854685">I mean, I don't even have a wlan0</td><td class="time"><a href="#t2013-09-22T19:40:24" class="time">19:40</a></td></tr>
+<tr id="t2013-09-22T19:40:43"><th class="nick" style="background: #854685">abelloni</th><td class="text" style="color: #854685">at firs,t I didn't event have linux-firmware but that is fixed</td><td class="time"><a href="#t2013-09-22T19:40:43" class="time">19:40</a></td></tr>
+<tr id="t2013-09-22T20:08:51"><th class="nick" style="background: #488888">ericben</th><td class="text" style="color: #488888">hi, has anyone already met this bitbake error : <a href="http://pastebin.com/FkuZPXmj" rel="nofollow">http://pastebin.com/FkuZPXmj</a> ?</td><td class="time"><a href="#t2013-09-22T20:08:51" class="time">20:08</a></td></tr>
+<tr id="t2013-09-22T20:43:03"><th class="nick" style="background: #488888">ericben</th><td class="text" style="color: #488888">bitbake master + oe-core master : MACHINE=qemuarm bitbake base-core-image leads to Failure expanding variable qmake_base_do_configure: ShellSyntaxError: LexToken(TOKEN,'ext2',0,0)</td><td class="time"><a href="#t2013-09-22T20:43:03" class="time">20:43</a></td></tr>
+<tr id="t2013-09-22T20:50:44"><th class="nick" style="background: #488888">ericben</th><td class="text" style="color: #488888">ok forget it ... PEBKAC ;-)</td><td class="time"><a href="#t2013-09-22T20:50:44" class="time">20:50</a></td></tr>
+<tr id="t2013-09-22T23:33:42"><td class="other" colspan="2">-YoctoAutoBuilder- build #264 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly/builds/264" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly/builds/264</a></td><td><a href="#t2013-09-22T23:33:42" class="time">23:33</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-09-21.log.html">&#171; Saturday, 2013-09-21</a> <a href="index.html">Index</a> <a href="%23yocto.2013-09-23.log.html">Monday, 2013-09-23 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-11-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-11-02</h1>
+<div class="navigation"> <a href="%23yocto.2013-11-01.log.html">&#171; Friday, 2013-11-01</a> <a href="index.html">Index</a> <a href="%23yocto.2013-11-03.log.html">Sunday, 2013-11-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-11-02T00:07:02"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">nerdboy: got the erlang recipes to build properly, but if I include your meta-raspberrypi in my bblayers.conf I get a failure when I run bitbake</td><td class="time"><a href="#t2013-11-02T00:07:02" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:10"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">error is:</td><td class="time"><a href="#t2013-11-02T00:07:10" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:15"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">ERROR: Unable to analyse format of PR variable: 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| ETA:&nbsp;&nbsp;--:--:--</td><td class="time"><a href="#t2013-11-02T00:07:15" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:16"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">ERROR: Error executing a python function in &lt;code&gt;:</td><td class="time"><a href="#t2013-11-02T00:07:16" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:16"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">AttributeError: 'NoneType' object has no attribute 'group'</td><td class="time"><a href="#t2013-11-02T00:07:16" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:50"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">lots more lines, but seems to be failing in a recipe unrelated to the rasberrypi meta</td><td class="time"><a href="#t2013-11-02T00:07:50" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:07:58"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">layer</td><td class="time"><a href="#t2013-11-02T00:07:58" class="time">00:07</a></td></tr>
+<tr id="t2013-11-02T00:08:13"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">I'm going to try splitting our the erlang stuff into its own layer</td><td class="time"><a href="#t2013-11-02T00:08:13" class="time">00:08</a></td></tr>
+<tr id="t2013-11-02T00:08:21"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">are you on master branch in the oe repos?</td><td class="time"><a href="#t2013-11-02T00:08:21" class="time">00:08</a></td></tr>
+<tr id="t2013-11-02T00:08:32"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">hmmm, let me check</td><td class="time"><a href="#t2013-11-02T00:08:32" class="time">00:08</a></td></tr>
+<tr id="t2013-11-02T00:09:31"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">ah, no</td><td class="time"><a href="#t2013-11-02T00:09:31" class="time">00:09</a></td></tr>
+<tr id="t2013-11-02T00:09:44"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">otherwise you don't need a separate layer just to build it...&nbsp;&nbsp; just copy the erlang dir to one of the other layers under recipes-devtools/</td><td class="time"><a href="#t2013-11-02T00:09:44" class="time">00:09</a></td></tr>
+<tr id="t2013-11-02T00:09:53"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">I've set it up using the gumstix repo setup</td><td class="time"><a href="#t2013-11-02T00:09:53" class="time">00:09</a></td></tr>
+<tr id="t2013-11-02T00:10:03"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">which is picking specific commits</td><td class="time"><a href="#t2013-11-02T00:10:03" class="time">00:10</a></td></tr>
+<tr id="t2013-11-02T00:10:09"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">I'll try using master for all</td><td class="time"><a href="#t2013-11-02T00:10:09" class="time">00:10</a></td></tr>
+<tr id="t2013-11-02T00:10:39"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">I'll try copying it first</td><td class="time"><a href="#t2013-11-02T00:10:39" class="time">00:10</a></td></tr>
+<tr id="t2013-11-02T00:11:08"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">since I know the current versions work to give me a stable build on the gumstix hardware</td><td class="time"><a href="#t2013-11-02T00:11:08" class="time">00:11</a></td></tr>
+<tr id="t2013-11-02T00:13:26"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">that's a pretty basic PR setting, so you might need to change it to whatever works in the gumstix world</td><td class="time"><a href="#t2013-11-02T00:13:26" class="time">00:13</a></td></tr>
+<tr id="t2013-11-02T00:22:13"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">yep, ok</td><td class="time"><a href="#t2013-11-02T00:22:13" class="time">00:22</a></td></tr>
+<tr id="t2013-11-02T00:22:30"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">seems to build properly now - copied the recipe into an existing layer</td><td class="time"><a href="#t2013-11-02T00:22:30" class="time">00:22</a></td></tr>
+<tr id="t2013-11-02T00:51:47"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">woohoo! success!</td><td class="time"><a href="#t2013-11-02T00:51:47" class="time">00:51</a></td></tr>
+<tr id="t2013-11-02T00:51:53"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">thanks nerdboy!</td><td class="time"><a href="#t2013-11-02T00:51:53" class="time">00:51</a></td></tr>
+<tr id="t2013-11-02T00:52:05"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">owe you a beer :-)</td><td class="time"><a href="#t2013-11-02T00:52:05" class="time">00:52</a></td></tr>
+<tr id="t2013-11-02T00:53:17"><td class="action" colspan="2">* nerdboy likes guinness</td><td><a href="#t2013-11-02T00:53:17" class="time">00:53</a></td></tr>
+<tr id="t2013-11-02T00:54:01"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">where ru located?</td><td class="time"><a href="#t2013-11-02T00:54:01" class="time">00:54</a></td></tr>
+<tr id="t2013-11-02T00:54:29"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">california</td><td class="time"><a href="#t2013-11-02T00:54:29" class="time">00:54</a></td></tr>
+<tr id="t2013-11-02T00:54:36"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">bay area?</td><td class="time"><a href="#t2013-11-02T00:54:36" class="time">00:54</a></td></tr>
+<tr id="t2013-11-02T00:54:43"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">next time I'm there :-)</td><td class="time"><a href="#t2013-11-02T00:54:43" class="time">00:54</a></td></tr>
+<tr id="t2013-11-02T00:54:51"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">south of there...</td><td class="time"><a href="#t2013-11-02T00:54:51" class="time">00:54</a></td></tr>
+<tr id="t2013-11-02T00:55:15"><th class="nick" style="background: #407a40">peterwhitfield</th><td class="text" style="color: #407a40">k</td><td class="time"><a href="#t2013-11-02T00:55:15" class="time">00:55</a></td></tr>
+<tr id="t2013-11-02T00:58:47"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">man, having a bestbuy and a couple of office stores in town seems rather useless if i can't even buy a usb3 cable...</td><td class="time"><a href="#t2013-11-02T00:58:47" class="time">00:58</a></td></tr>
+<tr id="t2013-11-02T00:59:12"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">well, other than one 3 ft. cable at one store, which is not what i want</td><td class="time"><a href="#t2013-11-02T00:59:12" class="time">00:59</a></td></tr>
+<tr id="t2013-11-02T01:42:15"><td class="nickchange" colspan="2">*** balister_ is now known as Crofton</td><td><a href="#t2013-11-02T01:42:15" class="time">01:42</a></td></tr>
+<tr id="t2013-11-02T01:55:25"><th class="nick" style="background: #818144">brm</th><td class="text" style="color: #818144">hi all, anyone know how to setup connman for a static IP ... just by adding a script to the build.??</td><td class="time"><a href="#t2013-11-02T01:55:25" class="time">01:55</a></td></tr>
+<tr id="t2013-11-02T02:01:33"><th class="nick" style="background: #818144">brm</th><td class="text" style="color: #818144">yocti: any clue?</td><td class="time"><a href="#t2013-11-02T02:01:33" class="time">02:01</a></td></tr>
+<tr id="t2013-11-02T02:01:33"><th class="nick" style="background: #854685">yocti</th><td class="text" style="color: #854685">brm: Error: 'clue?' is not a valid nick.</td><td class="time"><a href="#t2013-11-02T02:01:33" class="time">02:01</a></td></tr>
+<tr id="t2013-11-02T02:02:41"><th class="nick" style="background: #818144">brm</th><td class="text" style="color: #818144">silviof1: know anything about connman?</td><td class="time"><a href="#t2013-11-02T02:02:41" class="time">02:02</a></td></tr>
+<tr id="t2013-11-02T03:14:04"><td class="nickchange" colspan="2">*** sgarman is now known as zenlinux</td><td><a href="#t2013-11-02T03:14:04" class="time">03:14</a></td></tr>
+<tr id="t2013-11-02T03:47:45"><th class="nick" style="background: #818144">brm</th><td class="text" style="color: #818144">hey guys, anyone have any experience with connman and setting it up?</td><td class="time"><a href="#t2013-11-02T03:47:45" class="time">03:47</a></td></tr>
+<tr id="t2013-11-02T19:33:12"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">hi</td><td class="time"><a href="#t2013-11-02T19:33:12" class="time">19:33</a></td></tr>
+<tr id="t2013-11-02T19:33:33"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">someone know how to download the kiosko img?</td><td class="time"><a href="#t2013-11-02T19:33:33" class="time">19:33</a></td></tr>
+<tr id="t2013-11-02T19:34:02"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">i tried with this git clone git://git.yoctoproject.org/meta-web-kiosk</td><td class="time"><a href="#t2013-11-02T19:34:02" class="time">19:34</a></td></tr>
+<tr id="t2013-11-02T19:34:11"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">but i get connection refuse</td><td class="time"><a href="#t2013-11-02T19:34:11" class="time">19:34</a></td></tr>
+<tr id="t2013-11-02T19:35:08"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">?</td><td class="time"><a href="#t2013-11-02T19:35:08" class="time">19:35</a></td></tr>
+<tr id="t2013-11-02T19:40:57"><th class="nick" style="background: #488888">aandres</th><td class="text" style="color: #488888">git clone git://git.yoctoproject.org/meta-web-kiosk ??? someone know how to clone this on my local rep?</td><td class="time"><a href="#t2013-11-02T19:40:57" class="time">19:40</a></td></tr>
+<tr id="t2013-11-02T22:44:56"><td class="part" colspan="2">*** peterwhitfield &lt;peterwhitfield!~peterwhit@CPE-124-188-64-235.facz1.ken.bigpond.net.au&gt; has left #yocto</td><td><a href="#t2013-11-02T22:44:56" class="time">22:44</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-11-01.log.html">&#171; Friday, 2013-11-01</a> <a href="index.html">Index</a> <a href="%23yocto.2013-11-03.log.html">Sunday, 2013-11-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

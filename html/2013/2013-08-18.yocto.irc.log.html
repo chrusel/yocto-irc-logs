@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2013-08-18</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2013-08-18</h1>
+<div class="navigation"> <a href="%23yocto.2013-08-17.log.html">&#171; Saturday, 2013-08-17</a> <a href="index.html">Index</a> <a href="%23yocto.2013-08-19.log.html">Monday, 2013-08-19 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-08-18T00:15:47"><td class="part" colspan="2">*** nerdboy &lt;nerdboy!~sarnold@gentoo/developer/nerdboy&gt; has left #yocto</td><td><a href="#t2013-08-18T00:15:47" class="time">00:15</a></td></tr>
+<tr id="t2013-08-18T00:16:27"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">damn, guess he's not here...</td><td class="time"><a href="#t2013-08-18T00:16:27" class="time">00:16</a></td></tr>
+<tr id="t2013-08-18T00:16:57"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">was going to say cmake builds could easily be underlinked if building shared libs</td><td class="time"><a href="#t2013-08-18T00:16:57" class="time">00:16</a></td></tr>
+<tr id="t2013-08-18T00:17:25"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">infamous even...</td><td class="time"><a href="#t2013-08-18T00:17:25" class="time">00:17</a></td></tr>
+<tr id="t2013-08-18T00:19:29"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">dcmtk is already heavily patched by the major distros and i *still* had to add more linker patches to get ti to build link properly in oe-classic</td><td class="time"><a href="#t2013-08-18T00:19:29" class="time">00:19</a></td></tr>
+<tr id="t2013-08-18T00:19:44"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">ie, so other builds could succeed...</td><td class="time"><a href="#t2013-08-18T00:19:44" class="time">00:19</a></td></tr>
+<tr id="t2013-08-18T00:20:26"><td class="action" colspan="2">* nerdboy thinks cmake is more painful than autotools if both are currently maintained</td><td><a href="#t2013-08-18T00:20:26" class="time">00:20</a></td></tr>
+<tr id="t2013-08-18T00:25:57"><td class="other" colspan="2">-YoctoAutoBuilder- build #254 of nightly-arm is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/254" rel="nofollow">http://autobuilder.yoctoproject.org:8011/builders/nightly-arm/builds/254</a></td><td><a href="#t2013-08-18T00:25:57" class="time">00:25</a></td></tr>
+<tr id="t2013-08-18T00:30:01"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">*hacking cmake</td><td class="time"><a href="#t2013-08-18T00:30:01" class="time">00:30</a></td></tr>
+<tr id="t2013-08-18T06:57:21"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2013-08-18T06:57:21" class="time">06:57</a></td></tr>
+<tr id="t2013-08-18T07:08:37"><td class="nickchange" colspan="2">*** darknighte_znc is now known as darknighte</td><td><a href="#t2013-08-18T07:08:37" class="time">07:08</a></td></tr>
+<tr id="t2013-08-18T08:48:06"><th class="nick" style="background: #42427e">alex_kag_</th><td class="text" style="color: #42427e">hello, prompt, where i can see an example of a simple program written prescription for qt and opengl?</td><td class="time"><a href="#t2013-08-18T08:48:06" class="time">08:48</a></td></tr>
+<tr id="t2013-08-18T08:48:57"><th class="nick" style="background: #818144">lpapp</th><td class="text" style="color: #818144">alex_kag_: what is a presciption?</td><td class="time"><a href="#t2013-08-18T08:48:57" class="time">08:48</a></td></tr>
+<tr id="t2013-08-18T11:39:11"><th class="nick" style="background: #42427e">alex_kag_</th><td class="text" style="color: #42427e">lpapp, - recipe (.bb)</td><td class="time"><a href="#t2013-08-18T11:39:11" class="time">11:39</a></td></tr>
+<tr id="t2013-08-18T13:14:43"><th class="nick" style="background: #818144">lpapp</th><td class="text" style="color: #818144">alex_kag_: maybe the demos...</td><td class="time"><a href="#t2013-08-18T13:14:43" class="time">13:14</a></td></tr>
+<tr id="t2013-08-18T13:14:56"><th class="nick" style="background: #818144">lpapp</th><td class="text" style="color: #818144">bluelightning: about?</td><td class="time"><a href="#t2013-08-18T13:14:56" class="time">13:14</a></td></tr>
+<tr id="t2013-08-18T13:40:13"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">lpapp: sort of</td><td class="time"><a href="#t2013-08-18T13:40:13" class="time">13:40</a></td></tr>
+<tr id="t2013-08-18T14:04:45"><th class="nick" style="background: #42427e">alex_kag_</th><td class="text" style="color: #42427e">lpapp: in demos i see only "smarthome", but it on qml, not opengl</td><td class="time"><a href="#t2013-08-18T14:04:45" class="time">14:04</a></td></tr>
+<tr id="t2013-08-18T14:05:21"><th class="nick" style="background: #818144">lpapp</th><td class="text" style="color: #818144">alex_kag_: opengl is not tight to qml, c, or cpp</td><td class="time"><a href="#t2013-08-18T14:05:21" class="time">14:05</a></td></tr>
+<tr id="t2013-08-18T14:05:24"><th class="nick" style="background: #818144">lpapp</th><td class="text" style="color: #818144">bluelightning: ok ...</td><td class="time"><a href="#t2013-08-18T14:05:24" class="time">14:05</a></td></tr>
+<tr id="t2013-08-18T17:48:36"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2013-08-18T17:48:36" class="time">17:48</a></td></tr>
+<tr id="t2013-08-18T19:14:27"><td class="nickchange" colspan="2">*** silviof1 is now known as silviof</td><td><a href="#t2013-08-18T19:14:27" class="time">19:14</a></td></tr>
+<tr id="t2013-08-18T20:21:14"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2013-08-18T20:21:14" class="time">20:21</a></td></tr>
+<tr id="t2013-08-18T20:22:17"><th class="nick" style="background: #488888">ant_home</th><td class="text" style="color: #488888">zz_ka6sox, before sleeping&nbsp;&nbsp;<a href="http://www.youtube.com/watch?v=i9aftG6pybA" rel="nofollow">http://www.youtube.com/watch?v=i9aftG6pybA</a></td><td class="time"><a href="#t2013-08-18T20:22:17" class="time">20:22</a></td></tr>
+<tr id="t2013-08-18T20:22:48"><th class="nick" style="background: #488888">ant_home</th><td class="text" style="color: #488888">organist ofc but also for the drummer</td><td class="time"><a href="#t2013-08-18T20:22:48" class="time">20:22</a></td></tr>
+<tr id="t2013-08-18T23:06:56"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2013-08-18T23:06:56" class="time">23:06</a></td></tr>
+<tr id="t2013-08-18T23:52:47"><td class="nickchange" colspan="2">*** ndec is now known as ndec|vacations</td><td><a href="#t2013-08-18T23:52:47" class="time">23:52</a></td></tr>
+<tr id="t2013-08-18T23:53:58"><td class="nickchange" colspan="2">*** ndec|vacations is now known as ndec</td><td><a href="#t2013-08-18T23:53:58" class="time">23:53</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-08-17.log.html">&#171; Saturday, 2013-08-17</a> <a href="index.html">Index</a> <a href="%23yocto.2013-08-19.log.html">Monday, 2013-08-19 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

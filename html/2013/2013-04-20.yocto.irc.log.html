@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2013-04-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2013-04-20</h1>
+<div class="navigation"> <a href="%23yocto.2013-04-19.log.html">&#171; Friday, 2013-04-19</a> <a href="index.html">Index</a> <a href="%23yocto.2013-04-21.log.html">Sunday, 2013-04-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2013-04-20T03:15:13"><td class="nickchange" colspan="2">*** denix0 is now known as denix</td><td><a href="#t2013-04-20T03:15:13" class="time">03:15</a></td></tr>
+<tr id="t2013-04-20T03:31:18"><td class="nickchange" colspan="2">*** darknighte is now known as darknighte_znc</td><td><a href="#t2013-04-20T03:31:18" class="time">03:31</a></td></tr>
+<tr id="t2013-04-20T05:27:00"><td class="nickchange" colspan="2">*** zz_ka6sox-farfar is now known as ka6sox</td><td><a href="#t2013-04-20T05:27:00" class="time">05:27</a></td></tr>
+<tr id="t2013-04-20T07:37:15"><td class="nickchange" colspan="2">*** ka6sox is now known as ka6sox-away</td><td><a href="#t2013-04-20T07:37:15" class="time">07:37</a></td></tr>
+<tr id="t2013-04-20T07:48:10"><td class="part" colspan="2">*** woodruff &lt;woodruff!~woodruff@46-117-207-239.bb.netvision.net.il&gt; has left #yocto</td><td><a href="#t2013-04-20T07:48:10" class="time">07:48</a></td></tr>
+<tr id="t2013-04-20T08:03:44"><th class="nick" style="background: #407a40">rburton</th><td class="text" style="color: #407a40">not using PN with ALLOW_EMPTY will produce warnings/errors in dylan</td><td class="time"><a href="#t2013-04-20T08:03:44" class="time">08:03</a></td></tr>
+<tr id="t2013-04-20T13:32:07"><td class="nickchange" colspan="2">*** _Lucretia__ is now known as _Lucretia_</td><td><a href="#t2013-04-20T13:32:07" class="time">13:32</a></td></tr>
+<tr id="t2013-04-20T14:47:49"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">hello</td><td class="time"><a href="#t2013-04-20T14:47:49" class="time">14:47</a></td></tr>
+<tr id="t2013-04-20T14:49:57"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">i'm looking into Yocto for a Linux BSP for a TI OMAP L138 custom board.&nbsp;&nbsp;i *think* i'm on the right track.&nbsp;&nbsp;i downloaded poky danny and also grabbed a meta-ti layer from [i forget where...i'm not at work at the moment] and used hob to add the layer.&nbsp;&nbsp;but how do i find out what L138 drivers are in the layer?</td><td class="time"><a href="#t2013-04-20T14:49:57" class="time">14:49</a></td></tr>
+<tr id="t2013-04-20T15:02:03"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2013-04-20T15:02:03" class="time">15:02</a></td></tr>
+<tr id="t2013-04-20T15:02:28"><th class="nick" style="background: #818144">mckoan</th><td class="text" style="color: #818144">cpow: what do you mean with 'drivers'? kernel drivers?</td><td class="time"><a href="#t2013-04-20T15:02:28" class="time">15:02</a></td></tr>
+<tr id="t2013-04-20T15:03:31"><th class="nick" style="background: #818144">mckoan</th><td class="text" style="color: #818144">cpow: take a look in the kernel recipe - <a href="http://goo.gl/9ZsJz" rel="nofollow">http://goo.gl/9ZsJz</a></td><td class="time"><a href="#t2013-04-20T15:03:31" class="time">15:03</a></td></tr>
+<tr id="t2013-04-20T15:04:32"><th class="nick" style="background: #818144">mckoan</th><td class="text" style="color: #818144">cpow: anyway you can invesigate in <a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-ti/tree/recipes-kernel/linux" rel="nofollow">http://git.yoctoproject.org/cgit/cgit.cgi/meta-ti/tree/recipes-kernel/linux</a></td><td class="time"><a href="#t2013-04-20T15:04:32" class="time">15:04</a></td></tr>
+<tr id="t2013-04-20T15:26:46"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2013-04-20T15:26:46" class="time">15:26</a></td></tr>
+<tr id="t2013-04-20T15:41:27"><td class="nickchange" colspan="2">*** ka6sox-away is now known as ka6sox</td><td><a href="#t2013-04-20T15:41:27" class="time">15:41</a></td></tr>
+<tr id="t2013-04-20T16:13:25"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">mckoan|away: thanks for the reply i'll check into the links you provided.&nbsp;&nbsp;what i meant by drivers is there are several devices on the SoC...RTC, I2C, USB, GPIO, etc.&nbsp;&nbsp;i'm wondering if the meta-ti layer or some other layer includes drivers for those or if i'll have to roll my own.</td><td class="time"><a href="#t2013-04-20T16:13:25" class="time">16:13</a></td></tr>
+<tr id="t2013-04-20T16:15:41"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">i left work yesterday after starting a build including meta-ti layer and for the am180x machine.</td><td class="time"><a href="#t2013-04-20T16:15:41" class="time">16:15</a></td></tr>
+<tr id="t2013-04-20T16:15:54"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">so i'm curious what i'll have on monday =]</td><td class="time"><a href="#t2013-04-20T16:15:54" class="time">16:15</a></td></tr>
+<tr id="t2013-04-20T16:16:35"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">with dual quad-core intel xeon bitbake takes only little over an hour from scratch but i had to leave</td><td class="time"><a href="#t2013-04-20T16:16:35" class="time">16:16</a></td></tr>
+<tr id="t2013-04-20T17:11:35"><th class="nick" style="background: #854685">denix</th><td class="text" style="color: #854685">cpow: meta-ti does include full support for am180x = omapl138</td><td class="time"><a href="#t2013-04-20T17:11:35" class="time">17:11</a></td></tr>
+<tr id="t2013-04-20T17:39:12"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">denix: i think i sent you an email?&nbsp;&nbsp;anyway...is am180x a devkit?</td><td class="time"><a href="#t2013-04-20T17:39:12" class="time">17:39</a></td></tr>
+<tr id="t2013-04-20T17:41:20"><th class="nick" style="background: #42427e">cpow</th><td class="text" style="color: #42427e">i'm going to have to put in a firewall request so i can get on here while at work.&nbsp;&nbsp;seems to be the place for live yocto help.&nbsp;&nbsp;=]&nbsp;&nbsp;nevermind that it'd give me the opportunity to remain connected to other IRC channels that aren't work related.&nbsp;&nbsp;haha</td><td class="time"><a href="#t2013-04-20T17:41:20" class="time">17:41</a></td></tr>
+<tr id="t2013-04-20T22:05:10"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2013-04-20T22:05:10" class="time">22:05</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2013-04-19.log.html">&#171; Friday, 2013-04-19</a> <a href="index.html">Index</a> <a href="%23yocto.2013-04-21.log.html">Sunday, 2013-04-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
