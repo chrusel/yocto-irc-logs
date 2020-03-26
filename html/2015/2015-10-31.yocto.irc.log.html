@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-10-31</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-10-31</h1>
+<div class="navigation"> <a href="%23yocto.2015-10-30.log.html">&#171; Friday, 2015-10-30</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-01.log.html">Sunday, 2015-11-01 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-10-31T01:08:52"><th class="nick" style="background: #407a40">Christian___</th><td class="text" style="color: #407a40">I know I need a bbappend file for this but where should I place it and how should the content look like: linux-yocto-rt was skipped: incompatible with machine mymachine</td><td class="time"><a href="#t2015-10-31T01:08:52" class="time">01:08</a></td></tr>
+<tr id="t2015-10-31T09:48:04"><th class="nick" style="background: #42427e">abelloni</th><td class="text" style="color: #42427e">Am I the only one getting issue with the glibc ?</td><td class="time"><a href="#t2015-10-31T09:48:04" class="time">09:48</a></td></tr>
+<tr id="t2015-10-31T09:48:16"><th class="nick" style="background: #42427e">abelloni</th><td class="text" style="color: #42427e">I'm not sure what yet</td><td class="time"><a href="#t2015-10-31T09:48:16" class="time">09:48</a></td></tr>
+<tr id="t2015-10-31T09:49:04"><th class="nick" style="background: #42427e">abelloni</th><td class="text" style="color: #42427e">But the system refuses to boot, init is not starting</td><td class="time"><a href="#t2015-10-31T09:49:04" class="time">09:49</a></td></tr>
+<tr id="t2015-10-31T09:49:19"><th class="nick" style="background: #42427e">abelloni</th><td class="text" style="color: #42427e">going back to an older libc makes everything work</td><td class="time"><a href="#t2015-10-31T09:49:19" class="time">09:49</a></td></tr>
+<tr id="t2015-10-31T13:34:18"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">Hello, I have some problems with settings for kernel version in my angstrom linux distribution. It is based on yocto thats why I hope someone here help me :).</td><td class="time"><a href="#t2015-10-31T13:34:18" class="time">13:34</a></td></tr>
+<tr id="t2015-10-31T13:34:46"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">I need to compile my version with specific kernel linux-ti33x-psp. I added to local.conf PREFERRED_PROVIDER_virtual/kernel = "linux-ti33x-psp" PREFERRED_VERSION_linux-ti33x-psp="3.2%"</td><td class="time"><a href="#t2015-10-31T13:34:46" class="time">13:34</a></td></tr>
+<tr id="t2015-10-31T13:35:23"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">Metadata for this is in meta-ti/recipes-kernel/linux. I've decided to add COMPATIBLE_MACHINE = "(beagleboard)" in linux-ti33x-psp_3.2.bb file.</td><td class="time"><a href="#t2015-10-31T13:35:23" class="time">13:35</a></td></tr>
+<tr id="t2015-10-31T13:35:51"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">But when i starting with bitbake virtual/kernel it is build with linux version 3.8.17</td><td class="time"><a href="#t2015-10-31T13:35:51" class="time">13:35</a></td></tr>
+<tr id="t2015-10-31T13:36:12"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">and I really stuck with this</td><td class="time"><a href="#t2015-10-31T13:36:12" class="time">13:36</a></td></tr>
+<tr id="t2015-10-31T13:37:39"><th class="nick" style="background: #818144">gapa</th><td class="text" style="color: #818144">any ideas how to check why I'm not able to get my version 3.2?</td><td class="time"><a href="#t2015-10-31T13:37:39" class="time">13:37</a></td></tr>
+<tr id="t2015-10-31T17:13:01"><td class="part" colspan="2">*** RP &lt;RP!~richard@5751f4a1.skybroadband.com&gt; has left #yocto</td><td><a href="#t2015-10-31T17:13:01" class="time">17:13</a></td></tr>
+<tr id="t2015-10-31T17:25:43"><th class="nick" style="background: #854685">matman</th><td class="text" style="color: #854685">Is there a way to make an image depend on another image? say core-image-minimal depends on core-image-crash</td><td class="time"><a href="#t2015-10-31T17:25:43" class="time">17:25</a></td></tr>
+<tr id="t2015-10-31T17:43:36"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">yes.</td><td class="time"><a href="#t2015-10-31T17:43:36" class="time">17:43</a></td></tr>
+<tr id="t2015-10-31T17:44:06"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">eg in my foo-image-dev.bb I have "require foo-image.bb"</td><td class="time"><a href="#t2015-10-31T17:44:06" class="time">17:44</a></td></tr>
+<tr id="t2015-10-31T17:44:23"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">and then some IMAGE_FEATURES_append</td><td class="time"><a href="#t2015-10-31T17:44:23" class="time">17:44</a></td></tr>
+<tr id="t2015-10-31T17:44:31"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">and some CORE_IMAGE_BASE_INSTALL +=</td><td class="time"><a href="#t2015-10-31T17:44:31" class="time">17:44</a></td></tr>
+<tr id="t2015-10-31T17:44:35"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">you get the idea.</td><td class="time"><a href="#t2015-10-31T17:44:35" class="time">17:44</a></td></tr>
+<tr id="t2015-10-31T17:45:14"><th class="nick" style="background: #854685">matman</th><td class="text" style="color: #854685">I do't want to append.. I want to build both and include the crash kernel in the minimal image</td><td class="time"><a href="#t2015-10-31T17:45:14" class="time">17:45</a></td></tr>
+<tr id="t2015-10-31T17:48:01"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">as far as I can tell you just directly contradicted yourself.</td><td class="time"><a href="#t2015-10-31T17:48:01" class="time">17:48</a></td></tr>
+<tr id="t2015-10-31T17:48:32"><th class="nick" style="background: #488888">fledermaus</th><td class="text" style="color: #488888">so I guess I don't understand what you want.</td><td class="time"><a href="#t2015-10-31T17:48:32" class="time">17:48</a></td></tr>
+<tr id="t2015-10-31T20:44:34"><th class="nick" style="background: #8c4a4a">paulg_</th><td class="text" style="color: #8c4a4a">fray, if you are around, how would you recommend I disable prelink if I were to test that on ppc for you?</td><td class="time"><a href="#t2015-10-31T20:44:34" class="time">20:44</a></td></tr>
+<tr id="t2015-10-31T20:55:05"><th class="nick" style="background: #854685">matman</th><td class="text" style="color: #854685">Well maybe. I want to build an image that contains another separate image that I can kexec into.</td><td class="time"><a href="#t2015-10-31T20:55:05" class="time">20:55</a></td></tr>
+<tr id="t2015-10-31T20:58:22"><th class="nick" style="background: #854685">matman</th><td class="text" style="color: #854685">Is there a way to add a dependency on another image definition as well as reference it's generated files</td><td class="time"><a href="#t2015-10-31T20:58:22" class="time">20:58</a></td></tr>
+<tr id="t2015-10-31T21:03:38"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">sounds more like: build image a, build image b (where b has custom deploy task for image a rootfs/kernel</td><td class="time"><a href="#t2015-10-31T21:03:38" class="time">21:03</a></td></tr>
+<tr id="t2015-10-31T21:04:59"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">more work would be to implement something like an sdk/other recipe that builds/deploys both a/b together</td><td class="time"><a href="#t2015-10-31T21:04:59" class="time">21:04</a></td></tr>
+<tr id="t2015-10-31T21:05:42"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">1st way is simple, but no depend that i know of will build a different image first</td><td class="time"><a href="#t2015-10-31T21:05:42" class="time">21:05</a></td></tr>
+<tr id="t2015-10-31T21:37:00"><th class="nick" style="background: #4d4d93">Azurium</th><td class="text" style="color: #4d4d93">Hello guys and girls!</td><td class="time"><a href="#t2015-10-31T21:37:00" class="time">21:37</a></td></tr>
+<tr id="t2015-10-31T21:37:29"><th class="nick" style="background: #4d4d93">Azurium</th><td class="text" style="color: #4d4d93">I'm having a bit of a trouble trying to install the libgphoto library along with gphoto2 on the Yocto linux image for Galileo</td><td class="time"><a href="#t2015-10-31T21:37:29" class="time">21:37</a></td></tr>
+<tr id="t2015-10-31T21:37:39"><th class="nick" style="background: #4d4d93">Azurium</th><td class="text" style="color: #4d4d93">I've written a question on stack exchange</td><td class="time"><a href="#t2015-10-31T21:37:39" class="time">21:37</a></td></tr>
+<tr id="t2015-10-31T21:37:42"><th class="nick" style="background: #4d4d93">Azurium</th><td class="text" style="color: #4d4d93"><a href="http://unix.stackexchange.com/questions/239937/cant-install-gphoto2-on-yocto-linux" rel="nofollow">http://unix.stackexchange.com/questions/239937/cant-install-gphoto2-on-yocto-linux</a></td><td class="time"><a href="#t2015-10-31T21:37:42" class="time">21:37</a></td></tr>
+<tr id="t2015-10-31T21:37:54"><th class="nick" style="background: #4d4d93">Azurium</th><td class="text" style="color: #4d4d93">if somebody has a bit of time, please have a look :D</td><td class="time"><a href="#t2015-10-31T21:37:54" class="time">21:37</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-10-30.log.html">&#171; Friday, 2015-10-30</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-01.log.html">Sunday, 2015-11-01 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

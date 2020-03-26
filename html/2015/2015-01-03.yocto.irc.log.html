@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-01-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-01-03</h1>
+<div class="navigation"> <a href="%23yocto.2015-01-02.log.html">&#171; Friday, 2015-01-02</a> <a href="index.html">Index</a> <a href="%23yocto.2015-01-04.log.html">Sunday, 2015-01-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-01-03T00:15:18"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">bluelightning: <a href="https://gist.github.com/kergoth/6cca6caa4e9b22a21f75" rel="nofollow">https://gist.github.com/kergoth/6cca6caa4e9b22a21f75</a> - work in progress, but a functioning prototype :)</td><td class="time"><a href="#t2015-01-03T00:15:18" class="time">00:15</a></td></tr>
+<tr id="t2015-01-03T00:31:25"><th class="nick" style="background: #42427e">bluelightning</th><td class="text" style="color: #42427e">kergoth: nice :)</td><td class="time"><a href="#t2015-01-03T00:31:25" class="time">00:31</a></td></tr>
+<tr id="t2015-01-03T04:24:28"><th class="nick" style="background: #818144">redengin</th><td class="text" style="color: #818144">can someone help me set PREFERRED_PROVIDER for java2-runtime, I've tried the web suggestions and still got nothing</td><td class="time"><a href="#t2015-01-03T04:24:28" class="time">04:24</a></td></tr>
+<tr id="t2015-01-03T07:47:11"><td class="other" colspan="2">-7F1ACA955- build #146 of build-appliance is complete: Failure [failed BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/146" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/build-appliance/builds/146</a></td><td><a href="#t2015-01-03T07:47:11" class="time">07:47</a></td></tr>
+<tr id="t2015-01-03T08:57:25"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">when building yocto with rpm, how will the install through a cross build environment using static qemu user binfmt support? As with any other rpms, likely through smart (is the default yocto rpm dep solver IIRC?), if so, how are file ownership being taken care of considering the requirement for dlopen() of libnss_files.so within root?</td><td class="time"><a href="#t2015-01-03T08:57:25" class="time">08:57</a></td></tr>
+<tr id="t2015-01-03T08:57:31"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">hm</td><td class="time"><a href="#t2015-01-03T08:57:31" class="time">08:57</a></td></tr>
+<tr id="t2015-01-03T08:58:07"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">maybe I'll try to look for finding something in the yocto rpm tree...</td><td class="time"><a href="#t2015-01-03T08:58:07" class="time">08:58</a></td></tr>
+<tr id="t2015-01-03T09:23:44"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">quite a nice amount of patfches pending in the tree..</td><td class="time"><a href="#t2015-01-03T09:23:44" class="time">09:23</a></td></tr>
+<tr id="t2015-01-03T12:50:46"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">as I assume poky is affected by uid/gid not being properly set when installing rpms into chroot environment as well, here's a patch for ya: <a href="https://abf.io/openmandriva/rpm/commit/5a502415e7aaac9440b84b5c0ceaf955508ca039" rel="nofollow">https://abf.io/openmandriva/rpm/commit/5a502415e7aaac9440b84b5c0ceaf955508ca039</a></td><td class="time"><a href="#t2015-01-03T12:50:46" class="time">12:50</a></td></tr>
+<tr id="t2015-01-03T12:51:59"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">if necessary to post on some mailing list (I'm generally too lazy to subscribe to new ones), someone please do :)</td><td class="time"><a href="#t2015-01-03T12:51:59" class="time">12:51</a></td></tr>
+<tr id="t2015-01-03T12:52:30"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">*do forward</td><td class="time"><a href="#t2015-01-03T12:52:30" class="time">12:52</a></td></tr>
+<tr id="t2015-01-03T13:16:44"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">proyvind: first, poky doesn't use chroot. second, it runs under pseudo, which is a superior version of fakeroot</td><td class="time"><a href="#t2015-01-03T13:16:44" class="time">13:16</a></td></tr>
+<tr id="t2015-01-03T13:27:57"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">ah</td><td class="time"><a href="#t2015-01-03T13:27:57" class="time">13:27</a></td></tr>
+<tr id="t2015-01-03T13:28:00"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">I see</td><td class="time"><a href="#t2015-01-03T13:28:00" class="time">13:28</a></td></tr>
+<tr id="t2015-01-03T13:30:57"><th class="nick" style="background: #854685">proyvind</th><td class="text" style="color: #854685">for mandrake cooker we use qemu user space emulation for it to be installable with the dep solver into a chroot just like one would do from a native package tree..</td><td class="time"><a href="#t2015-01-03T13:30:57" class="time">13:30</a></td></tr>
+<tr id="t2015-01-03T15:08:44"><td class="nickchange" colspan="2">*** munch_ is now known as Guest59985</td><td><a href="#t2015-01-03T15:08:44" class="time">15:08</a></td></tr>
+<tr id="t2015-01-03T16:32:48"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2015-01-03T16:32:48" class="time">16:32</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-01-02.log.html">&#171; Friday, 2015-01-02</a> <a href="index.html">Index</a> <a href="%23yocto.2015-01-04.log.html">Sunday, 2015-01-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

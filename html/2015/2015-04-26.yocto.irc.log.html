@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-04-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-04-26</h1>
+<div class="navigation"> <a href="%23yocto.2015-04-25.log.html">&#171; Saturday, 2015-04-25</a> <a href="index.html">Index</a> <a href="%23yocto.2015-04-27.log.html">Monday, 2015-04-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-04-26T02:06:42"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-26T02:06:42" class="time">02:06</a></td></tr>
+<tr id="t2015-04-26T05:51:00"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-26T05:51:00" class="time">05:51</a></td></tr>
+<tr id="t2015-04-26T17:13:13"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-26T17:13:13" class="time">17:13</a></td></tr>
+<tr id="t2015-04-26T17:15:31"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-04-26T17:15:31" class="time">17:15</a></td></tr>
+<tr id="t2015-04-26T17:17:43"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-26T17:17:43" class="time">17:17</a></td></tr>
+<tr id="t2015-04-26T17:25:43"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-04-26T17:25:43" class="time">17:25</a></td></tr>
+<tr id="t2015-04-26T21:01:14"><th class="nick" style="background: #407a40">sayguh</th><td class="text" style="color: #407a40">Very sorry, simple question. Been trying to parse through the manual for this but am not having any luck.&nbsp;&nbsp;My recipe builds fine and installs when I include it in an image but it is not populating the sysroot for other down stream recipes to build off of.&nbsp;&nbsp;What class do I inherit from or magic one liner do I need here to populate sysroot with my built library?</td><td class="time"><a href="#t2015-04-26T21:01:14" class="time">21:01</a></td></tr>
+<tr id="t2015-04-26T22:03:51"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">sayguh: If you install files into proper locations in do_install, those files will be both in the sysroot and its binary package. If not, then not.</td><td class="time"><a href="#t2015-04-26T22:03:51" class="time">22:03</a></td></tr>
+<tr id="t2015-04-26T22:04:05"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">sayguh: e.g. headers into ${D}${includedir}, libs into ${D}${libdir}, ..</td><td class="time"><a href="#t2015-04-26T22:04:05" class="time">22:04</a></td></tr>
+<tr id="t2015-04-26T22:06:57"><th class="nick" style="background: #407a40">sayguh</th><td class="text" style="color: #407a40">Yeah I was just reading through some other examples.&nbsp;&nbsp;I'm not sure why my stuff isn't getting automatically installed.&nbsp;&nbsp;I do not override any of the do_install methods, instead I'm inheriting from autotools-brokensep pkgconfig and pythonnative.&nbsp;&nbsp;It must be one of my EXTRA_OECONF or CACHED_CONFIGUREVARS that is causing things to install impropertly</td><td class="time"><a href="#t2015-04-26T22:06:57" class="time">22:06</a></td></tr>
+<tr id="t2015-04-26T22:09:33"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">highly unlikely</td><td class="time"><a href="#t2015-04-26T22:09:33" class="time">22:09</a></td></tr>
+<tr id="t2015-04-26T22:09:49"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">examine the ${D} directory (${WORKDIR}/image) and see what got installed and where.</td><td class="time"><a href="#t2015-04-26T22:09:49" class="time">22:09</a></td></tr>
+<tr id="t2015-04-26T22:18:29"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">Is there a way to ignore errors within a certain package?</td><td class="time"><a href="#t2015-04-26T22:18:29" class="time">22:18</a></td></tr>
+<tr id="t2015-04-26T22:23:26"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">assuming you mean recipe, not binary package, ignore in what way? bitbake -k will continue to run other tasks it's possible to run, but anything depending on the recipe which failed obviously cannot be built, which includes any images which include i</td><td class="time"><a href="#t2015-04-26T22:23:26" class="time">22:23</a></td></tr>
+<tr id="t2015-04-26T22:23:27"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">t</td><td class="time"><a href="#t2015-04-26T22:23:27" class="time">22:23</a></td></tr>
+<tr id="t2015-04-26T22:24:35"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">Ah.&nbsp;&nbsp;Well I'm hoping I can do something in the recipe.&nbsp;&nbsp;I tend to want failures to stop the build.&nbsp;&nbsp;But in this case it makes more sense to me to just allow the failure.&nbsp;&nbsp;(It still works for what I need it to).</td><td class="time"><a href="#t2015-04-26T22:24:35" class="time">22:24</a></td></tr>
+<tr id="t2015-04-26T22:25:11"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">what's the failure?</td><td class="time"><a href="#t2015-04-26T22:25:11" class="time">22:25</a></td></tr>
+<tr id="t2015-04-26T22:26:10"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">Building a project that is contained within the chromium source.&nbsp;&nbsp;Even though I'm not pulling in all of chromium it will fail (after checkout) because I don't have all of the deps needed for chromium itself.</td><td class="time"><a href="#t2015-04-26T22:26:10" class="time">22:26</a></td></tr>
+<tr id="t2015-04-26T22:26:18"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">So it appears as a fetch failure.</td><td class="time"><a href="#t2015-04-26T22:26:18" class="time">22:26</a></td></tr>
+<tr id="t2015-04-26T22:27:20"><th class="nick" style="background: #407a40">sayguh</th><td class="text" style="color: #407a40">What does it mean if there is no image directory in my workdir?</td><td class="time"><a href="#t2015-04-26T22:27:20" class="time">22:27</a></td></tr>
+<tr id="t2015-04-26T22:27:23"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">So I'm left with somehow allowing this failure and using the source (which does get pulled down, merged, etc, etc).&nbsp;&nbsp;Or from scratch reimplementing whatever black magic their tools use.</td><td class="time"><a href="#t2015-04-26T22:27:23" class="time">22:27</a></td></tr>
+<tr id="t2015-04-26T22:27:39"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">sayguh: your do_install didn't install anything.</td><td class="time"><a href="#t2015-04-26T22:27:39" class="time">22:27</a></td></tr>
+<tr id="t2015-04-26T22:28:27"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">xulfer: sounds like you need to customize the fetch process in some way. there's no way to tell bitbake it's okay to have a task fail. as far as it's concerned, no tasks which depend on a failed task can run, since they require what that task did</td><td class="time"><a href="#t2015-04-26T22:28:27" class="time">22:28</a></td></tr>
+<tr id="t2015-04-26T22:28:52"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">Yeah it's an understandable feature.&nbsp;&nbsp;I just didn't know if there was a workaround.</td><td class="time"><a href="#t2015-04-26T22:28:52" class="time">22:28</a></td></tr>
+<tr id="t2015-04-26T22:50:12"><th class="nick" style="background: #818144">xulfer</th><td class="text" style="color: #818144">Hm.&nbsp;&nbsp;I think I'm going to try an || : on the command and see if that works.</td><td class="time"><a href="#t2015-04-26T22:50:12" class="time">22:50</a></td></tr>
+<tr id="t2015-04-26T22:54:44"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">seems reasonable</td><td class="time"><a href="#t2015-04-26T22:54:44" class="time">22:54</a></td></tr>
+<tr id="t2015-04-26T23:39:15"><td class="other" colspan="2">-YoctoAutoBuilder- build #277 of poky-tiny is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/poky-tiny/builds/277" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/poky-tiny/builds/277</a></td><td><a href="#t2015-04-26T23:39:15" class="time">23:39</a></td></tr>
+<tr id="t2015-04-26T23:49:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #267 of nightly-intel-gpl is complete: Failure [failed BuildImages BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/267" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/267</a></td><td><a href="#t2015-04-26T23:49:03" class="time">23:49</a></td></tr>
+<tr id="t2015-04-26T23:56:04"><td class="other" colspan="2">-YoctoAutoBuilder- build #271 of nightly-qa-pam is complete: Failure [failed BuildImages Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-pam/builds/271" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-pam/builds/271</a></td><td><a href="#t2015-04-26T23:56:04" class="time">23:56</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-04-25.log.html">&#171; Saturday, 2015-04-25</a> <a href="index.html">Index</a> <a href="%23yocto.2015-04-27.log.html">Monday, 2015-04-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-04-05</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-04-05</h1>
+<div class="navigation"> <a href="%23yocto.2015-04-04.log.html">&#171; Saturday, 2015-04-04</a> <a href="index.html">Index</a> <a href="%23yocto.2015-04-06.log.html">Monday, 2015-04-06 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-04-05T15:59:44"><td class="nickchange" colspan="2">*** munch_ is now known as Guest10717</td><td><a href="#t2015-04-05T15:59:44" class="time">15:59</a></td></tr>
+<tr id="t2015-04-05T17:47:23"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-05T17:47:23" class="time">17:47</a></td></tr>
+<tr id="t2015-04-05T18:33:27"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">hey guys, I'm trying to remove an RDEPENDS on a dev package (it depends on the core package, which is empty so it isn't generated), so I'm using this line</td><td class="time"><a href="#t2015-04-05T18:33:27" class="time">18:33</a></td></tr>
+<tr id="t2015-04-05T18:33:29"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">RDEPENDS_${PN}-dev_remove = "${PN}"</td><td class="time"><a href="#t2015-04-05T18:33:29" class="time">18:33</a></td></tr>
+<tr id="t2015-04-05T18:33:45"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">and it generates an exception "TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'</td><td class="time"><a href="#t2015-04-05T18:33:45" class="time">18:33</a></td></tr>
+<tr id="t2015-04-05T18:33:45"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">"</td><td class="time"><a href="#t2015-04-05T18:33:45" class="time">18:33</a></td></tr>
+<tr id="t2015-04-05T18:39:16"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">sounds like a bug. you could *try* doing it with the ${PN} in the variable name manually expanded, and see if the behavior changes, and if it works (i.e. RDEPENDS_foo-dev_remove)</td><td class="time"><a href="#t2015-04-05T18:39:16" class="time">18:39</a></td></tr>
+<tr id="t2015-04-05T18:41:50"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">no good :) good idea though</td><td class="time"><a href="#t2015-04-05T18:41:50" class="time">18:41</a></td></tr>
+<tr id="t2015-04-05T18:46:36"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">temp workaround is to allow empty packages to be created and leave the dependency intact : ALLOW_EMPTY_${PN} = "1"</td><td class="time"><a href="#t2015-04-05T18:46:36" class="time">18:46</a></td></tr>
+<tr id="t2015-04-05T18:48:58"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">yeah, that always works. should open a bug in the bts</td><td class="time"><a href="#t2015-04-05T18:48:58" class="time">18:48</a></td></tr>
+<tr id="t2015-04-05T18:49:09"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-04-05T18:49:09" class="time">18:49</a></td></tr>
+<tr id="t2015-04-05T18:49:45"><th class="nick" style="background: #818144">khem`</th><td class="text" style="color: #818144">real issues are packages generating .so to be real librararies and not version solibs</td><td class="time"><a href="#t2015-04-05T18:49:45" class="time">18:49</a></td></tr>
+<tr id="t2015-04-05T18:49:47"><th class="nick" style="background: #818144">khem`</th><td class="text" style="color: #818144">and then default packaging of OE shoves it into -dev package</td><td class="time"><a href="#t2015-04-05T18:49:47" class="time">18:49</a></td></tr>
+<tr id="t2015-04-05T18:49:58"><th class="nick" style="background: #818144">khem`</th><td class="text" style="color: #818144">shlibs then starts creating&nbsp;&nbsp;dependencies to -dev package</td><td class="time"><a href="#t2015-04-05T18:49:58" class="time">18:49</a></td></tr>
+<tr id="t2015-04-05T18:50:56"><th class="nick" style="background: #818144">khem`</th><td class="text" style="color: #818144">so fix the faulty recipe to either not package .so into -dev package or let it generate versioned library name and everything will fall in place</td><td class="time"><a href="#t2015-04-05T18:50:56" class="time">18:50</a></td></tr>
+<tr id="t2015-04-05T18:52:07"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">problem is it's a static only lib right now....so there's only headers in the dev package</td><td class="time"><a href="#t2015-04-05T18:52:07" class="time">18:52</a></td></tr>
+<tr id="t2015-04-05T18:52:26"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">so I had to have the dev package depend on the staticdev package as well</td><td class="time"><a href="#t2015-04-05T18:52:26" class="time">18:52</a></td></tr>
+<tr id="t2015-04-05T18:53:18"><th class="nick" style="background: #407a40">ebolton</th><td class="text" style="color: #407a40">but yea, our libs need a lot of clean up so that they package and distribute correctly</td><td class="time"><a href="#t2015-04-05T18:53:18" class="time">18:53</a></td></tr>
+<tr id="t2015-04-05T19:06:45"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-04-05T19:06:45" class="time">19:06</a></td></tr>
+<tr id="t2015-04-05T20:18:13"><td class="nickchange" colspan="2">*** RP1 is now known as help</td><td><a href="#t2015-04-05T20:18:13" class="time">20:18</a></td></tr>
+<tr id="t2015-04-05T20:18:48"><td class="nickchange" colspan="2">*** help is now known as RP</td><td><a href="#t2015-04-05T20:18:48" class="time">20:18</a></td></tr>
+<tr id="t2015-04-05T20:43:31"><td class="nickchange" colspan="2">*** Jackie is now known as Guest94287</td><td><a href="#t2015-04-05T20:43:31" class="time">20:43</a></td></tr>
+<tr id="t2015-04-05T22:00:18"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-04-05T22:00:18" class="time">22:00</a></td></tr>
+<tr id="t2015-04-05T23:17:39"><th class="nick" style="background: #854685">prsdhall</th><td class="text" style="color: #854685">Hello, I'm not sure if this is the right forum for this question but...&nbsp;&nbsp;I've been trying to use the Dora (1.5.4) release to work with the 3.10 kernel but I see that most of the kernel modules I've configured don't appear in the root file system after doing the linux-yocto menuconfig, compile , deploy&nbsp;&nbsp;and bit bake -k core-image-sato steps.&nbsp;&nbsp;Am I missing something, is this a know bug with the Dora release?</td><td class="time"><a href="#t2015-04-05T23:17:39" class="time">23:17</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-04-04.log.html">&#171; Saturday, 2015-04-04</a> <a href="index.html">Index</a> <a href="%23yocto.2015-04-06.log.html">Monday, 2015-04-06 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2015-05-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2015-05-25</h1>
+<div class="navigation"> <a href="%23yocto.2015-05-24.log.html">&#171; Sunday, 2015-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2015-05-26.log.html">Tuesday, 2015-05-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-05-25T06:40:47"><td class="nickchange" colspan="2">*** mago|away is now known as mago_</td><td><a href="#t2015-05-25T06:40:47" class="time">06:40</a></td></tr>
+<tr id="t2015-05-25T06:47:56"><th class="nick" style="background: #407a40">chankit</th><td class="text" style="color: #407a40">is there some thing like oe_cmake that cmakes an installation?</td><td class="time"><a href="#t2015-05-25T06:47:56" class="time">06:47</a></td></tr>
+<tr id="t2015-05-25T06:49:11"><th class="nick" style="background: #407a40">chankit</th><td class="text" style="color: #407a40">so there's oe_runmake that is sort of equivalent to make, so I'm looking for something equivalent to cmake</td><td class="time"><a href="#t2015-05-25T06:49:11" class="time">06:49</a></td></tr>
+<tr id="t2015-05-25T07:04:51"><th class="nick" style="background: #407a40">chankit</th><td class="text" style="color: #407a40"> is there some thing like oe_cmake that cmakes an installation?</td><td class="time"><a href="#t2015-05-25T07:04:51" class="time">07:04</a></td></tr>
+<tr id="t2015-05-25T07:04:57"><th class="nick" style="background: #407a40">chankit</th><td class="text" style="color: #407a40"> so there's oe_runmake that is sort of equivalent to make, so I'm looking for something equivalent to cmake</td><td class="time"><a href="#t2015-05-25T07:04:57" class="time">07:04</a></td></tr>
+<tr id="t2015-05-25T07:17:49"><td class="part" colspan="2">*** Ferocity &lt;Ferocity!~fry@2a02:810d:8840:1b4:514f:8da3:bb5d:7d2f&gt; has left #yocto</td><td><a href="#t2015-05-25T07:17:49" class="time">07:17</a></td></tr>
+<tr id="t2015-05-25T08:17:23"><th class="nick" style="background: #42427e">erbo</th><td class="text" style="color: #42427e">chankit: have you looked at cmake.bbclass? Try inherit cmake in the recipe for cmake based packages.</td><td class="time"><a href="#t2015-05-25T08:17:23" class="time">08:17</a></td></tr>
+<tr id="t2015-05-25T08:18:04"><td class="other" colspan="2">-YoctoAutoBuilder- build #325 of eclipse-plugin-juno is complete: Failure [failed Building Eclipse Plugin Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-juno/builds/325" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-juno/builds/325</a></td><td><a href="#t2015-05-25T08:18:04" class="time">08:18</a></td></tr>
+<tr id="t2015-05-25T08:27:47"><td class="other" colspan="2">-YoctoAutoBuilder- build #323 of eclipse-plugin-kepler is complete: Failure [failed Building Eclipse Plugin Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-kepler/builds/323" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-kepler/builds/323</a></td><td><a href="#t2015-05-25T08:27:47" class="time">08:27</a></td></tr>
+<tr id="t2015-05-25T08:42:09"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2015-05-25T08:42:09" class="time">08:42</a></td></tr>
+<tr id="t2015-05-25T08:42:19"><th class="nick" style="background: #818144">mckoan</th><td class="text" style="color: #818144">good morning</td><td class="time"><a href="#t2015-05-25T08:42:19" class="time">08:42</a></td></tr>
+<tr id="t2015-05-25T09:11:53"><th class="nick" style="background: #407a40">chankit</th><td class="text" style="color: #407a40">erbo: thanks. will check that out :-)</td><td class="time"><a href="#t2015-05-25T09:11:53" class="time">09:11</a></td></tr>
+<tr id="t2015-05-25T09:21:10"><th class="nick" style="background: #854685">Valentin_</th><td class="text" style="color: #854685">hi all!</td><td class="time"><a href="#t2015-05-25T09:21:10" class="time">09:21</a></td></tr>
+<tr id="t2015-05-25T09:22:13"><th class="nick" style="background: #854685">Valentin_</th><td class="text" style="color: #854685">i'm trying to build BlueZ for yocto with toolchain, but getting this errors <a href="http://paste.ubuntu.com/11321877/" rel="nofollow">http://paste.ubuntu.com/11321877/</a></td><td class="time"><a href="#t2015-05-25T09:22:13" class="time">09:22</a></td></tr>
+<tr id="t2015-05-25T10:08:30"><td class="nickchange" colspan="2">*** ipuustin_ is now known as ipuustin</td><td><a href="#t2015-05-25T10:08:30" class="time">10:08</a></td></tr>
+<tr id="t2015-05-25T10:18:08"><th class="nick" style="background: #818144">mckoan</th><td class="text" style="color: #818144">What could be the cause for this error? DEBUG: SITE files ['endian-little', 'bit-32', 'arm-common', 'common-linux', 'common-glibc', 'arm-linux', 'arm-linux-gnueabi', 'common']</td><td class="time"><a href="#t2015-05-25T10:18:08" class="time">10:18</a></td></tr>
+<tr id="t2015-05-25T10:40:09"><th class="nick" style="background: #488888">neverpanic</th><td class="text" style="color: #488888">that's not an error.</td><td class="time"><a href="#t2015-05-25T10:40:09" class="time">10:40</a></td></tr>
+<tr id="t2015-05-25T14:00:33"><td class="other" colspan="2">-YoctoAutoBuilder- build #311 of nightly-qa-systemd is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/311" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/311</a></td><td><a href="#t2015-05-25T14:00:33" class="time">14:00</a></td></tr>
+<tr id="t2015-05-25T14:22:09"><td class="other" colspan="2">-YoctoAutoBuilder- build #306 of nightly-rpm is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/306" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/306</a></td><td><a href="#t2015-05-25T14:22:09" class="time">14:22</a></td></tr>
+<tr id="t2015-05-25T14:26:20"><td class="part" colspan="2">*** ylouise &lt;ylouise!yalouise@nat/intel/x-wqkvejpykingkvno&gt; has left #yocto</td><td><a href="#t2015-05-25T14:26:20" class="time">14:26</a></td></tr>
+<tr id="t2015-05-25T14:31:37"><td class="part" colspan="2">*** ylouise &lt;ylouise!~yalouise@134.134.139.72&gt; has left #yocto</td><td><a href="#t2015-05-25T14:31:37" class="time">14:31</a></td></tr>
+<tr id="t2015-05-25T16:01:00"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2015-05-25T16:01:00" class="time">16:01</a></td></tr>
+<tr id="t2015-05-25T16:10:37"><td class="nickchange" colspan="2">*** mago_ is now known as mago|away</td><td><a href="#t2015-05-25T16:10:37" class="time">16:10</a></td></tr>
+<tr id="t2015-05-25T16:43:15"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a"><a href="https://www.youtube.com/watch?v=xxcLNHasPx4" rel="nofollow">https://www.youtube.com/watch?v=xxcLNHasPx4</a>&nbsp;&nbsp;&lt;=&nbsp;&nbsp;time to wake up</td><td class="time"><a href="#t2015-05-25T16:43:15" class="time">16:43</a></td></tr>
+<tr id="t2015-05-25T16:55:16"><th class="nick" style="background: #4b904b">tid</th><td class="text" style="color: #4b904b">hello ! I have a image that work with ext4 or 3 and readonly-rootfs option but when i switch to squashfs it boot but some systemd service don't run for exemple : systemd-networkd fail with status 226/NAMESPACE</td><td class="time"><a href="#t2015-05-25T16:55:16" class="time">16:55</a></td></tr>
+<tr id="t2015-05-25T16:55:21"><th class="nick" style="background: #4b904b">tid</th><td class="text" style="color: #4b904b">any clues ? :)</td><td class="time"><a href="#t2015-05-25T16:55:21" class="time">16:55</a></td></tr>
+<tr id="t2015-05-25T17:37:06"><th class="nick" style="background: #4d4d93">mario-goulart</th><td class="text" style="color: #4d4d93">This is starting to look like a "vacation notice" loop.</td><td class="time"><a href="#t2015-05-25T17:37:06" class="time">17:37</a></td></tr>
+<tr id="t2015-05-25T18:00:11"><td class="other" colspan="2">-YoctoAutoBuilder- build #307 of nightly-rpm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/307" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-rpm/builds/307</a></td><td><a href="#t2015-05-25T18:00:11" class="time">18:00</a></td></tr>
+<tr id="t2015-05-25T18:02:36"><td class="other" colspan="2">-YoctoAutoBuilder- build #312 of nightly-qa-systemd is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/312" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/312</a></td><td><a href="#t2015-05-25T18:02:36" class="time">18:02</a></td></tr>
+<tr id="t2015-05-25T19:04:25"><th class="nick" style="background: #97974f">DS_</th><td class="text" style="color: #97974f">Hi! Could someone tell me what are the main differences between using "oe_runmake" and just using "make" in a do_configure task?</td><td class="time"><a href="#t2015-05-25T19:04:25" class="time">19:04</a></td></tr>
+<tr id="t2015-05-25T19:13:13"><th class="nick" style="background: #9b519b">clopez_</th><td class="text" style="color: #9b519b">i have a recipe (.bb) to build an image and it includes some packages, i want to change a default configure option for one of this packages (via PACKAGECONFIG variable). Can i do that inside the recipe of the image?</td><td class="time"><a href="#t2015-05-25T19:13:13" class="time">19:13</a></td></tr>
+<tr id="t2015-05-25T20:17:12"><td class="nickchange" colspan="2">*** clopez_ is now known as clopez</td><td><a href="#t2015-05-25T20:17:12" class="time">20:17</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-05-24.log.html">&#171; Sunday, 2015-05-24</a> <a href="index.html">Index</a> <a href="%23yocto.2015-05-26.log.html">Tuesday, 2015-05-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

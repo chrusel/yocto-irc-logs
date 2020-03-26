@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-08-23</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-08-23</h1>
+<div class="navigation"> <a href="%23yocto.2015-08-22.log.html">&#171; Saturday, 2015-08-22</a> <a href="index.html">Index</a> <a href="%23yocto.2015-08-24.log.html">Monday, 2015-08-24 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-08-23T04:37:42"><td class="nickchange" colspan="2">*** dlan_ is now known as dlan</td><td><a href="#t2015-08-23T04:37:42" class="time">04:37</a></td></tr>
+<tr id="t2015-08-23T04:56:14"><td class="nickchange" colspan="2">*** neil__ is now known as malkauns</td><td><a href="#t2015-08-23T04:56:14" class="time">04:56</a></td></tr>
+<tr id="t2015-08-23T05:00:09"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">hi all, is there an easy way to install the iw command and wireless-regdb in yocto?</td><td class="time"><a href="#t2015-08-23T05:00:09" class="time">05:00</a></td></tr>
+<tr id="t2015-08-23T05:53:12"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">the iw recipe is in the meta-oe repo, add its meta-networking layer to your bblayers.conf, then add iw to CORE_IMAGE_EXTRA_INSTALL in local.conf</td><td class="time"><a href="#t2015-08-23T05:53:12" class="time">05:53</a></td></tr>
+<tr id="t2015-08-23T05:53:13"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">no idea on the other offhand</td><td class="time"><a href="#t2015-08-23T05:53:13" class="time">05:53</a></td></tr>
+<tr id="t2015-08-23T06:56:32"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">kergoth: thanx, i'm new to this, how do I add this repo? which config file to i edit?</td><td class="time"><a href="#t2015-08-23T06:56:32" class="time">06:56</a></td></tr>
+<tr id="t2015-08-23T07:45:18"><td class="part" colspan="2">*** aehs29 &lt;aehs29!aehernan@nat/intel/x-huppbwhzctlagfmg&gt; has left #yocto</td><td><a href="#t2015-08-23T07:45:18" class="time">07:45</a></td></tr>
+<tr id="t2015-08-23T08:54:27"><th class="nick" style="background: #818144">rupertbg</th><td class="text" style="color: #818144">hey all!</td><td class="time"><a href="#t2015-08-23T08:54:27" class="time">08:54</a></td></tr>
+<tr id="t2015-08-23T08:55:11"><th class="nick" style="background: #818144">rupertbg</th><td class="text" style="color: #818144">I'm building an IoT device based on Edison that will connect with other devices of the same design to share config information</td><td class="time"><a href="#t2015-08-23T08:55:11" class="time">08:55</a></td></tr>
+<tr id="t2015-08-23T08:55:25"><th class="nick" style="background: #818144">rupertbg</th><td class="text" style="color: #818144">is there a distributed feature for yocto like etcd in coreOS?</td><td class="time"><a href="#t2015-08-23T08:55:25" class="time">08:55</a></td></tr>
+<tr id="t2015-08-23T08:55:39"><th class="nick" style="background: #818144">rupertbg</th><td class="text" style="color: #818144">or something else anyone knows of that could fill this requirement</td><td class="time"><a href="#t2015-08-23T08:55:39" class="time">08:55</a></td></tr>
+<tr id="t2015-08-23T14:25:40"><td class="nickchange" colspan="2">*** Amynka_ is now known as Amynka</td><td><a href="#t2015-08-23T14:25:40" class="time">14:25</a></td></tr>
+<tr id="t2015-08-23T16:42:17"><td class="nickchange" colspan="2">*** AlexV is now known as Guest91589</td><td><a href="#t2015-08-23T16:42:17" class="time">16:42</a></td></tr>
+<tr id="t2015-08-23T18:54:26"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">ok guys I added the meta-oe repo to my project but now I get this: "ERROR: ParseError at ...gpsd/gpsd_3.14.bb:26: Could not inherit file classes/bluetooth.bbclass</td><td class="time"><a href="#t2015-08-23T18:54:26" class="time">18:54</a></td></tr>
+<tr id="t2015-08-23T18:54:33"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">how can I fix this?</td><td class="time"><a href="#t2015-08-23T18:54:33" class="time">18:54</a></td></tr>
+<tr id="t2015-08-23T18:55:30"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">i'm trying to get the iw command and wireless-regdb working in yocto</td><td class="time"><a href="#t2015-08-23T18:55:30" class="time">18:55</a></td></tr>
+<tr id="t2015-08-23T18:56:00"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">bluetooth.bbclass is in oe-core. sounds like you're using mismatched branches</td><td class="time"><a href="#t2015-08-23T18:56:00" class="time">18:56</a></td></tr>
+<tr id="t2015-08-23T18:56:11"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">you can't use a stable release / branch of poky/oe-core and master of meta-oe</td><td class="time"><a href="#t2015-08-23T18:56:11" class="time">18:56</a></td></tr>
+<tr id="t2015-08-23T18:56:15"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">you have to use matching branches</td><td class="time"><a href="#t2015-08-23T18:56:15" class="time">18:56</a></td></tr>
+<tr id="t2015-08-23T18:56:31"><th class="nick" style="background: #407a40">malkauns</th><td class="text" style="color: #407a40">hmm</td><td class="time"><a href="#t2015-08-23T18:56:31" class="time">18:56</a></td></tr>
+<tr id="t2015-08-23T22:29:34"><th class="nick" style="background: #854685">raffaele</th><td class="text" style="color: #854685">exit</td><td class="time"><a href="#t2015-08-23T22:29:34" class="time">22:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-08-22.log.html">&#171; Saturday, 2015-08-22</a> <a href="index.html">Index</a> <a href="%23yocto.2015-08-24.log.html">Monday, 2015-08-24 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-03-15</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-03-15</h1>
+<div class="navigation"> <a href="%23yocto.2015-03-14.log.html">&#171; Saturday, 2015-03-14</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-16.log.html">Monday, 2015-03-16 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-03-15T07:34:00"><td class="nickchange" colspan="2">*** Jackie is now known as Guest58369</td><td><a href="#t2015-03-15T07:34:00" class="time">07:34</a></td></tr>
+<tr id="t2015-03-15T10:58:49"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">hi</td><td class="time"><a href="#t2015-03-15T10:58:49" class="time">10:58</a></td></tr>
+<tr id="t2015-03-15T10:59:45"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">i would like to ssh to my board running yocto. I am in a dynamically IP assigned network.</td><td class="time"><a href="#t2015-03-15T10:59:45" class="time">10:59</a></td></tr>
+<tr id="t2015-03-15T11:00:07"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">I can't ssh by: ssh root@pandaboard</td><td class="time"><a href="#t2015-03-15T11:00:07" class="time">11:00</a></td></tr>
+<tr id="t2015-03-15T11:00:29"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">but it works if I give the ip instaed oh hostname</td><td class="time"><a href="#t2015-03-15T11:00:29" class="time">11:00</a></td></tr>
+<tr id="t2015-03-15T11:00:40"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">*instead of</td><td class="time"><a href="#t2015-03-15T11:00:40" class="time">11:00</a></td></tr>
+<tr id="t2015-03-15T11:01:00"><th class="nick" style="background: #407a40">blackfish</th><td class="text" style="color: #407a40">WHat am i missing?</td><td class="time"><a href="#t2015-03-15T11:01:00" class="time">11:01</a></td></tr>
+<tr id="t2015-03-15T11:08:17"><th class="nick" style="background: #42427e">ccaione</th><td class="text" style="color: #42427e">a DNS server?</td><td class="time"><a href="#t2015-03-15T11:08:17" class="time">11:08</a></td></tr>
+<tr id="t2015-03-15T13:26:30"><th class="nick" style="background: #818144">tthtlc</th><td class="text" style="color: #818144">sorry i am confused:&nbsp;&nbsp; what is the difference between layers and recipes?</td><td class="time"><a href="#t2015-03-15T13:26:30" class="time">13:26</a></td></tr>
+<tr id="t2015-03-15T13:27:50"><th class="nick" style="background: #818144">tthtlc</th><td class="text" style="color: #818144">poky is a build system:&nbsp;&nbsp; so that means it contains config files to say what packages is to be build</td><td class="time"><a href="#t2015-03-15T13:27:50" class="time">13:27</a></td></tr>
+<tr id="t2015-03-15T13:28:04"><th class="nick" style="background: #818144">tthtlc</th><td class="text" style="color: #818144">and where is this "list" located?</td><td class="time"><a href="#t2015-03-15T13:28:04" class="time">13:28</a></td></tr>
+<tr id="t2015-03-15T13:30:02"><th class="nick" style="background: #818144">tthtlc</th><td class="text" style="color: #818144">for eg, i am interested to include "netstat" to go into the build....and perhaps some other tools for router setup....and perhaps quagga for inclusion for routing....where should these setup instruction go?</td><td class="time"><a href="#t2015-03-15T13:30:02" class="time">13:30</a></td></tr>
+<tr id="t2015-03-15T13:31:16"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">tthtlc: a layer is simply a collection of recipes</td><td class="time"><a href="#t2015-03-15T13:31:16" class="time">13:31</a></td></tr>
+<tr id="t2015-03-15T13:31:51"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">+ possibly configuration</td><td class="time"><a href="#t2015-03-15T13:31:51" class="time">13:31</a></td></tr>
+<tr id="t2015-03-15T13:33:43"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">to make a layer visible to bitbake so you can build the recipes within it you would download it, and then put the path to it in BBLAYERS within conf/bblayers.conf in your build directory</td><td class="time"><a href="#t2015-03-15T13:33:43" class="time">13:33</a></td></tr>
+<tr id="t2015-03-15T13:34:07"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">this may be of interest:<a href="http://www.openembedded.org/Layers_FAQ" rel="nofollow">http://www.openembedded.org/Layers_FAQ</a></td><td class="time"><a href="#t2015-03-15T13:34:07" class="time">13:34</a></td></tr>
+<tr id="t2015-03-15T13:44:10"><th class="nick" style="background: #818144">tthtlc</th><td class="text" style="color: #818144">and a recipes is a collection of packages?&nbsp;&nbsp; so, for eg, "sato" is a recipe?</td><td class="time"><a href="#t2015-03-15T13:44:10" class="time">13:44</a></td></tr>
+<tr id="t2015-03-15T13:53:33"><th class="nick" style="background: #488888">Crofton|work</th><td class="text" style="color: #488888">poky is a reference distribution, it is most certainly not a build system, no matter what people post on the INternet</td><td class="time"><a href="#t2015-03-15T13:53:33" class="time">13:53</a></td></tr>
+<tr id="t2015-03-15T17:20:47"><td class="part" colspan="2">*** Calchan &lt;Calchan!~calchan@gentoo/developer/calchan&gt; has left #yocto</td><td><a href="#t2015-03-15T17:20:47" class="time">17:20</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-03-14.log.html">&#171; Saturday, 2015-03-14</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-16.log.html">Monday, 2015-03-16 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

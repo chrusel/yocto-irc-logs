@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-11-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-11-08</h1>
+<div class="navigation"> <a href="%23yocto.2015-11-07.log.html">&#171; Saturday, 2015-11-07</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-09.log.html">Monday, 2015-11-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-11-08T03:18:21"><td class="nickchange" colspan="2">*** khem` is now known as onoffon</td><td><a href="#t2015-11-08T03:18:21" class="time">03:18</a></td></tr>
+<tr id="t2015-11-08T03:18:24"><td class="nickchange" colspan="2">*** onoffon is now known as khem`</td><td><a href="#t2015-11-08T03:18:24" class="time">03:18</a></td></tr>
+<tr id="t2015-11-08T04:24:50"><td class="other" colspan="2">-YoctoAutoBuilder- build #541 of nightly-x86-64 is complete: Failure [failed BuildImages Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64/builds/541" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64/builds/541</a></td><td><a href="#t2015-11-08T04:24:50" class="time">04:24</a></td></tr>
+<tr id="t2015-11-08T09:46:07"><td class="nickchange" colspan="2">*** khem` is now known as onoffon</td><td><a href="#t2015-11-08T09:46:07" class="time">09:46</a></td></tr>
+<tr id="t2015-11-08T09:50:31"><td class="nickchange" colspan="2">*** jku is now known as jku_</td><td><a href="#t2015-11-08T09:50:31" class="time">09:50</a></td></tr>
+<tr id="t2015-11-08T10:39:37"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40"><a href="http://lpaste.net/144862" rel="nofollow">http://lpaste.net/144862</a></td><td class="time"><a href="#t2015-11-08T10:39:37" class="time">10:39</a></td></tr>
+<tr id="t2015-11-08T10:39:49"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40">^ should i abort or cannot work anyway?</td><td class="time"><a href="#t2015-11-08T10:39:49" class="time">10:39</a></td></tr>
+<tr id="t2015-11-08T10:40:09"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40">And how long does a buil take, i started it before i wen to sleeap 9 hour bsago and it is still building...</td><td class="time"><a href="#t2015-11-08T10:40:09" class="time">10:40</a></td></tr>
+<tr id="t2015-11-08T10:40:39"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40">it doesnt write anything to the prompt so i have no idea if it is working or if it gets stuck</td><td class="time"><a href="#t2015-11-08T10:40:39" class="time">10:40</a></td></tr>
+<tr id="t2015-11-08T10:43:55"><td class="nickchange" colspan="2">*** onoffon is now known as khem`</td><td><a href="#t2015-11-08T10:43:55" class="time">10:43</a></td></tr>
+<tr id="t2015-11-08T10:44:37"><td class="nickchange" colspan="2">*** khem` is now known as onoffon</td><td><a href="#t2015-11-08T10:44:37" class="time">10:44</a></td></tr>
+<tr id="t2015-11-08T10:47:31"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40">noone?</td><td class="time"><a href="#t2015-11-08T10:47:31" class="time">10:47</a></td></tr>
+<tr id="t2015-11-08T11:51:54"><td class="nickchange" colspan="2">*** jku is now known as jku_</td><td><a href="#t2015-11-08T11:51:54" class="time">11:51</a></td></tr>
+<tr id="t2015-11-08T12:00:56"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40"><a href="http://lpaste.net/144875" rel="nofollow">http://lpaste.net/144875</a></td><td class="time"><a href="#t2015-11-08T12:00:56" class="time">12:00</a></td></tr>
+<tr id="t2015-11-08T12:42:39"><td class="nickchange" colspan="2">*** silviof1 is now known as silviof</td><td><a href="#t2015-11-08T12:42:39" class="time">12:42</a></td></tr>
+<tr id="t2015-11-08T13:02:34"><th class="nick" style="background: #407a40">frite</th><td class="text" style="color: #407a40">I worked on branch B that is behind master (A) and now I want to branch from B to C and merge master into C</td><td class="time"><a href="#t2015-11-08T13:02:34" class="time">13:02</a></td></tr>
+<tr id="t2015-11-08T13:13:09"><th class="nick" style="background: #42427e">JEEB</th><td class="text" style="color: #42427e">[on B] -&gt; [git checkout -b C (if C is a new branch you're creating)] -&gt; [git merge/rebase master (usually when you have your own branch(es) you rebase them on top of master to always have your own work on top of the branch you're basing on)]</td><td class="time"><a href="#t2015-11-08T13:13:09" class="time">13:13</a></td></tr>
+<tr id="t2015-11-08T13:13:51"><th class="nick" style="background: #42427e">JEEB</th><td class="text" style="color: #42427e">in both cases if there's stuff that both you and the other side changed you will have to do merge conflict resolution</td><td class="time"><a href="#t2015-11-08T13:13:51" class="time">13:13</a></td></tr>
+<tr id="t2015-11-08T21:18:31"><th class="nick" style="background: #818144">neverpanic</th><td class="text" style="color: #818144">seebs: sent, let me know if you have any questions</td><td class="time"><a href="#t2015-11-08T21:18:31" class="time">21:18</a></td></tr>
+<tr id="t2015-11-08T21:18:39"><th class="nick" style="background: #854685">seebs</th><td class="text" style="color: #854685">Thanks!</td><td class="time"><a href="#t2015-11-08T21:18:39" class="time">21:18</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-11-07.log.html">&#171; Saturday, 2015-11-07</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-09.log.html">Monday, 2015-11-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

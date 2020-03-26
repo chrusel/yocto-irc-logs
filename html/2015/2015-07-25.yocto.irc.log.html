@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-07-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-07-25</h1>
+<div class="navigation"> <a href="%23yocto.2015-07-24.log.html">&#171; Friday, 2015-07-24</a> <a href="index.html">Index</a> <a href="%23yocto.2015-07-26.log.html">Sunday, 2015-07-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-07-25T00:02:48"><td class="part" colspan="2">*** aehs291 &lt;aehs291!~aehernan@134.134.139.76&gt; has left #yocto</td><td><a href="#t2015-07-25T00:02:48" class="time">00:02</a></td></tr>
+<tr id="t2015-07-25T00:55:43"><th class="nick" style="background: #407a40">kamzaa</th><td class="text" style="color: #407a40">Hello there, I just received a device running Poky. Before this date I wasn't even aware of such distribution, I am used to debian. I have tons of questions, like why running udhcpc -i epth0 only works temporarely but doesn't survive a reboot? why isn't there a /etc/network/interfaces file. Why isn't there a package manager (like apt-get) and how can I install packages then? Is there a place I can look at to start understanding how to co</td><td class="time"><a href="#t2015-07-25T00:55:43" class="time">00:55</a></td></tr>
+<tr id="t2015-07-25T00:55:45"><th class="nick" style="background: #407a40">kamzaa</th><td class="text" style="color: #407a40">nfigure my device? full question asked here: <a href="https://superuser.com/questions/945044/how-to-make-udhcpc-changes-permanent-in-poky-yokto-dizzy-ditribution" rel="nofollow">https://superuser.com/questions/945044/how-to-make-udhcpc-changes-permanent-in-poky-yokto-dizzy-ditribution</a></td><td class="time"><a href="#t2015-07-25T00:55:45" class="time">00:55</a></td></tr>
+<tr id="t2015-07-25T04:52:09"><th class="nick" style="background: #407a40">kamzaa</th><td class="text" style="color: #407a40">Hello, can someone tell me how to configure the network interfaces under Poky?</td><td class="time"><a href="#t2015-07-25T04:52:09" class="time">04:52</a></td></tr>
+<tr id="t2015-07-25T06:02:19"><td class="part" colspan="2">*** Jefro &lt;Jefro!~jefro@50-0-152-82.dedicated.static.sonic.net&gt; has left #yocto</td><td><a href="#t2015-07-25T06:02:19" class="time">06:02</a></td></tr>
+<tr id="t2015-07-25T11:50:08"><td class="other" colspan="2">-YoctoAutoBuilder- build #394 of nightly-deb is complete: Failure [failed BuildImages Running Sanity Tests Running Sanity Tests_1 Running Sanity Tests_2]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-deb/builds/394" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-deb/builds/394</a></td><td><a href="#t2015-07-25T11:50:08" class="time">11:50</a></td></tr>
+<tr id="t2015-07-25T12:13:45"><td class="other" colspan="2">-YoctoAutoBuilder- build #68 of nightly-deb-non-deb is complete: Failure [failed BuildImages Running Sanity Tests Running Sanity Tests_1 Running Sanity Tests_2]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-deb-non-deb/builds/68" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-deb-non-deb/builds/68</a></td><td><a href="#t2015-07-25T12:13:45" class="time">12:13</a></td></tr>
+<tr id="t2015-07-25T13:00:14"><td class="nickchange" colspan="2">*** Thomas_ is now known as Guest7256</td><td><a href="#t2015-07-25T13:00:14" class="time">13:00</a></td></tr>
+<tr id="t2015-07-25T13:01:35"><th class="nick" style="background: #42427e">Guest7256</th><td class="text" style="color: #42427e">Hello guys, I am sitting here on a bitbake recipe which I need to debug and I would like to see in which order the tasks of my recipe are going to be executed. Is there a command/option in bitbake to list the order in which tasks are executed?</td><td class="time"><a href="#t2015-07-25T13:01:35" class="time">13:01</a></td></tr>
+<tr id="t2015-07-25T14:24:41"><td class="part" colspan="2">*** kamzaa &lt;kamzaa!~kamzaa@216-58-29-17.cpe.distributel.net&gt; has left #yocto</td><td><a href="#t2015-07-25T14:24:41" class="time">14:24</a></td></tr>
+<tr id="t2015-07-25T14:36:05"><th class="nick" style="background: #407a40">kamzaa</th><td class="text" style="color: #407a40">Hello community, once Yocto is built, how can I download packages to it, i.e. what is the equivalent of apt-get or opkg?</td><td class="time"><a href="#t2015-07-25T14:36:05" class="time">14:36</a></td></tr>
+<tr id="t2015-07-25T14:54:22"><td class="part" colspan="2">*** kamzaa &lt;kamzaa!~kamzaa@216-58-29-17.cpe.distributel.net&gt; has left #yocto</td><td><a href="#t2015-07-25T14:54:22" class="time">14:54</a></td></tr>
+<tr id="t2015-07-25T16:37:12"><td class="other" colspan="2">-YoctoAutoBuilder- build #405 of nightly-qa-systemd is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/405" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/405</a></td><td><a href="#t2015-07-25T16:37:12" class="time">16:37</a></td></tr>
+<tr id="t2015-07-25T17:52:25"><td class="other" colspan="2">-YoctoAutoBuilder- build #410 of nightly-x86 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/410" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/410</a></td><td><a href="#t2015-07-25T17:52:25" class="time">17:52</a></td></tr>
+<tr id="t2015-07-25T18:33:57"><td class="other" colspan="2">-YoctoAutoBuilder- build #410 of nightly-world is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/410" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/410</a></td><td><a href="#t2015-07-25T18:33:57" class="time">18:33</a></td></tr>
+<tr id="t2015-07-25T19:57:24"><td class="other" colspan="2">-YoctoAutoBuilder- build #409 of nightly-arm is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/409" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/409</a></td><td><a href="#t2015-07-25T19:57:24" class="time">19:57</a></td></tr>
+<tr id="t2015-07-25T20:09:36"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">hmmm</td><td class="time"><a href="#t2015-07-25T20:09:36" class="time">20:09</a></td></tr>
+<tr id="t2015-07-25T22:54:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #400 of nightly-intel-gpl is complete: Failure [failed BuildImages BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/400" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/400</a></td><td><a href="#t2015-07-25T22:54:55" class="time">22:54</a></td></tr>
+<tr id="t2015-07-25T23:40:23"><td class="part" colspan="2">*** aehs29 &lt;aehs29!~aehernan@134.134.137.75&gt; has left #yocto</td><td><a href="#t2015-07-25T23:40:23" class="time">23:40</a></td></tr>
+<tr id="t2015-07-25T23:40:44"><td class="part" colspan="2">*** aehs29 &lt;aehs29!~aehernan@134.134.137.75&gt; has left #yocto</td><td><a href="#t2015-07-25T23:40:44" class="time">23:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-07-24.log.html">&#171; Friday, 2015-07-24</a> <a href="index.html">Index</a> <a href="%23yocto.2015-07-26.log.html">Sunday, 2015-07-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

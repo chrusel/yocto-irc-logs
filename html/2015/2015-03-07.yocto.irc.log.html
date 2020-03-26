@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-03-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-03-07</h1>
+<div class="navigation"> <a href="%23yocto.2015-03-06.log.html">&#171; Friday, 2015-03-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-08.log.html">Sunday, 2015-03-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-03-07T17:21:45"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-07T17:21:45" class="time">17:21</a></td></tr>
+<tr id="t2015-03-07T18:24:36"><td class="nickchange" colspan="2">*** Proclivis is now known as proclivis_</td><td><a href="#t2015-03-07T18:24:36" class="time">18:24</a></td></tr>
+<tr id="t2015-03-07T18:25:19"><td class="part" colspan="2">*** proclivis_ &lt;proclivis_!~proclivis@75-163-175-144.clsp.qwest.net&gt; has left #yocto</td><td><a href="#t2015-03-07T18:25:19" class="time">18:25</a></td></tr>
+<tr id="t2015-03-07T19:05:55"><td class="nickchange" colspan="2">*** Guest39711 is now known as unpro</td><td><a href="#t2015-03-07T19:05:55" class="time">19:05</a></td></tr>
+<tr id="t2015-03-07T19:11:21"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">I've set up a new layer, and I added a machine definition which is getting loaded, but it seems to be ignoring my directive for PREFERRED_PROVIDER_virtual/kernel</td><td class="time"><a href="#t2015-03-07T19:11:21" class="time">19:11</a></td></tr>
+<tr id="t2015-03-07T19:14:27"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">I've got a directory recipes-kernel/linux in there, and a file matching the name specied</td><td class="time"><a href="#t2015-03-07T19:14:27" class="time">19:14</a></td></tr>
+<tr id="t2015-03-07T19:14:41"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">PREFERRED_PROVIDER_virtual/kernel = "linux-rom-7420"</td><td class="time"><a href="#t2015-03-07T19:14:41" class="time">19:14</a></td></tr>
+<tr id="t2015-03-07T19:14:41"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">PREFERRED_VERSION_linux-rom-7420 = "3.0.35"</td><td class="time"><a href="#t2015-03-07T19:14:41" class="time">19:14</a></td></tr>
+<tr id="t2015-03-07T19:14:56"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">./recipes-kernel/linux:</td><td class="time"><a href="#t2015-03-07T19:14:56" class="time">19:14</a></td></tr>
+<tr id="t2015-03-07T19:14:58"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">linux-rom-7420&nbsp;&nbsp;linux-rom-7420_3.0.35.bb&nbsp;&nbsp;linux-rom-7420.inc</td><td class="time"><a href="#t2015-03-07T19:14:58" class="time">19:14</a></td></tr>
+<tr id="t2015-03-07T19:15:52"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">it's recofnizing the PREFERRED_PROVIDER entry for u-boot just fine</td><td class="time"><a href="#t2015-03-07T19:15:52" class="time">19:15</a></td></tr>
+<tr id="t2015-03-07T19:16:00"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">recognizing</td><td class="time"><a href="#t2015-03-07T19:16:00" class="time">19:16</a></td></tr>
+<tr id="t2015-03-07T19:22:01"><td class="part" colspan="2">*** aehs291 &lt;aehs291!aehernan@nat/intel/x-dmctqgbrsmqhqxsi&gt; has left #yocto</td><td><a href="#t2015-03-07T19:22:01" class="time">19:22</a></td></tr>
+<tr id="t2015-03-07T19:59:16"><td class="part" colspan="2">*** madisox &lt;madisox!~madison@70.90.175.93-BusName-ca.sfba.hfc.comcastbusiness.net&gt; has left #yocto</td><td><a href="#t2015-03-07T19:59:16" class="time">19:59</a></td></tr>
+<tr id="t2015-03-07T20:09:17"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">cyclist: is everything in your layer/machine config?</td><td class="time"><a href="#t2015-03-07T20:09:17" class="time">20:09</a></td></tr>
+<tr id="t2015-03-07T20:09:53"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">cyclist: and what is in your bblayers.conf?</td><td class="time"><a href="#t2015-03-07T20:09:53" class="time">20:09</a></td></tr>
+<tr id="t2015-03-07T20:10:26"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">maybe you have extra yocto bsp layer still in there?</td><td class="time"><a href="#t2015-03-07T20:10:26" class="time">20:10</a></td></tr>
+<tr id="t2015-03-07T20:11:22"><td class="action" colspan="2">* nerdboy thinking maybe layer order or priority?</td><td><a href="#t2015-03-07T20:11:22" class="time">20:11</a></td></tr>
+<tr id="t2015-03-07T21:09:25"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">Sorry.&nbsp;&nbsp;I was away</td><td class="time"><a href="#t2015-03-07T21:09:25" class="time">21:09</a></td></tr>
+<tr id="t2015-03-07T21:09:54"><td class="part" colspan="2">*** sergio &lt;sergio!~sergio@kde/developer/smartins&gt; has left #yocto</td><td><a href="#t2015-03-07T21:09:54" class="time">21:09</a></td></tr>
+<tr id="t2015-03-07T21:11:05"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">cd I'm going to try to add a "SECTION 'kernel'" to my config</td><td class="time"><a href="#t2015-03-07T21:11:05" class="time">21:11</a></td></tr>
+<tr id="t2015-03-07T21:13:00"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">actually "PROVIDES kernel"</td><td class="time"><a href="#t2015-03-07T21:13:00" class="time">21:13</a></td></tr>
+<tr id="t2015-03-07T21:16:32"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">now it's asking for entries for kernel-base, kernel-image, and kernel-module-*</td><td class="time"><a href="#t2015-03-07T21:16:32" class="time">21:16</a></td></tr>
+<tr id="t2015-03-07T21:17:37"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">I used the config files from meta-fsl-arm as a basis</td><td class="time"><a href="#t2015-03-07T21:17:37" class="time">21:17</a></td></tr>
+<tr id="t2015-03-07T21:23:48"><th class="nick" style="background: #407a40">cyclist</th><td class="text" style="color: #407a40">I added "inherit kernel".&nbsp;&nbsp;that fixed it</td><td class="time"><a href="#t2015-03-07T21:23:48" class="time">21:23</a></td></tr>
+<tr id="t2015-03-07T22:02:24"><th class="nick" style="background: #818144">macbug</th><td class="text" style="color: #818144">can i safely change my build dirs name to beagle-build ?</td><td class="time"><a href="#t2015-03-07T22:02:24" class="time">22:02</a></td></tr>
+<tr id="t2015-03-07T22:03:00"><th class="nick" style="background: #854685">mihok</th><td class="text" style="color: #854685">how do I fix the hwclock</td><td class="time"><a href="#t2015-03-07T22:03:00" class="time">22:03</a></td></tr>
+<tr id="t2015-03-07T22:03:12"><th class="nick" style="background: #854685">mihok</th><td class="text" style="color: #854685">I cant build any npm modules because it thinks its janurary 1st 2015</td><td class="time"><a href="#t2015-03-07T22:03:12" class="time">22:03</a></td></tr>
+<tr id="t2015-03-07T22:37:20"><td class="part" colspan="2">*** aehs29 &lt;aehs29!aehernan@nat/intel/x-sgqucsojtovruzdu&gt; has left #yocto</td><td><a href="#t2015-03-07T22:37:20" class="time">22:37</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-03-06.log.html">&#171; Friday, 2015-03-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-08.log.html">Sunday, 2015-03-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

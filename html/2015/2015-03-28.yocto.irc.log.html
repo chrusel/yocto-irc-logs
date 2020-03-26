@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-03-28</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-03-28</h1>
+<div class="navigation"> <a href="%23yocto.2015-03-27.log.html">&#171; Friday, 2015-03-27</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-29.log.html">Sunday, 2015-03-29 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-03-28T00:50:21"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-03-28T00:50:21" class="time">00:50</a></td></tr>
+<tr id="t2015-03-28T00:50:23"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-03-28T00:50:23" class="time">00:50</a></td></tr>
+<tr id="t2015-03-28T05:14:19"><td class="nickchange" colspan="2">*** bluelightning_ is now known as bluelightning</td><td><a href="#t2015-03-28T05:14:19" class="time">05:14</a></td></tr>
+<tr id="t2015-03-28T06:10:39"><td class="nickchange" colspan="2">*** khem` is now known as khem[away]</td><td><a href="#t2015-03-28T06:10:39" class="time">06:10</a></td></tr>
+<tr id="t2015-03-28T06:19:25"><td class="nickchange" colspan="2">*** khem[away] is now known as khem`</td><td><a href="#t2015-03-28T06:19:25" class="time">06:19</a></td></tr>
+<tr id="t2015-03-28T09:22:15"><td class="other" colspan="2">-YoctoAutoBuilder- build #18 of eclipse-plugin-luna is complete: Failure [failed Building Eclipse Plugin Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-luna/builds/18" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/eclipse-plugin-luna/builds/18</a></td><td><a href="#t2015-03-28T09:22:15" class="time">09:22</a></td></tr>
+<tr id="t2015-03-28T11:06:01"><td class="other" colspan="2">-YoctoAutoBuilder- build #243 of nightly-non-gpl3 is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-non-gpl3/builds/243" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-non-gpl3/builds/243</a></td><td><a href="#t2015-03-28T11:06:01" class="time">11:06</a></td></tr>
+<tr id="t2015-03-28T11:29:07"><td class="part" colspan="2">*** madisox &lt;madisox!~madison@70.90.175.93-BusName-ca.sfba.hfc.comcastbusiness.net&gt; has left #yocto</td><td><a href="#t2015-03-28T11:29:07" class="time">11:29</a></td></tr>
+<tr id="t2015-03-28T12:05:29"><td class="part" colspan="2">*** Nilesh_ &lt;Nilesh_!~minda@114.143.135.194&gt; has left #yocto</td><td><a href="#t2015-03-28T12:05:29" class="time">12:05</a></td></tr>
+<tr id="t2015-03-28T16:23:44"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40"> #beagle</td><td class="time"><a href="#t2015-03-28T16:23:44" class="time">16:23</a></td></tr>
+<tr id="t2015-03-28T17:59:31"><td class="part" colspan="2">*** tasslehoff &lt;tasslehoff!~Tasslehof@ti0260a430-0879.bb.online.no&gt; has left #yocto</td><td><a href="#t2015-03-28T17:59:31" class="time">17:59</a></td></tr>
+<tr id="t2015-03-28T18:32:10"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">hi all, it's possible have a SRC_URI with a whitespace between some words? i got a ExpansionError failure.</td><td class="time"><a href="#t2015-03-28T18:32:10" class="time">18:32</a></td></tr>
+<tr id="t2015-03-28T18:33:20"><th class="nick" style="background: #818144">bluelightning</th><td class="text" style="color: #818144">eballetbo: if you mean part of the URL itself wouldn't you need to encode it?</td><td class="time"><a href="#t2015-03-28T18:33:20" class="time">18:33</a></td></tr>
+<tr id="t2015-03-28T18:33:33"><th class="nick" style="background: #818144">bluelightning</th><td class="text" style="color: #818144">i.e. %20</td><td class="time"><a href="#t2015-03-28T18:33:33" class="time">18:33</a></td></tr>
+<tr id="t2015-03-28T18:34:18"><th class="nick" style="background: #854685">fray</th><td class="text" style="color: #854685">yup, encoding works.. I've done it in the past</td><td class="time"><a href="#t2015-03-28T18:34:18" class="time">18:34</a></td></tr>
+<tr id="t2015-03-28T18:37:34"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">bluelightning, fray: oh, yes it works, i'm seeing that this is not my problem ...</td><td class="time"><a href="#t2015-03-28T18:37:34" class="time">18:37</a></td></tr>
+<tr id="t2015-03-28T18:38:13"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">the problem is a ';' in the password to checkout a svn repo</td><td class="time"><a href="#t2015-03-28T18:38:13" class="time">18:38</a></td></tr>
+<tr id="t2015-03-28T18:38:17"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">damn</td><td class="time"><a href="#t2015-03-28T18:38:17" class="time">18:38</a></td></tr>
+<tr id="t2015-03-28T18:38:31"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">encoding should work?</td><td class="time"><a href="#t2015-03-28T18:38:31" class="time">18:38</a></td></tr>
+<tr id="t2015-03-28T18:38:53"><th class="nick" style="background: #818144">bluelightning</th><td class="text" style="color: #818144">hmm, you could try it but it probably won't</td><td class="time"><a href="#t2015-03-28T18:38:53" class="time">18:38</a></td></tr>
+<tr id="t2015-03-28T18:41:52"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">bluelightning: right, doesn't work :(</td><td class="time"><a href="#t2015-03-28T18:41:52" class="time">18:41</a></td></tr>
+<tr id="t2015-03-28T18:43:19"><th class="nick" style="background: #42427e">eballetbo</th><td class="text" style="color: #42427e">so passwords can't have the ';' character</td><td class="time"><a href="#t2015-03-28T18:43:19" class="time">18:43</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-03-27.log.html">&#171; Friday, 2015-03-27</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-29.log.html">Sunday, 2015-03-29 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

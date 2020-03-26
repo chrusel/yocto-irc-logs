@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-11-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-11-07</h1>
+<div class="navigation"> <a href="%23yocto.2015-11-06.log.html">&#171; Friday, 2015-11-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-08.log.html">Sunday, 2015-11-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-11-07T00:02:47"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">Hmm, I want to depend on the do_package_write* pulled in by an image's do_rootfs task, but i don't want to build the do_rootfs task</td><td class="time"><a href="#t2015-11-07T00:02:47" class="time">00:02</a></td></tr>
+<tr id="t2015-11-07T00:03:00"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">not sure this is doable. I was expecting recideptask to do the job, but not quite</td><td class="time"><a href="#t2015-11-07T00:03:00" class="time">00:03</a></td></tr>
+<tr id="t2015-11-07T00:03:51"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">oh well, easy enough to work around, just let it run do_rootfs, but was hoping it was a possibility</td><td class="time"><a href="#t2015-11-07T00:03:51" class="time">00:03</a></td></tr>
+<tr id="t2015-11-07T07:55:03"><th class="nick" style="background: #42427e">aurelien</th><td class="text" style="color: #42427e">hi #yocto ... I've git clone the meta-intel ... but don't find any ref to skylake ... anyone knows where is the git about skylake? <a href="http://anandtech.com/show/9582/intel-skylake-mobile-desktop-launch-architecture-analysis" rel="nofollow">http://anandtech.com/show/9582/intel-skylake-mobile-desktop-launch-architecture-analysis</a></td><td class="time"><a href="#t2015-11-07T07:55:03" class="time">07:55</a></td></tr>
+<tr id="t2015-11-07T08:04:20"><th class="nick" style="background: #42427e">aurelien</th><td class="text" style="color: #42427e"><a href="http://linuxgizmos.com/wind-river-linux-8-supports-yocto-2-0-and-intel-skylake-cpus/" rel="nofollow">http://linuxgizmos.com/wind-river-linux-8-supports-yocto-2-0-and-intel-skylake-cpus/</a></td><td class="time"><a href="#t2015-11-07T08:04:20" class="time">08:04</a></td></tr>
+<tr id="t2015-11-07T08:04:42"><th class="nick" style="background: #42427e">aurelien</th><td class="text" style="color: #42427e">oh 1.9 yocto ... ok ok</td><td class="time"><a href="#t2015-11-07T08:04:42" class="time">08:04</a></td></tr>
+<tr id="t2015-11-07T09:38:55"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">hi folks! I’m trying to get Yocto running on my Altera DE0 Nano SoC but somehow the ethernet interface is not working:</td><td class="time"><a href="#t2015-11-07T09:38:55" class="time">09:38</a></td></tr>
+<tr id="t2015-11-07T09:39:04"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">root@socfpga_cyclone5:~# ifconfig eth0 192.168.0.44</td><td class="time"><a href="#t2015-11-07T09:39:04" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:39:13"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">eth0: device MAC address d6:27:fe:76:e6:70</td><td class="time"><a href="#t2015-11-07T09:39:13" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:39:16"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">libphy: PHY stmmac-1:00 not found</td><td class="time"><a href="#t2015-11-07T09:39:16" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:39:30"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">eth0: Could not attach to PHY</td><td class="time"><a href="#t2015-11-07T09:39:30" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:39:32"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">stmmac_open: Cannot attach to PHY (error: -19)</td><td class="time"><a href="#t2015-11-07T09:39:32" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:39:34"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">SIOCSIFFLAGS: No such device</td><td class="time"><a href="#t2015-11-07T09:39:34" class="time">09:39</a></td></tr>
+<tr id="t2015-11-07T09:40:43"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">any idea what the problem is? Linux socfpga_cyclone5 3.10.31-ltsi-05167-g6b67245 #1 SM</td><td class="time"><a href="#t2015-11-07T09:40:43" class="time">09:40</a></td></tr>
+<tr id="t2015-11-07T09:40:45"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">P Sat Nov 7 10:13:03 CET 2015 armv7l GNU/Linux</td><td class="time"><a href="#t2015-11-07T09:40:45" class="time">09:40</a></td></tr>
+<tr id="t2015-11-07T09:42:38"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">I tried several ways for building the kernel, namely <a href="http://rocketboards.org/foswiki/view/Documentation/GSRD151CompilingLinux" rel="nofollow">http://rocketboards.org/foswiki/view/Documentation/GSRD151CompilingLinux</a> and <a href="http://rocketboards.org/foswiki/view/Documentation/YoctoDoraBuildWithMetaAltera" rel="nofollow">http://rocketboards.org/foswiki/view/Documentation/YoctoDoraBuildWithMetaAltera</a></td><td class="time"><a href="#t2015-11-07T09:42:38" class="time">09:42</a></td></tr>
+<tr id="t2015-11-07T10:01:21"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">oh, apparently this can happen when not updating the .stb device tree file … which I did not</td><td class="time"><a href="#t2015-11-07T10:01:21" class="time">10:01</a></td></tr>
+<tr id="t2015-11-07T10:01:40"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">*.dtb file</td><td class="time"><a href="#t2015-11-07T10:01:40" class="time">10:01</a></td></tr>
+<tr id="t2015-11-07T10:11:47"><th class="nick" style="background: #818144">Mike1</th><td class="text" style="color: #818144">yes, works! =)</td><td class="time"><a href="#t2015-11-07T10:11:47" class="time">10:11</a></td></tr>
+<tr id="t2015-11-07T13:07:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #524 of nightly-ppc-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-ppc-lsb/builds/524" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-ppc-lsb/builds/524</a></td><td><a href="#t2015-11-07T13:07:03" class="time">13:07</a></td></tr>
+<tr id="t2015-11-07T19:44:18"><th class="nick" style="background: #854685">darqwan</th><td class="text" style="color: #854685">hi there</td><td class="time"><a href="#t2015-11-07T19:44:18" class="time">19:44</a></td></tr>
+<tr id="t2015-11-07T19:45:16"><th class="nick" style="background: #854685">darqwan</th><td class="text" style="color: #854685">will packages added to a DEPENDS of a package that is added to IMAGE_INSTALL, automatically be installed on the image as well ?</td><td class="time"><a href="#t2015-11-07T19:45:16" class="time">19:45</a></td></tr>
+<tr id="t2015-11-07T22:36:47"><td class="nickchange" colspan="2">*** nrossi_ is now known as nrossi</td><td><a href="#t2015-11-07T22:36:47" class="time">22:36</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-11-06.log.html">&#171; Friday, 2015-11-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-08.log.html">Sunday, 2015-11-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-03-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-03-29</h1>
+<div class="navigation"> <a href="%23yocto.2015-03-28.log.html">&#171; Saturday, 2015-03-28</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-30.log.html">Monday, 2015-03-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-03-29T00:18:30"><td class="part" colspan="2">*** sakoman &lt;sakoman!~steve@50.53.240.131&gt; has left #yocto</td><td><a href="#t2015-03-29T00:18:30" class="time">00:18</a></td></tr>
+<tr id="t2015-03-29T09:34:38"><th class="nick" style="background: #407a40">hamis</th><td class="text" style="color: #407a40">I am trying to build gstreamer-ti for beaglebone black</td><td class="time"><a href="#t2015-03-29T09:34:38" class="time">09:34</a></td></tr>
+<tr id="t2015-03-29T09:34:47"><th class="nick" style="background: #407a40">hamis</th><td class="text" style="color: #407a40">I am getting errors for svn fetch</td><td class="time"><a href="#t2015-03-29T09:34:47" class="time">09:34</a></td></tr>
+<tr id="t2015-03-29T09:35:14"><th class="nick" style="background: #407a40">hamis</th><td class="text" style="color: #407a40">related to UNDEFINED_SRCREV and UNDEFINED_DMAIBRANCH</td><td class="time"><a href="#t2015-03-29T09:35:14" class="time">09:35</a></td></tr>
+<tr id="t2015-03-29T09:35:34"><th class="nick" style="background: #407a40">hamis</th><td class="text" style="color: #407a40">Anyone have any idea what are these and how to fix/avoid these ?</td><td class="time"><a href="#t2015-03-29T09:35:34" class="time">09:35</a></td></tr>
+<tr id="t2015-03-29T13:59:32"><td class="action" colspan="2">* wmealing1 waves</td><td><a href="#t2015-03-29T13:59:32" class="time">13:59</a></td></tr>
+<tr id="t2015-03-29T14:00:49"><th class="nick" style="background: #42427e">wmealing1</th><td class="text" style="color: #42427e">i want to get erlang on my edison, i think i can use <a href="https://github.com/joaohf/meta-erlang/tree/master/recipes-devtools/erlangg" rel="nofollow">https://github.com/joaohf/meta-erlang/tree/master/recipes-devtools/erlangg</a></td><td class="time"><a href="#t2015-03-29T14:00:49" class="time">14:00</a></td></tr>
+<tr id="t2015-03-29T14:00:50"><th class="nick" style="background: #42427e">wmealing1</th><td class="text" style="color: #42427e">to do so</td><td class="time"><a href="#t2015-03-29T14:00:50" class="time">14:00</a></td></tr>
+<tr id="t2015-03-29T14:01:22"><th class="nick" style="background: #42427e">wmealing1</th><td class="text" style="color: #42427e">am i assuming that openembedded stuff is ok to talk about here ?</td><td class="time"><a href="#t2015-03-29T14:01:22" class="time">14:01</a></td></tr>
+<tr id="t2015-03-29T14:02:43"><th class="nick" style="background: #42427e">wmealing1</th><td class="text" style="color: #42427e">if there is another way</td><td class="time"><a href="#t2015-03-29T14:02:43" class="time">14:02</a></td></tr>
+<tr id="t2015-03-29T14:02:44"><th class="nick" style="background: #42427e">wmealing1</th><td class="text" style="color: #42427e">i'm all ears</td><td class="time"><a href="#t2015-03-29T14:02:44" class="time">14:02</a></td></tr>
+<tr id="t2015-03-29T15:00:31"><td class="part" colspan="2">*** wmealing1 &lt;wmealing1!~wmealing@dsl-58-7-42-89.wa.westnet.com.au&gt; has left #yocto</td><td><a href="#t2015-03-29T15:00:31" class="time">15:00</a></td></tr>
+<tr id="t2015-03-29T16:31:42"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">how do i substitute my edgerouter lite's ubnt stock kernel with yocto's kernel, supposing i have root right now on the router?</td><td class="time"><a href="#t2015-03-29T16:31:42" class="time">16:31</a></td></tr>
+<tr id="t2015-03-29T16:33:56"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">that's a bsp specific question. read the documentation on your board to see how to flash a kernel to it, or read the readme of the layer that provides the kernel for that platform</td><td class="time"><a href="#t2015-03-29T16:33:56" class="time">16:33</a></td></tr>
+<tr id="t2015-03-29T16:40:21"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">kergoth: but all paths i've found atm are leading to uboot/tftp, all of which requires a serial interface</td><td class="time"><a href="#t2015-03-29T16:40:21" class="time">16:40</a></td></tr>
+<tr id="t2015-03-29T16:40:44"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">if i already have total root control over the system, why do i have to get a serial cable...</td><td class="time"><a href="#t2015-03-29T16:40:44" class="time">16:40</a></td></tr>
+<tr id="t2015-03-29T16:41:59"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">early in the boot process, linux isn't even started, so your root access is irrelevent at that point :) but there are generally ways, yes</td><td class="time"><a href="#t2015-03-29T16:41:59" class="time">16:41</a></td></tr>
+<tr id="t2015-03-29T16:43:07"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">Hmm, bitbake-whatchanged has no -c option. /me uses printdiff instead</td><td class="time"><a href="#t2015-03-29T16:43:07" class="time">16:43</a></td></tr>
+<tr id="t2015-03-29T16:43:20"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">kergoth: can you give some pointers though?</td><td class="time"><a href="#t2015-03-29T16:43:20" class="time">16:43</a></td></tr>
+<tr id="t2015-03-29T16:43:31"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">(i really really really don't wanna get a serial cable)</td><td class="time"><a href="#t2015-03-29T16:43:31" class="time">16:43</a></td></tr>
+<tr id="t2015-03-29T16:43:46"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">not really, no, it's completely dependent on the device. i don't own an edgerouter</td><td class="time"><a href="#t2015-03-29T16:43:46" class="time">16:43</a></td></tr>
+<tr id="t2015-03-29T16:43:56"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">nor do i know how their bootloader is configured</td><td class="time"><a href="#t2015-03-29T16:43:56" class="time">16:43</a></td></tr>
+<tr id="t2015-03-29T16:44:45"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">it's u-boot based on <a href="http://www.crashcourse.ca/wiki/index.php/ERLITE-3_U-Boot" rel="nofollow">http://www.crashcourse.ca/wiki/index.php/ERLITE-3_U-Boot</a></td><td class="time"><a href="#t2015-03-29T16:44:45" class="time">16:44</a></td></tr>
+<tr id="t2015-03-29T16:50:36"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">how i wish i had an x86-based router instead</td><td class="time"><a href="#t2015-03-29T16:50:36" class="time">16:50</a></td></tr>
+<tr id="t2015-03-29T16:51:17"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">then kernel upgrade would have never been easier</td><td class="time"><a href="#t2015-03-29T16:51:17" class="time">16:51</a></td></tr>
+<tr id="t2015-03-29T16:52:45"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">there is a README.hardware file that describes exactly how to do this btw</td><td class="time"><a href="#t2015-03-29T16:52:45" class="time">16:52</a></td></tr>
+<tr id="t2015-03-29T16:54:13"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">bluelightning: yeah, all require tftp, and serial cable and another machine</td><td class="time"><a href="#t2015-03-29T16:54:13" class="time">16:54</a></td></tr>
+<tr id="t2015-03-29T16:54:26"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">I'm afraid you do yes</td><td class="time"><a href="#t2015-03-29T16:54:26" class="time">16:54</a></td></tr>
+<tr id="t2015-03-29T16:54:36"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">well, tftp is not required</td><td class="time"><a href="#t2015-03-29T16:54:36" class="time">16:54</a></td></tr>
+<tr id="t2015-03-29T16:55:05"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">well s/and/or the</td><td class="time"><a href="#t2015-03-29T16:55:05" class="time">16:55</a></td></tr>
+<tr id="t2015-03-29T16:55:08"><th class="nick" style="background: #818144">mjkr</th><td class="text" style="color: #818144">s/the/then</td><td class="time"><a href="#t2015-03-29T16:55:08" class="time">16:55</a></td></tr>
+<tr id="t2015-03-29T16:55:31"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">the instructions do state up front that you need NFS+tftp even if using the USB method, that's not quite accurate</td><td class="time"><a href="#t2015-03-29T16:55:31" class="time">16:55</a></td></tr>
+<tr id="t2015-03-29T16:55:52"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">I should definitely get that fixed</td><td class="time"><a href="#t2015-03-29T16:55:52" class="time">16:55</a></td></tr>
+<tr id="t2015-03-29T18:42:05"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a">if it's u-boot, can't you use a uEnv.txt file to configure it?</td><td class="time"><a href="#t2015-03-29T18:42:05" class="time">18:42</a></td></tr>
+<tr id="t2015-03-29T18:42:25"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a">how new/forky is it?</td><td class="time"><a href="#t2015-03-29T18:42:25" class="time">18:42</a></td></tr>
+<tr id="t2015-03-29T18:43:40"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a">damn, that does look old *and* forky...</td><td class="time"><a href="#t2015-03-29T18:43:40" class="time">18:43</a></td></tr>
+<tr id="t2015-03-29T18:45:32"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a">is their u-boot source available?</td><td class="time"><a href="#t2015-03-29T18:45:32" class="time">18:45</a></td></tr>
+<tr id="t2015-03-29T19:17:08"><th class="nick" style="background: #8c4a4a">nerdboy</th><td class="text" style="color: #8c4a4a">old/forky should still support boot.scr</td><td class="time"><a href="#t2015-03-29T19:17:08" class="time">19:17</a></td></tr>
+<tr id="t2015-03-29T23:06:54"><td class="other" colspan="2">-YoctoAutoBuilder- build #244 of nightly-non-gpl3 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-non-gpl3/builds/244" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-non-gpl3/builds/244</a></td><td><a href="#t2015-03-29T23:06:54" class="time">23:06</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-03-28.log.html">&#171; Saturday, 2015-03-28</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-30.log.html">Monday, 2015-03-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

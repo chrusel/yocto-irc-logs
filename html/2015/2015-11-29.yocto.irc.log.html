@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-11-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-11-29</h1>
+<div class="navigation"> <a href="%23yocto.2015-11-28.log.html">&#171; Saturday, 2015-11-28</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-30.log.html">Monday, 2015-11-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-11-29T04:50:26"><td class="nickchange" colspan="2">*** Jackie is now known as Guest75903</td><td><a href="#t2015-11-29T04:50:26" class="time">04:50</a></td></tr>
+<tr id="t2015-11-29T06:05:11"><td class="nickchange" colspan="2">*** AndChat375681 is now known as sunfunbaby</td><td><a href="#t2015-11-29T06:05:11" class="time">06:05</a></td></tr>
+<tr id="t2015-11-29T10:03:44"><td class="nickchange" colspan="2">*** nrossi_ is now known as nrossi</td><td><a href="#t2015-11-29T10:03:44" class="time">10:03</a></td></tr>
+<tr id="t2015-11-29T19:41:32"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">morning all</td><td class="time"><a href="#t2015-11-29T19:41:32" class="time">19:41</a></td></tr>
+<tr id="t2015-11-29T22:57:53"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">Hi</td><td class="time"><a href="#t2015-11-29T22:57:53" class="time">22:57</a></td></tr>
+<tr id="t2015-11-29T22:58:09"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">I'm getting this splat with qemu-native on latest master when building for nios2</td><td class="time"><a href="#t2015-11-29T22:58:09" class="time">22:58</a></td></tr>
+<tr id="t2015-11-29T22:58:11"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e"><a href="http://pastebin.com/u01i4R1E" rel="nofollow">http://pastebin.com/u01i4R1E</a></td><td class="time"><a href="#t2015-11-29T22:58:11" class="time">22:58</a></td></tr>
+<tr id="t2015-11-29T22:59:10"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">I wonder -- should qemu-native depend on libpulsecommon maybe ? OR should we disable pulseaudio support for qemu via configure ?</td><td class="time"><a href="#t2015-11-29T22:59:10" class="time">22:59</a></td></tr>
+<tr id="t2015-11-29T23:05:28"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">Marex: hey</td><td class="time"><a href="#t2015-11-29T23:05:28" class="time">23:05</a></td></tr>
+<tr id="t2015-11-29T23:05:30"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">Marex: which host distro is this on?</td><td class="time"><a href="#t2015-11-29T23:05:30" class="time">23:05</a></td></tr>
+<tr id="t2015-11-29T23:08:37"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: debian testing</td><td class="time"><a href="#t2015-11-29T23:08:37" class="time">23:08</a></td></tr>
+<tr id="t2015-11-29T23:08:52"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: you're right, it's sucking in the host libs it seems</td><td class="time"><a href="#t2015-11-29T23:08:52" class="time">23:08</a></td></tr>
+<tr id="t2015-11-29T23:09:09"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">I think it's meant to; we have to link to the host SDL</td><td class="time"><a href="#t2015-11-29T23:09:09" class="time">23:09</a></td></tr>
+<tr id="t2015-11-29T23:09:22"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">(since that's going to be properly linked to the host libgl)</td><td class="time"><a href="#t2015-11-29T23:09:22" class="time">23:09</a></td></tr>
+<tr id="t2015-11-29T23:09:43"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: a bit of googling also found this <a href="http://lists.openembedded.org/pipermail/openembedded-core/2015-November/112207.html" rel="nofollow">http://lists.openembedded.org/pipermail/openembedded-core/2015-November/112207.html</a></td><td class="time"><a href="#t2015-11-29T23:09:43" class="time">23:09</a></td></tr>
+<tr id="t2015-11-29T23:10:05"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: so it's linking against OE Dbus, but host libpulsecommon ?</td><td class="time"><a href="#t2015-11-29T23:10:05" class="time">23:10</a></td></tr>
+<tr id="t2015-11-29T23:10:16"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">I'm not entirely sure</td><td class="time"><a href="#t2015-11-29T23:10:16" class="time">23:10</a></td></tr>
+<tr id="t2015-11-29T23:10:30"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">something of that nature though</td><td class="time"><a href="#t2015-11-29T23:10:30" class="time">23:10</a></td></tr>
+<tr id="t2015-11-29T23:11:38"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: but that'd imply it's not possible to build qemu-native reliably on any distro ?</td><td class="time"><a href="#t2015-11-29T23:11:38" class="time">23:11</a></td></tr>
+<tr id="t2015-11-29T23:11:52"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">since there would be some sort of incompatibility between dbus and libpulsecommon</td><td class="time"><a href="#t2015-11-29T23:11:52" class="time">23:11</a></td></tr>
+<tr id="t2015-11-29T23:11:58"><th class="nick" style="background: #407a40">bluelightning</th><td class="text" style="color: #407a40">well, clearly it does build on a lot of host distros</td><td class="time"><a href="#t2015-11-29T23:11:58" class="time">23:11</a></td></tr>
+<tr id="t2015-11-29T23:12:15"><td class="nickchange" colspan="2">*** Jackie is now known as Guest38758</td><td><a href="#t2015-11-29T23:12:15" class="time">23:12</a></td></tr>
+<tr id="t2015-11-29T23:12:18"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: probably because they didn't update libpulsecommon to a newer version or something ?</td><td class="time"><a href="#t2015-11-29T23:12:18" class="time">23:12</a></td></tr>
+<tr id="t2015-11-29T23:12:50"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: or maybe the libpulse* is linked against different version of dbus</td><td class="time"><a href="#t2015-11-29T23:12:50" class="time">23:12</a></td></tr>
+<tr id="t2015-11-29T23:13:09"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: I use dbus 1.10.4 and libpulse0 7.1 on debian</td><td class="time"><a href="#t2015-11-29T23:13:09" class="time">23:13</a></td></tr>
+<tr id="t2015-11-29T23:13:36"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">looks like Ed also has this issue with host with dbus 1.10</td><td class="time"><a href="#t2015-11-29T23:13:36" class="time">23:13</a></td></tr>
+<tr id="t2015-11-29T23:17:12"><td class="nickchange" colspan="2">*** radhus__ is now known as radhus</td><td><a href="#t2015-11-29T23:17:12" class="time">23:17</a></td></tr>
+<tr id="t2015-11-29T23:38:25"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: maybe the patch from Ed is correct ?</td><td class="time"><a href="#t2015-11-29T23:38:25" class="time">23:38</a></td></tr>
+<tr id="t2015-11-29T23:38:40"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">bluelightning: maybe it should be extended to always link against system dbus though ?</td><td class="time"><a href="#t2015-11-29T23:38:40" class="time">23:38</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-11-28.log.html">&#171; Saturday, 2015-11-28</a> <a href="index.html">Index</a> <a href="%23yocto.2015-11-30.log.html">Monday, 2015-11-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-03-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-03-08</h1>
+<div class="navigation"> <a href="%23yocto.2015-03-07.log.html">&#171; Saturday, 2015-03-07</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-09.log.html">Monday, 2015-03-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-03-08T03:35:06"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T03:35:06" class="time">03:35</a></td></tr>
+<tr id="t2015-03-08T03:35:08"><td class="nickchange" colspan="2">*** khem[away] is now known as khem_</td><td><a href="#t2015-03-08T03:35:08" class="time">03:35</a></td></tr>
+<tr id="t2015-03-08T04:30:58"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T04:30:58" class="time">04:30</a></td></tr>
+<tr id="t2015-03-08T04:31:01"><td class="nickchange" colspan="2">*** khem[away] is now known as khem_</td><td><a href="#t2015-03-08T04:31:01" class="time">04:31</a></td></tr>
+<tr id="t2015-03-08T05:04:25"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T05:04:25" class="time">05:04</a></td></tr>
+<tr id="t2015-03-08T05:04:35"><td class="nickchange" colspan="2">*** khem[away] is now known as khem_</td><td><a href="#t2015-03-08T05:04:35" class="time">05:04</a></td></tr>
+<tr id="t2015-03-08T05:05:08"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T05:05:08" class="time">05:05</a></td></tr>
+<tr id="t2015-03-08T05:17:05"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T05:17:05" class="time">05:17</a></td></tr>
+<tr id="t2015-03-08T09:22:32"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">has anyone also met the Fetcher failure of git://qt.gitorious.org/qt/qt3d.git;branch=dev, while building meta-qt5 ?</td><td class="time"><a href="#t2015-03-08T09:22:32" class="time">09:22</a></td></tr>
+<tr id="t2015-03-08T09:23:18"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">the error message says "Unable to fetch URL from any source"</td><td class="time"><a href="#t2015-03-08T09:23:18" class="time">09:23</a></td></tr>
+<tr id="t2015-03-08T13:47:16"><th class="nick" style="background: #42427e">Crofton|work</th><td class="text" style="color: #42427e">Yi-Che, It may be a temporary failure</td><td class="time"><a href="#t2015-03-08T13:47:16" class="time">13:47</a></td></tr>
+<tr id="t2015-03-08T14:08:22"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">Crofton, thanks for you answering. Do you have any idea how long will it last?</td><td class="time"><a href="#t2015-03-08T14:08:22" class="time">14:08</a></td></tr>
+<tr id="t2015-03-08T14:39:17"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">he didn't even tell you it was broken, much less that he knows how long it'll last, he said it *may* be a temporary failure :)</td><td class="time"><a href="#t2015-03-08T14:39:17" class="time">14:39</a></td></tr>
+<tr id="t2015-03-08T14:39:20"><td class="action" colspan="2">* kergoth yawns</td><td><a href="#t2015-03-08T14:39:20" class="time">14:39</a></td></tr>
+<tr id="t2015-03-08T14:41:04"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">I did notice that 'may'.&nbsp;&nbsp;: )</td><td class="time"><a href="#t2015-03-08T14:41:04" class="time">14:41</a></td></tr>
+<tr id="t2015-03-08T15:16:25"><th class="nick" style="background: #42427e">Crofton|work</th><td class="text" style="color: #42427e">check cloning by hand</td><td class="time"><a href="#t2015-03-08T15:16:25" class="time">15:16</a></td></tr>
+<tr id="t2015-03-08T15:16:47"><th class="nick" style="background: #42427e">Crofton|work</th><td class="text" style="color: #42427e">gitorious urls may be unstable, apparently they have been bought by someone else</td><td class="time"><a href="#t2015-03-08T15:16:47" class="time">15:16</a></td></tr>
+<tr id="t2015-03-08T15:16:58"><th class="nick" style="background: #42427e">Crofton|work</th><td class="text" style="color: #42427e">not sure of exact transition details</td><td class="time"><a href="#t2015-03-08T15:16:58" class="time">15:16</a></td></tr>
+<tr id="t2015-03-08T15:28:49"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">I've tried cloning by hand and it did not work either.</td><td class="time"><a href="#t2015-03-08T15:28:49" class="time">15:28</a></td></tr>
+<tr id="t2015-03-08T15:30:52"><th class="nick" style="background: #42427e">Crofton|work</th><td class="text" style="color: #42427e">that is a pretty strong clue</td><td class="time"><a href="#t2015-03-08T15:30:52" class="time">15:30</a></td></tr>
+<tr id="t2015-03-08T15:51:19"><th class="nick" style="background: #407a40">Yi-Che</th><td class="text" style="color: #407a40">the source code can be downloaded from the website though. is there a way to change the fetch URL to a local place?</td><td class="time"><a href="#t2015-03-08T15:51:19" class="time">15:51</a></td></tr>
+<tr id="t2015-03-08T16:59:00"><td class="nickchange" colspan="2">*** khem_ is now known as khem[away]</td><td><a href="#t2015-03-08T16:59:00" class="time">16:59</a></td></tr>
+<tr id="t2015-03-08T16:59:29"><td class="nickchange" colspan="2">*** khem[away] is now known as khem_</td><td><a href="#t2015-03-08T16:59:29" class="time">16:59</a></td></tr>
+<tr id="t2015-03-08T18:29:43"><th class="nick" style="background: #854685">JustasMika</th><td class="text" style="color: #854685">Hi, anyone here with knowledge of openswan or any *swan?</td><td class="time"><a href="#t2015-03-08T18:29:43" class="time">18:29</a></td></tr>
+<tr id="t2015-03-08T20:17:50"><th class="nick" style="background: #854685">JustasMika</th><td class="text" style="color: #854685">Anyone with knowledge of ipsec in yocto for beaglebone black (am335x)</td><td class="time"><a href="#t2015-03-08T20:17:50" class="time">20:17</a></td></tr>
+<tr id="t2015-03-08T21:09:23"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">I'm having a problem building u-boot under dizzy.&nbsp;&nbsp;It's an older version that I imported in because it's what came with my board's BSP.&nbsp;&nbsp;Here's the offending line in the log:</td><td class="time"><a href="#t2015-03-08T21:09:23" class="time">21:09</a></td></tr>
+<tr id="t2015-03-08T21:09:47"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">| arm-poky-linux-gnueabi-gcc&nbsp;&nbsp;--sysroot=/home/dan/sabre/build/tmp/sysroots/rom-7420&nbsp;&nbsp;-g&nbsp;&nbsp;-Os&nbsp;&nbsp; -fno-strict-aliasing -fno-common -ffixed-r8 -mfloat-abi=hard -D__ARM_PCS_VFP -D__KERNEL__ -DTEXT_BASE=0x26800000 -I/home/dan/sabre/build/tmp/work/rom_7420-poky-linux-gnueabi/u-boot-advantech/v2009.08-r0/u-boot-v2009.08/include -fno-builtin -ffreestanding -nostdinc -isystem /home/dan/sabre/build/tmp/sysroots/x86_64-linux/usr/lib/arm-poky-linux-</td><td class="time"><a href="#t2015-03-08T21:09:47" class="time">21:09</a></td></tr>
+<tr id="t2015-03-08T21:09:54"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">| In file included from /home/dan/sabre/build/tmp/sysroots/rom-7420/usr/include/features.h:389:0,</td><td class="time"><a href="#t2015-03-08T21:09:54" class="time">21:09</a></td></tr>
+<tr id="t2015-03-08T21:09:57"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from /home/dan/sabre/build/tmp/sysroots/rom-7420/usr/include/stdio.h:27,</td><td class="time"><a href="#t2015-03-08T21:09:57" class="time">21:09</a></td></tr>
+<tr id="t2015-03-08T21:10:00"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from envcrc.c:24:</td><td class="time"><a href="#t2015-03-08T21:10:00" class="time">21:10</a></td></tr>
+<tr id="t2015-03-08T21:10:02"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">|&nbsp;&nbsp;# include &lt;gnu/stubs-soft.h&gt;</td><td class="time"><a href="#t2015-03-08T21:10:02" class="time">21:10</a></td></tr>
+<tr id="t2015-03-08T21:10:05"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">| /home/dan/sabre/build/tmp/sysroots/rom-7420/usr/include/gnu/stubs.h:7:29: fatal error: gnu/stubs-soft.h: No such file or directory</td><td class="time"><a href="#t2015-03-08T21:10:05" class="time">21:10</a></td></tr>
+<tr id="t2015-03-08T21:11:03"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">in usr/include/gnu/stubs.h, it has this:</td><td class="time"><a href="#t2015-03-08T21:11:03" class="time">21:11</a></td></tr>
+<tr id="t2015-03-08T21:11:06"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">#if !defined __ARM_PCS_VFP</td><td class="time"><a href="#t2015-03-08T21:11:06" class="time">21:11</a></td></tr>
+<tr id="t2015-03-08T21:11:06"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888"># include &lt;gnu/stubs-soft.h&gt;</td><td class="time"><a href="#t2015-03-08T21:11:06" class="time">21:11</a></td></tr>
+<tr id="t2015-03-08T21:11:06"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">#endif</td><td class="time"><a href="#t2015-03-08T21:11:06" class="time">21:11</a></td></tr>
+<tr id="t2015-03-08T21:11:57"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">that variable is defined, and the -mfloat-abi=hard should set it</td><td class="time"><a href="#t2015-03-08T21:11:57" class="time">21:11</a></td></tr>
+<tr id="t2015-03-08T21:12:17"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">I've tried it all 3 ways, and I still get the error</td><td class="time"><a href="#t2015-03-08T21:12:17" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:12:18"><td class="action" colspan="2">* rink_ notes: pastebin</td><td><a href="#t2015-03-08T21:12:18" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:12:25"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">sorry</td><td class="time"><a href="#t2015-03-08T21:12:25" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:12:29"><th class="nick" style="background: #8c4a4a">rink_</th><td class="text" style="color: #8c4a4a">and this channel should be less inactive in about, 12 hours</td><td class="time"><a href="#t2015-03-08T21:12:29" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:12:44"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">ok</td><td class="time"><a href="#t2015-03-08T21:12:44" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:12:56"><th class="nick" style="background: #8c4a4a">rink_</th><td class="text" style="color: #8c4a4a">sorry, can't be of any real assistance :(</td><td class="time"><a href="#t2015-03-08T21:12:56" class="time">21:12</a></td></tr>
+<tr id="t2015-03-08T21:13:28"><th class="nick" style="background: #488888">cyclist_</th><td class="text" style="color: #488888">I don't understand why that file is being included when that variable being set should make it not happen</td><td class="time"><a href="#t2015-03-08T21:13:28" class="time">21:13</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-03-07.log.html">&#171; Saturday, 2015-03-07</a> <a href="index.html">Index</a> <a href="%23yocto.2015-03-09.log.html">Monday, 2015-03-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

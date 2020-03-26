@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2015-01-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2015-01-24</h1>
+<div class="navigation"> <a href="%23yocto.2015-01-23.log.html">&#171; Friday, 2015-01-23</a> <a href="index.html">Index</a> <a href="%23yocto.2015-01-25.log.html">Sunday, 2015-01-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-01-24T00:01:47"><td class="nickchange" colspan="2">*** simonl is now known as Guest12086</td><td><a href="#t2015-01-24T00:01:47" class="time">00:01</a></td></tr>
+<tr id="t2015-01-24T00:09:48"><td class="nickchange" colspan="2">*** Guest12086 is now known as simonl</td><td><a href="#t2015-01-24T00:09:48" class="time">00:09</a></td></tr>
+<tr id="t2015-01-24T00:44:00"><th class="nick" style="background: #407a40">halstead</th><td class="text" style="color: #407a40">autobuilder downtime starting now.</td><td class="time"><a href="#t2015-01-24T00:44:00" class="time">00:44</a></td></tr>
+<tr id="t2015-01-24T02:52:10"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e"><a href="https://gist.github.com/kergoth/7d2e9f6c7d0fd759d7f2#file-check-python-deps-txt" rel="nofollow">https://gist.github.com/kergoth/7d2e9f6c7d0fd759d7f2#file-check-python-deps-txt</a></td><td class="time"><a href="#t2015-01-24T02:52:10" class="time">02:52</a></td></tr>
+<tr id="t2015-01-24T03:27:24"><th class="nick" style="background: #818144">fishey1</th><td class="text" style="color: #818144">Hmm... bitbake likes hanging at 99% parsing recipies. Is there any way to determine what it's stalled processing?</td><td class="time"><a href="#t2015-01-24T03:27:24" class="time">03:27</a></td></tr>
+<tr id="t2015-01-24T03:27:50"><th class="nick" style="background: #818144">fishey1</th><td class="text" style="color: #818144">I presume it's some network access that's not timing out as it should</td><td class="time"><a href="#t2015-01-24T03:27:50" class="time">03:27</a></td></tr>
+<tr id="t2015-01-24T08:28:54"><td class="servermsg" colspan="2">*** ChanServ sets mode: +o yocti</td><td><a href="#t2015-01-24T08:28:54" class="time">08:28</a></td></tr>
+<tr id="t2015-01-24T09:35:01"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">I just did an incremental build using master branches, and noticed a couple of changes in buildhistory that stand out:</td><td class="time"><a href="#t2015-01-24T09:35:01" class="time">09:35</a></td></tr>
+<tr id="t2015-01-24T09:35:29"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">/sbin/halt.sysvinit group changed from "shutdown" to "root"</td><td class="time"><a href="#t2015-01-24T09:35:29" class="time">09:35</a></td></tr>
+<tr id="t2015-01-24T09:35:59"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">/sbin/shutdown.sysvinit group changed from "shutdown" to "root"</td><td class="time"><a href="#t2015-01-24T09:35:59" class="time">09:35</a></td></tr>
+<tr id="t2015-01-24T09:37:10"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">I didn't notice any recent changes in busybox recipes</td><td class="time"><a href="#t2015-01-24T09:37:10" class="time">09:37</a></td></tr>
+<tr id="t2015-01-24T09:37:27"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, could it be a pseudo thing ?</td><td class="time"><a href="#t2015-01-24T09:37:27" class="time">09:37</a></td></tr>
+<tr id="t2015-01-24T11:47:12"><th class="nick" style="background: #488888">seebs</th><td class="text" style="color: #488888">I don't *think* so, but maybe? I know we found some leakage in ... i think it was libgcc and/or glibc, recently.</td><td class="time"><a href="#t2015-01-24T11:47:12" class="time">11:47</a></td></tr>
+<tr id="t2015-01-24T11:47:12"><th class="nick" style="background: #488888">seebs</th><td class="text" style="color: #488888">Are they symlinks?</td><td class="time"><a href="#t2015-01-24T11:47:12" class="time">11:47</a></td></tr>
+<tr id="t2015-01-24T12:48:09"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, -rwsr-xr-- root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11072 ./sbin/halt.sysvinit</td><td class="time"><a href="#t2015-01-24T12:48:09" class="time">12:48</a></td></tr>
+<tr id="t2015-01-24T12:48:49"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, so not symlinks</td><td class="time"><a href="#t2015-01-24T12:48:49" class="time">12:48</a></td></tr>
+<tr id="t2015-01-24T12:50:10"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">bah, I also notice a "-rw-r--r-- 1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 ./var/lib/opkg/lists/oe" line in there</td><td class="time"><a href="#t2015-01-24T12:50:10" class="time">12:50</a></td></tr>
+<tr id="t2015-01-24T12:50:38"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">which I guess should be using root,root</td><td class="time"><a href="#t2015-01-24T12:50:38" class="time">12:50</a></td></tr>
+<tr id="t2015-01-24T12:50:56"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">thats the only one of that kind though</td><td class="time"><a href="#t2015-01-24T12:50:56" class="time">12:50</a></td></tr>
+<tr id="t2015-01-24T13:00:19"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, if it makes any difference, there _are_ symlinks halt -&gt; halt.sysvinit and shutdown -&gt; shutdown.sysvinit, both of which are "lrwxrwxrwx root root"</td><td class="time"><a href="#t2015-01-24T13:00:19" class="time">13:00</a></td></tr>
+<tr id="t2015-01-24T13:30:35"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">kergoth: around?</td><td class="time"><a href="#t2015-01-24T13:30:35" class="time">13:30</a></td></tr>
+<tr id="t2015-01-24T13:31:07"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">kergoth: got a really odd bug with COW and I don't understand it at all :(</td><td class="time"><a href="#t2015-01-24T13:31:07" class="time">13:31</a></td></tr>
+<tr id="t2015-01-24T18:46:54"><th class="nick" style="background: #4b904b">gabrbedd</th><td class="text" style="color: #4b904b">So, I make a small change to BlueZ and then it triggers a rebuild of qt4-x11-free.</td><td class="time"><a href="#t2015-01-24T18:46:54" class="time">18:46</a></td></tr>
+<tr id="t2015-01-24T18:47:33"><th class="nick" style="background: #4b904b">gabrbedd</th><td class="text" style="color: #4b904b">Is there any way to (temporarily) say to bitbake: "Don't rebuild Qt, again. I ain't go time for it."</td><td class="time"><a href="#t2015-01-24T18:47:33" class="time">18:47</a></td></tr>
+<tr id="t2015-01-24T19:25:05"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, halt and shutdown have one thing common in that they have the suid bit set</td><td class="time"><a href="#t2015-01-24T19:25:05" class="time">19:25</a></td></tr>
+<tr id="t2015-01-24T19:25:31"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">seebs, I've tried bitbake -c clean -c cleansstate for sysvinit, busybox, base-passwd</td><td class="time"><a href="#t2015-01-24T19:25:31" class="time">19:25</a></td></tr>
+<tr id="t2015-01-24T19:26:36"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">rebuilding things, but now, halt and shutdown will never get to be "root.shutdown", although I clearly see in sysvinit_2.88dsf.bb's do_install() that they should be root.shutdown</td><td class="time"><a href="#t2015-01-24T19:26:36" class="time">19:26</a></td></tr>
+<tr id="t2015-01-24T19:31:28"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">log.do_install doesnt show any warnings of interest :-/</td><td class="time"><a href="#t2015-01-24T19:31:28" class="time">19:31</a></td></tr>
+<tr id="t2015-01-24T19:31:57"><td class="nickchange" colspan="2">*** smartin__ is now known as smartin</td><td><a href="#t2015-01-24T19:31:57" class="time">19:31</a></td></tr>
+<tr id="t2015-01-24T19:45:24"><th class="nick" style="background: #854685">kroon</th><td class="text" style="color: #854685">gabrbedd, I think you can "lock" certain hashes, but I'm not sure where it is documented</td><td class="time"><a href="#t2015-01-24T19:45:24" class="time">19:45</a></td></tr>
+<tr id="t2015-01-24T19:49:04"><th class="nick" style="background: #4b904b">gabrbedd</th><td class="text" style="color: #4b904b">kroon: thanks!</td><td class="time"><a href="#t2015-01-24T19:49:04" class="time">19:49</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-01-23.log.html">&#171; Friday, 2015-01-23</a> <a href="index.html">Index</a> <a href="%23yocto.2015-01-25.log.html">Sunday, 2015-01-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

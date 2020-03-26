@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Thursday, 2015-12-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Thursday, 2015-12-24</h1>
+<div class="navigation"> <a href="%23yocto.2015-12-23.log.html">&#171; Wednesday, 2015-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2015-12-25.log.html">Friday, 2015-12-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-12-24T00:28:38"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">is that dependency documented anywhere?</td><td class="time"><a href="#t2015-12-24T00:28:38" class="time">00:28</a></td></tr>
+<tr id="t2015-12-24T00:29:45"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">my guess is it was unintentional</td><td class="time"><a href="#t2015-12-24T00:29:45" class="time">00:29</a></td></tr>
+<tr id="t2015-12-24T00:33:12"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">it worked fine not long ago on that machine</td><td class="time"><a href="#t2015-12-24T00:33:12" class="time">00:33</a></td></tr>
+<tr id="t2015-12-24T00:33:30"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">other machines already had it enabled in the kernel</td><td class="time"><a href="#t2015-12-24T00:33:30" class="time">00:33</a></td></tr>
+<tr id="t2015-12-24T00:41:11"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">see '[OE-core] [PATCH 5/7] buildstats: Improve to add getrusage data and corrected IO stats'</td><td class="time"><a href="#t2015-12-24T00:41:11" class="time">00:41</a></td></tr>
+<tr id="t2015-12-24T01:25:03"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">"corrected" being the keyword...</td><td class="time"><a href="#t2015-12-24T01:25:03" class="time">01:25</a></td></tr>
+<tr id="t2015-12-24T01:25:51"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">building again with updated kernel and default config, so that was the culprit</td><td class="time"><a href="#t2015-12-24T01:25:51" class="time">01:25</a></td></tr>
+<tr id="t2015-12-24T01:27:00"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">MACHINE = "udooneo" &lt;= need to add meta-uav next if this works...</td><td class="time"><a href="#t2015-12-24T01:27:00" class="time">01:27</a></td></tr>
+<tr id="t2015-12-24T07:03:43"><th class="nick" style="background: #818144">hanthings_</th><td class="text" style="color: #818144">Hi I have a strange issue I'm trying to build a recipe using for example this command bitbake -f -c fetch pkgconfig, but the bitbake for some reason is running the compile task. Any ideas why</td><td class="time"><a href="#t2015-12-24T07:03:43" class="time">07:03</a></td></tr>
+<tr id="t2015-12-24T07:32:15"><td class="nickchange" colspan="2">*** jbrianceau_away is now known as jbrianceau</td><td><a href="#t2015-12-24T07:32:15" class="time">07:32</a></td></tr>
+<tr id="t2015-12-24T09:16:44"><th class="nick" style="background: #854685">joshuagl</th><td class="text" style="color: #854685">sa2ajj: yup, I'll still be here</td><td class="time"><a href="#t2015-12-24T09:16:44" class="time">09:16</a></td></tr>
+<tr id="t2015-12-24T11:12:02"><th class="nick" style="background: #488888">sa2ajj</th><td class="text" style="color: #488888">joshuagl: so you are not going to _completely_ disappear in the aether :D</td><td class="time"><a href="#t2015-12-24T11:12:02" class="time">11:12</a></td></tr>
+<tr id="t2015-12-24T12:45:34"><td class="nickchange" colspan="2">*** jbrianceau is now known as jbrianceau_away</td><td><a href="#t2015-12-24T12:45:34" class="time">12:45</a></td></tr>
+<tr id="t2015-12-24T12:57:12"><th class="nick" style="background: #818144">hanthings_</th><td class="text" style="color: #818144">Nobody can help me on this? It looks that bitbake fails to compile one recipe. Once that start to fail whatever I do run for example bitbake recipename -f -c fetch it still fails compilation. No matter command I give to bitbake the errors are still related to compilation that recipe. Any idea why?</td><td class="time"><a href="#t2015-12-24T12:57:12" class="time">12:57</a></td></tr>
+<tr id="t2015-12-24T13:32:11"><th class="nick" style="background: #8c4a4a">fledermaus</th><td class="text" style="color: #8c4a4a">hanthings: check the logs to see what broke.</td><td class="time"><a href="#t2015-12-24T13:32:11" class="time">13:32</a></td></tr>
+<tr id="t2015-12-24T14:38:17"><td class="nickchange" colspan="2">*** [1]niteshnarayan is now known as niteshnarayanlal</td><td><a href="#t2015-12-24T14:38:17" class="time">14:38</a></td></tr>
+<tr id="t2015-12-24T16:59:40"><td class="nickchange" colspan="2">*** kinga is now known as obsrwr</td><td><a href="#t2015-12-24T16:59:40" class="time">16:59</a></td></tr>
+<tr id="t2015-12-24T23:38:03"><td class="part" colspan="2">*** jku &lt;jku!~jku@173-165-214-157-naples.hfc.comcastbusiness.net&gt; has left #yocto</td><td><a href="#t2015-12-24T23:38:03" class="time">23:38</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-12-23.log.html">&#171; Wednesday, 2015-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2015-12-25.log.html">Friday, 2015-12-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

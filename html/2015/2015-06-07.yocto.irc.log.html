@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-06-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-06-07</h1>
+<div class="navigation"> <a href="%23yocto.2015-06-06.log.html">&#171; Saturday, 2015-06-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-06-08.log.html">Monday, 2015-06-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-06-07T00:00:10"><td class="action" colspan="2">* nerdboy assumes pseudo has same usage</td><td><a href="#t2015-06-07T00:00:10" class="time">00:00</a></td></tr>
+<tr id="t2015-06-07T00:10:59"><th class="nick" style="background: #407a40">abelloni</th><td class="text" style="color: #407a40">nerdboy: but as the name implies, it is fake</td><td class="time"><a href="#t2015-06-07T00:10:59" class="time">00:10</a></td></tr>
+<tr id="t2015-06-07T00:11:16"><th class="nick" style="background: #407a40">abelloni</th><td class="text" style="color: #407a40">so it can't be used to write in a root owned directory</td><td class="time"><a href="#t2015-06-07T00:11:16" class="time">00:11</a></td></tr>
+<tr id="t2015-06-07T00:11:16"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">uh huh</td><td class="time"><a href="#t2015-06-07T00:11:16" class="time">00:11</a></td></tr>
+<tr id="t2015-06-07T00:12:48"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">oh, directly from recipe to host filesystem</td><td class="time"><a href="#t2015-06-07T00:12:48" class="time">00:12</a></td></tr>
+<tr id="t2015-06-07T00:13:08"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">then group thing is best option...</td><td class="time"><a href="#t2015-06-07T00:13:08" class="time">00:13</a></td></tr>
+<tr id="t2015-06-07T10:50:52"><th class="nick" style="background: #818144">whirm</th><td class="text" style="color: #818144">hi everybody</td><td class="time"><a href="#t2015-06-07T10:50:52" class="time">10:50</a></td></tr>
+<tr id="t2015-06-07T10:57:26"><th class="nick" style="background: #818144">whirm</th><td class="text" style="color: #818144">I'm a newbie trying to make an ocaml cross compiler recipe. So far I've successfully made the normal recipe to have a host-native compiler as required, but I'm having trouble building the cross compiler: stdio.h &amp; co. are not on the host sysroot's include dir. What do I need to include in the recipe so it looks on the right place?</td><td class="time"><a href="#t2015-06-07T10:57:26" class="time">10:57</a></td></tr>
+<tr id="t2015-06-07T17:59:27"><td class="nickchange" colspan="2">*** josh is now known as Guest38528</td><td><a href="#t2015-06-07T17:59:27" class="time">17:59</a></td></tr>
+<tr id="t2015-06-07T18:00:47"><td class="part" colspan="2">*** Guest38528 &lt;Guest38528!~josh@rrcs-96-11-124-154.central.biz.rr.com&gt; has left #yocto</td><td><a href="#t2015-06-07T18:00:47" class="time">18:00</a></td></tr>
+<tr id="t2015-06-07T18:03:22"><th class="nick" style="background: #854685">josh__d</th><td class="text" style="color: #854685">Hello, I'm very novice to yocto. I'm trying to get opengl es 1.1 support into a build. I've read much of the manual and I believe I have to create a bsp layer with appropriate recipes in the graphics directory. I've also found a mesa .inc file which I think will be helpful. Where should I go from here</td><td class="time"><a href="#t2015-06-07T18:03:22" class="time">18:03</a></td></tr>
+<tr id="t2015-06-07T18:21:19"><th class="nick" style="background: #854685">josh__d</th><td class="text" style="color: #854685">here is the inc file I was referring to: <a href="http://git.yoctoproject.org/cgit.cgi/poky/plain/meta/recipes-graphics/mesa/mesa.inc" rel="nofollow">http://git.yoctoproject.org/cgit.cgi/poky/plain/meta/recipes-graphics/mesa/mesa.inc</a></td><td class="time"><a href="#t2015-06-07T18:21:19" class="time">18:21</a></td></tr>
+<tr id="t2015-06-07T18:54:56"><th class="nick" style="background: #407a40">abelloni</th><td class="text" style="color: #407a40">josh__d: it actually depends on your platform</td><td class="time"><a href="#t2015-06-07T18:54:56" class="time">18:54</a></td></tr>
+<tr id="t2015-06-07T19:21:25"><th class="nick" style="background: #854685">josh__d</th><td class="text" style="color: #854685">abelloni: I'm attempting it first on a genericx86 image which I'm going to run on qemu</td><td class="time"><a href="#t2015-06-07T19:21:25" class="time">19:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-06-06.log.html">&#171; Saturday, 2015-06-06</a> <a href="index.html">Index</a> <a href="%23yocto.2015-06-08.log.html">Monday, 2015-06-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

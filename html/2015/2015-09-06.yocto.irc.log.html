@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2015-09-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2015-09-06</h1>
+<div class="navigation"> <a href="%23yocto.2015-09-05.log.html">&#171; Saturday, 2015-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2015-09-07.log.html">Monday, 2015-09-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2015-09-06T01:10:48"><td class="nickchange" colspan="2">*** DumpChatUser is now known as Farmer</td><td><a href="#t2015-09-06T01:10:48" class="time">01:10</a></td></tr>
+<tr id="t2015-09-06T06:09:44"><th class="nick" style="background: #407a40">nandi_fi</th><td class="text" style="color: #407a40">Hi everybody</td><td class="time"><a href="#t2015-09-06T06:09:44" class="time">06:09</a></td></tr>
+<tr id="t2015-09-06T06:09:56"><th class="nick" style="background: #407a40">nandi_fi</th><td class="text" style="color: #407a40">I have a question regarding yocto</td><td class="time"><a href="#t2015-09-06T06:09:56" class="time">06:09</a></td></tr>
+<tr id="t2015-09-06T06:10:42"><th class="nick" style="background: #407a40">nandi_fi</th><td class="text" style="color: #407a40">is it possible to have configure yocto to run a script after all the image was build?</td><td class="time"><a href="#t2015-09-06T06:10:42" class="time">06:10</a></td></tr>
+<tr id="t2015-09-06T06:11:46"><th class="nick" style="background: #407a40">nandi_fi</th><td class="text" style="color: #407a40">I want to run a script that will automatically unpack the rootfs and move the kernel image into different directories in order to use NFS bootup</td><td class="time"><a href="#t2015-09-06T06:11:46" class="time">06:11</a></td></tr>
+<tr id="t2015-09-06T07:25:21"><th class="nick" style="background: #42427e">pacopad</th><td class="text" style="color: #42427e">Hi Everybody, i’d like to try to build yocto for Odroid C1</td><td class="time"><a href="#t2015-09-06T07:25:21" class="time">07:25</a></td></tr>
+<tr id="t2015-09-06T07:26:02"><th class="nick" style="background: #42427e">pacopad</th><td class="text" style="color: #42427e">Where could i find docs about building yocto ?</td><td class="time"><a href="#t2015-09-06T07:26:02" class="time">07:26</a></td></tr>
+<tr id="t2015-09-06T08:20:12"><td class="part" colspan="2">*** pacopad &lt;pacopad!~pacopad@18-165-190-109.dsl.ovh.fr&gt; has left #yocto</td><td><a href="#t2015-09-06T08:20:12" class="time">08:20</a></td></tr>
+<tr id="t2015-09-06T17:51:53"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">khem: hmm, i'm assuming the systemd-sysv-install script is never run if systemd was built without sysvcompat?</td><td class="time"><a href="#t2015-09-06T17:51:53" class="time">17:51</a></td></tr>
+<tr id="t2015-09-06T17:56:06"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">yes it wont</td><td class="time"><a href="#t2015-09-06T17:56:06" class="time">17:56</a></td></tr>
+<tr id="t2015-09-06T17:56:46"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">but one may then later on install a package which is sysv so it needs to be there</td><td class="time"><a href="#t2015-09-06T17:56:46" class="time">17:56</a></td></tr>
+<tr id="t2015-09-06T18:09:12"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">i don't understand. if you built systemd without sysv compat support enabled, and then install a sysv package, why would it do anything?</td><td class="time"><a href="#t2015-09-06T18:09:12" class="time">18:09</a></td></tr>
+<tr id="t2015-09-06T18:15:14"><th class="nick" style="background: #488888">onoffon</th><td class="text" style="color: #488888">kergoth: yeah thats right</td><td class="time"><a href="#t2015-09-06T18:15:14" class="time">18:15</a></td></tr>
+<tr id="t2015-09-06T18:15:48"><td class="nickchange" colspan="2">*** onoffon is now known as khem`</td><td><a href="#t2015-09-06T18:15:48" class="time">18:15</a></td></tr>
+<tr id="t2015-09-06T18:16:20"><th class="nick" style="background: #488888">khem`</th><td class="text" style="color: #488888">I was thinking a situaiton where you have it enabled but initially no sysv services are shipped</td><td class="time"><a href="#t2015-09-06T18:16:20" class="time">18:16</a></td></tr>
+<tr id="t2015-09-06T18:16:47"><th class="nick" style="background: #488888">khem`</th><td class="text" style="color: #488888">distracted with other stuff</td><td class="time"><a href="#t2015-09-06T18:16:47" class="time">18:16</a></td></tr>
+<tr id="t2015-09-06T18:16:50"><th class="nick" style="background: #488888">khem`</th><td class="text" style="color: #488888">:)</td><td class="time"><a href="#t2015-09-06T18:16:50" class="time">18:16</a></td></tr>
+<tr id="t2015-09-06T21:26:12"><td class="nickchange" colspan="2">*** ueni_ is now known as ueni</td><td><a href="#t2015-09-06T21:26:12" class="time">21:26</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2015-09-05.log.html">&#171; Saturday, 2015-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2015-09-07.log.html">Monday, 2015-09-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
