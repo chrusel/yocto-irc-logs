@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-12-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-12-03</h1>
+<div class="navigation"> <a href="%23yocto.2016-12-02.log.html">&#171; Friday, 2016-12-02</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-04.log.html">Sunday, 2016-12-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-12-03T00:25:36"><th class="nick" style="background: #407a40">kunyi</th><td class="text" style="color: #407a40">hello, I have a quick question.. Is there a way to force a recipe .bb to execute even when building an image that doesn't require it?</td><td class="time"><a href="#t2016-12-03T00:25:36" class="time">00:25</a></td></tr>
+<tr id="t2016-12-03T01:12:39"><td class="part" colspan="2">*** jamesp &lt;jamesp!~jamesp@157.245.80.14&gt; has left #yocto</td><td><a href="#t2016-12-03T01:12:39" class="time">01:12</a></td></tr>
+<tr id="t2016-12-03T07:06:05"><td class="part" colspan="2">*** boucman_work &lt;boucman_work!~jrosen@wesnoth/developer/boucman&gt; has left #yocto</td><td><a href="#t2016-12-03T07:06:05" class="time">07:06</a></td></tr>
+<tr id="t2016-12-03T08:19:06"><th class="nick" style="background: #42427e">fmeerkoetter</th><td class="text" style="color: #42427e">kunyi: bitbake recipename</td><td class="time"><a href="#t2016-12-03T08:19:06" class="time">08:19</a></td></tr>
+<tr id="t2016-12-03T10:11:24"><th class="nick" style="background: #818144">ziggy</th><td class="text" style="color: #818144">Hi, I was wondering what the differences between the apache2 and apache2-naive recipes are? Thanks</td><td class="time"><a href="#t2016-12-03T10:11:24" class="time">10:11</a></td></tr>
+<tr id="t2016-12-03T10:15:37"><th class="nick" style="background: #818144">ziggy</th><td class="text" style="color: #818144">Looking at the .bb file it looks like apache2 depends on apache2-native and sets up config files. Is native the basic install with no configuration while apache2 includes basic configuration?</td><td class="time"><a href="#t2016-12-03T10:15:37" class="time">10:15</a></td></tr>
+<tr id="t2016-12-03T10:52:12"><th class="nick" style="background: #854685">jonte_</th><td class="text" style="color: #854685">Hi. Can I define a python function in my recipe, which will be callable by python code in several other tasks (do_install &amp; do_fetch, for instance)?</td><td class="time"><a href="#t2016-12-03T10:52:12" class="time">10:52</a></td></tr>
+<tr id="t2016-12-03T11:52:06"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2016-12-03T11:52:06" class="time">11:52</a></td></tr>
+<tr id="t2016-12-03T12:24:29"><th class="nick" style="background: #488888">pemdp</th><td class="text" style="color: #488888">Hello</td><td class="time"><a href="#t2016-12-03T12:24:29" class="time">12:24</a></td></tr>
+<tr id="t2016-12-03T13:09:33"><th class="nick" style="background: #8c4a4a">kergoth</th><td class="text" style="color: #8c4a4a">ziggy: no. target is for your target board, native is for the machine you're building on, the host. often we need to build tools which are then run as part of the build process, the only way to cross-compile certain things</td><td class="time"><a href="#t2016-12-03T13:09:33" class="time">13:09</a></td></tr>
+<tr id="t2016-12-03T13:12:09"><th class="nick" style="background: #818144">ziggy</th><td class="text" style="color: #818144">Thanks</td><td class="time"><a href="#t2016-12-03T13:12:09" class="time">13:12</a></td></tr>
+<tr id="t2016-12-03T13:27:56"><th class="nick" style="background: #488888">pemdp</th><td class="text" style="color: #488888">Hello I am trying to make a recipe which needs to stage an sdk that can be reused by other recipes . The sdk has a mix of target and host binaries. I was looking into the "do_install_append_class-nativesdk" but without success.</td><td class="time"><a href="#t2016-12-03T13:27:56" class="time">13:27</a></td></tr>
+<tr id="t2016-12-03T14:05:38"><td class="part" colspan="2">*** vin &lt;vin!~vincent@fsf/member/vin&gt; has left #yocto</td><td><a href="#t2016-12-03T14:05:38" class="time">14:05</a></td></tr>
+<tr id="t2016-12-03T14:49:01"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2016-12-03T14:49:01" class="time">14:49</a></td></tr>
+<tr id="t2016-12-03T15:25:37"><th class="nick" style="background: #4b904b">davis</th><td class="text" style="color: #4b904b">hello</td><td class="time"><a href="#t2016-12-03T15:25:37" class="time">15:25</a></td></tr>
+<tr id="t2016-12-03T15:26:08"><th class="nick" style="background: #4b904b">davis</th><td class="text" style="color: #4b904b">this week, i started getting an error while building /openembedded-core/meta/recipes-kernel/linux/linux-yocto-rt_4.4.bb,</td><td class="time"><a href="#t2016-12-03T15:26:08" class="time">15:26</a></td></tr>
+<tr id="t2016-12-03T15:26:28"><th class="nick" style="background: #4b904b">davis</th><td class="text" style="color: #4b904b">it appears the intel iot patches are failing</td><td class="time"><a href="#t2016-12-03T15:26:28" class="time">15:26</a></td></tr>
+<tr id="t2016-12-03T15:26:48"><th class="nick" style="background: #4b904b">davis</th><td class="text" style="color: #4b904b">i modified the patch recipe so it skipped applying the patch and it built</td><td class="time"><a href="#t2016-12-03T15:26:48" class="time">15:26</a></td></tr>
+<tr id="t2016-12-03T15:27:12"><th class="nick" style="background: #4b904b">davis</th><td class="text" style="color: #4b904b">besides that is there something I should do to work?</td><td class="time"><a href="#t2016-12-03T15:27:12" class="time">15:27</a></td></tr>
+<tr id="t2016-12-03T17:21:28"><th class="nick" style="background: #4d4d93">peter_</th><td class="text" style="color: #4d4d93">hi</td><td class="time"><a href="#t2016-12-03T17:21:28" class="time">17:21</a></td></tr>
+<tr id="t2016-12-03T17:26:00"><th class="nick" style="background: #97974f">bytefire</th><td class="text" style="color: #97974f">hi</td><td class="time"><a href="#t2016-12-03T17:26:00" class="time">17:26</a></td></tr>
+<tr id="t2016-12-03T21:01:02"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2016-12-03T21:01:02" class="time">21:01</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-12-02.log.html">&#171; Friday, 2016-12-02</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-04.log.html">Sunday, 2016-12-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

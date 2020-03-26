@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-11-12</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-11-12</h1>
+<div class="navigation"> <a href="%23yocto.2016-11-11.log.html">&#171; Friday, 2016-11-11</a> <a href="index.html">Index</a> <a href="%23yocto.2016-11-13.log.html">Sunday, 2016-11-13 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-11-12T00:17:41"><td class="other" colspan="2">-YoctoAutoBuilder- build #621 of nightly-mips64 is complete: Failure [failed Publishing Artifacts]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/621" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/621</a></td><td><a href="#t2016-11-12T00:17:41" class="time">00:17</a></td></tr>
+<tr id="t2016-11-12T00:51:44"><td class="other" colspan="2">-YoctoAutoBuilder- build #998 of nightly-x86-64-lsb is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64-lsb/builds/998" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64-lsb/builds/998</a></td><td><a href="#t2016-11-12T00:51:44" class="time">00:51</a></td></tr>
+<tr id="t2016-11-12T00:56:37"><th class="nick" style="background: #407a40">crsharff</th><td class="text" style="color: #407a40">does anyone have any experience building an image with NVIDIA discrete GPU support? for example 367.57 stable?</td><td class="time"><a href="#t2016-11-12T00:56:37" class="time">00:56</a></td></tr>
+<tr id="t2016-11-12T01:42:30"><td class="nickchange" colspan="2">*** khem` is now known as onoffon</td><td><a href="#t2016-11-12T01:42:30" class="time">01:42</a></td></tr>
+<tr id="t2016-11-12T03:01:52"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">Anyone played with x32 builds? running into some failures</td><td class="time"><a href="#t2016-11-12T03:01:52" class="time">03:01</a></td></tr>
+<tr id="t2016-11-12T03:33:04"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-11-12T03:33:04" class="time">03:33</a></td></tr>
+<tr id="t2016-11-12T03:49:22"><th class="nick" style="background: #818144">floob</th><td class="text" style="color: #818144">Hi folks.&nbsp;&nbsp;Where is the kernel .config file stored? thanks</td><td class="time"><a href="#t2016-11-12T03:49:22" class="time">03:49</a></td></tr>
+<tr id="t2016-11-12T03:57:17"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">floob: look in the build tree of kernel</td><td class="time"><a href="#t2016-11-12T03:57:17" class="time">03:57</a></td></tr>
+<tr id="t2016-11-12T04:47:14"><th class="nick" style="background: #818144">floob</th><td class="text" style="color: #818144">I have found that poky/meta-virtualization/recipes-kernel/linux/linux-yocto/xen.cfg contains all the kernel settings that I need.&nbsp;&nbsp;How can I get my project to use these settings?</td><td class="time"><a href="#t2016-11-12T04:47:14" class="time">04:47</a></td></tr>
+<tr id="t2016-11-12T04:52:47"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">you need to add it to the recipe</td><td class="time"><a href="#t2016-11-12T04:52:47" class="time">04:52</a></td></tr>
+<tr id="t2016-11-12T04:52:56"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">may be via a linux-yocto_*.bbappend</td><td class="time"><a href="#t2016-11-12T04:52:56" class="time">04:52</a></td></tr>
+<tr id="t2016-11-12T04:53:20"><th class="nick" style="background: #854685">khem`</th><td class="text" style="color: #854685">SRC_URI += "file://xen.cfj"</td><td class="time"><a href="#t2016-11-12T04:53:20" class="time">04:53</a></td></tr>
+<tr id="t2016-11-12T04:57:24"><th class="nick" style="background: #818144">floob</th><td class="text" style="color: #818144">Yes I can see there is a file poky/meta-virtualization/recipes-kernel/ linux/linux-yocto_4.8.bbappend - what exactly do I do with that?</td><td class="time"><a href="#t2016-11-12T04:57:24" class="time">04:57</a></td></tr>
+<tr id="t2016-11-12T06:16:06"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-11-12T06:16:06" class="time">06:16</a></td></tr>
+<tr id="t2016-11-12T06:20:08"><td class="other" colspan="2">-YoctoAutoBuilder- build #732 of nightly-oe-selftest is complete: Failure [failed Running oe-selftest]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/732" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/732</a></td><td><a href="#t2016-11-12T06:20:08" class="time">06:20</a></td></tr>
+<tr id="t2016-11-12T07:40:33"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">Good morning,</td><td class="time"><a href="#t2016-11-12T07:40:33" class="time">07:40</a></td></tr>
+<tr id="t2016-11-12T07:40:50"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">I've got a question regarding yocto configuration:</td><td class="time"><a href="#t2016-11-12T07:40:50" class="time">07:40</a></td></tr>
+<tr id="t2016-11-12T07:41:24"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">I would like to remove udev and syslog/klog from my sysvinit based yocto setup</td><td class="time"><a href="#t2016-11-12T07:41:24" class="time">07:41</a></td></tr>
+<tr id="t2016-11-12T07:42:49"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">now I've created my own ./&lt;my-meta&gt;/recipes-core/packagegroups/packagegroup-core-boot.bbappend in which I've written: VIRTUAL-RUNTIME_dev_manager = ""</td><td class="time"><a href="#t2016-11-12T07:42:49" class="time">07:42</a></td></tr>
+<tr id="t2016-11-12T07:43:16"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">is there any "simpler" way to do it?</td><td class="time"><a href="#t2016-11-12T07:43:16" class="time">07:43</a></td></tr>
+<tr id="t2016-11-12T07:44:15"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">And I'm a bit puzzled now how to remove "syslogd/klogd"</td><td class="time"><a href="#t2016-11-12T07:44:15" class="time">07:44</a></td></tr>
+<tr id="t2016-11-12T07:44:30"><th class="nick" style="background: #488888">lukma1</th><td class="text" style="color: #488888">Any help appreciated :-)</td><td class="time"><a href="#t2016-11-12T07:44:30" class="time">07:44</a></td></tr>
+<tr id="t2016-11-12T07:58:46"><th class="nick" style="background: #8c4a4a">bachp</th><td class="text" style="color: #8c4a4a">lukma1: You can set VIRTUAL-RUNTIME variables in your local.con or your distro. Not sure about syslog tough</td><td class="time"><a href="#t2016-11-12T07:58:46" class="time">07:58</a></td></tr>
+<tr id="t2016-11-12T09:29:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #1075 of nightly is complete: Failure [failed]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/1075" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/1075</a></td><td><a href="#t2016-11-12T09:29:19" class="time">09:29</a></td></tr>
+<tr id="t2016-11-12T10:43:40"><td class="nickchange" colspan="2">*** Jackie is now known as Guest93376</td><td><a href="#t2016-11-12T10:43:40" class="time">10:43</a></td></tr>
+<tr id="t2016-11-12T11:32:59"><td class="nickchange" colspan="2">*** Jackie is now known as Guest44506</td><td><a href="#t2016-11-12T11:32:59" class="time">11:32</a></td></tr>
+<tr id="t2016-11-12T13:07:50"><td class="action" colspan="2">* Marex is back at u-boot-mkimage mess</td><td><a href="#t2016-11-12T13:07:50" class="time">13:07</a></td></tr>
+<tr id="t2016-11-12T15:25:27"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-11-12T15:25:27" class="time">15:25</a></td></tr>
+<tr id="t2016-11-12T15:30:39"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-11-12T15:30:39" class="time">15:30</a></td></tr>
+<tr id="t2016-11-12T16:22:35"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-11-12T16:22:35" class="time">16:22</a></td></tr>
+<tr id="t2016-11-12T18:22:43"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-11-12T18:22:43" class="time">18:22</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-11-11.log.html">&#171; Friday, 2016-11-11</a> <a href="index.html">Index</a> <a href="%23yocto.2016-11-13.log.html">Sunday, 2016-11-13 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

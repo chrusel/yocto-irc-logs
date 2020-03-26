@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-06-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-06-04</h1>
+<div class="navigation"> <a href="%23yocto.2016-06-03.log.html">&#171; Friday, 2016-06-03</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-05.log.html">Sunday, 2016-06-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-06-04T00:50:43"><td class="other" colspan="2">-YoctoAutoBuilder- build #807 of nightly-qa-systemd is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/807" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-systemd/builds/807</a></td><td><a href="#t2016-06-04T00:50:43" class="time">00:50</a></td></tr>
+<tr id="t2016-06-04T06:02:24"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">i have a problem building one of the packages from qt-meta5: QA Issue: Qt5XmlPatterns.pc failed sanity test (tmpdir) in path /data/projects/fsl-community-bsp/build-weston/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/qtxmlpatterns/5.6.99+5.7.0-beta+gitAUTOINC+4ca909e7da-r0/sysroot-destdir/usr/lib/pkgconfig [pkgconfig]</td><td class="time"><a href="#t2016-06-04T06:02:24" class="time">06:02</a></td></tr>
+<tr id="t2016-06-04T06:03:02"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">i don't care about pkgconfig so i added INSANE_SKIP_${PN} += "pkgconfig" and INSANE_SKIP_${PN}-dev += "pkgconfig" to the qt5xmlpatterns recipe</td><td class="time"><a href="#t2016-06-04T06:03:02" class="time">06:03</a></td></tr>
+<tr id="t2016-06-04T06:03:14"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">but the build still fails with the QA error</td><td class="time"><a href="#t2016-06-04T06:03:14" class="time">06:03</a></td></tr>
+<tr id="t2016-06-04T06:03:23"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">any idea what i am doing wrong?</td><td class="time"><a href="#t2016-06-04T06:03:23" class="time">06:03</a></td></tr>
+<tr id="t2016-06-04T06:18:17"><td class="other" colspan="2">-YoctoAutoBuilder- build #544 of nightly-oe-selftest is complete: Failure [failed Running oe-selftest]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/544" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/544</a></td><td><a href="#t2016-06-04T06:18:17" class="time">06:18</a></td></tr>
+<tr id="t2016-06-04T06:22:29"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">try just deleting it instead?</td><td class="time"><a href="#t2016-06-04T06:22:29" class="time">06:22</a></td></tr>
+<tr id="t2016-06-04T06:22:39"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">either that or install it...</td><td class="time"><a href="#t2016-06-04T06:22:39" class="time">06:22</a></td></tr>
+<tr id="t2016-06-04T06:51:28"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">might work (will try it)</td><td class="time"><a href="#t2016-06-04T06:51:28" class="time">06:51</a></td></tr>
+<tr id="t2016-06-04T06:51:58"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">but still i'd like to understand if I am using that INSANE_SKIP mechanism as intended</td><td class="time"><a href="#t2016-06-04T06:51:58" class="time">06:51</a></td></tr>
+<tr id="t2016-06-04T06:51:58"><th class="nick" style="background: #407a40">fmeerkoetter</th><td class="text" style="color: #407a40">:-)</td><td class="time"><a href="#t2016-06-04T06:51:58" class="time">06:51</a></td></tr>
+<tr id="t2016-06-04T13:52:51"><td class="nickchange" colspan="2">*** balister__ is now known as Crofton|work</td><td><a href="#t2016-06-04T13:52:51" class="time">13:52</a></td></tr>
+<tr id="t2016-06-04T17:40:45"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-06-04T17:40:45" class="time">17:40</a></td></tr>
+<tr id="t2016-06-04T19:12:52"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">custom kernel recipe, better to _append do_install or do_deploy ?</td><td class="time"><a href="#t2016-06-04T19:12:52" class="time">19:12</a></td></tr>
+<tr id="t2016-06-04T20:00:54"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-06-04T20:00:54" class="time">20:00</a></td></tr>
+<tr id="t2016-06-04T20:22:38"><td class="action" colspan="2">* nerdboy installs and makes extra package</td><td><a href="#t2016-06-04T20:22:38" class="time">20:22</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-06-03.log.html">&#171; Friday, 2016-06-03</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-05.log.html">Sunday, 2016-06-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

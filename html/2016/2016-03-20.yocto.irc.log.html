@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-03-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-03-20</h1>
+<div class="navigation"> <a href="%23yocto.2016-03-19.log.html">&#171; Saturday, 2016-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2016-03-21.log.html">Monday, 2016-03-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-03-20T02:47:11"><td class="part" colspan="2">*** cluelessperson &lt;cluelessperson!~cluelessp@unaffiliated/cluelessperson&gt; has left #yocto</td><td><a href="#t2016-03-20T02:47:11" class="time">02:47</a></td></tr>
+<tr id="t2016-03-20T03:30:08"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-03-20T03:30:08" class="time">03:30</a></td></tr>
+<tr id="t2016-03-20T15:45:57"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">hi folks, I've just removed alsa-utils from my IMAGE_INSTALL but alsa-utils stuff is still present in my images</td><td class="time"><a href="#t2016-03-20T15:45:57" class="time">15:45</a></td></tr>
+<tr id="t2016-03-20T15:47:35"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">what I have forgotten?</td><td class="time"><a href="#t2016-03-20T15:47:35" class="time">15:47</a></td></tr>
+<tr id="t2016-03-20T15:48:15"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">is something related to package/config cache?</td><td class="time"><a href="#t2016-03-20T15:48:15" class="time">15:48</a></td></tr>
+<tr id="t2016-03-20T17:52:57"><td class="other" colspan="2">-YoctoAutoBuilder- build #713 of nightly-multilib is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/713" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-multilib/builds/713</a></td><td><a href="#t2016-03-20T17:52:57" class="time">17:52</a></td></tr>
+<tr id="t2016-03-20T18:24:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #700 of nightly-fsl-arm is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm/builds/700" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-fsl-arm/builds/700</a></td><td><a href="#t2016-03-20T18:24:21" class="time">18:24</a></td></tr>
+<tr id="t2016-03-20T18:44:17"><td class="other" colspan="2">-YoctoAutoBuilder- build #351 of nightly-mips64 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/351" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/351</a></td><td><a href="#t2016-03-20T18:44:17" class="time">18:44</a></td></tr>
+<tr id="t2016-03-20T19:07:08"><th class="nick" style="background: #42427e">Herrie</th><td class="text" style="color: #42427e">zero_note: Could be some other recipe is still refering to it in DEPENDS, RDEPENDS or RRECOMMENDS?</td><td class="time"><a href="#t2016-03-20T19:07:08" class="time">19:07</a></td></tr>
+<tr id="t2016-03-20T19:08:29"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">zero_note: most likely you still have alsa in DISTRO_FEATURES, so it's being pulled in by packagegroup-base.</td><td class="time"><a href="#t2016-03-20T19:08:29" class="time">19:08</a></td></tr>
+<tr id="t2016-03-20T19:09:01"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">Herrie: I've just checked and nothing *depends or *recommeds on it</td><td class="time"><a href="#t2016-03-20T19:09:01" class="time">19:09</a></td></tr>
+<tr id="t2016-03-20T19:09:48"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">kergoth: you're right, so I have added MACHINE_FEATURES_remove = "alsa" in my machine.conf</td><td class="time"><a href="#t2016-03-20T19:09:48" class="time">19:09</a></td></tr>
+<tr id="t2016-03-20T19:10:23"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">bitbake -g is often helpful for determining why something is being pulled in</td><td class="time"><a href="#t2016-03-20T19:10:23" class="time">19:10</a></td></tr>
+<tr id="t2016-03-20T19:11:00"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">and DISTRO_FEATURES_remove = "alsa" in my local.conf, now a new build in clean dir is running, but from the compile logs I've just read "alsa-lib-native-...."</td><td class="time"><a href="#t2016-03-20T19:11:00" class="time">19:11</a></td></tr>
+<tr id="t2016-03-20T19:12:28"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">kergoth: yep, indeed reading dot files from bitbake -g alsa-utils I've found that packagegroup-base pull on alsa-utils</td><td class="time"><a href="#t2016-03-20T19:12:28" class="time">19:12</a></td></tr>
+<tr id="t2016-03-20T19:14:28"><th class="nick" style="background: #407a40">zero_note</th><td class="text" style="color: #407a40">Herrie: kergoth: thanks for the response :-)</td><td class="time"><a href="#t2016-03-20T19:14:28" class="time">19:14</a></td></tr>
+<tr id="t2016-03-20T20:06:36"><td class="other" colspan="2">-YoctoAutoBuilder- build #343 of nightly-arm64 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm64/builds/343" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm64/builds/343</a></td><td><a href="#t2016-03-20T20:06:36" class="time">20:06</a></td></tr>
+<tr id="t2016-03-20T21:38:52"><td class="part" colspan="2">*** raykinsella78 &lt;raykinsella78!rkinsell@nat/intel/x-pcybdvtkhjwlhykr&gt; has left #yocto</td><td><a href="#t2016-03-20T21:38:52" class="time">21:38</a></td></tr>
+<tr id="t2016-03-20T22:00:33"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">WARNING: gst-plugins-good-0.10.31-r8 do_configure: QA Issue: gst-plugins-good: configure was passed unrecognised options: --disable-introspection [unknown-configure-option]</td><td class="time"><a href="#t2016-03-20T22:00:33" class="time">22:00</a></td></tr>
+<tr id="t2016-03-20T22:01:13"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">with the introspection stubs being replaced recently, I'm guessing we just don't need that option (not that it worked anyway)</td><td class="time"><a href="#t2016-03-20T22:01:13" class="time">22:01</a></td></tr>
+<tr id="t2016-03-20T22:08:05"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">halstead: not sure why but fedora22 is being very slow again :(</td><td class="time"><a href="#t2016-03-20T22:08:05" class="time">22:08</a></td></tr>
+<tr id="t2016-03-20T22:08:45"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">paulg_: it might be a sign that you need the workaround discussed on list (delete the .m4 files it ships with so it gets our version)</td><td class="time"><a href="#t2016-03-20T22:08:45" class="time">22:08</a></td></tr>
+<tr id="t2016-03-20T22:13:31"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">RP, I'll have a look...</td><td class="time"><a href="#t2016-03-20T22:13:31" class="time">22:13</a></td></tr>
+<tr id="t2016-03-20T22:37:23"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">RP, so there was one, and I clobbered it in a preconfigure, then the build gets the sysroot one...</td><td class="time"><a href="#t2016-03-20T22:37:23" class="time">22:37</a></td></tr>
+<tr id="t2016-03-20T22:37:28"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">0.10.31-r8#ls -l ./build/aclocal-copy/introspection.m4</td><td class="time"><a href="#t2016-03-20T22:37:28" class="time">22:37</a></td></tr>
+<tr id="t2016-03-20T22:37:28"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">lrwxrwxrwx 1 1000 pulse 83 Mar 20 18:32 ./build/aclocal-copy/introspection.m4 -&gt; /home/paul/poky/build/tmp/sysroots/genericx86-64/usr/share/aclocal/introspection.m4</td><td class="time"><a href="#t2016-03-20T22:37:28" class="time">22:37</a></td></tr>
+<tr id="t2016-03-20T22:37:28"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">0.10.31-r8#</td><td class="time"><a href="#t2016-03-20T22:37:28" class="time">22:37</a></td></tr>
+<tr id="t2016-03-20T22:38:21"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">but the warning remains.&nbsp;&nbsp; Seems it is because both m4 expects "--enable-introspection=no"&nbsp;&nbsp;-- they don't grok "--disable-introspection"</td><td class="time"><a href="#t2016-03-20T22:38:21" class="time">22:38</a></td></tr>
+<tr id="t2016-03-20T22:38:47"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">paulg: It should accept --disable too</td><td class="time"><a href="#t2016-03-20T22:38:47" class="time">22:38</a></td></tr>
+<tr id="t2016-03-20T22:38:59"><th class="nick" style="background: #854685">paulg_</th><td class="text" style="color: #854685">odd.</td><td class="time"><a href="#t2016-03-20T22:38:59" class="time">22:38</a></td></tr>
+<tr id="t2016-03-20T22:53:30"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">halstead: is fedora22 using xfs and is that our only builder using xfs? Its tied in knots and I can't even login to an interactive shell atm. All I can see is a kernel worker process using 100% cpu. I'm suspecting the filesystem being crossed up :(</td><td class="time"><a href="#t2016-03-20T22:53:30" class="time">22:53</a></td></tr>
+<tr id="t2016-03-20T22:58:50"><th class="nick" style="background: #8c4a4a">halstead</th><td class="text" style="color: #8c4a4a">RP, Centos7 is also XFS.</td><td class="time"><a href="#t2016-03-20T22:58:50" class="time">22:58</a></td></tr>
+<tr id="t2016-03-20T23:00:27"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">halstead: hmm, so it could be something else :/. Regardless, it doesn't seem happy :(</td><td class="time"><a href="#t2016-03-20T23:00:27" class="time">23:00</a></td></tr>
+<tr id="t2016-03-20T23:19:14"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-03-20T23:19:14" class="time">23:19</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-03-19.log.html">&#171; Saturday, 2016-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2016-03-21.log.html">Monday, 2016-03-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

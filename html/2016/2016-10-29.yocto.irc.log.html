@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-10-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-10-29</h1>
+<div class="navigation"> <a href="%23yocto.2016-10-28.log.html">&#171; Friday, 2016-10-28</a> <a href="index.html">Index</a> <a href="%23yocto.2016-10-30.log.html">Sunday, 2016-10-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-10-29T15:48:37"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">seen elsewhere: The Programmer's Credo: We do these things not because they are easy, but because we thought they would be easy.</td><td class="time"><a href="#t2016-10-29T15:48:37" class="time">15:48</a></td></tr>
+<tr id="t2016-10-29T15:48:41"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">This is *exactly* why pseudo exists.</td><td class="time"><a href="#t2016-10-29T15:48:41" class="time">15:48</a></td></tr>
+<tr id="t2016-10-29T15:51:57"><th class="nick" style="background: #42427e">neverpanic</th><td class="text" style="color: #42427e">(and exactly why user namespaces exist, too? ;-))</td><td class="time"><a href="#t2016-10-29T15:51:57" class="time">15:51</a></td></tr>
+<tr id="t2016-10-29T15:52:31"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">probably.</td><td class="time"><a href="#t2016-10-29T15:52:31" class="time">15:52</a></td></tr>
+<tr id="t2016-10-29T17:07:07"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">hmm, pseudo fails to build from source on x32: <a href="https://buildd.debian.org/status/fetch.php?pkg=pseudo&amp;arch=x32&amp;ver=1.8.1%2Bgit20161012-1&amp;stamp=1477757121" rel="nofollow">https://buildd.debian.org/status/fetch.php?pkg=pseudo&amp;arch=x32&amp;ver=1.8.1%2Bgit20161012-1&amp;stamp=1477757121</a></td><td class="time"><a href="#t2016-10-29T17:07:07" class="time">17:07</a></td></tr>
+<tr id="t2016-10-29T17:07:12"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">seebs: any ideas?</td><td class="time"><a href="#t2016-10-29T17:07:12" class="time">17:07</a></td></tr>
+<tr id="t2016-10-29T17:07:50"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">Huh. Now I have to remember why we had a specific version requested for memcpy.</td><td class="time"><a href="#t2016-10-29T17:07:50" class="time">17:07</a></td></tr>
+<tr id="t2016-10-29T17:08:17"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">seebs: by the way, could you import a manpage patch from Debian?</td><td class="time"><a href="#t2016-10-29T17:08:17" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:08:32"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">#ifdef __amd64__</td><td class="time"><a href="#t2016-10-29T17:08:32" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:08:32"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">GLIBC_COMPAT_SYMBOL(memcpy,2.2.5);</td><td class="time"><a href="#t2016-10-29T17:08:32" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:08:33"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">this one: <a href="https://sources.debian.net/src/pseudo/1.7.5-5/debian/patches/0000-manpage.patch/" rel="nofollow">https://sources.debian.net/src/pseudo/1.7.5-5/debian/patches/0000-manpage.patch/</a></td><td class="time"><a href="#t2016-10-29T17:08:33" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:08:49"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">Yeah, it's on my list. I'm briefly between development machines, but I've got an email with it.</td><td class="time"><a href="#t2016-10-29T17:08:49" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:08:55"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">So why is x32 defining __amd64__?</td><td class="time"><a href="#t2016-10-29T17:08:55" class="time">17:08</a></td></tr>
+<tr id="t2016-10-29T17:09:07"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">honestly, I don't know</td><td class="time"><a href="#t2016-10-29T17:09:07" class="time">17:09</a></td></tr>
+<tr id="t2016-10-29T17:09:21"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">I guess the likely fix would be to find a suitable #ifdef for x32 and change it to if defined(__amd64__) &amp;&amp; !defined(...)</td><td class="time"><a href="#t2016-10-29T17:09:21" class="time">17:09</a></td></tr>
+<tr id="t2016-10-29T17:09:55"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">Not 100% sure that's the issue, but it's my first guess, since that's the only way I'd expect to see a memcpy@GLIBC_2.2.5 show up.</td><td class="time"><a href="#t2016-10-29T17:09:55" class="time">17:09</a></td></tr>
+<tr id="t2016-10-29T17:10:27"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">seebs: a-ha, I see Igor Gnatenko &lt;i.gnatenko.brain@gmail.com&gt; has forwarded it</td><td class="time"><a href="#t2016-10-29T17:10:27" class="time">17:10</a></td></tr>
+<tr id="t2016-10-29T17:12:08"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">seebs: <a href="https://wiki.debian.org/X32Port#Detecting%20_X32" rel="nofollow">https://wiki.debian.org/X32Port#Detecting%20_X32</a></td><td class="time"><a href="#t2016-10-29T17:12:08" class="time">17:12</a></td></tr>
+<tr id="t2016-10-29T17:15:02"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">ports/linux/portdefs.h:</td><td class="time"><a href="#t2016-10-29T17:15:02" class="time">17:15</a></td></tr>
+<tr id="t2016-10-29T17:15:03"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">-#ifdef __amd64__</td><td class="time"><a href="#t2016-10-29T17:15:03" class="time">17:15</a></td></tr>
+<tr id="t2016-10-29T17:15:03"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">+#if defined(__amd64__) &amp;&amp; !defined(__ILP32__)</td><td class="time"><a href="#t2016-10-29T17:15:03" class="time">17:15</a></td></tr>
+<tr id="t2016-10-29T17:15:12"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">try that and let me know whether it works before I push any commits?</td><td class="time"><a href="#t2016-10-29T17:15:12" class="time">17:15</a></td></tr>
+<tr id="t2016-10-29T17:25:07"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">doing so</td><td class="time"><a href="#t2016-10-29T17:25:07" class="time">17:25</a></td></tr>
+<tr id="t2016-10-29T17:51:59"><th class="nick" style="background: #818144">andrewsh</th><td class="text" style="color: #818144">seebs: I uploaded a patched version, I expect build results to be ready shortly.</td><td class="time"><a href="#t2016-10-29T17:51:59" class="time">17:51</a></td></tr>
+<tr id="t2016-10-29T18:06:21"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">Thanks!</td><td class="time"><a href="#t2016-10-29T18:06:21" class="time">18:06</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-10-28.log.html">&#171; Friday, 2016-10-28</a> <a href="index.html">Index</a> <a href="%23yocto.2016-10-30.log.html">Sunday, 2016-10-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

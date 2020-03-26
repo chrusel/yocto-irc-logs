@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-03-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-03-19</h1>
+<div class="navigation"> <a href="%23yocto.2016-03-18.log.html">&#171; Friday, 2016-03-18</a> <a href="index.html">Index</a> <a href="%23yocto.2016-03-20.log.html">Sunday, 2016-03-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-03-19T00:03:14"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">Hmm. afaict only *tasks* run prefuncs/postfuncs, yet the dependency code includes prefuncs/postfuncs in function checksums, not only tasks</td><td class="time"><a href="#t2016-03-19T00:03:14" class="time">00:03</a></td></tr>
+<tr id="t2016-03-19T00:23:49"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">err.. I just noticed we include variable flags for variables we depend on in the checksum (minus excludes), but we don't actually include flags we explicitly use!</td><td class="time"><a href="#t2016-03-19T00:23:49" class="time">00:23</a></td></tr>
+<tr id="t2016-03-19T00:24:30"><td class="nickchange" colspan="2">*** kergoth` is now known as kergoth</td><td><a href="#t2016-03-19T00:24:30" class="time">00:24</a></td></tr>
+<tr id="t2016-03-19T00:46:40"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">WIP: <a href="https://github.com/MentorEmbedded/poky/compare/master...kergoth:bitbake-track-var-flag-refs," rel="nofollow">https://github.com/MentorEmbedded/poky/compare/master...kergoth:bitbake-track-var-flag-refs,</a> also WIP: <a href="https://github.com/MentorEmbedded/poky/compare/master...kergoth:task-level-exports" rel="nofollow">https://github.com/MentorEmbedded/poky/compare/master...kergoth:task-level-exports</a></td><td class="time"><a href="#t2016-03-19T00:46:40" class="time">00:46</a></td></tr>
+<tr id="t2016-03-19T00:46:43"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">hrm</td><td class="time"><a href="#t2016-03-19T00:46:43" class="time">00:46</a></td></tr>
+<tr id="t2016-03-19T00:50:59"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">of course the flag thing doesn't actually affect much in practice, since most flags are used to adjust behavior in anonymous python and whatnot, or either the varname or flag isn't a fixed string, but still</td><td class="time"><a href="#t2016-03-19T00:50:59" class="time">00:50</a></td></tr>
+<tr id="t2016-03-19T03:15:55"><th class="nick" style="background: #42427e">zskdan</th><td class="text" style="color: #42427e">hello folks</td><td class="time"><a href="#t2016-03-19T03:15:55" class="time">03:15</a></td></tr>
+<tr id="t2016-03-19T03:16:30"><th class="nick" style="background: #42427e">zskdan</th><td class="text" style="color: #42427e">how can i set a prefered version of the gcc crosscompiler ?</td><td class="time"><a href="#t2016-03-19T03:16:30" class="time">03:16</a></td></tr>
+<tr id="t2016-03-19T03:18:10"><th class="nick" style="background: #42427e">zskdan</th><td class="text" style="color: #42427e">in yocto</td><td class="time"><a href="#t2016-03-19T03:18:10" class="time">03:18</a></td></tr>
+<tr id="t2016-03-19T03:23:16"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-03-19T03:23:16" class="time">03:23</a></td></tr>
+<tr id="t2016-03-19T03:37:42"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">there's the GCCVERSION variable, but you can only select between the versions that are available as recipes, not any arbitrary version</td><td class="time"><a href="#t2016-03-19T03:37:42" class="time">03:37</a></td></tr>
+<tr id="t2016-03-19T03:38:57"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">as you can see at <a href="http://layers.openembedded.org/layerindex/branch/master/recipes/?q=gcc-cross," rel="nofollow">http://layers.openembedded.org/layerindex/branch/master/recipes/?q=gcc-cross,</a> only 4.9.3 and 5.2.0 are provided by oe-core at this time</td><td class="time"><a href="#t2016-03-19T03:38:57" class="time">03:38</a></td></tr>
+<tr id="t2016-03-19T06:16:15"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-03-19T06:16:15" class="time">06:16</a></td></tr>
+<tr id="t2016-03-19T13:19:18"><th class="nick" style="background: #818144">Ulfalizer2</th><td class="text" style="color: #818144">why does update-alternatives.bbclass add virtual/update-alternatives as a build dependency (in ua_extend_depends) as opposed to just a runtime dependency?</td><td class="time"><a href="#t2016-03-19T13:19:18" class="time">13:19</a></td></tr>
+<tr id="t2016-03-19T14:44:49"><th class="nick" style="background: #854685">chandra</th><td class="text" style="color: #854685">Hi - I am seeing this error when I try to build kernel which is not part of Yocto project.</td><td class="time"><a href="#t2016-03-19T14:44:49" class="time">14:44</a></td></tr>
+<tr id="t2016-03-19T14:44:51"><th class="nick" style="background: #854685">chandra</th><td class="text" style="color: #854685">Multiple .bb files are due to be built which each provide virtual/kernel</td><td class="time"><a href="#t2016-03-19T14:44:51" class="time">14:44</a></td></tr>
+<tr id="t2016-03-19T14:45:01"><th class="nick" style="background: #854685">chandra</th><td class="text" style="color: #854685">I appreciate your help.</td><td class="time"><a href="#t2016-03-19T14:45:01" class="time">14:45</a></td></tr>
+<tr id="t2016-03-19T18:41:20"><td class="part" colspan="2">*** aehs29 &lt;aehs29!aehernan@nat/intel/x-dofnikujuulomzxh&gt; has left #yocto</td><td><a href="#t2016-03-19T18:41:20" class="time">18:41</a></td></tr>
+<tr id="t2016-03-19T19:14:11"><td class="part" colspan="2">*** Jeena &lt;Jeena!~Jeena@jugulator.defunced.de&gt; has left #yocto</td><td><a href="#t2016-03-19T19:14:11" class="time">19:14</a></td></tr>
+<tr id="t2016-03-19T20:46:31"><td class="nickchange" colspan="2">*** goto_bad is now known as Amynka</td><td><a href="#t2016-03-19T20:46:31" class="time">20:46</a></td></tr>
+<tr id="t2016-03-19T23:12:24"><th class="nick" style="background: #488888">riz___</th><td class="text" style="color: #488888">In regards to setting up a new kit for TqtCreator, I am trying to point to my yocto embedded linux toolchain "qmake" for QtVersion, however I keep getting a popup saying that it is no an executable or it does not exist. Clearly it exists.</td><td class="time"><a href="#t2016-03-19T23:12:24" class="time">23:12</a></td></tr>
+<tr id="t2016-03-19T23:13:12"><th class="nick" style="background: #488888">riz___</th><td class="text" style="color: #488888">It is in the opt/poky/2.0.1..... directory where the sdk defaults to after building and installing</td><td class="time"><a href="#t2016-03-19T23:13:12" class="time">23:13</a></td></tr>
+<tr id="t2016-03-19T23:15:42"><th class="nick" style="background: #488888">riz___</th><td class="text" style="color: #488888">*QtCreator</td><td class="time"><a href="#t2016-03-19T23:15:42" class="time">23:15</a></td></tr>
+<tr id="t2016-03-19T23:42:56"><th class="nick" style="background: #488888">riz___</th><td class="text" style="color: #488888">I am finding that when I build my Qt5 SDK the qmake is not executable at all</td><td class="time"><a href="#t2016-03-19T23:42:56" class="time">23:42</a></td></tr>
+<tr id="t2016-03-19T23:43:06"><th class="nick" style="background: #488888">riz___</th><td class="text" style="color: #488888">Any ideas why that might happen?</td><td class="time"><a href="#t2016-03-19T23:43:06" class="time">23:43</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-03-18.log.html">&#171; Friday, 2016-03-18</a> <a href="index.html">Index</a> <a href="%23yocto.2016-03-20.log.html">Sunday, 2016-03-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

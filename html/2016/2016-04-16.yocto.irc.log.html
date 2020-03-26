@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-04-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-04-16</h1>
+<div class="navigation"> <a href="%23yocto.2016-04-15.log.html">&#171; Friday, 2016-04-15</a> <a href="index.html">Index</a> <a href="%23yocto.2016-04-17.log.html">Sunday, 2016-04-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-04-16T01:32:56"><th class="nick" style="background: #407a40">otay</th><td class="text" style="color: #407a40">Is there a Linux installer (like Anaconda) with Yocto?</td><td class="time"><a href="#t2016-04-16T01:32:56" class="time">01:32</a></td></tr>
+<tr id="t2016-04-16T04:48:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #765 of nightly-x86-64-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64-lsb/builds/765" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86-64-lsb/builds/765</a></td><td><a href="#t2016-04-16T04:48:55" class="time">04:48</a></td></tr>
+<tr id="t2016-04-16T05:45:16"><th class="nick" style="background: #42427e">[R]</th><td class="text" style="color: #42427e">how can i build multiple images from one yocto directory... do i need separate build directories?</td><td class="time"><a href="#t2016-04-16T05:45:16" class="time">05:45</a></td></tr>
+<tr id="t2016-04-16T07:55:47"><td class="part" colspan="2">*** raykinsella78 &lt;raykinsella78!rkinsell@nat/intel/x-yzdgiuahssozozbm&gt; has left #yocto</td><td><a href="#t2016-04-16T07:55:47" class="time">07:55</a></td></tr>
+<tr id="t2016-04-16T08:12:11"><td class="nickchange" colspan="2">*** Zelena is now known as Amynka</td><td><a href="#t2016-04-16T08:12:11" class="time">08:12</a></td></tr>
+<tr id="t2016-04-16T08:22:36"><td class="nickchange" colspan="2">*** Amynka is now known as Zelena</td><td><a href="#t2016-04-16T08:22:36" class="time">08:22</a></td></tr>
+<tr id="t2016-04-16T14:54:51"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">No</td><td class="time"><a href="#t2016-04-16T14:54:51" class="time">14:54</a></td></tr>
+<tr id="t2016-04-16T14:55:04"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">you can just do bitbake img1 img2</td><td class="time"><a href="#t2016-04-16T14:55:04" class="time">14:55</a></td></tr>
+<tr id="t2016-04-16T14:55:15"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">as long as they are targetted at same machine</td><td class="time"><a href="#t2016-04-16T14:55:15" class="time">14:55</a></td></tr>
+<tr id="t2016-04-16T14:59:53"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">And if they don't pull in recipes that conflict on files in the sysroot, if I understand things correctly.</td><td class="time"><a href="#t2016-04-16T14:59:53" class="time">14:59</a></td></tr>
+<tr id="t2016-04-16T15:13:19"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">well that wont happen if its same machine+distro</td><td class="time"><a href="#t2016-04-16T15:13:19" class="time">15:13</a></td></tr>
+<tr id="t2016-04-16T15:14:34"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">if it happens thats a problem to fix in recipe</td><td class="time"><a href="#t2016-04-16T15:14:34" class="time">15:14</a></td></tr>
+<tr id="t2016-04-16T16:05:41"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">khem: You could have two recipes that build the same binary with different flags, no? Then it would happen -- or should that be done in a separate distro?</td><td class="time"><a href="#t2016-04-16T16:05:41" class="time">16:05</a></td></tr>
+<tr id="t2016-04-16T16:15:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #467 of nightly-world-lsb is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world-lsb/builds/467" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world-lsb/builds/467</a></td><td><a href="#t2016-04-16T16:15:19" class="time">16:15</a></td></tr>
+<tr id="t2016-04-16T18:07:27"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">neverpanic: yes, but that is global config metadata change</td><td class="time"><a href="#t2016-04-16T18:07:27" class="time">18:07</a></td></tr>
+<tr id="t2016-04-16T18:07:47"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">you do that either at machine config or distro config level</td><td class="time"><a href="#t2016-04-16T18:07:47" class="time">18:07</a></td></tr>
+<tr id="t2016-04-16T18:07:52"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">and I excluded both</td><td class="time"><a href="#t2016-04-16T18:07:52" class="time">18:07</a></td></tr>
+<tr id="t2016-04-16T18:10:36"><td class="other" colspan="2">-YoctoAutoBuilder- build #820 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/820" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/820</a></td><td><a href="#t2016-04-16T18:10:36" class="time">18:10</a></td></tr>
+<tr id="t2016-04-16T18:22:01"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">khem: no, I'm saying you could write two recipes building the same software, but with different flags, and the results of those two recipes could go into different images</td><td class="time"><a href="#t2016-04-16T18:22:01" class="time">18:22</a></td></tr>
+<tr id="t2016-04-16T18:22:19"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">that's not a global config metadata change, and it would conflict in the sysroot</td><td class="time"><a href="#t2016-04-16T18:22:19" class="time">18:22</a></td></tr>
+<tr id="t2016-04-16T18:56:32"><th class="nick" style="background: #488888">yodakohl</th><td class="text" style="color: #488888">Hello, im trying to create a custom yocto distribution using GIT as versioning system. Is it recommended to use git-submodules for my own layers or to use the combo-layer tool?</td><td class="time"><a href="#t2016-04-16T18:56:32" class="time">18:56</a></td></tr>
+<tr id="t2016-04-16T19:39:43"><td class="part" colspan="2">*** raykinsella78 &lt;raykinsella78!rkinsell@nat/intel/x-ulqogjqpbzxgmixa&gt; has left #yocto</td><td><a href="#t2016-04-16T19:39:43" class="time">19:39</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-04-15.log.html">&#171; Friday, 2016-04-15</a> <a href="index.html">Index</a> <a href="%23yocto.2016-04-17.log.html">Sunday, 2016-04-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

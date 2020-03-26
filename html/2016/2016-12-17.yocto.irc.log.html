@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-12-17</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-12-17</h1>
+<div class="navigation"> <a href="%23yocto.2016-12-16.log.html">&#171; Friday, 2016-12-16</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-18.log.html">Sunday, 2016-12-18 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-12-17T00:16:32"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-12-17T00:16:32" class="time">00:16</a></td></tr>
+<tr id="t2016-12-17T02:03:26"><th class="nick" style="background: #407a40">zzeroo</th><td class="text" style="color: #407a40">Does someone use systemd/netword's resolv.conf feature. I am especially interested how `ln -s /usr/lib/systemd/resolv.conf /etc/resolv.conf` is handled</td><td class="time"><a href="#t2016-12-17T02:03:26" class="time">02:03</a></td></tr>
+<tr id="t2016-12-17T02:37:41"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">zzeroo: "[OE-core] [PATCH] systemd: point to correct resolv.conf when resolved is enabled" on the oe-core mailing list may be of interest.</td><td class="time"><a href="#t2016-12-17T02:37:41" class="time">02:37</a></td></tr>
+<tr id="t2016-12-17T02:38:10"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">zzeroo: <a href="https://patchwork.openembedded.org/patch/135223/" rel="nofollow">https://patchwork.openembedded.org/patch/135223/</a></td><td class="time"><a href="#t2016-12-17T02:38:10" class="time">02:38</a></td></tr>
+<tr id="t2016-12-17T02:40:21"><th class="nick" style="background: #407a40">zzeroo</th><td class="text" style="color: #407a40">kergoth: thank you. damn bleeding edge ^^.</td><td class="time"><a href="#t2016-12-17T02:40:21" class="time">02:40</a></td></tr>
+<tr id="t2016-12-17T02:40:30"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">np</td><td class="time"><a href="#t2016-12-17T02:40:30" class="time">02:40</a></td></tr>
+<tr id="t2016-12-17T04:31:10"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">kergoth: no immediate ideas, but that seems like possibly something ran outside of pseudo and replaced things with symlinks?</td><td class="time"><a href="#t2016-12-17T04:31:10" class="time">04:31</a></td></tr>
+<tr id="t2016-12-17T04:31:20"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">Like, there were previously files, and they got replaced, or vice versa.</td><td class="time"><a href="#t2016-12-17T04:31:20" class="time">04:31</a></td></tr>
+<tr id="t2016-12-17T04:40:46"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">seebs: nope, the dir was empty and was only written to by update-ca-certificates, which is only run from a postinst at do_rootfs time</td><td class="time"><a href="#t2016-12-17T04:40:46" class="time">04:40</a></td></tr>
+<tr id="t2016-12-17T04:40:47"><td class="action" colspan="2">* kergoth shrugs</td><td><a href="#t2016-12-17T04:40:47" class="time">04:40</a></td></tr>
+<tr id="t2016-12-17T04:41:53"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">hmm</td><td class="time"><a href="#t2016-12-17T04:41:53" class="time">04:41</a></td></tr>
+<tr id="t2016-12-17T04:42:10"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">interesting. it's possible there's a bug in the symlink handling, but it seems sorta unlikely-ish?</td><td class="time"><a href="#t2016-12-17T04:42:10" class="time">04:42</a></td></tr>
+<tr id="t2016-12-17T04:42:26"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">also i am probably not functional right now, i'm travelling, and just got back to hotel after a 3-hour holiday party with dj.</td><td class="time"><a href="#t2016-12-17T04:42:26" class="time">04:42</a></td></tr>
+<tr id="t2016-12-17T04:42:41"><th class="nick" style="background: #818144">seebs</th><td class="text" style="color: #818144">and i have to be up in five hours for air travel. wheeeeeeee.</td><td class="time"><a href="#t2016-12-17T04:42:41" class="time">04:42</a></td></tr>
+<tr id="t2016-12-17T04:43:30"><th class="nick" style="background: #42427e">kergoth</th><td class="text" style="color: #42427e">no worries</td><td class="time"><a href="#t2016-12-17T04:43:30" class="time">04:43</a></td></tr>
+<tr id="t2016-12-17T19:27:25"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">zzeroo, try again. looks like things are working again</td><td class="time"><a href="#t2016-12-17T19:27:25" class="time">19:27</a></td></tr>
+<tr id="t2016-12-17T19:46:51"><th class="nick" style="background: #488888">zumbi</th><td class="text" style="color: #488888">armpit: yeah, it works for me again</td><td class="time"><a href="#t2016-12-17T19:46:51" class="time">19:46</a></td></tr>
+<tr id="t2016-12-17T21:31:15"><td class="nickchange" colspan="2">*** manuel__ is now known as manuel_</td><td><a href="#t2016-12-17T21:31:15" class="time">21:31</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-12-16.log.html">&#171; Friday, 2016-12-16</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-18.log.html">Sunday, 2016-12-18 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

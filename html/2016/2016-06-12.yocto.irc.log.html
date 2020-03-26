@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-06-12</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-06-12</h1>
+<div class="navigation"> <a href="%23yocto.2016-06-11.log.html">&#171; Saturday, 2016-06-11</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-13.log.html">Monday, 2016-06-13 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-06-12T01:06:11"><td class="part" colspan="2">*** aehs29 &lt;aehs29!aehernan@nat/intel/x-qtobgvlolxhgxrcs&gt; has left #yocto</td><td><a href="#t2016-06-12T01:06:11" class="time">01:06</a></td></tr>
+<tr id="t2016-06-12T07:21:08"><th class="nick" style="background: #407a40">olejl77</th><td class="text" style="color: #407a40">I have enabled systemd acording to: <a href="http://www.yoctoproject.org/docs/1.6/dev-manual/dev-manual.html#using-systemd-exclusively." rel="nofollow">http://www.yoctoproject.org/docs/1.6/dev-manual/dev-manual.html#using-systemd-exclusively.</a> systemd critical-chain gives me getty@tty1.service @5.168s. Line above says -getty.target @1min 30.530s. Does anyone know what could be the problem?</td><td class="time"><a href="#t2016-06-12T07:21:08" class="time">07:21</a></td></tr>
+<tr id="t2016-06-12T19:02:38"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">hi: i'm having a problem. When i want to build an image with "bitbake core-image-minimal" an error arrises stating it cannot find layer.conf... any hints?</td><td class="time"><a href="#t2016-06-12T19:02:38" class="time">19:02</a></td></tr>
+<tr id="t2016-06-12T19:02:56"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">it's the same if i pass another target</td><td class="time"><a href="#t2016-06-12T19:02:56" class="time">19:02</a></td></tr>
+<tr id="t2016-06-12T19:43:29"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">ani help pls?</td><td class="time"><a href="#t2016-06-12T19:43:29" class="time">19:43</a></td></tr>
+<tr id="t2016-06-12T19:43:33"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">any*</td><td class="time"><a href="#t2016-06-12T19:43:33" class="time">19:43</a></td></tr>
+<tr id="t2016-06-12T21:14:43"><th class="nick" style="background: #818144">TwisteR</th><td class="text" style="color: #818144">pablo_: maybe, there is indeed no layer.conf in some of your layers?</td><td class="time"><a href="#t2016-06-12T21:14:43" class="time">21:14</a></td></tr>
+<tr id="t2016-06-12T21:34:22"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">TwisteR: thanks for the answer. I looked at bblayers and one directory was wrong... now it works!</td><td class="time"><a href="#t2016-06-12T21:34:22" class="time">21:34</a></td></tr>
+<tr id="t2016-06-12T21:34:48"><th class="nick" style="background: #818144">TwisteR</th><td class="text" style="color: #818144">great!</td><td class="time"><a href="#t2016-06-12T21:34:48" class="time">21:34</a></td></tr>
+<tr id="t2016-06-12T22:01:20"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">hey... i've got another problem (sorry i'm a noob). I was working with meta-intel-iot-devkit, but now i wanted to write my custom recipe, just with a recipe for image and a blinky program... once i have the image, i have no rc.d nor /etc/init.d directory... what happened?</td><td class="time"><a href="#t2016-06-12T22:01:20" class="time">22:01</a></td></tr>
+<tr id="t2016-06-12T22:24:41"><th class="nick" style="background: #854685">berte</th><td class="text" style="color: #854685">hi all, I'm getting error under Gentoo while trying bitmake do_compile for perl package which issue regarding libnm.so any idea would be great, <a href="http://pastebin.com/RDHgdEnF" rel="nofollow">http://pastebin.com/RDHgdEnF</a></td><td class="time"><a href="#t2016-06-12T22:24:41" class="time">22:24</a></td></tr>
+<tr id="t2016-06-12T22:53:01"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">hey, i've solver my previous problem. But now, i've written a script that executes a led blinking program... however, as blink is inside a while(1), startup takes 5 minutes in ending (think it's waiting for the script to finish)... how can i make it run in background?</td><td class="time"><a href="#t2016-06-12T22:53:01" class="time">22:53</a></td></tr>
+<tr id="t2016-06-12T22:55:51"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">it says A start job is running for (null)</td><td class="time"><a href="#t2016-06-12T22:55:51" class="time">22:55</a></td></tr>
+<tr id="t2016-06-12T23:13:56"><td class="other" colspan="2">-YoctoAutoBuilder- build #214 of nightly-checkuri is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/214" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/214</a></td><td><a href="#t2016-06-12T23:13:56" class="time">23:13</a></td></tr>
+<tr id="t2016-06-12T23:14:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #807 of nightly-intel-gpl is complete: Failure [failed BuildImages BuildImages_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/807" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-intel-gpl/builds/807</a></td><td><a href="#t2016-06-12T23:14:19" class="time">23:14</a></td></tr>
+<tr id="t2016-06-12T23:22:16"><th class="nick" style="background: #488888">bluelightning</th><td class="text" style="color: #488888">pablo_: if you're using an initscript, probably you just have to run the program with " &amp;" at the end of the command to put it in the background</td><td class="time"><a href="#t2016-06-12T23:22:16" class="time">23:22</a></td></tr>
+<tr id="t2016-06-12T23:23:32"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">yes! thanks... that was it... i had completly forgotten about that!</td><td class="time"><a href="#t2016-06-12T23:23:32" class="time">23:23</a></td></tr>
+<tr id="t2016-06-12T23:29:43"><th class="nick" style="background: #42427e">pablo_</th><td class="text" style="color: #42427e">another question, how can i change grub.conf from my custom layer?</td><td class="time"><a href="#t2016-06-12T23:29:43" class="time">23:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-06-11.log.html">&#171; Saturday, 2016-06-11</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-13.log.html">Monday, 2016-06-13 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

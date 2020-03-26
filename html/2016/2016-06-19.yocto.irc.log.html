@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-06-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-06-19</h1>
+<div class="navigation"> <a href="%23yocto.2016-06-18.log.html">&#171; Saturday, 2016-06-18</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-20.log.html">Monday, 2016-06-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-06-19T01:41:32"><th class="nick" style="background: #407a40">soreau</th><td class="text" style="color: #407a40"><a href="https://software.intel.com/en-us/node/593591" rel="nofollow">https://software.intel.com/en-us/node/593591</a> says "Download the BSP source package edison-src.tgz from the Intel® Edison Software Downloads page." so I searched and found <a href="https://software.intel.com/en-us/iot/hardware/edison/downloads" rel="nofollow">https://software.intel.com/en-us/iot/hardware/edison/downloads</a> but there is no specific Board Support (or Source?) Package specifically labeled. I ended up grabbing a version through the link there titled 'Sources - GPL/GPL source files' and things seemed to be going well until</td><td class="time"><a href="#t2016-06-19T01:41:32" class="time">01:41</a></td></tr>
+<tr id="t2016-06-19T01:41:33"><th class="nick" style="background: #407a40">soreau</th><td class="text" style="color: #407a40">base-files_3.0.14.bb, do_package) failed with exit code '1'</td><td class="time"><a href="#t2016-06-19T01:41:33" class="time">01:41</a></td></tr>
+<tr id="t2016-06-19T03:08:23"><th class="nick" style="background: #407a40">soreau</th><td class="text" style="color: #407a40">now I get gcc-cross-initial_4.9.bb, do_compile) failed with exit code '1' with a myriad of 'undefined reference to'</td><td class="time"><a href="#t2016-06-19T03:08:23" class="time">03:08</a></td></tr>
+<tr id="t2016-06-19T03:09:13"><th class="nick" style="background: #407a40">soreau</th><td class="text" style="color: #407a40">is there any current legitimate guide for building an edison (kernel) image?</td><td class="time"><a href="#t2016-06-19T03:09:13" class="time">03:09</a></td></tr>
+<tr id="t2016-06-19T08:31:52"><th class="nick" style="background: #42427e">berte</th><td class="text" style="color: #42427e">hello everyone I'm gettin perl comiple error which is regarding to libnm (?) -&gt; <a href="http://pastebin.com/X7Wq0fpA" rel="nofollow">http://pastebin.com/X7Wq0fpA</a> any idea would be more than great</td><td class="time"><a href="#t2016-06-19T08:31:52" class="time">08:31</a></td></tr>
+<tr id="t2016-06-19T12:48:13"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-06-19T12:48:13" class="time">12:48</a></td></tr>
+<tr id="t2016-06-19T14:02:15"><td class="part" colspan="2">*** Amynka &lt;Amynka!~frozen@gentoo/developer/amynka&gt; has left #yocto</td><td><a href="#t2016-06-19T14:02:15" class="time">14:02</a></td></tr>
+<tr id="t2016-06-19T15:31:40"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-06-19T15:31:40" class="time">15:31</a></td></tr>
+<tr id="t2016-06-19T17:02:52"><td class="part" colspan="2">*** figiel &lt;figiel!~piotr@unaffiliated/figiel&gt; has left #yocto</td><td><a href="#t2016-06-19T17:02:52" class="time">17:02</a></td></tr>
+<tr id="t2016-06-19T18:50:14"><td class="nickchange" colspan="2">*** chep` is now known as chep</td><td><a href="#t2016-06-19T18:50:14" class="time">18:50</a></td></tr>
+<tr id="t2016-06-19T19:06:30"><td class="nickchange" colspan="2">*** mario-go` is now known as mario-goulart</td><td><a href="#t2016-06-19T19:06:30" class="time">19:06</a></td></tr>
+<tr id="t2016-06-19T19:41:12"><td class="part" colspan="2">*** Theremin &lt;Theremin!~amir@chello085216129094.chello.sk&gt; has left #yocto</td><td><a href="#t2016-06-19T19:41:12" class="time">19:41</a></td></tr>
+<tr id="t2016-06-19T20:43:55"><td class="nickchange" colspan="2">*** eyal__ is now known as ecohen</td><td><a href="#t2016-06-19T20:43:55" class="time">20:43</a></td></tr>
+<tr id="t2016-06-19T23:34:47"><th class="nick" style="background: #818144">dhirc</th><td class="text" style="color: #818144">I am building a pretty vanilla yocto image for the imx7 Sabre board (iMX7DSABRE). I am using the meta-fsl-arm layer from github and using the krogoth branch for all. The kernel is not booting, boot log here&nbsp;&nbsp;<a href="http://pastebin.com/mDMg3430" rel="nofollow">http://pastebin.com/mDMg3430</a> . After some googling it seems it has to do with the security settings and one poster said to add CONFIG_MX7_SEC to config. I am wondering where that define should be put in the Yocto tree?</td><td class="time"><a href="#t2016-06-19T23:34:47" class="time">23:34</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-06-18.log.html">&#171; Saturday, 2016-06-18</a> <a href="index.html">Index</a> <a href="%23yocto.2016-06-20.log.html">Monday, 2016-06-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

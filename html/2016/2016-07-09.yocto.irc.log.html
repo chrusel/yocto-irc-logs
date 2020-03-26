@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-07-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-07-09</h1>
+<div class="navigation"> <a href="%23yocto.2016-07-08.log.html">&#171; Friday, 2016-07-08</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-10.log.html">Sunday, 2016-07-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-07-09T00:57:20"><td class="part" colspan="2">*** tjamison &lt;tjamison!~tjamison@38.104.105.146&gt; has left #yocto</td><td><a href="#t2016-07-09T00:57:20" class="time">00:57</a></td></tr>
+<tr id="t2016-07-09T01:15:19"><td class="other" colspan="2">-YoctoAutoBuilder- build #583 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/583" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/583</a></td><td><a href="#t2016-07-09T01:15:19" class="time">01:15</a></td></tr>
+<tr id="t2016-07-09T03:39:11"><td class="other" colspan="2">-YoctoAutoBuilder- build #932 of nightly is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/932" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/932</a></td><td><a href="#t2016-07-09T03:39:11" class="time">03:39</a></td></tr>
+<tr id="t2016-07-09T07:35:06"><td class="part" colspan="2">*** townxelliot &lt;townxelliot!~ell@176.249.250.127&gt; has left #yocto</td><td><a href="#t2016-07-09T07:35:06" class="time">07:35</a></td></tr>
+<tr id="t2016-07-09T10:30:44"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">hi, i'm trying to create a recipe for the surf browser, but i'm unable to get it to compile, this is my bb-file: EXTRA_OEMAKE = "'CC=${CC}' 'PREFIX=${PKG_CONFIG_SYSROOT_DIR}/usr' 'X11INC=${PREFIX}/X11R6/include' 'X11LIB=${PREFIX}/X11R6/lib' 'INCS=-I. -I${PREFIX}/include -I${X11INC} ${GTKINC}' 'LIBS=-L${PREFIX}/lib -lc -L${X11LIB} -lX11 ${GTKLIB} -lgthread-2.0'"</td><td class="time"><a href="#t2016-07-09T10:30:44" class="time">10:30</a></td></tr>
+<tr id="t2016-07-09T10:30:48"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">woops</td><td class="time"><a href="#t2016-07-09T10:30:48" class="time">10:30</a></td></tr>
+<tr id="t2016-07-09T10:31:15"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">&gt; <a href="https://gist.github.com/willeponken/3b1dab48e882f5b5acb5a30edfe3f53e\#file-surf_git-bb" rel="nofollow">https://gist.github.com/willeponken/3b1dab48e882f5b5acb5a30edfe3f53e\#file-surf_git-bb</a></td><td class="time"><a href="#t2016-07-09T10:31:15" class="time">10:31</a></td></tr>
+<tr id="t2016-07-09T10:35:45"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">this is from log.do_compile:&nbsp;&nbsp;<a href="https://gist.github.com/willeponken/b3b5dd8f5ed4444aea2e3a9589ba1429" rel="nofollow">https://gist.github.com/willeponken/b3b5dd8f5ed4444aea2e3a9589ba1429</a></td><td class="time"><a href="#t2016-07-09T10:35:45" class="time">10:35</a></td></tr>
+<tr id="t2016-07-09T10:37:08"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">so it seems like it's unable to find gdk_seat_get_keyboard and gdk_display_get_default_seat - which should be in gdk_pixbuf (?)</td><td class="time"><a href="#t2016-07-09T10:37:08" class="time">10:37</a></td></tr>
+<tr id="t2016-07-09T10:43:47"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">oh wait, no it's defined in gtk-3.0/gdk/gdkdisplay.h</td><td class="time"><a href="#t2016-07-09T10:43:47" class="time">10:43</a></td></tr>
+<tr id="t2016-07-09T10:50:05"><th class="nick" style="background: #407a40">willeponken</th><td class="text" style="color: #407a40">Oh, think i found the problem, heh, gtk-3.0 pulls gdk 3.18, and gdk_display_get_default_seat came with 3.20</td><td class="time"><a href="#t2016-07-09T10:50:05" class="time">10:50</a></td></tr>
+<tr id="t2016-07-09T16:32:20"><td class="other" colspan="2">-YoctoAutoBuilder- build #933 of nightly is complete: Failure [failed]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly/builds/933" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly/builds/933</a></td><td><a href="#t2016-07-09T16:32:20" class="time">16:32</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-07-08.log.html">&#171; Friday, 2016-07-08</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-10.log.html">Sunday, 2016-07-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

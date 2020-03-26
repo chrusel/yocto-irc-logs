@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-07-30</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-07-30</h1>
+<div class="navigation"> <a href="%23yocto.2016-07-29.log.html">&#171; Friday, 2016-07-29</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-31.log.html">Sunday, 2016-07-31 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-07-30T01:51:54"><td class="other" colspan="2">-YoctoAutoBuilder- build #621 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/621" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-oe-selftest/builds/621</a></td><td><a href="#t2016-07-30T01:51:54" class="time">01:51</a></td></tr>
+<tr id="t2016-07-30T04:44:56"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">Hello, I have installed Fluidsynth onto an Intel Edison following this guide: &lt; <a href="http://www.instructables.com/id/MIDI-SoundFont-synthetizer-with-Intel-Edison-and-F/?ALLSTEPS" rel="nofollow">http://www.instructables.com/id/MIDI-SoundFont-synthetizer-with-Intel-Edison-and-F/?ALLSTEPS</a> &gt;.</td><td class="time"><a href="#t2016-07-30T04:44:56" class="time">04:44</a></td></tr>
+<tr id="t2016-07-30T04:45:12"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">I am trying to compile this: &lt; <a href="http://fluidsynth.sourceforge.net/api/index.html#Sequencer" rel="nofollow">http://fluidsynth.sourceforge.net/api/index.html#Sequencer</a> &gt;, I have an error that is probably very easy to resolve.&nbsp;&nbsp;The code compiles successfully, but when I run it I get the error: "error while loading shared libraries: libfluidsynth.so.1: cannot open shared object file: No such file or directory"&nbsp;&nbsp;How do I resolve this error?&nbsp;&nbsp;I'm sure I just need to put some file in the right place or add a path s</td><td class="time"><a href="#t2016-07-30T04:45:12" class="time">04:45</a></td></tr>
+<tr id="t2016-07-30T05:11:42"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">Technicus: how did you install/build it</td><td class="time"><a href="#t2016-07-30T05:11:42" class="time">05:11</a></td></tr>
+<tr id="t2016-07-30T05:12:21"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">cross compile or did you compile it on edison itself ?</td><td class="time"><a href="#t2016-07-30T05:12:21" class="time">05:12</a></td></tr>
+<tr id="t2016-07-30T05:13:02"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">its native I see</td><td class="time"><a href="#t2016-07-30T05:13:02" class="time">05:13</a></td></tr>
+<tr id="t2016-07-30T05:14:07"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">khem: followed the tutorial: `#tar zxvf fluidsynth-1.1.6.tar.gz`, `#cd fluidsynth-1.1.6`, `#./configure`, `#make`, `#make check`, `#make install`, `#make clean`.</td><td class="time"><a href="#t2016-07-30T05:14:07" class="time">05:14</a></td></tr>
+<tr id="t2016-07-30T05:14:22"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">ok and it worked ?</td><td class="time"><a href="#t2016-07-30T05:14:22" class="time">05:14</a></td></tr>
+<tr id="t2016-07-30T05:18:40"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">can you try find /usr -name "libfluidsynth.so.1"</td><td class="time"><a href="#t2016-07-30T05:18:40" class="time">05:18</a></td></tr>
+<tr id="t2016-07-30T05:24:49"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I think its ending up in /usr/local/lib64 and its not in LD_LIBRARY_PATH</td><td class="time"><a href="#t2016-07-30T05:24:49" class="time">05:24</a></td></tr>
+<tr id="t2016-07-30T05:24:59"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">so set this</td><td class="time"><a href="#t2016-07-30T05:24:59" class="time">05:24</a></td></tr>
+<tr id="t2016-07-30T05:25:21"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64</td><td class="time"><a href="#t2016-07-30T05:25:21" class="time">05:25</a></td></tr>
+<tr id="t2016-07-30T05:25:29"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">and rerun your app</td><td class="time"><a href="#t2016-07-30T05:25:29" class="time">05:25</a></td></tr>
+<tr id="t2016-07-30T05:25:56"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">Technicus: try these steps above</td><td class="time"><a href="#t2016-07-30T05:25:56" class="time">05:25</a></td></tr>
+<tr id="t2016-07-30T05:29:25"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">I think I screwed up the file.</td><td class="time"><a href="#t2016-07-30T05:29:25" class="time">05:29</a></td></tr>
+<tr id="t2016-07-30T05:38:33"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">khem: It appears as though the root directory is full.</td><td class="time"><a href="#t2016-07-30T05:38:33" class="time">05:38</a></td></tr>
+<tr id="t2016-07-30T05:38:53"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">Is there a package install cache that I can remove?</td><td class="time"><a href="#t2016-07-30T05:38:53" class="time">05:38</a></td></tr>
+<tr id="t2016-07-30T05:48:39"><th class="nick" style="background: #407a40">Technicus</th><td class="text" style="color: #407a40">I can't do anything now that the root is full.</td><td class="time"><a href="#t2016-07-30T05:48:39" class="time">05:48</a></td></tr>
+<tr id="t2016-07-30T05:49:39"><td class="part" colspan="2">*** soloz &lt;soloz!~i@unaffiliated/solol&gt; has left #yocto</td><td><a href="#t2016-07-30T05:49:39" class="time">05:49</a></td></tr>
+<tr id="t2016-07-30T10:59:47"><th class="nick" style="background: #818144">essa</th><td class="text" style="color: #818144">is there anybody tried to build gnome-shell without x11 dependency?</td><td class="time"><a href="#t2016-07-30T10:59:47" class="time">10:59</a></td></tr>
+<tr id="t2016-07-30T11:07:46"><td class="nickchange" colspan="2">*** tlwoerner_ is now known as twoerner</td><td><a href="#t2016-07-30T11:07:46" class="time">11:07</a></td></tr>
+<tr id="t2016-07-30T11:09:53"><td class="nickchange" colspan="2">*** twoerner is now known as tlwoerner</td><td><a href="#t2016-07-30T11:09:53" class="time">11:09</a></td></tr>
+<tr id="t2016-07-30T12:09:07"><td class="nickchange" colspan="2">*** jkroon is now known as Guest33590</td><td><a href="#t2016-07-30T12:09:07" class="time">12:09</a></td></tr>
+<tr id="t2016-07-30T12:24:34"><td class="nickchange" colspan="2">*** Guest33590 is now known as jkroon_</td><td><a href="#t2016-07-30T12:24:34" class="time">12:24</a></td></tr>
+<tr id="t2016-07-30T18:14:57"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-07-30T18:14:57" class="time">18:14</a></td></tr>
+<tr id="t2016-07-30T19:14:11"><th class="nick" style="background: #854685">snouto</th><td class="text" style="color: #854685">hello everyone</td><td class="time"><a href="#t2016-07-30T19:14:11" class="time">19:14</a></td></tr>
+<tr id="t2016-07-30T19:52:07"><th class="nick" style="background: #488888">cslangmead</th><td class="text" style="color: #488888">Hi I'm very new to the yocto project and linux.&nbsp;&nbsp;I am trying to build linux for an inhand fingertip4 with a Marvell PXA270 Processor.&nbsp;&nbsp;I'm having trouble determing if there is a supporting BSP or i have to create one.&nbsp;&nbsp;cCan someone provide some guidence?&nbsp;&nbsp;Thank you in advance</td><td class="time"><a href="#t2016-07-30T19:52:07" class="time">19:52</a></td></tr>
+<tr id="t2016-07-30T19:54:41"><th class="nick" style="background: #488888">cslangmead</th><td class="text" style="color: #488888">The first thing is was gonna do is to build a minimal yocto linux with the beaglebone target.&nbsp;&nbsp;This seems to be the ony ARM BSP available.</td><td class="time"><a href="#t2016-07-30T19:54:41" class="time">19:54</a></td></tr>
+<tr id="t2016-07-30T21:25:27"><td class="part" colspan="2">*** LocutusOfBorg &lt;LocutusOfBorg!~Gianfranc@ubuntu/member/locutusofborg&gt; has left #yocto</td><td><a href="#t2016-07-30T21:25:27" class="time">21:25</a></td></tr>
+<tr id="t2016-07-30T22:21:09"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-07-30T22:21:09" class="time">22:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-07-29.log.html">&#171; Friday, 2016-07-29</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-31.log.html">Sunday, 2016-07-31 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-07-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-07-24</h1>
+<div class="navigation"> <a href="%23yocto.2016-07-23.log.html">&#171; Saturday, 2016-07-23</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-25.log.html">Monday, 2016-07-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-07-24T00:41:01"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">neverpanic: So I should not set PACKAGES="my list" either, because that will override the default value, including the P_B_P value, right. Amongst others.</td><td class="time"><a href="#t2016-07-24T00:41:01" class="time">00:41</a></td></tr>
+<tr id="t2016-07-24T00:43:10"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Point is, there is no ${PN} package in my case, so I set PACKAGE="${PN}-a ${PN}-b". Which is proabably fine, as I control the packages and the sequence. But by doing this I remove the -dbg, -dev and -doc (plus some other). Is that frowned upon to do?</td><td class="time"><a href="#t2016-07-24T00:43:10" class="time">00:43</a></td></tr>
+<tr id="t2016-07-24T00:46:28"><th class="nick" style="background: #42427e">neverpanic</th><td class="text" style="color: #42427e">Yes</td><td class="time"><a href="#t2016-07-24T00:46:28" class="time">00:46</a></td></tr>
+<tr id="t2016-07-24T00:46:41"><th class="nick" style="background: #42427e">neverpanic</th><td class="text" style="color: #42427e">Instead just mark ${PN} as empty, by setting ALLOW_EMPTY_$PN</td><td class="time"><a href="#t2016-07-24T00:46:41" class="time">00:46</a></td></tr>
+<tr id="t2016-07-24T00:48:04"><td class="nickchange" colspan="2">*** cesdv is now known as linulin</td><td><a href="#t2016-07-24T00:48:04" class="time">00:48</a></td></tr>
+<tr id="t2016-07-24T00:57:25"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">neverpanic: All right. Thanks. Change applied</td><td class="time"><a href="#t2016-07-24T00:57:25" class="time">00:57</a></td></tr>
+<tr id="t2016-07-24T00:59:38"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">(It's a proposed subject to put into "recipes 101" or "recipe writing best practices". It's these small policies like this that makes out a great recipe from a not no great recipe, right.)</td><td class="time"><a href="#t2016-07-24T00:59:38" class="time">00:59</a></td></tr>
+<tr id="t2016-07-24T22:15:00"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">sveinse: stay with default packaging as much as you can</td><td class="time"><a href="#t2016-07-24T22:15:00" class="time">22:15</a></td></tr>
+<tr id="t2016-07-24T22:15:40"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">you can add extra packages PACKAGES += "foo" will add foo to the default packageset&nbsp;&nbsp;but override with care</td><td class="time"><a href="#t2016-07-24T22:15:40" class="time">22:15</a></td></tr>
+<tr id="t2016-07-24T22:16:01"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">so you can really package at a fine granularity</td><td class="time"><a href="#t2016-07-24T22:16:01" class="time">22:16</a></td></tr>
+<tr id="t2016-07-24T23:18:14"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Does bitbake have a function for "remote/local" sstate cache?</td><td class="time"><a href="#t2016-07-24T23:18:14" class="time">23:18</a></td></tr>
+<tr id="t2016-07-24T23:20:04"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Our dev team is widespread physically. We will setup a central build server to host a sstate cache to speed up dev's build. However, downloading from the cache is still expensive, e.g. via VPN, so once downloaded, you should buffer them locally for later reuse.</td><td class="time"><a href="#t2016-07-24T23:20:04" class="time">23:20</a></td></tr>
+<tr id="t2016-07-24T23:22:20"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Like a tier1 and tier2 type of caching scheme</td><td class="time"><a href="#t2016-07-24T23:22:20" class="time">23:22</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-07-23.log.html">&#171; Saturday, 2016-07-23</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-25.log.html">Monday, 2016-07-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

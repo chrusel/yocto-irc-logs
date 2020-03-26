@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2016-04-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2016-04-09</h1>
+<div class="navigation"> <a href="%23yocto.2016-04-08.log.html">&#171; Friday, 2016-04-08</a> <a href="index.html">Index</a> <a href="%23yocto.2016-04-10.log.html">Sunday, 2016-04-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-04-09T03:46:30"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-04-09T03:46:30" class="time">03:46</a></td></tr>
+<tr id="t2016-04-09T06:52:00"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-04-09T06:52:00" class="time">06:52</a></td></tr>
+<tr id="t2016-04-09T15:41:07"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">hey all, I've got a case were I'm building a library that needs to be linked to another target and the pkgconfig that its installing seems to be host-specific (e.g. /usr/lib/libqpid-proton.so for its library, rather than an absolute path to where the file is in the sysroot)</td><td class="time"><a href="#t2016-04-09T15:41:07" class="time">15:41</a></td></tr>
+<tr id="t2016-04-09T15:41:51"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">should the cmake.bbclass be appending that path to whatever path it finds?</td><td class="time"><a href="#t2016-04-09T15:41:51" class="time">15:41</a></td></tr>
+<tr id="t2016-04-09T15:42:00"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">appending the sysroot that is</td><td class="time"><a href="#t2016-04-09T15:42:00" class="time">15:42</a></td></tr>
+<tr id="t2016-04-09T17:11:19"><td class="action" colspan="2">* nerdboy noticing the xorg-server fail on master...</td><td><a href="#t2016-04-09T17:11:19" class="time">17:11</a></td></tr>
+<tr id="t2016-04-09T17:13:56"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">sorry, wrong build - oe-core jethro</td><td class="time"><a href="#t2016-04-09T17:13:56" class="time">17:13</a></td></tr>
+<tr id="t2016-04-09T17:15:14"><th class="nick" style="background: #42427e">nerdboy</th><td class="text" style="color: #42427e">xorg-server-1.17.2/hw/xfree86/drivers/modesetting/drmmode_display.c &lt;= Werror implicit declaration</td><td class="time"><a href="#t2016-04-09T17:15:14" class="time">17:15</a></td></tr>
+<tr id="t2016-04-09T18:03:12"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">mbroadst: we export PKG_CONFIG_SYSROOT so pkg-config should be prepending that to paths in cflags and libs. if that path is in a different variable in the .pc, though, it won't be automatically prefixed, and you'd need to patch the configure.{ac,in} to prefix it with that variable</td><td class="time"><a href="#t2016-04-09T18:03:12" class="time">18:03</a></td></tr>
+<tr id="t2016-04-09T18:03:38"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">so basically you need to look at how cmake is calling pkg-config, afaict</td><td class="time"><a href="#t2016-04-09T18:03:38" class="time">18:03</a></td></tr>
+<tr id="t2016-04-09T18:03:47"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">for that particular project</td><td class="time"><a href="#t2016-04-09T18:03:47" class="time">18:03</a></td></tr>
+<tr id="t2016-04-09T18:14:37"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">kergoth: I haven't really been able to figure out what's going on</td><td class="time"><a href="#t2016-04-09T18:14:37" class="time">18:14</a></td></tr>
+<tr id="t2016-04-09T18:15:11"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">I was taking a look at their cmake module to find the proton lib, and it does so via pkgconfig</td><td class="time"><a href="#t2016-04-09T18:15:11" class="time">18:15</a></td></tr>
+<tr id="t2016-04-09T18:15:40"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">the pkgconfig is in the sysroot, and retuning values like a libdir of /usr/lib</td><td class="time"><a href="#t2016-04-09T18:15:40" class="time">18:15</a></td></tr>
+<tr id="t2016-04-09T18:15:53"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">the build is failing because it can't find /usr/lib/libqpid-proton.so</td><td class="time"><a href="#t2016-04-09T18:15:53" class="time">18:15</a></td></tr>
+<tr id="t2016-04-09T18:17:21"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">kergoth: its getting that all set here: <a href="https://github.com/apache/qpid/blob/trunk/qpid/cpp/CMakeModules/FindProton.cmake#L60" rel="nofollow">https://github.com/apache/qpid/blob/trunk/qpid/cpp/CMakeModules/FindProton.cmake#L60</a></td><td class="time"><a href="#t2016-04-09T18:17:21" class="time">18:17</a></td></tr>
+<tr id="t2016-04-09T18:17:49"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">all I can really think of its trying to manually patch that to prepend the sysroot since it seems otherwise its not quite working</td><td class="time"><a href="#t2016-04-09T18:17:49" class="time">18:17</a></td></tr>
+<tr id="t2016-04-09T18:21:21"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">pkg_check_modules and find_library should both be calling pkg-config in the correct ways to obey PKG_CONFIG_SYSROOT, i doubt the problem lies there</td><td class="time"><a href="#t2016-04-09T18:21:21" class="time">18:21</a></td></tr>
+<tr id="t2016-04-09T18:24:43"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">so you would lean towards the cmake module in this library not looking it up properly?</td><td class="time"><a href="#t2016-04-09T18:24:43" class="time">18:24</a></td></tr>
+<tr id="t2016-04-09T18:30:48"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">kergoth: or rather than going through the huge testing cycle I have right now, is it your understanding that if everything "went right" that Proton_LIBRARIES there should be ${PKG_CONFIG_SYSROOT}/usr/lib/libqpid-proton.so ?</td><td class="time"><a href="#t2016-04-09T18:30:48" class="time">18:30</a></td></tr>
+<tr id="t2016-04-09T19:30:11"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">kergoth: yeah I can confirm that the values that make it into the CMakeCache.txt are just plain `/usr/lib` etc</td><td class="time"><a href="#t2016-04-09T19:30:11" class="time">19:30</a></td></tr>
+<tr id="t2016-04-09T19:30:27"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">I also can confirm that this is being run as the pkg-config: /build/build/tmp-glibc/sysroots/x86_64-linux/usr/bin/pkg-config, so the correct pkg-config</td><td class="time"><a href="#t2016-04-09T19:30:27" class="time">19:30</a></td></tr>
+<tr id="t2016-04-09T19:31:15"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">man I've been working on this since 8am hah</td><td class="time"><a href="#t2016-04-09T19:31:15" class="time">19:31</a></td></tr>
+<tr id="t2016-04-09T20:51:43"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">kergoth: ah jeez what a pain, the proton library was installing a custom .cmake file which was overriding the pkg-config data</td><td class="time"><a href="#t2016-04-09T20:51:43" class="time">20:51</a></td></tr>
+<tr id="t2016-04-09T20:51:51"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">remove the .cmake file, pkg-config works</td><td class="time"><a href="#t2016-04-09T20:51:51" class="time">20:51</a></td></tr>
+<tr id="t2016-04-09T20:52:15"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">ugh, lame. nicely spotted, though</td><td class="time"><a href="#t2016-04-09T20:52:15" class="time">20:52</a></td></tr>
+<tr id="t2016-04-09T20:57:00"><th class="nick" style="background: #407a40">mbroadst</th><td class="text" style="color: #407a40">hey what are saturdays for :)</td><td class="time"><a href="#t2016-04-09T20:57:00" class="time">20:57</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-04-08.log.html">&#171; Friday, 2016-04-08</a> <a href="index.html">Index</a> <a href="%23yocto.2016-04-10.log.html">Sunday, 2016-04-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

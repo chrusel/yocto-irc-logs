@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-07-17</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-07-17</h1>
+<div class="navigation"> <a href="%23yocto.2016-07-16.log.html">&#171; Saturday, 2016-07-16</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-18.log.html">Monday, 2016-07-18 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-07-17T00:23:43"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">I found it in meta/classes/base.bbclass, oe_runmake_call(). And once more _prepend comes to the rescue.</td><td class="time"><a href="#t2016-07-17T00:23:43" class="time">00:23</a></td></tr>
+<tr id="t2016-07-17T00:24:48"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Why is doing MAKE_prepend="myfilter " and such frowned upon and considered a hack? I does exactly what I want it to</td><td class="time"><a href="#t2016-07-17T00:24:48" class="time">00:24</a></td></tr>
+<tr id="t2016-07-17T00:49:45"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-07-17T00:49:45" class="time">00:49</a></td></tr>
+<tr id="t2016-07-17T03:42:16"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-07-17T03:42:16" class="time">03:42</a></td></tr>
+<tr id="t2016-07-17T03:59:22"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2016-07-17T03:59:22" class="time">03:59</a></td></tr>
+<tr id="t2016-07-17T09:23:20"><td class="part" colspan="2">*** aboseley &lt;aboseley!~kvirc@101.165.216.251&gt; has left #yocto</td><td><a href="#t2016-07-17T09:23:20" class="time">09:23</a></td></tr>
+<tr id="t2016-07-17T13:53:36"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">How far back do I need to take the build to change from deb to ipk?</td><td class="time"><a href="#t2016-07-17T13:53:36" class="time">13:53</a></td></tr>
+<tr id="t2016-07-17T14:19:26"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">In Yocto methodology, how do you resolve package file collisions? Strangely enough I got a collision on /var/lib/alsa/asound.state when switching from deb to ipk.</td><td class="time"><a href="#t2016-07-17T14:19:26" class="time">14:19</a></td></tr>
+<tr id="t2016-07-17T14:21:10"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">The collision is valid, alsa-state provides it, and a machine specific package named asound-defaults provides it.</td><td class="time"><a href="#t2016-07-17T14:21:10" class="time">14:21</a></td></tr>
+<tr id="t2016-07-17T14:23:23"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Is the Yocto intention, that I should "override" (bbappend?) the alsa-state package in a custom BSP?</td><td class="time"><a href="#t2016-07-17T14:23:23" class="time">14:23</a></td></tr>
+<tr id="t2016-07-17T17:57:13"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">sveinse: if you change packaging format build system will take care of rebuilding needed bits. mostly only the packaging tasks will rerun</td><td class="time"><a href="#t2016-07-17T17:57:13" class="time">17:57</a></td></tr>
+<tr id="t2016-07-17T17:58:25"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">sveinse: a file should only belong to one package if you have mutliple providers then you can user the ALTERNATIVES contructs, looks at busybox for an example, how it fills in the gaps for missing coreutils</td><td class="time"><a href="#t2016-07-17T17:58:25" class="time">17:58</a></td></tr>
+<tr id="t2016-07-17T19:02:07"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">what do I need to get qt5 compiled under qemu86-64? That is, how do I get something with opengl support?</td><td class="time"><a href="#t2016-07-17T19:02:07" class="time">19:02</a></td></tr>
+<tr id="t2016-07-17T19:22:32"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2016-07-17T19:22:32" class="time">19:22</a></td></tr>
+<tr id="t2016-07-17T22:08:41"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">nah, forget it. no more qemu64 attempts in this round</td><td class="time"><a href="#t2016-07-17T22:08:41" class="time">22:08</a></td></tr>
+<tr id="t2016-07-17T22:45:04"><td class="nickchange" colspan="2">*** neverpan1c is now known as neverpanic</td><td><a href="#t2016-07-17T22:45:04" class="time">22:45</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-07-16.log.html">&#171; Saturday, 2016-07-16</a> <a href="index.html">Index</a> <a href="%23yocto.2016-07-18.log.html">Monday, 2016-07-18 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

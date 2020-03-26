@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2016-12-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2016-12-26</h1>
+<div class="navigation"> <a href="%23yocto.2016-12-25.log.html">&#171; Sunday, 2016-12-25</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-27.log.html">Tuesday, 2016-12-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-12-26T03:21:37"><td class="nickchange" colspan="2">*** stryx`_ is now known as stryx`</td><td><a href="#t2016-12-26T03:21:37" class="time">03:21</a></td></tr>
+<tr id="t2016-12-26T06:53:25"><td class="nickchange" colspan="2">*** denix0 is now known as denix</td><td><a href="#t2016-12-26T06:53:25" class="time">06:53</a></td></tr>
+<tr id="t2016-12-26T06:53:30"><td class="nickchange" colspan="2">*** kergoth` is now known as kergoth</td><td><a href="#t2016-12-26T06:53:30" class="time">06:53</a></td></tr>
+<tr id="t2016-12-26T10:40:45"><th class="nick" style="background: #407a40">ttllkk</th><td class="text" style="color: #407a40">Why could this be failing?</td><td class="time"><a href="#t2016-12-26T10:40:45" class="time">10:40</a></td></tr>
+<tr id="t2016-12-26T10:40:45"><th class="nick" style="background: #407a40">ttllkk</th><td class="text" style="color: #407a40">do_unpack_append() {&nbsp;&nbsp;&nbsp;&nbsp; echo "test!" }</td><td class="time"><a href="#t2016-12-26T10:40:45" class="time">10:40</a></td></tr>
+<tr id="t2016-12-26T10:40:55"><th class="nick" style="background: #407a40">ttllkk</th><td class="text" style="color: #407a40">ERROR: ExpansionError during parsing /home/jdepedro/dey-2.0/sources/meta-digi/meta-digi-dey/recipes-digi/swu-images/dey-image-qt-swu.bb: Failure expanding variable do_unpack: SyntaxError: invalid syntax (&lt;string&gt;, line 3)</td><td class="time"><a href="#t2016-12-26T10:40:55" class="time">10:40</a></td></tr>
+<tr id="t2016-12-26T10:41:06"><th class="nick" style="background: #407a40">ttllkk</th><td class="text" style="color: #407a40">I think it is trying to parse it as python instead of bash... could that be the case?</td><td class="time"><a href="#t2016-12-26T10:41:06" class="time">10:41</a></td></tr>
+<tr id="t2016-12-26T10:47:52"><th class="nick" style="background: #42427e">boucman_work</th><td class="text" style="color: #42427e">I don't know if you can _append some bash code to a python function</td><td class="time"><a href="#t2016-12-26T10:47:52" class="time">10:47</a></td></tr>
+<tr id="t2016-12-26T10:48:24"><th class="nick" style="background: #42427e">boucman_work</th><td class="text" style="color: #42427e">you can check the original content of your do_unpack using bitbake -e &lt;package&gt; just to be sure</td><td class="time"><a href="#t2016-12-26T10:48:24" class="time">10:48</a></td></tr>
+<tr id="t2016-12-26T11:00:05"><th class="nick" style="background: #407a40">ttllkk</th><td class="text" style="color: #407a40">boucman_work: thanks</td><td class="time"><a href="#t2016-12-26T11:00:05" class="time">11:00</a></td></tr>
+<tr id="t2016-12-26T11:30:40"><th class="nick" style="background: #42427e">boucman_work</th><td class="text" style="color: #42427e">np</td><td class="time"><a href="#t2016-12-26T11:30:40" class="time">11:30</a></td></tr>
+<tr id="t2016-12-26T11:48:58"><th class="nick" style="background: #818144">sereinity</th><td class="text" style="color: #818144">hi</td><td class="time"><a href="#t2016-12-26T11:48:58" class="time">11:48</a></td></tr>
+<tr id="t2016-12-26T11:49:00"><th class="nick" style="background: #818144">sereinity</th><td class="text" style="color: #818144">maybe I'm not on the right place</td><td class="time"><a href="#t2016-12-26T11:49:00" class="time">11:49</a></td></tr>
+<tr id="t2016-12-26T11:49:20"><th class="nick" style="background: #818144">sereinity</th><td class="text" style="color: #818144">but I can't reach git://git.openembedded.org/…</td><td class="time"><a href="#t2016-12-26T11:49:20" class="time">11:49</a></td></tr>
+<tr id="t2016-12-26T11:49:40"><th class="nick" style="background: #818144">sereinity</th><td class="text" style="color: #818144">(it works via http protocol, but not with git)</td><td class="time"><a href="#t2016-12-26T11:49:40" class="time">11:49</a></td></tr>
+<tr id="t2016-12-26T11:50:16"><th class="nick" style="background: #818144">sereinity</th><td class="text" style="color: #818144">(tried through multiple ISP)</td><td class="time"><a href="#t2016-12-26T11:50:16" class="time">11:50</a></td></tr>
+<tr id="t2016-12-26T13:17:00"><th class="nick" style="background: #854685">CoLa</th><td class="text" style="color: #854685">I have a small patch that I would like to propose for the cmake toolchain in Poky, is sending the patch to the mailing list the right step? or do you have some dedicated review tooling?</td><td class="time"><a href="#t2016-12-26T13:17:00" class="time">13:17</a></td></tr>
+<tr id="t2016-12-26T13:19:37"><th class="nick" style="background: #42427e">boucman_work</th><td class="text" style="color: #42427e">CoLa: ML is the right steop</td><td class="time"><a href="#t2016-12-26T13:19:37" class="time">13:19</a></td></tr>
+<tr id="t2016-12-26T13:20:53"><th class="nick" style="background: #854685">CoLa</th><td class="text" style="color: #854685">thanks</td><td class="time"><a href="#t2016-12-26T13:20:53" class="time">13:20</a></td></tr>
+<tr id="t2016-12-26T14:12:50"><td class="nickchange" colspan="2">*** manuel__ is now known as manuel_</td><td><a href="#t2016-12-26T14:12:50" class="time">14:12</a></td></tr>
+<tr id="t2016-12-26T15:08:07"><th class="nick" style="background: #488888">kergoth</th><td class="text" style="color: #488888">morning</td><td class="time"><a href="#t2016-12-26T15:08:07" class="time">15:08</a></td></tr>
+<tr id="t2016-12-26T15:08:09"><td class="action" colspan="2">* kergoth yawns</td><td><a href="#t2016-12-26T15:08:09" class="time">15:08</a></td></tr>
+<tr id="t2016-12-26T23:32:01"><th class="nick" style="background: #8c4a4a">zauberstuhl</th><td class="text" style="color: #8c4a4a">hey all, has anyone experience with compiling stuff with ruby? how can I compile gems without using the native headers? I always run into the sanity check "size of array 'ruby_check_sizeof_long' is negative"</td><td class="time"><a href="#t2016-12-26T23:32:01" class="time">23:32</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-12-25.log.html">&#171; Sunday, 2016-12-25</a> <a href="index.html">Index</a> <a href="%23yocto.2016-12-27.log.html">Tuesday, 2016-12-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

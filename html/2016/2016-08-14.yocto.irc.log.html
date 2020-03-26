@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-08-14</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-08-14</h1>
+<div class="navigation"> <a href="%23yocto.2016-08-13.log.html">&#171; Saturday, 2016-08-13</a> <a href="index.html">Index</a> <a href="%23yocto.2016-08-15.log.html">Monday, 2016-08-15 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-08-14T09:41:21"><td class="nickchange" colspan="2">*** sujith_h_ is now known as sujith_h</td><td><a href="#t2016-08-14T09:41:21" class="time">09:41</a></td></tr>
+<tr id="t2016-08-14T14:50:31"><th class="nick" style="background: #407a40">c0d3st0rm</th><td class="text" style="color: #407a40">hi all - I'm trying to build an image for my Intel Edison, however compiling fails when ncurses is reached (log: <a href="http://pastebin.com/raw/5dcCG1m5" rel="nofollow">http://pastebin.com/raw/5dcCG1m5</a>). my question is - where is _26837.c? is it a temporary file sumwhere?</td><td class="time"><a href="#t2016-08-14T14:50:31" class="time">14:50</a></td></tr>
+<tr id="t2016-08-14T15:09:35"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I'm fighing a do_package_write_deb error as part of a bitbake</td><td class="time"><a href="#t2016-08-14T15:09:35" class="time">15:09</a></td></tr>
+<tr id="t2016-08-14T15:10:09"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">"package name has characters that aren't lowercase alphanums or '-+.""</td><td class="time"><a href="#t2016-08-14T15:10:09" class="time">15:10</a></td></tr>
+<tr id="t2016-08-14T15:10:39"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">The log file doesn't indicate what exactly the offending string is, so I'm trying to hunt how this process works.&nbsp;&nbsp;Where should I start looking about do_package_write_deb?</td><td class="time"><a href="#t2016-08-14T15:10:39" class="time">15:10</a></td></tr>
+<tr id="t2016-08-14T15:25:15"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I wish there were a way to do a printf/echo/log message of some sort from a .bb file</td><td class="time"><a href="#t2016-08-14T15:25:15" class="time">15:25</a></td></tr>
+<tr id="t2016-08-14T16:00:19"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">OK I'm getting closer</td><td class="time"><a href="#t2016-08-14T16:00:19" class="time">16:00</a></td></tr>
+<tr id="t2016-08-14T16:00:27"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">there's a package named python-wsgiref-simple_server apparently</td><td class="time"><a href="#t2016-08-14T16:00:27" class="time">16:00</a></td></tr>
+<tr id="t2016-08-14T16:00:31"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">and the underscore is screwing it up</td><td class="time"><a href="#t2016-08-14T16:00:31" class="time">16:00</a></td></tr>
+<tr id="t2016-08-14T16:40:28"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Is there a way to invalidate cache for just one file?</td><td class="time"><a href="#t2016-08-14T16:40:28" class="time">16:40</a></td></tr>
+<tr id="t2016-08-14T16:40:36"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I want to force one particular .bb recipe to redownload</td><td class="time"><a href="#t2016-08-14T16:40:36" class="time">16:40</a></td></tr>
+<tr id="t2016-08-14T16:40:54"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">bitbake -c cleanall your-recipe</td><td class="time"><a href="#t2016-08-14T16:40:54" class="time">16:40</a></td></tr>
+<tr id="t2016-08-14T16:41:05"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">and redownloading andc aching are two different things</td><td class="time"><a href="#t2016-08-14T16:41:05" class="time">16:41</a></td></tr>
+<tr id="t2016-08-14T16:41:10"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">That won't nuke the entire build environment?</td><td class="time"><a href="#t2016-08-14T16:41:10" class="time">16:41</a></td></tr>
+<tr id="t2016-08-14T16:41:25"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Well I suspect the download isn't happening even when I do "-c fetchall" because the recipe is cached</td><td class="time"><a href="#t2016-08-14T16:41:25" class="time">16:41</a></td></tr>
+<tr id="t2016-08-14T16:43:18"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">kergoth:&nbsp;&nbsp;Nope, I seem to have cleaned the recipe in question, yet fetchall still ignores the updated .bb</td><td class="time"><a href="#t2016-08-14T16:43:18" class="time">16:43</a></td></tr>
+<tr id="t2016-08-14T16:43:29"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I added an invalid URL in it so I'm trying to force the error to appear so I know it's working</td><td class="time"><a href="#t2016-08-14T16:43:29" class="time">16:43</a></td></tr>
+<tr id="t2016-08-14T16:43:40"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">clean and cleanall are two completely different tasks.</td><td class="time"><a href="#t2016-08-14T16:43:40" class="time">16:43</a></td></tr>
+<tr id="t2016-08-14T16:43:56"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">clean wipes the bits for a single reciope, cleanall does that and removes downloaded sources from teh download dir</td><td class="time"><a href="#t2016-08-14T16:43:56" class="time">16:43</a></td></tr>
+<tr id="t2016-08-14T16:44:29"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">also, just use bitbake -e yourrecipe | grep SRC_URI= and make sure its set to what you think it is</td><td class="time"><a href="#t2016-08-14T16:44:29" class="time">16:44</a></td></tr>
+<tr id="t2016-08-14T16:45:09"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">kergoth:&nbsp;&nbsp;It is</td><td class="time"><a href="#t2016-08-14T16:45:09" class="time">16:45</a></td></tr>
+<tr id="t2016-08-14T16:45:25"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Background:&nbsp;&nbsp;I have no downloaded source for 1 recipe.</td><td class="time"><a href="#t2016-08-14T16:45:25" class="time">16:45</a></td></tr>
+<tr id="t2016-08-14T16:45:46"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">So, I thought perhaps that recipe got skipped / messed up because of some build mishap (power loss, crash?).</td><td class="time"><a href="#t2016-08-14T16:45:46" class="time">16:45</a></td></tr>
+<tr id="t2016-08-14T16:46:03"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I'm debugging why nothing was downloaded for the package in question</td><td class="time"><a href="#t2016-08-14T16:46:03" class="time">16:46</a></td></tr>
+<tr id="t2016-08-14T16:48:51"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">a build mishap would not result in that behavior. the only time bitbake will skip a task is if that task succeeded.</td><td class="time"><a href="#t2016-08-14T16:48:51" class="time">16:48</a></td></tr>
+<tr id="t2016-08-14T16:49:00"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Thanks</td><td class="time"><a href="#t2016-08-14T16:49:00" class="time">16:49</a></td></tr>
+<tr id="t2016-08-14T16:50:48"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">kergoth:&nbsp;&nbsp;I may have resolved my issue</td><td class="time"><a href="#t2016-08-14T16:50:48" class="time">16:50</a></td></tr>
+<tr id="t2016-08-14T16:51:08"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I was trying to do "-c fetchall MY_OVERALL_PROJECT"</td><td class="time"><a href="#t2016-08-14T16:51:08" class="time">16:51</a></td></tr>
+<tr id="t2016-08-14T16:51:27"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">But "-c fetchall THIS_ONE_RECIPE" might fix it</td><td class="time"><a href="#t2016-08-14T16:51:27" class="time">16:51</a></td></tr>
+<tr id="t2016-08-14T16:51:55"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Perhaps the overall project wasn't trying to fetch for this particular recipe for some reason, even after cleanall</td><td class="time"><a href="#t2016-08-14T16:51:55" class="time">16:51</a></td></tr>
+<tr id="t2016-08-14T16:53:06"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">Thanks!</td><td class="time"><a href="#t2016-08-14T16:53:06" class="time">16:53</a></td></tr>
+<tr id="t2016-08-14T17:12:38"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">kergoth:&nbsp;&nbsp;Do you know why some directories under downloads/git2 end in ".git", and others do not?</td><td class="time"><a href="#t2016-08-14T17:12:38" class="time">17:12</a></td></tr>
+<tr id="t2016-08-14T17:12:54"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">some urls end in .git, others do not</td><td class="time"><a href="#t2016-08-14T17:12:54" class="time">17:12</a></td></tr>
+<tr id="t2016-08-14T17:26:00"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">kergoth:&nbsp;&nbsp;Apparently adding .git onto a URL makes no difference, how interesting</td><td class="time"><a href="#t2016-08-14T17:26:00" class="time">17:26</a></td></tr>
+<tr id="t2016-08-14T17:26:18"><th class="nick" style="background: #42427e">AgentElrond</th><td class="text" style="color: #42427e">I'm new to this aspect of github :p</td><td class="time"><a href="#t2016-08-14T17:26:18" class="time">17:26</a></td></tr>
+<tr id="t2016-08-14T17:44:35"><th class="nick" style="background: #854685">iskander</th><td class="text" style="color: #854685">hello</td><td class="time"><a href="#t2016-08-14T17:44:35" class="time">17:44</a></td></tr>
+<tr id="t2016-08-14T17:44:53"><th class="nick" style="background: #854685">iskander</th><td class="text" style="color: #854685">i have an odd problem with tmux and 'bitbake -c menuconfig virtual/kernel'</td><td class="time"><a href="#t2016-08-14T17:44:53" class="time">17:44</a></td></tr>
+<tr id="t2016-08-14T17:45:23"><th class="nick" style="background: #854685">iskander</th><td class="text" style="color: #854685">it doesn't work with tmux</td><td class="time"><a href="#t2016-08-14T17:45:23" class="time">17:45</a></td></tr>
+<tr id="t2016-08-14T17:46:25"><th class="nick" style="background: #854685">iskander</th><td class="text" style="color: #854685">but i have no problem executing it in xterm w/o tmux</td><td class="time"><a href="#t2016-08-14T17:46:25" class="time">17:46</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-08-13.log.html">&#171; Saturday, 2016-08-13</a> <a href="index.html">Index</a> <a href="%23yocto.2016-08-15.log.html">Monday, 2016-08-15 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

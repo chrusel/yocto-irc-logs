@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2016-05-01</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2016-05-01</h1>
+<div class="navigation"> <a href="%23yocto.2016-04-30.log.html">&#171; Saturday, 2016-04-30</a> <a href="index.html">Index</a> <a href="%23yocto.2016-05-02.log.html">Monday, 2016-05-02 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2016-05-01T01:00:10"><td class="nickchange" colspan="2">*** blueness_ is now known as blueness</td><td><a href="#t2016-05-01T01:00:10" class="time">01:00</a></td></tr>
+<tr id="t2016-05-01T10:37:25"><td class="part" colspan="2">*** korena &lt;korena!~korena@210.195.244.142&gt; has left #yocto</td><td><a href="#t2016-05-01T10:37:25" class="time">10:37</a></td></tr>
+<tr id="t2016-05-01T10:40:02"><td class="nickchange" colspan="2">*** korena is now known as thatGuy</td><td><a href="#t2016-05-01T10:40:02" class="time">10:40</a></td></tr>
+<tr id="t2016-05-01T10:40:12"><td class="nickchange" colspan="2">*** thatGuy is now known as korena</td><td><a href="#t2016-05-01T10:40:12" class="time">10:40</a></td></tr>
+<tr id="t2016-05-01T11:25:14"><td class="nickchange" colspan="2">*** korena is now known as korena_gone</td><td><a href="#t2016-05-01T11:25:14" class="time">11:25</a></td></tr>
+<tr id="t2016-05-01T11:53:37"><td class="nickchange" colspan="2">*** korena_gone is now known as korena</td><td><a href="#t2016-05-01T11:53:37" class="time">11:53</a></td></tr>
+<tr id="t2016-05-01T12:03:37"><td class="nickchange" colspan="2">*** korena is now known as korena_gone</td><td><a href="#t2016-05-01T12:03:37" class="time">12:03</a></td></tr>
+<tr id="t2016-05-01T13:03:05"><td class="nickchange" colspan="2">*** korena_gone is now known as korena</td><td><a href="#t2016-05-01T13:03:05" class="time">13:03</a></td></tr>
+<tr id="t2016-05-01T14:14:32"><td class="nickchange" colspan="2">*** korena is now known as errormagnet</td><td><a href="#t2016-05-01T14:14:32" class="time">14:14</a></td></tr>
+<tr id="t2016-05-01T14:22:44"><th class="nick" style="background: #407a40">errormagnet</th><td class="text" style="color: #407a40">So I just went through the quick getting started, failed to build qemuarm, some python [split-strip] QA issues , so I'm about to dig in for solutions, pointers?</td><td class="time"><a href="#t2016-05-01T14:22:44" class="time">14:22</a></td></tr>
+<tr id="t2016-05-01T14:23:41"><th class="nick" style="background: #407a40">errormagnet</th><td class="text" style="color: #407a40">this is my first build, pulled krogoth, on archlinux (followed arch wiki, trusting it for now)</td><td class="time"><a href="#t2016-05-01T14:23:41" class="time">14:23</a></td></tr>
+<tr id="t2016-05-01T14:43:05"><td class="nickchange" colspan="2">*** thatGuy is now known as errormagnet</td><td><a href="#t2016-05-01T14:43:05" class="time">14:43</a></td></tr>
+<tr id="t2016-05-01T14:52:04"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">errormagnet: archlinux file package has a bug</td><td class="time"><a href="#t2016-05-01T14:52:04" class="time">14:52</a></td></tr>
+<tr id="t2016-05-01T14:52:24"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">errormagnet: as a workaround disable this QA warning</td><td class="time"><a href="#t2016-05-01T14:52:24" class="time">14:52</a></td></tr>
+<tr id="t2016-05-01T14:53:03"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">ERROR_QA_remove&nbsp;&nbsp;= "split-strip"</td><td class="time"><a href="#t2016-05-01T14:53:03" class="time">14:53</a></td></tr>
+<tr id="t2016-05-01T14:53:08"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">in local.conf</td><td class="time"><a href="#t2016-05-01T14:53:08" class="time">14:53</a></td></tr>
+<tr id="t2016-05-01T15:16:16"><th class="nick" style="background: #407a40">errormagnet</th><td class="text" style="color: #407a40">khem: thanks, works now</td><td class="time"><a href="#t2016-05-01T15:16:16" class="time">15:16</a></td></tr>
+<tr id="t2016-05-01T15:42:37"><td class="nickchange" colspan="2">*** errormagnet is now known as errormagnet_gone</td><td><a href="#t2016-05-01T15:42:37" class="time">15:42</a></td></tr>
+<tr id="t2016-05-01T15:46:34"><td class="nickchange" colspan="2">*** errormagnet_gone is now known as errormagnet</td><td><a href="#t2016-05-01T15:46:34" class="time">15:46</a></td></tr>
+<tr id="t2016-05-01T21:19:47"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">khem: hey, I am tempted to submit a talk proposal to linuxcon japan titled "Bringing up new architecture using Yocto" ... pretty much a story of what I had to battle with nios2</td><td class="time"><a href="#t2016-05-01T21:19:47" class="time">21:19</a></td></tr>
+<tr id="t2016-05-01T21:19:52"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">khem: what do you think ?</td><td class="time"><a href="#t2016-05-01T21:19:52" class="time">21:19</a></td></tr>
+<tr id="t2016-05-01T21:21:13"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">khem: I am not sure if I'm qualified enough btw</td><td class="time"><a href="#t2016-05-01T21:21:13" class="time">21:21</a></td></tr>
+<tr id="t2016-05-01T21:38:45"><th class="nick" style="background: #854685">Crofton|work</th><td class="text" style="color: #854685">Marex, you would do fine</td><td class="time"><a href="#t2016-05-01T21:38:45" class="time">21:38</a></td></tr>
+<tr id="t2016-05-01T21:39:30"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">Crofton|work: ha, nice to hear that, thanks</td><td class="time"><a href="#t2016-05-01T21:39:30" class="time">21:39</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2016-04-30.log.html">&#171; Saturday, 2016-04-30</a> <a href="index.html">Index</a> <a href="%23yocto.2016-05-02.log.html">Monday, 2016-05-02 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
