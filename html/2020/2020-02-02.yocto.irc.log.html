@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-02-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2020-02-02</h1>
+<div class="navigation"> <a href="%23yocto.2020-02-01.log.html">&#171; Saturday, 2020-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-03.log.html">Monday, 2020-02-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-02-02T08:57:37"><th class="nick" style="background: #407a40">dv|2</th><td class="text" style="color: #407a40">how to exclude qemu-native from image dependencies?</td><td class="time"><a href="#t2020-02-02T08:57:37" class="time">08:57</a></td></tr>
+<tr id="t2020-02-02T09:37:50"><th class="nick" style="background: #407a40">dv|2</th><td class="text" style="color: #407a40">when SSH asks for a new key confirmation bitbake can't clone the repo with "wrong key" message</td><td class="time"><a href="#t2020-02-02T09:37:50" class="time">09:37</a></td></tr>
+<tr id="t2020-02-02T21:50:59"><th class="nick" style="background: #42427e">cmtptr</th><td class="text" style="color: #42427e">how can i package and enable a systemd service only for a specific target?&nbsp;&nbsp;would i use SYSTEMD_PACKAGES_target = "foo" and SYSTEMD_SERVICE_target = "foo", or ???</td><td class="time"><a href="#t2020-02-02T21:50:59" class="time">21:50</a></td></tr>
+<tr id="t2020-02-02T21:55:44"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">looks good</td><td class="time"><a href="#t2020-02-02T21:55:44" class="time">21:55</a></td></tr>
+<tr id="t2020-02-02T22:01:57"><th class="nick" style="background: #42427e">cmtptr</th><td class="text" style="color: #42427e">"ERROR: foo does not appear in packages list, please add it"</td><td class="time"><a href="#t2020-02-02T22:01:57" class="time">22:01</a></td></tr>
+<tr id="t2020-02-02T22:02:39"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">add the package itself to IMAGE_INSTALL</td><td class="time"><a href="#t2020-02-02T22:02:39" class="time">22:02</a></td></tr>
+<tr id="t2020-02-02T22:05:59"><th class="nick" style="background: #42427e">cmtptr</th><td class="text" style="color: #42427e">sorry, i don't know what that means.&nbsp;&nbsp;this thing is an incomprehensible mess put together by some guy at work and fat chance i'll ever understand it.&nbsp;&nbsp;i'll just wait until tomorrow and ask him.&nbsp;&nbsp;thanks anyway</td><td class="time"><a href="#t2020-02-02T22:05:59" class="time">22:05</a></td></tr>
+<tr id="t2020-02-02T22:07:36"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">cmtptr: sorry to hear that. in that case it probably would make sense to do some housekeeping and clean configuration up</td><td class="time"><a href="#t2020-02-02T22:07:36" class="time">22:07</a></td></tr>
+<tr id="t2020-02-02T22:08:09"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">i don't know your current setup, but for a quick try, you could at least go to build/conf/local.conf</td><td class="time"><a href="#t2020-02-02T22:08:09" class="time">22:08</a></td></tr>
+<tr id="t2020-02-02T22:08:21"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">and add a line IMAGE_INSTALL += "foo"</td><td class="time"><a href="#t2020-02-02T22:08:21" class="time">22:08</a></td></tr>
+<tr id="t2020-02-02T22:08:55"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">but remember that this local.conf is not meant to hold such configs for the long run. for testing that is fine!</td><td class="time"><a href="#t2020-02-02T22:08:55" class="time">22:08</a></td></tr>
+<tr id="t2020-02-02T22:15:54"><th class="nick" style="background: #42427e">cmtptr</th><td class="text" style="color: #42427e">unfortunately that did not resolve it.&nbsp;&nbsp;i don't even see an IMAGE_INSTALL defined anywhere in our source.&nbsp;&nbsp;we don't generate a single image output, so i suspect he's doing something really tricky</td><td class="time"><a href="#t2020-02-02T22:15:54" class="time">22:15</a></td></tr>
+<tr id="t2020-02-02T22:16:00"><th class="nick" style="background: #42427e">cmtptr</th><td class="text" style="color: #42427e">thanks anyway for your time</td><td class="time"><a href="#t2020-02-02T22:16:00" class="time">22:16</a></td></tr>
+<tr id="t2020-02-02T23:03:11"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">cmtptr: your welcome</td><td class="time"><a href="#t2020-02-02T23:03:11" class="time">23:03</a></td></tr>
+<tr id="t2020-02-02T23:03:33"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">btw, how are you building? so what does your command look like?</td><td class="time"><a href="#t2020-02-02T23:03:33" class="time">23:03</a></td></tr>
+<tr id="t2020-02-02T23:03:52"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">something like 'bitbake core-image' or similay?</td><td class="time"><a href="#t2020-02-02T23:03:52" class="time">23:03</a></td></tr>
+<tr id="t2020-02-02T23:04:17"><th class="nick" style="background: #818144">creich</th><td class="text" style="color: #818144">it is possible to just reuse the poky default images</td><td class="time"><a href="#t2020-02-02T23:04:17" class="time">23:04</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-02-01.log.html">&#171; Saturday, 2020-02-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-03.log.html">Monday, 2020-02-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

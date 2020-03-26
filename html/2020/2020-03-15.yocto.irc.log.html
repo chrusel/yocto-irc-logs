@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-03-15</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2020-03-15</h1>
+<div class="navigation"> <a href="%23yocto.2020-03-14.log.html">&#171; Saturday, 2020-03-14</a> <a href="index.html">Index</a> <a href="%23yocto.2020-03-16.log.html">Monday, 2020-03-16 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-03-15T10:27:30"><th class="nick" style="background: #407a40">ed____</th><td class="text" style="color: #407a40">Hi there</td><td class="time"><a href="#t2020-03-15T10:27:30" class="time">10:27</a></td></tr>
+<tr id="t2020-03-15T10:27:37"><th class="nick" style="background: #407a40">ed____</th><td class="text" style="color: #407a40">I'm writing a recipe for gpib based off this installation guide: <a href="https://xdevs.com/guide/ni_gpib_rpi/" rel="nofollow">https://xdevs.com/guide/ni_gpib_rpi/</a></td><td class="time"><a href="#t2020-03-15T10:27:37" class="time">10:27</a></td></tr>
+<tr id="t2020-03-15T10:27:43"><th class="nick" style="background: #407a40">ed____</th><td class="text" style="color: #407a40">There's two different installs from the process, one marked kernel and another marked user. Should I be writing a specialised form of recipe for the kernel install? (New to doing this with drivers)</td><td class="time"><a href="#t2020-03-15T10:27:43" class="time">10:27</a></td></tr>
+<tr id="t2020-03-15T10:33:10"><th class="nick" style="background: #407a40">ed____</th><td class="text" style="color: #407a40">And anyone recommend a good youtube video to learn devtool?</td><td class="time"><a href="#t2020-03-15T10:33:10" class="time">10:33</a></td></tr>
+<tr id="t2020-03-15T13:43:59"><td class="nickchange" colspan="2">*** camus1 is now known as kaspter</td><td><a href="#t2020-03-15T13:43:59" class="time">13:43</a></td></tr>
+<tr id="t2020-03-15T16:41:33"><td class="nickchange" colspan="2">*** rperier_ is now known as rperier</td><td><a href="#t2020-03-15T16:41:33" class="time">16:41</a></td></tr>
+<tr id="t2020-03-15T18:11:21"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: libcurl-dev package for yocto &lt;<a href="https://stackoverflow.com/questions/60695980/libcurl-dev-package-for-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/60695980/libcurl-dev-package-for-yocto&gt;</a></td><td class="time"><a href="#t2020-03-15T18:11:21" class="time">18:11</a></td></tr>
+<tr id="t2020-03-15T18:54:13"><th class="nick" style="background: #818144">mabnhdev</th><td class="text" style="color: #818144">Hi.&nbsp;&nbsp;I'm hoping someone can help me with a head-scratcher.&nbsp;&nbsp;I recently upgraded to zeus from sumo.&nbsp;&nbsp;Because of its new dependency on udev, I need to downgrade lvm2.&nbsp;&nbsp;I copied lvm2 from the thud version of openembedded into my custom meta-exos layer and set the preferred versions for lvm2 and libdevmapper to 2.02.180.&nbsp;&nbsp;Then I get the enclosed errors</td><td class="time"><a href="#t2020-03-15T18:54:13" class="time">18:54</a></td></tr>
+<tr id="t2020-03-15T18:54:14"><th class="nick" style="background: #818144">mabnhdev</th><td class="text" style="color: #818144">and I can't figure out what;s wrong.&nbsp;&nbsp;I included a listing of both lvm2 dirs as well as my PREFERRED_VERSIONS from my conf file.&nbsp;&nbsp;Can anyone tell me what I'm doing wrong? <a href="https://gist.github.com/mabnhdev/e521231691b5d3b262e850bd5d09d566" rel="nofollow">https://gist.github.com/mabnhdev/e521231691b5d3b262e850bd5d09d566</a></td><td class="time"><a href="#t2020-03-15T18:54:14" class="time">18:54</a></td></tr>
+<tr id="t2020-03-15T19:42:04"><td class="nickchange" colspan="2">*** jero is now known as Guest18181</td><td><a href="#t2020-03-15T19:42:04" class="time">19:42</a></td></tr>
+<tr id="t2020-03-15T20:54:17"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">hi all, i want do test-drive yocto/linux's profiling features and have started with the profiling manual for 2.7. trouble is if i set the PACKAGE_DEBUG_SPLIT_STYLE to "debug-file-directory" i run out of space on my rootfs device. so i am wondering, can i specify which packages to build and install without debug? i can sacrifice some debug info in order to be able to upload the rootfs to my device</td><td class="time"><a href="#t2020-03-15T20:54:17" class="time">20:54</a></td></tr>
+<tr id="t2020-03-15T20:56:21"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">one thing i'm trying out at the moment is PACKAGE_DEBUG_SPLIT_STYLE = "debug-without-src", to see if I can shave enough</td><td class="time"><a href="#t2020-03-15T20:56:21" class="time">20:56</a></td></tr>
+<tr id="t2020-03-15T21:54:01"><th class="nick" style="background: #488888">risca</th><td class="text" style="color: #488888">Yo! Do anyone in here know how I can disable getty@tty1.service for my image? I've found some hints online about removing the symlink in a custom systemd do_install_append(), but the symlink is not there at that point, and I can't figure out who creates it!</td><td class="time"><a href="#t2020-03-15T21:54:01" class="time">21:54</a></td></tr>
+<tr id="t2020-03-15T21:54:50"><th class="nick" style="background: #488888">risca</th><td class="text" style="color: #488888">Ref.: <a href="http://www.toradex.com/community/answers/10752/view.html" rel="nofollow">http://www.toradex.com/community/answers/10752/view.html</a> &lt;-- this doesn't work (file not found)</td><td class="time"><a href="#t2020-03-15T21:54:50" class="time">21:54</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-03-14.log.html">&#171; Saturday, 2020-03-14</a> <a href="index.html">Index</a> <a href="%23yocto.2020-03-16.log.html">Monday, 2020-03-16 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

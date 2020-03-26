@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-02-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2020-02-08</h1>
+<div class="navigation"> <a href="%23yocto.2020-02-07.log.html">&#171; Friday, 2020-02-07</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-09.log.html">Sunday, 2020-02-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-02-08T01:35:29"><td class="part" colspan="2">*** emg &lt;emg!~emg@47.180.176.91&gt; has left #yocto</td><td><a href="#t2020-02-08T01:35:29" class="time">01:35</a></td></tr>
+<tr id="t2020-02-08T02:13:16"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: sent a v3 for the cpio QA patch which hopefully works</td><td class="time"><a href="#t2020-02-08T02:13:16" class="time">02:13</a></td></tr>
+<tr id="t2020-02-08T09:45:56"><td class="nickchange" colspan="2">*** florian_kc is now known as florian</td><td><a href="#t2020-02-08T09:45:56" class="time">09:45</a></td></tr>
+<tr id="t2020-02-08T09:47:14"><th class="nick" style="background: #42427e">alephnull</th><td class="text" style="color: #42427e">I rather new to yocto. I am attempting to build a k3s image for the odroid xu4. I found <a href="https://github.com/janeczku/meta-k3s-odroid-c2" rel="nofollow">https://github.com/janeczku/meta-k3s-odroid-c2</a> and am trying to work from here.</td><td class="time"><a href="#t2020-02-08T09:47:14" class="time">09:47</a></td></tr>
+<tr id="t2020-02-08T09:48:50"><th class="nick" style="background: #42427e">alephnull</th><td class="text" style="color: #42427e">The uboot bit is unclear to me. It looks like uboot is fips_create'd during the uboot build. But the xu4 uses an sd_fuse.sh script at the time of writing the image.</td><td class="time"><a href="#t2020-02-08T09:48:50" class="time">09:48</a></td></tr>
+<tr id="t2020-02-08T09:51:15"><th class="nick" style="background: #42427e">alephnull</th><td class="text" style="color: #42427e">Would someone point me to docs on the appropriate hook (?) like do_compile_append() to make it use sd_fuse.sh when writing the image?</td><td class="time"><a href="#t2020-02-08T09:51:15" class="time">09:51</a></td></tr>
+<tr id="t2020-02-08T09:53:17"><th class="nick" style="background: #42427e">alephnull</th><td class="text" style="color: #42427e">I'm using zeus, btw.</td><td class="time"><a href="#t2020-02-08T09:53:17" class="time">09:53</a></td></tr>
+<tr id="t2020-02-08T11:56:24"><th class="nick" style="background: #818144">beratiks</th><td class="text" style="color: #818144">Hi guys. I am working on iMX8QX, How can I pinmux? I change from device tree but not change. Please help me?</td><td class="time"><a href="#t2020-02-08T11:56:24" class="time">11:56</a></td></tr>
+<tr id="t2020-02-08T12:25:35"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">hi all, i've got some difficulty understanding how a certain yocto syntax works: <a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-freescale/tree/recipes-bsp/imx-mkimage/imx-boot_0.2.bb?h=master#n52" rel="nofollow">http://git.yoctoproject.org/cgit/cgit.cgi/meta-freescale/tree/recipes-bsp/imx-mkimage/imx-boot_0.2.bb?h=master#n52</a></td><td class="time"><a href="#t2020-02-08T12:25:35" class="time">12:25</a></td></tr>
+<tr id="t2020-02-08T12:25:55"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">SOC_TARGET_foo = "bar"</td><td class="time"><a href="#t2020-02-08T12:25:55" class="time">12:25</a></td></tr>
+<tr id="t2020-02-08T12:26:31"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">i guess it's like an if-else-statement... if there are no SOC_TARGET_foo's defined, you go with the SOC_TARGET = "INVALID"</td><td class="time"><a href="#t2020-02-08T12:26:31" class="time">12:26</a></td></tr>
+<tr id="t2020-02-08T12:27:12"><th class="nick" style="background: #854685">marble_visions</th><td class="text" style="color: #854685">but if there is foo defined somewhere, this would mean that you'd also get SOC_TARGET_foo autodefined as well, and SOC_TARGET would expand to bar</td><td class="time"><a href="#t2020-02-08T12:27:12" class="time">12:27</a></td></tr>
+<tr id="t2020-02-08T13:15:41"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: Run Raspberry Pi Zero W image in qemu &lt;<a href="https://stackoverflow.com/questions/60127086/run-raspberry-pi-zero-w-image-in-qemu&gt;" rel="nofollow">https://stackoverflow.com/questions/60127086/run-raspberry-pi-zero-w-image-in-qemu&gt;</a></td><td class="time"><a href="#t2020-02-08T13:15:41" class="time">13:15</a></td></tr>
+<tr id="t2020-02-08T13:40:30"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">armpit: I pushed zeus-next with some things in. Not tested yet, might need patches defuzzing</td><td class="time"><a href="#t2020-02-08T13:40:30" class="time">13:40</a></td></tr>
+<tr id="t2020-02-08T16:27:05"><th class="nick" style="background: #4b904b">armpit</th><td class="text" style="color: #4b904b">RP, Which zeus-next where.&nbsp;&nbsp;I just refreshed my repos</td><td class="time"><a href="#t2020-02-08T16:27:05" class="time">16:27</a></td></tr>
+<tr id="t2020-02-08T16:38:51"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">armpit: sorry, pushed</td><td class="time"><a href="#t2020-02-08T16:38:51" class="time">16:38</a></td></tr>
+<tr id="t2020-02-08T16:56:14"><th class="nick" style="background: #4d4d93">smurray</th><td class="text" style="color: #4d4d93">marble_visions: the syntax is described here: <a href="https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#conditional-syntax-overrides" rel="nofollow">https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#conditional-syntax-overrides</a></td><td class="time"><a href="#t2020-02-08T16:56:14" class="time">16:56</a></td></tr>
+<tr id="t2020-02-08T17:58:49"><td class="part" colspan="2">*** jsmf &lt;jsmf!2e059dd0@HSI-KBW-046-005-157-208.hsi8.kabel-badenwuerttemberg.de&gt; has left #yocto</td><td><a href="#t2020-02-08T17:58:49" class="time">17:58</a></td></tr>
+<tr id="t2020-02-08T18:48:55"><td class="part" colspan="2">*** bcran &lt;bcran!~bcran@muon.bluestop.org&gt; has left #yocto</td><td><a href="#t2020-02-08T18:48:55" class="time">18:48</a></td></tr>
+<tr id="t2020-02-08T19:16:40"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: How does BitBake make use of variables like B and SRC_URI? &lt;<a href="https://stackoverflow.com/questions/60130146/how-does-bitbake-make-use-of-variables-like-b-and-src-uri&gt;" rel="nofollow">https://stackoverflow.com/questions/60130146/how-does-bitbake-make-use-of-variables-like-b-and-src-uri&gt;</a></td><td class="time"><a href="#t2020-02-08T19:16:40" class="time">19:16</a></td></tr>
+<tr id="t2020-02-08T21:10:29"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-02-08T21:10:29" class="time">21:10</a></td></tr>
+<tr id="t2020-02-08T21:12:04"><td class="nickchange" colspan="2">*** Flo is now known as Guest28975</td><td><a href="#t2020-02-08T21:12:04" class="time">21:12</a></td></tr>
+<tr id="t2020-02-08T21:34:00"><th class="nick" style="background: #97974f">SilvesterFlo</th><td class="text" style="color: #97974f">Hello! Does anyone have experience with wic?</td><td class="time"><a href="#t2020-02-08T21:34:00" class="time">21:34</a></td></tr>
+<tr id="t2020-02-08T23:40:13"><th class="nick" style="background: #9b519b">attieg</th><td class="text" style="color: #9b519b">creich: no problem, sorry for my delayed response too...</td><td class="time"><a href="#t2020-02-08T23:40:13" class="time">23:40</a></td></tr>
+<tr id="t2020-02-08T23:40:36"><th class="nick" style="background: #9b519b">attieg</th><td class="text" style="color: #9b519b">I think i might be going to look in to building the module in-tree, just because it's working there...</td><td class="time"><a href="#t2020-02-08T23:40:36" class="time">23:40</a></td></tr>
+<tr id="t2020-02-08T23:40:49"><th class="nick" style="background: #9b519b">attieg</th><td class="text" style="color: #9b519b">i'll let you know how the other platform goes (haven't had a chance to try it yet)</td><td class="time"><a href="#t2020-02-08T23:40:49" class="time">23:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-02-07.log.html">&#171; Friday, 2020-02-07</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-09.log.html">Sunday, 2020-02-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-02-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2020-02-09</h1>
+<div class="navigation"> <a href="%23yocto.2020-02-08.log.html">&#171; Saturday, 2020-02-08</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-10.log.html">Monday, 2020-02-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-02-09T08:30:09"><th class="nick" style="background: #407a40">moustafa</th><td class="text" style="color: #407a40">hello everybody</td><td class="time"><a href="#t2020-02-09T08:30:09" class="time">08:30</a></td></tr>
+<tr id="t2020-02-09T08:33:24"><th class="nick" style="background: #407a40">moustafa</th><td class="text" style="color: #407a40">I am trying to tar some directory with tar cfj &lt;archive.tar.xz&gt; &lt;files&gt;&nbsp;&nbsp;and when I bitbake it gives me these error do_unpack unpack failure for url ...</td><td class="time"><a href="#t2020-02-09T08:33:24" class="time">08:33</a></td></tr>
+<tr id="t2020-02-09T08:33:30"><th class="nick" style="background: #407a40">moustafa</th><td class="text" style="color: #407a40">any help ?</td><td class="time"><a href="#t2020-02-09T08:33:30" class="time">08:33</a></td></tr>
+<tr id="t2020-02-09T10:55:09"><td class="nickchange" colspan="2">*** mcfrisk_ is now known as mcfrisk</td><td><a href="#t2020-02-09T10:55:09" class="time">10:55</a></td></tr>
+<tr id="t2020-02-09T11:19:22"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: bitbake -c savedefconfig overwrites current configuration &lt;<a href="https://stackoverflow.com/questions/60135867/bitbake-c-savedefconfig-overwrites-current-configuration&gt;" rel="nofollow">https://stackoverflow.com/questions/60135867/bitbake-c-savedefconfig-overwrites-current-configuration&gt;</a></td><td class="time"><a href="#t2020-02-09T11:19:22" class="time">11:19</a></td></tr>
+<tr id="t2020-02-09T11:31:57"><th class="nick" style="background: #818144">RobertBerger</th><td class="text" style="color: #818144">Hi</td><td class="time"><a href="#t2020-02-09T11:31:57" class="time">11:31</a></td></tr>
+<tr id="t2020-02-09T11:33:34"><th class="nick" style="background: #818144">RobertBerger</th><td class="text" style="color: #818144">Did someone manage to get rid of the TOPDIR=${S} in meta-java ? <a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-java/tree/recipes-core/openjdk/openjdk-8-common.inc?h=master-next#n13" rel="nofollow">http://git.yoctoproject.org/cgit/cgit.cgi/meta-java/tree/recipes-core/openjdk/openjdk-8-common.inc?h=master-next#n13</a></td><td class="time"><a href="#t2020-02-09T11:33:34" class="time">11:33</a></td></tr>
+<tr id="t2020-02-09T11:34:14"><th class="nick" style="background: #818144">RobertBerger</th><td class="text" style="color: #818144">moving TOPDIR around potentially has more serious implications than just missing stuff in SSTATE</td><td class="time"><a href="#t2020-02-09T11:34:14" class="time">11:34</a></td></tr>
+<tr id="t2020-02-09T18:20:35"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Contents of Image folder after building in Yocto &lt;<a href="https://stackoverflow.com/questions/60139617/contents-of-image-folder-after-building-in-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/60139617/contents-of-image-folder-after-building-in-yocto&gt;</a></td><td class="time"><a href="#t2020-02-09T18:20:35" class="time">18:20</a></td></tr>
+<tr id="t2020-02-09T18:50:40"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Clone repository in post-process function in Yocto &lt;<a href="https://stackoverflow.com/questions/60006492/clone-repository-in-post-process-function-in-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/60006492/clone-repository-in-post-process-function-in-yocto&gt;</a></td><td class="time"><a href="#t2020-02-09T18:50:40" class="time">18:50</a></td></tr>
+<tr id="t2020-02-09T19:00:23"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">RP: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/88/builds/228" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/88/builds/228</a> - how do such sigkills happen ?</td><td class="time"><a href="#t2020-02-09T19:00:23" class="time">19:00</a></td></tr>
+<tr id="t2020-02-09T19:28:43"><td class="nickchange" colspan="2">*** orzen^ is now known as orzen</td><td><a href="#t2020-02-09T19:28:43" class="time">19:28</a></td></tr>
+<tr id="t2020-02-09T20:00:19"><td class="nickchange" colspan="2">*** rangergord_ is now known as rangergord</td><td><a href="#t2020-02-09T20:00:19" class="time">20:00</a></td></tr>
+<tr id="t2020-02-09T20:20:59"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Change keyboard layout on Yocto/Poky linux &lt;<a href="https://stackoverflow.com/questions/60116012/change-keyboard-layout-on-yocto-poky-linux&gt;" rel="nofollow">https://stackoverflow.com/questions/60116012/change-keyboard-layout-on-yocto-poky-linux&gt;</a></td><td class="time"><a href="#t2020-02-09T20:20:59" class="time">20:20</a></td></tr>
+<tr id="t2020-02-09T20:51:05"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: creating Initramfs in Yocto &lt;<a href="https://stackoverflow.com/questions/60140951/creating-initramfs-in-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/60140951/creating-initramfs-in-yocto&gt;</a></td><td class="time"><a href="#t2020-02-09T20:51:05" class="time">20:51</a></td></tr>
+<tr id="t2020-02-09T21:36:39"><td class="servermsg" colspan="2">*** orwell.freenode.net sets mode: +o RP</td><td><a href="#t2020-02-09T21:36:39" class="time">21:36</a></td></tr>
+<tr id="t2020-02-09T21:39:14"><td class="servermsg" colspan="2">*** orwell.freenode.net sets mode: +o RP</td><td><a href="#t2020-02-09T21:39:14" class="time">21:39</a></td></tr>
+<tr id="t2020-02-09T22:25:18"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">khem: I don't know :/</td><td class="time"><a href="#t2020-02-09T22:25:18" class="time">22:25</a></td></tr>
+<tr id="t2020-02-09T22:25:33"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">khem: looks like buildbot was trying to kill the build for some reason?</td><td class="time"><a href="#t2020-02-09T22:25:33" class="time">22:25</a></td></tr>
+<tr id="t2020-02-09T23:05:06"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">RP: yes, it has happened quite a few times</td><td class="time"><a href="#t2020-02-09T23:05:06" class="time">23:05</a></td></tr>
+<tr id="t2020-02-09T23:05:09"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">I wonder</td><td class="time"><a href="#t2020-02-09T23:05:09" class="time">23:05</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-02-08.log.html">&#171; Saturday, 2020-02-08</a> <a href="index.html">Index</a> <a href="%23yocto.2020-02-10.log.html">Monday, 2020-02-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-03-14</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2020-03-14</h1>
+<div class="navigation"> <a href="%23yocto.2020-03-13.log.html">&#171; Friday, 2020-03-13</a> <a href="index.html">Index</a> <a href="%23yocto.2020-03-15.log.html">Sunday, 2020-03-15 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-03-14T00:51:24"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: I was looking at meta/lib/oeqa/runtime/cases/parselogs.py and it lists errors by machine types</td><td class="time"><a href="#t2020-03-14T00:51:24" class="time">00:51</a></td></tr>
+<tr id="t2020-03-14T00:52:04"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">I wanted to add some exceptions for rpi preferably</td><td class="time"><a href="#t2020-03-14T00:52:04" class="time">00:52</a></td></tr>
+<tr id="t2020-03-14T00:55:10"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">in the SOC layer, but I did not find an easy way</td><td class="time"><a href="#t2020-03-14T00:55:10" class="time">00:55</a></td></tr>
+<tr id="t2020-03-14T01:10:03"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">see <a href="https://git.openembedded.org/openembedded-core-contrib/commit/?h=yoe/mut&amp;id=2e9acabea250ecb7c0cb06834373cea8490f5b2b" rel="nofollow">https://git.openembedded.org/openembedded-core-contrib/commit/?h=yoe/mut&amp;id=2e9acabea250ecb7c0cb06834373cea8490f5b2b</a></td><td class="time"><a href="#t2020-03-14T01:10:03" class="time">01:10</a></td></tr>
+<tr id="t2020-03-14T03:28:50"><td class="nickchange" colspan="2">*** warthog19 is now known as warthog9</td><td><a href="#t2020-03-14T03:28:50" class="time">03:28</a></td></tr>
+<tr id="t2020-03-14T03:29:13"><td class="nickchange" colspan="2">*** Lihis_ is now known as Lihis</td><td><a href="#t2020-03-14T03:29:13" class="time">03:29</a></td></tr>
+<tr id="t2020-03-14T04:50:10"><td class="nickchange" colspan="2">*** davisr_ is now known as davisr</td><td><a href="#t2020-03-14T04:50:10" class="time">04:50</a></td></tr>
+<tr id="t2020-03-14T08:11:32"><td class="nickchange" colspan="2">*** jero is now known as Guest99719</td><td><a href="#t2020-03-14T08:11:32" class="time">08:11</a></td></tr>
+<tr id="t2020-03-14T09:23:17"><td class="nickchange" colspan="2">*** derRicha1d is now known as derRichard</td><td><a href="#t2020-03-14T09:23:17" class="time">09:23</a></td></tr>
+<tr id="t2020-03-14T12:30:55"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">zeddii: armpit: hey, could one of you backport gstreamer 1.16.2 update from master to zeus ? It fixes crash in v4l2h264dec and should be easy, so this would help</td><td class="time"><a href="#t2020-03-14T12:30:55" class="time">12:30</a></td></tr>
+<tr id="t2020-03-14T12:34:30"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">zeddii: armpit: git cherry-pick 962e7e9bc4 1b40d5f318 8768e8c899 27545fb68f 52e0a50798 5f22e50f22 c018fbb03c 765d743037 8f9b6ca285 329017bf62 1c35f6a640 2ce0f84a5f</td><td class="time"><a href="#t2020-03-14T12:34:30" class="time">12:34</a></td></tr>
+<tr id="t2020-03-14T12:34:34"><th class="nick" style="background: #42427e">Marex</th><td class="text" style="color: #42427e">this should probably do</td><td class="time"><a href="#t2020-03-14T12:34:34" class="time">12:34</a></td></tr>
+<tr id="t2020-03-14T15:20:36"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: this bison-native niggle is ongoing every clean build is failing for me <a href="https://jenkins.ccp.xcal.tv/jenkins/view/YP/job/Yocto-world-clang/1195/console" rel="nofollow">https://jenkins.ccp.xcal.tv/jenkins/view/YP/job/Yocto-world-clang/1195/console</a></td><td class="time"><a href="#t2020-03-14T15:20:36" class="time">15:20</a></td></tr>
+<tr id="t2020-03-14T15:21:01"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40"><a href="https://errors.yoctoproject.org/Errors/Details/396142/" rel="nofollow">https://errors.yoctoproject.org/Errors/Details/396142/</a> is right link</td><td class="time"><a href="#t2020-03-14T15:21:01" class="time">15:21</a></td></tr>
+<tr id="t2020-03-14T21:08:14"><th class="nick" style="background: #818144">kroon</th><td class="text" style="color: #818144">Should e2fsprogs be patched to always default to inode size = 256 ? Getting warnings when mounting yocto images while running 5.4 kernels</td><td class="time"><a href="#t2020-03-14T21:08:14" class="time">21:08</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-03-13.log.html">&#171; Friday, 2020-03-13</a> <a href="index.html">Index</a> <a href="%23yocto.2020-03-15.log.html">Sunday, 2020-03-15 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
