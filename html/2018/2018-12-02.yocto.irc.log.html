@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2018-12-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2018-12-02</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-01.log.html">&#171; Saturday, 2018-12-01</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-03.log.html">Monday, 2018-12-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-02T00:19:58"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">junland: Yocto Project is used by many of the embedded software vendors (Wind River, Mentor, Montavista, ENEA and so on) so its used heavily commercially as well as by hobbyists</td><td class="time"><a href="#t2018-12-02T00:19:58" class="time">00:19</a></td></tr>
+<tr id="t2018-12-02T00:20:31"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">junland: it allows ease of customisation but has a heavy learning curve so there are tradeoffs</td><td class="time"><a href="#t2018-12-02T00:20:31" class="time">00:20</a></td></tr>
+<tr id="t2018-12-02T00:50:06"><th class="nick" style="background: #42427e">junland</th><td class="text" style="color: #42427e">RP: Yea, I've been playing around with yocto for a couple of years. Just was wondering if yocto was being use to build images more server hardware rather than little devices.</td><td class="time"><a href="#t2018-12-02T00:50:06" class="time">00:50</a></td></tr>
+<tr id="t2018-12-02T00:54:40"><th class="nick" style="background: #818144">Crofton</th><td class="text" style="color: #818144">junland, we've seen people doing that</td><td class="time"><a href="#t2018-12-02T00:54:40" class="time">00:54</a></td></tr>
+<tr id="t2018-12-02T01:04:49"><th class="nick" style="background: #42427e">junland</th><td class="text" style="color: #42427e">Ah okay. Looking thru the OE Layers site there is like 4 openstack layers. Which I think is pretty interesting for a project focused on embedded.</td><td class="time"><a href="#t2018-12-02T01:04:49" class="time">01:04</a></td></tr>
+<tr id="t2018-12-02T01:10:09"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">flexibility being such a high priority does mean it gets used in a wide variety of areas. embedded was just the original focus</td><td class="time"><a href="#t2018-12-02T01:10:09" class="time">01:10</a></td></tr>
+<tr id="t2018-12-02T06:54:43"><th class="nick" style="background: #42427e">junland</th><td class="text" style="color: #42427e">Oh okay gotcha</td><td class="time"><a href="#t2018-12-02T06:54:43" class="time">06:54</a></td></tr>
+<tr id="t2018-12-02T08:01:15"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP: classes/waf: Fix builds when B != S seems to have a regression in meta-oe</td><td class="time"><a href="#t2018-12-02T08:01:15" class="time">08:01</a></td></tr>
+<tr id="t2018-12-02T09:27:05"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: ok, will hold that one</td><td class="time"><a href="#t2018-12-02T09:27:05" class="time">09:27</a></td></tr>
+<tr id="t2018-12-02T10:10:58"><th class="nick" style="background: #8c4a4a">sirloin</th><td class="text" style="color: #8c4a4a">Mornin guys! Perhaps someone could help me out. I recently updated to yocto-sumo and systemd 237 which now includes a service 'systemd-networkd-wait-online.service' which delays my system because there is no network at boot. How do I "cleanly" disable that service in my yocto build?</td><td class="time"><a href="#t2018-12-02T10:10:58" class="time">10:10</a></td></tr>
+<tr id="t2018-12-02T11:32:05"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin: do you remember anything about gpg memory allocation problems?</td><td class="time"><a href="#t2018-12-02T11:32:05" class="time">11:32</a></td></tr>
+<tr id="t2018-12-02T14:15:51"><th class="nick" style="background: #4b904b">yocti</th><td class="text" style="color: #4b904b">New news from stackoverflow: am335x evmsk screen init:id"00" respawning too fast disabled for 5 minutes yocto sumo [on hold] &lt;<a href="https://stackoverflow.com/questions/53523039/am335x-evmsk-screen-initid00-respawning-too-fast-disabled-for-5-minutes-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/53523039/am335x-evmsk-screen-initid00-respawning-too-fast-disabled-for-5-minutes-yocto&gt;</a></td><td class="time"><a href="#t2018-12-02T14:15:51" class="time">14:15</a></td></tr>
+<tr id="t2018-12-02T14:24:33"><th class="nick" style="background: #4d4d93">la_croix</th><td class="text" style="color: #4d4d93">I've build cronie into a yocto image, but I can't find its log files anywhere /var/log/syslog doesn't exist</td><td class="time"><a href="#t2018-12-02T14:24:33" class="time">14:24</a></td></tr>
+<tr id="t2018-12-02T14:45:59"><th class="nick" style="background: #4b904b">yocti</th><td class="text" style="color: #4b904b">New news from stackoverflow: Cronie - python with subprocess doesn't run &lt;<a href="https://stackoverflow.com/questions/53581129/cronie-python-with-subprocess-doesnt-run&gt;" rel="nofollow">https://stackoverflow.com/questions/53581129/cronie-python-with-subprocess-doesnt-run&gt;</a></td><td class="time"><a href="#t2018-12-02T14:45:59" class="time">14:45</a></td></tr>
+<tr id="t2018-12-02T17:10:31"><td class="nickchange" colspan="2">*** vmesons is now known as vmeson</td><td><a href="#t2018-12-02T17:10:31" class="time">17:10</a></td></tr>
+<tr id="t2018-12-02T17:30:30"><td class="nickchange" colspan="2">*** yann|work is now known as yann</td><td><a href="#t2018-12-02T17:30:30" class="time">17:30</a></td></tr>
+<tr id="t2018-12-02T18:54:13"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP: <a href="http://errors.yoctoproject.org/Errors/Details/202947/" rel="nofollow">http://errors.yoctoproject.org/Errors/Details/202947/</a></td><td class="time"><a href="#t2018-12-02T18:54:13" class="time">18:54</a></td></tr>
+<tr id="t2018-12-02T18:54:56"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">we upgraded build hosts to ubuntu 18.04 and seeing this new</td><td class="time"><a href="#t2018-12-02T18:54:56" class="time">18:54</a></td></tr>
+<tr id="t2018-12-02T18:55:12"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">dont know if its due to that or something master-next brought it</td><td class="time"><a href="#t2018-12-02T18:55:12" class="time">18:55</a></td></tr>
+<tr id="t2018-12-02T20:05:28"><td class="part" colspan="2">*** arkom &lt;arkom!~arkom@apn-77-114-154-194.dynamic.gprs.plus.pl&gt; has left #yocto</td><td><a href="#t2018-12-02T20:05:28" class="time">20:05</a></td></tr>
+<tr id="t2018-12-02T22:20:00"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: we have 1804 workers and I've never seen that</td><td class="time"><a href="#t2018-12-02T22:20:00" class="time">22:20</a></td></tr>
+<tr id="t2018-12-02T22:20:18"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: I'd lean to master-next, something making one of the versions "None"</td><td class="time"><a href="#t2018-12-02T22:20:18" class="time">22:20</a></td></tr>
+<tr id="t2018-12-02T23:26:20"><th class="nick" style="background: #97974f">zyradyl</th><td class="text" style="color: #97974f">Hello :)</td><td class="time"><a href="#t2018-12-02T23:26:20" class="time">23:26</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-01.log.html">&#171; Saturday, 2018-12-01</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-03.log.html">Monday, 2018-12-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

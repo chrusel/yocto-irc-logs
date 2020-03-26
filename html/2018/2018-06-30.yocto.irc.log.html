@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-06-30</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-06-30</h1>
+<div class="navigation"> <a href="%23yocto.2018-06-29.log.html">&#171; Friday, 2018-06-29</a> <a href="index.html">Index</a> <a href="%23yocto.2018-07-01.log.html">Sunday, 2018-07-01 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-06-30T01:02:16"><td class="part" colspan="2">*** jmg50 &lt;jmg50!~Jean-Mi@192-222-158-156.qc.cable.ebox.net&gt; has left #yocto</td><td><a href="#t2018-06-30T01:02:16" class="time">01:02</a></td></tr>
+<tr id="t2018-06-30T04:14:30"><td class="other" colspan="2">-YoctoAutoBuilder- build #1117 of nightly-multilib is complete: Failure [failed BuildImages_2 Running Sanity Tests_2 BuildImages_3 Running Sanity Tests_3]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-multilib/builds/1117" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-multilib/builds/1117</a></td><td><a href="#t2018-06-30T04:14:30" class="time">04:14</a></td></tr>
+<tr id="t2018-06-30T04:30:53"><td class="other" colspan="2">-YoctoAutoBuilder- build #1113 of nightly-qa-extras is complete: Failure [failed BuildImages_14]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/1113" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/1113</a></td><td><a href="#t2018-06-30T04:30:53" class="time">04:30</a></td></tr>
+<tr id="t2018-06-30T04:58:58"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Building Yocto Linux works on Ubuntu but not Suse &lt;<a href="https://stackoverflow.com/questions/45753100/building-yocto-linux-works-on-ubuntu-but-not-suse&gt;" rel="nofollow">https://stackoverflow.com/questions/45753100/building-yocto-linux-works-on-ubuntu-but-not-suse&gt;</a></td><td class="time"><a href="#t2018-06-30T04:58:58" class="time">04:58</a></td></tr>
+<tr id="t2018-06-30T05:41:42"><td class="other" colspan="2">-YoctoAutoBuilder- build #1197 of nightly is complete: Failure [failed]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly/builds/1197" rel="nofollow">https://autobuilder.yocto.io/builders/nightly/builds/1197</a></td><td><a href="#t2018-06-30T05:41:42" class="time">05:41</a></td></tr>
+<tr id="t2018-06-30T09:32:15"><th class="nick" style="background: #42427e">yates_home</th><td class="text" style="color: #42427e">hey guys, i tried to do a devtool modify and am getting this: <a href="https://paste.fedoraproject.org/paste/VxS1Jg986pn-ii9-vJEDkQ" rel="nofollow">https://paste.fedoraproject.org/paste/VxS1Jg986pn-ii9-vJEDkQ</a></td><td class="time"><a href="#t2018-06-30T09:32:15" class="time">09:32</a></td></tr>
+<tr id="t2018-06-30T09:32:24"><th class="nick" style="background: #42427e">yates_home</th><td class="text" style="color: #42427e">any ideas what's going on?</td><td class="time"><a href="#t2018-06-30T09:32:24" class="time">09:32</a></td></tr>
+<tr id="t2018-06-30T09:34:39"><th class="nick" style="background: #42427e">yates_home</th><td class="text" style="color: #42427e">btw, I found the culprit - wasn't seeing the tree for the forest: ./meta-swupdate/recipes-devtools/mtd/mtd-utils_%.bbappend:6:&nbsp;&nbsp;&nbsp;&nbsp;install -m 0644 ${S}/include/libubi.h ${D}${includedir}/mtd/</td><td class="time"><a href="#t2018-06-30T09:34:39" class="time">09:34</a></td></tr>
+<tr id="t2018-06-30T09:37:59"><th class="nick" style="background: #42427e">yates_home</th><td class="text" style="color: #42427e">should I just modify the bbappend directly? yeah, probably, since i've got the whole project checked into svn. right?</td><td class="time"><a href="#t2018-06-30T09:37:59" class="time">09:37</a></td></tr>
+<tr id="t2018-06-30T12:27:12"><td class="nickchange" colspan="2">*** rZZZr is now known as RzR</td><td><a href="#t2018-06-30T12:27:12" class="time">12:27</a></td></tr>
+<tr id="t2018-06-30T15:00:42"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Recipe to bitbake a docker container into Yocto [closed] &lt;<a href="https://stackoverflow.com/questions/49309691/recipe-to-bitbake-a-docker-container-into-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/49309691/recipe-to-bitbake-a-docker-container-into-yocto&gt;</a></td><td class="time"><a href="#t2018-06-30T15:00:42" class="time">15:00</a></td></tr>
+<tr id="t2018-06-30T16:23:59"><td class="other" colspan="2">-YoctoAutoBuilder- build #1128 of nightly-musl is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-musl/builds/1128" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-musl/builds/1128</a></td><td><a href="#t2018-06-30T16:23:59" class="time">16:23</a></td></tr>
+<tr id="t2018-06-30T16:30:54"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Yocto Psplash: Change progress-bar image [closed] &lt;<a href="https://stackoverflow.com/questions/51024422/yocto-psplash-change-progress-bar-image&gt;" rel="nofollow">https://stackoverflow.com/questions/51024422/yocto-psplash-change-progress-bar-image&gt;</a></td><td class="time"><a href="#t2018-06-30T16:30:54" class="time">16:30</a></td></tr>
+<tr id="t2018-06-30T17:01:27"><td class="other" colspan="2">-YoctoAutoBuilder- build #1118 of nightly-multilib is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-multilib/builds/1118" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-multilib/builds/1118</a></td><td><a href="#t2018-06-30T17:01:27" class="time">17:01</a></td></tr>
+<tr id="t2018-06-30T18:27:24"><td class="other" colspan="2">-YoctoAutoBuilder- build #1199 of nightly is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly/builds/1199" rel="nofollow">https://autobuilder.yocto.io/builders/nightly/builds/1199</a></td><td><a href="#t2018-06-30T18:27:24" class="time">18:27</a></td></tr>
+<tr id="t2018-06-30T19:58:46"><td class="other" colspan="2">-YoctoAutoBuilder- build #1155 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/1155" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/1155</a></td><td><a href="#t2018-06-30T19:58:46" class="time">19:58</a></td></tr>
+<tr id="t2018-06-30T20:31:30"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Yocto post-build script &lt;<a href="https://stackoverflow.com/questions/45773234/yocto-post-build-script&gt;" rel="nofollow">https://stackoverflow.com/questions/45773234/yocto-post-build-script&gt;</a></td><td class="time"><a href="#t2018-06-30T20:31:30" class="time">20:31</a></td></tr>
+<tr id="t2018-06-30T20:51:18"><td class="other" colspan="2">-YoctoAutoBuilder- build #1088 of nightly-non-gpl3 is complete: Failure [failed BuildImages]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-non-gpl3/builds/1088" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-non-gpl3/builds/1088</a></td><td><a href="#t2018-06-30T20:51:18" class="time">20:51</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-06-29.log.html">&#171; Friday, 2018-06-29</a> <a href="index.html">Index</a> <a href="%23yocto.2018-07-01.log.html">Sunday, 2018-07-01 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

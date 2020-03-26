@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Wednesday, 2018-12-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Wednesday, 2018-12-26</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-25.log.html">&#171; Tuesday, 2018-12-25</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-27.log.html">Thursday, 2018-12-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-26T06:42:06"><td class="nickchange" colspan="2">*** [1]Jack3k3 is now known as Jack3k3</td><td><a href="#t2018-12-26T06:42:06" class="time">06:42</a></td></tr>
+<tr id="t2018-12-26T06:55:26"><td class="nickchange" colspan="2">*** [1]Jack3k3 is now known as Jack3k3</td><td><a href="#t2018-12-26T06:55:26" class="time">06:55</a></td></tr>
+<tr id="t2018-12-26T11:26:48"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: merged :)</td><td class="time"><a href="#t2018-12-26T11:26:48" class="time">11:26</a></td></tr>
+<tr id="t2018-12-26T14:04:07"><th class="nick" style="background: #42427e">tas</th><td class="text" style="color: #42427e">Hello! I try to build basic yocto core-image-minimal with prebuild meta-linaro-toolchain. All packages are builded, but one error remains: QA issue: glibc-locale: Files/directories were installed but not shipped in any package: /usr/bin Please set FILES such that these items are packaged. . ..</td><td class="time"><a href="#t2018-12-26T14:04:07" class="time">14:04</a></td></tr>
+<tr id="t2018-12-26T14:07:41"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: Yocto - fetch private repo using https &lt;<a href="https://stackoverflow.com/questions/53656233/yocto-fetch-private-repo-using-https&gt;" rel="nofollow">https://stackoverflow.com/questions/53656233/yocto-fetch-private-repo-using-https&gt;</a></td><td class="time"><a href="#t2018-12-26T14:07:41" class="time">14:07</a></td></tr>
+<tr id="t2018-12-26T14:31:29"><th class="nick" style="background: #42427e">tas</th><td class="text" style="color: #42427e">(tas) Hello! I try to build basic yocto core-image-minimal with prebuild meta-linaro-toolchain. All packages are builded, but one error remains: QA issue: glibc-locale: Files/directories were installed but not shipped in any package: /usr/bin Please set FILES such that these items are packaged. . ..</td><td class="time"><a href="#t2018-12-26T14:31:29" class="time">14:31</a></td></tr>
+<tr id="t2018-12-26T15:49:32"><th class="nick" style="background: #42427e">tas</th><td class="text" style="color: #42427e">(tas) Hello! I try to build basic yocto core-image-minimal with prebuild meta-linaro-toolchain. All packages are builded, but one error remains: QA issue: glibc-locale: Files/directories were installed but not shipped in any package: /usr/bin Please set FILES such that these items are packaged. . ..</td><td class="time"><a href="#t2018-12-26T15:49:32" class="time">15:49</a></td></tr>
+<tr id="t2018-12-26T15:56:47"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">not enough information. you should post the full log to a pastebin, or at the very least mention what recipe is involved</td><td class="time"><a href="#t2018-12-26T15:56:47" class="time">15:56</a></td></tr>
+<tr id="t2018-12-26T16:00:35"><th class="nick" style="background: #42427e">tas</th><td class="text" style="color: #42427e">Ok, I try to post full log some later.</td><td class="time"><a href="#t2018-12-26T16:00:35" class="time">16:00</a></td></tr>
+<tr id="t2018-12-26T16:04:39"><td class="action" colspan="2">* armpit ugh.. eclipse build failure again</td><td><a href="#t2018-12-26T16:04:39" class="time">16:04</a></td></tr>
+<tr id="t2018-12-26T16:44:25"><td class="nickchange" colspan="2">*** [1]Jack3k3 is now known as Jack3k3</td><td><a href="#t2018-12-26T16:44:25" class="time">16:44</a></td></tr>
+<tr id="t2018-12-26T17:12:51"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: I let ChinHuat and moto-timo know</td><td class="time"><a href="#t2018-12-26T17:12:51" class="time">17:12</a></td></tr>
+<tr id="t2018-12-26T17:16:06"><th class="nick" style="background: #488888">armpit</th><td class="text" style="color: #488888">k, its odd. the message point out its using "master". I have another build running and if continues to fail I will open a bug</td><td class="time"><a href="#t2018-12-26T17:16:06" class="time">17:16</a></td></tr>
+<tr id="t2018-12-26T17:16:32"><th class="nick" style="background: #488888">armpit</th><td class="text" style="color: #488888">I double check the build parms and they are all using thud</td><td class="time"><a href="#t2018-12-26T17:16:32" class="time">17:16</a></td></tr>
+<tr id="t2018-12-26T19:24:58"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">Hmm, systemd is booting into emergency mode, journalctl -xb shows no obvious service failure, and systemctl --failed shows nothing. No hung jobs in systemctl list-jobs..</td><td class="time"><a href="#t2018-12-26T19:24:58" class="time">19:24</a></td></tr>
+<tr id="t2018-12-26T19:57:52"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">RP: great</td><td class="time"><a href="#t2018-12-26T19:57:52" class="time">19:57</a></td></tr>
+<tr id="t2018-12-26T19:58:14"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">RP: now we need to merge the binutils change I sent and I will send a few more just now</td><td class="time"><a href="#t2018-12-26T19:58:14" class="time">19:58</a></td></tr>
+<tr id="t2018-12-26T20:31:42"><th class="nick" style="background: #4b904b">alimon</th><td class="text" style="color: #4b904b">khem: <a href="https://github.com/kraj/meta-clang/pull/75" rel="nofollow">https://github.com/kraj/meta-clang/pull/75</a></td><td class="time"><a href="#t2018-12-26T20:31:42" class="time">20:31</a></td></tr>
+<tr id="t2018-12-26T20:43:14"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">alimon: you need to rework it</td><td class="time"><a href="#t2018-12-26T20:43:14" class="time">20:43</a></td></tr>
+<tr id="t2018-12-26T22:05:23"><th class="nick" style="background: #4b904b">alimon</th><td class="text" style="color: #4b904b">khem: i just update it</td><td class="time"><a href="#t2018-12-26T22:05:23" class="time">22:05</a></td></tr>
+<tr id="t2018-12-26T22:40:42"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">thx</td><td class="time"><a href="#t2018-12-26T22:40:42" class="time">22:40</a></td></tr>
+<tr id="t2018-12-26T23:31:45"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: What does the binutils change bring in?</td><td class="time"><a href="#t2018-12-26T23:31:45" class="time">23:31</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-25.log.html">&#171; Tuesday, 2018-12-25</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-27.log.html">Thursday, 2018-12-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

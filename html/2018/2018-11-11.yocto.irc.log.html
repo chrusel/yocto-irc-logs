@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2018-11-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2018-11-11</h1>
+<div class="navigation"> <a href="%23yocto.2018-11-10.log.html">&#171; Saturday, 2018-11-10</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-12.log.html">Monday, 2018-11-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-11-11T00:47:45"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-11T00:47:45" class="time">00:47</a></td></tr>
+<tr id="t2018-11-11T00:47:53"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-11T00:47:53" class="time">00:47</a></td></tr>
+<tr id="t2018-11-11T01:37:06"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">khem: ping</td><td class="time"><a href="#t2018-11-11T01:37:06" class="time">01:37</a></td></tr>
+<tr id="t2018-11-11T04:06:34"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-11T04:06:34" class="time">04:06</a></td></tr>
+<tr id="t2018-11-11T12:24:35"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Hi, anybody here?</td><td class="time"><a href="#t2018-11-11T12:24:35" class="time">12:24</a></td></tr>
+<tr id="t2018-11-11T13:55:36"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-11T13:55:36" class="time">13:55</a></td></tr>
+<tr id="t2018-11-11T14:03:16"><th class="nick" style="background: #818144">diembed_</th><td class="text" style="color: #818144">Hi la_croix</td><td class="time"><a href="#t2018-11-11T14:03:16" class="time">14:03</a></td></tr>
+<tr id="t2018-11-11T14:04:51"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Hi</td><td class="time"><a href="#t2018-11-11T14:04:51" class="time">14:04</a></td></tr>
+<tr id="t2018-11-11T14:05:04"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">I'm having a bit of a problem with i2s support, could you give me a hand?</td><td class="time"><a href="#t2018-11-11T14:05:04" class="time">14:05</a></td></tr>
+<tr id="t2018-11-11T14:52:40"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Anybody here?</td><td class="time"><a href="#t2018-11-11T14:52:40" class="time">14:52</a></td></tr>
+<tr id="t2018-11-11T14:53:51"><th class="nick" style="background: #818144">diembed_</th><td class="text" style="color: #818144">What is the relation beetween I2S audio protocol and Yocto ?</td><td class="time"><a href="#t2018-11-11T14:53:51" class="time">14:53</a></td></tr>
+<tr id="t2018-11-11T15:17:33"><th class="nick" style="background: #854685">sno</th><td class="text" style="color: #854685">moto-timo: yt?</td><td class="time"><a href="#t2018-11-11T15:17:33" class="time">15:17</a></td></tr>
+<tr id="t2018-11-11T15:18:57"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">The fact that I've attempted to build that module into a yocto build, but it doesn't seem to be able to find an i2s soundcard</td><td class="time"><a href="#t2018-11-11T15:18:57" class="time">15:18</a></td></tr>
+<tr id="t2018-11-11T15:26:04"><th class="nick" style="background: #818144">diembed_</th><td class="text" style="color: #818144">It is kernel and Device-tree related stuff</td><td class="time"><a href="#t2018-11-11T15:26:04" class="time">15:26</a></td></tr>
+<tr id="t2018-11-11T15:26:29"><th class="nick" style="background: #818144">diembed_</th><td class="text" style="color: #818144">Did you try to build Kernel and DTB outside yocto ?</td><td class="time"><a href="#t2018-11-11T15:26:29" class="time">15:26</a></td></tr>
+<tr id="t2018-11-11T15:27:46"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">No, I don't really know how to do that</td><td class="time"><a href="#t2018-11-11T15:27:46" class="time">15:27</a></td></tr>
+<tr id="t2018-11-11T15:28:04"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">I've added: IMAGE_INSTALL_append = " kernel-modules "</td><td class="time"><a href="#t2018-11-11T15:28:04" class="time">15:28</a></td></tr>
+<tr id="t2018-11-11T15:28:04"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">KERNEL_MODULE_AUTOLOAD_append = " snd-soc-bcm2835-i2s " to my local.conf, as some guys here told me to</td><td class="time"><a href="#t2018-11-11T15:28:04" class="time">15:28</a></td></tr>
+<tr id="t2018-11-11T15:28:22"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">And now the modules are present, but it still fails to find the soundcard</td><td class="time"><a href="#t2018-11-11T15:28:22" class="time">15:28</a></td></tr>
+<tr id="t2018-11-11T15:36:10"><th class="nick" style="background: #488888">yocti</th><td class="text" style="color: #488888">New news from stackoverflow: Yocto linux can't find i2s soundcard &lt;<a href="https://stackoverflow.com/questions/53250214/yocto-linux-cant-find-i2s-soundcard&gt;" rel="nofollow">https://stackoverflow.com/questions/53250214/yocto-linux-cant-find-i2s-soundcard&gt;</a></td><td class="time"><a href="#t2018-11-11T15:36:10" class="time">15:36</a></td></tr>
+<tr id="t2018-11-11T15:37:59"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Yeah, that's me</td><td class="time"><a href="#t2018-11-11T15:37:59" class="time">15:37</a></td></tr>
+<tr id="t2018-11-11T19:07:03"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Anybody here?</td><td class="time"><a href="#t2018-11-11T19:07:03" class="time">19:07</a></td></tr>
+<tr id="t2018-11-11T19:49:45"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">HI yocto set -Wl,-rpath-link for LDFLAGS, assume the makefile using gcc to invoke linker, however there is one pkt using ld to link, what is the best way to remove -Wl fore one recipe's do_compile()</td><td class="time"><a href="#t2018-11-11T19:49:45" class="time">19:49</a></td></tr>
+<tr id="t2018-11-11T20:34:13"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">derek_, have you tried LDFLAGFS_remove ?</td><td class="time"><a href="#t2018-11-11T20:34:13" class="time">20:34</a></td></tr>
+<tr id="t2018-11-11T20:44:27"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">armpit2, do you mean in do_compile() pass LDFLAG=${LDFLAGS_remove} instead of LDFLAGS=${LDFLAGS}?</td><td class="time"><a href="#t2018-11-11T20:44:27" class="time">20:44</a></td></tr>
+<tr id="t2018-11-11T20:45:27"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">something like this?</td><td class="time"><a href="#t2018-11-11T20:45:27" class="time">20:45</a></td></tr>
+<tr id="t2018-11-11T20:45:27"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">oe_runmake CC="${CC} ${CFLAGS}" LD="${LD}" LDFLAGS="${LDFLAGFS_remove}" firmware="bios"</td><td class="time"><a href="#t2018-11-11T20:45:27" class="time">20:45</a></td></tr>
+<tr id="t2018-11-11T20:46:05"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">no, in your recipe have LDFLAGS_remove =" {what you want removed)"</td><td class="time"><a href="#t2018-11-11T20:46:05" class="time">20:46</a></td></tr>
+<tr id="t2018-11-11T20:46:46"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">if you don't want "-02" then is would be LDFLAGS_remove = " -o2"</td><td class="time"><a href="#t2018-11-11T20:46:46" class="time">20:46</a></td></tr>
+<tr id="t2018-11-11T20:47:20"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">if you want is empty LDFLAGS = ""</td><td class="time"><a href="#t2018-11-11T20:47:20" class="time">20:47</a></td></tr>
+<tr id="t2018-11-11T20:52:30"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">LDFLAGS_remove="-Wl" do_compile() {}</td><td class="time"><a href="#t2018-11-11T20:52:30" class="time">20:52</a></td></tr>
+<tr id="t2018-11-11T21:12:51"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">derek_, yeah. give that a try..</td><td class="time"><a href="#t2018-11-11T21:12:51" class="time">21:12</a></td></tr>
+<tr id="t2018-11-11T21:25:12"><th class="nick" style="background: #4d4d93">RP</th><td class="text" style="color: #4d4d93">armpit2: wondering what I did to get on your bad side today :/</td><td class="time"><a href="#t2018-11-11T21:25:12" class="time">21:25</a></td></tr>
+<tr id="t2018-11-11T21:29:32"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">RP, not on my bad side.. just trying to understand your changes..</td><td class="time"><a href="#t2018-11-11T21:29:32" class="time">21:29</a></td></tr>
+<tr id="t2018-11-11T21:29:40"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">armpit2, thanks, LDFLAGS_remove="-Wl" BUILD_LDFLAGS_remove="-Wl" TARGET_LDFLAGS_remove="-Wl"</td><td class="time"><a href="#t2018-11-11T21:29:40" class="time">21:29</a></td></tr>
+<tr id="t2018-11-11T21:30:18"><th class="nick" style="background: #4b904b">armpit2</th><td class="text" style="color: #4b904b">RP, I just cant write</td><td class="time"><a href="#t2018-11-11T21:30:18" class="time">21:30</a></td></tr>
+<tr id="t2018-11-11T21:30:24"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">I searched run.do_compile.xxx file, there are 3 flags included -Wl, so I added 3 _remove,</td><td class="time"><a href="#t2018-11-11T21:30:24" class="time">21:30</a></td></tr>
+<tr id="t2018-11-11T21:30:48"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">but still got Wl passed to target pkt's Makefile</td><td class="time"><a href="#t2018-11-11T21:30:48" class="time">21:30</a></td></tr>
+<tr id="t2018-11-11T21:31:35"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">oe_runmake CC="" LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed" firmware="bios"</td><td class="time"><a href="#t2018-11-11T21:31:35" class="time">21:31</a></td></tr>
+<tr id="t2018-11-11T21:31:54"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">I can see that from run.compile.xxx file</td><td class="time"><a href="#t2018-11-11T21:31:54" class="time">21:31</a></td></tr>
+<tr id="t2018-11-11T21:32:18"><th class="nick" style="background: #8c4a4a">derek_</th><td class="text" style="color: #8c4a4a">oe_runmake CC="${CC} ${CFLAGS}" LD="${LD}" LDFLAGS="${LDFLAGS}" firmware="bios"</td><td class="time"><a href="#t2018-11-11T21:32:18" class="time">21:32</a></td></tr>
+<tr id="t2018-11-11T21:39:24"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Does anybody know why i2s might. not be working in yocto for rpi3?</td><td class="time"><a href="#t2018-11-11T21:39:24" class="time">21:39</a></td></tr>
+<tr id="t2018-11-11T22:02:38"><th class="nick" style="background: #42427e">la_croix_</th><td class="text" style="color: #42427e">Anybody?</td><td class="time"><a href="#t2018-11-11T22:02:38" class="time">22:02</a></td></tr>
+<tr id="t2018-11-11T22:40:34"><td class="nickchange" colspan="2">*** armpit2 is now known as armpit</td><td><a href="#t2018-11-11T22:40:34" class="time">22:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-11-10.log.html">&#171; Saturday, 2018-11-10</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-12.log.html">Monday, 2018-11-12 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

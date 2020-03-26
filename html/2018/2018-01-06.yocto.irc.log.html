@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-01-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-01-06</h1>
+<div class="navigation"> <a href="%23yocto.2018-01-05.log.html">&#171; Friday, 2018-01-05</a> <a href="index.html">Index</a> <a href="%23yocto.2018-01-07.log.html">Sunday, 2018-01-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-01-06T02:05:02"><th class="nick" style="background: #407a40">loxeen</th><td class="text" style="color: #407a40">hello guys</td><td class="time"><a href="#t2018-01-06T02:05:02" class="time">02:05</a></td></tr>
+<tr id="t2018-01-06T02:07:24"><th class="nick" style="background: #407a40">loxeen</th><td class="text" style="color: #407a40">i get this error at btibake rpi-basic-image <a href="https://pastebin.com/QPFVnN5A" rel="nofollow">https://pastebin.com/QPFVnN5A</a> . Any ideea why that might may be? thank you!</td><td class="time"><a href="#t2018-01-06T02:07:24" class="time">02:07</a></td></tr>
+<tr id="t2018-01-06T02:27:15"><td class="nickchange" colspan="2">*** milindur_ is now known as milindur</td><td><a href="#t2018-01-06T02:27:15" class="time">02:27</a></td></tr>
+<tr id="t2018-01-06T02:27:17"><td class="nickchange" colspan="2">*** mithro_ is now known as mithro</td><td><a href="#t2018-01-06T02:27:17" class="time">02:27</a></td></tr>
+<tr id="t2018-01-06T04:30:30"><th class="nick" style="background: #42427e">learningc</th><td class="text" style="color: #42427e">Is there a menuconfig to configure u-boot in yocto?</td><td class="time"><a href="#t2018-01-06T04:30:30" class="time">04:30</a></td></tr>
+<tr id="t2018-01-06T07:00:25"><th class="nick" style="background: #818144">soderstrom</th><td class="text" style="color: #818144">learningc: omly indirectly I think, i.e.,&nbsp;&nbsp;you could probably get away with something like `bitbake -c devshell virtual/bootloader` and in the new shell environment run `make menuconfig`.</td><td class="time"><a href="#t2018-01-06T07:00:25" class="time">07:00</a></td></tr>
+<tr id="t2018-01-06T09:38:04"><th class="nick" style="background: #42427e">learningc</th><td class="text" style="color: #42427e">I see. Thanks</td><td class="time"><a href="#t2018-01-06T09:38:04" class="time">09:38</a></td></tr>
+<tr id="t2018-01-06T12:26:41"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2018-01-06T12:26:41" class="time">12:26</a></td></tr>
+<tr id="t2018-01-06T13:37:16"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">hi everyone</td><td class="time"><a href="#t2018-01-06T13:37:16" class="time">13:37</a></td></tr>
+<tr id="t2018-01-06T14:14:17"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">can i set the packageconfig for a recipe in an image recipe?</td><td class="time"><a href="#t2018-01-06T14:14:17" class="time">14:14</a></td></tr>
+<tr id="t2018-01-06T14:14:43"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">i'm trying to enable python-opencv in the opencv recipe</td><td class="time"><a href="#t2018-01-06T14:14:43" class="time">14:14</a></td></tr>
+<tr id="t2018-01-06T14:30:44"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">hello guys, I am playing with yocto and remarked that "ofono" package was installed in my image</td><td class="time"><a href="#t2018-01-06T14:30:44" class="time">14:30</a></td></tr>
+<tr id="t2018-01-06T14:31:11"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">when I plot dependencies with bitbake -g ofono, it tells me that ofono was included because it is required by… ofono</td><td class="time"><a href="#t2018-01-06T14:31:11" class="time">14:31</a></td></tr>
+<tr id="t2018-01-06T14:31:29"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">hence, I do not understand why I am having this package (that I do not need) in my resulting image</td><td class="time"><a href="#t2018-01-06T14:31:29" class="time">14:31</a></td></tr>
+<tr id="t2018-01-06T14:32:37"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">question is: how can I find out why I am having this package in my image?</td><td class="time"><a href="#t2018-01-06T14:32:37" class="time">14:32</a></td></tr>
+<tr id="t2018-01-06T14:35:51"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">hmm, making an opencv_3.3.bbappend and adding `PACKAGECONFIG += "python2"` doesn't do anything...</td><td class="time"><a href="#t2018-01-06T14:35:51" class="time">14:35</a></td></tr>
+<tr id="t2018-01-06T14:52:13"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">what is BPN? and why is opencv using it to create the python package name instead of PN?</td><td class="time"><a href="#t2018-01-06T14:52:13" class="time">14:52</a></td></tr>
+<tr id="t2018-01-06T15:19:55"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">turns out packagegroup-install-extended, included by core-image, was bringing in ofono. and this is done by default by core-image (wtf? ofono, really?)</td><td class="time"><a href="#t2018-01-06T15:19:55" class="time">15:19</a></td></tr>
+<tr id="t2018-01-06T15:20:35"><th class="nick" style="background: #488888">MicroJoe</th><td class="text" style="color: #488888">removed using CORE_IMAGE_BASE_INSTALL_remove = "packagegroup-install-extended" in order to get rid of wifi, bluetooth and ofono</td><td class="time"><a href="#t2018-01-06T15:20:35" class="time">15:20</a></td></tr>
+<tr id="t2018-01-06T16:06:44"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">hmm, i'm getting `Error: max_leb_cnt too low (2146 needed)` from do_ubifs. it sounds like my image is too large?</td><td class="time"><a href="#t2018-01-06T16:06:44" class="time">16:06</a></td></tr>
+<tr id="t2018-01-06T16:43:07"><th class="nick" style="background: #854685">peacememories</th><td class="text" style="color: #854685">hmm, i can't seem to get python-opencv to be found on yocto rocko... :/</td><td class="time"><a href="#t2018-01-06T16:43:07" class="time">16:43</a></td></tr>
+<tr id="t2018-01-06T19:49:32"><td class="part" colspan="2">*** cc_smart1 &lt;cc_smart1!~michael@80.238.209.140&gt; has left #yocto</td><td><a href="#t2018-01-06T19:49:32" class="time">19:49</a></td></tr>
+<tr id="t2018-01-06T21:41:51"><th class="nick" style="background: #8c4a4a">yocti</th><td class="text" style="color: #8c4a4a">New news from stackoverflow: Unable to start bitbake server &lt;<a href="https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;" rel="nofollow">https://stackoverflow.com/questions/48132054/unable-to-start-bitbake-server&gt;</a></td><td class="time"><a href="#t2018-01-06T21:41:51" class="time">21:41</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-01-05.log.html">&#171; Friday, 2018-01-05</a> <a href="index.html">Index</a> <a href="%23yocto.2018-01-07.log.html">Sunday, 2018-01-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2018-12-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2018-12-24</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-23.log.html">&#171; Sunday, 2018-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-25.log.html">Tuesday, 2018-12-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-24T00:32:26"><th class="nick" style="background: #407a40">ant_home</th><td class="text" style="color: #407a40">derRichard, you were trying to hide the dirty core2 part ;)</td><td class="time"><a href="#t2018-12-24T00:32:26" class="time">00:32</a></td></tr>
+<tr id="t2018-12-24T00:32:40"><th class="nick" style="background: #407a40">ant_home</th><td class="text" style="color: #407a40">but this was your initial goal, isn't?</td><td class="time"><a href="#t2018-12-24T00:32:40" class="time">00:32</a></td></tr>
+<tr id="t2018-12-24T00:32:59"><th class="nick" style="background: #407a40">ant_home</th><td class="text" style="color: #407a40">sdk 32b</td><td class="time"><a href="#t2018-12-24T00:32:59" class="time">00:32</a></td></tr>
+<tr id="t2018-12-24T00:41:55"><th class="nick" style="background: #407a40">ant_home</th><td class="text" style="color: #407a40">gn</td><td class="time"><a href="#t2018-12-24T00:41:55" class="time">00:41</a></td></tr>
+<tr id="t2018-12-24T01:45:12"><th class="nick" style="background: #42427e">Jack3k3</th><td class="text" style="color: #42427e">hey folks, Im getting a very strange error, im doing "bitbake developer-image" and it finishes all the compilation steps fine but during the developer-image do_rootfs task it fails because opkg returned an error code of -11</td><td class="time"><a href="#t2018-12-24T01:45:12" class="time">01:45</a></td></tr>
+<tr id="t2018-12-24T01:51:18"><th class="nick" style="background: #42427e">Jack3k3</th><td class="text" style="color: #42427e">This is the full error <a href="https://ideone.com/2BRXRv" rel="nofollow">https://ideone.com/2BRXRv</a></td><td class="time"><a href="#t2018-12-24T01:51:18" class="time">01:51</a></td></tr>
+<tr id="t2018-12-24T03:13:08"><th class="nick" style="background: #42427e">Jack3k3</th><td class="text" style="color: #42427e">well i did some modifications to get opkg to print full verbosity and I can find nothing that indicates where the failure is occuring</td><td class="time"><a href="#t2018-12-24T03:13:08" class="time">03:13</a></td></tr>
+<tr id="t2018-12-24T04:05:29"><th class="nick" style="background: #42427e">Jack3k3</th><td class="text" style="color: #42427e">ahh interesting, dmesg shows opkg is seg faulting</td><td class="time"><a href="#t2018-12-24T04:05:29" class="time">04:05</a></td></tr>
+<tr id="t2018-12-24T04:05:44"><th class="nick" style="background: #42427e">Jack3k3</th><td class="text" style="color: #42427e">looks like this is going to be a real pain in the ass to figure out</td><td class="time"><a href="#t2018-12-24T04:05:44" class="time">04:05</a></td></tr>
+<tr id="t2018-12-24T07:27:57"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: How to integrated mender within lk-bootloader base-on Yocto Project &lt;<a href="https://stackoverflow.com/questions/53910257/how-to-integrated-mender-within-lk-bootloader-base-on-yocto-project&gt;" rel="nofollow">https://stackoverflow.com/questions/53910257/how-to-integrated-mender-within-lk-bootloader-base-on-yocto-project&gt;</a></td><td class="time"><a href="#t2018-12-24T07:27:57" class="time">07:27</a></td></tr>
+<tr id="t2018-12-24T07:45:03"><td class="nickchange" colspan="2">*** [1]Jack3k3 is now known as Jack3k3</td><td><a href="#t2018-12-24T07:45:03" class="time">07:45</a></td></tr>
+<tr id="t2018-12-24T08:38:19"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: our current cross-canadian is three part (BUILD, SDK, TARGET)...</td><td class="time"><a href="#t2018-12-24T08:38:19" class="time">08:38</a></td></tr>
+<tr id="t2018-12-24T08:46:17"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">can sdk == arm ?</td><td class="time"><a href="#t2018-12-24T08:46:17" class="time">08:46</a></td></tr>
+<tr id="t2018-12-24T09:17:50"><th class="nick" style="background: #8c4a4a">nacknick</th><td class="text" style="color: #8c4a4a">hi</td><td class="time"><a href="#t2018-12-24T09:17:50" class="time">09:17</a></td></tr>
+<tr id="t2018-12-24T09:20:25"><th class="nick" style="background: #8c4a4a">nacknick</th><td class="text" style="color: #8c4a4a">if I want to compile ALL yocto with "arm" (not "thumb") how should I do this? I have ARM_INSTRUCTION_SET = "arm" in 'local.conf', and DISTRO_ARM_INSTRUCTION ?= "arm" in 'fslc-base.inc'. The programs are compiled with 'arm', but '_start' function (for instance) is still compiled with thumb.</td><td class="time"><a href="#t2018-12-24T09:20:25" class="time">09:20</a></td></tr>
+<tr id="t2018-12-24T09:40:57"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: in theory</td><td class="time"><a href="#t2018-12-24T09:40:57" class="time">09:40</a></td></tr>
+<tr id="t2018-12-24T09:41:50"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: I just checked and that libc override appears to be doing the right thing</td><td class="time"><a href="#t2018-12-24T09:41:50" class="time">09:41</a></td></tr>
+<tr id="t2018-12-24T09:54:49"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: its broken for the SDKs but ok everywhere else</td><td class="time"><a href="#t2018-12-24T09:54:49" class="time">09:54</a></td></tr>
+<tr id="t2018-12-24T15:22:34"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP: ok cool. btw. you need <a href="https://patchwork.openembedded.org/patch/157389/" rel="nofollow">https://patchwork.openembedded.org/patch/157389/</a></td><td class="time"><a href="#t2018-12-24T15:22:34" class="time">15:22</a></td></tr>
+<tr id="t2018-12-24T15:22:55"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP: so this gets tested as well</td><td class="time"><a href="#t2018-12-24T15:22:55" class="time">15:22</a></td></tr>
+<tr id="t2018-12-24T15:23:16"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">since it will be required for new sequence to work</td><td class="time"><a href="#t2018-12-24T15:23:16" class="time">15:23</a></td></tr>
+<tr id="t2018-12-24T15:23:31"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">on gold</td><td class="time"><a href="#t2018-12-24T15:23:31" class="time">15:23</a></td></tr>
+<tr id="t2018-12-24T15:23:46"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">avoid double testing</td><td class="time"><a href="#t2018-12-24T15:23:46" class="time">15:23</a></td></tr>
+<tr id="t2018-12-24T16:00:41"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: Is that for 2.28 or 2.29 or both?</td><td class="time"><a href="#t2018-12-24T16:00:41" class="time">16:00</a></td></tr>
+<tr id="t2018-12-24T16:03:44"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">both</td><td class="time"><a href="#t2018-12-24T16:03:44" class="time">16:03</a></td></tr>
+<tr id="t2018-12-24T16:08:14"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">vmeson: reproduced it on master-next</td><td class="time"><a href="#t2018-12-24T16:08:14" class="time">16:08</a></td></tr>
+<tr id="t2018-12-24T16:25:44"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: thanks, added to -next</td><td class="time"><a href="#t2018-12-24T16:25:44" class="time">16:25</a></td></tr>
+<tr id="t2018-12-24T17:07:29"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">thanks RP I have some doubts on that patch thats why I want it to be throughly tested</td><td class="time"><a href="#t2018-12-24T17:07:29" class="time">17:07</a></td></tr>
+<tr id="t2018-12-24T17:35:43"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: it along with the other tweaks in -next are running on the AB now</td><td class="time"><a href="#t2018-12-24T17:35:43" class="time">17:35</a></td></tr>
+<tr id="t2018-12-24T17:36:36"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">okay</td><td class="time"><a href="#t2018-12-24T17:36:36" class="time">17:36</a></td></tr>
+<tr id="t2018-12-24T23:22:11"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">khem: build was green apart from some known issues unrelated to the toolchain</td><td class="time"><a href="#t2018-12-24T23:22:11" class="time">23:22</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-23.log.html">&#171; Sunday, 2018-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-25.log.html">Tuesday, 2018-12-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-09-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-09-29</h1>
+<div class="navigation"> <a href="%23yocto.2018-09-28.log.html">&#171; Friday, 2018-09-28</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-30.log.html">Sunday, 2018-09-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-09-29T00:24:47"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">@jdel Is there a guide of sorts on how to add a new variant? If I add a new class and just set PROVIDES += "linux-dump-capture", bitbake complains: linux-dump-capture was skipped: Set PREFERRED_PROVIDER_virtual/kernel to linux-dump-capture to enable it</td><td class="time"><a href="#t2018-09-29T00:24:47" class="time">00:24</a></td></tr>
+<tr id="t2018-09-29T00:25:19"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">Of course I also did BBCLASSEXTEND += "dump-capture" in the main kernel recipe</td><td class="time"><a href="#t2018-09-29T00:25:19" class="time">00:25</a></td></tr>
+<tr id="t2018-09-29T00:25:28"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">And the class is called dump-capture.bbclass</td><td class="time"><a href="#t2018-09-29T00:25:28" class="time">00:25</a></td></tr>
+<tr id="t2018-09-29T01:00:04"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-09-29T01:00:04" class="time">01:00</a></td></tr>
+<tr id="t2018-09-29T01:11:47"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">Also, if I have an anonymous python function in a variant class, it doesn't seem to get executed.</td><td class="time"><a href="#t2018-09-29T01:11:47" class="time">01:11</a></td></tr>
+<tr id="t2018-09-29T01:11:57"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">Is that by design?</td><td class="time"><a href="#t2018-09-29T01:11:57" class="time">01:11</a></td></tr>
+<tr id="t2018-09-29T02:52:20"><td class="nickchange" colspan="2">*** kaspter1 is now known as kaspter</td><td><a href="#t2018-09-29T02:52:20" class="time">02:52</a></td></tr>
+<tr id="t2018-09-29T04:29:40"><th class="nick" style="background: #407a40">mtahmed</th><td class="text" style="color: #407a40">Actually, support for multiple kernels is already in upstream yocto: <a href="https://github.com/openembedded/openembedded-core/commit/6c8c899849d101fd1b86aad0b8eed05c7c785924#diff-5d0a2e8a1c20b1e0ae7dde8b5ea357c3" rel="nofollow">https://github.com/openembedded/openembedded-core/commit/6c8c899849d101fd1b86aad0b8eed05c7c785924#diff-5d0a2e8a1c20b1e0ae7dde8b5ea357c3</a></td><td class="time"><a href="#t2018-09-29T04:29:40" class="time">04:29</a></td></tr>
+<tr id="t2018-09-29T04:48:01"><th class="nick" style="background: #42427e">jdel</th><td class="text" style="color: #42427e">mtahmed: i don't know; i just know of the general approach and it seemed to fit your goal</td><td class="time"><a href="#t2018-09-29T04:48:01" class="time">04:48</a></td></tr>
+<tr id="t2018-09-29T04:48:23"><th class="nick" style="background: #42427e">jdel</th><td class="text" style="color: #42427e">a lame thing you could do is copy the recipe and modify it</td><td class="time"><a href="#t2018-09-29T04:48:23" class="time">04:48</a></td></tr>
+<tr id="t2018-09-29T04:49:02"><th class="nick" style="background: #42427e">jdel</th><td class="text" style="color: #42427e">IMO that would be the fastest way to get what you want without mucking around with any internals</td><td class="time"><a href="#t2018-09-29T04:49:02" class="time">04:49</a></td></tr>
+<tr id="t2018-09-29T08:39:52"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: How to build an extra package in Yocto project after the image is built &lt;<a href="https://stackoverflow.com/questions/52566645/how-to-build-an-extra-package-in-yocto-project-after-the-image-is-built&gt;" rel="nofollow">https://stackoverflow.com/questions/52566645/how-to-build-an-extra-package-in-yocto-project-after-the-image-is-built&gt;</a></td><td class="time"><a href="#t2018-09-29T08:39:52" class="time">08:39</a></td></tr>
+<tr id="t2018-09-29T10:56:22"><td class="nickchange" colspan="2">*** denix0 is now known as denix</td><td><a href="#t2018-09-29T10:56:22" class="time">10:56</a></td></tr>
+<tr id="t2018-09-29T15:16:04"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">hello?</td><td class="time"><a href="#t2018-09-29T15:16:04" class="time">15:16</a></td></tr>
+<tr id="t2018-09-29T15:16:50"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">I'm having an issue I can't figure out...</td><td class="time"><a href="#t2018-09-29T15:16:50" class="time">15:16</a></td></tr>
+<tr id="t2018-09-29T15:16:56"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">Initialising tasks: 100% |##################################################################################################################################################################################################| Time: 0:00:21 NOTE: Executing SetScene Tasks NOTE: Executing RunQueue Tasks ERROR: pkgconfig-native-0.29.2+gitAUTOINC+edf8e6f0ea-r0 do_patch: Command Error: 'quilt --quiltrc /home/aclifton/src/var-fslc-yocto/build_fb</td><td class="time"><a href="#t2018-09-29T15:16:56" class="time">15:16</a></td></tr>
+<tr id="t2018-09-29T15:17:11"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">Hunk #1 FAILED at 1438 (different line endings).</td><td class="time"><a href="#t2018-09-29T15:17:11" class="time">15:17</a></td></tr>
+<tr id="t2018-09-29T15:17:32"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">when any of my recipes' do_patch is called, I get that^ error</td><td class="time"><a href="#t2018-09-29T15:17:32" class="time">15:17</a></td></tr>
+<tr id="t2018-09-29T15:21:46"><th class="nick" style="background: #488888">JaMa</th><td class="text" style="color: #488888">boopamy: do you have some strange git client configuration enforcin some line endings?</td><td class="time"><a href="#t2018-09-29T15:21:46" class="time">15:21</a></td></tr>
+<tr id="t2018-09-29T15:23:49"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">actually I might</td><td class="time"><a href="#t2018-09-29T15:23:49" class="time">15:23</a></td></tr>
+<tr id="t2018-09-29T15:25:32"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">I had to set some git configs globally for a project I'm working on. Does yocto have git settings it needs?</td><td class="time"><a href="#t2018-09-29T15:25:32" class="time">15:25</a></td></tr>
+<tr id="t2018-09-29T15:34:52"><th class="nick" style="background: #488888">JaMa</th><td class="text" style="color: #488888">boopamy: yocto doesn't have any special setting for git, but enforcing line endings will surely break thins</td><td class="time"><a href="#t2018-09-29T15:34:52" class="time">15:34</a></td></tr>
+<tr id="t2018-09-29T15:49:43"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">I fixed it by turning git's core.autocrlf to false</td><td class="time"><a href="#t2018-09-29T15:49:43" class="time">15:49</a></td></tr>
+<tr id="t2018-09-29T15:49:52"><th class="nick" style="background: #854685">boopamy</th><td class="text" style="color: #854685">thanks</td><td class="time"><a href="#t2018-09-29T15:49:52" class="time">15:49</a></td></tr>
+<tr id="t2018-09-29T16:11:10"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: Linux Kernel DTSI File Cannot Compile from Yocto for BeagleBone &lt;<a href="https://stackoverflow.com/questions/52570141/linux-kernel-dtsi-file-cannot-compile-from-yocto-for-beaglebone&gt;" rel="nofollow">https://stackoverflow.com/questions/52570141/linux-kernel-dtsi-file-cannot-compile-from-yocto-for-beaglebone&gt;</a></td><td class="time"><a href="#t2018-09-29T16:11:10" class="time">16:11</a></td></tr>
+<tr id="t2018-09-29T21:45:10"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">armpit: that config.sub error is odd :/</td><td class="time"><a href="#t2018-09-29T21:45:10" class="time">21:45</a></td></tr>
+<tr id="t2018-09-29T22:17:45"><th class="nick" style="background: #4b904b">armpit</th><td class="text" style="color: #4b904b">you mean for sumo-nmut.. yeah. at least not too many patches to sort though.. I need to sort out Rocko first</td><td class="time"><a href="#t2018-09-29T22:17:45" class="time">22:17</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-09-28.log.html">&#171; Friday, 2018-09-28</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-30.log.html">Sunday, 2018-09-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

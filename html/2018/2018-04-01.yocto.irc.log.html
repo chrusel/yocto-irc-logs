@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2018-04-01</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2018-04-01</h1>
+<div class="navigation"> <a href="%23yocto.2018-03-31.log.html">&#171; Saturday, 2018-03-31</a> <a href="index.html">Index</a> <a href="%23yocto.2018-04-02.log.html">Monday, 2018-04-02 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-04-01T00:14:04"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">It's actually sorta weird to me that it didn't bite my test program, which called syscall() right away.</td><td class="time"><a href="#t2018-04-01T00:14:04" class="time">00:14</a></td></tr>
+<tr id="t2018-04-01T00:14:42"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">I have no idea how that was actually working without the setup code. I don't think I have a wrapper on getpid().</td><td class="time"><a href="#t2018-04-01T00:14:42" class="time">00:14</a></td></tr>
+<tr id="t2018-04-01T00:39:11"><th class="nick" style="background: #42427e">JPEWhacker</th><td class="text" style="color: #42427e">I wonder if maybe glibc has a way to invoke syscall() in a way that pseudo can't trap</td><td class="time"><a href="#t2018-04-01T00:39:11" class="time">00:39</a></td></tr>
+<tr id="t2018-04-01T00:41:19"><th class="nick" style="background: #42427e">JPEWhacker</th><td class="text" style="color: #42427e">hah, never mind, you said your program called syscall() right away. I should read better</td><td class="time"><a href="#t2018-04-01T00:41:19" class="time">00:41</a></td></tr>
+<tr id="t2018-04-01T02:43:55"><th class="nick" style="background: #42427e">JPEWhacker</th><td class="text" style="color: #42427e">seebs still here?</td><td class="time"><a href="#t2018-04-01T02:43:55" class="time">02:43</a></td></tr>
+<tr id="t2018-04-01T04:10:09"><th class="nick" style="background: #407a40">seebs</th><td class="text" style="color: #407a40">occasionally</td><td class="time"><a href="#t2018-04-01T04:10:09" class="time">04:10</a></td></tr>
+<tr id="t2018-04-01T15:22:32"><th class="nick" style="background: #818144">laplante</th><td class="text" style="color: #818144">suppose I have a native recipe that installs 2 GB, and is needed by many (~20) recipes. is there any way to install it to one place, rather than 20 different recipe sysroots, to save space?</td><td class="time"><a href="#t2018-04-01T15:22:32" class="time">15:22</a></td></tr>
+<tr id="t2018-04-01T15:22:44"><th class="nick" style="background: #818144">laplante</th><td class="text" style="color: #818144">perhaps add it to the toolchain itself?</td><td class="time"><a href="#t2018-04-01T15:22:44" class="time">15:22</a></td></tr>
+<tr id="t2018-04-01T17:57:35"><td class="action" colspan="2">* armpit working on morty build failure... </td><td><a href="#t2018-04-01T17:57:35" class="time">17:57</a></td></tr>
+<tr id="t2018-04-01T21:05:16"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">laplante: assuming there are no hardcoded paths in it, all the copies will be hardlinks</td><td class="time"><a href="#t2018-04-01T21:05:16" class="time">21:05</a></td></tr>
+<tr id="t2018-04-01T21:05:41"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">armpit: good luck!</td><td class="time"><a href="#t2018-04-01T21:05:41" class="time">21:05</a></td></tr>
+<tr id="t2018-04-01T21:06:04"><th class="nick" style="background: #818144">laplante</th><td class="text" style="color: #818144">RP: thanks! Khem got back to me earlier today and pointed that out. I had misunderstood what 'du' was doing wrt hard links</td><td class="time"><a href="#t2018-04-01T21:06:04" class="time">21:06</a></td></tr>
+<tr id="t2018-04-01T21:07:34"><th class="nick" style="background: #488888">armpit</th><td class="text" style="color: #488888">RP, its really odd. glibc-local is being installed then removed during the sdk creating</td><td class="time"><a href="#t2018-04-01T21:07:34" class="time">21:07</a></td></tr>
+<tr id="t2018-04-01T21:07:47"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">armpit: :/</td><td class="time"><a href="#t2018-04-01T21:07:47" class="time">21:07</a></td></tr>
+<tr id="t2018-04-01T21:38:07"><th class="nick" style="background: #8c4a4a">DanteD</th><td class="text" style="color: #8c4a4a">So does Yocto provide a modern embedded OS for my old Zaurus SL-5500 ? :)</td><td class="time"><a href="#t2018-04-01T21:38:07" class="time">21:38</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-03-31.log.html">&#171; Saturday, 2018-03-31</a> <a href="index.html">Index</a> <a href="%23yocto.2018-04-02.log.html">Monday, 2018-04-02 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

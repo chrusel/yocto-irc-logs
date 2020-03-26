@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-09-15</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-09-15</h1>
+<div class="navigation"> <a href="%23yocto.2018-09-14.log.html">&#171; Friday, 2018-09-14</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-16.log.html">Sunday, 2018-09-16 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-09-15T11:05:48"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2018-09-15T11:05:48" class="time">11:05</a></td></tr>
+<tr id="t2018-09-15T11:15:46"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: Hi, is there an existing i.MX platform that boots directly into Linux using a dcd.cfg in meta-freescale*?</td><td class="time"><a href="#t2018-09-15T11:15:46" class="time">11:15</a></td></tr>
+<tr id="t2018-09-15T11:16:46"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">good morning likewise</td><td class="time"><a href="#t2018-09-15T11:16:46" class="time">11:16</a></td></tr>
+<tr id="t2018-09-15T11:17:00"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">it does not. I made it for a specific customer</td><td class="time"><a href="#t2018-09-15T11:17:00" class="time">11:17</a></td></tr>
+<tr id="t2018-09-15T11:17:28"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">generally speaking, you will prefer U-Boot Falcon mode instead</td><td class="time"><a href="#t2018-09-15T11:17:28" class="time">11:17</a></td></tr>
+<tr id="t2018-09-15T11:21:46"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: thanks. Unless boot time is really most important.</td><td class="time"><a href="#t2018-09-15T11:21:46" class="time">11:21</a></td></tr>
+<tr id="t2018-09-15T11:22:28"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">I'm investigating how to use eMMC dual hardware-boot-partitions, e.MMC fast boot, eMMC ack'd fast boot, eMMC 8-bit etc under i.MX</td><td class="time"><a href="#t2018-09-15T11:22:28" class="time">11:22</a></td></tr>
+<tr id="t2018-09-15T11:23:18"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">I was first thinking: nice to have A/B kernel+initramfs in both boot partitions, but the iMX does not have a fall-back mechanism AFAIK</td><td class="time"><a href="#t2018-09-15T11:23:18" class="time">11:23</a></td></tr>
+<tr id="t2018-09-15T11:24:54"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">so yes I think SPL mode is more flexible, as there I can take into account bootcnt etc.</td><td class="time"><a href="#t2018-09-15T11:24:54" class="time">11:24</a></td></tr>
+<tr id="t2018-09-15T11:25:57"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">likewise: in fact, U-Boot will likely be faster as it enables cache</td><td class="time"><a href="#t2018-09-15T11:25:57" class="time">11:25</a></td></tr>
+<tr id="t2018-09-15T11:26:53"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">likewise: the use-case we added the dcd boot support for a in-field recovery tool</td><td class="time"><a href="#t2018-09-15T11:26:53" class="time">11:26</a></td></tr>
+<tr id="t2018-09-15T11:26:54"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: with U-Boot you mean; the full monty, not just SPL?</td><td class="time"><a href="#t2018-09-15T11:26:54" class="time">11:26</a></td></tr>
+<tr id="t2018-09-15T11:27:00"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">SPL</td><td class="time"><a href="#t2018-09-15T11:27:00" class="time">11:27</a></td></tr>
+<tr id="t2018-09-15T11:27:05"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">ok SPL</td><td class="time"><a href="#t2018-09-15T11:27:05" class="time">11:27</a></td></tr>
+<tr id="t2018-09-15T11:27:18"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">in fact both. But SPL is faster of course</td><td class="time"><a href="#t2018-09-15T11:27:18" class="time">11:27</a></td></tr>
+<tr id="t2018-09-15T11:27:48"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: did you ever play with the eMMC fuses for eMMC boot modes?</td><td class="time"><a href="#t2018-09-15T11:27:48" class="time">11:27</a></td></tr>
+<tr id="t2018-09-15T11:28:00"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">i.MX fuses that are eMMC related I mean</td><td class="time"><a href="#t2018-09-15T11:28:00" class="time">11:28</a></td></tr>
+<tr id="t2018-09-15T11:28:22"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">yes</td><td class="time"><a href="#t2018-09-15T11:28:22" class="time">11:28</a></td></tr>
+<tr id="t2018-09-15T11:28:27"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">some time ago</td><td class="time"><a href="#t2018-09-15T11:28:27" class="time">11:28</a></td></tr>
+<tr id="t2018-09-15T11:28:52"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">I guess it doesn't help much only loading the SPL.</td><td class="time"><a href="#t2018-09-15T11:28:52" class="time">11:28</a></td></tr>
+<tr id="t2018-09-15T11:29:16"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">from there on, eMMC settings are already under software control</td><td class="time"><a href="#t2018-09-15T11:29:16" class="time">11:29</a></td></tr>
+<tr id="t2018-09-15T11:30:12"><th class="nick" style="background: #42427e">otavio</th><td class="text" style="color: #42427e">what do you mean?</td><td class="time"><a href="#t2018-09-15T11:30:12" class="time">11:30</a></td></tr>
+<tr id="t2018-09-15T13:19:36"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: initial boot rom reads from eMMC at slowest speed, 1bit, this can be enhanced with fuse settings.</td><td class="time"><a href="#t2018-09-15T13:19:36" class="time">13:19</a></td></tr>
+<tr id="t2018-09-15T13:20:09"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: but as the SPL is so small, increasing the boot load speed using fuses is of little use.</td><td class="time"><a href="#t2018-09-15T13:20:09" class="time">13:20</a></td></tr>
+<tr id="t2018-09-15T13:20:37"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: the SPL will configure the controller to load U-Boot or Linux kernel at maximum speed anyways.</td><td class="time"><a href="#t2018-09-15T13:20:37" class="time">13:20</a></td></tr>
+<tr id="t2018-09-15T13:21:05"><th class="nick" style="background: #407a40">likewise</th><td class="text" style="color: #407a40">otavio: setting the fuses for optimal eMMC read speed would certainly be needed when loading the max BootROM capable image: 32 MB</td><td class="time"><a href="#t2018-09-15T13:21:05" class="time">13:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-09-14.log.html">&#171; Friday, 2018-09-14</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-16.log.html">Sunday, 2018-09-16 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

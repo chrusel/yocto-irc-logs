@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-12-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-12-08</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-07.log.html">&#171; Friday, 2018-12-07</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-09.log.html">Sunday, 2018-12-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-08T00:05:50"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">Hmm, the mystery sdk bug turns out to be one of my patches :(</td><td class="time"><a href="#t2018-12-08T00:05:50" class="time">00:05</a></td></tr>
+<tr id="t2018-12-08T00:12:06"><th class="nick" style="background: #42427e">rburton_</th><td class="text" style="color: #42427e">RP: phew at least it wasn'tone of mine :)</td><td class="time"><a href="#t2018-12-08T00:12:06" class="time">00:12</a></td></tr>
+<tr id="t2018-12-08T00:14:19"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">JPEW: your bitbake patch isn't against master? :/</td><td class="time"><a href="#t2018-12-08T00:14:19" class="time">00:14</a></td></tr>
+<tr id="t2018-12-08T00:14:42"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: found an interestnig multiconfig bug yesterday</td><td class="time"><a href="#t2018-12-08T00:14:42" class="time">00:14</a></td></tr>
+<tr id="t2018-12-08T00:14:59"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">I will file a bug later</td><td class="time"><a href="#t2018-12-08T00:14:59" class="time">00:14</a></td></tr>
+<tr id="t2018-12-08T00:15:55"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: I'm not entirely surprised there are some...</td><td class="time"><a href="#t2018-12-08T00:15:55" class="time">00:15</a></td></tr>
+<tr id="t2018-12-08T00:16:50"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">you need to build two separate DISTROs, one that INHERITS buildhistory for example, or something that has a post parsing event, you need to declare DISTRO on your main local.conf to that one that has the extra INHERIT, and one of your other confs should build the DISTRO that doesnt INHERIT that</td><td class="time"><a href="#t2018-12-08T00:16:50" class="time">00:16</a></td></tr>
+<tr id="t2018-12-08T00:17:36"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: they get the wrong events?</td><td class="time"><a href="#t2018-12-08T00:17:36" class="time">00:17</a></td></tr>
+<tr id="t2018-12-08T00:17:38"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">and the INHERIT NEEDS to be on the distro.conf, if it is in local.conf it works fine</td><td class="time"><a href="#t2018-12-08T00:17:38" class="time">00:17</a></td></tr>
+<tr id="t2018-12-08T00:18:07"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: I can imagine why that could break</td><td class="time"><a href="#t2018-12-08T00:18:07" class="time">00:18</a></td></tr>
+<tr id="t2018-12-08T00:18:08"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: so it errors out becuase it tries to read variables that dont exist, e.g. BUILDHISTORY</td><td class="time"><a href="#t2018-12-08T00:18:08" class="time">00:18</a></td></tr>
+<tr id="t2018-12-08T00:18:30"><td class="nickchange" colspan="2">*** blueness_ is now known as blueness</td><td><a href="#t2018-12-08T00:18:30" class="time">00:18</a></td></tr>
+<tr id="t2018-12-08T00:18:36"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: the interesting thing for me was that I was testing the INHERIT inside the local.conf and it didnt error out</td><td class="time"><a href="#t2018-12-08T00:18:36" class="time">00:18</a></td></tr>
+<tr id="t2018-12-08T00:18:44"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">it needed to be inside the distro.conf</td><td class="time"><a href="#t2018-12-08T00:18:44" class="time">00:18</a></td></tr>
+<tr id="t2018-12-08T00:19:26"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: interesting. The event handlers aren't namespaced per multiconfig so can probably get confused :/</td><td class="time"><a href="#t2018-12-08T00:19:26" class="time">00:19</a></td></tr>
+<tr id="t2018-12-08T00:19:27"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">otherwise it was parsed as well by the other multiconfs and the BUILDHISTORY variable existed</td><td class="time"><a href="#t2018-12-08T00:19:27" class="time">00:19</a></td></tr>
+<tr id="t2018-12-08T00:19:55"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: yeah I will file a bug later today and take it myself</td><td class="time"><a href="#t2018-12-08T00:19:55" class="time">00:19</a></td></tr>
+<tr id="t2018-12-08T00:20:34"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: also I have a patch that modifies the debug info, to show for which mc its doing something for, because that was making things even more confusing</td><td class="time"><a href="#t2018-12-08T00:20:34" class="time">00:20</a></td></tr>
+<tr id="t2018-12-08T00:20:51"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">when multiconfig isnt being used it'll just show the default I suppose</td><td class="time"><a href="#t2018-12-08T00:20:51" class="time">00:20</a></td></tr>
+<tr id="t2018-12-08T00:21:37"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">another thing I meant to ask, was that when is the variable expansion happening?, can we keep the parsed files and reuse them for another multiconfig?, because at this point were parsing everything several times</td><td class="time"><a href="#t2018-12-08T00:21:37" class="time">00:21</a></td></tr>
+<tr id="t2018-12-08T00:22:02"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">basically, can we keep the parsed files, and expand them depending on each multiconfig</td><td class="time"><a href="#t2018-12-08T00:22:02" class="time">00:22</a></td></tr>
+<tr id="t2018-12-08T00:24:12"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: we can keep the ast for the files and I think we may already do so. There are things like immediate expansion during parsing though so its not that much of a win</td><td class="time"><a href="#t2018-12-08T00:24:12" class="time">00:24</a></td></tr>
+<tr id="t2018-12-08T00:24:24"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: our flexible structure is a nightmare for optimisation/caching</td><td class="time"><a href="#t2018-12-08T00:24:24" class="time">00:24</a></td></tr>
+<tr id="t2018-12-08T00:24:32"><td class="action" colspan="2">* RP -&gt; Zzzz</td><td><a href="#t2018-12-08T00:24:32" class="time">00:24</a></td></tr>
+<tr id="t2018-12-08T00:24:52"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: alright</td><td class="time"><a href="#t2018-12-08T00:24:52" class="time">00:24</a></td></tr>
+<tr id="t2018-12-08T00:24:56"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: night</td><td class="time"><a href="#t2018-12-08T00:24:56" class="time">00:24</a></td></tr>
+<tr id="t2018-12-08T01:32:34"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">RP: sent you the python fixes for both py2 and py3</td><td class="time"><a href="#t2018-12-08T01:32:34" class="time">01:32</a></td></tr>
+<tr id="t2018-12-08T02:49:35"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-12-08T02:49:35" class="time">02:49</a></td></tr>
+<tr id="t2018-12-08T11:06:47"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">aehs29: where did you send them? :/</td><td class="time"><a href="#t2018-12-08T11:06:47" class="time">11:06</a></td></tr>
+<tr id="t2018-12-08T14:08:08"><td class="part" colspan="2">*** c0le &lt;c0le!~c0le@ogre.hipro.co.in&gt; has left #yocto</td><td><a href="#t2018-12-08T14:08:08" class="time">14:08</a></td></tr>
+<tr id="t2018-12-08T17:44:06"><th class="nick" style="background: #854685">moto-timo</th><td class="text" style="color: #854685">RP: I built ~20 eclipse-plugin-neon and ~20 eclipse-plugin-oxygen jobs yesterday, no timeout failures. I still have doubts that we really solved the problem, but it looks like we are in a better situation.</td><td class="time"><a href="#t2018-12-08T17:44:06" class="time">17:44</a></td></tr>
+<tr id="t2018-12-08T17:46:15"><th class="nick" style="background: #854685">moto-timo</th><td class="text" style="color: #854685">RP: grr. just noticed this one: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/25/builds/325" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/25/builds/325</a></td><td class="time"><a href="#t2018-12-08T17:46:15" class="time">17:46</a></td></tr>
+<tr id="t2018-12-08T21:00:07"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP: sent a v3 of mdadm patch, it seems that I was too ambitious with cleanup</td><td class="time"><a href="#t2018-12-08T21:00:07" class="time">21:00</a></td></tr>
+<tr id="t2018-12-08T21:26:28"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">moto-timo: right, it failed when I ran that larger build :/</td><td class="time"><a href="#t2018-12-08T21:26:28" class="time">21:26</a></td></tr>
+<tr id="t2018-12-08T21:26:39"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">moto-timo: its as if system load somehow triggers it :/</td><td class="time"><a href="#t2018-12-08T21:26:39" class="time">21:26</a></td></tr>
+<tr id="t2018-12-08T21:26:49"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: thanks</td><td class="time"><a href="#t2018-12-08T21:26:49" class="time">21:26</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-07.log.html">&#171; Friday, 2018-12-07</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-09.log.html">Sunday, 2018-12-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

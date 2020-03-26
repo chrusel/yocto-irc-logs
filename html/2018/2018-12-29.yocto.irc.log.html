@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-12-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-12-29</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-28.log.html">&#171; Friday, 2018-12-28</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-30.log.html">Sunday, 2018-12-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-29T00:19:59"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: yes, fixed it. I also see that we have three patches doing same things for different arches, I have squashed all three into one for gcc 9</td><td class="time"><a href="#t2018-12-29T00:19:59" class="time">00:19</a></td></tr>
+<tr id="t2018-12-29T16:33:44"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2018-12-29T16:33:44" class="time">16:33</a></td></tr>
+<tr id="t2018-12-29T20:12:37"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">Hey all, I have enabled "CONFIG_MODULE_COMPRESS" in my Linux Kernel and included "kernel-modules" to get it to rootfs. But yocto still complains in package_qa. How can I include compressed kernel module into rootfs?</td><td class="time"><a href="#t2018-12-29T20:12:37" class="time">20:12</a></td></tr>
+<tr id="t2018-12-29T21:33:31"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">whats the error?</td><td class="time"><a href="#t2018-12-29T21:33:31" class="time">21:33</a></td></tr>
+<tr id="t2018-12-29T21:39:26"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">khem: <a href="https://pastebin.com/3uqgaj3Q" rel="nofollow">https://pastebin.com/3uqgaj3Q</a> That's the error I am getting. But it works perfectly fine without compression.</td><td class="time"><a href="#t2018-12-29T21:39:26" class="time">21:39</a></td></tr>
+<tr id="t2018-12-29T21:43:39"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: apparently your kernel recipe isnt setting FILES_$PN correctly</td><td class="time"><a href="#t2018-12-29T21:43:39" class="time">21:43</a></td></tr>
+<tr id="t2018-12-29T21:47:49"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">aehs29: Thanks. But I am just inhering yocto classes. Should I explicitly specify for FILES_${PN} when kernel modules are in compressed form?</td><td class="time"><a href="#t2018-12-29T21:47:49" class="time">21:47</a></td></tr>
+<tr id="t2018-12-29T21:48:09"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: maybe setting compression is modifying where the modules are put after being built or something, check the difference between the ${D} directory with and without compresiosn</td><td class="time"><a href="#t2018-12-29T21:48:09" class="time">21:48</a></td></tr>
+<tr id="t2018-12-29T21:48:10"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">aehs29: Between, here is my recipes <a href="https://pastebin.com/yLJZxSM9" rel="nofollow">https://pastebin.com/yLJZxSM9</a> and <a href="https://pastebin.com/rZnM1DiA" rel="nofollow">https://pastebin.com/rZnM1DiA</a></td><td class="time"><a href="#t2018-12-29T21:48:10" class="time">21:48</a></td></tr>
+<tr id="t2018-12-29T21:48:34"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: you may have to modify it, if the compression is changing something from the defaults</td><td class="time"><a href="#t2018-12-29T21:48:34" class="time">21:48</a></td></tr>
+<tr id="t2018-12-29T21:49:31"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">aehs29: Yes the compression just changes the extension of the files i.e instead of .ko, I have .ko.xz (may be other compressions as well)</td><td class="time"><a href="#t2018-12-29T21:49:31" class="time">21:49</a></td></tr>
+<tr id="t2018-12-29T21:49:42"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">do a diff between tree ${D} with and without the compression, then check what FILES is being set to and then you'll see if you have to modify it somewhow, but before simply modifying you should know why you are doing it</td><td class="time"><a href="#t2018-12-29T21:49:42" class="time">21:49</a></td></tr>
+<tr id="t2018-12-29T21:50:12"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: who knows, perhaps FILES has a pattern that doesnt match .ko.xz ...</td><td class="time"><a href="#t2018-12-29T21:50:12" class="time">21:50</a></td></tr>
+<tr id="t2018-12-29T21:51:30"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">aehs29: I have searched around the poky code to check for "kernel-modules" and how it is handled. But unfortunately I couldn't figure out how it is copied.</td><td class="time"><a href="#t2018-12-29T21:51:30" class="time">21:51</a></td></tr>
+<tr id="t2018-12-29T21:56:33"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: it is very likely is caused because of what i just said, look at the kernel-module-split class</td><td class="time"><a href="#t2018-12-29T21:56:33" class="time">21:56</a></td></tr>
+<tr id="t2018-12-29T21:57:26"><th class="nick" style="background: #818144">aehs29</th><td class="text" style="color: #818144">pn: if this isn't specific to your configuration, please file a bug on bugzilla and send a patch for it</td><td class="time"><a href="#t2018-12-29T21:57:26" class="time">21:57</a></td></tr>
+<tr id="t2018-12-29T22:01:58"><th class="nick" style="background: #42427e">pn</th><td class="text" style="color: #42427e">aehs29: Sure, thanks. I will check that class.</td><td class="time"><a href="#t2018-12-29T22:01:58" class="time">22:01</a></td></tr>
+<tr id="t2018-12-29T22:26:06"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2018-12-29T22:26:06" class="time">22:26</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-28.log.html">&#171; Friday, 2018-12-28</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-30.log.html">Sunday, 2018-12-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-11-10</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-11-10</h1>
+<div class="navigation"> <a href="%23yocto.2018-11-09.log.html">&#171; Friday, 2018-11-09</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-11.log.html">Sunday, 2018-11-11 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-11-10T00:49:12"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T00:49:12" class="time">00:49</a></td></tr>
+<tr id="t2018-11-10T00:58:33"><th class="nick" style="background: #407a40">derek_</th><td class="text" style="color: #407a40">HI everyone, I got error like this, ld: unrecognized option '-Wl,-rpath-link, tmp/work/x86_64-linux/syslinux-native/6.03-r0/recipe-sysroot-native/usr/lib</td><td class="time"><a href="#t2018-11-10T00:58:33" class="time">00:58</a></td></tr>
+<tr id="t2018-11-10T00:58:55"><th class="nick" style="background: #407a40">derek_</th><td class="text" style="color: #407a40">does anyone have seen that, thanks</td><td class="time"><a href="#t2018-11-10T00:58:55" class="time">00:58</a></td></tr>
+<tr id="t2018-11-10T01:19:10"><th class="nick" style="background: #42427e">OutBackDingo</th><td class="text" style="color: #42427e">ermmm yeah nevermind cables was unplugged for the touchscreen its working fine now</td><td class="time"><a href="#t2018-11-10T01:19:10" class="time">01:19</a></td></tr>
+<tr id="t2018-11-10T01:20:11"><th class="nick" style="background: #818144">kergoth</th><td class="text" style="color: #818144">derek_: it's trying to use our LDFLAGS when running ld directly, that won't work. our LDFLAGS are to be passed to gcc which calls ld itself</td><td class="time"><a href="#t2018-11-10T01:20:11" class="time">01:20</a></td></tr>
+<tr id="t2018-11-10T02:05:57"><th class="nick" style="background: #407a40">derek_</th><td class="text" style="color: #407a40">kergoth, thanks, so bestway to deal with is make a patch to replace $(LD) to $(CC) in make file, right?</td><td class="time"><a href="#t2018-11-10T02:05:57" class="time">02:05</a></td></tr>
+<tr id="t2018-11-10T02:39:34"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T02:39:34" class="time">02:39</a></td></tr>
+<tr id="t2018-11-10T02:39:42"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T02:39:42" class="time">02:39</a></td></tr>
+<tr id="t2018-11-10T02:39:51"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T02:39:51" class="time">02:39</a></td></tr>
+<tr id="t2018-11-10T03:27:26"><th class="nick" style="background: #854685">yocti</th><td class="text" style="color: #854685">New news from stackoverflow: psplash image does not appear (yocto &amp; qemu) &lt;<a href="https://stackoverflow.com/questions/52969184/psplash-image-does-not-appear-yocto-qemu&gt;" rel="nofollow">https://stackoverflow.com/questions/52969184/psplash-image-does-not-appear-yocto-qemu&gt;</a></td><td class="time"><a href="#t2018-11-10T03:27:26" class="time">03:27</a></td></tr>
+<tr id="t2018-11-10T03:44:03"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T03:44:03" class="time">03:44</a></td></tr>
+<tr id="t2018-11-10T17:37:14"><td class="nickchange" colspan="2">*** OpenSorc_ is now known as OpenSorceress</td><td><a href="#t2018-11-10T17:37:14" class="time">17:37</a></td></tr>
+<tr id="t2018-11-10T18:29:05"><th class="nick" style="background: #488888">la_croix</th><td class="text" style="color: #488888">Could somebody give me a hand with i2s support on a raspberry pi?</td><td class="time"><a href="#t2018-11-10T18:29:05" class="time">18:29</a></td></tr>
+<tr id="t2018-11-10T19:10:49"><th class="nick" style="background: #488888">la_croix</th><td class="text" style="color: #488888">Anybody around?</td><td class="time"><a href="#t2018-11-10T19:10:49" class="time">19:10</a></td></tr>
+<tr id="t2018-11-10T20:29:36"><th class="nick" style="background: #8c4a4a">la_croix_</th><td class="text" style="color: #8c4a4a">Anybody around?</td><td class="time"><a href="#t2018-11-10T20:29:36" class="time">20:29</a></td></tr>
+<tr id="t2018-11-10T21:16:24"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-10T21:16:24" class="time">21:16</a></td></tr>
+<tr id="t2018-11-10T22:09:11"><th class="nick" style="background: #8c4a4a">la_croix_</th><td class="text" style="color: #8c4a4a">Anybody around?</td><td class="time"><a href="#t2018-11-10T22:09:11" class="time">22:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-11-09.log.html">&#171; Friday, 2018-11-09</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-11.log.html">Sunday, 2018-11-11 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

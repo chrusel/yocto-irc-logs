@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2018-04-22</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2018-04-22</h1>
+<div class="navigation"> <a href="%23yocto.2018-04-21.log.html">&#171; Saturday, 2018-04-21</a> <a href="index.html">Index</a> <a href="%23yocto.2018-04-23.log.html">Monday, 2018-04-23 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-04-22T02:24:58"><td class="other" colspan="2">-YoctoAutoBuilder- build #1009 of nightly-oe-selftest is complete: Failure [failed Running oe-selftest]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/1009" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/1009</a></td><td><a href="#t2018-04-22T02:24:58" class="time">02:24</a></td></tr>
+<tr id="t2018-04-22T03:08:29"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Yocto do_kernel_metadata failed with custom BSP &lt;<a href="https://stackoverflow.com/questions/49770393/yocto-do-kernel-metadata-failed-with-custom-bsp&gt;" rel="nofollow">https://stackoverflow.com/questions/49770393/yocto-do-kernel-metadata-failed-with-custom-bsp&gt;</a></td><td class="time"><a href="#t2018-04-22T03:08:29" class="time">03:08</a></td></tr>
+<tr id="t2018-04-22T04:42:16"><td class="other" colspan="2">-YoctoAutoBuilder- build #966 of nightly-qa-extras is complete: Failure [failed Running Sanity Tests_5 Running Sanity Tests_6]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/966" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/966</a></td><td><a href="#t2018-04-22T04:42:16" class="time">04:42</a></td></tr>
+<tr id="t2018-04-22T18:44:37"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">quick question; I was about to create riscv-compiler yocto packaging. first hit seems to be 'configure: error: cannot run C compiled programs' from 'populate_sdk' for the package. this seems to be a valid finding, 'x86_64-pokysdk-linux-gcc' produces output that requests ld.so from /opt/poky, which logically does not exit while building the sdk.</td><td class="time"><a href="#t2018-04-22T18:44:37" class="time">18:44</a></td></tr>
+<tr id="t2018-04-22T18:49:13"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">chicken-and-the-egg kind of thing, it would probably run if I had the sdk installed to begin with. but, it is still supposed to be making that sdk...</td><td class="time"><a href="#t2018-04-22T18:49:13" class="time">18:49</a></td></tr>
+<tr id="t2018-04-22T18:58:36"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">so in other words, while the sdk is building stuff produced by 'x86_64-pokysdk-linux-gcc' is not runnable unless there was sdk installed on the machine to begin with. bug or a feature ..?</td><td class="time"><a href="#t2018-04-22T18:58:36" class="time">18:58</a></td></tr>
+<tr id="t2018-04-22T19:16:12"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">/home/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/nativesdk-riscv-tools/0.1-r0/riscv-tools-0.1/build$ x86_64-pokysdk-linux-gcc&nbsp;&nbsp;--sysroot=/home/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/nativesdk-riscv-tools/0.1-r0/recipe-sysroot t.c</td><td class="time"><a href="#t2018-04-22T19:16:12" class="time">19:16</a></td></tr>
+<tr id="t2018-04-22T19:16:27"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">file ./a.out</td><td class="time"><a href="#t2018-04-22T19:16:27" class="time">19:16</a></td></tr>
+<tr id="t2018-04-22T19:16:27"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">./a.out: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /opt/poky/2.4.2/sysroots/x86_64-pokysdk-linux/lib/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=38816e567eb71dd1640744a8552807912dbe038e, not stripped</td><td class="time"><a href="#t2018-04-22T19:16:27" class="time">19:16</a></td></tr>
+<tr id="t2018-04-22T19:18:48"><th class="nick" style="background: #42427e">jmk_</th><td class="text" style="color: #42427e">beyond my comprehension how that was supposed to run during the build unless there was a sdk installed before starting. I guess it was supposed to find this somehow; /home/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/nativesdk-riscv-tools/0.1-r0/recipe-sysroot/opt/poky/2.4.2/sysroots/x86_64-pokysdk-linux/lib/ld-linux-x86-64.so.2</td><td class="time"><a href="#t2018-04-22T19:18:48" class="time">19:18</a></td></tr>
+<tr id="t2018-04-22T20:53:38"><td class="part" colspan="2">*** TooTallTims &lt;TooTallTims!a161d762@gateway/web/freenode/ip.161.97.215.98&gt; has left #yocto</td><td><a href="#t2018-04-22T20:53:38" class="time">20:53</a></td></tr>
+<tr id="t2018-04-22T20:55:21"><td class="part" colspan="2">*** justin___ &lt;justin___!~quassel@161.97.215.98&gt; has left #yocto</td><td><a href="#t2018-04-22T20:55:21" class="time">20:55</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-04-21.log.html">&#171; Saturday, 2018-04-21</a> <a href="index.html">Index</a> <a href="%23yocto.2018-04-23.log.html">Monday, 2018-04-23 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

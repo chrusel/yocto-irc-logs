@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-08-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-08-25</h1>
+<div class="navigation"> <a href="%23yocto.2018-08-24.log.html">&#171; Friday, 2018-08-24</a> <a href="index.html">Index</a> <a href="%23yocto.2018-08-26.log.html">Sunday, 2018-08-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-08-25T16:54:07"><th class="nick" style="background: #407a40">armpit</th><td class="text" style="color: #407a40">RP, halstead the bitbake selftests failed on master &amp; rocko with the same errors</td><td class="time"><a href="#t2018-08-25T16:54:07" class="time">16:54</a></td></tr>
+<tr id="t2018-08-25T21:13:52"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">RP: so I gave a whirl for master-next + meta-oe and now see some new fails <a href="http://errors.yoctoproject.org/Errors/Build/66877/" rel="nofollow">http://errors.yoctoproject.org/Errors/Build/66877/</a></td><td class="time"><a href="#t2018-08-25T21:13:52" class="time">21:13</a></td></tr>
+<tr id="t2018-08-25T21:14:46"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">fluidsynth can-isotp libcec piglit wireshark are new</td><td class="time"><a href="#t2018-08-25T21:14:46" class="time">21:14</a></td></tr>
+<tr id="t2018-08-25T21:15:57"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I am sure most of cmake issues are due to <a href="http://git.openembedded.org/openembedded-core/commit/?h=master-next&amp;id=6896ad8385eb29bdd6b1c44962842b0e7949b1e3" rel="nofollow">http://git.openembedded.org/openembedded-core/commit/?h=master-next&amp;id=6896ad8385eb29bdd6b1c44962842b0e7949b1e3</a></td><td class="time"><a href="#t2018-08-25T21:15:57" class="time">21:15</a></td></tr>
+<tr id="t2018-08-25T22:18:47"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">hello</td><td class="time"><a href="#t2018-08-25T22:18:47" class="time">22:18</a></td></tr>
+<tr id="t2018-08-25T22:19:15"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">this might not be the best place to ask but</td><td class="time"><a href="#t2018-08-25T22:19:15" class="time">22:19</a></td></tr>
+<tr id="t2018-08-25T22:20:10"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">everytime i run bitbake after a minor edit in my source, the directory gets destroyed and unless i push that change to URI_SRC</td><td class="time"><a href="#t2018-08-25T22:20:10" class="time">22:20</a></td></tr>
+<tr id="t2018-08-25T22:20:31"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">the build won't include the changes</td><td class="time"><a href="#t2018-08-25T22:20:31" class="time">22:20</a></td></tr>
+<tr id="t2018-08-25T22:21:48"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">basically my workflow: &lt;testing new function&gt; -&gt; &lt;push to git&gt; -&gt; &lt;bitbake&gt; -&gt; &lt;error&gt; -&gt; &lt;add semi-colon&gt; -&gt; &lt;push to git&gt; .... etc</td><td class="time"><a href="#t2018-08-25T22:21:48" class="time">22:21</a></td></tr>
+<tr id="t2018-08-25T22:21:55"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">really in-efficient</td><td class="time"><a href="#t2018-08-25T22:21:55" class="time">22:21</a></td></tr>
+<tr id="t2018-08-25T22:43:50"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">it sounds like you want to use devtool modify to make it work from a local source tree and bypass the fetch/unpack/patch process</td><td class="time"><a href="#t2018-08-25T22:43:50" class="time">22:43</a></td></tr>
+<tr id="t2018-08-25T22:44:01"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">that's the best approach to active development</td><td class="time"><a href="#t2018-08-25T22:44:01" class="time">22:44</a></td></tr>
+<tr id="t2018-08-25T22:57:59"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">kergoth are meaning to use "file:///" with the directory to where the sources will be locally?</td><td class="time"><a href="#t2018-08-25T22:57:59" class="time">22:57</a></td></tr>
+<tr id="t2018-08-25T22:58:44"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">kergoth i thought of this a good while ago but i'm trying to learn/figure why all of a sudden this started behaving in this way</td><td class="time"><a href="#t2018-08-25T22:58:44" class="time">22:58</a></td></tr>
+<tr id="t2018-08-25T22:59:20"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">for months i never had to push and any changes would be picked-up</td><td class="time"><a href="#t2018-08-25T22:59:20" class="time">22:59</a></td></tr>
+<tr id="t2018-08-25T23:11:30"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">tijko: no, i mean use devtool</td><td class="time"><a href="#t2018-08-25T23:11:30" class="time">23:11</a></td></tr>
+<tr id="t2018-08-25T23:11:31"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">as i said</td><td class="time"><a href="#t2018-08-25T23:11:31" class="time">23:11</a></td></tr>
+<tr id="t2018-08-25T23:11:42"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">devtool uses the externalsrc bbclass to make it use local sources</td><td class="time"><a href="#t2018-08-25T23:11:42" class="time">23:11</a></td></tr>
+<tr id="t2018-08-25T23:12:00"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">a file:// uri in SRC_URI will still get copied to workdir and built there, so it's really an unnecessary indirection for your use case</td><td class="time"><a href="#t2018-08-25T23:12:00" class="time">23:12</a></td></tr>
+<tr id="t2018-08-25T23:12:21"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">kergoth sorry about the misunderstanding, i will give devtools a look</td><td class="time"><a href="#t2018-08-25T23:12:21" class="time">23:12</a></td></tr>
+<tr id="t2018-08-25T23:12:23"><th class="nick" style="background: #818144">tijko</th><td class="text" style="color: #818144">thank you</td><td class="time"><a href="#t2018-08-25T23:12:23" class="time">23:12</a></td></tr>
+<tr id="t2018-08-25T23:12:35"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">see the mega manual at yoctoproject.org's documentation area</td><td class="time"><a href="#t2018-08-25T23:12:35" class="time">23:12</a></td></tr>
+<tr id="t2018-08-25T23:12:39"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">search for devtool</td><td class="time"><a href="#t2018-08-25T23:12:39" class="time">23:12</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-08-24.log.html">&#171; Friday, 2018-08-24</a> <a href="index.html">Index</a> <a href="%23yocto.2018-08-26.log.html">Sunday, 2018-08-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

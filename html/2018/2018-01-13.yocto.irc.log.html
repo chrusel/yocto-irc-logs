@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-01-13</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-01-13</h1>
+<div class="navigation"> <a href="%23yocto.2018-01-12.log.html">&#171; Friday, 2018-01-12</a> <a href="index.html">Index</a> <a href="%23yocto.2018-01-14.log.html">Sunday, 2018-01-14 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-01-13T00:10:10"><td class="part" colspan="2">*** scottrif &lt;scottrif!~scottrif@47.39.44.219&gt; has left #yocto</td><td><a href="#t2018-01-13T00:10:10" class="time">00:10</a></td></tr>
+<tr id="t2018-01-13T00:58:13"><th class="nick" style="background: #407a40">rschaefe</th><td class="text" style="color: #407a40">Hi all. I'm trying to build with yocto. I am getting "unknown type name '__locale_t'" during the glibc/cross-localedef-native_2.25.bb pyro recipe. I have found a similar report to my problem, but am unsure how to apply this to the yocto project.</td><td class="time"><a href="#t2018-01-13T00:58:13" class="time">00:58</a></td></tr>
+<tr id="t2018-01-13T00:58:14"><th class="nick" style="background: #407a40">rschaefe</th><td class="text" style="color: #407a40"><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=52922" rel="nofollow">https://gcc.gnu.org/bugzilla/show_bug.cgi?id=52922</a></td><td class="time"><a href="#t2018-01-13T00:58:14" class="time">00:58</a></td></tr>
+<tr id="t2018-01-13T00:58:15"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">Bug 52922: was not found.</td><td class="time"><a href="#t2018-01-13T00:58:15" class="time">00:58</a></td></tr>
+<tr id="t2018-01-13T00:59:06"><th class="nick" style="background: #407a40">rschaefe</th><td class="text" style="color: #407a40">This was building just last week, and I am not sure what would have changed</td><td class="time"><a href="#t2018-01-13T00:59:06" class="time">00:59</a></td></tr>
+<tr id="t2018-01-13T07:12:59"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Linux Build Machine - Virtual/Real or otherwise? [on hold] &lt;<a href="https://stackoverflow.com/questions/48234374/linux-build-machine-virtual-real-or-otherwise&gt;" rel="nofollow">https://stackoverflow.com/questions/48234374/linux-build-machine-virtual-real-or-otherwise&gt;</a></td><td class="time"><a href="#t2018-01-13T07:12:59" class="time">07:12</a></td></tr>
+<tr id="t2018-01-13T11:13:24"><th class="nick" style="background: #42427e">yocti</th><td class="text" style="color: #42427e">New news from stackoverflow: Catching processor wake up by rtc alarm &lt;<a href="https://stackoverflow.com/questions/48239285/catching-processor-wake-up-by-rtc-alarm&gt;" rel="nofollow">https://stackoverflow.com/questions/48239285/catching-processor-wake-up-by-rtc-alarm&gt;</a></td><td class="time"><a href="#t2018-01-13T11:13:24" class="time">11:13</a></td></tr>
+<tr id="t2018-01-13T12:01:46"><td class="nickchange" colspan="2">*** lty is now known as Toumasu</td><td><a href="#t2018-01-13T12:01:46" class="time">12:01</a></td></tr>
+<tr id="t2018-01-13T13:02:08"><th class="nick" style="background: #818144">tornade</th><td class="text" style="color: #818144">What is the oldest kernel I can work with on Rocko? I tried working with a 2.6.x recipe with a couple of patches for GCC7 and encountered issues with glibc during boot. Some searching indicated that it's possible to get glibc to work with older kernels with --enable-kernel=VERSION but I was worried about other core dependencies not working</td><td class="time"><a href="#t2018-01-13T13:02:08" class="time">13:02</a></td></tr>
+<tr id="t2018-01-13T15:21:36"><th class="nick" style="background: #854685">luc4</th><td class="text" style="color: #854685">Hello! I’m creating a recipe for my open source software. I think I’m on the right way, the package is built and installed but I get this: “Variable FILES is set as not being package specific, please fix this.”. It is not clear to me what this is saying exactly.</td><td class="time"><a href="#t2018-01-13T15:21:36" class="time">15:21</a></td></tr>
+<tr id="t2018-01-13T15:22:31"><th class="nick" style="background: #488888">neverpanic</th><td class="text" style="color: #488888">You probably have FILES = "something" in your recipe, but it needs to be FILES_packagename, probably FILES_${PN}</td><td class="time"><a href="#t2018-01-13T15:22:31" class="time">15:22</a></td></tr>
+<tr id="t2018-01-13T17:18:54"><td class="other" colspan="2">-YoctoAutoBuilder- build #895 of nightly-deb-non-deb is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-deb-non-deb/builds/895" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-deb-non-deb/builds/895</a></td><td><a href="#t2018-01-13T17:18:54" class="time">17:18</a></td></tr>
+<tr id="t2018-01-13T17:58:14"><td class="nickchange" colspan="2">*** luc4_ is now known as luc4</td><td><a href="#t2018-01-13T17:58:14" class="time">17:58</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-01-12.log.html">&#171; Friday, 2018-01-12</a> <a href="index.html">Index</a> <a href="%23yocto.2018-01-14.log.html">Sunday, 2018-01-14 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

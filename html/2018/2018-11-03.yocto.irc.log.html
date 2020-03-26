@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2018-11-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2018-11-03</h1>
+<div class="navigation"> <a href="%23yocto.2018-11-02.log.html">&#171; Friday, 2018-11-02</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-04.log.html">Sunday, 2018-11-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-11-03T02:13:01"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-03T02:13:01" class="time">02:13</a></td></tr>
+<tr id="t2018-11-03T08:04:52"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">guys what OS / version is sumo know to build on ?</td><td class="time"><a href="#t2018-11-03T08:04:52" class="time">08:04</a></td></tr>
+<tr id="t2018-11-03T08:05:10"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">../../m4-1.4.18/lib/freadahead.c:92:3: error: #error "Please port gnulib freadahead.c to your platform! Look at the definition of fflush, fread, ungetc on your system, then report this to bug-gnulib."</td><td class="time"><a href="#t2018-11-03T08:05:10" class="time">08:05</a></td></tr>
+<tr id="t2018-11-03T08:05:10"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">|&nbsp;&nbsp; #error "Please port gnulib freadahead.c to your platform! Look at the definition of fflush, fread, ungetc on your system, then report this to bug-gnulib."</td><td class="time"><a href="#t2018-11-03T08:05:10" class="time">08:05</a></td></tr>
+<tr id="t2018-11-03T08:05:22"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">Ive hoit this on fedora28, ubuntu 18, 17</td><td class="time"><a href="#t2018-11-03T08:05:22" class="time">08:05</a></td></tr>
+<tr id="t2018-11-03T08:05:55"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">and i ccant use thud becauuse a specific app fails to build on thud</td><td class="time"><a href="#t2018-11-03T08:05:55" class="time">08:05</a></td></tr>
+<tr id="t2018-11-03T08:06:05"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">however thhud builds fine on ffedora 29</td><td class="time"><a href="#t2018-11-03T08:06:05" class="time">08:06</a></td></tr>
+<tr id="t2018-11-03T12:22:48"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">OutBackDingo: that seems odd since we test on f28 and ubuntu 1804</td><td class="time"><a href="#t2018-11-03T12:22:48" class="time">12:22</a></td></tr>
+<tr id="t2018-11-03T12:23:24"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">OutBackDingo: is that from m4 or m4-native?</td><td class="time"><a href="#t2018-11-03T12:23:24" class="time">12:23</a></td></tr>
+<tr id="t2018-11-03T12:56:46"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: ALSA unexpected underrun with seemingly correct timings &lt;<a href="https://stackoverflow.com/questions/53131301/alsa-unexpected-underrun-with-seemingly-correct-timings&gt;" rel="nofollow">https://stackoverflow.com/questions/53131301/alsa-unexpected-underrun-with-seemingly-correct-timings&gt;</a></td><td class="time"><a href="#t2018-11-03T12:56:46" class="time">12:56</a></td></tr>
+<tr id="t2018-11-03T13:42:40"><td class="part" colspan="2">*** RP &lt;RP!~RP@5751f4a1.skybroadband.com&gt; has left #yocto</td><td><a href="#t2018-11-03T13:42:40" class="time">13:42</a></td></tr>
+<tr id="t2018-11-03T16:36:31"><td class="part" colspan="2">*** Son_Goku &lt;Son_Goku!~King_InuY@fedora/ngompa&gt; has left #yocto</td><td><a href="#t2018-11-03T16:36:31" class="time">16:36</a></td></tr>
+<tr id="t2018-11-03T16:55:02"><th class="nick" style="background: #407a40">OutBackDingo</th><td class="text" style="color: #407a40">RP: yes from native on fedora 29</td><td class="time"><a href="#t2018-11-03T16:55:02" class="time">16:55</a></td></tr>
+<tr id="t2018-11-03T17:13:01"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">OutBackDingo: we might not have gotten to testing with f29 yet...</td><td class="time"><a href="#t2018-11-03T17:13:01" class="time">17:13</a></td></tr>
+<tr id="t2018-11-03T18:33:41"><td class="part" colspan="2">*** andrey_utkin &lt;andrey_utkin!~andrey_ut@gentoo/developer/andrey-utkin&gt; has left #yocto</td><td><a href="#t2018-11-03T18:33:41" class="time">18:33</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-11-02.log.html">&#171; Friday, 2018-11-02</a> <a href="index.html">Index</a> <a href="%23yocto.2018-11-04.log.html">Sunday, 2018-11-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

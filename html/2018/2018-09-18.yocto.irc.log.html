@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Tuesday, 2018-09-18</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Tuesday, 2018-09-18</h1>
+<div class="navigation"> <a href="%23yocto.2018-09-17.log.html">&#171; Monday, 2018-09-17</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-19.log.html">Wednesday, 2018-09-19 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-09-18T06:15:08"><td class="nickchange" colspan="2">*** fdanis_away is now known as fdanis</td><td><a href="#t2018-09-18T06:15:08" class="time">06:15</a></td></tr>
+<tr id="t2018-09-18T08:16:19"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2018-09-18T08:16:19" class="time">08:16</a></td></tr>
+<tr id="t2018-09-18T09:19:53"><th class="nick" style="background: #407a40">jofr</th><td class="text" style="color: #407a40">Is it possible to somehow run u-boot with runqemu?</td><td class="time"><a href="#t2018-09-18T09:19:53" class="time">09:19</a></td></tr>
+<tr id="t2018-09-18T09:21:00"><th class="nick" style="background: #42427e">mckoan</th><td class="text" style="color: #42427e">jofr: AFAIK no</td><td class="time"><a href="#t2018-09-18T09:21:00" class="time">09:21</a></td></tr>
+<tr id="t2018-09-18T09:45:39"><th class="nick" style="background: #818144">rburton</th><td class="text" style="color: #818144">i think you can with master, but probably not out of the box</td><td class="time"><a href="#t2018-09-18T09:45:39" class="time">09:45</a></td></tr>
+<tr id="t2018-09-18T09:45:48"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">AFAIK that was added recently</td><td class="time"><a href="#t2018-09-18T09:45:48" class="time">09:45</a></td></tr>
+<tr id="t2018-09-18T10:05:01"><th class="nick" style="background: #407a40">jofr</th><td class="text" style="color: #407a40">I'm able to do it manually, but not with runqemu. But its nice that it may be on master.</td><td class="time"><a href="#t2018-09-18T10:05:01" class="time">10:05</a></td></tr>
+<tr id="t2018-09-18T12:46:47"><th class="nick" style="background: #488888">xtron</th><td class="text" style="color: #488888">is there any problem inheriting a class multiple time in an image recipe?</td><td class="time"><a href="#t2018-09-18T12:46:47" class="time">12:46</a></td></tr>
+<tr id="t2018-09-18T14:09:39"><td class="part" colspan="2">*** maxin &lt;maxin!~maxin@134.134.139.76&gt; has left #yocto</td><td><a href="#t2018-09-18T14:09:39" class="time">14:09</a></td></tr>
+<tr id="t2018-09-18T14:35:55"><th class="nick" style="background: #8c4a4a">yann|work</th><td class="text" style="color: #8c4a4a">is there a specific (possibly non-standard) way of using LD/LDFLAGS with the SDK ?&nbsp;&nbsp;I'm a bit surprised by seeing my env set to "LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed" with "LD=aarch64-shadow-linux-ld&nbsp;&nbsp;--sysroot=..."</td><td class="time"><a href="#t2018-09-18T14:35:55" class="time">14:35</a></td></tr>
+<tr id="t2018-09-18T14:36:42"><th class="nick" style="background: #8c4a4a">yann|work</th><td class="text" style="color: #8c4a4a">that LDFLAGS clearly seems to assume that LD points to the gcc wrapper</td><td class="time"><a href="#t2018-09-18T14:36:42" class="time">14:36</a></td></tr>
+<tr id="t2018-09-18T14:48:28"><th class="nick" style="background: #4b904b">uglyoldbob</th><td class="text" style="color: #4b904b">how does /sbin/reboot get generated for an image? I can only find it in the rootfs folder of my generated image and nowhere else</td><td class="time"><a href="#t2018-09-18T14:48:28" class="time">14:48</a></td></tr>
+<tr id="t2018-09-18T14:51:13"><th class="nick" style="background: #4b904b">uglyoldbob</th><td class="text" style="color: #4b904b">oh it was a symlink</td><td class="time"><a href="#t2018-09-18T14:51:13" class="time">14:51</a></td></tr>
+<tr id="t2018-09-18T16:09:38"><th class="nick" style="background: #4d4d93">halstead</th><td class="text" style="color: #4d4d93">armpit, <a href="https://wiki.yoctoproject.org/wiki/Yocto_Project_Release_Process" rel="nofollow">https://wiki.yoctoproject.org/wiki/Yocto_Project_Release_Process</a> and <a href="https://wiki.yoctoproject.org/wiki/Yocto_Project_Release_Checklist" rel="nofollow">https://wiki.yoctoproject.org/wiki/Yocto_Project_Release_Checklist</a> are the main ones.</td><td class="time"><a href="#t2018-09-18T16:09:38" class="time">16:09</a></td></tr>
+<tr id="t2018-09-18T16:10:21"><th class="nick" style="background: #97974f">armpit</th><td class="text" style="color: #97974f">k</td><td class="time"><a href="#t2018-09-18T16:10:21" class="time">16:10</a></td></tr>
+<tr id="t2018-09-18T16:12:06"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2018-09-18T16:12:06" class="time">16:12</a></td></tr>
+<tr id="t2018-09-18T16:29:45"><td class="nickchange" colspan="2">*** jacques is now known as linuxjacques</td><td><a href="#t2018-09-18T16:29:45" class="time">16:29</a></td></tr>
+<tr id="t2018-09-18T16:37:45"><th class="nick" style="background: #9b519b">davenporten</th><td class="text" style="color: #9b519b">Does anyone know if there is a way to have oprofiled to be included in the rootfs? I've have oprofile in the IMAGE_INSTALL_append field, but it doesn't do it for me</td><td class="time"><a href="#t2018-09-18T16:37:45" class="time">16:37</a></td></tr>
+<tr id="t2018-09-18T16:49:51"><th class="nick" style="background: #4b904b">uglyoldbob</th><td class="text" style="color: #4b904b">davenporten: try IMAGE_INSTALL += "blabla" in your image recipe</td><td class="time"><a href="#t2018-09-18T16:49:51" class="time">16:49</a></td></tr>
+<tr id="t2018-09-18T16:57:53"><td class="nickchange" colspan="2">*** fdanis is now known as fdanis_away</td><td><a href="#t2018-09-18T16:57:53" class="time">16:57</a></td></tr>
+<tr id="t2018-09-18T17:18:33"><td class="nickchange" colspan="2">*** jacques is now known as linuxjacques</td><td><a href="#t2018-09-18T17:18:33" class="time">17:18</a></td></tr>
+<tr id="t2018-09-18T18:54:35"><td class="nickchange" colspan="2">*** kaspter1 is now known as kaspter</td><td><a href="#t2018-09-18T18:54:35" class="time">18:54</a></td></tr>
+<tr id="t2018-09-18T19:24:39"><th class="nick" style="background: #9b519b">davenporten</th><td class="text" style="color: #9b519b">uglyoldbob: thanks for your help before, I had to jump off before I was finished trying it</td><td class="time"><a href="#t2018-09-18T19:24:39" class="time">19:24</a></td></tr>
+<tr id="t2018-09-18T20:17:36"><th class="nick" style="background: #9b519b">davenporten</th><td class="text" style="color: #9b519b">Is anyone familiar with 'tools-profile', meaning what sort of things are included in it? I know there is oprofile, but when I added it to the build the number of items that needed to be built jumped by 1000</td><td class="time"><a href="#t2018-09-18T20:17:36" class="time">20:17</a></td></tr>
+<tr id="t2018-09-18T21:25:21"><th class="nick" style="background: #539e9e">opello</th><td class="text" style="color: #539e9e">i've got a local git repository cloned down, it has submodules that are defined as relative paths; the gitsm fetcher seems to not be finding them -- ("repository '/group/group/proj.git' does not exist"), on an internal gitlab instance which wants relative paths for pipelines</td><td class="time"><a href="#t2018-09-18T21:25:21" class="time">21:25</a></td></tr>
+<tr id="t2018-09-18T21:27:39"><th class="nick" style="background: #539e9e">opello</th><td class="text" style="color: #539e9e">is there a better way to solve the 'local development' scenario?&nbsp;&nbsp;i kind of like having the repo for the code i'm working on the recipe for outside of the work directory</td><td class="time"><a href="#t2018-09-18T21:27:39" class="time">21:27</a></td></tr>
+<tr id="t2018-09-18T22:23:08"><th class="nick" style="background: #a25555">yocti</th><td class="text" style="color: #a25555">New news from stackoverflow: Protobuf build fail in Yocto &lt;<a href="https://stackoverflow.com/questions/52395278/protobuf-build-fail-in-yocto&gt;" rel="nofollow">https://stackoverflow.com/questions/52395278/protobuf-build-fail-in-yocto&gt;</a></td><td class="time"><a href="#t2018-09-18T22:23:08" class="time">22:23</a></td></tr>
+<tr id="t2018-09-18T22:53:13"><th class="nick" style="background: #a25555">yocti</th><td class="text" style="color: #a25555">New news from stackoverflow: Why does BitBake error if it can't find www.example.com? &lt;<a href="https://stackoverflow.com/questions/52395512/why-does-bitbake-error-if-it-cant-find-www-example-com&gt;" rel="nofollow">https://stackoverflow.com/questions/52395512/why-does-bitbake-error-if-it-cant-find-www-example-com&gt;</a></td><td class="time"><a href="#t2018-09-18T22:53:13" class="time">22:53</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-09-17.log.html">&#171; Monday, 2018-09-17</a> <a href="index.html">Index</a> <a href="%23yocto.2018-09-19.log.html">Wednesday, 2018-09-19 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

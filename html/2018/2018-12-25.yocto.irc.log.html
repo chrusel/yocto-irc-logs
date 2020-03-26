@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Tuesday, 2018-12-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Tuesday, 2018-12-25</h1>
+<div class="navigation"> <a href="%23yocto.2018-12-24.log.html">&#171; Monday, 2018-12-24</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-26.log.html">Wednesday, 2018-12-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2018-12-25T00:02:34"><th class="nick" style="background: #407a40">Jack3k3</th><td class="text" style="color: #407a40">is there a specific step in bitbake image builds where ownership is setup for the rootfs? My build failed to start up successfully because all of the files are owned by the uid of the process I used to do bitbake, not the root user</td><td class="time"><a href="#t2018-12-25T00:02:34" class="time">00:02</a></td></tr>
+<tr id="t2018-12-25T00:02:39"><th class="nick" style="background: #407a40">Jack3k3</th><td class="text" style="color: #407a40">Im trying to figure out what went wrong</td><td class="time"><a href="#t2018-12-25T00:02:39" class="time">00:02</a></td></tr>
+<tr id="t2018-12-25T00:55:19"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">RP: cool. Lets push</td><td class="time"><a href="#t2018-12-25T00:55:19" class="time">00:55</a></td></tr>
+<tr id="t2018-12-25T00:55:40"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">a good christmas present to community :) reduced and simplified toolchain build sequence</td><td class="time"><a href="#t2018-12-25T00:55:40" class="time">00:55</a></td></tr>
+<tr id="t2018-12-25T01:14:34"><th class="nick" style="background: #818144">neverpanic</th><td class="text" style="color: #818144">Jack3k3: That's normal, bitbake doesn't build as root, it only emulates the privileges.</td><td class="time"><a href="#t2018-12-25T01:14:34" class="time">01:14</a></td></tr>
+<tr id="t2018-12-25T03:48:56"><th class="nick" style="background: #407a40">Jack3k3</th><td class="text" style="color: #407a40">neverpanic, that makes sense but the issue is the permissions/ownership in the actual image are mucked up, my boot process fails on the device because mount thinks my uid is 2017 (non root) which is the same uid bitbake had on my host for the build</td><td class="time"><a href="#t2018-12-25T03:48:56" class="time">03:48</a></td></tr>
+<tr id="t2018-12-25T09:28:34"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2018-12-25T09:28:34" class="time">09:28</a></td></tr>
+<tr id="t2018-12-25T10:33:10"><th class="nick" style="background: #854685">nacknick</th><td class="text" style="color: #854685">Hello! Is there anyway to use the exact same toolchain that bitbake uses to compile packages? How?</td><td class="time"><a href="#t2018-12-25T10:33:10" class="time">10:33</a></td></tr>
+<tr id="t2018-12-25T11:52:45"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2018-12-25T11:52:45" class="time">11:52</a></td></tr>
+<tr id="t2018-12-25T12:26:33"><th class="nick" style="background: #854685">nacknick</th><td class="text" style="color: #854685">Where do I find the compiler that yocto used to compile a specific package?</td><td class="time"><a href="#t2018-12-25T12:26:33" class="time">12:26</a></td></tr>
+<tr id="t2018-12-25T13:18:37"><th class="nick" style="background: #488888">Crofton</th><td class="text" style="color: #488888">nacknick, bitbake -c populate_sdk image -name generates an sdk you can use to build apps for the image</td><td class="time"><a href="#t2018-12-25T13:18:37" class="time">13:18</a></td></tr>
+<tr id="t2018-12-25T15:36:47"><th class="nick" style="background: #854685">nacknick</th><td class="text" style="color: #854685">Crofton, I'm not sure that I understood your explanation. Can you write an example?</td><td class="time"><a href="#t2018-12-25T15:36:47" class="time">15:36</a></td></tr>
+<tr id="t2018-12-25T15:37:41"><th class="nick" style="background: #854685">nacknick</th><td class="text" style="color: #854685">In addition, I want to specify a toolchain for building a specific package. How should I do it?</td><td class="time"><a href="#t2018-12-25T15:37:41" class="time">15:37</a></td></tr>
+<tr id="t2018-12-25T17:41:24"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2018-12-25T17:41:24" class="time">17:41</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2018-12-24.log.html">&#171; Monday, 2018-12-24</a> <a href="index.html">Index</a> <a href="%23yocto.2018-12-26.log.html">Wednesday, 2018-12-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
