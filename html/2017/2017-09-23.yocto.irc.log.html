@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-09-23</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-09-23</h1>
+<div class="navigation"> <a href="%23yocto.2017-09-22.log.html">&#171; Friday, 2017-09-22</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-24.log.html">Sunday, 2017-09-24 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-09-23T02:16:24"><td class="action" colspan="2">* armpit sweat a new pull down on the AB.. nice</td><td><a href="#t2017-09-23T02:16:24" class="time">02:16</a></td></tr>
+<tr id="t2017-09-23T02:16:41"><th class="nick" style="background: #407a40">armpit</th><td class="text" style="color: #407a40">??? s/sweat/sweet</td><td class="time"><a href="#t2017-09-23T02:16:41" class="time">02:16</a></td></tr>
+<tr id="t2017-09-23T04:04:40"><td class="other" colspan="2">-YoctoAutoBuilder- build #501 of nightly-ppc-lsb is complete: Failure [failed BuildImages_1]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-ppc-lsb/builds/501" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-ppc-lsb/builds/501</a></td><td><a href="#t2017-09-23T04:04:40" class="time">04:04</a></td></tr>
+<tr id="t2017-09-23T04:52:21"><td class="other" colspan="2">-YoctoAutoBuilder- build #512 of nightly-ppc is complete: Failure [failed BuildImages_1]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-ppc/builds/512" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-ppc/builds/512</a></td><td><a href="#t2017-09-23T04:52:21" class="time">04:52</a></td></tr>
+<tr id="t2017-09-23T05:12:14"><td class="other" colspan="2">-YoctoAutoBuilder- build #515 of nightly-x86-64 is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-x86-64/builds/515" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-x86-64/builds/515</a></td><td><a href="#t2017-09-23T05:12:14" class="time">05:12</a></td></tr>
+<tr id="t2017-09-23T06:43:59"><td class="other" colspan="2">-YoctoAutoBuilder- build #506 of nightly-x86-lsb is complete: Failure [failed Running Sanity Tests]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-x86-lsb/builds/506" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-x86-lsb/builds/506</a></td><td><a href="#t2017-09-23T06:43:59" class="time">06:43</a></td></tr>
+<tr id="t2017-09-23T07:27:05"><td class="other" colspan="2">-YoctoAutoBuilder- build #502 of nightly-ppc-lsb is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-ppc-lsb/builds/502" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-ppc-lsb/builds/502</a></td><td><a href="#t2017-09-23T07:27:05" class="time">07:27</a></td></tr>
+<tr id="t2017-09-23T08:14:34"><td class="other" colspan="2">-YoctoAutoBuilder- build #540 of nightly-oe-selftest is complete: Failure [failed Running oe-selftest]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/540" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/540</a></td><td><a href="#t2017-09-23T08:14:34" class="time">08:14</a></td></tr>
+<tr id="t2017-09-23T08:57:16"><td class="other" colspan="2">-YoctoAutoBuilder- build #513 of nightly-ppc is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-ppc/builds/513" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-ppc/builds/513</a></td><td><a href="#t2017-09-23T08:57:16" class="time">08:57</a></td></tr>
+<tr id="t2017-09-23T12:22:50"><th class="nick" style="background: #42427e">bachp</th><td class="text" style="color: #42427e">Is it possible the version specification in opkg is not working correclty? I get the error "nothing provides python3-aiohttp = 2.2.5" if I do a `RDEPENDS_${PN} = "python3-aiohttp (= 2.2.5)"`. If I change it to `RDEPENDS_${PN} = "python3-aiohttp (&gt;= 2.2.5)"` or `RDEPENDS_${PN} = "python3-aiohttp (&lt;= 2.2.5)"` it works. The version I have is 2.2.5.</td><td class="time"><a href="#t2017-09-23T12:22:50" class="time">12:22</a></td></tr>
+<tr id="t2017-09-23T15:41:55"><td class="part" colspan="2">*** Amynka &lt;Amynka!~frozen@gentoo/developer/amynka&gt; has left #yocto</td><td><a href="#t2017-09-23T15:41:55" class="time">15:41</a></td></tr>
+<tr id="t2017-09-23T15:59:14"><td class="part" colspan="2">*** scottrif &lt;scottrif!~scottrif@47.39.44.219&gt; has left #yocto</td><td><a href="#t2017-09-23T15:59:14" class="time">15:59</a></td></tr>
+<tr id="t2017-09-23T16:16:45"><td class="nickchange" colspan="2">*** Jackie is now known as Guest95612</td><td><a href="#t2017-09-23T16:16:45" class="time">16:16</a></td></tr>
+<tr id="t2017-09-23T16:26:05"><td class="other" colspan="2">-YoctoAutoBuilder- build #507 of nightly-x86-lsb is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-x86-lsb/builds/507" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-x86-lsb/builds/507</a></td><td><a href="#t2017-09-23T16:26:05" class="time">16:26</a></td></tr>
+<tr id="t2017-09-23T16:27:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #515 of nightly-multilib is complete: Failure [failed BuildImages_2 Running Sanity Tests_2]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-multilib/builds/515" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-multilib/builds/515</a></td><td><a href="#t2017-09-23T16:27:55" class="time">16:27</a></td></tr>
+<tr id="t2017-09-23T17:13:44"><th class="nick" style="background: #818144">ayaka</th><td class="text" style="color: #818144">I met a problem, I have create a package to provides a library, and it install successfully when I build for the other package</td><td class="time"><a href="#t2017-09-23T17:13:44" class="time">17:13</a></td></tr>
+<tr id="t2017-09-23T17:15:13"><th class="nick" style="background: #818144">ayaka</th><td class="text" style="color: #818144">but it package can't find where the library comes from report me that <a href="https://paste.fedoraproject.org/paste/z3IS~q-jdF6kQphKmAoD9w" rel="nofollow">https://paste.fedoraproject.org/paste/z3IS~q-jdF6kQphKmAoD9w</a></td><td class="time"><a href="#t2017-09-23T17:15:13" class="time">17:15</a></td></tr>
+<tr id="t2017-09-23T17:15:48"><th class="nick" style="background: #818144">ayaka</th><td class="text" style="color: #818144">does the "Skipping setscene dependency " make this problem?</td><td class="time"><a href="#t2017-09-23T17:15:48" class="time">17:15</a></td></tr>
+<tr id="t2017-09-23T17:19:26"><td class="other" colspan="2">-YoctoAutoBuilder- build #503 of nightly-qa-extras is complete: Failure [failed Running Sanity Tests_7]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/503" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/503</a></td><td><a href="#t2017-09-23T17:19:26" class="time">17:19</a></td></tr>
+<tr id="t2017-09-23T18:20:00"><td class="other" colspan="2">-YoctoAutoBuilder- build #541 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/541" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/541</a></td><td><a href="#t2017-09-23T18:20:00" class="time">18:20</a></td></tr>
+<tr id="t2017-09-23T18:23:06"><th class="nick" style="background: #854685">BBoy</th><td class="text" style="color: #854685">Hi Everybody! Is there anybody now who could help me with a kernel build issue with Raspberry Pi device... I've made a custom .bbappend file for build custom kernel, but bitbake says file not found for defconfig, but I've made everything according to the Yocto Project documentation. The strange is that bitbake looks for defconfig, but it is not searching for in the custom meta directory?! :(</td><td class="time"><a href="#t2017-09-23T18:23:06" class="time">18:23</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-09-22.log.html">&#171; Friday, 2017-09-22</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-24.log.html">Sunday, 2017-09-24 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

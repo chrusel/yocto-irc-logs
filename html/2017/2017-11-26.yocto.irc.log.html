@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-11-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-11-26</h1>
+<div class="navigation"> <a href="%23yocto.2017-11-25.log.html">&#171; Saturday, 2017-11-25</a> <a href="index.html">Index</a> <a href="%23yocto.2017-11-27.log.html">Monday, 2017-11-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-11-26T05:19:31"><th class="nick" style="background: #407a40">grokreality1</th><td class="text" style="color: #407a40">hi all</td><td class="time"><a href="#t2017-11-26T05:19:31" class="time">05:19</a></td></tr>
+<tr id="t2017-11-26T05:26:56"><th class="nick" style="background: #407a40">grokreality1</th><td class="text" style="color: #407a40">Im using the morty branch of meta-ti. I face a compiler error while building u-boot. Its the PLAIN_VERSION undeclared issue. I think this is the fix <a href="https://lists.yoctoproject.org/pipermail/meta-ti/2016-October/009114.html." rel="nofollow">https://lists.yoctoproject.org/pipermail/meta-ti/2016-October/009114.html.</a> But even after using morty this error is stopping the build ...plz help.</td><td class="time"><a href="#t2017-11-26T05:26:56" class="time">05:26</a></td></tr>
+<tr id="t2017-11-26T05:27:55"><th class="nick" style="background: #407a40">grokreality1</th><td class="text" style="color: #407a40">I can see the commit in my git repo. but why is this commit being applied. The changes dont reflect on the u-boot .inc and .bb files as specified in the commit.</td><td class="time"><a href="#t2017-11-26T05:27:55" class="time">05:27</a></td></tr>
+<tr id="t2017-11-26T05:28:14"><th class="nick" style="background: #407a40">grokreality1</th><td class="text" style="color: #407a40">i mean. why is this commit not being applied?</td><td class="time"><a href="#t2017-11-26T05:28:14" class="time">05:28</a></td></tr>
+<tr id="t2017-11-26T05:33:43"><td class="part" colspan="2">*** grokreality1 &lt;grokreality1!~avi@59.98.37.212&gt; has left #yocto</td><td><a href="#t2017-11-26T05:33:43" class="time">05:33</a></td></tr>
+<tr id="t2017-11-26T06:07:09"><th class="nick" style="background: #407a40">grokreality1</th><td class="text" style="color: #407a40">plz some help. some ideas?</td><td class="time"><a href="#t2017-11-26T06:07:09" class="time">06:07</a></td></tr>
+<tr id="t2017-11-26T12:43:22"><td class="nickchange" colspan="2">*** kaspter1 is now known as kaspter</td><td><a href="#t2017-11-26T12:43:22" class="time">12:43</a></td></tr>
+<tr id="t2017-11-26T15:46:17"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">hey guys! Is there a way to get wlfreerdp .bb recipe anywhere? I want to run RDP under Wayland/Weston and it seems it is not as easy as I have hoped :-)</td><td class="time"><a href="#t2017-11-26T15:46:17" class="time">15:46</a></td></tr>
+<tr id="t2017-11-26T15:47:29"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">it seems like it gets built so I just need to install_append it, I suppose</td><td class="time"><a href="#t2017-11-26T15:47:29" class="time">15:47</a></td></tr>
+<tr id="t2017-11-26T16:28:36"><th class="nick" style="background: #818144">top22</th><td class="text" style="color: #818144">Hello</td><td class="time"><a href="#t2017-11-26T16:28:36" class="time">16:28</a></td></tr>
+<tr id="t2017-11-26T16:31:04"><th class="nick" style="background: #818144">top22</th><td class="text" style="color: #818144">I'm trying to setup a yocto environment for a mini pc based on amd E2-1800 APU; I've looked at the different meta-amd layers but I don't think they support this. Should I just try creating a machine conf from scratch ?</td><td class="time"><a href="#t2017-11-26T16:31:04" class="time">16:31</a></td></tr>
+<tr id="t2017-11-26T19:44:49"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">is it ok that freerdp recipe doesn't build any clients at all, only libs? I try to install a client binary and I got RPATH issue, not sure what to do :-(</td><td class="time"><a href="#t2017-11-26T19:44:49" class="time">19:44</a></td></tr>
+<tr id="t2017-11-26T21:03:07"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">how to I disable a QA check in Yocto?</td><td class="time"><a href="#t2017-11-26T21:03:07" class="time">21:03</a></td></tr>
+<tr id="t2017-11-26T21:05:35"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">INSANE_SKIP</td><td class="time"><a href="#t2017-11-26T21:05:35" class="time">21:05</a></td></tr>
+<tr id="t2017-11-26T21:06:08"><th class="nick" style="background: #818144">top22</th><td class="text" style="color: #818144">Hello, I'm trying to append a recipe but I'm under the impression it's not taken into account</td><td class="time"><a href="#t2017-11-26T21:06:08" class="time">21:06</a></td></tr>
+<tr id="t2017-11-26T21:06:17"><th class="nick" style="background: #818144">top22</th><td class="text" style="color: #818144">show-layers show my layer</td><td class="time"><a href="#t2017-11-26T21:06:17" class="time">21:06</a></td></tr>
+<tr id="t2017-11-26T21:06:23"><th class="nick" style="background: #818144">top22</th><td class="text" style="color: #818144">show-appends doesn't show my append</td><td class="time"><a href="#t2017-11-26T21:06:23" class="time">21:06</a></td></tr>
+<tr id="t2017-11-26T21:09:02"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">neverpanic, thanks! found better thing to do, which is to use chrpath-native and remove the damned rpath; hope, the binary will work</td><td class="time"><a href="#t2017-11-26T21:09:02" class="time">21:09</a></td></tr>
+<tr id="t2017-11-26T21:09:54"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">there's almost always a better solution; the QA checks are there for a reason.</td><td class="time"><a href="#t2017-11-26T21:09:54" class="time">21:09</a></td></tr>
+<tr id="t2017-11-26T21:11:45"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">yeah, but I just can figure out how to fix installation of what seems like not supposed to be installed part of freerdp</td><td class="time"><a href="#t2017-11-26T21:11:45" class="time">21:11</a></td></tr>
+<tr id="t2017-11-26T21:12:08"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">there's a mess of cmake and a lot of flags, and stuff like SKIP_RPATH did not work</td><td class="time"><a href="#t2017-11-26T21:12:08" class="time">21:12</a></td></tr>
+<tr id="t2017-11-26T21:12:29"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">don't have that much time to spend there ;-(</td><td class="time"><a href="#t2017-11-26T21:12:29" class="time">21:12</a></td></tr>
+<tr id="t2017-11-26T21:13:18"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">I suppose, if rpaths are actually required, I could still bypass it with LD_LIBRARY_PATH, that's acceptable for me</td><td class="time"><a href="#t2017-11-26T21:13:18" class="time">21:13</a></td></tr>
+<tr id="t2017-11-26T21:13:24"><th class="nick" style="background: #854685">neverpanic</th><td class="text" style="color: #854685">Cmake has a variety of options to deal with rpaths</td><td class="time"><a href="#t2017-11-26T21:13:24" class="time">21:13</a></td></tr>
+<tr id="t2017-11-26T21:15:26"><th class="nick" style="background: #42427e">luneff</th><td class="text" style="color: #42427e">yeah, been there. Maybe, 'don't use rpath at all' setting is overriden by freerdp internals...</td><td class="time"><a href="#t2017-11-26T21:15:26" class="time">21:15</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-11-25.log.html">&#171; Saturday, 2017-11-25</a> <a href="index.html">Index</a> <a href="%23yocto.2017-11-27.log.html">Monday, 2017-11-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-03-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-03-19</h1>
+<div class="navigation"> <a href="%23yocto.2017-03-18.log.html">&#171; Saturday, 2017-03-18</a> <a href="index.html">Index</a> <a href="%23yocto.2017-03-20.log.html">Monday, 2017-03-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-03-19T03:00:31"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">haha!</td><td class="time"><a href="#t2017-03-19T03:00:31" class="time">03:00</a></td></tr>
+<tr id="t2017-03-19T10:26:03"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">I think the git hashes on git://github.com/file/file.git have changed, the revision used in poky/krogoth no longer exists</td><td class="time"><a href="#t2017-03-19T10:26:03" class="time">10:26</a></td></tr>
+<tr id="t2017-03-19T11:13:29"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">Is anyone else on krogoth having problems with the source for the file 5.25 release disappearing?</td><td class="time"><a href="#t2017-03-19T11:13:29" class="time">11:13</a></td></tr>
+<tr id="t2017-03-19T11:45:22"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">deepwater: <a href="http://git.openembedded.org/openembedded-core/commit/?id=adb71e06768adadda7b69c3b5e81ca3ad67237f4" rel="nofollow">http://git.openembedded.org/openembedded-core/commit/?id=adb71e06768adadda7b69c3b5e81ca3ad67237f4</a></td><td class="time"><a href="#t2017-03-19T11:45:22" class="time">11:45</a></td></tr>
+<tr id="t2017-03-19T11:45:57"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">deepwater: looks like there was some history re-writing or similar to the file git repo</td><td class="time"><a href="#t2017-03-19T11:45:57" class="time">11:45</a></td></tr>
+<tr id="t2017-03-19T15:43:38"><td class="nickchange" colspan="2">*** p0kerface|work is now known as BaloneyGeek</td><td><a href="#t2017-03-19T15:43:38" class="time">15:43</a></td></tr>
+<tr id="t2017-03-19T20:15:27"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">nrossi: thanks I thought I was losing my mind</td><td class="time"><a href="#t2017-03-19T20:15:27" class="time">20:15</a></td></tr>
+<tr id="t2017-03-19T20:18:03"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">This will break all my old release tags, I'm not sure how other deal with this sort of issue</td><td class="time"><a href="#t2017-03-19T20:18:03" class="time">20:18</a></td></tr>
+<tr id="t2017-03-19T20:24:55"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">nrossi: a similar fix needs to be applied to all yocto release</td><td class="time"><a href="#t2017-03-19T20:24:55" class="time">20:24</a></td></tr>
+<tr id="t2017-03-19T21:22:05"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">deepwater: argh :(</td><td class="time"><a href="#t2017-03-19T21:22:05" class="time">21:22</a></td></tr>
+<tr id="t2017-03-19T21:39:13"><th class="nick" style="background: #488888">kergoth</th><td class="text" style="color: #488888">there's a mailing list thread about the srcrev update of the 5.30 tag, denis (iirc) replied indicating every release needed equivalent updates</td><td class="time"><a href="#t2017-03-19T21:39:13" class="time">21:39</a></td></tr>
+<tr id="t2017-03-19T21:39:14"><td class="action" colspan="2">* kergoth yawns</td><td><a href="#t2017-03-19T21:39:14" class="time">21:39</a></td></tr>
+<tr id="t2017-03-19T21:51:04"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">kergoth: I'm not against plugins in the git fetcher, I know what we have now is all a bit of a mess :(</td><td class="time"><a href="#t2017-03-19T21:51:04" class="time">21:51</a></td></tr>
+<tr id="t2017-03-19T21:51:41"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">The trouble was trying to keep the different extensions with the same level of functionality as I'm pretty sure the archive/mirroring of gitsm is broken :(</td><td class="time"><a href="#t2017-03-19T21:51:41" class="time">21:51</a></td></tr>
+<tr id="t2017-03-19T22:01:13"><th class="nick" style="background: #488888">kergoth</th><td class="text" style="color: #488888">yeah.. i was mulling over trying to rework gitsm to leverage the fetcher to fetch the individual submodules, rather than letting git do it, would give us some more flexibiliyt in that dept</td><td class="time"><a href="#t2017-03-19T22:01:13" class="time">22:01</a></td></tr>
+<tr id="t2017-03-19T23:06:22"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">bluelightning: I see that devtool modify -x is too slow on master</td><td class="time"><a href="#t2017-03-19T23:06:22" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:06:27"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">any insights ?</td><td class="time"><a href="#t2017-03-19T23:06:27" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:06:38"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">khem: on the kernel? or another recipe?</td><td class="time"><a href="#t2017-03-19T23:06:38" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:06:47"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">its a small recipe</td><td class="time"><a href="#t2017-03-19T23:06:47" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:06:49"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">I am adding</td><td class="time"><a href="#t2017-03-19T23:06:49" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:06:56"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">but its noticeable delay</td><td class="time"><a href="#t2017-03-19T23:06:56" class="time">23:06</a></td></tr>
+<tr id="t2017-03-19T23:07:06"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">right now it takes about a min+</td><td class="time"><a href="#t2017-03-19T23:07:06" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:07:06"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">hmm, ok, I'll look into it</td><td class="time"><a href="#t2017-03-19T23:07:06" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:07:13"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">yeah that's too long</td><td class="time"><a href="#t2017-03-19T23:07:13" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:07:22"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">btw. I have other layers in bblayers</td><td class="time"><a href="#t2017-03-19T23:07:22" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:07:41"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">most of meta-openembedded layers plus meta-rpi and meta-96boards</td><td class="time"><a href="#t2017-03-19T23:07:41" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:07:50"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">so its not just oe-core</td><td class="time"><a href="#t2017-03-19T23:07:50" class="time">23:07</a></td></tr>
+<tr id="t2017-03-19T23:08:03"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">devtool modify -x libexecinfo&nbsp;&nbsp;19.13s user 11.03s system 8% cpu 6:07.73 total</td><td class="time"><a href="#t2017-03-19T23:08:03" class="time">23:08</a></td></tr>
+<tr id="t2017-03-19T23:08:52"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">you don't have git recipes with no fixed revision? or something triggering reparse on every execution?</td><td class="time"><a href="#t2017-03-19T23:08:52" class="time">23:08</a></td></tr>
+<tr id="t2017-03-19T23:09:08"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">either would potentially explain it</td><td class="time"><a href="#t2017-03-19T23:09:08" class="time">23:09</a></td></tr>
+<tr id="t2017-03-19T23:10:33"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">khem: at what stage exactly does it seem to pause?</td><td class="time"><a href="#t2017-03-19T23:10:33" class="time">23:10</a></td></tr>
+<tr id="t2017-03-19T23:11:13"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">NOTE: Executing do_fetch...</td><td class="time"><a href="#t2017-03-19T23:11:13" class="time">23:11</a></td></tr>
+<tr id="t2017-03-19T23:11:26"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">but key is tarball is already fetched into my downloads/</td><td class="time"><a href="#t2017-03-19T23:11:26" class="time">23:11</a></td></tr>
+<tr id="t2017-03-19T23:11:38"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">prior to devtool operation</td><td class="time"><a href="#t2017-03-19T23:11:38" class="time">23:11</a></td></tr>
+<tr id="t2017-03-19T23:11:44"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">right, it should pick that up</td><td class="time"><a href="#t2017-03-19T23:11:44" class="time">23:11</a></td></tr>
+<tr id="t2017-03-19T23:13:01"><th class="nick" style="background: #854685">bluelightning</th><td class="text" style="color: #854685">khem: is that a recipe you could send to me?</td><td class="time"><a href="#t2017-03-19T23:13:01" class="time">23:13</a></td></tr>
+<tr id="t2017-03-19T23:18:12"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">bluelightning: let me push it to gh</td><td class="time"><a href="#t2017-03-19T23:18:12" class="time">23:18</a></td></tr>
+<tr id="t2017-03-19T23:20:56"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">bluelightning: <a href="https://github.com/kraj/meta-openembedded/commit/91853a4fc5f362ff2fa20a9c40a220b728da3bc4" rel="nofollow">https://github.com/kraj/meta-openembedded/commit/91853a4fc5f362ff2fa20a9c40a220b728da3bc4</a></td><td class="time"><a href="#t2017-03-19T23:20:56" class="time">23:20</a></td></tr>
+<tr id="t2017-03-19T23:21:20"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">I have already finished fixing it</td><td class="time"><a href="#t2017-03-19T23:21:20" class="time">23:21</a></td></tr>
+<tr id="t2017-03-19T23:21:29"><th class="nick" style="background: #4b904b">khem</th><td class="text" style="color: #4b904b">all done with devtool</td><td class="time"><a href="#t2017-03-19T23:21:29" class="time">23:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-03-18.log.html">&#171; Saturday, 2017-03-18</a> <a href="index.html">Index</a> <a href="%23yocto.2017-03-20.log.html">Monday, 2017-03-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

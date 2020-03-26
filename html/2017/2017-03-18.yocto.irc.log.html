@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-03-18</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-03-18</h1>
+<div class="navigation"> <a href="%23yocto.2017-03-17.log.html">&#171; Friday, 2017-03-17</a> <a href="index.html">Index</a> <a href="%23yocto.2017-03-19.log.html">Sunday, 2017-03-19 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-03-18T00:03:57"><td class="other" colspan="2">-YoctoAutoBuilder- build #649 of nightly-wic is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-wic/builds/649" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-wic/builds/649</a></td><td><a href="#t2017-03-18T00:03:57" class="time">00:03</a></td></tr>
+<tr id="t2017-03-18T00:24:57"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">ah this ovmf crap&nbsp;&nbsp;is using native compiler :(</td><td class="time"><a href="#t2017-03-18T00:24:57" class="time">00:24</a></td></tr>
+<tr id="t2017-03-18T00:25:05"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">I wonder how it got into OE-Core</td><td class="time"><a href="#t2017-03-18T00:25:05" class="time">00:25</a></td></tr>
+<tr id="t2017-03-18T00:25:29"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">its used on x86 platforms so it got along</td><td class="time"><a href="#t2017-03-18T00:25:29" class="time">00:25</a></td></tr>
+<tr id="t2017-03-18T00:28:07"><td class="other" colspan="2">-YoctoAutoBuilder- build #1078 of nightly-qa-extras is complete: Failure [failed BuildImages_3]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-qa-extras/builds/1078" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-qa-extras/builds/1078</a></td><td><a href="#t2017-03-18T00:28:07" class="time">00:28</a></td></tr>
+<tr id="t2017-03-18T00:31:43"><td class="part" colspan="2">*** jairglez &lt;jairglez!~jairdeje@134.134.139.83&gt; has left #yocto</td><td><a href="#t2017-03-18T00:31:43" class="time">00:31</a></td></tr>
+<tr id="t2017-03-18T05:50:14"><td class="part" colspan="2">*** localhorst_ &lt;localhorst_!~me@unaffiliated/boscop&gt; has left #yocto</td><td><a href="#t2017-03-18T05:50:14" class="time">05:50</a></td></tr>
+<tr id="t2017-03-18T08:57:36"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">Hi</td><td class="time"><a href="#t2017-03-18T08:57:36" class="time">08:57</a></td></tr>
+<tr id="t2017-03-18T08:59:23"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">I recently heard about outreachy program . I am interested in this and open source. I am contributing to open source since december .In the list of ideas for outreachy ,i came across "Improve autobuilder ". Can i give it a try.</td><td class="time"><a href="#t2017-03-18T08:59:23" class="time">08:59</a></td></tr>
+<tr id="t2017-03-18T09:00:05"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">I have worked on various projects in c, c++ and python.</td><td class="time"><a href="#t2017-03-18T09:00:05" class="time">09:00</a></td></tr>
+<tr id="t2017-03-18T09:00:46"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">Can anyone guide me to get started in this :)</td><td class="time"><a href="#t2017-03-18T09:00:46" class="time">09:00</a></td></tr>
+<tr id="t2017-03-18T09:06:16"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">radhika: well, do you have any problem with autobuilder that particularly pains you ?</td><td class="time"><a href="#t2017-03-18T09:06:16" class="time">09:06</a></td></tr>
+<tr id="t2017-03-18T09:06:24"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">radhika: if so, fix it, send patch ... as usual</td><td class="time"><a href="#t2017-03-18T09:06:24" class="time">09:06</a></td></tr>
+<tr id="t2017-03-18T09:09:52"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">Marex: I never used it before ....But if you can point me to some bug ,i can try to fix that .</td><td class="time"><a href="#t2017-03-18T09:09:52" class="time">09:09</a></td></tr>
+<tr id="t2017-03-18T09:11:10"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">radhika: well then what's your motivation ? I don't understand it ...</td><td class="time"><a href="#t2017-03-18T09:11:10" class="time">09:11</a></td></tr>
+<tr id="t2017-03-18T09:11:50"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">radhika: I'd understand it if you had a problem with it, that you'd try to fix it and send patch ... but if you have no problem, then why would you try hard to get yourself a problem ^_^' ?</td><td class="time"><a href="#t2017-03-18T09:11:50" class="time">09:11</a></td></tr>
+<tr id="t2017-03-18T09:12:27"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">just hack on stuff you care about, otherwise it's meh ...</td><td class="time"><a href="#t2017-03-18T09:12:27" class="time">09:12</a></td></tr>
+<tr id="t2017-03-18T09:14:12"><th class="nick" style="background: #818144">Marex</th><td class="text" style="color: #818144">RP: are you aware that the file package fails to fetch from the github repo ? apparently the history therein was rewritten</td><td class="time"><a href="#t2017-03-18T09:14:12" class="time">09:14</a></td></tr>
+<tr id="t2017-03-18T09:16:15"><th class="nick" style="background: #42427e">radhika</th><td class="text" style="color: #42427e">Okay . Thanks Marex :)</td><td class="time"><a href="#t2017-03-18T09:16:15" class="time">09:16</a></td></tr>
+<tr id="t2017-03-18T09:20:33"><td class="part" colspan="2">*** radhika &lt;radhika!0e8bf61e@gateway/web/freenode/ip.14.139.246.30&gt; has left #yocto</td><td><a href="#t2017-03-18T09:20:33" class="time">09:20</a></td></tr>
+<tr id="t2017-03-18T12:58:37"><td class="other" colspan="2">-YoctoAutoBuilder- build #1057 of nightly-arm-lsb is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm-lsb/builds/1057" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm-lsb/builds/1057</a></td><td><a href="#t2017-03-18T12:58:37" class="time">12:58</a></td></tr>
+<tr id="t2017-03-18T16:07:13"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">I have a problem with the TUNE_FEATURES</td><td class="time"><a href="#t2017-03-18T16:07:13" class="time">16:07</a></td></tr>
+<tr id="t2017-03-18T16:07:42"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">there are different combine with float support and arm cortex</td><td class="time"><a href="#t2017-03-18T16:07:42" class="time">16:07</a></td></tr>
+<tr id="t2017-03-18T16:08:03"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">how should I use the predefine marco in my target soc?</td><td class="time"><a href="#t2017-03-18T16:08:03" class="time">16:08</a></td></tr>
+<tr id="t2017-03-18T16:08:17"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">or it looks like it won't support hard mode float in arm</td><td class="time"><a href="#t2017-03-18T16:08:17" class="time">16:08</a></td></tr>
+<tr id="t2017-03-18T16:39:23"><td class="part" colspan="2">*** Reaper &lt;Reaper!~Reaper@50-255-118-235-static.hfc.comcastbusiness.net&gt; has left #yocto</td><td><a href="#t2017-03-18T16:39:23" class="time">16:39</a></td></tr>
+<tr id="t2017-03-18T16:54:50"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">ayaka: it does look at the hf variants</td><td class="time"><a href="#t2017-03-18T16:54:50" class="time">16:54</a></td></tr>
+<tr id="t2017-03-18T16:55:20"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">khem, I see, it would set DEFAULTTUNE</td><td class="time"><a href="#t2017-03-18T16:55:20" class="time">16:55</a></td></tr>
+<tr id="t2017-03-18T16:56:18"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">khem, so what I should do is using the DEFAULTUNE in my soc class file set to one of the AVAILTUNES?</td><td class="time"><a href="#t2017-03-18T16:56:18" class="time">16:56</a></td></tr>
+<tr id="t2017-03-18T17:01:39"><th class="nick" style="background: #488888">ant_home</th><td class="text" style="color: #488888">khem, hi</td><td class="time"><a href="#t2017-03-18T17:01:39" class="time">17:01</a></td></tr>
+<tr id="t2017-03-18T17:03:26"><th class="nick" style="background: #488888">ant_home</th><td class="text" style="color: #488888">I've seen linux-raspberry does require recipes-kernel/linux/linux-yocto.inc so probably do_menuconfig works</td><td class="time"><a href="#t2017-03-18T17:03:26" class="time">17:03</a></td></tr>
+<tr id="t2017-03-18T17:18:07"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">ant_home: so far it has been working</td><td class="time"><a href="#t2017-03-18T17:18:07" class="time">17:18</a></td></tr>
+<tr id="t2017-03-18T17:18:12"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">what errors do you see</td><td class="time"><a href="#t2017-03-18T17:18:12" class="time">17:18</a></td></tr>
+<tr id="t2017-03-18T19:06:24"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2017-03-18T19:06:24" class="time">19:06</a></td></tr>
+<tr id="t2017-03-18T19:12:15"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2017-03-18T19:12:15" class="time">19:12</a></td></tr>
+<tr id="t2017-03-18T19:54:54"><th class="nick" style="background: #8c4a4a">kergoth</th><td class="text" style="color: #8c4a4a">damnit gmail, stop miscategorizing mailing list email from trever woerner as promotions. it belongs in forums</td><td class="time"><a href="#t2017-03-18T19:54:54" class="time">19:54</a></td></tr>
+<tr id="t2017-03-18T20:11:11"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">X is ignoring my console res and keeps going 480p</td><td class="time"><a href="#t2017-03-18T20:11:11" class="time">20:11</a></td></tr>
+<tr id="t2017-03-18T20:11:31"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">anybody guess what i'm missing?</td><td class="time"><a href="#t2017-03-18T20:11:31" class="time">20:11</a></td></tr>
+<tr id="t2017-03-18T20:12:11"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">tlwoerner: lose the marketing hat?</td><td class="time"><a href="#t2017-03-18T20:12:11" class="time">20:12</a></td></tr>
+<tr id="t2017-03-18T20:17:02"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">don't really want to hard-code one video mode in xorg snippet...</td><td class="time"><a href="#t2017-03-18T20:17:02" class="time">20:17</a></td></tr>
+<tr id="t2017-03-18T20:17:41"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">shouldn't X/udev detect a better mode?&nbsp;&nbsp;normally it does but i have a kinda lite xorg install...</td><td class="time"><a href="#t2017-03-18T20:17:41" class="time">20:17</a></td></tr>
+<tr id="t2017-03-18T20:19:21"><th class="nick" style="background: #4b904b">nerdboy</th><td class="text" style="color: #4b904b">what about differences in VIRTUAL-RUNTIME_xserver_common ?&nbsp;&nbsp;is xserver-common preferred over x11-common?</td><td class="time"><a href="#t2017-03-18T20:19:21" class="time">20:19</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-03-17.log.html">&#171; Friday, 2017-03-17</a> <a href="index.html">Index</a> <a href="%23yocto.2017-03-19.log.html">Sunday, 2017-03-19 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

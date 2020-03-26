@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2017-04-17</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Monday, 2017-04-17</h1>
+<div class="navigation"> <a href="%23yocto.2017-04-16.log.html">&#171; Sunday, 2017-04-16</a> <a href="index.html">Index</a> <a href="%23yocto.2017-04-18.log.html">Tuesday, 2017-04-18 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-04-17T04:29:26"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2017-04-17T04:29:26" class="time">04:29</a></td></tr>
+<tr id="t2017-04-17T05:57:00"><td class="nickchange" colspan="2">*** qt-x1 is now known as qt-x</td><td><a href="#t2017-04-17T05:57:00" class="time">05:57</a></td></tr>
+<tr id="t2017-04-17T09:10:54"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2017-04-17T09:10:54" class="time">09:10</a></td></tr>
+<tr id="t2017-04-17T09:12:17"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">i am trying to make a sato image for the zedboard and i've encountered a problem</td><td class="time"><a href="#t2017-04-17T09:12:17" class="time">09:12</a></td></tr>
+<tr id="t2017-04-17T09:13:21"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">i dont seem to be able to compile the fontconfig 2.12</td><td class="time"><a href="#t2017-04-17T09:13:21" class="time">09:13</a></td></tr>
+<tr id="t2017-04-17T09:17:21"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">i think it's got something to do with the FC_OBJECT.. im really newb, and even after googling for a while i dont seem to figure it out</td><td class="time"><a href="#t2017-04-17T09:17:21" class="time">09:17</a></td></tr>
+<tr id="t2017-04-17T09:24:32"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">im reading about an update on glibc, anyone got any idea?</td><td class="time"><a href="#t2017-04-17T09:24:32" class="time">09:24</a></td></tr>
+<tr id="t2017-04-17T11:32:05"><th class="nick" style="background: #42427e">Son_Goku</th><td class="text" style="color: #42427e">kanavin: btw, I don't know if yocto folks are interested in this sort of thing, but there is a TUI/GUI frontend for dnf called dnfdragora: <a href="https://github.com/manatools/dnfdragora" rel="nofollow">https://github.com/manatools/dnfdragora</a></td><td class="time"><a href="#t2017-04-17T11:32:05" class="time">11:32</a></td></tr>
+<tr id="t2017-04-17T12:05:48"><td class="nickchange" colspan="2">*** supermark is now known as sandsmark</td><td><a href="#t2017-04-17T12:05:48" class="time">12:05</a></td></tr>
+<tr id="t2017-04-17T14:03:43"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2017-04-17T14:03:43" class="time">14:03</a></td></tr>
+<tr id="t2017-04-17T14:26:37"><td class="nickchange" colspan="2">*** tlwoerner_ is now known as tlwoerner</td><td><a href="#t2017-04-17T14:26:37" class="time">14:26</a></td></tr>
+<tr id="t2017-04-17T15:12:19"><td class="action" colspan="2">* kergoth yawns</td><td><a href="#t2017-04-17T15:12:19" class="time">15:12</a></td></tr>
+<tr id="t2017-04-17T15:41:31"><td class="action" colspan="2">* majuk farts</td><td><a href="#t2017-04-17T15:41:31" class="time">15:41</a></td></tr>
+<tr id="t2017-04-17T15:53:24"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2017-04-17T15:53:24" class="time">15:53</a></td></tr>
+<tr id="t2017-04-17T16:11:06"><td class="nickchange" colspan="2">*** dv__ is now known as dv_</td><td><a href="#t2017-04-17T16:11:06" class="time">16:11</a></td></tr>
+<tr id="t2017-04-17T17:53:15"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">anyone understand this?</td><td class="time"><a href="#t2017-04-17T17:53:15" class="time">17:53</a></td></tr>
+<tr id="t2017-04-17T17:53:16"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">[balister@thuvia ~]$ sh poky-glibc-x86_64-core-image-minimal-cortexa8hf-neon-toolchain-ext-2.2+snapshot.sh</td><td class="time"><a href="#t2017-04-17T17:53:16" class="time">17:53</a></td></tr>
+<tr id="t2017-04-17T17:53:16"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">/usr/bin/env: ‘poky-glibc-x86_64-core-image-minimal-cortexa8hf-neon-toolchain-ext-2.2+snapshot.sh’: Permission denied</td><td class="time"><a href="#t2017-04-17T17:53:16" class="time">17:53</a></td></tr>
+<tr id="t2017-04-17T18:39:04"><th class="nick" style="background: #854685">nrossi</th><td class="text" style="color: #854685">Crofton|work: the .sh needs to be executable, reason is to do with how the script itself re-exec's using env to clean the environment</td><td class="time"><a href="#t2017-04-17T18:39:04" class="time">18:39</a></td></tr>
+<tr id="t2017-04-17T18:39:24"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">hmm, weird, didn't use to be this way I thought?</td><td class="time"><a href="#t2017-04-17T18:39:24" class="time">18:39</a></td></tr>
+<tr id="t2017-04-17T18:40:10"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">bugger got he extensible one by mistake</td><td class="time"><a href="#t2017-04-17T18:40:10" class="time">18:40</a></td></tr>
+<tr id="t2017-04-17T18:40:12"><th class="nick" style="background: #854685">nrossi</th><td class="text" style="color: #854685">Crofton|work: not sure, but populate_sdk_base.bbclass sets it to be +x before appending the archive content</td><td class="time"><a href="#t2017-04-17T18:40:12" class="time">18:40</a></td></tr>
+<tr id="t2017-04-17T18:42:05"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">Having trouble building u-boot with sdk from oe-core based build</td><td class="time"><a href="#t2017-04-17T18:42:05" class="time">18:42</a></td></tr>
+<tr id="t2017-04-17T18:42:18"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">apparently works with sdk from poky</td><td class="time"><a href="#t2017-04-17T18:42:18" class="time">18:42</a></td></tr>
+<tr id="t2017-04-17T18:42:28"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">so trying an AB sdk to see if I can see the difference</td><td class="time"><a href="#t2017-04-17T18:42:28" class="time">18:42</a></td></tr>
+<tr id="t2017-04-17T18:43:18"><th class="nick" style="background: #488888">kergoth</th><td class="text" style="color: #488888">I've been running our installers with sh or bash with it not +x for quite some time..</td><td class="time"><a href="#t2017-04-17T18:43:18" class="time">18:43</a></td></tr>
+<tr id="t2017-04-17T18:43:40"><th class="nick" style="background: #488888">kergoth</th><td class="text" style="color: #488888">haven't tried it recently, but it definitely has worked int he past</td><td class="time"><a href="#t2017-04-17T18:43:40" class="time">18:43</a></td></tr>
+<tr id="t2017-04-17T18:44:00"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">I'm wondering if it is sdk versus extensible sdk. Not familiar with AB output so trying aniother file now</td><td class="time"><a href="#t2017-04-17T18:44:00" class="time">18:44</a></td></tr>
+<tr id="t2017-04-17T18:54:23"><th class="nick" style="background: #854685">nrossi</th><td class="text" style="color: #854685">kergoth: Crofton|work: Ah i think the reason is your executing it with "sh ..." instead of souring it. And because of that it doesn't get the right "$0" value to re-execute with env</td><td class="time"><a href="#t2017-04-17T18:54:23" class="time">18:54</a></td></tr>
+<tr id="t2017-04-17T19:13:46"><th class="nick" style="background: #854685">nrossi</th><td class="text" style="color: #854685">sorry just ignore the above, your not expected to be sourcing the installer... but yes you definitely used to be able to execute them with just "sh ./..." without needing +x :|.</td><td class="time"><a href="#t2017-04-17T19:13:46" class="time">19:13</a></td></tr>
+<tr id="t2017-04-17T19:19:59"><th class="nick" style="background: #854685">nrossi</th><td class="text" style="color: #854685">found the introduction of this requirement here... <a href="http://git.openembedded.org/openembedded-core/commit/?id=6d2074d477596971dc52027dd87b02af7f39138d" rel="nofollow">http://git.openembedded.org/openembedded-core/commit/?id=6d2074d477596971dc52027dd87b02af7f39138d</a> -- which is krogoth (2.1) and newer</td><td class="time"><a href="#t2017-04-17T19:19:59" class="time">19:19</a></td></tr>
+<tr id="t2017-04-17T19:24:07"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">thanks nrossi</td><td class="time"><a href="#t2017-04-17T19:24:07" class="time">19:24</a></td></tr>
+<tr id="t2017-04-17T19:37:47"><td class="nickchange" colspan="2">*** suy_ is now known as suy</td><td><a href="#t2017-04-17T19:37:47" class="time">19:37</a></td></tr>
+<tr id="t2017-04-17T20:32:37"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">i am trying to bitbake the sato image for the zedboard but the fontconfig fails to compile</td><td class="time"><a href="#t2017-04-17T20:32:37" class="time">20:32</a></td></tr>
+<tr id="t2017-04-17T20:33:16"><th class="nick" style="background: #407a40">quelotic</th><td class="text" style="color: #407a40">ive read that theres a problem with the namespaces on the new glibc update and there is a patch on the internet, but how can I use that patch so I can finish the build?</td><td class="time"><a href="#t2017-04-17T20:33:16" class="time">20:33</a></td></tr>
+<tr id="t2017-04-17T20:37:18"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">quelotic, mayb elook in oe-core master and see how the problem was fixed there</td><td class="time"><a href="#t2017-04-17T20:37:18" class="time">20:37</a></td></tr>
+<tr id="t2017-04-17T20:39:16"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">quelotic, I think you need 7687234ff0f36ae943ca17624da9cdd8da0da83b</td><td class="time"><a href="#t2017-04-17T20:39:16" class="time">20:39</a></td></tr>
+<tr id="t2017-04-17T21:44:45"><td class="part" colspan="2">*** quelotic &lt;quelotic!~quelotic@athedsl-247422.home.otenet.gr&gt; has left #yocto</td><td><a href="#t2017-04-17T21:44:45" class="time">21:44</a></td></tr>
+<tr id="t2017-04-17T23:21:21"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">zeddii_home: Can you backport <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=474c90156c8dcc2fa815e6716cc9394d7930cb9c" rel="nofollow">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=474c90156c8dcc2fa815e6716cc9394d7930cb9c</a> to older kernels ?</td><td class="time"><a href="#t2017-04-17T23:21:21" class="time">23:21</a></td></tr>
+<tr id="t2017-04-17T23:21:30"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">zeddii_home: its needed for gcc7</td><td class="time"><a href="#t2017-04-17T23:21:30" class="time">23:21</a></td></tr>
+<tr id="t2017-04-17T23:28:49"><th class="nick" style="background: #4b904b">zeddii_home</th><td class="text" style="color: #4b904b">yep. no problem. I’ll pull it into my trees in the morning.</td><td class="time"><a href="#t2017-04-17T23:28:49" class="time">23:28</a></td></tr>
+<tr id="t2017-04-17T23:53:12"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">zeddii_home: thanks btw. I just saw that gkh has backported it into 4.9 stable too</td><td class="time"><a href="#t2017-04-17T23:53:12" class="time">23:53</a></td></tr>
+<tr id="t2017-04-17T23:53:22"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">but not sure about other maintained releases</td><td class="time"><a href="#t2017-04-17T23:53:22" class="time">23:53</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-04-16.log.html">&#171; Sunday, 2017-04-16</a> <a href="index.html">Index</a> <a href="%23yocto.2017-04-18.log.html">Tuesday, 2017-04-18 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

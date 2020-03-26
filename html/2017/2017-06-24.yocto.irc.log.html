@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-06-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-06-24</h1>
+<div class="navigation"> <a href="%23yocto.2017-06-23.log.html">&#171; Friday, 2017-06-23</a> <a href="index.html">Index</a> <a href="%23yocto.2017-06-25.log.html">Sunday, 2017-06-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-06-24T06:12:31"><td class="other" colspan="2">-YoctoAutoBuilder- build #1161 of nightly-world is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/1161" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world/builds/1161</a></td><td><a href="#t2017-06-24T06:12:31" class="time">06:12</a></td></tr>
+<tr id="t2017-06-24T06:38:43"><td class="other" colspan="2">-YoctoAutoBuilder- build #884 of nightly-world-lsb is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-world-lsb/builds/884" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-world-lsb/builds/884</a></td><td><a href="#t2017-06-24T06:38:43" class="time">06:38</a></td></tr>
+<tr id="t2017-06-24T10:01:10"><th class="nick" style="background: #407a40">luc4</th><td class="text" style="color: #407a40">Hello! Anyone who knows how to get some more info about this error I’m gettng? <a href="https://pastebin.com/DBCuVAbV" rel="nofollow">https://pastebin.com/DBCuVAbV</a></td><td class="time"><a href="#t2017-06-24T10:01:10" class="time">10:01</a></td></tr>
+<tr id="t2017-06-24T15:44:24"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">Illegal instruction (core dumped)</td><td class="time"><a href="#t2017-06-24T15:44:24" class="time">15:44</a></td></tr>
+<tr id="t2017-06-24T15:47:34"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">something to do with your build host</td><td class="time"><a href="#t2017-06-24T15:47:34" class="time">15:47</a></td></tr>
+<tr id="t2017-06-24T15:52:03"><th class="nick" style="background: #818144">cruisemaniac</th><td class="text" style="color: #818144">Hi, given a bin file for Yocto’s Jethro platform, how do I get started with Qemu? I’ve been reading the documentation but am unable to wrap my head around this! I’d like some guidance / help here please...</td><td class="time"><a href="#t2017-06-24T15:52:03" class="time">15:52</a></td></tr>
+<tr id="t2017-06-24T15:57:39"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">cruisemaniac: you can build an image core-image-minimal</td><td class="time"><a href="#t2017-06-24T15:57:39" class="time">15:57</a></td></tr>
+<tr id="t2017-06-24T15:57:59"><th class="nick" style="background: #407a40">luc4</th><td class="text" style="color: #407a40">Hello! During do_rootfs I’m getting “E: Unable to locate package alsa-lib”. However bitbake alsa-lib seems to report no issue… any idea what this may mean?</td><td class="time"><a href="#t2017-06-24T15:57:59" class="time">15:57</a></td></tr>
+<tr id="t2017-06-24T15:58:34"><th class="nick" style="background: #407a40">luc4</th><td class="text" style="color: #407a40">khem: maybe I can get more info with verbose output? I’ll try as soon as the image builds without that package.</td><td class="time"><a href="#t2017-06-24T15:58:34" class="time">15:58</a></td></tr>
+<tr id="t2017-06-24T15:59:03"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">you need to write a recipe to package your bin file and add it to image via local.conf like IMAGE_INSTALL += "&lt;your_package&gt;"</td><td class="time"><a href="#t2017-06-24T15:59:03" class="time">15:59</a></td></tr>
+<tr id="t2017-06-24T15:59:37"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">then when you bitbake core-image-minimal again then it should have your image</td><td class="time"><a href="#t2017-06-24T15:59:37" class="time">15:59</a></td></tr>
+<tr id="t2017-06-24T16:00:17"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">luc4: yes</td><td class="time"><a href="#t2017-06-24T16:00:17" class="time">16:00</a></td></tr>
+<tr id="t2017-06-24T16:01:38"><th class="nick" style="background: #407a40">luc4</th><td class="text" style="color: #407a40">khem: I read you worked a bit with cortexa53 specific tunes. Is there a specific reason why those flags were not integrated?</td><td class="time"><a href="#t2017-06-24T16:01:38" class="time">16:01</a></td></tr>
+<tr id="t2017-06-24T16:33:33"><th class="nick" style="background: #407a40">luc4</th><td class="text" style="color: #407a40">Hello! I noticed that morty was generating alsa-lib deb package, while pyro only generates alsa-lib-dev and alsa-lib-dbg. If I bitbake alsa-lib in pyro everything seems ok. do_rootfs instead fails with “E: Unable to locate package alsa-lib”. Any idea why?</td><td class="time"><a href="#t2017-06-24T16:33:33" class="time">16:33</a></td></tr>
+<tr id="t2017-06-24T17:29:47"><td class="other" colspan="2">-YoctoAutoBuilder- build #554 of nightly-checkuri is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/554" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/554</a></td><td><a href="#t2017-06-24T17:29:47" class="time">17:29</a></td></tr>
+<tr id="t2017-06-24T21:20:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #1153 of nightly-x32 is complete: Failure [failed Running Sanity Tests Running Sanity Tests_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x32/builds/1153" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x32/builds/1153</a></td><td><a href="#t2017-06-24T21:20:03" class="time">21:20</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-06-23.log.html">&#171; Friday, 2017-06-23</a> <a href="index.html">Index</a> <a href="%23yocto.2017-06-25.log.html">Sunday, 2017-06-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

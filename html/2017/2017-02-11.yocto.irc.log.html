@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-02-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-02-11</h1>
+<div class="navigation"> <a href="%23yocto.2017-02-10.log.html">&#171; Friday, 2017-02-10</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-12.log.html">Sunday, 2017-02-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-02-11T00:49:18"><td class="part" colspan="2">*** jairglez &lt;jairglez!~jairdeje@134.134.139.76&gt; has left #yocto</td><td><a href="#t2017-02-11T00:49:18" class="time">00:49</a></td></tr>
+<tr id="t2017-02-11T02:28:29"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">okay, i stopped trying to make it build a hardened toolchain (for now) but found a vapier patch that at least fixes the gcc-6.21 toolchain build</td><td class="time"><a href="#t2017-02-11T02:28:29" class="time">02:28</a></td></tr>
+<tr id="t2017-02-11T02:28:38"><th class="nick" style="background: #407a40">nerdboy</th><td class="text" style="color: #407a40">*6.2 even</td><td class="time"><a href="#t2017-02-11T02:28:38" class="time">02:28</a></td></tr>
+<tr id="t2017-02-11T03:55:13"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">Can anyone point me at the script/recipe that collates the kernel *.cfg files includes them into the .config file</td><td class="time"><a href="#t2017-02-11T03:55:13" class="time">03:55</a></td></tr>
+<tr id="t2017-02-11T07:18:07"><td class="nickchange" colspan="2">*** CoLa is now known as Guest65618</td><td><a href="#t2017-02-11T07:18:07" class="time">07:18</a></td></tr>
+<tr id="t2017-02-11T07:29:28"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">deepwater: look into kernel.bbclass</td><td class="time"><a href="#t2017-02-11T07:29:28" class="time">07:29</a></td></tr>
+<tr id="t2017-02-11T08:43:58"><td class="part" colspan="2">*** gtristan &lt;gtristan!~tristanva@175.211.28.83&gt; has left #yocto</td><td><a href="#t2017-02-11T08:43:58" class="time">08:43</a></td></tr>
+<tr id="t2017-02-11T09:02:59"><th class="nick" style="background: #42427e">deepwater</th><td class="text" style="color: #42427e">khem: the kernel.bbclass.kernel_do_configure move the defconfig to the .config but I still can't see any mention of "cfg" files</td><td class="time"><a href="#t2017-02-11T09:02:59" class="time">09:02</a></td></tr>
+<tr id="t2017-02-11T09:04:40"><td class="nickchange" colspan="2">*** Guest65618 is now known as CoLa</td><td><a href="#t2017-02-11T09:04:40" class="time">09:04</a></td></tr>
+<tr id="t2017-02-11T10:02:02"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">deepwater: see kernel-yocto.bbclass especially look for merge_config.sh usage in there</td><td class="time"><a href="#t2017-02-11T10:02:02" class="time">10:02</a></td></tr>
+<tr id="t2017-02-11T11:01:11"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">ant_home: I assume you saw my emails?</td><td class="time"><a href="#t2017-02-11T11:01:11" class="time">11:01</a></td></tr>
+<tr id="t2017-02-11T16:53:56"><td class="nickchange" colspan="2">*** supermark is now known as sandsmark</td><td><a href="#t2017-02-11T16:53:56" class="time">16:53</a></td></tr>
+<tr id="t2017-02-11T18:04:08"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">sjburt: you can have it all in a single recipe, but create a separate package for each of the apps, then no one will be able to tell they came from one recipe</td><td class="time"><a href="#t2017-02-11T18:04:08" class="time">18:04</a></td></tr>
+<tr id="t2017-02-11T18:04:44"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">sjburt: alternatively, create a shared .inc file between recipes, and have the recipes themselves set only the bits that differ into variable(s) used by the .inc</td><td class="time"><a href="#t2017-02-11T18:04:44" class="time">18:04</a></td></tr>
+<tr id="t2017-02-11T18:45:57"><th class="nick" style="background: #8c4a4a">sveinse</th><td class="text" style="color: #8c4a4a">Is it easy to switch from the default .tar.bz2 image/rootfs generation and use .tar.xz?</td><td class="time"><a href="#t2017-02-11T18:45:57" class="time">18:45</a></td></tr>
+<tr id="t2017-02-11T18:47:22"><th class="nick" style="background: #8c4a4a">sveinse</th><td class="text" style="color: #8c4a4a">Its claimed that xz is faster to decompress, and I'd like to test that in an on-target installation</td><td class="time"><a href="#t2017-02-11T18:47:22" class="time">18:47</a></td></tr>
+<tr id="t2017-02-11T19:42:35"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">sveinse: it should be easy for build system your target may have issues</td><td class="time"><a href="#t2017-02-11T19:42:35" class="time">19:42</a></td></tr>
+<tr id="t2017-02-11T21:47:20"><th class="nick" style="background: #8c4a4a">sveinse</th><td class="text" style="color: #8c4a4a">khem: how come? xz is not available decompressor for tar? Yeah, because tar and compressor can be busybox. Right.</td><td class="time"><a href="#t2017-02-11T21:47:20" class="time">21:47</a></td></tr>
+<tr id="t2017-02-11T23:19:36"><th class="nick" style="background: #4b904b">ant_home</th><td class="text" style="color: #4b904b">RP: tested, many thanks!</td><td class="time"><a href="#t2017-02-11T23:19:36" class="time">23:19</a></td></tr>
+<tr id="t2017-02-11T23:19:56"><th class="nick" style="background: #4b904b">ant_home</th><td class="text" style="color: #4b904b">is a bit like libtool-cross, just more nasty</td><td class="time"><a href="#t2017-02-11T23:19:56" class="time">23:19</a></td></tr>
+<tr id="t2017-02-11T23:30:51"><th class="nick" style="background: #4b904b">ant_home</th><td class="text" style="color: #4b904b">RP: btw there is a missing semicolon before last sed</td><td class="time"><a href="#t2017-02-11T23:30:51" class="time">23:30</a></td></tr>
+<tr id="t2017-02-11T23:38:01"><th class="nick" style="background: #4d4d93">dreyna_</th><td class="text" style="color: #4d4d93">halstead : DevDay fs does not seem to support "user_xattr" - email sent</td><td class="time"><a href="#t2017-02-11T23:38:01" class="time">23:38</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-02-10.log.html">&#171; Friday, 2017-02-10</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-12.log.html">Sunday, 2017-02-12 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

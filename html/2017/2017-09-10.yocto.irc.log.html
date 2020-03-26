@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-09-10</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-09-10</h1>
+<div class="navigation"> <a href="%23yocto.2017-09-09.log.html">&#171; Saturday, 2017-09-09</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-11.log.html">Monday, 2017-09-11 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-09-10T00:25:02"><th class="nick" style="background: #407a40">black_13</th><td class="text" style="color: #407a40">this is a dead city</td><td class="time"><a href="#t2017-09-10T00:25:02" class="time">00:25</a></td></tr>
+<tr id="t2017-09-10T07:01:07"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">hi</td><td class="time"><a href="#t2017-09-10T07:01:07" class="time">07:01</a></td></tr>
+<tr id="t2017-09-10T07:01:25"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">Recommend specs for a yocto machine</td><td class="time"><a href="#t2017-09-10T07:01:25" class="time">07:01</a></td></tr>
+<tr id="t2017-09-10T07:01:36"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">RAM, processor etc</td><td class="time"><a href="#t2017-09-10T07:01:36" class="time">07:01</a></td></tr>
+<tr id="t2017-09-10T07:05:24"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">anbody?</td><td class="time"><a href="#t2017-09-10T07:05:24" class="time">07:05</a></td></tr>
+<tr id="t2017-09-10T07:16:21"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">?</td><td class="time"><a href="#t2017-09-10T07:16:21" class="time">07:16</a></td></tr>
+<tr id="t2017-09-10T07:21:56"><td class="nickchange" colspan="2">*** tasslehoff is now known as tasslhoffAway</td><td><a href="#t2017-09-10T07:21:56" class="time">07:21</a></td></tr>
+<tr id="t2017-09-10T07:25:51"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">Recommend specs for a yocto machine</td><td class="time"><a href="#t2017-09-10T07:25:51" class="time">07:25</a></td></tr>
+<tr id="t2017-09-10T07:25:58"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">.RAM, processor etc?</td><td class="time"><a href="#t2017-09-10T07:25:58" class="time">07:25</a></td></tr>
+<tr id="t2017-09-10T08:14:55"><th class="nick" style="background: #818144">paulbarker</th><td class="text" style="color: #818144">uhaider: For a build machine? I'd say start with a good 4-core/8-thread i7 or Xeon processor, at least 4GB RAM and at least 1TB disk space. Double the RAM if you're building a GUI stack/web browsers/etc</td><td class="time"><a href="#t2017-09-10T08:14:55" class="time">08:14</a></td></tr>
+<tr id="t2017-09-10T08:16:00"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">paulbarker yes for a build machine</td><td class="time"><a href="#t2017-09-10T08:16:00" class="time">08:16</a></td></tr>
+<tr id="t2017-09-10T08:16:17"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">can you recommend a workstation</td><td class="time"><a href="#t2017-09-10T08:16:17" class="time">08:16</a></td></tr>
+<tr id="t2017-09-10T08:16:25"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">I am really new in this area.</td><td class="time"><a href="#t2017-09-10T08:16:25" class="time">08:16</a></td></tr>
+<tr id="t2017-09-10T08:17:12"><th class="nick" style="background: #818144">paulbarker</th><td class="text" style="color: #818144">I can't recommend a specific machine but look for that sort of spec</td><td class="time"><a href="#t2017-09-10T08:17:12" class="time">08:17</a></td></tr>
+<tr id="t2017-09-10T08:18:01"><th class="nick" style="background: #42427e">uhaider</th><td class="text" style="color: #42427e">Ok. Thanks.</td><td class="time"><a href="#t2017-09-10T08:18:01" class="time">08:18</a></td></tr>
+<tr id="t2017-09-10T11:16:09"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">Hi, my u-boot .bbappend fails under the yocto master. The error is: "ImportError: No module named libfdt". I've heard that it maybe has to do with python but I don't know where to start.</td><td class="time"><a href="#t2017-09-10T11:16:09" class="time">11:16</a></td></tr>
+<tr id="t2017-09-10T11:17:31"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685"><a href="https://gist.github.com/zzeroo/a1d1e8f9a060ba4e135f1139ba820049#file-log-do_compile-L171" rel="nofollow">https://gist.github.com/zzeroo/a1d1e8f9a060ba4e135f1139ba820049#file-log-do_compile-L171</a></td><td class="time"><a href="#t2017-09-10T11:17:31" class="time">11:17</a></td></tr>
+<tr id="t2017-09-10T11:19:27"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685"><a href="https://github.com/zzeroo/meta-bsp_lemaker/blob/development/recipes-bsp/u-boot/u-boot_%25.bbappend" rel="nofollow">https://github.com/zzeroo/meta-bsp_lemaker/blob/development/recipes-bsp/u-boot/u-boot_%25.bbappend</a></td><td class="time"><a href="#t2017-09-10T11:19:27" class="time">11:19</a></td></tr>
+<tr id="t2017-09-10T11:44:46"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: try DEPENDS += "dtc-native" since you want to run on the build host ;)</td><td class="time"><a href="#t2017-09-10T11:44:46" class="time">11:44</a></td></tr>
+<tr id="t2017-09-10T11:49:17"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: thought that might not be enough to get pylibfdt, adding swig-native might help since u-boot can build its own pylibfdt?</td><td class="time"><a href="#t2017-09-10T11:49:17" class="time">11:49</a></td></tr>
+<tr id="t2017-09-10T12:21:01"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">nrossi: No luck, I've added the DEPENDS to my bbappend, now I get stranger errors <a href="https://gist.github.com/cdeb1c1ec6eb387d6aa8e84505fef13c" rel="nofollow">https://gist.github.com/cdeb1c1ec6eb387d6aa8e84505fef13c</a></td><td class="time"><a href="#t2017-09-10T12:21:01" class="time">12:21</a></td></tr>
+<tr id="t2017-09-10T12:22:02"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685"><a href="https://github.com/zzeroo/meta-bsp_lemaker/blob/development/recipes-bsp/u-boot/u-boot_%25.bbappend" rel="nofollow">https://github.com/zzeroo/meta-bsp_lemaker/blob/development/recipes-bsp/u-boot/u-boot_%25.bbappend</a></td><td class="time"><a href="#t2017-09-10T12:22:02" class="time">12:22</a></td></tr>
+<tr id="t2017-09-10T12:22:57"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: bananapro is not x86-64 is it?</td><td class="time"><a href="#t2017-09-10T12:22:57" class="time">12:22</a></td></tr>
+<tr id="t2017-09-10T12:25:58"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">I only added `DEPENDS += "dtc-native swig-native"` and called then `bitbake u-boot -c clean; bitbake u-boot` nothing more.</td><td class="time"><a href="#t2017-09-10T12:25:58" class="time">12:25</a></td></tr>
+<tr id="t2017-09-10T12:26:28"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">It's the `swig-native` that seems to have problems with my bananapro BSP env</td><td class="time"><a href="#t2017-09-10T12:26:28" class="time">12:26</a></td></tr>
+<tr id="t2017-09-10T12:28:10"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: yer it looks related to python setup tools, you could always just walk around the issue and install pylibfdt on your build machine</td><td class="time"><a href="#t2017-09-10T12:28:10" class="time">12:28</a></td></tr>
+<tr id="t2017-09-10T12:30:41"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: though i am surprised that there is nothing in the meta-sunxi layer to handle it :|, but that might just be because that layer doesn't use mainline u-boot</td><td class="time"><a href="#t2017-09-10T12:30:41" class="time">12:30</a></td></tr>
+<tr id="t2017-09-10T12:31:06"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">I thing thats not possible, because we use a easy-build/ Docker environment. Our Build env has only the offical dependencies and is more or less read only for our use case. Do you have more info about the python/ setuptools issue, I'm willing to fix that.</td><td class="time"><a href="#t2017-09-10T12:31:06" class="time">12:31</a></td></tr>
+<tr id="t2017-09-10T12:32:06"><th class="nick" style="background: #854685">zzeroo</th><td class="text" style="color: #854685">I have to use Mainline linux and u-boot beside other bleeding edge, but that's another storry &gt;&lt;</td><td class="time"><a href="#t2017-09-10T12:32:06" class="time">12:32</a></td></tr>
+<tr id="t2017-09-10T12:55:10"><th class="nick" style="background: #488888">nrossi</th><td class="text" style="color: #488888">zzeroo: sorry was afk. I am not sure, but maybe a better solution its to update the dtc recipe in oe-core or have one in your repo, since upstream dtc now ships pylibfdt</td><td class="time"><a href="#t2017-09-10T12:55:10" class="time">12:55</a></td></tr>
+<tr id="t2017-09-10T15:54:50"><td class="nickchange" colspan="2">*** Wi||y-- is now known as Willy--</td><td><a href="#t2017-09-10T15:54:50" class="time">15:54</a></td></tr>
+<tr id="t2017-09-10T17:11:59"><td class="nickchange" colspan="2">*** ulf`_ is now known as ulf`</td><td><a href="#t2017-09-10T17:11:59" class="time">17:11</a></td></tr>
+<tr id="t2017-09-10T20:18:16"><td class="nickchange" colspan="2">*** tshark is now known as tcpdump</td><td><a href="#t2017-09-10T20:18:16" class="time">20:18</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-09-09.log.html">&#171; Saturday, 2017-09-09</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-11.log.html">Monday, 2017-09-11 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

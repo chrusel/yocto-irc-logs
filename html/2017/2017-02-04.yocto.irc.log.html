@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-02-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-02-04</h1>
+<div class="navigation"> <a href="%23yocto.2017-02-03.log.html">&#171; Friday, 2017-02-03</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-05.log.html">Sunday, 2017-02-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-02-04T00:14:18"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">sgw_: yeah thats common outcome of making it private</td><td class="time"><a href="#t2017-02-04T00:14:18" class="time">00:14</a></td></tr>
+<tr id="t2017-02-04T00:14:32"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">which package is showing this ?</td><td class="time"><a href="#t2017-02-04T00:14:32" class="time">00:14</a></td></tr>
+<tr id="t2017-02-04T00:16:57"><th class="nick" style="background: #42427e">sgw_</th><td class="text" style="color: #42427e">khem: intel-gpu-tools</td><td class="time"><a href="#t2017-02-04T00:16:57" class="time">00:16</a></td></tr>
+<tr id="t2017-02-04T00:37:07"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">so firstly its non-posix code</td><td class="time"><a href="#t2017-02-04T00:37:07" class="time">00:37</a></td></tr>
+<tr id="t2017-02-04T00:37:22"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">to access SIGEV_THREAD_ID</td><td class="time"><a href="#t2017-02-04T00:37:22" class="time">00:37</a></td></tr>
+<tr id="t2017-02-04T00:44:01"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">sgw_: it should do something like this <a href="http://git.alpinelinux.org/cgit/aports/plain/main/qemu/fix-sigevent-and-sigval_t.patch" rel="nofollow">http://git.alpinelinux.org/cgit/aports/plain/main/qemu/fix-sigevent-and-sigval_t.patch</a></td><td class="time"><a href="#t2017-02-04T00:44:01" class="time">00:44</a></td></tr>
+<tr id="t2017-02-04T00:44:41"><th class="nick" style="background: #42427e">sgw_</th><td class="text" style="color: #42427e">khem: thanks for the pointer, I will work on this for next week, running out of steam today!</td><td class="time"><a href="#t2017-02-04T00:44:41" class="time">00:44</a></td></tr>
+<tr id="t2017-02-04T00:47:00"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">np have a good weekend</td><td class="time"><a href="#t2017-02-04T00:47:00" class="time">00:47</a></td></tr>
+<tr id="t2017-02-04T04:30:01"><td class="other" colspan="2">-YoctoAutoBuilder- build #686 of nightly-arm64 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm64/builds/686" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm64/builds/686</a></td><td><a href="#t2017-02-04T04:30:01" class="time">04:30</a></td></tr>
+<tr id="t2017-02-04T10:15:14"><th class="nick" style="background: #818144">Ox4</th><td class="text" style="color: #818144">good day guys. Is is possible to remove perl package from the image? I am currently using IMAGE_INSTALL_remove = " perl", but it doesn't help me so far.</td><td class="time"><a href="#t2017-02-04T10:15:14" class="time">10:15</a></td></tr>
+<tr id="t2017-02-04T10:29:41"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">Ox4: you'd have to remove the things which depend on perl</td><td class="time"><a href="#t2017-02-04T10:29:41" class="time">10:29</a></td></tr>
+<tr id="t2017-02-04T10:46:57"><th class="nick" style="background: #818144">Ox4</th><td class="text" style="color: #818144">RP: thanks</td><td class="time"><a href="#t2017-02-04T10:46:57" class="time">10:46</a></td></tr>
+<tr id="t2017-02-04T15:38:28"><td class="part" colspan="2">*** Mioz &lt;Mioz!~user@91.192.44.161&gt; has left #yocto</td><td><a href="#t2017-02-04T15:38:28" class="time">15:38</a></td></tr>
+<tr id="t2017-02-04T18:43:31"><th class="nick" style="background: #488888">fray</th><td class="text" style="color: #488888">seebs -- what machines have NVMe SSD slots?&nbsp;&nbsp;I don't think any of the current macs are true NVMe.. and I've not seen any others</td><td class="time"><a href="#t2017-02-04T18:43:31" class="time">18:43</a></td></tr>
+<tr id="t2017-02-04T18:44:03"><th class="nick" style="background: #488888">fray</th><td class="text" style="color: #488888">oops, wrong channel</td><td class="time"><a href="#t2017-02-04T18:44:03" class="time">18:44</a></td></tr>
+<tr id="t2017-02-04T21:21:22"><td class="nickchange" colspan="2">*** flihp_ is now known as flihp</td><td><a href="#t2017-02-04T21:21:22" class="time">21:21</a></td></tr>
+<tr id="t2017-02-04T23:15:50"><td class="other" colspan="2">-YoctoAutoBuilder- build #700 of nightly-mips64 is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/700" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/700</a></td><td><a href="#t2017-02-04T23:15:50" class="time">23:15</a></td></tr>
+<tr id="t2017-02-04T23:59:23"><td class="other" colspan="2">-YoctoAutoBuilder- build #452 of nightly-checkuri is complete: Success [build successful]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/452" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/452</a></td><td><a href="#t2017-02-04T23:59:23" class="time">23:59</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-02-03.log.html">&#171; Friday, 2017-02-03</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-05.log.html">Sunday, 2017-02-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-12-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-12-24</h1>
+<div class="navigation"> <a href="%23yocto.2017-12-23.log.html">&#171; Saturday, 2017-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2017-12-25.log.html">Monday, 2017-12-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-12-24T05:13:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #703 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/703" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/703</a></td><td><a href="#t2017-12-24T05:13:55" class="time">05:13</a></td></tr>
+<tr id="t2017-12-24T09:39:19"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Log files with same content after build &lt;<a href="https://stackoverflow.com/questions/47959392/log-files-with-same-content-after-build&gt;" rel="nofollow">https://stackoverflow.com/questions/47959392/log-files-with-same-content-after-build&gt;</a></td><td class="time"><a href="#t2017-12-24T09:39:19" class="time">09:39</a></td></tr>
+<tr id="t2017-12-24T11:25:53"><th class="nick" style="background: #42427e">Jamal</th><td class="text" style="color: #42427e">Hi Guys.. Is there any link where I can get more information regarding different folders present in poky source code.. I know meta folder is the OpenEmbedded-Core Recipes,bitbake folder contains bitbake binary, what about other layers/folders</td><td class="time"><a href="#t2017-12-24T11:25:53" class="time">11:25</a></td></tr>
+<tr id="t2017-12-24T11:26:19"><th class="nick" style="background: #42427e">Jamal</th><td class="text" style="color: #42427e">meta-poky and meta-yocto-bsp</td><td class="time"><a href="#t2017-12-24T11:26:19" class="time">11:26</a></td></tr>
+<tr id="t2017-12-24T11:38:10"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">&lt;Jamal&gt; hi back</td><td class="time"><a href="#t2017-12-24T11:38:10" class="time">11:38</a></td></tr>
+<tr id="t2017-12-24T11:42:00"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">Jamal: meta-yocto-bsp: Configuration for the Yocto Project reference hardware board support packages</td><td class="time"><a href="#t2017-12-24T11:42:00" class="time">11:42</a></td></tr>
+<tr id="t2017-12-24T11:42:27"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">Jamal: meta-poky: Holds the configuration for the Poky reference distribution.</td><td class="time"><a href="#t2017-12-24T11:42:27" class="time">11:42</a></td></tr>
+<tr id="t2017-12-24T11:46:52"><th class="nick" style="background: #42427e">Jamal</th><td class="text" style="color: #42427e">Can we generate a image with only one layer which is meta</td><td class="time"><a href="#t2017-12-24T11:46:52" class="time">11:46</a></td></tr>
+<tr id="t2017-12-24T11:47:31"><th class="nick" style="background: #42427e">Jamal</th><td class="text" style="color: #42427e">Other question is do we need meta-yocto-bsp layer when we are building for rpi for which we need to download other layer from git meta-yocto-bsp</td><td class="time"><a href="#t2017-12-24T11:47:31" class="time">11:47</a></td></tr>
+<tr id="t2017-12-24T11:48:18"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">everything is possible, but you probably want to base your work over Poky, which has several layers</td><td class="time"><a href="#t2017-12-24T11:48:18" class="time">11:48</a></td></tr>
+<tr id="t2017-12-24T11:51:26"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">Jamal: nop meta-yocto-bsp is not mandatory</td><td class="time"><a href="#t2017-12-24T11:51:26" class="time">11:51</a></td></tr>
+<tr id="t2017-12-24T11:56:06"><th class="nick" style="background: #818144">nayfe</th><td class="text" style="color: #818144">Jamal: for resources, <a href="http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html" rel="nofollow">http://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html</a> <a href="https://free-electrons.com/doc/training/yocto/yocto-slides.pdf" rel="nofollow">https://free-electrons.com/doc/training/yocto/yocto-slides.pdf</a> <a href="https://wiki.yoctoproject.org/wiki/images/1/1d/Ypdd-2017.02-ELC-Portland.pdf" rel="nofollow">https://wiki.yoctoproject.org/wiki/images/1/1d/Ypdd-2017.02-ELC-Portland.pdf</a> <a href="https://wiki.yoctoproject.org/wiki/Main_Page" rel="nofollow">https://wiki.yoctoproject.org/wiki/Main_Page</a> and books i.e. <a href="https://www.packtpub.com/application-development/linux-embedded-development" rel="nofollow">https://www.packtpub.com/application-development/linux-embedded-development</a></td><td class="time"><a href="#t2017-12-24T11:56:06" class="time">11:56</a></td></tr>
+<tr id="t2017-12-24T11:58:05"><th class="nick" style="background: #42427e">Jamal</th><td class="text" style="color: #42427e">Thanks</td><td class="time"><a href="#t2017-12-24T11:58:05" class="time">11:58</a></td></tr>
+<tr id="t2017-12-24T15:40:26"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: cross compile protobuf files in cmake with Yocto sdk &lt;<a href="https://stackoverflow.com/questions/47961852/cross-compile-protobuf-files-in-cmake-with-yocto-sdk&gt;" rel="nofollow">https://stackoverflow.com/questions/47961852/cross-compile-protobuf-files-in-cmake-with-yocto-sdk&gt;</a></td><td class="time"><a href="#t2017-12-24T15:40:26" class="time">15:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-12-23.log.html">&#171; Saturday, 2017-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2017-12-25.log.html">Monday, 2017-12-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-01-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-01-07</h1>
+<div class="navigation"> <a href="%23yocto.2017-01-06.log.html">&#171; Friday, 2017-01-06</a> <a href="index.html">Index</a> <a href="%23yocto.2017-01-08.log.html">Sunday, 2017-01-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-01-07T02:16:01"><td class="part" colspan="2">*** AK_ &lt;AK_!44657df2@gateway/web/freenode/ip.68.101.125.242&gt; has left #yocto</td><td><a href="#t2017-01-07T02:16:01" class="time">02:16</a></td></tr>
+<tr id="t2017-01-07T08:55:35"><th class="nick" style="background: #407a40">ayaka</th><td class="text" style="color: #407a40">if I use recipetool create git@github.com:users/repo.git and forget to use -o option</td><td class="time"><a href="#t2017-01-07T08:55:35" class="time">08:55</a></td></tr>
+<tr id="t2017-01-07T08:56:11"><th class="nick" style="background: #407a40">ayaka</th><td class="text" style="color: #407a40">it seems cost a long time to download the source code(network is slow) but without new recipe created</td><td class="time"><a href="#t2017-01-07T08:56:11" class="time">08:56</a></td></tr>
+<tr id="t2017-01-07T08:57:22"><th class="nick" style="background: #407a40">ayaka</th><td class="text" style="color: #407a40">worry, it created a bb in the build</td><td class="time"><a href="#t2017-01-07T08:57:22" class="time">08:57</a></td></tr>
+<tr id="t2017-01-07T08:57:55"><th class="nick" style="background: #407a40">ayaka</th><td class="text" style="color: #407a40">but if I want to create a recipe in the layer, should I use the abstract url to set the path?</td><td class="time"><a href="#t2017-01-07T08:57:55" class="time">08:57</a></td></tr>
+<tr id="t2017-01-07T11:58:29"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2017-01-07T11:58:29" class="time">11:58</a></td></tr>
+<tr id="t2017-01-07T14:10:42"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2017-01-07T14:10:42" class="time">14:10</a></td></tr>
+<tr id="t2017-01-07T14:16:53"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2017-01-07T14:16:53" class="time">14:16</a></td></tr>
+<tr id="t2017-01-07T17:23:02"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">Is PACKAGECONFIG_pn-somepackage_remove = "removethisone" supported?</td><td class="time"><a href="#t2017-01-07T17:23:02" class="time">17:23</a></td></tr>
+<tr id="t2017-01-07T17:23:16"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">^ in local.conf</td><td class="time"><a href="#t2017-01-07T17:23:16" class="time">17:23</a></td></tr>
+<tr id="t2017-01-07T17:28:23"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">likewise: you need to do it the other way around, PACKAGECONFIG_remove_pn-somepackage, since "pn-somepackage" is an override</td><td class="time"><a href="#t2017-01-07T17:28:23" class="time">17:28</a></td></tr>
+<tr id="t2017-01-07T17:29:36"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">nrossi: Ah thanks, let me try that. (I have strace, but due to DISTRO_FEATURES containing bluetooth, suddenly strace depends on bluez depends on x11).</td><td class="time"><a href="#t2017-01-07T17:29:36" class="time">17:29</a></td></tr>
+<tr id="t2017-01-07T17:32:22"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">related: How can I verify what is the resulting PACKAGECONFIG the strace package uses?&nbsp;&nbsp;I tried bitbake -e strace | grep PACKAGECONFIG (and the experimental bb tool: bb show -r strace PACKAGECONFIG) but they keep showing bluez, even when I empty PACKAGECONFIG as follows: PACKAGECONFIG_pn-strace = "" in local.conf</td><td class="time"><a href="#t2017-01-07T17:32:22" class="time">17:32</a></td></tr>
+<tr id="t2017-01-07T17:40:41"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">works: PACKAGECONFIG_remove_pn-strace = "bluez"</td><td class="time"><a href="#t2017-01-07T17:40:41" class="time">17:40</a></td></tr>
+<tr id="t2017-01-07T17:41:00"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">doesn't work:&nbsp;&nbsp;PACKAGECONFIG_pn-strace = ""</td><td class="time"><a href="#t2017-01-07T17:41:00" class="time">17:41</a></td></tr>
+<tr id="t2017-01-07T17:41:32"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">is this due to the order in which these variables get evaluated/expanded?&nbsp;&nbsp;_remove is very late AFAIK</td><td class="time"><a href="#t2017-01-07T17:41:32" class="time">17:41</a></td></tr>
+<tr id="t2017-01-07T17:53:27"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">likewise: strace sets PACKAGECONFIG_class-target, which is higher priority than pn-strace</td><td class="time"><a href="#t2017-01-07T17:53:27" class="time">17:53</a></td></tr>
+<tr id="t2017-01-07T17:55:55"><th class="nick" style="background: #818144">nrossi</th><td class="text" style="color: #818144">likewise: If you look at the full output in bitbake -e, it will tell you about the variable operations/overrides that are in play.</td><td class="time"><a href="#t2017-01-07T17:55:55" class="time">17:55</a></td></tr>
+<tr id="t2017-01-07T18:44:26"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2017-01-07T18:44:26" class="time">18:44</a></td></tr>
+<tr id="t2017-01-07T18:59:32"><td class="nickchange" colspan="2">*** clement_ is now known as clement</td><td><a href="#t2017-01-07T18:59:32" class="time">18:59</a></td></tr>
+<tr id="t2017-01-07T19:08:30"><td class="part" colspan="2">*** aehs29 &lt;aehs29!~aehernan@134.134.137.75&gt; has left #yocto</td><td><a href="#t2017-01-07T19:08:30" class="time">19:08</a></td></tr>
+<tr id="t2017-01-07T20:57:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #424 of nightly-checkuri is complete: Failure [failed BuildImages]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/424" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-checkuri/builds/424</a></td><td><a href="#t2017-01-07T20:57:03" class="time">20:57</a></td></tr>
+<tr id="t2017-01-07T21:52:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #1050 of nightly-x86 is complete: Failure [failed Running ESDK Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/1050" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-x86/builds/1050</a></td><td><a href="#t2017-01-07T21:52:03" class="time">21:52</a></td></tr>
+<tr id="t2017-01-07T22:29:33"><td class="other" colspan="2">-YoctoAutoBuilder- build #1054 of nightly-arm is complete: Failure [failed Running ESDK Sanity Tests]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/1054" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-arm/builds/1054</a></td><td><a href="#t2017-01-07T22:29:33" class="time">22:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-01-06.log.html">&#171; Friday, 2017-01-06</a> <a href="index.html">Index</a> <a href="%23yocto.2017-01-08.log.html">Sunday, 2017-01-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

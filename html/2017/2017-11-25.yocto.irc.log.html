@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-11-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-11-25</h1>
+<div class="navigation"> <a href="%23yocto.2017-11-24.log.html">&#171; Friday, 2017-11-24</a> <a href="index.html">Index</a> <a href="%23yocto.2017-11-26.log.html">Sunday, 2017-11-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-11-25T00:37:05"><td class="nickchange" colspan="2">*** fitzsim` is now known as fitzsim</td><td><a href="#t2017-11-25T00:37:05" class="time">00:37</a></td></tr>
+<tr id="t2017-11-25T00:41:16"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">Is this a bug: "ERROR: libgcc-7.2.0-r0 do_packagedata: QA Issue: Package version for package libgcc went backwards which would break package feeds from (0:linaro-7.1-r2017.08 to 0:7.2.0-r0) [version-going-backwards]"</td><td class="time"><a href="#t2017-11-25T00:41:16" class="time">00:41</a></td></tr>
+<tr id="t2017-11-25T00:43:00"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">afaik 7.2.0-r0 is newer than linaro-7.1-r2017.08, not the other way round. Perhaps the lexical comparison ruins the comparison?</td><td class="time"><a href="#t2017-11-25T00:43:00" class="time">00:43</a></td></tr>
+<tr id="t2017-11-25T13:05:41"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">What is the mechanism for automatically bringing eth0 up after boot in poky?</td><td class="time"><a href="#t2017-11-25T13:05:41" class="time">13:05</a></td></tr>
+<tr id="t2017-11-25T13:07:54"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">My system doesn't bring up eth0 itself, and I'm wondering if 1) is it the distro's responsibility, e.g. mine, to do so or 2) what method is the "yocto-way"? As in, what have others done?</td><td class="time"><a href="#t2017-11-25T13:07:54" class="time">13:07</a></td></tr>
+<tr id="t2017-11-25T14:04:55"><td class="other" colspan="2">-YoctoAutoBuilder- build #870 of nightly-mips64 is complete: Failure [failed BuildImages Running Sanity Tests Building Toolchain Images Running SDK Sanity Tests Building Toolchain Images_1 Running SDK Sanity Tests_1]  Build details are at <a href="http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/870" rel="nofollow">http://autobuilder.yoctoproject.org/main/builders/nightly-mips64/builds/870</a></td><td><a href="#t2017-11-25T14:04:55" class="time">14:04</a></td></tr>
+<tr id="t2017-11-25T14:23:41"><td class="part" colspan="2">*** grokreality1 &lt;grokreality1!~avi@59.98.37.212&gt; has left #yocto</td><td><a href="#t2017-11-25T14:23:41" class="time">14:23</a></td></tr>
+<tr id="t2017-11-25T18:46:16"><th class="nick" style="background: #42427e">nayfe</th><td class="text" style="color: #42427e">&lt;sveinse&gt; you can add a systemd_%.bbappend and put ethX.network and add it to ${D}${systemd_unitdir}/network/ (if you use systemd, for sysvinit, override init-ifupdown)</td><td class="time"><a href="#t2017-11-25T18:46:16" class="time">18:46</a></td></tr>
+<tr id="t2017-11-25T18:57:09"><th class="nick" style="background: #407a40">sveinse</th><td class="text" style="color: #407a40">nayfe: ah, great. thanks</td><td class="time"><a href="#t2017-11-25T18:57:09" class="time">18:57</a></td></tr>
+<tr id="t2017-11-25T18:57:36"><th class="nick" style="background: #42427e">nayfe</th><td class="text" style="color: #42427e">sveinse: np</td><td class="time"><a href="#t2017-11-25T18:57:36" class="time">18:57</a></td></tr>
+<tr id="t2017-11-25T23:25:24"><td class="action" colspan="2">* armpit kills build.. 96 too long</td><td><a href="#t2017-11-25T23:25:24" class="time">23:25</a></td></tr>
+<tr id="t2017-11-25T23:29:44"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">armpit, it is a hliday!</td><td class="time"><a href="#t2017-11-25T23:29:44" class="time">23:29</a></td></tr>
+<tr id="t2017-11-25T23:30:32"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">yeah.. I am weird and like to tinker in open source</td><td class="time"><a href="#t2017-11-25T23:30:32" class="time">23:30</a></td></tr>
+<tr id="t2017-11-25T23:31:47"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">gets me out of setting up xmas</td><td class="time"><a href="#t2017-11-25T23:31:47" class="time">23:31</a></td></tr>
+<tr id="t2017-11-25T23:33:43"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">heh</td><td class="time"><a href="#t2017-11-25T23:33:43" class="time">23:33</a></td></tr>
+<tr id="t2017-11-25T23:34:06"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">"Honey, I have to work"</td><td class="time"><a href="#t2017-11-25T23:34:06" class="time">23:34</a></td></tr>
+<tr id="t2017-11-25T23:34:20"><th class="nick" style="background: #818144">Crofton|work</th><td class="text" style="color: #818144">I've been tinkering in som eold cave maps</td><td class="time"><a href="#t2017-11-25T23:34:20" class="time">23:34</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-11-24.log.html">&#171; Friday, 2017-11-24</a> <a href="index.html">Index</a> <a href="%23yocto.2017-11-26.log.html">Sunday, 2017-11-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

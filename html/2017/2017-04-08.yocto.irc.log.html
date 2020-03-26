@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-04-08</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-04-08</h1>
+<div class="navigation"> <a href="%23yocto.2017-04-07.log.html">&#171; Friday, 2017-04-07</a> <a href="index.html">Index</a> <a href="%23yocto.2017-04-09.log.html">Sunday, 2017-04-09 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-04-08T00:10:55"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">hi, I'm trying to (overload / override ?) a wpa_supplicant.conf file with another in my own layer. I was able to make this work with the /etc/network/interfaces file, but no permutation I've tried works for this.</td><td class="time"><a href="#t2017-04-08T00:10:55" class="time">00:10</a></td></tr>
+<tr id="t2017-04-08T00:11:29"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">I followed <a href="https://communities.intel.com/thread/49251," rel="nofollow">https://communities.intel.com/thread/49251,</a> and <a href="https://communities.intel.com/thread/63267" rel="nofollow">https://communities.intel.com/thread/63267</a> as references</td><td class="time"><a href="#t2017-04-08T00:11:29" class="time">00:11</a></td></tr>
+<tr id="t2017-04-08T00:12:24"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">every attempt I've made, ends up with no wpa_spplicant.conf in the fs</td><td class="time"><a href="#t2017-04-08T00:12:24" class="time">00:12</a></td></tr>
+<tr id="t2017-04-08T00:12:50"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">anything I'm missing?</td><td class="time"><a href="#t2017-04-08T00:12:50" class="time">00:12</a></td></tr>
+<tr id="t2017-04-08T01:20:38"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">mhilt: take a look at <a href="https://github.com/kraj/meta-himvis/commit/0bb40412d1ed608fcef10b6f183d3c76160316d4" rel="nofollow">https://github.com/kraj/meta-himvis/commit/0bb40412d1ed608fcef10b6f183d3c76160316d4</a></td><td class="time"><a href="#t2017-04-08T01:20:38" class="time">01:20</a></td></tr>
+<tr id="t2017-04-08T01:21:03"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">mhilt: ofcourse you need to replace the wpa_supplicant.conf-sane with your own but you get the idea</td><td class="time"><a href="#t2017-04-08T01:21:03" class="time">01:21</a></td></tr>
+<tr id="t2017-04-08T01:25:12"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">thanks khem -- that's actually exactly what my first attempt looked like ...</td><td class="time"><a href="#t2017-04-08T01:25:12" class="time">01:25</a></td></tr>
+<tr id="t2017-04-08T01:26:48"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">apparently though, it seems it is packaging the change correct ... since it is appearing in the package directory correctly deploy/rpm/..</td><td class="time"><a href="#t2017-04-08T01:26:48" class="time">01:26</a></td></tr>
+<tr id="t2017-04-08T01:27:10"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">but then not in my image</td><td class="time"><a href="#t2017-04-08T01:27:10" class="time">01:27</a></td></tr>
+<tr id="t2017-04-08T01:38:48"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">its strange unless you tell me that you have a post processing function which mucks with image</td><td class="time"><a href="#t2017-04-08T01:38:48" class="time">01:38</a></td></tr>
+<tr id="t2017-04-08T01:49:34"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">well, I am still very much learning Yocto / OE - but I don't think there's any post processing. I have made a custom layer of course, but also define my own distro within it</td><td class="time"><a href="#t2017-04-08T01:49:34" class="time">01:49</a></td></tr>
+<tr id="t2017-04-08T01:50:07"><th class="nick" style="background: #407a40">mhilt</th><td class="text" style="color: #407a40">there is another layer provided by the dev board supplier, but I don't think it's doing any post processing on the image</td><td class="time"><a href="#t2017-04-08T01:50:07" class="time">01:50</a></td></tr>
+<tr id="t2017-04-08T02:13:13"><td class="part" colspan="2">*** jairglez &lt;jairglez!jairdeje@nat/intel/x-nvmkwskrjyfygfjz&gt; has left #yocto</td><td><a href="#t2017-04-08T02:13:13" class="time">02:13</a></td></tr>
+<tr id="t2017-04-08T07:14:13"><th class="nick" style="background: #818144">beeker23</th><td class="text" style="color: #818144">hi, i added a new kernel source to the recipes-kernel/linux directory. but where do i need to add it in the layer?</td><td class="time"><a href="#t2017-04-08T07:14:13" class="time">07:14</a></td></tr>
+<tr id="t2017-04-08T09:03:29"><td class="nickchange" colspan="2">*** beeker23_ is now known as beeker23</td><td><a href="#t2017-04-08T09:03:29" class="time">09:03</a></td></tr>
+<tr id="t2017-04-08T14:26:39"><td class="nickchange" colspan="2">*** zero is now known as Guest20746</td><td><a href="#t2017-04-08T14:26:39" class="time">14:26</a></td></tr>
+<tr id="t2017-04-08T16:52:21"><td class="nickchange" colspan="2">*** neverpan1c is now known as neverpanic</td><td><a href="#t2017-04-08T16:52:21" class="time">16:52</a></td></tr>
+<tr id="t2017-04-08T19:41:02"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">I meet a problem with writing a recipe, I want to execuate the git in cmake file</td><td class="time"><a href="#t2017-04-08T19:41:02" class="time">19:41</a></td></tr>
+<tr id="t2017-04-08T19:41:27"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">but the cmake would report the git excuatable file is not found</td><td class="time"><a href="#t2017-04-08T19:41:27" class="time">19:41</a></td></tr>
+<tr id="t2017-04-08T19:42:07"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">it works fine with the toolchains produced from yocto</td><td class="time"><a href="#t2017-04-08T19:42:07" class="time">19:42</a></td></tr>
+<tr id="t2017-04-08T20:13:42"><th class="nick" style="background: #854685">ayaka</th><td class="text" style="color: #854685">I see I need git-replacement-native not git-native</td><td class="time"><a href="#t2017-04-08T20:13:42" class="time">20:13</a></td></tr>
+<tr id="t2017-04-08T22:28:32"><td class="part" colspan="2">*** sjolley &lt;sjolley!~sjolley@134.134.139.74&gt; has left #yocto</td><td><a href="#t2017-04-08T22:28:32" class="time">22:28</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-04-07.log.html">&#171; Friday, 2017-04-07</a> <a href="index.html">Index</a> <a href="%23yocto.2017-04-09.log.html">Sunday, 2017-04-09 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

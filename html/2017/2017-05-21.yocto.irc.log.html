@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-05-21</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-05-21</h1>
+<div class="navigation"> <a href="%23yocto.2017-05-20.log.html">&#171; Saturday, 2017-05-20</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-22.log.html">Monday, 2017-05-22 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-05-21T08:33:03"><td class="nickchange" colspan="2">*** john is now known as Guest10599</td><td><a href="#t2017-05-21T08:33:03" class="time">08:33</a></td></tr>
+<tr id="t2017-05-21T08:40:28"><th class="nick" style="background: #407a40">vm__</th><td class="text" style="color: #407a40">hi, how do i use toaster with a fresh yocto-pyro install ?</td><td class="time"><a href="#t2017-05-21T08:40:28" class="time">08:40</a></td></tr>
+<tr id="t2017-05-21T08:41:08"><th class="nick" style="background: #407a40">vm__</th><td class="text" style="color: #407a40">there are no recipes to choose from ?</td><td class="time"><a href="#t2017-05-21T08:41:08" class="time">08:41</a></td></tr>
+<tr id="t2017-05-21T09:08:16"><th class="nick" style="background: #42427e">ros</th><td class="text" style="color: #42427e">i installed poky-morty and toaster, and there i can directly choose Layers,Machines,Software Recipes, Image Recipes&nbsp;&nbsp;but with the poky-pyro toaster install, there is nothing to choose from? what is new or what do i wrong</td><td class="time"><a href="#t2017-05-21T09:08:16" class="time">09:08</a></td></tr>
+<tr id="t2017-05-21T21:28:35"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">[meta-java] virtual/javac-native seems to not be happy with sstate... it works the first time but not the second</td><td class="time"><a href="#t2017-05-21T21:28:35" class="time">21:28</a></td></tr>
+<tr id="t2017-05-21T21:29:17"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">[meta-java] and .jar fetching seems to be similarly hit and miss (unzip not defined evenough though lib/bb/fetch2 should be properly catching .jar</td><td class="time"><a href="#t2017-05-21T21:29:17" class="time">21:29</a></td></tr>
+<tr id="t2017-05-21T22:20:52"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">I want to build an initramfs image, but when I include modules, the kernel bzImage is installed in /boot too. And the the size is too large to load.</td><td class="time"><a href="#t2017-05-21T22:20:52" class="time">22:20</a></td></tr>
+<tr id="t2017-05-21T22:22:33"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">Any ideas how to prevent installing or removing it before generating the cpio?</td><td class="time"><a href="#t2017-05-21T22:22:33" class="time">22:22</a></td></tr>
+<tr id="t2017-05-21T22:43:52"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">ROOTFS_POSTPROCESS_COMMAND perhaps?</td><td class="time"><a href="#t2017-05-21T22:43:52" class="time">22:43</a></td></tr>
+<tr id="t2017-05-21T22:44:13"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">paulg: hit and run... maybe respond to his email</td><td class="time"><a href="#t2017-05-21T22:44:13" class="time">22:44</a></td></tr>
+<tr id="t2017-05-21T22:44:51"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">oh well, if a person expects an answer in under 20m on a weekend ....</td><td class="time"><a href="#t2017-05-21T22:44:51" class="time">22:44</a></td></tr>
+<tr id="t2017-05-21T22:44:59"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">or ever</td><td class="time"><a href="#t2017-05-21T22:44:59" class="time">22:44</a></td></tr>
+<tr id="t2017-05-21T22:46:27"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">ftoth: you can set RDEPENDS_kernel-base = "" in kernel recipe</td><td class="time"><a href="#t2017-05-21T22:46:27" class="time">22:46</a></td></tr>
+<tr id="t2017-05-21T22:47:02"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">then add modules you need into your initramfs image recipe</td><td class="time"><a href="#t2017-05-21T22:47:02" class="time">22:47</a></td></tr>
+<tr id="t2017-05-21T22:47:35"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">IMAGE_INSTALL += "kernel-module-&lt;name1&gt;"</td><td class="time"><a href="#t2017-05-21T22:47:35" class="time">22:47</a></td></tr>
+<tr id="t2017-05-21T22:49:12"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">So that would remove the dependancy of the modules on the kernel right?</td><td class="time"><a href="#t2017-05-21T22:49:12" class="time">22:49</a></td></tr>
+<tr id="t2017-05-21T22:49:38"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">welcome back ftoth, glad you stuck around to get some answers :)</td><td class="time"><a href="#t2017-05-21T22:49:38" class="time">22:49</a></td></tr>
+<tr id="t2017-05-21T22:50:45"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">Yes, just went ou for a smoke, sorry. In the initramsfs recepy I used PACKAGE_INSTALL, so I need to raplace that by IMAGE_INSTALL?</td><td class="time"><a href="#t2017-05-21T22:50:45" class="time">22:50</a></td></tr>
+<tr id="t2017-05-21T22:53:09"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">(actually I subscribed to the mailing list, but it took so long for the post to appear that I thought something went wrong, then decided to try IRC. Didn't expect an answer here so quick)</td><td class="time"><a href="#t2017-05-21T22:53:09" class="time">22:53</a></td></tr>
+<tr id="t2017-05-21T22:53:24"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">So, thanks for helping me out!</td><td class="time"><a href="#t2017-05-21T22:53:24" class="time">22:53</a></td></tr>
+<tr id="t2017-05-21T22:54:06"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888"><a href="https://raw.githubusercontent.com/OverC/meta-overc/master/meta-cube/recipes-core/images/cube-essential_0.1.bb" rel="nofollow">https://raw.githubusercontent.com/OverC/meta-overc/master/meta-cube/recipes-core/images/cube-essential_0.1.bb</a></td><td class="time"><a href="#t2017-05-21T22:54:06" class="time">22:54</a></td></tr>
+<tr id="t2017-05-21T22:54:45"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">^^&nbsp;&nbsp; &lt;--- example of using ROOTFS_POSTPROCESS_COMMAND to do customizations based on IMAGE_FEATURES.</td><td class="time"><a href="#t2017-05-21T22:54:45" class="time">22:54</a></td></tr>
+<tr id="t2017-05-21T22:57:14"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">eh, so how does this work?</td><td class="time"><a href="#t2017-05-21T22:57:14" class="time">22:57</a></td></tr>
+<tr id="t2017-05-21T22:58:23"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">you probably don't want anything that complex with three options; based on what you said to begin with your post processing command could just clobber the bzImage.</td><td class="time"><a href="#t2017-05-21T22:58:23" class="time">22:58</a></td></tr>
+<tr id="t2017-05-21T23:01:00"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">Ah, would that just be as simple as ROOTFS_POSTPROCESS_COMMAND += '${rm /boot/*} ?</td><td class="time"><a href="#t2017-05-21T23:01:00" class="time">23:01</a></td></tr>
+<tr id="t2017-05-21T23:01:44"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">ya, something like that, but maybe with the close quote.&nbsp;&nbsp;:)</td><td class="time"><a href="#t2017-05-21T23:01:44" class="time">23:01</a></td></tr>
+<tr id="t2017-05-21T23:02:22"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">I'm sure the yocto docs have coverage on ROOTFS_POSTPROCESS_COMMAND with examples.&nbsp;&nbsp; (at least I hope so...)</td><td class="time"><a href="#t2017-05-21T23:02:22" class="time">23:02</a></td></tr>
+<tr id="t2017-05-21T23:03:34"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">Ah, I see, it's 1 AM here. I need to bet some sleep now, and will try tomorrow. You guys have been very helpful, thanks!</td><td class="time"><a href="#t2017-05-21T23:03:34" class="time">23:03</a></td></tr>
+<tr id="t2017-05-21T23:04:00"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">fwiw, the example in that file switches between the functions listed below it, based on what it finds in IMAGE_FEATURES.</td><td class="time"><a href="#t2017-05-21T23:04:00" class="time">23:04</a></td></tr>
+<tr id="t2017-05-21T23:04:17"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">maybe that helps make sense of it.</td><td class="time"><a href="#t2017-05-21T23:04:17" class="time">23:04</a></td></tr>
+<tr id="t2017-05-21T23:08:22"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">That seems to be a very usefull example. From this I think I need to change to rm ${IMAGE_ROOTFS}/boot/*. Always good to use the correct path in combination with rm :-)</td><td class="time"><a href="#t2017-05-21T23:08:22" class="time">23:08</a></td></tr>
+<tr id="t2017-05-21T23:09:05"><th class="nick" style="background: #854685">ftoth</th><td class="text" style="color: #854685">Good night!</td><td class="time"><a href="#t2017-05-21T23:09:05" class="time">23:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-05-20.log.html">&#171; Saturday, 2017-05-20</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-22.log.html">Monday, 2017-05-22 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

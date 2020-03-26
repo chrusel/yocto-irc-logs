@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-05-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-05-20</h1>
+<div class="navigation"> <a href="%23yocto.2017-05-19.log.html">&#171; Friday, 2017-05-19</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-21.log.html">Sunday, 2017-05-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-05-20T01:39:51"><th class="nick" style="background: #407a40">black_13</th><td class="text" style="color: #407a40">how do i create a recipe of a live image like black13s_image it uses a certain kernel config and creates an iso image and so on</td><td class="time"><a href="#t2017-05-20T01:39:51" class="time">01:39</a></td></tr>
+<tr id="t2017-05-20T03:01:18"><td class="nickchange" colspan="2">*** Snert__ is now known as Snert</td><td><a href="#t2017-05-20T03:01:18" class="time">03:01</a></td></tr>
+<tr id="t2017-05-20T08:18:19"><th class="nick" style="background: #42427e">christianbillp</th><td class="text" style="color: #42427e">Is there anything specific I need to setup in Yocto to use a custom .dtb file, or do I just place it one the SD-card?</td><td class="time"><a href="#t2017-05-20T08:18:19" class="time">08:18</a></td></tr>
+<tr id="t2017-05-20T15:12:17"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">hi, in the fsl-community-bsp README there is the setup cmdline whith MACHINE and DISTRO=&nbsp;&nbsp;, what MACHINE and DISTRO is possible?</td><td class="time"><a href="#t2017-05-20T15:12:17" class="time">15:12</a></td></tr>
+<tr id="t2017-05-20T15:15:20"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">vm__: they should document it too didnt they ?</td><td class="time"><a href="#t2017-05-20T15:15:20" class="time">15:15</a></td></tr>
+<tr id="t2017-05-20T15:15:55"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">if, i cannot find a doc</td><td class="time"><a href="#t2017-05-20T15:15:55" class="time">15:15</a></td></tr>
+<tr id="t2017-05-20T15:16:37"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">usually it would be fsl machines</td><td class="time"><a href="#t2017-05-20T15:16:37" class="time">15:16</a></td></tr>
+<tr id="t2017-05-20T15:16:38"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">i can look at the names of the files in meta-freescale/conf/machine/ to get some MACHINE names, but where can i find DISTRO?</td><td class="time"><a href="#t2017-05-20T15:16:38" class="time">15:16</a></td></tr>
+<tr id="t2017-05-20T15:16:53"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">it should be in conf/distro</td><td class="time"><a href="#t2017-05-20T15:16:53" class="time">15:16</a></td></tr>
+<tr id="t2017-05-20T15:17:25"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">there is no conf/distro</td><td class="time"><a href="#t2017-05-20T15:17:25" class="time">15:17</a></td></tr>
+<tr id="t2017-05-20T15:17:29"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">nodistro is also a possible value btw</td><td class="time"><a href="#t2017-05-20T15:17:29" class="time">15:17</a></td></tr>
+<tr id="t2017-05-20T15:17:46"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">but what are possible values for freescale</td><td class="time"><a href="#t2017-05-20T15:17:46" class="time">15:17</a></td></tr>
+<tr id="t2017-05-20T15:17:51"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">did it clone poky repo too ?</td><td class="time"><a href="#t2017-05-20T15:17:51" class="time">15:17</a></td></tr>
+<tr id="t2017-05-20T15:17:57"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">yes</td><td class="time"><a href="#t2017-05-20T15:17:57" class="time">15:17</a></td></tr>
+<tr id="t2017-05-20T15:18:10"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">then look into poky/meta/conf/distro</td><td class="time"><a href="#t2017-05-20T15:18:10" class="time">15:18</a></td></tr>
+<tr id="t2017-05-20T15:18:16"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">and you will see possible vals</td><td class="time"><a href="#t2017-05-20T15:18:16" class="time">15:18</a></td></tr>
+<tr id="t2017-05-20T15:20:06"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">not really</td><td class="time"><a href="#t2017-05-20T15:20:06" class="time">15:20</a></td></tr>
+<tr id="t2017-05-20T15:21:12"><th class="nick" style="background: #818144">vm__</th><td class="text" style="color: #818144">ah, it checked out meta-freescale-distro and there is a conf/distro</td><td class="time"><a href="#t2017-05-20T15:21:12" class="time">15:21</a></td></tr>
+<tr id="t2017-05-20T18:26:10"><th class="nick" style="background: #488888">majuk</th><td class="text" style="color: #488888">Can someone help me understand this issue: building ruby and it gets different extensions built for different architectures. I can't find this difference in the ruby.bbclass file... where else should I look?</td><td class="time"><a href="#t2017-05-20T18:26:10" class="time">18:26</a></td></tr>
+<tr id="t2017-05-20T18:27:09"><th class="nick" style="background: #488888">majuk</th><td class="text" style="color: #488888">Particularly, I am looking to build the libffi &amp; fiddle modules/extension for ruby. I see them built in the x86_64 ./build/work/tmp directory, but my wandboard directory doesn't have it.</td><td class="time"><a href="#t2017-05-20T18:27:09" class="time">18:27</a></td></tr>
+<tr id="t2017-05-20T18:27:54"><th class="nick" style="background: #488888">majuk</th><td class="text" style="color: #488888">./build/tmp/work</td><td class="time"><a href="#t2017-05-20T18:27:54" class="time">18:27</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-05-19.log.html">&#171; Friday, 2017-05-19</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-21.log.html">Sunday, 2017-05-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

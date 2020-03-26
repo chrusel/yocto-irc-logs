@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2017-05-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2017-05-07</h1>
+<div class="navigation"> <a href="%23yocto.2017-05-06.log.html">&#171; Saturday, 2017-05-06</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-08.log.html">Monday, 2017-05-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-05-07T03:43:26"><td class="nickchange" colspan="2">*** zz_ka6sox is now known as ka6sox</td><td><a href="#t2017-05-07T03:43:26" class="time">03:43</a></td></tr>
+<tr id="t2017-05-07T06:35:54"><td class="nickchange" colspan="2">*** ka6sox is now known as zz_ka6sox</td><td><a href="#t2017-05-07T06:35:54" class="time">06:35</a></td></tr>
+<tr id="t2017-05-07T09:41:04"><th class="nick" style="background: #407a40">vm_</th><td class="text" style="color: #407a40">hi, i created a build/ dir with source oe-init-env, then started toaster and configured and build a rpi image, now i want to build a image for a fsl-arm, what is the way todo it?&nbsp;&nbsp;stop toaster, create a new dir with "source oe-init-env fsl-build-dir", then source toaster start? If i do it that way, it shows me the rpi images?</td><td class="time"><a href="#t2017-05-07T09:41:04" class="time">09:41</a></td></tr>
+<tr id="t2017-05-07T09:44:03"><th class="nick" style="background: #42427e">luc4</th><td class="text" style="color: #42427e">Hello! I built a image with yocto but when I try to mount it via sshfs I get "remote host has disconnected". Isn't sshfs supported with dropbear?</td><td class="time"><a href="#t2017-05-07T09:44:03" class="time">09:44</a></td></tr>
+<tr id="t2017-05-07T10:32:04"><td class="nickchange" colspan="2">*** joshua__ is now known as joshua__picklez</td><td><a href="#t2017-05-07T10:32:04" class="time">10:32</a></td></tr>
+<tr id="t2017-05-07T11:04:33"><th class="nick" style="background: #818144">vpa</th><td class="text" style="color: #818144">Hi, I just joined yocto IRC</td><td class="time"><a href="#t2017-05-07T11:04:33" class="time">11:04</a></td></tr>
+<tr id="t2017-05-07T11:05:12"><th class="nick" style="background: #818144">vpa</th><td class="text" style="color: #818144">recently I tried using wic to create image for beagleboneblack</td><td class="time"><a href="#t2017-05-07T11:05:12" class="time">11:05</a></td></tr>
+<tr id="t2017-05-07T12:47:55"><td class="nickchange" colspan="2">*** p0kerface|work is now known as BaloneyGeek</td><td><a href="#t2017-05-07T12:47:55" class="time">12:47</a></td></tr>
+<tr id="t2017-05-07T17:01:34"><th class="nick" style="background: #407a40">vm_</th><td class="text" style="color: #407a40">hi someone tried to build morty meta-fsl-arm-extra ?</td><td class="time"><a href="#t2017-05-07T17:01:34" class="time">17:01</a></td></tr>
+<tr id="t2017-05-07T17:02:14"><th class="nick" style="background: #407a40">vm_</th><td class="text" style="color: #407a40">Checksum failure encountered with download</td><td class="time"><a href="#t2017-05-07T17:02:14" class="time">17:02</a></td></tr>
+<tr id="t2017-05-07T17:13:47"><th class="nick" style="background: #407a40">vm_</th><td class="text" style="color: #407a40">it wants to get data from git://git.freescale.com/imx/imx-firmware.git but its not accessible</td><td class="time"><a href="#t2017-05-07T17:13:47" class="time">17:13</a></td></tr>
+<tr id="t2017-05-07T17:16:23"><th class="nick" style="background: #407a40">vm_</th><td class="text" style="color: #407a40">i try to build fsl-image-machine-test</td><td class="time"><a href="#t2017-05-07T17:16:23" class="time">17:16</a></td></tr>
+<tr id="t2017-05-07T20:52:55"><th class="nick" style="background: #854685">fest</th><td class="text" style="color: #854685">I'm trying to build my first yocto package and I'm having hard time :) the library I'm building depends on headers in userland-dev (Broadcom userland libs). Building the yocto package fails with missing header file from the userland-dev package, however userland-dev installs the headers in rootfs/usr/include</td><td class="time"><a href="#t2017-05-07T20:52:55" class="time">20:52</a></td></tr>
+<tr id="t2017-05-07T20:55:52"><th class="nick" style="background: #854685">fest</th><td class="text" style="color: #854685">what am I missing? My assumption is that files installed by packages during build time are placed in temporary sysroot, which is accessible by the next package being built- maybe this is not the case?</td><td class="time"><a href="#t2017-05-07T20:55:52" class="time">20:55</a></td></tr>
+<tr id="t2017-05-07T21:14:55"><th class="nick" style="background: #854685">fest</th><td class="text" style="color: #854685">ok, it appears I did need to add EXTRA_OEMAKE = "CC='${CC}'" and use oe_runmake instead of make in do_compile()</td><td class="time"><a href="#t2017-05-07T21:14:55" class="time">21:14</a></td></tr>
+<tr id="t2017-05-07T22:22:58"><td class="nickchange" colspan="2">*** derekstraka is now known as asteriusio</td><td><a href="#t2017-05-07T22:22:58" class="time">22:22</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-05-06.log.html">&#171; Saturday, 2017-05-06</a> <a href="index.html">Index</a> <a href="%23yocto.2017-05-08.log.html">Monday, 2017-05-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

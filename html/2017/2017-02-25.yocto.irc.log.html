@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-02-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-02-25</h1>
+<div class="navigation"> <a href="%23yocto.2017-02-24.log.html">&#171; Friday, 2017-02-24</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-26.log.html">Sunday, 2017-02-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-02-25T01:19:33"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">Hello, does anyone know of a good tutorial on creating a bbappend file to change the PACKAGECONFIG?</td><td class="time"><a href="#t2017-02-25T01:19:33" class="time">01:19</a></td></tr>
+<tr id="t2017-02-25T02:17:00"><td class="part" colspan="2">*** gk_-1wm &lt;gk_-1wm!~su@209.73.151.42&gt; has left #yocto</td><td><a href="#t2017-02-25T02:17:00" class="time">02:17</a></td></tr>
+<tr id="t2017-02-25T05:17:10"><td class="nickchange" colspan="2">*** chep` is now known as chep</td><td><a href="#t2017-02-25T05:17:10" class="time">05:17</a></td></tr>
+<tr id="t2017-02-25T05:17:21"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2017-02-25T05:17:21" class="time">05:17</a></td></tr>
+<tr id="t2017-02-25T05:20:43"><td class="nickchange" colspan="2">*** stryx`_ is now known as stryx`</td><td><a href="#t2017-02-25T05:20:43" class="time">05:20</a></td></tr>
+<tr id="t2017-02-25T05:41:41"><td class="nickchange" colspan="2">*** Flow86_ is now known as Flow86</td><td><a href="#t2017-02-25T05:41:41" class="time">05:41</a></td></tr>
+<tr id="t2017-02-25T09:03:43"><td class="nickchange" colspan="2">*** manuel__ is now known as manuel_</td><td><a href="#t2017-02-25T09:03:43" class="time">09:03</a></td></tr>
+<tr id="t2017-02-25T10:38:13"><td class="part" colspan="2">*** gtristan &lt;gtristan!~tristanva@110.11.226.29&gt; has left #yocto</td><td><a href="#t2017-02-25T10:38:13" class="time">10:38</a></td></tr>
+<tr id="t2017-02-25T10:39:51"><td class="nickchange" colspan="2">*** JEEB_ is now known as JEEB</td><td><a href="#t2017-02-25T10:39:51" class="time">10:39</a></td></tr>
+<tr id="t2017-02-25T12:38:52"><td class="part" colspan="2">*** kanavin_home &lt;kanavin_home!~ak@89-27-123-115.bb.dnainternet.fi&gt; has left #yocto</td><td><a href="#t2017-02-25T12:38:52" class="time">12:38</a></td></tr>
+<tr id="t2017-02-25T13:10:06"><td class="nickchange" colspan="2">*** Marex_ is now known as Marex</td><td><a href="#t2017-02-25T13:10:06" class="time">13:10</a></td></tr>
+<tr id="t2017-02-25T13:13:26"><td class="nickchange" colspan="2">*** sveinse_ is now known as sveinse</td><td><a href="#t2017-02-25T13:13:26" class="time">13:13</a></td></tr>
+<tr id="t2017-02-25T13:14:25"><td class="part" colspan="2">*** sveinse &lt;sveinse!~sveinse@156.92-221-160.customer.lyse.net&gt; has left #yocto</td><td><a href="#t2017-02-25T13:14:25" class="time">13:14</a></td></tr>
+<tr id="t2017-02-25T18:22:51"><td class="nickchange" colspan="2">*** lexano_ is now known as lexano</td><td><a href="#t2017-02-25T18:22:51" class="time">18:22</a></td></tr>
+<tr id="t2017-02-25T18:57:42"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">Hey all, I've got an odd one. I am building a system image for a iMx6 board. Trying to add chromium-imx to the mix. Booted the image and chrome segfaults on launch complaining it can't find libexif.so</td><td class="time"><a href="#t2017-02-25T18:57:42" class="time">18:57</a></td></tr>
+<tr id="t2017-02-25T18:58:00"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">Got the libexif from openembedded-core and now it's throwing an error</td><td class="time"><a href="#t2017-02-25T18:58:00" class="time">18:58</a></td></tr>
+<tr id="t2017-02-25T18:58:11"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">ERROR: Nothing PROVIDES 'core-x11-image'. Close matches</td><td class="time"><a href="#t2017-02-25T18:58:11" class="time">18:58</a></td></tr>
+<tr id="t2017-02-25T18:59:02"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">The odd thing is, core-image-x11 is an available recipe and I can't find any reference to core-x11-image anywhere in the openembedded-core folder</td><td class="time"><a href="#t2017-02-25T18:59:02" class="time">18:59</a></td></tr>
+<tr id="t2017-02-25T18:59:21"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">It SEEMS like it's just a typo.... somewhere. But I can't find it.</td><td class="time"><a href="#t2017-02-25T18:59:21" class="time">18:59</a></td></tr>
+<tr id="t2017-02-25T19:05:58"><th class="nick" style="background: #42427e">Majuk</th><td class="text" style="color: #42427e">Just grepped my ENTIRE sources folder. 0 hits for core-x11-image, about 10 for core-image-x11</td><td class="time"><a href="#t2017-02-25T19:05:58" class="time">19:05</a></td></tr>
+<tr id="t2017-02-25T21:45:05"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">Hello, I was hopindg omeone may be able to provide me some assistance with how to have my custom image include a specific kernel module.</td><td class="time"><a href="#t2017-02-25T21:45:05" class="time">21:45</a></td></tr>
+<tr id="t2017-02-25T21:47:38"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">I tried using&nbsp;&nbsp;CORE_IMAGE_EXTRA_INSTALL += "kernel-modules" but did not see any change</td><td class="time"><a href="#t2017-02-25T21:47:38" class="time">21:47</a></td></tr>
+<tr id="t2017-02-25T22:33:54"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">Anyone know of a reason that bitbake virtual/kernel -c menuconfig would fail with missing symbols?</td><td class="time"><a href="#t2017-02-25T22:33:54" class="time">22:33</a></td></tr>
+<tr id="t2017-02-25T22:43:38"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">I am having trouble with&nbsp;&nbsp;menuconfig recieving : "mconf.c:(.text+0x914): undefined reference to `stdscr'" and mutliple lines like mconf.c:(.text+0x914): undefined reference to `stdscr'</td><td class="time"><a href="#t2017-02-25T22:43:38" class="time">22:43</a></td></tr>
+<tr id="t2017-02-25T22:43:54"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">is this a know problem, and/or is there a known fix?</td><td class="time"><a href="#t2017-02-25T22:43:54" class="time">22:43</a></td></tr>
+<tr id="t2017-02-25T22:58:19"><th class="nick" style="background: #407a40">inkspell4</th><td class="text" style="color: #407a40">It appears there are 2 problems, 1 my kernel menuconfig does not open (fails every time as mentioned above), but also that it cannot complete the kerner do_install due to a missing file nnot stat './modules.order': No such file or directory</td><td class="time"><a href="#t2017-02-25T22:58:19" class="time">22:58</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-02-24.log.html">&#171; Friday, 2017-02-24</a> <a href="index.html">Index</a> <a href="%23yocto.2017-02-26.log.html">Sunday, 2017-02-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

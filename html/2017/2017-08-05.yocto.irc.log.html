@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-08-05</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-08-05</h1>
+<div class="navigation"> <a href="%23yocto.2017-08-04.log.html">&#171; Friday, 2017-08-04</a> <a href="index.html">Index</a> <a href="%23yocto.2017-08-06.log.html">Sunday, 2017-08-06 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-08-05T01:46:05"><td class="part" colspan="2">*** bully4u &lt;bully4u!Adium@nat/intel/x-crjzqvcvdjhxjcfj&gt; has left #yocto</td><td><a href="#t2017-08-05T01:46:05" class="time">01:46</a></td></tr>
+<tr id="t2017-08-05T08:51:55"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2017-08-05T08:51:55" class="time">08:51</a></td></tr>
+<tr id="t2017-08-05T09:33:43"><td class="part" colspan="2">*** TurBoss &lt;TurBoss!~turboss@117.54.135.37.dynamic.jazztel.es&gt; has left #yocto</td><td><a href="#t2017-08-05T09:33:43" class="time">09:33</a></td></tr>
+<tr id="t2017-08-05T13:41:16"><th class="nick" style="background: #407a40">ranran</th><td class="text" style="color: #407a40">hi</td><td class="time"><a href="#t2017-08-05T13:41:16" class="time">13:41</a></td></tr>
+<tr id="t2017-08-05T13:43:14"><th class="nick" style="background: #407a40">ranran</th><td class="text" style="color: #407a40">Does intall -m actually copy folder and files ? I see example such as "do_install() { install -d $D/... install -m 0755 ${D}/mydir ${WORKDIR}/my... ${D}/mydir&nbsp;&nbsp;}</td><td class="time"><a href="#t2017-08-05T13:43:14" class="time">13:43</a></td></tr>
+<tr id="t2017-08-05T14:00:34"><th class="nick" style="background: #407a40">ranran</th><td class="text" style="color: #407a40">Does "install -m" actually copy folder and files ? I see example such as "do_install() { install -d $D/... install -m 0755 ${D}/mydir ${WORKDIR}/my... ${D}/mydir&nbsp;&nbsp;}</td><td class="time"><a href="#t2017-08-05T14:00:34" class="time">14:00</a></td></tr>
+<tr id="t2017-08-05T14:17:00"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">ranran: you can look into doing install -Dm</td><td class="time"><a href="#t2017-08-05T14:17:00" class="time">14:17</a></td></tr>
+<tr id="t2017-08-05T14:17:33"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">which should create target folders if not found</td><td class="time"><a href="#t2017-08-05T14:17:33" class="time">14:17</a></td></tr>
+<tr id="t2017-08-05T14:57:19"><td class="part" colspan="2">*** seezer &lt;seezer!quassel@quassel/developer/seezer&gt; has left #yocto</td><td><a href="#t2017-08-05T14:57:19" class="time">14:57</a></td></tr>
+<tr id="t2017-08-05T15:58:42"><td class="part" colspan="2">*** http_GK1wmSU &lt;http_GK1wmSU!~deep-book@212.83.139.210&gt; has left #yocto</td><td><a href="#t2017-08-05T15:58:42" class="time">15:58</a></td></tr>
+<tr id="t2017-08-05T18:12:49"><th class="nick" style="background: #818144">d21d3q</th><td class="text" style="color: #818144">I didn't manage to find bitbake syntax description, especially if statement. Does it support if ... elif .. elif ... else ... fi&nbsp;&nbsp;? While analysing some receipes I found only if .. else .. fi</td><td class="time"><a href="#t2017-08-05T18:12:49" class="time">18:12</a></td></tr>
+<tr id="t2017-08-05T18:40:57"><th class="nick" style="background: #854685">kergoth</th><td class="text" style="color: #854685">d21d3q: no. what you found was inside a shell function, that's shell syntax. bitbake itself has no if statement. see the bitbake user manual which covers the entire syntax</td><td class="time"><a href="#t2017-08-05T18:40:57" class="time">18:40</a></td></tr>
+<tr id="t2017-08-05T18:55:42"><td class="part" colspan="2">*** TurBoss &lt;TurBoss!~turboss@117.54.135.37.dynamic.jazztel.es&gt; has left #yocto</td><td><a href="#t2017-08-05T18:55:42" class="time">18:55</a></td></tr>
+<tr id="t2017-08-05T21:56:18"><td class="part" colspan="2">*** d33pb00k-GK1wmSU &lt;d33pb00k-GK1wmSU!~Pyatibrat@23.27.18.240&gt; has left #yocto</td><td><a href="#t2017-08-05T21:56:18" class="time">21:56</a></td></tr>
+<tr id="t2017-08-05T22:47:05"><td class="nickchange" colspan="2">*** smartin_ is now known as smartin</td><td><a href="#t2017-08-05T22:47:05" class="time">22:47</a></td></tr>
+<tr id="t2017-08-05T23:15:07"><th class="nick" style="background: #488888">black_13</th><td class="text" style="color: #488888">how do you make bootable iso where the root filesystem is NOT readonly</td><td class="time"><a href="#t2017-08-05T23:15:07" class="time">23:15</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-08-04.log.html">&#171; Friday, 2017-08-04</a> <a href="index.html">Index</a> <a href="%23yocto.2017-08-06.log.html">Sunday, 2017-08-06 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>

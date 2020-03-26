@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2017-09-16</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2017-09-16</h1>
+<div class="navigation"> <a href="%23yocto.2017-09-15.log.html">&#171; Friday, 2017-09-15</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-17.log.html">Sunday, 2017-09-17 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2017-09-16T05:17:14"><td class="part" colspan="2">*** scottrif &lt;scottrif!~scottrif@rrcs-76-80-233-171.west.biz.rr.com&gt; has left #yocto</td><td><a href="#t2017-09-16T05:17:14" class="time">05:17</a></td></tr>
+<tr id="t2017-09-16T13:06:47"><th class="nick" style="background: #407a40">ioanb7</th><td class="text" style="color: #407a40">anyone knows why i'm getting "automake: error: cannot open &lt; build/dist-changelog.am: No such file or directory" when installing a package?</td><td class="time"><a href="#t2017-09-16T13:06:47" class="time">13:06</a></td></tr>
+<tr id="t2017-09-16T13:07:08"><th class="nick" style="background: #407a40">ioanb7</th><td class="text" style="color: #407a40">previous line in logs: configure.ac:28: installing 'build/missing'</td><td class="time"><a href="#t2017-09-16T13:07:08" class="time">13:07</a></td></tr>
+<tr id="t2017-09-16T13:16:19"><th class="nick" style="background: #407a40">ioanb7</th><td class="text" style="color: #407a40">found that the error is coming from. <a href="https://github.com/GNOME/mm-common/blob/master/Makefile.am" rel="nofollow">https://github.com/GNOME/mm-common/blob/master/Makefile.am</a> . bitbake mm-common runs OK but bitbake gtkmm3 which depends on it fails</td><td class="time"><a href="#t2017-09-16T13:16:19" class="time">13:16</a></td></tr>
+<tr id="t2017-09-16T15:55:13"><th class="nick" style="background: #42427e">dl9pf</th><td class="text" style="color: #42427e">kergoth</td><td class="time"><a href="#t2017-09-16T15:55:13" class="time">15:55</a></td></tr>
+<tr id="t2017-09-16T15:57:02"><th class="nick" style="background: #407a40">ioanb7</th><td class="text" style="color: #407a40">is it possible to use jhbuild inside yocto ?</td><td class="time"><a href="#t2017-09-16T15:57:02" class="time">15:57</a></td></tr>
+<tr id="t2017-09-16T16:19:51"><td class="other" colspan="2">-YoctoAutoBuilder- build #480 of nightly-no-x11 is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-no-x11/builds/480" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-no-x11/builds/480</a></td><td><a href="#t2017-09-16T16:19:51" class="time">16:19</a></td></tr>
+<tr id="t2017-09-16T16:30:03"><td class="other" colspan="2">-YoctoAutoBuilder- build #472 of nightly-world-lsb is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-world-lsb/builds/472" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-world-lsb/builds/472</a></td><td><a href="#t2017-09-16T16:30:03" class="time">16:30</a></td></tr>
+<tr id="t2017-09-16T16:42:49"><td class="other" colspan="2">-YoctoAutoBuilder- build #134 of nightly-packagemanagers is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-packagemanagers/builds/134" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-packagemanagers/builds/134</a></td><td><a href="#t2017-09-16T16:42:49" class="time">16:42</a></td></tr>
+<tr id="t2017-09-16T16:51:29"><td class="other" colspan="2">-YoctoAutoBuilder- build #496 of nightly-wic is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-wic/builds/496" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-wic/builds/496</a></td><td><a href="#t2017-09-16T16:51:29" class="time">16:51</a></td></tr>
+<tr id="t2017-09-16T18:23:25"><td class="other" colspan="2">-YoctoAutoBuilder- build #521 of nightly-oe-selftest is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/521" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-oe-selftest/builds/521</a></td><td><a href="#t2017-09-16T18:23:25" class="time">18:23</a></td></tr>
+<tr id="t2017-09-16T18:34:45"><td class="other" colspan="2">-YoctoAutoBuilder- build #544 of nightly-arm is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-arm/builds/544" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-arm/builds/544</a></td><td><a href="#t2017-09-16T18:34:45" class="time">18:34</a></td></tr>
+<tr id="t2017-09-16T18:37:18"><td class="other" colspan="2">-YoctoAutoBuilder- build #484 of nightly-qa-extras is complete: Failure [failed Running Sanity Tests_6 Running Sanity Tests_7]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/484" rel="nofollow">https://autobuilder.yocto.io/builders/nightly-qa-extras/builds/484</a></td><td><a href="#t2017-09-16T18:37:18" class="time">18:37</a></td></tr>
+<tr id="t2017-09-16T18:39:22"><td class="other" colspan="2">-YoctoAutoBuilder- build #547 of nightly is complete: Success [build successful]  Build details are at <a href="https://autobuilder.yocto.io/builders/nightly/builds/547" rel="nofollow">https://autobuilder.yocto.io/builders/nightly/builds/547</a></td><td><a href="#t2017-09-16T18:39:22" class="time">18:39</a></td></tr>
+<tr id="t2017-09-16T21:34:30"><th class="nick" style="background: #818144">DVorkin</th><td class="text" style="color: #818144">who can discuss Yocto ADT plugin bug?</td><td class="time"><a href="#t2017-09-16T21:34:30" class="time">21:34</a></td></tr>
+<tr id="t2017-09-16T21:43:28"><th class="nick" style="background: #818144">DVorkin</th><td class="text" style="color: #818144">My Linux is x86_64. I built SDK for i686 + arm to easily run on 32bit Linux versions. I installed Eclipse x86_64 and tryed to configure my i686 SDK at Yocto ADT plugin. No success. It says, SDK arch and host arch are different.</td><td class="time"><a href="#t2017-09-16T21:43:28" class="time">21:43</a></td></tr>
+<tr id="t2017-09-16T21:45:11"><th class="nick" style="background: #818144">DVorkin</th><td class="text" style="color: #818144">I used my i686 SDK in my x86_64 Linux without problems for year. Why Eclipse ADT plugin complains?</td><td class="time"><a href="#t2017-09-16T21:45:11" class="time">21:45</a></td></tr>
+<tr id="t2017-09-16T21:46:35"><th class="nick" style="background: #818144">DVorkin</th><td class="text" style="color: #818144">It forces me to change my SDK to x86_64 arch. If I'll do that, I'll need to publish two SDKs: for users with i686 and for those, who have x86_64 Eclipse</td><td class="time"><a href="#t2017-09-16T21:46:35" class="time">21:46</a></td></tr>
+<tr id="t2017-09-16T21:47:54"><th class="nick" style="background: #818144">DVorkin</th><td class="text" style="color: #818144">I think, line 149 of <a href="http://git.yoctoproject.org/cgit/cgit.cgi/eclipse-poky-contrib/tree/plugins/org.yocto.sdk.ide/src/org/yocto/sdk/ide/YoctoSDKChecker.java#n149" rel="nofollow">http://git.yoctoproject.org/cgit/cgit.cgi/eclipse-poky-contrib/tree/plugins/org.yocto.sdk.ide/src/org/yocto/sdk/ide/YoctoSDKChecker.java#n149</a> is completely incorrect</td><td class="time"><a href="#t2017-09-16T21:47:54" class="time">21:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2017-09-15.log.html">&#171; Friday, 2017-09-15</a> <a href="index.html">Index</a> <a href="%23yocto.2017-09-17.log.html">Sunday, 2017-09-17 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
