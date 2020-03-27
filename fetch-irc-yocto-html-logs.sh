@@ -1,13 +1,11 @@
 #!/bin/bash
 
-#
 # This script fetches the #yocto IRC html logs from www.yoctoproject.org server.
 # Having logs on your local disk enables searching and finding solutions for your
 # individual problem which was already discussed in IRC. 
 #
 # Feel free to use and improve that script.
 # It hopefully helps, cheers, chrusel
-#
 
 # first available logfile:
 d_start="2013-03-07"
