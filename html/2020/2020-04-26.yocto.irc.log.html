@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-04-26</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Sunday, 2020-04-26</h1>
+<div class="navigation"> <a href="%23yocto.2020-04-25.log.html">&#171; Saturday, 2020-04-25</a> <a href="index.html">Index</a> <a href="%23yocto.2020-04-27.log.html">Monday, 2020-04-27 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-04-26T03:27:32"><th class="nick" style="background: #407a40">yocti</th><td class="text" style="color: #407a40">New news from stackoverflow: Yocto included cmake-project can't find stdio.h &lt;<a href="https://stackoverflow.com/questions/61239241/yocto-included-cmake-project-cant-find-stdio-h&gt;" rel="nofollow">https://stackoverflow.com/questions/61239241/yocto-included-cmake-project-cant-find-stdio-h&gt;</a></td><td class="time"><a href="#t2020-04-26T03:27:32" class="time">03:27</a></td></tr>
+<tr id="t2020-04-26T12:02:09"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">Hello. I'm facing an issue and I apologise in advance if this is a newbie question. I'm trying to build the meta-java layer against the sumo yocto release. If I build it using the master branch of the meta-java layer, I get an error saying that the version is not compatible. If I switch to the sumo branch of the meta-java layer, the compilation starts but fails due to some bugs in the recipes and OpenJDK itself. These</td><td class="time"><a href="#t2020-04-26T12:02:09" class="time">12:02</a></td></tr>
+<tr id="t2020-04-26T12:02:09"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e"> bugs seems that have been fixed since. However, I'm interested in making yocto build the meta-java layer from the master branch instead of the sumo branch. Would this be possible? thanks.</td><td class="time"><a href="#t2020-04-26T12:02:09" class="time">12:02</a></td></tr>
+<tr id="t2020-04-26T12:05:34"><th class="nick" style="background: #818144">RobertBerger</th><td class="text" style="color: #818144">@nucatus: I don't know about sumo in general, but played with it with zeus. In general meta-java has a dependency on your host gcc. Which host gcc do you have? Can you post the errors on <a href="https://pastebin.com/" rel="nofollow">https://pastebin.com/</a> ?</td><td class="time"><a href="#t2020-04-26T12:05:34" class="time">12:05</a></td></tr>
+<tr id="t2020-04-26T12:12:28"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">@RobertBerger the GCC version on the host is: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0</td><td class="time"><a href="#t2020-04-26T12:12:28" class="time">12:12</a></td></tr>
+<tr id="t2020-04-26T12:12:34"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">@RobertBerger: the GCC version on the host is: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0</td><td class="time"><a href="#t2020-04-26T12:12:34" class="time">12:12</a></td></tr>
+<tr id="t2020-04-26T12:17:14"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">@RobertBerger: here is the last part of the make log: <a href="https://pastebin.com/vaPtpCFQ" rel="nofollow">https://pastebin.com/vaPtpCFQ</a></td><td class="time"><a href="#t2020-04-26T12:17:14" class="time">12:17</a></td></tr>
+<tr id="t2020-04-26T12:19:34"><td class="part" colspan="2">*** Moh3N &lt;Moh3N!057d2b17@5.125.43.23&gt; has left #yocto</td><td><a href="#t2020-04-26T12:19:34" class="time">12:19</a></td></tr>
+<tr id="t2020-04-26T12:20:04"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">This is what I found to be related to the issue: <a href="https://www.mail-archive.com/openembedded-devel@lists.openembedded.org/msg62549.html" rel="nofollow">https://www.mail-archive.com/openembedded-devel@lists.openembedded.org/msg62549.html</a></td><td class="time"><a href="#t2020-04-26T12:20:04" class="time">12:20</a></td></tr>
+<tr id="t2020-04-26T13:29:28"><th class="nick" style="background: #42427e">nucatus</th><td class="text" style="color: #42427e">sorry, but my connection went down. Did I miss something related to my question?</td><td class="time"><a href="#t2020-04-26T13:29:28" class="time">13:29</a></td></tr>
+<tr id="t2020-04-26T14:26:08"><td class="part" colspan="2">*** JEEB &lt;JEEB!~jeeb@unaffiliated/jeeb&gt; has left #yocto</td><td><a href="#t2020-04-26T14:26:08" class="time">14:26</a></td></tr>
+<tr id="t2020-04-26T14:56:10"><th class="nick" style="background: #854685">rabbit9911</th><td class="text" style="color: #854685">Interesting issue with my setup.&nbsp;&nbsp;I have several MACHINEs that share a kernel. In order to keep from checking out the code for each machine I am using externalsrc.&nbsp;&nbsp;The problem is the defconfig is stored in the source directory... So I get random failures if I try to build the machines in parallel.</td><td class="time"><a href="#t2020-04-26T14:56:10" class="time">14:56</a></td></tr>
+<tr id="t2020-04-26T15:30:37"><th class="nick" style="background: #854685">rabbit9911</th><td class="text" style="color: #854685">I am hacking around it for now by appending ${MACHINE} to meta_dir.&nbsp;&nbsp;Will look for a more permanent solution.</td><td class="time"><a href="#t2020-04-26T15:30:37" class="time">15:30</a></td></tr>
+<tr id="t2020-04-26T15:30:59"><th class="nick" style="background: #854685">rabbit9911</th><td class="text" style="color: #854685">Ideally nothing would be stored in the source directory</td><td class="time"><a href="#t2020-04-26T15:30:59" class="time">15:30</a></td></tr>
+<tr id="t2020-04-26T20:25:36"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">RP: on which host distros the extended tarball is currently in use?</td><td class="time"><a href="#t2020-04-26T20:25:36" class="time">20:25</a></td></tr>
+<tr id="t2020-04-26T20:59:59"><th class="nick" style="background: #8c4a4a">denix</th><td class="text" style="color: #8c4a4a">halstead, RP: do the AB workers run in VM, container or bare metal?</td><td class="time"><a href="#t2020-04-26T20:59:59" class="time">20:59</a></td></tr>
+<tr id="t2020-04-26T21:51:20"><th class="nick" style="background: #4b904b">RP</th><td class="text" style="color: #4b904b">kanavin_home: <a href="http://git.yoctoproject.org/cgit.cgi/yocto-autobuilder-helper/tree/config.json#n964" rel="nofollow">http://git.yoctoproject.org/cgit.cgi/yocto-autobuilder-helper/tree/config.json#n964</a></td><td class="time"><a href="#t2020-04-26T21:51:20" class="time">21:51</a></td></tr>
+<tr id="t2020-04-26T21:51:30"><th class="nick" style="background: #4b904b">RP</th><td class="text" style="color: #4b904b">denix: bare metal</td><td class="time"><a href="#t2020-04-26T21:51:30" class="time">21:51</a></td></tr>
+<tr id="t2020-04-26T21:52:01"><th class="nick" style="background: #8c4a4a">denix</th><td class="text" style="color: #8c4a4a">RP: thanks</td><td class="time"><a href="#t2020-04-26T21:52:01" class="time">21:52</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-04-25.log.html">&#171; Saturday, 2020-04-25</a> <a href="index.html">Index</a> <a href="%23yocto.2020-04-27.log.html">Monday, 2020-04-27 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
