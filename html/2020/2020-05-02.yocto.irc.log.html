@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-05-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.11.0 by Marius Gedminas" />
+  <meta name="version" content="2.11.0 - 2012-07-30" />
+</head>
+<body>
+<h1>Saturday, 2020-05-02</h1>
+<div class="navigation"> <a href="%23yocto.2020-05-01.log.html">&#171; Friday, 2020-05-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-05-03.log.html">Sunday, 2020-05-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-05-02T01:38:15"><td class="nickchange" colspan="2">*** circ-user-xc3Xq is now known as mboyar</td><td><a href="#t2020-05-02T01:38:15" class="time">01:38</a></td></tr>
+<tr id="t2020-05-02T06:23:59"><td class="nickchange" colspan="2">*** Guest90506 is now known as mischief</td><td><a href="#t2020-05-02T06:23:59" class="time">06:23</a></td></tr>
+<tr id="t2020-05-02T08:07:42"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: I tried reverting re2c and that seems to be the cause of the breakage</td><td class="time"><a href="#t2020-05-02T08:07:42" class="time">08:07</a></td></tr>
+<tr id="t2020-05-02T08:39:37"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: that is really odd. re2c is only used in ninja?</td><td class="time"><a href="#t2020-05-02T08:39:37" class="time">08:39</a></td></tr>
+<tr id="t2020-05-02T08:41:59"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: right, it is :/</td><td class="time"><a href="#t2020-05-02T08:41:59" class="time">08:41</a></td></tr>
+<tr id="t2020-05-02T08:42:23"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: its what the results show though :/</td><td class="time"><a href="#t2020-05-02T08:42:23" class="time">08:42</a></td></tr>
+<tr id="t2020-05-02T08:44:37"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: I think it might be coincidental :-/</td><td class="time"><a href="#t2020-05-02T08:44:37" class="time">08:44</a></td></tr>
+<tr id="t2020-05-02T08:45:00"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">but we can try again to update re2c later</td><td class="time"><a href="#t2020-05-02T08:45:00" class="time">08:45</a></td></tr>
+<tr id="t2020-05-02T09:05:30"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: it could be. Other options is some kind of determinism issue in mesa or similar's build :/</td><td class="time"><a href="#t2020-05-02T09:05:30" class="time">09:05</a></td></tr>
+<tr id="t2020-05-02T09:06:39"><td class="nickchange" colspan="2">*** kiwi_542 is now known as sissy</td><td><a href="#t2020-05-02T09:06:39" class="time">09:06</a></td></tr>
+<tr id="t2020-05-02T09:07:15"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: dbusmock breaks non-gplv3 :/</td><td class="time"><a href="#t2020-05-02T09:07:15" class="time">09:07</a></td></tr>
+<tr id="t2020-05-02T11:11:22"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: then I think it's time to set the license restriction per-image in the AB config, and not global</td><td class="time"><a href="#t2020-05-02T11:11:22" class="time">11:11</a></td></tr>
+<tr id="t2020-05-02T11:12:54"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">dbusmock is only needed for ptests</td><td class="time"><a href="#t2020-05-02T11:12:54" class="time">11:12</a></td></tr>
+<tr id="t2020-05-02T11:14:07"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">alternatively, we can adjust that same config to drop ptests from DISTRO_FEATURES (not sure if that would help)</td><td class="time"><a href="#t2020-05-02T11:14:07" class="time">11:14</a></td></tr>
+<tr id="t2020-05-02T11:15:00"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">but generally, the time is nigh to stop supporting that layer, LTS is out, but for master enough is enough</td><td class="time"><a href="#t2020-05-02T11:15:00" class="time">11:15</a></td></tr>
+<tr id="t2020-05-02T14:53:14"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: thought you might say that and yes, I said something similar recently. Sadly that layer is in high demand and the projects members want it</td><td class="time"><a href="#t2020-05-02T14:53:14" class="time">14:53</a></td></tr>
+<tr id="t2020-05-02T16:27:03"><th class="nick" style="background: #818144">yocti</th><td class="text" style="color: #818144">New news from stackoverflow: yocto build core-image-base in orange pi lite &lt;<a href="https://stackoverflow.com/questions/61562394/yocto-build-core-image-base-in-orange-pi-lite&gt;" rel="nofollow">https://stackoverflow.com/questions/61562394/yocto-build-core-image-base-in-orange-pi-lite&gt;</a></td><td class="time"><a href="#t2020-05-02T16:27:03" class="time">16:27</a></td></tr>
+<tr id="t2020-05-02T16:51:14"><td class="part" colspan="2">*** RobertBerger &lt;RobertBerger!~rber@ppp-94-65-43-120.home.otenet.gr&gt; has left #yocto</td><td><a href="#t2020-05-02T16:51:14" class="time">16:51</a></td></tr>
+<tr id="t2020-05-02T20:32:31"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-05-02T20:32:31" class="time">20:32</a></td></tr>
+<tr id="t2020-05-02T20:45:04"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">RP: I have send a dpkg patch for enabling riscv32 for master, Please cherrypick it when you updater master-next I am looking for including it in dunfell eventually</td><td class="time"><a href="#t2020-05-02T20:45:04" class="time">20:45</a></td></tr>
+<tr id="t2020-05-02T20:47:10"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">khem: Doing my best to work through the patches</td><td class="time"><a href="#t2020-05-02T20:47:10" class="time">20:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-05-01.log.html">&#171; Friday, 2020-05-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-05-03.log.html">Sunday, 2020-05-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.11.0 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="http://mg.pov.lt/irclog2html/">mg.pov.lt</a>!</p>
+</div>
+</body>
+</html>
