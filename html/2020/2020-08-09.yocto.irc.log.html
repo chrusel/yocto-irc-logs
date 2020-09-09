@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-08-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-08-09</h1>
+<div class="navigation"> <a href="%23yocto.2020-08-08.log.html">&#171; Saturday, 2020-08-08</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-10.log.html">Monday, 2020-08-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-08-09T00:10:05"><th class="nick" style="background: #407a40">pnd</th><td class="text" style="color: #407a40">hi</td><td class="time"><a href="#t2020-08-09T00:10:05" class="time">00:10</a></td></tr>
+<tr id="t2020-08-09T00:11:18"><th class="nick" style="background: #407a40">pnd</th><td class="text" style="color: #407a40">can the project consider putting the logs in irc.yoctoproject.org? im having a hard time searching the logs specifically...im looking for info on ram init/memory initialization...</td><td class="time"><a href="#t2020-08-09T00:11:18" class="time">00:11</a></td></tr>
+<tr id="t2020-08-09T01:19:26"><th class="nick" style="background: #42427e">tcdiem</th><td class="text" style="color: #42427e">just for the archives, the issue which I've reported was due sstate_create_package function doing a hardlink from the tmpfile (TFILE) and in my case the underlying FS under SSTATE_DIR did not support hardlinks. Unfortunately an error is not thrown to bitbake and it was suppressed. Changing SSTATE_DIR to a filesystem that supports hardlinks did not</td><td class="time"><a href="#t2020-08-09T01:19:26" class="time">01:19</a></td></tr>
+<tr id="t2020-08-09T01:19:27"><th class="nick" style="background: #42427e">tcdiem</th><td class="text" style="color: #42427e">produce the additional 8 digits at the end of the file.</td><td class="time"><a href="#t2020-08-09T01:19:27" class="time">01:19</a></td></tr>
+<tr id="t2020-08-09T09:09:43"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">hello everyone</td><td class="time"><a href="#t2020-08-09T09:09:43" class="time">09:09</a></td></tr>
+<tr id="t2020-08-09T09:09:45"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">So I am using a .bbappend file in a layer I have created and in that layer I also have some additional local files that I want to install.</td><td class="time"><a href="#t2020-08-09T09:09:45" class="time">09:09</a></td></tr>
+<tr id="t2020-08-09T09:09:46"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">the append one in my layer. How can I best do this without putting some type of absolute path?</td><td class="time"><a href="#t2020-08-09T09:09:46" class="time">09:09</a></td></tr>
+<tr id="t2020-08-09T09:12:22"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">I have meta-example-layer/recipes-bsp/u-boot/&lt;myfile.bbappend&gt; and I want to copy a config file to uboot directory in it!!</td><td class="time"><a href="#t2020-08-09T09:12:22" class="time">09:12</a></td></tr>
+<tr id="t2020-08-09T09:17:19"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">can you help me ?</td><td class="time"><a href="#t2020-08-09T09:17:19" class="time">09:17</a></td></tr>
+<tr id="t2020-08-09T10:02:34"><th class="nick" style="background: #818144">Moh3N</th><td class="text" style="color: #818144">is there any one :)&nbsp;&nbsp;?</td><td class="time"><a href="#t2020-08-09T10:02:34" class="time">10:02</a></td></tr>
+<tr id="t2020-08-09T11:00:34"><td class="action" colspan="2">* paulbarker Moh3N: You'll have better luck on weekdays</td><td><a href="#t2020-08-09T11:00:34" class="time">11:00</a></td></tr>
+<tr id="t2020-08-09T18:23:33"><th class="nick" style="background: #854685">Jebee</th><td class="text" style="color: #854685">Is there any docs on how to create a properly formed patch that could be included in a bbappend file such that it will apply properly? I'm trying to apply a poorly formed vendor supplied patch and I'd like to recreate it so that it follows a proper convention and can just be included in SRC_URI</td><td class="time"><a href="#t2020-08-09T18:23:33" class="time">18:23</a></td></tr>
+<tr id="t2020-08-09T18:42:23"><th class="nick" style="background: #488888">Crofton|cloud</th><td class="text" style="color: #488888">use git format-oatch</td><td class="time"><a href="#t2020-08-09T18:42:23" class="time">18:42</a></td></tr>
+<tr id="t2020-08-09T20:33:15"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-08-09T20:33:15" class="time">20:33</a></td></tr>
+<tr id="t2020-08-09T21:33:49"><th class="nick" style="background: #854685">Jebee</th><td class="text" style="color: #854685">Thanks! this worked really nicely actually. That patch has been giving me trouble for almost a full day now, nicely formatted and fixed. Thanks so much for all the help here, @zeddii too for the git patch fence post assistance yesterday, looking forward to contributing back.</td><td class="time"><a href="#t2020-08-09T21:33:49" class="time">21:33</a></td></tr>
+<tr id="t2020-08-09T22:08:57"><th class="nick" style="background: #854685">Jebee</th><td class="text" style="color: #854685">Is it possible to force do_patch_append and _prepend to not use python, but to run bash?</td><td class="time"><a href="#t2020-08-09T22:08:57" class="time">22:08</a></td></tr>
+<tr id="t2020-08-09T22:16:59"><th class="nick" style="background: #854685">Jebee</th><td class="text" style="color: #854685">Or possibly a way to disable quilt for a recipie?</td><td class="time"><a href="#t2020-08-09T22:16:59" class="time">22:16</a></td></tr>
+<tr id="t2020-08-09T23:47:54"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-08-09T23:47:54" class="time">23:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-08-08.log.html">&#171; Saturday, 2020-08-08</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-10.log.html">Monday, 2020-08-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
