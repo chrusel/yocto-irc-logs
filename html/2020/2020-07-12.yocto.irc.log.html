@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-07-12</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-07-12</h1>
+<div class="navigation"> <a href="%23yocto.2020-07-11.log.html">&#171; Saturday, 2020-07-11</a> <a href="index.html">Index</a> <a href="%23yocto.2020-07-13.log.html">Monday, 2020-07-13 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-07-12T01:08:05"><th class="nick" style="background: #407a40">splatch</th><td class="text" style="color: #407a40">hey, a quite basic question - how to get certain modules loaded or compiled into kernel. I have a need to pull in can + gs_usb into my build. These are rather not popular parts so I can't source anything useful around github. I've added KERNEL_MODULE_AUTOLOAD but I still can't find kernel module packages. Could you please point me how packages are split for bundled kernel modules?</td><td class="time"><a href="#t2020-07-12T01:08:05" class="time">01:08</a></td></tr>
+<tr id="t2020-07-12T01:11:38"><th class="nick" style="background: #407a40">splatch</th><td class="text" style="color: #407a40">I do have two builds, one is based on meta-intel and qemu.</td><td class="time"><a href="#t2020-07-12T01:11:38" class="time">01:11</a></td></tr>
+<tr id="t2020-07-12T01:36:42"><th class="nick" style="background: #407a40">splatch</th><td class="text" style="color: #407a40">ok, found it - possible via .cfg file, variables found in KConfig files.</td><td class="time"><a href="#t2020-07-12T01:36:42" class="time">01:36</a></td></tr>
+<tr id="t2020-07-12T06:34:03"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">Hi. How can I build Poky for x86 on a ppc64le host?</td><td class="time"><a href="#t2020-07-12T06:34:03" class="time">06:34</a></td></tr>
+<tr id="t2020-07-12T06:34:14"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">bitbake uninative-tarball</td><td class="time"><a href="#t2020-07-12T06:34:14" class="time">06:34</a></td></tr>
+<tr id="t2020-07-12T06:34:37"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e"><a href="https://paste.debian.net/1156088/" rel="nofollow">https://paste.debian.net/1156088/</a></td><td class="time"><a href="#t2020-07-12T06:34:37" class="time">06:34</a></td></tr>
+<tr id="t2020-07-12T07:49:37"><th class="nick" style="background: #818144">OutBackDingo</th><td class="text" style="color: #818144">PaulePanter: try bitbake core-image-minimal</td><td class="time"><a href="#t2020-07-12T07:49:37" class="time">07:49</a></td></tr>
+<tr id="t2020-07-12T07:50:05"><th class="nick" style="background: #818144">OutBackDingo</th><td class="text" style="color: #818144">and pastebin your bblayers and local.conf next time</td><td class="time"><a href="#t2020-07-12T07:50:05" class="time">07:50</a></td></tr>
+<tr id="t2020-07-12T07:50:19"><th class="nick" style="background: #818144">OutBackDingo</th><td class="text" style="color: #818144">itll help others also determine areas of error</td><td class="time"><a href="#t2020-07-12T07:50:19" class="time">07:50</a></td></tr>
+<tr id="t2020-07-12T08:12:21"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">OutBackDingo: Thank you. I am using the default.</td><td class="time"><a href="#t2020-07-12T08:12:21" class="time">08:12</a></td></tr>
+<tr id="t2020-07-12T08:12:23"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">*defaults</td><td class="time"><a href="#t2020-07-12T08:12:23" class="time">08:12</a></td></tr>
+<tr id="t2020-07-12T08:12:24"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e"><a href="https://paste.debian.net/1156091/" rel="nofollow">https://paste.debian.net/1156091/</a></td><td class="time"><a href="#t2020-07-12T08:12:24" class="time">08:12</a></td></tr>
+<tr id="t2020-07-12T08:12:41"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">*poky(?) defaults</td><td class="time"><a href="#t2020-07-12T08:12:41" class="time">08:12</a></td></tr>
+<tr id="t2020-07-12T08:17:22"><th class="nick" style="background: #818144">OutBackDingo</th><td class="text" style="color: #818144">PaulePanter: maybe see <a href="https://github.com/openbmc/openbmc/issues/500" rel="nofollow">https://github.com/openbmc/openbmc/issues/500</a> scroll all the way to the bottom</td><td class="time"><a href="#t2020-07-12T08:17:22" class="time">08:17</a></td></tr>
+<tr id="t2020-07-12T08:17:55"><th class="nick" style="background: #818144">OutBackDingo</th><td class="text" style="color: #818144"> adamliyi commented on Mar 15, 2017</td><td class="time"><a href="#t2020-07-12T08:17:55" class="time">08:17</a></td></tr>
+<tr id="t2020-07-12T08:46:49"><th class="nick" style="background: #42427e">PaulePanter</th><td class="text" style="color: #42427e">OutBackDingo: Thank you. Editing `meta-poky/conf/distro/poky.conf`~ helped.</td><td class="time"><a href="#t2020-07-12T08:46:49" class="time">08:46</a></td></tr>
+<tr id="t2020-07-12T11:14:10"><th class="nick" style="background: #854685">lev39</th><td class="text" style="color: #854685">Hi, I am building poky 2.7.1. I copy pasted SSSTATE_MIRROR from the documentation,</td><td class="time"><a href="#t2020-07-12T11:14:10" class="time">11:14</a></td></tr>
+<tr id="t2020-07-12T11:14:45"><th class="nick" style="background: #854685">lev39</th><td class="text" style="color: #854685">but bitbake builds all from scartch, all recipes are missed</td><td class="time"><a href="#t2020-07-12T11:14:45" class="time">11:14</a></td></tr>
+<tr id="t2020-07-12T16:18:30"><th class="nick" style="background: #488888">ahadi</th><td class="text" style="color: #488888">Hello, I am fairly new to Yocto and building my custom embedded OS. I have a working setup which creates a Raspberry PI 0 W image and everything is kind of fine. I have a custom `fstab` file which mounts another partition for user data (this partition is not updated). The update mechanism we use is `swupdate`. When I flash the Yocto `wic` file to a SD card the fstab looks correct. When I use `swupdate` to</td><td class="time"><a href="#t2020-07-12T16:18:30" class="time">16:18</a></td></tr>
+<tr id="t2020-07-12T16:18:36"><th class="nick" style="background: #488888">ahadi</th><td class="text" style="color: #488888">update the second partition, the fstab looks like it is not from me.</td><td class="time"><a href="#t2020-07-12T16:18:36" class="time">16:18</a></td></tr>
+<tr id="t2020-07-12T16:18:59"><th class="nick" style="background: #488888">ahadi</th><td class="text" style="color: #488888">Hence all user data is missing until I manually mount the disk. Any idea what could cause this?</td><td class="time"><a href="#t2020-07-12T16:18:59" class="time">16:18</a></td></tr>
+<tr id="t2020-07-12T19:20:20"><th class="nick" style="background: #8c4a4a">BloodSurfer</th><td class="text" style="color: #8c4a4a">heyho guys. Is someone around who have worked with fitimages especially provided by phytec's BSP? I'm trying to copy the generated (and signed) fitimage to the rootfs since /boot is on the same partition as the rest of the fs. Unfortunately I'm completely lost on the convolution of the image generation and phytec's special sauce. Alternatively I'm open for suggestions on how to convince yocto to generate both, a signed barebo</td><td class="time"><a href="#t2020-07-12T19:20:20" class="time">19:20</a></td></tr>
+<tr id="t2020-07-12T19:20:20-2"><th class="nick" style="background: #8c4a4a">BloodSurfer</th><td class="text" style="color: #8c4a4a">x which will verify the signature of a fitimage and the fitimage itself.</td><td class="time"><a href="#t2020-07-12T19:20:20-2" class="time">19:20</a></td></tr>
+<tr id="t2020-07-12T21:49:02"><th class="nick" style="background: #4b904b">RP</th><td class="text" style="color: #4b904b">moto-timo: I had a look at adding jinja2 to buildtools, it needs 15 recipes from meta-python though :(</td><td class="time"><a href="#t2020-07-12T21:49:02" class="time">21:49</a></td></tr>
+<tr id="t2020-07-12T21:53:45"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-07-12T21:53:45" class="time">21:53</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-07-11.log.html">&#171; Saturday, 2020-07-11</a> <a href="index.html">Index</a> <a href="%23yocto.2020-07-13.log.html">Monday, 2020-07-13 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
