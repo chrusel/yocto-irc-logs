@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-08-23</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-08-23</h1>
+<div class="navigation"> <a href="%23yocto.2020-08-22.log.html">&#171; Saturday, 2020-08-22</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-24.log.html">Monday, 2020-08-24 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-08-23T00:41:38"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">RP: I'll diff some configs and see if anything pops up as wrong.</td><td class="time"><a href="#t2020-08-23T00:41:38" class="time">00:41</a></td></tr>
+<tr id="t2020-08-23T02:58:43"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">RP: the only NFS config difference that shows between 5.4 and 5.8 is: <a href="https://pastebin.com/R5kPksAY" rel="nofollow">https://pastebin.com/R5kPksAY</a></td><td class="time"><a href="#t2020-08-23T02:58:43" class="time">02:58</a></td></tr>
+<tr id="t2020-08-23T02:59:21"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">if the NFS is over UDP that could explain it. I'll dig more on Sunday to see why it has changed, might be a missing dependency</td><td class="time"><a href="#t2020-08-23T02:59:21" class="time">02:59</a></td></tr>
+<tr id="t2020-08-23T03:06:19"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">khem: your warning is fixed. I'll send the fix on Monday</td><td class="time"><a href="#t2020-08-23T03:06:19" class="time">03:06</a></td></tr>
+<tr id="t2020-08-23T03:06:24"><td class="action" colspan="2">* zeddii heads off</td><td><a href="#t2020-08-23T03:06:24" class="time">03:06</a></td></tr>
+<tr id="t2020-08-23T07:25:22"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">Hi, I'm getting a strange error with bitbake (building an Angstromg Linux) and I'm not able to get the root of the issue.</td><td class="time"><a href="#t2020-08-23T07:25:22" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:22-2"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">There is a fatal error in a python subprocess call which gives me also a kenel log entry</td><td class="time"><a href="#t2020-08-23T07:25:22-2" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:22-3"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">`audit: type=1326 audit(1598166107.216:5): auid=4294967295 uid=1000 gid=1000 ses=4294967295 subj=kernel pid=25453 comm=&quot;file&quot; exe=&quot;/usr/bin/file&quot; sig=31 arch=c000003e syscall=41 compat=0 ip=0x7f1477bb85b7 code=0x0`.</td><td class="time"><a href="#t2020-08-23T07:25:22-3" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:32"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">The bitbake error is the following: `ERROR: base-files-3.0.14-r89 do_package: Fatal errors occurred in subprocesses: Command '['file', '-b', '/..../work/cyclone5-angstrom-linux-gnueabi/base-files/3.0.14-r89/package/etc/skel/.profile'] died with &lt;Signals.SIGSYS: 31&gt;`</td><td class="time"><a href="#t2020-08-23T07:25:32" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:41"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">The traceback is</td><td class="time"><a href="#t2020-08-23T07:25:41" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:41-2"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">File &quot;/..../conf/../layers/openembedded-core/meta/lib/oe/utils.py&quot;, line 276, in run</td><td class="time"><a href="#t2020-08-23T07:25:41-2" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:41-3"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;ret = self._target(*self._args, **self._kwargs)</td><td class="time"><a href="#t2020-08-23T07:25:41-3" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:41-4"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;File &quot;/..../conf/../layers/openembedded-core/meta/lib/oe/package.py&quot;, line 74, in is_elf</td><td class="time"><a href="#t2020-08-23T07:25:41-4" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:41-5"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;result = subprocess.check_output([&quot;file&quot;, &quot;-b&quot;, path], stderr=subprocess.STDOUT).decode(&quot;utf-8&quot;)</td><td class="time"><a href="#t2020-08-23T07:25:41-5" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:42"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;File &quot;/usr/lib/python3.7/subprocess.py&quot;, line 411, in check_output</td><td class="time"><a href="#t2020-08-23T07:25:42" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:44"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;**kwargs).stdout</td><td class="time"><a href="#t2020-08-23T07:25:44" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:46"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;File &quot;/usr/lib/python3.7/subprocess.py&quot;, line 512, in run</td><td class="time"><a href="#t2020-08-23T07:25:46" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:48"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">&nbsp;&nbsp;&nbsp;&nbsp;output=stdout, stderr=stderr)</td><td class="time"><a href="#t2020-08-23T07:25:48" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:52"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">I've created a small python script which does the same subprocess call and it</td><td class="time"><a href="#t2020-08-23T07:25:52" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T07:25:52-2"><th class="nick" style="background: #42427e">feddischson</th><td class="text" style="color: #42427e">works fine, so why could bitbake fail with this simple subprocess call?</td><td class="time"><a href="#t2020-08-23T07:25:52-2" class="time">07:25</a></td></tr>
+<tr id="t2020-08-23T09:48:15"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">feddischson: the environment bitbake runs it under is probably a bit different. Which version of the project is this?</td><td class="time"><a href="#t2020-08-23T09:48:15" class="time">09:48</a></td></tr>
+<tr id="t2020-08-23T09:49:17"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">feddischson: could be pseudo causing problems. Is this a version of file with seccomp enabled?</td><td class="time"><a href="#t2020-08-23T09:49:17" class="time">09:49</a></td></tr>
+<tr id="t2020-08-23T10:16:14"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">One of the workers has some fascinating locked up bitbake server processes. I just can't figure out why. If I leave it, might lose the opportunity to debug :(</td><td class="time"><a href="#t2020-08-23T10:16:14" class="time">10:16</a></td></tr>
+<tr id="t2020-08-23T15:04:57"><td class="nickchange" colspan="2">*** xyz__ is now known as hch_</td><td><a href="#t2020-08-23T15:04:57" class="time">15:04</a></td></tr>
+<tr id="t2020-08-23T15:15:06"><td class="nickchange" colspan="2">*** hch_ is now known as xyz__</td><td><a href="#t2020-08-23T15:15:06" class="time">15:15</a></td></tr>
+<tr id="t2020-08-23T15:15:10"><td class="nickchange" colspan="2">*** xyz__ is now known as hch_</td><td><a href="#t2020-08-23T15:15:10" class="time">15:15</a></td></tr>
+<tr id="t2020-08-23T15:15:12"><td class="nickchange" colspan="2">*** hch_ is now known as xyz__</td><td><a href="#t2020-08-23T15:15:12" class="time">15:15</a></td></tr>
+<tr id="t2020-08-23T15:20:00"><td class="part" colspan="2">*** xyz__ &lt;xyz__!~user1@x4d06dbe9.dyn.telefonica.de&gt; has left #yocto</td><td><a href="#t2020-08-23T15:20:00" class="time">15:20</a></td></tr>
+<tr id="t2020-08-23T16:27:33"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">I don't half hate some of this code :(</td><td class="time"><a href="#t2020-08-23T16:27:33" class="time">16:27</a></td></tr>
+<tr id="t2020-08-23T18:10:30"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-08-23T18:10:30" class="time">18:10</a></td></tr>
+<tr id="t2020-08-23T21:51:24"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-08-23T21:51:24" class="time">21:51</a></td></tr>
+<tr id="t2020-08-23T22:51:44"><td class="part" colspan="2">*** u1106[m] &lt;u1106[m]!u1106frosc@gateway/shell/matrix.org/x-tmdhvkcgeyrbbyup&gt; has left #yocto</td><td><a href="#t2020-08-23T22:51:44" class="time">22:51</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-08-22.log.html">&#171; Saturday, 2020-08-22</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-24.log.html">Monday, 2020-08-24 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
