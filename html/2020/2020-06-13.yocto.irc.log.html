@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-06-13</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-06-13</h1>
+<div class="navigation"> <a href="%23yocto.2020-06-12.log.html">&#171; Friday, 2020-06-12</a> <a href="index.html">Index</a> <a href="%23yocto.2020-06-14.log.html">Sunday, 2020-06-14 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-06-13T06:38:13-2"><td class="nickchange" colspan="2">*** camus1 is now known as kaspter</td><td><a href="#t2020-06-13T06:38:13-2" class="time">06:38</a></td></tr>
+<tr id="t2020-06-13T09:48:39"><th class="nick" style="background: #407a40">kriive</th><td class="text" style="color: #407a40">Hi guys, I am evaluating meta-updater and Yocto needs Java on the host machine. Since I am building inside a CROPS container I made a little modification and derived a custom image installing Java in the CROPS container</td><td class="time"><a href="#t2020-06-13T09:48:39" class="time">09:48</a></td></tr>
+<tr id="t2020-06-13T09:49:15"><th class="nick" style="background: #407a40">kriive</th><td class="text" style="color: #407a40">But, still, Yocto (meta-updater really) complains that it cannot find Java on my machine, what am I doing wrong?</td><td class="time"><a href="#t2020-06-13T09:49:15" class="time">09:49</a></td></tr>
+<tr id="t2020-06-13T09:51:46"><th class="nick" style="background: #407a40">kriive</th><td class="text" style="color: #407a40">Do I need to change things in environment also? I printed the $PATH variable just before the error occurred and there's a lot of Yocto related paths and no signs of /usr/bin and standard paths usually found in $PATH (I guess it's because host contamination and stuff like that)</td><td class="time"><a href="#t2020-06-13T09:51:46" class="time">09:51</a></td></tr>
+<tr id="t2020-06-13T09:58:54"><th class="nick" style="background: #407a40">kriive</th><td class="text" style="color: #407a40">Ok, HOSTTOOLS came in rescue</td><td class="time"><a href="#t2020-06-13T09:58:54" class="time">09:58</a></td></tr>
+<tr id="t2020-06-13T11:42:09"><td class="part" colspan="2">*** ayaka &lt;ayaka!~ayaka@103.42.215.143&gt; has left #yocto</td><td><a href="#t2020-06-13T11:42:09" class="time">11:42</a></td></tr>
+<tr id="t2020-06-13T11:50:36"><th class="nick" style="background: #42427e">holagvk</th><td class="text" style="color: #42427e">Hi,</td><td class="time"><a href="#t2020-06-13T11:50:36" class="time">11:50</a></td></tr>
+<tr id="t2020-06-13T16:36:51"><th class="nick" style="background: #818144">gonkulator</th><td class="text" style="color: #818144">LocutusOfBorg: Michael?</td><td class="time"><a href="#t2020-06-13T16:36:51" class="time">16:36</a></td></tr>
+<tr id="t2020-06-13T17:13:27"><td class="nickchange" colspan="2">*** pbb_ is now known as pbb</td><td><a href="#t2020-06-13T17:13:27" class="time">17:13</a></td></tr>
+<tr id="t2020-06-13T17:15:23"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">paulbarker: looks promising, failures but not from your patch</td><td class="time"><a href="#t2020-06-13T17:15:23" class="time">17:15</a></td></tr>
+<tr id="t2020-06-13T17:58:05"><th class="nick" style="background: #488888">PaowZ</th><td class="text" style="color: #488888">hi there ! I'm new to yocto and having an issue building some sources that require usb.h.. though, I can't find the package that would fit for DEPENDS var.. any clue ?</td><td class="time"><a href="#t2020-06-13T17:58:05" class="time">17:58</a></td></tr>
+<tr id="t2020-06-13T19:15:18-2"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-06-13T19:15:18-2" class="time">19:15</a></td></tr>
+<tr id="t2020-06-13T19:48:22"><th class="nick" style="background: #8c4a4a">Letothe2nd</th><td class="text" style="color: #8c4a4a">PaowZ: &quot;usb.h&quot; is very generic, many things can provide a header like that. usually, the configure/build scripts of the sources in question give some ideas what the dependencies are, as well as the full include path. maybe there actually is noted &lt;libusb/usb.h&gt; or such?</td><td class="time"><a href="#t2020-06-13T19:48:22" class="time">19:48</a></td></tr>
+<tr id="t2020-06-13T19:49:33"><th class="nick" style="background: #8c4a4a">Letothe2nd</th><td class="text" style="color: #8c4a4a">PaowZ: this comes to mind, obviously: <a href="http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-support/libusb/libusb1_1.0.23.bb?h=master" rel="nofollow">http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-support/libusb/libusb1_1.0.23.bb?h=master</a></td><td class="time"><a href="#t2020-06-13T19:49:33" class="time">19:49</a></td></tr>
+<tr id="t2020-06-13T21:21:49-2"><td class="nickchange" colspan="2">*** gurmble is now known as grumble</td><td><a href="#t2020-06-13T21:21:49-2" class="time">21:21</a></td></tr>
+<tr id="t2020-06-13T21:45:10"><th class="nick" style="background: #4b904b">LocutusOfBorg</th><td class="text" style="color: #4b904b">gonkulator, what?</td><td class="time"><a href="#t2020-06-13T21:45:10" class="time">21:45</a></td></tr>
+<tr id="t2020-06-13T21:46:55"><th class="nick" style="background: #488888">PaowZ</th><td class="text" style="color: #488888">Letothe2nd: thanks for the link.. I've had actually added libusb1 to my DEPENDS var, without any success..</td><td class="time"><a href="#t2020-06-13T21:46:55" class="time">21:46</a></td></tr>
+<tr id="t2020-06-13T21:47:24"><th class="nick" style="background: #488888">PaowZ</th><td class="text" style="color: #488888">Letothe2nd: ..and yes, I was indeed talking about libusb :)</td><td class="time"><a href="#t2020-06-13T21:47:24" class="time">21:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-06-12.log.html">&#171; Friday, 2020-06-12</a> <a href="index.html">Index</a> <a href="%23yocto.2020-06-14.log.html">Sunday, 2020-06-14 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
