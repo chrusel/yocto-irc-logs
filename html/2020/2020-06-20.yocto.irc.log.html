@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-06-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-06-20</h1>
+<div class="navigation"> <a href="%23yocto.2020-06-19.log.html">&#171; Friday, 2020-06-19</a> <a href="index.html">Index</a> <a href="%23yocto.2020-06-21.log.html">Sunday, 2020-06-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-06-20T06:02:02-2"><td class="nickchange" colspan="2">*** camus1 is now known as kaspter</td><td><a href="#t2020-06-20T06:02:02-2" class="time">06:02</a></td></tr>
+<tr id="t2020-06-20T09:05:10"><th class="nick" style="background: #407a40">PaowZ</th><td class="text" style="color: #407a40">khem: sorry, I didn't catch your first line about that.. had to rewind back in IRC log.. thks !</td><td class="time"><a href="#t2020-06-20T09:05:10" class="time">09:05</a></td></tr>
+<tr id="t2020-06-20T11:29:41"><td class="nickchange" colspan="2">*** camus1 is now known as kaspter</td><td><a href="#t2020-06-20T11:29:41" class="time">11:29</a></td></tr>
+<tr id="t2020-06-20T12:26:49"><th class="nick" style="background: #407a40">PaowZ</th><td class="text" style="color: #407a40">seems like I broke something..runqemu - ERROR - Native sysroot directory /home/vince/dev/poky/build/tmp/work/x86_64-linux/qemu-helper-native/1.0-r1/recipe-sysroot-native/usr/bin doesn't exist</td><td class="time"><a href="#t2020-06-20T12:26:49" class="time">12:26</a></td></tr>
+<tr id="t2020-06-20T18:42:59"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">halstead: NOTE: Uploading the report /home/jenkins/oe/world/yoe/build/tmpfs/log/error-report/error_report_20200620000725.txt to errors.yoctoproject.org:80</td><td class="time"><a href="#t2020-06-20T18:42:59" class="time">18:42</a></td></tr>
+<tr id="t2020-06-20T18:43:01"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">WARNING: There was a problem submiting your data: HTTP Error 500: INTERNAL SERVER ERROR</td><td class="time"><a href="#t2020-06-20T18:43:01" class="time">18:43</a></td></tr>
+<tr id="t2020-06-20T18:44:06"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">khem, thanks for the report. That one has been difficult to reproduce.</td><td class="time"><a href="#t2020-06-20T18:44:06" class="time">18:44</a></td></tr>
+<tr id="t2020-06-20T18:55:45"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I am seeing it all around my servers</td><td class="time"><a href="#t2020-06-20T18:55:45" class="time">18:55</a></td></tr>
+<tr id="t2020-06-20T18:55:59"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">they are not AB nodes</td><td class="time"><a href="#t2020-06-20T18:55:59" class="time">18:55</a></td></tr>
+<tr id="t2020-06-20T19:05:59"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">Yes this will effect any server submitting error reports. I believe slow DB queries are causing timeouts.</td><td class="time"><a href="#t2020-06-20T19:05:59" class="time">19:05</a></td></tr>
+<tr id="t2020-06-20T19:25:16"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">halstead: do we periodically clean the old entries</td><td class="time"><a href="#t2020-06-20T19:25:16" class="time">19:25</a></td></tr>
+<tr id="t2020-06-20T19:27:54"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">khem: there is a script that deletes all entities older than 90 days unless they're referenced by bugzilla.</td><td class="time"><a href="#t2020-06-20T19:27:54" class="time">19:27</a></td></tr>
+<tr id="t2020-06-20T19:38:20"><th class="nick" style="background: #854685">beo38</th><td class="text" style="color: #854685">hi</td><td class="time"><a href="#t2020-06-20T19:38:20" class="time">19:38</a></td></tr>
+<tr id="t2020-06-20T19:38:58"><th class="nick" style="background: #854685">beo38</th><td class="text" style="color: #854685">why does mu console prints every change in build progress during bitbake commands into a new line</td><td class="time"><a href="#t2020-06-20T19:38:58" class="time">19:38</a></td></tr>
+<tr id="t2020-06-20T19:39:09"><th class="nick" style="background: #854685">beo38</th><td class="text" style="color: #854685">instead of updating one line</td><td class="time"><a href="#t2020-06-20T19:39:09" class="time">19:39</a></td></tr>
+<tr id="t2020-06-20T19:39:14"><th class="nick" style="background: #854685">beo38</th><td class="text" style="color: #854685">any idea?</td><td class="time"><a href="#t2020-06-20T19:39:14" class="time">19:39</a></td></tr>
+<tr id="t2020-06-20T19:40:50"><th class="nick" style="background: #854685">beo38</th><td class="text" style="color: #854685">=L</td><td class="time"><a href="#t2020-06-20T19:40:50" class="time">19:40</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-06-19.log.html">&#171; Friday, 2020-06-19</a> <a href="index.html">Index</a> <a href="%23yocto.2020-06-21.log.html">Sunday, 2020-06-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
