@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-08-22</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-08-22</h1>
+<div class="navigation"> <a href="%23yocto.2020-08-21.log.html">&#171; Friday, 2020-08-21</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-23.log.html">Sunday, 2020-08-23 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-08-22T00:05:36"><th class="nick" style="background: #407a40">armpit</th><td class="text" style="color: #407a40">zeddii, tell'em to send a patch ; )</td><td class="time"><a href="#t2020-08-22T00:05:36" class="time">00:05</a></td></tr>
+<tr id="t2020-08-22T01:25:07"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">khem. as I mentioned .. when I cloned your distro, it doesn't even have the 5.8 bits active on master. so I need the instructions on how to reproduce it.</td><td class="time"><a href="#t2020-08-22T01:25:07" class="time">01:25</a></td></tr>
+<tr id="t2020-08-22T01:25:20"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">oe-core itself, doesn't have the warning</td><td class="time"><a href="#t2020-08-22T01:25:20" class="time">01:25</a></td></tr>
+<tr id="t2020-08-22T01:27:44"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">build2 [~/yoe]&gt; git branch</td><td class="time"><a href="#t2020-08-22T01:27:44" class="time">01:27</a></td></tr>
+<tr id="t2020-08-22T01:27:44-2"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">* master</td><td class="time"><a href="#t2020-08-22T01:27:44-2" class="time">01:27</a></td></tr>
+<tr id="t2020-08-22T01:27:44-3"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">build2 [~/yoe]&gt; find . -name '*linux-yocto*5.8*'</td><td class="time"><a href="#t2020-08-22T01:27:44-3" class="time">01:27</a></td></tr>
+<tr id="t2020-08-22T02:09:23"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">zeddii: git clone --recurse-submodules -j8 -b yoe/mut</td><td class="time"><a href="#t2020-08-22T02:09:23" class="time">02:09</a></td></tr>
+<tr id="t2020-08-22T02:09:48"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">master-next changes are in yoe/mut branch</td><td class="time"><a href="#t2020-08-22T02:09:48" class="time">02:09</a></td></tr>
+<tr id="t2020-08-22T02:18:06"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">aha. doing that now. Will fix it over the weekend. thanks!</td><td class="time"><a href="#t2020-08-22T02:18:06" class="time">02:18</a></td></tr>
+<tr id="t2020-08-22T04:24:05-2"><td class="nickchange" colspan="2">*** dagmcr_ is now known as dagmcr</td><td><a href="#t2020-08-22T04:24:05-2" class="time">04:24</a></td></tr>
+<tr id="t2020-08-22T04:24:28"><td class="nickchange" colspan="2">*** rsalveti_ is now known as rsalveti</td><td><a href="#t2020-08-22T04:24:28" class="time">04:24</a></td></tr>
+<tr id="t2020-08-22T08:57:01"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii: think 5.8 for qemu threw a couple of errors. Trying to confirm in the current build</td><td class="time"><a href="#t2020-08-22T08:57:01" class="time">08:57</a></td></tr>
+<tr id="t2020-08-22T08:57:45"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/59/builds/2330" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/59/builds/2330</a> - missing fs type? and <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/79/builds/1272" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/79/builds/1272</a> - gl/drm config missing?</td><td class="time"><a href="#t2020-08-22T08:57:45" class="time">08:57</a></td></tr>
+<tr id="t2020-08-22T10:35:10"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">RP: &quot;AssertionError: 'virgl 3d acceleration enabled' not found in '[&nbsp;&nbsp;&nbsp;&nbsp;1.073737] [drm] features: +virgl +edid'&quot;</td><td class="time"><a href="#t2020-08-22T10:35:10" class="time">10:35</a></td></tr>
+<tr id="t2020-08-22T10:35:43"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">RP: to me looks like 5.8 changed the printout format for virgl support, and the assert in the test needs to be adjusted?</td><td class="time"><a href="#t2020-08-22T10:35:43" class="time">10:35</a></td></tr>
+<tr id="t2020-08-22T11:05:07"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: that could be it!</td><td class="time"><a href="#t2020-08-22T11:05:07" class="time">11:05</a></td></tr>
+<tr id="t2020-08-22T14:52:28"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: if you have a few minutes for a patch that would be really useful. I'm going to try and stay more away from the computer now I have the immediate backlog of stuff that was bothering me sorted out</td><td class="time"><a href="#t2020-08-22T14:52:28" class="time">14:52</a></td></tr>
+<tr id="t2020-08-22T16:14:06"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">RP: I'll have a look!</td><td class="time"><a href="#t2020-08-22T16:14:06" class="time">16:14</a></td></tr>
+<tr id="t2020-08-22T16:18:39"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">RP: did that same error throw for all 5.8 builds, or</td><td class="time"><a href="#t2020-08-22T16:18:39" class="time">16:18</a></td></tr>
+<tr id="t2020-08-22T16:18:45"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">grr. too early enter</td><td class="time"><a href="#t2020-08-22T16:18:45" class="time">16:18</a></td></tr>
+<tr id="t2020-08-22T16:19:08"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">I meant to say, did that NFS error only trigger for x86-32 or was it all the 5.8 builds ? I wasn't able to see it locally.</td><td class="time"><a href="#t2020-08-22T16:19:08" class="time">16:19</a></td></tr>
+<tr id="t2020-08-22T16:23:15"><th class="nick" style="background: #42427e">zeddii</th><td class="text" style="color: #42427e">looking at the build, I see only the x86-32. I wonder what they busted with NFS. I'll have a closer look later.</td><td class="time"><a href="#t2020-08-22T16:23:15" class="time">16:23</a></td></tr>
+<tr id="t2020-08-22T17:00:17"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">RP: yes, sure</td><td class="time"><a href="#t2020-08-22T17:00:17" class="time">17:00</a></td></tr>
+<tr id="t2020-08-22T17:58:31"><th class="nick" style="background: #488888">kanavin_home</th><td class="text" style="color: #488888">RP: done</td><td class="time"><a href="#t2020-08-22T17:58:31" class="time">17:58</a></td></tr>
+<tr id="t2020-08-22T18:06:44"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii: it was qemux86 and qemux86-64, its during the toolchain tests which makes me suspect something NFS like</td><td class="time"><a href="#t2020-08-22T18:06:44" class="time">18:06</a></td></tr>
+<tr id="t2020-08-22T18:06:54"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: thanks, much appreciated!</td><td class="time"><a href="#t2020-08-22T18:06:54" class="time">18:06</a></td></tr>
+<tr id="t2020-08-22T18:07:28"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zeddii: it doesn't look bust, more just missing</td><td class="time"><a href="#t2020-08-22T18:07:28" class="time">18:07</a></td></tr>
+<tr id="t2020-08-22T22:25:06"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-08-22T22:25:06" class="time">22:25</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-08-21.log.html">&#171; Friday, 2020-08-21</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-23.log.html">Sunday, 2020-08-23 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
