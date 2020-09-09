@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-08-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-08-02</h1>
+<div class="navigation"> <a href="%23yocto.2020-08-01.log.html">&#171; Saturday, 2020-08-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-03.log.html">Monday, 2020-08-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-08-02T05:34:32"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP: we are not alone see <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964605" rel="nofollow">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964605</a></td><td class="time"><a href="#t2020-08-02T05:34:32" class="time">05:34</a></td></tr>
+<tr id="t2020-08-02T05:45:43"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">zeddii: Can you backport <a href="https://github.com/torvalds/linux/commit/39efdd94e314336f4acbac4c07e0f37bdc3bef71" rel="nofollow">https://github.com/torvalds/linux/commit/39efdd94e314336f4acbac4c07e0f37bdc3bef71</a> to kernels in oe-core master please ?</td><td class="time"><a href="#t2020-08-02T05:45:43" class="time">05:45</a></td></tr>
+<tr id="t2020-08-02T05:46:04"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">zeddii: we need this for binutils 2.35 upgrade to get perf building</td><td class="time"><a href="#t2020-08-02T05:46:04" class="time">05:46</a></td></tr>
+<tr id="t2020-08-02T12:31:09"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">hi i have a recipe which natively builds fine but when I try to cross compile i am getting try using -rpath or -rpath-link error</td><td class="time"><a href="#t2020-08-02T12:31:09" class="time">12:31</a></td></tr>
+<tr id="t2020-08-02T12:31:54"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">i have compared the two compile logs and i can see that natively there are rpath and rpath-link set but no in the cross compile version - is this my issue?</td><td class="time"><a href="#t2020-08-02T12:31:54" class="time">12:31</a></td></tr>
+<tr id="t2020-08-02T14:48:22"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">usually you point -rpath-link during cross compile and point it at path into staging sysroot dir</td><td class="time"><a href="#t2020-08-02T14:48:22" class="time">14:48</a></td></tr>
+<tr id="t2020-08-02T14:48:44"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">usually, rpath is not used in yocto builds</td><td class="time"><a href="#t2020-08-02T14:48:44" class="time">14:48</a></td></tr>
+<tr id="t2020-08-02T14:48:50"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">you can also nullify them</td><td class="time"><a href="#t2020-08-02T14:48:50" class="time">14:48</a></td></tr>
+<tr id="t2020-08-02T14:52:32"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">khem &gt; what variable would i set in the recipe to have -rpath-link point to the correct path?</td><td class="time"><a href="#t2020-08-02T14:52:32" class="time">14:52</a></td></tr>
+<tr id="t2020-08-02T14:56:44"><td class="nickchange" colspan="2">*** faxe is now known as Guest5823</td><td><a href="#t2020-08-02T14:56:44" class="time">14:56</a></td></tr>
+<tr id="t2020-08-02T15:12:19"><th class="nick" style="background: #818144">Guest5823</th><td class="text" style="color: #818144">Hi, when using wic create I get ENOSPC error, despite there being 20GB left on my drive. Any advice?</td><td class="time"><a href="#t2020-08-02T15:12:19" class="time">15:12</a></td></tr>
+<tr id="t2020-08-02T16:40:21"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">so the shared library which causes issues when cross compiling is in the recipe-sysroot-native but not the recipe-sysroot?</td><td class="time"><a href="#t2020-08-02T16:40:21" class="time">16:40</a></td></tr>
+<tr id="t2020-08-02T16:40:35-2"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-08-02T16:40:35-2" class="time">16:40</a></td></tr>
+<tr id="t2020-08-02T16:41:48"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">why would this be?</td><td class="time"><a href="#t2020-08-02T16:41:48" class="time">16:41</a></td></tr>
+<tr id="t2020-08-02T16:51:28"><th class="nick" style="background: #854685">kanavin_home</th><td class="text" style="color: #854685">RP rburton I am back in Berlin :)</td><td class="time"><a href="#t2020-08-02T16:51:28" class="time">16:51</a></td></tr>
+<tr id="t2020-08-02T17:01:06"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">elcfd: you might try something like LDFLAGS += &quot;-Wl,-rpath-link,${STAGING_LIBDIR} -Wl,-rpath,${libdir}&quot;</td><td class="time"><a href="#t2020-08-02T17:01:06" class="time">17:01</a></td></tr>
+<tr id="t2020-08-02T17:03:30"><td class="action" colspan="2">* armpit enjoyed Berlin</td><td><a href="#t2020-08-02T17:03:30" class="time">17:03</a></td></tr>
+<tr id="t2020-08-02T17:21:04"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">khem &gt; thanks - but the issue is that the shared library is not in the recipe-sysroot under /usr/lib</td><td class="time"><a href="#t2020-08-02T17:21:04" class="time">17:21</a></td></tr>
+<tr id="t2020-08-02T17:21:35"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">however natively it is. Why would there be this difference?</td><td class="time"><a href="#t2020-08-02T17:21:35" class="time">17:21</a></td></tr>
+<tr id="t2020-08-02T17:21:59"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">perhaps its missing in your dependencies in recipes in DEPENDS</td><td class="time"><a href="#t2020-08-02T17:21:59" class="time">17:21</a></td></tr>
+<tr id="t2020-08-02T17:22:54"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">i thought that but the library is bundled under the project</td><td class="time"><a href="#t2020-08-02T17:22:54" class="time">17:22</a></td></tr>
+<tr id="t2020-08-02T17:24:22"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">its just a folder inside the project source</td><td class="time"><a href="#t2020-08-02T17:24:22" class="time">17:24</a></td></tr>
+<tr id="t2020-08-02T17:26:27"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">its an autotools recipe</td><td class="time"><a href="#t2020-08-02T17:26:27" class="time">17:26</a></td></tr>
+<tr id="t2020-08-02T17:43:20"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">elcfd: you have few ways, one is to write a separate recipe for library and dep on it second is to use -L flags to point linker in right directories where this lib is to be found during build and in do_install put this library in regular ${libdir} location on target this way you can avoid rpath stuff completely</td><td class="time"><a href="#t2020-08-02T17:43:20" class="time">17:43</a></td></tr>
+<tr id="t2020-08-02T17:44:07"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">unless you find that its encapsulating a third party library which is commonly available on systems for whatever reason</td><td class="time"><a href="#t2020-08-02T17:44:07" class="time">17:44</a></td></tr>
+<tr id="t2020-08-02T17:47:41"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">khem &gt; ok will give that a go. unfortunately not - would be much simpler if that was the case! why is there different behaviour when compiling natively?</td><td class="time"><a href="#t2020-08-02T17:47:41" class="time">17:47</a></td></tr>
+<tr id="t2020-08-02T17:58:16"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">native is very different since rpath does not respect sysroots which makes it hard to tame for cross compiling</td><td class="time"><a href="#t2020-08-02T17:58:16" class="time">17:58</a></td></tr>
+<tr id="t2020-08-02T18:19:36"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">khem &gt; thanks for the help</td><td class="time"><a href="#t2020-08-02T18:19:36" class="time">18:19</a></td></tr>
+<tr id="t2020-08-02T20:27:08"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2020-08-02T20:27:08" class="time">20:27</a></td></tr>
+<tr id="t2020-08-02T22:58:07"><th class="nick" style="background: #42427e">elcfd</th><td class="text" style="color: #42427e">quit</td><td class="time"><a href="#t2020-08-02T22:58:07" class="time">22:58</a></td></tr>
+<tr id="t2020-08-02T22:58:47"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">zeddii: the autobuilder was looking quite healthy!</td><td class="time"><a href="#t2020-08-02T22:58:47" class="time">22:58</a></td></tr>
+<tr id="t2020-08-02T22:59:27"><th class="nick" style="background: #8c4a4a">zeddii</th><td class="text" style="color: #8c4a4a">heh. I had a bad rebase in my test series and it blew up nicely.</td><td class="time"><a href="#t2020-08-02T22:59:27" class="time">22:59</a></td></tr>
+<tr id="t2020-08-02T22:59:40"><th class="nick" style="background: #8c4a4a">zeddii</th><td class="text" style="color: #8c4a4a">now, I'm building everything, but my improved tooling is finding warnings.</td><td class="time"><a href="#t2020-08-02T22:59:40" class="time">22:59</a></td></tr>
+<tr id="t2020-08-02T22:59:46"><th class="nick" style="background: #8c4a4a">zeddii</th><td class="text" style="color: #8c4a4a">I don't know if I'm happy or sad about that.</td><td class="time"><a href="#t2020-08-02T22:59:46" class="time">22:59</a></td></tr>
+<tr id="t2020-08-02T22:59:58"><th class="nick" style="background: #8c4a4a">zeddii</th><td class="text" style="color: #8c4a4a">since I can't reproduce them locally, I'm scratching my head :D</td><td class="time"><a href="#t2020-08-02T22:59:58" class="time">22:59</a></td></tr>
+<tr id="t2020-08-02T23:01:43"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">zeddii: I'm going to bed and just not thinking about it ;-)</td><td class="time"><a href="#t2020-08-02T23:01:43" class="time">23:01</a></td></tr>
+<tr id="t2020-08-02T23:02:18"><td class="action" colspan="2">* RP likes build warnings which are someone else's problem for a change! :)</td><td><a href="#t2020-08-02T23:02:18" class="time">23:02</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-08-01.log.html">&#171; Saturday, 2020-08-01</a> <a href="index.html">Index</a> <a href="%23yocto.2020-08-03.log.html">Monday, 2020-08-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
