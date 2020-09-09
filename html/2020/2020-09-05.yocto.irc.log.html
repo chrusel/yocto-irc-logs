@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-09-05</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-09-05</h1>
+<div class="navigation"> <a href="%23yocto.2020-09-04.log.html">&#171; Friday, 2020-09-04</a> <a href="index.html">Index</a> <a href="%23yocto.2020-09-06.log.html">Sunday, 2020-09-06 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-09-05T01:48:19"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T01:48:19" class="time">01:48</a></td></tr>
+<tr id="t2020-09-05T08:27:12"><th class="nick" style="background: #407a40">ikkysleepy</th><td class="text" style="color: #407a40">Anyone know why I am getting an error compiling openjre-8 ? It was working before but after a repo update it fails to compile icedtea7-native_2.1.3, it says checking whether the C compiler works...| checking whether the C compiler works... no , this is ubuntu 16.04 build system to compile for raspberry pi 4&nbsp;&nbsp;hardware.</td><td class="time"><a href="#t2020-09-05T08:27:12" class="time">08:27</a></td></tr>
+<tr id="t2020-09-05T08:39:56"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">@ikkysleepy: I suspect that your host gcc is too old</td><td class="time"><a href="#t2020-09-05T08:39:56" class="time">08:39</a></td></tr>
+<tr id="t2020-09-05T08:40:35"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">@ikkysleepy: UB 16.04 default host gcc is definitely to old</td><td class="time"><a href="#t2020-09-05T08:40:35" class="time">08:40</a></td></tr>
+<tr id="t2020-09-05T08:41:47"><th class="nick" style="background: #407a40">ikkysleepy</th><td class="text" style="color: #407a40">ah, yeah I was just looking into that, it says it's gcc 5.4, i'll try to update it to version 8 I think is what zeus default to now...?</td><td class="time"><a href="#t2020-09-05T08:41:47" class="time">08:41</a></td></tr>
+<tr id="t2020-09-05T08:44:21"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">You can also update the compiler</td><td class="time"><a href="#t2020-09-05T08:44:21" class="time">08:44</a></td></tr>
+<tr id="t2020-09-05T08:44:46"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">Or even better - use a build container, so you don't need to update the OS</td><td class="time"><a href="#t2020-09-05T08:44:46" class="time">08:44</a></td></tr>
+<tr id="t2020-09-05T08:45:41"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">There are ready made build containers (e.g. docker) you can use as well - I would have one for you if you are interested which works with meta-java ;)</td><td class="time"><a href="#t2020-09-05T08:45:41" class="time">08:45</a></td></tr>
+<tr id="t2020-09-05T08:46:25"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">I have both UB16 with a newer host gcc and UB18 where (I think) this is not needed anymore</td><td class="time"><a href="#t2020-09-05T08:46:25" class="time">08:46</a></td></tr>
+<tr id="t2020-09-05T08:48:23"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">What I use currently is UB18 with a gcc9: <a href="https://github.com/RobertBerger/poky-container/blob/2020-07-26-master-local-gcc-9-gui-ub18/Dockerfile" rel="nofollow">https://github.com/RobertBerger/poky-container/blob/2020-07-26-master-local-gcc-9-gui-ub18/Dockerfile</a></td><td class="time"><a href="#t2020-09-05T08:48:23" class="time">08:48</a></td></tr>
+<tr id="t2020-09-05T08:49:02"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">So in case of trouble just do something like this: <a href="https://github.com/RobertBerger/poky-container/blob/2020-07-26-master-local-gcc-9-gui-ub18/Dockerfile#L63" rel="nofollow">https://github.com/RobertBerger/poky-container/blob/2020-07-26-master-local-gcc-9-gui-ub18/Dockerfile#L63</a></td><td class="time"><a href="#t2020-09-05T08:49:02" class="time">08:49</a></td></tr>
+<tr id="t2020-09-05T08:55:13"><th class="nick" style="background: #407a40">ikkysleepy</th><td class="text" style="color: #407a40">yeah I am running a build on UB18 now, got new errors for GCC8, cc1plus: all warnings being treated as errors, i'll try out the docker script... thanks for your help</td><td class="time"><a href="#t2020-09-05T08:55:13" class="time">08:55</a></td></tr>
+<tr id="t2020-09-05T08:55:57"><th class="nick" style="background: #407a40">ikkysleepy</th><td class="text" style="color: #407a40">The error was on U16 that I upgraded to GCC8 , but yeah that seems to be the problem I was having</td><td class="time"><a href="#t2020-09-05T08:55:57" class="time">08:55</a></td></tr>
+<tr id="t2020-09-05T09:21:07"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">Just use the commands starting from L63 on your UB 18 and it should work</td><td class="time"><a href="#t2020-09-05T09:21:07" class="time">09:21</a></td></tr>
+<tr id="t2020-09-05T09:21:15"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">Hmm</td><td class="time"><a href="#t2020-09-05T09:21:15" class="time">09:21</a></td></tr>
+<tr id="t2020-09-05T09:21:30"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">Which meta-java branch do you use?</td><td class="time"><a href="#t2020-09-05T09:21:30" class="time">09:21</a></td></tr>
+<tr id="t2020-09-05T09:23:15"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">Which yocto version? zeus?</td><td class="time"><a href="#t2020-09-05T09:23:15" class="time">09:23</a></td></tr>
+<tr id="t2020-09-05T09:28:17"><th class="nick" style="background: #407a40">ikkysleepy</th><td class="text" style="color: #407a40">yeah zeus, yeah waiting on the new UB 18 build to finish so in a few hours i'll know if it worked.&nbsp;&nbsp;I had another VM with UB16 and warrior but after an update it failed to build.&nbsp;&nbsp;I am getting some errors on this VM after updating GCC to 8 so i'll wait for the UB18, which seems to be the OS to use going forward.</td><td class="time"><a href="#t2020-09-05T09:28:17" class="time">09:28</a></td></tr>
+<tr id="t2020-09-05T09:33:47"><th class="nick" style="background: #818144">zandrey</th><td class="text" style="color: #818144">RP: got it, thanks a lot!</td><td class="time"><a href="#t2020-09-05T09:33:47" class="time">09:33</a></td></tr>
+<tr id="t2020-09-05T10:34:01"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T10:34:01" class="time">10:34</a></td></tr>
+<tr id="t2020-09-05T17:26:47"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T17:26:47" class="time">17:26</a></td></tr>
+<tr id="t2020-09-05T19:04:24"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-09-05T19:04:24" class="time">19:04</a></td></tr>
+<tr id="t2020-09-05T19:57:01"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T19:57:01" class="time">19:57</a></td></tr>
+<tr id="t2020-09-05T21:44:14"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T21:44:14" class="time">21:44</a></td></tr>
+<tr id="t2020-09-05T22:29:27"><td class="nickchange" colspan="2">*** nslu2-log_ is now known as nslu2-log</td><td><a href="#t2020-09-05T22:29:27" class="time">22:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-09-04.log.html">&#171; Friday, 2020-09-04</a> <a href="index.html">Index</a> <a href="%23yocto.2020-09-06.log.html">Sunday, 2020-09-06 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
