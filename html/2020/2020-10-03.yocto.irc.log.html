@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-10-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-10-03</h1>
+<div class="navigation"> <a href="%23yocto.2020-10-02.log.html">&#171; Friday, 2020-10-02</a> <a href="index.html">Index</a> <a href="%23yocto.2020-10-04.log.html">Sunday, 2020-10-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-10-03T00:26:20"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T00:26:20" class="time">00:26</a></td></tr>
+<tr id="t2020-10-03T00:37:02"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T00:37:02" class="time">00:37</a></td></tr>
+<tr id="t2020-10-03T00:41:25"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T00:41:25" class="time">00:41</a></td></tr>
+<tr id="t2020-10-03T00:42:06"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T00:42:06" class="time">00:42</a></td></tr>
+<tr id="t2020-10-03T00:59:20"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T00:59:20" class="time">00:59</a></td></tr>
+<tr id="t2020-10-03T01:00:46"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T01:00:46" class="time">01:00</a></td></tr>
+<tr id="t2020-10-03T01:27:08"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T01:27:08" class="time">01:27</a></td></tr>
+<tr id="t2020-10-03T02:06:04"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T02:06:04" class="time">02:06</a></td></tr>
+<tr id="t2020-10-03T02:09:25"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T02:09:25" class="time">02:09</a></td></tr>
+<tr id="t2020-10-03T02:20:12"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~dmoseley@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T02:20:12" class="time">02:20</a></td></tr>
+<tr id="t2020-10-03T02:35:13"><td class="part" colspan="2">*** dmoseley_ &lt;dmoseley_!~dmoseley@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T02:35:13" class="time">02:35</a></td></tr>
+<tr id="t2020-10-03T05:50:37"><td class="action" colspan="2">* armpit that is weird.. something is setting my perms to root:root in my WORKDIR</td><td><a href="#t2020-10-03T05:50:37" class="time">05:50</a></td></tr>
+<tr id="t2020-10-03T06:53:57"><td class="nickchange" colspan="2">*** Engine[m] is now known as omar[m]</td><td><a href="#t2020-10-03T06:53:57" class="time">06:53</a></td></tr>
+<tr id="t2020-10-03T07:35:25"><th class="nick" style="background: #407a40">RPI_IMX6</th><td class="text" style="color: #407a40">If I build Yocto code for raspberry pi successfully using docker , is there a way to change the setting so I can&nbsp;&nbsp;build code for different processor such as imx6?</td><td class="time"><a href="#t2020-10-03T07:35:25" class="time">07:35</a></td></tr>
+<tr id="t2020-10-03T08:23:21"><th class="nick" style="background: #42427e">rburton</th><td class="text" style="color: #42427e">RPI_IMX6: set MACHINE to the machine you want to use</td><td class="time"><a href="#t2020-10-03T08:23:21" class="time">08:23</a></td></tr>
+<tr id="t2020-10-03T10:34:16"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2020-10-03T10:34:16" class="time">10:34</a></td></tr>
+<tr id="t2020-10-03T11:53:01"><th class="nick" style="background: #818144">maltebaden</th><td class="text" style="color: #818144">Hi guys, complete newbie here. I am working on a IOT device where i would like to switch from a customized raspbian dist, to use a yocto based image. My issue however, is that my current image relies on a provisioning system (saltstack) to configure and set up all required services configuration etc. But this means that I would have to somehow boot the yocto image after building it, and apply the salt states then save the chan</td><td class="time"><a href="#t2020-10-03T11:53:01" class="time">11:53</a></td></tr>
+<tr id="t2020-10-03T11:53:01-2"><th class="nick" style="background: #818144">maltebaden</th><td class="text" style="color: #818144">ges. I am just not sure if that is feasible to incorporate as an after-build step, while also being able to generate a (swu?) file to use with SWUpdate. Does anyone know if the way im trying to do this is possible, or if I need to ditch the current provisioning and implement this in a yocto-layer(?) or something? It would save a ton of time if i could somehow apply the states on the image after building the image. Thanks, and</td><td class="time"><a href="#t2020-10-03T11:53:01-2" class="time">11:53</a></td></tr>
+<tr id="t2020-10-03T11:53:01-3"><th class="nick" style="background: #818144">maltebaden</th><td class="text" style="color: #818144">have a great weekend :)</td><td class="time"><a href="#t2020-10-03T11:53:01-3" class="time">11:53</a></td></tr>
+<tr id="t2020-10-03T14:25:23"><td class="part" colspan="2">*** dmoseley_ &lt;dmoseley_!~dmoseley@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T14:25:23" class="time">14:25</a></td></tr>
+<tr id="t2020-10-03T14:43:12"><td class="part" colspan="2">*** dmoseley_ &lt;dmoseley_!~dmoseley@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-10-03T14:43:12" class="time">14:43</a></td></tr>
+<tr id="t2020-10-03T14:46:26"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2020-10-03T14:46:26" class="time">14:46</a></td></tr>
+<tr id="t2020-10-03T18:48:15"><th class="nick" style="background: #854685">manuel1985</th><td class="text" style="color: #854685">I just got the following error message when trying to build my image: ERROR: Layer meta-manwag is not compatible with the core layer which only supports these series: zeus (layer is compatible with dunfell)</td><td class="time"><a href="#t2020-10-03T18:48:15" class="time">18:48</a></td></tr>
+<tr id="t2020-10-03T18:48:15-2"><th class="nick" style="background: #854685">manuel1985</th><td class="text" style="color: #854685">What is &quot;the core layer&quot;? OpenEmbedded-core?</td><td class="time"><a href="#t2020-10-03T18:48:15-2" class="time">18:48</a></td></tr>
+<tr id="t2020-10-03T20:11:03"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">manuel1985: yes, openembedded-core</td><td class="time"><a href="#t2020-10-03T20:11:03" class="time">20:11</a></td></tr>
+<tr id="t2020-10-03T20:23:49"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">&quot;Exception: OverflowError: cannot serialize a string larger than 4GiB&quot; - that is a new one :)</td><td class="time"><a href="#t2020-10-03T20:23:49" class="time">20:23</a></td></tr>
+<tr id="t2020-10-03T20:45:08"><th class="nick" style="background: #854685">manuel1985</th><td class="text" style="color: #854685">RP: Thanks</td><td class="time"><a href="#t2020-10-03T20:45:08" class="time">20:45</a></td></tr>
+<tr id="t2020-10-03T21:09:30"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-10-03T21:09:30" class="time">21:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-10-02.log.html">&#171; Friday, 2020-10-02</a> <a href="index.html">Index</a> <a href="%23yocto.2020-10-04.log.html">Sunday, 2020-10-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
