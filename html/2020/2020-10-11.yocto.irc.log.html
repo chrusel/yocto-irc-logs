@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-10-11</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-10-11</h1>
+<div class="navigation"> <a href="%23yocto.2020-10-10.log.html">&#171; Saturday, 2020-10-10</a> <a href="index.html">Index</a> <a href="%23yocto.2020-10-12.log.html">Monday, 2020-10-12 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-10-11T04:54:56"><td class="nickchange" colspan="2">*** ric96_ is now known as ric96</td><td><a href="#t2020-10-11T04:54:56" class="time">04:54</a></td></tr>
+<tr id="t2020-10-11T09:52:16"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">tlwoerner: you've always needed to do that. There is an environment variable, CONFIGURE&lt;something like ARGS&gt; if I remember rightly</td><td class="time"><a href="#t2020-10-11T09:52:16" class="time">09:52</a></td></tr>
+<tr id="t2020-10-11T10:42:05"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e">Hi! I'm new to Yocto. I can already write recipes fluently, but don't know about layertool, devtool, and such. What is the &quot;right&quot; way to search for recipes? I always used `find &lt;dir&gt; -type f -iname &quot;*package.bb&quot;`, but I assume one of the yocto cli tools has a designated command exactly for that</td><td class="time"><a href="#t2020-10-11T10:42:05" class="time">10:42</a></td></tr>
+<tr id="t2020-10-11T11:38:29"><td class="nickchange" colspan="2">*** aurelien` is now known as aurelien</td><td><a href="#t2020-10-11T11:38:29" class="time">11:38</a></td></tr>
+<tr id="t2020-10-11T13:09:15"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e">Can anyone tell me, where &quot;/lib/systemd/system/getty@.service&quot; is coming from? `oe-pkgdata-util find-path` says &quot;systemd&quot;, but in the recipe can't find anything exceptRDEPENDS_${PN} += &quot;kmod dbus util-linux-mount util-linux-umount udev (= ${EXTENDPKGV}) util-linux-agetty util-linux-fsck&quot;</td><td class="time"><a href="#t2020-10-11T13:09:15" class="time">13:09</a></td></tr>
+<tr id="t2020-10-11T13:10:18"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e">oe-pkgdata-util looup-recipe tells me, the package util-linux agetty comes from util-linux recipe. But there I can't find anything either.</td><td class="time"><a href="#t2020-10-11T13:10:18" class="time">13:10</a></td></tr>
+<tr id="t2020-10-11T13:10:48"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e">I need to know the recipe so I can create an append which would then be modifying '/lib/systemd/system/getty@.service'</td><td class="time"><a href="#t2020-10-11T13:10:48" class="time">13:10</a></td></tr>
+<tr id="t2020-10-11T14:01:11"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e">In Yocto Dunfell, which recipe is writing out `/lib/systemd/system/getty@.service`? I failed to find out.</td><td class="time"><a href="#t2020-10-11T14:01:11" class="time">14:01</a></td></tr>
+<tr id="t2020-10-11T14:01:11-2"><th class="nick" style="background: #42427e">manuel1985</th><td class="text" style="color: #42427e"><a href="https://stackoverflow.com/questions/64304827/in-yocto-dunfell-which-recipe-is-writing-out-lib-systemd-system-getty-servic" rel="nofollow">https://stackoverflow.com/questions/64304827/in-yocto-dunfell-which-recipe-is-writing-out-lib-systemd-system-getty-servic</a></td><td class="time"><a href="#t2020-10-11T14:01:11-2" class="time">14:01</a></td></tr>
+<tr id="t2020-10-11T14:56:51"><td class="nickchange" colspan="2">*** vmesons is now known as vmeson</td><td><a href="#t2020-10-11T14:56:51" class="time">14:56</a></td></tr>
+<tr id="t2020-10-11T17:07:27"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">If anyone can explain why all the selftests in&nbsp;&nbsp;<a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/83/builds/1470" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/83/builds/1470</a> failed I'd love to understand it :/</td><td class="time"><a href="#t2020-10-11T17:07:27" class="time">17:07</a></td></tr>
+<tr id="t2020-10-11T17:07:37"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">(identical build before and after worked fine)</td><td class="time"><a href="#t2020-10-11T17:07:37" class="time">17:07</a></td></tr>
+<tr id="t2020-10-11T18:00:32"><th class="nick" style="background: #818144">xtron</th><td class="text" style="color: #818144">rootfs is labeled with IMA/EVM signatures stored in security extended attributes of every file, these attributes are visible on build-host but not on the target using getfattr command, distro is build with &quot;xattr&quot; in distro features</td><td class="time"><a href="#t2020-10-11T18:00:32" class="time">18:00</a></td></tr>
+<tr id="t2020-10-11T18:02:28"><th class="nick" style="background: #818144">xtron</th><td class="text" style="color: #818144">or whenever I try to set a security attribute like &lt;setfattr -n security.foo -v var test&gt; it returns operation not supported</td><td class="time"><a href="#t2020-10-11T18:02:28" class="time">18:02</a></td></tr>
+<tr id="t2020-10-11T21:26:38"><td class="part" colspan="2">*** beneth` &lt;beneth`!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-10-11T21:26:38" class="time">21:26</a></td></tr>
+<tr id="t2020-10-11T22:05:45"><td class="nickchange" colspan="2">*** creich_ is now known as creich</td><td><a href="#t2020-10-11T22:05:45" class="time">22:05</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-10-10.log.html">&#171; Saturday, 2020-10-10</a> <a href="index.html">Index</a> <a href="%23yocto.2020-10-12.log.html">Monday, 2020-10-12 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
