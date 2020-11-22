@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-11-21</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-11-21</h1>
+<div class="navigation"> <a href="%23yocto.2020-11-20.log.html">&#171; Friday, 2020-11-20</a> <a href="index.html">Index</a> <a href="%23yocto.2020-11-22.log.html">Sunday, 2020-11-22 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-11-21T04:29:27"><th class="nick" style="background: #407a40">Shikadi</th><td class="text" style="color: #407a40">Okay, so say I want the functionality of devtool in terms of incremental building my kernel, but I don't want it to be a separate checkout of my source (in other words, I want to edit the source in place where it is) is there a way to do that?</td><td class="time"><a href="#t2020-11-21T04:29:27" class="time">04:29</a></td></tr>
+<tr id="t2020-11-21T04:32:52"><th class="nick" style="background: #407a40">Shikadi</th><td class="text" style="color: #407a40">We have our own kernel repository that we maintain, and using patch files isn't desirable</td><td class="time"><a href="#t2020-11-21T04:32:52" class="time">04:32</a></td></tr>
+<tr id="t2020-11-21T07:18:17"><td class="nickchange" colspan="2">*** 7GHACHEVK is now known as nslu2-log</td><td><a href="#t2020-11-21T07:18:17" class="time">07:18</a></td></tr>
+<tr id="t2020-11-21T09:41:10"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">@DanmerZ: I ran a built with meta-java master and it seems to work for me out of the box. Can you try something like this? bitbake icedtea7-native --no-setscene</td><td class="time"><a href="#t2020-11-21T09:41:10" class="time">09:41</a></td></tr>
+<tr id="t2020-11-21T09:58:37"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-11-21T09:58:37" class="time">09:58</a></td></tr>
+<tr id="t2020-11-21T13:11:23"><th class="nick" style="background: #818144">Ad0</th><td class="text" style="color: #818144">how do I force the init-oe to rebuild conf directory with new local.conf etc?</td><td class="time"><a href="#t2020-11-21T13:11:23" class="time">13:11</a></td></tr>
+<tr id="t2020-11-21T13:11:30"><th class="nick" style="background: #818144">Ad0</th><td class="text" style="color: #818144">I deleted the build/conf, but it's not being created</td><td class="time"><a href="#t2020-11-21T13:11:30" class="time">13:11</a></td></tr>
+<tr id="t2020-11-21T13:26:35"><td class="action" colspan="2">* _mecairS` Hi. If i ever be an Angel of Light to guide you, to lead you in every way, will you also think of me at night and day.. <a href="https://bit.ly/36blphN" rel="nofollow">https://bit.ly/36blphN</a></td><td><a href="#t2020-11-21T13:26:35" class="time">13:26</a></td></tr>
+<tr id="t2020-11-21T13:26:46"><td class="part" colspan="2">*** _mecairS` &lt;_mecairS`!~st_ars@110.54.187.248&gt; has left #yocto</td><td><a href="#t2020-11-21T13:26:46" class="time">13:26</a></td></tr>
+<tr id="t2020-11-21T14:33:40"><th class="nick" style="background: #854685">BWhitten</th><td class="text" style="color: #854685">hi all, I am trying to use the meta-security image class dm-verity-img which appends some KERNEL_FEATURES in an scc, it looks like this would work with linux-yocto kernel as it seems like it checks out a yocto-kernel-cache repo alongside the kernel. I'm using the linux-fslc-imx kernel for my imx8, what's the right way to load the the feature scc's along side? Would that even work?</td><td class="time"><a href="#t2020-11-21T14:33:40" class="time">14:33</a></td></tr>
+<tr id="t2020-11-21T17:41:02"><th class="nick" style="background: #854685">BWhitten</th><td class="text" style="color: #854685">well a bbappend to append to the SRC_URI seems to have done the trick, at least I have the features scc's now to include</td><td class="time"><a href="#t2020-11-21T17:41:02" class="time">17:41</a></td></tr>
+<tr id="t2020-11-21T20:10:46"><th class="nick" style="background: #488888">wyre</th><td class="text" style="color: #488888">do you think could I install vim or man inside a crops container?</td><td class="time"><a href="#t2020-11-21T20:10:46" class="time">20:10</a></td></tr>
+<tr id="t2020-11-21T20:10:53"><th class="nick" style="background: #488888">wyre</th><td class="text" style="color: #488888">could this affect to the yocto build process?</td><td class="time"><a href="#t2020-11-21T20:10:53" class="time">20:10</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-11-20.log.html">&#171; Friday, 2020-11-20</a> <a href="index.html">Index</a> <a href="%23yocto.2020-11-22.log.html">Sunday, 2020-11-22 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
