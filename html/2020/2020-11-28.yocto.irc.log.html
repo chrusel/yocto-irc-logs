@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-11-28</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-11-28</h1>
+<div class="navigation"> <a href="%23yocto.2020-11-27.log.html">&#171; Friday, 2020-11-27</a> <a href="index.html">Index</a> <a href="%23yocto.2020-11-29.log.html">Sunday, 2020-11-29 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-11-28T10:37:56"><th class="nick" style="background: #407a40">paulbarker</th><td class="text" style="color: #407a40">qschulz: For the wiki links in the docs do you think we should move the '/' into the extlink directive? I'm slowly coming around to that point-of-view</td><td class="time"><a href="#t2020-11-28T10:37:56" class="time">10:37</a></td></tr>
+<tr id="t2020-11-28T10:38:46"><th class="nick" style="background: #407a40">paulbarker</th><td class="text" style="color: #407a40">I just locally added a `oe_layer` directive which expands to `<a href="https://layers.openembedded.org/layerindex/branch/master/layer/%s/`" rel="nofollow">https://layers.openembedded.org/layerindex/branch/master/layer/%s/`</a></td><td class="time"><a href="#t2020-11-28T10:38:46" class="time">10:38</a></td></tr>
+<tr id="t2020-11-28T10:39:28"><th class="nick" style="background: #407a40">paulbarker</th><td class="text" style="color: #407a40">So you can just do `:oe_layer:\`qt5 layer &lt;meta-qt5&gt;\``</td><td class="time"><a href="#t2020-11-28T10:39:28" class="time">10:39</a></td></tr>
+<tr id="t2020-11-28T10:40:04"><th class="nick" style="background: #407a40">paulbarker</th><td class="text" style="color: #407a40">Eugh IRCCloud is making a mess of that with backticks</td><td class="time"><a href="#t2020-11-28T10:40:04" class="time">10:40</a></td></tr>
+<tr id="t2020-11-28T12:12:30"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-11-28T12:12:30" class="time">12:12</a></td></tr>
+<tr id="t2020-11-28T12:46:15"><th class="nick" style="background: #42427e">wyre</th><td class="text" style="color: #42427e">paulbarker, is not LetoThe2nd's name Josef?</td><td class="time"><a href="#t2020-11-28T12:46:15" class="time">12:46</a></td></tr>
+<tr id="t2020-11-28T14:01:12"><th class="nick" style="background: #407a40">paulbarker</th><td class="text" style="color: #407a40">wyre: He is a man of many names</td><td class="time"><a href="#t2020-11-28T14:01:12" class="time">14:01</a></td></tr>
+<tr id="t2020-11-28T14:16:06"><td class="nickchange" colspan="2">*** fullstop_ is now known as fullstop</td><td><a href="#t2020-11-28T14:16:06" class="time">14:16</a></td></tr>
+<tr id="t2020-11-28T18:04:42"><td class="part" colspan="2">*** dmoseley` &lt;dmoseley`!~user@24.96.56.90&gt; has left #yocto</td><td><a href="#t2020-11-28T18:04:42" class="time">18:04</a></td></tr>
+<tr id="t2020-11-28T19:47:24"><th class="nick" style="background: #42427e">wyre</th><td class="text" style="color: #42427e">hi guys, what are the differences between these three? <a href="https://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/oe-init-build-env" rel="nofollow">https://git.yoctoproject.org/cgit/cgit.cgi/poky/tree/oe-init-build-env</a> <a href="https://github.com/Freescale/fsl-community-bsp-base/blob/master/setup-environment" rel="nofollow">https://github.com/Freescale/fsl-community-bsp-base/blob/master/setup-environment</a> and <a href="https://github.com/toradex/meta-fsl-bsp-release/blob/toradex_morty-4.9.51-8qm_beta2-bring_up/imx/tools/fsl-setup-release.sh" rel="nofollow">https://github.com/toradex/meta-fsl-bsp-release/blob/toradex_morty-4.9.51-8qm_beta2-bring_up/imx/tools/fsl-setup-release.sh</a> ?</td><td class="time"><a href="#t2020-11-28T19:47:24" class="time">19:47</a></td></tr>
+<tr id="t2020-11-28T19:47:47"><th class="nick" style="background: #42427e">wyre</th><td class="text" style="color: #42427e">why so many different scripts for the same setup?</td><td class="time"><a href="#t2020-11-28T19:47:47" class="time">19:47</a></td></tr>
+<tr id="t2020-11-28T22:41:00"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-11-28T22:41:00" class="time">22:41</a></td></tr>
+<tr id="t2020-11-28T23:55:46"><th class="nick" style="background: #818144">fenrig</th><td class="text" style="color: #818144">Hi I created this bbappend, but for some reason I cant find it in my resulting image rootfs. I can however find it in the package image folder</td><td class="time"><a href="#t2020-11-28T23:55:46" class="time">23:55</a></td></tr>
+<tr id="t2020-11-28T23:55:47"><th class="nick" style="background: #818144">fenrig</th><td class="text" style="color: #818144"><a href="https://gist.github.com/fenrig/56eaf220191356819a8f33f77f1ea67b" rel="nofollow">https://gist.github.com/fenrig/56eaf220191356819a8f33f77f1ea67b</a></td><td class="time"><a href="#t2020-11-28T23:55:47" class="time">23:55</a></td></tr>
+<tr id="t2020-11-28T23:56:07"><th class="nick" style="background: #818144">fenrig</th><td class="text" style="color: #818144">I'm missing something but I'm not sure what, I'm suspecting the install of the dir</td><td class="time"><a href="#t2020-11-28T23:56:07" class="time">23:56</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-11-27.log.html">&#171; Friday, 2020-11-27</a> <a href="index.html">Index</a> <a href="%23yocto.2020-11-29.log.html">Sunday, 2020-11-29 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
