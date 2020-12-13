@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-12-12</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-12-12</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-11.log.html">&#171; Friday, 2020-12-11</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-13.log.html">Sunday, 2020-12-13 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-12T00:56:20"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">mostly it should come down to device tree stuff? depends on wha the daughter board does</td><td class="time"><a href="#t2020-12-12T00:56:20" class="time">00:56</a></td></tr>
+<tr id="t2020-12-12T00:56:51"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">but in general, you are going to be happier with the meta-ti support of BBB... trust me</td><td class="time"><a href="#t2020-12-12T00:56:51" class="time">00:56</a></td></tr>
+<tr id="t2020-12-12T00:57:22"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">it's just that TI very intentionally only has one release per year</td><td class="time"><a href="#t2020-12-12T00:57:22" class="time">00:57</a></td></tr>
+<tr id="t2020-12-12T00:57:55"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">so you end up with a multi-month gap of some component (like the kernel) not updating and being in a lurch</td><td class="time"><a href="#t2020-12-12T00:57:55" class="time">00:57</a></td></tr>
+<tr id="t2020-12-12T00:58:11"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">and then you get tempted to use the yocto &quot;beaglebone&quot; machine again...</td><td class="time"><a href="#t2020-12-12T00:58:11" class="time">00:58</a></td></tr>
+<tr id="t2020-12-12T00:58:19"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">it's a viscious cycle...</td><td class="time"><a href="#t2020-12-12T00:58:19" class="time">00:58</a></td></tr>
+<tr id="t2020-12-12T09:10:42"><th class="nick" style="background: #42427e">rfried</th><td class="text" style="color: #42427e">Hi. I'm trying to build CMake package against an dunfell SDK I created.</td><td class="time"><a href="#t2020-12-12T09:10:42" class="time">09:10</a></td></tr>
+<tr id="t2020-12-12T09:10:42-2"><th class="nick" style="background: #42427e">rfried</th><td class="text" style="color: #42427e">The rule find_package(Python3 REQUIRED COMPONENTS Development) fails, although I think Python3 is installed in the SDK.</td><td class="time"><a href="#t2020-12-12T09:10:42-2" class="time">09:10</a></td></tr>
+<tr id="t2020-12-12T09:11:33"><th class="nick" style="background: #42427e">rfried</th><td class="text" style="color: #42427e">Is there a specific packageI need to add to Yocto in order to compile with Python3 ?</td><td class="time"><a href="#t2020-12-12T09:11:33" class="time">09:11</a></td></tr>
+<tr id="t2020-12-12T09:11:57"><th class="nick" style="background: #42427e">rfried</th><td class="text" style="color: #42427e">I added IMAGE_INSTALL_append = python3</td><td class="time"><a href="#t2020-12-12T09:11:57" class="time">09:11</a></td></tr>
+<tr id="t2020-12-12T19:33:39"><th class="nick" style="background: #818144">manuel__</th><td class="text" style="color: #818144">paulbarker: Just watching your talk &quot;Highly Scalable Yocto Project Build Automation&quot;. In &quot;<a href="https://gitlab.com/SanCloudLtd/meta-sancloud/-/blob/dunfell/scripts/ci-build.sh" rel="nofollow">https://gitlab.com/SanCloudLtd/meta-sancloud/-/blob/dunfell/scripts/ci-build.sh</a>&quot;, why did you run two &quot;kas shell&quot; commands than just a &quot;kas build&quot;?</td><td class="time"><a href="#t2020-12-12T19:33:39" class="time">19:33</a></td></tr>
+<tr id="t2020-12-12T19:34:13"><th class="nick" style="background: #818144">manuel__</th><td class="text" style="color: #818144">First with --setscene-only, the other one with --skip-setscene</td><td class="time"><a href="#t2020-12-12T19:34:13" class="time">19:34</a></td></tr>
+<tr id="t2020-12-12T19:55:21"><th class="nick" style="background: #854685">zeddii</th><td class="text" style="color: #854685">moto-timo: finally a thread to pull on. It is definitely our build of the k3s binary. So now I have to look at deltas between what rancher builds, and what we build. But will do that on Monday.</td><td class="time"><a href="#t2020-12-12T19:55:21" class="time">19:55</a></td></tr>
+<tr id="t2020-12-12T19:56:01"><th class="nick" style="background: #854685">zeddii</th><td class="text" style="color: #854685"><a href="https://pastebin.com/xXfg42ck" rel="nofollow">https://pastebin.com/xXfg42ck</a></td><td class="time"><a href="#t2020-12-12T19:56:01" class="time">19:56</a></td></tr>
+<tr id="t2020-12-12T20:06:00"><th class="nick" style="background: #818144">manuel__</th><td class="text" style="color: #818144">Does anyone understand how kas yaml files work? In <a href="https://gitlab.com/SanCloudLtd/meta-sancloud/-/blob/dunfell/kas/dev/bbe-poky.yml" rel="nofollow">https://gitlab.com/SanCloudLtd/meta-sancloud/-/blob/dunfell/kas/dev/bbe-poky.yml</a>, what does the 'base' below 'local_conf_header' refer to?</td><td class="time"><a href="#t2020-12-12T20:06:00" class="time">20:06</a></td></tr>
+<tr id="t2020-12-12T20:17:41"><th class="nick" style="background: #488888">neverpanic</th><td class="text" style="color: #488888"><a href="https://kas.readthedocs.io/en/latest/userguide.html?highlight=local_conf_header#project-configuration" rel="nofollow">https://kas.readthedocs.io/en/latest/userguide.html?highlight=local_conf_header#project-configuration</a></td><td class="time"><a href="#t2020-12-12T20:17:41" class="time">20:17</a></td></tr>
+<tr id="t2020-12-12T20:17:59"><th class="nick" style="background: #488888">neverpanic</th><td class="text" style="color: #488888">sounds like it's just some unique name identifying the added string.</td><td class="time"><a href="#t2020-12-12T20:17:59" class="time">20:17</a></td></tr>
+<tr id="t2020-12-12T23:00:04"><th class="nick" style="background: #8c4a4a">khem</th><td class="text" style="color: #8c4a4a">zeddii:&nbsp;&nbsp;I am running into same error reported here <a href="https://www.mail-archive.com/yocto@yoctoproject.org/msg37871.html" rel="nofollow">https://www.mail-archive.com/yocto@yoctoproject.org/msg37871.html</a> with dunfell and 4.9 kernel that I am trying to use linux-yocto tooling with any ideas ?</td><td class="time"><a href="#t2020-12-12T23:00:04" class="time">23:00</a></td></tr>
+<tr id="t2020-12-12T23:01:57"><th class="nick" style="background: #818144">manuel__</th><td class="text" style="color: #818144">neverpanic: Right but why would I like to refer to it? Where can I use it?</td><td class="time"><a href="#t2020-12-12T23:01:57" class="time">23:01</a></td></tr>
+<tr id="t2020-12-12T23:07:08"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-12T23:07:08" class="time">23:07</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-11.log.html">&#171; Friday, 2020-12-11</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-13.log.html">Sunday, 2020-12-13 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
