@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2020-12-19</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2020-12-19</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-18.log.html">&#171; Friday, 2020-12-18</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-20.log.html">Sunday, 2020-12-20 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-19T00:06:42"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-19T00:06:42" class="time">00:06</a></td></tr>
+<tr id="t2020-12-19T01:34:15"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">RP: yes, I fixed it for 5.10 (differently), It's a change that came back in -stable: <a href="https://git.yoctoproject.org/cgit/cgit.cgi/yocto-kernel-cache/commit/?h=yocto-5.10&amp;id=3d154dcfaa397654b1522e2ddd65a1a740bda812" rel="nofollow">https://git.yoctoproject.org/cgit/cgit.cgi/yocto-kernel-cache/commit/?h=yocto-5.10&amp;id=3d154dcfaa397654b1522e2ddd65a1a740bda812</a></td><td class="time"><a href="#t2020-12-19T01:34:15" class="time">01:34</a></td></tr>
+<tr id="t2020-12-19T01:36:32"><th class="nick" style="background: #407a40">zeddii</th><td class="text" style="color: #407a40">actually no. That warning was always there, just hidden. There are no changes to 5.8, it's the kern-tools change.</td><td class="time"><a href="#t2020-12-19T01:36:32" class="time">01:36</a></td></tr>
+<tr id="t2020-12-19T02:27:26"><td class="nickchange" colspan="2">*** khem is now known as Guest5532</td><td><a href="#t2020-12-19T02:27:26" class="time">02:27</a></td></tr>
+<tr id="t2020-12-19T04:45:33"><th class="nick" style="background: #42427e">tlwoerner</th><td class="text" style="color: #42427e">JPEW_: back in 2018 i suggested there be a meta-intel-community layer for x86-based boards that Intel wasn't interested in carrying in the official meta-intel</td><td class="time"><a href="#t2020-12-19T04:45:33" class="time">04:45</a></td></tr>
+<tr id="t2020-12-19T04:46:43"><th class="nick" style="background: #42427e">tlwoerner</th><td class="text" style="color: #42427e">apart from the rock pi x, the only other boards that might qualify are: galileo, UP, … ?</td><td class="time"><a href="#t2020-12-19T04:46:43" class="time">04:46</a></td></tr>
+<tr id="t2020-12-19T04:46:49"><th class="nick" style="background: #42427e">tlwoerner</th><td class="text" style="color: #42427e">JPEW_: *TAG* you're it!</td><td class="time"><a href="#t2020-12-19T04:46:49" class="time">04:46</a></td></tr>
+<tr id="t2020-12-19T07:05:53"><td class="nickchange" colspan="2">*** mihai- is now known as mihai</td><td><a href="#t2020-12-19T07:05:53" class="time">07:05</a></td></tr>
+<tr id="t2020-12-19T07:28:16"><td class="part" colspan="2">*** grembeter &lt;grembeter!~grembeter@pool1-25.cgn.as8758.net&gt; has left #yocto</td><td><a href="#t2020-12-19T07:28:16" class="time">07:28</a></td></tr>
+<tr id="t2020-12-19T11:48:20"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">RP: auh build against master-next running <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/112/builds/17" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/112/builds/17</a></td><td class="time"><a href="#t2020-12-19T11:48:20" class="time">11:48</a></td></tr>
+<tr id="t2020-12-19T11:52:14"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: great, I've found that change does break other layers but am working on that</td><td class="time"><a href="#t2020-12-19T11:52:14" class="time">11:52</a></td></tr>
+<tr id="t2020-12-19T11:52:41"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: found a nice regression in systemd for reproducibility</td><td class="time"><a href="#t2020-12-19T11:52:41" class="time">11:52</a></td></tr>
+<tr id="t2020-12-19T13:12:23"><th class="nick" style="background: #488888">paulg</th><td class="text" style="color: #488888">I thought systemd - by definition - was a regression.</td><td class="time"><a href="#t2020-12-19T13:12:23" class="time">13:12</a></td></tr>
+<tr id="t2020-12-19T14:22:45"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">paulg: I'd think so but people seem to want it so what can I do...</td><td class="time"><a href="#t2020-12-19T14:22:45" class="time">14:22</a></td></tr>
+<tr id="t2020-12-19T17:16:32"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">RP: I forgot that AUH builder does this:</td><td class="time"><a href="#t2020-12-19T17:16:32" class="time">17:16</a></td></tr>
+<tr id="t2020-12-19T17:16:32-2"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144"># Base the upgrades on poky master</td><td class="time"><a href="#t2020-12-19T17:16:32-2" class="time">17:16</a></td></tr>
+<tr id="t2020-12-19T17:16:32-3"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">git fetch origin</td><td class="time"><a href="#t2020-12-19T17:16:32-3" class="time">17:16</a></td></tr>
+<tr id="t2020-12-19T17:16:32-4"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">git checkout -B tmp-auh-upgrades origin/master</td><td class="time"><a href="#t2020-12-19T17:16:32-4" class="time">17:16</a></td></tr>
+<tr id="t2020-12-19T17:16:42"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">so it won't test the fix until the fix shows up in master</td><td class="time"><a href="#t2020-12-19T17:16:42" class="time">17:16</a></td></tr>
+<tr id="t2020-12-19T17:17:02"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: ok, I think I can get it merged</td><td class="time"><a href="#t2020-12-19T17:17:02" class="time">17:17</a></td></tr>
+<tr id="t2020-12-19T17:18:16"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: done</td><td class="time"><a href="#t2020-12-19T17:18:16" class="time">17:18</a></td></tr>
+<tr id="t2020-12-19T17:24:42"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">RP: thanks, I restarted the AUH job</td><td class="time"><a href="#t2020-12-19T17:24:42" class="time">17:24</a></td></tr>
+<tr id="t2020-12-19T17:25:03"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">RP: patch for ptest warnings also incoming, I checked that it does cause warnings when ptests fail: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/81/builds/1622" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/81/builds/1622</a></td><td class="time"><a href="#t2020-12-19T17:25:03" class="time">17:25</a></td></tr>
+<tr id="t2020-12-19T17:31:57"><td class="nickchange" colspan="2">*** mihai-- is now known as mihai</td><td><a href="#t2020-12-19T17:31:57" class="time">17:31</a></td></tr>
+<tr id="t2020-12-19T17:32:27"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">kanavin_home: thanks, I'll queue</td><td class="time"><a href="#t2020-12-19T17:32:27" class="time">17:32</a></td></tr>
+<tr id="t2020-12-19T17:54:38"><td class="nickchange" colspan="2">*** nerdboy_ is now known as nerdboy</td><td><a href="#t2020-12-19T17:54:38" class="time">17:54</a></td></tr>
+<tr id="t2020-12-19T20:23:24"><td class="part" colspan="2">*** arixey &lt;arixey!~arixey@068-184-146-172.res.spectrum.com&gt; has left #yocto</td><td><a href="#t2020-12-19T20:23:24" class="time">20:23</a></td></tr>
+<tr id="t2020-12-19T21:22:15"><th class="nick" style="background: #818144">kanavin_home</th><td class="text" style="color: #818144">RP: the patch seems to work, at least AUH got through two recipes where it would previously fail</td><td class="time"><a href="#t2020-12-19T21:22:15" class="time">21:22</a></td></tr>
+<tr id="t2020-12-19T21:34:33"><td class="part" colspan="2">*** arixey &lt;arixey!~arixey@068-184-146-172.res.spectrum.com&gt; has left #yocto</td><td><a href="#t2020-12-19T21:34:33" class="time">21:34</a></td></tr>
+<tr id="t2020-12-19T23:03:19"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-19T23:03:19" class="time">23:03</a></td></tr>
+<tr id="t2020-12-19T23:40:49"><th class="nick" style="background: #8c4a4a">jonesv[m]</th><td class="text" style="color: #8c4a4a">hello :)</td><td class="time"><a href="#t2020-12-19T23:40:49" class="time">23:40</a></td></tr>
+<tr id="t2020-12-19T23:41:41"><th class="nick" style="background: #8c4a4a">jonesv[m]</th><td class="text" style="color: #8c4a4a">I am struggling a bit understanding the bootloader stuff. What is the default bootloader in Yocto? Is there one, or does it depend on some BSP? I am building now with meta-raspberrypi4</td><td class="time"><a href="#t2020-12-19T23:41:41" class="time">23:41</a></td></tr>
+<tr id="t2020-12-19T23:42:08"><th class="nick" style="background: #8c4a4a">jonesv[m]</th><td class="text" style="color: #8c4a4a">It boots well and all, but I am trying to understand (for my own information) how a system is setup to use fastboot</td><td class="time"><a href="#t2020-12-19T23:42:08" class="time">23:42</a></td></tr>
+<tr id="t2020-12-19T23:42:56"><th class="nick" style="background: #8c4a4a">jonesv[m]</th><td class="text" style="color: #8c4a4a">Like I would be able to boot my rpi in &quot;fastboot mode&quot;, and there I could flash a new image. A bit like what mobile phones are doing, I think (if I try to flash a custom system on an Android phone, I usually restart in fastboot mode)</td><td class="time"><a href="#t2020-12-19T23:42:56" class="time">23:42</a></td></tr>
+<tr id="t2020-12-19T23:43:59"><th class="nick" style="background: #8c4a4a">jonesv[m]</th><td class="text" style="color: #8c4a4a">Can it be done through yocto, or should I set it independently and have yocto generate only the thing I will flash through fastboot? I guess I don't really get the bootloading workflow (obviously yocto sets up a boot loader since I can boot my rpi)</td><td class="time"><a href="#t2020-12-19T23:43:59" class="time">23:43</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-18.log.html">&#171; Friday, 2020-12-18</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-20.log.html">Sunday, 2020-12-20 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
