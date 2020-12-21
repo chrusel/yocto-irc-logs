@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2020-12-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2020-12-20</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-19.log.html">&#171; Saturday, 2020-12-19</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-21.log.html">Monday, 2020-12-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-20T09:44:43"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: looks like we have intermittent reproducibility issues in grub, u-boot-tools and man :/</td><td class="time"><a href="#t2020-12-20T09:44:43" class="time">09:44</a></td></tr>
+<tr id="t2020-12-20T09:45:12"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">had hoped I'd fixed the grub one but obviously not entirely :(</td><td class="time"><a href="#t2020-12-20T09:45:12" class="time">09:45</a></td></tr>
+<tr id="t2020-12-20T09:48:11"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: the easy way out is to add them to the exception list :-/</td><td class="time"><a href="#t2020-12-20T09:48:11" class="time">09:48</a></td></tr>
+<tr id="t2020-12-20T09:49:14"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: the problem with that is things that break reproducibility intermittently would get merged, then fail to reproduce much later, and the list would just keep growing</td><td class="time"><a href="#t2020-12-20T09:49:14" class="time">09:49</a></td></tr>
+<tr id="t2020-12-20T09:49:19"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: the u-boot-tools one looks like somehow LOCALVERSION is set on one builder</td><td class="time"><a href="#t2020-12-20T09:49:19" class="time">09:49</a></td></tr>
+<tr id="t2020-12-20T09:49:47"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: the grub one looks like file linking commands changing order as far as I can tell</td><td class="time"><a href="#t2020-12-20T09:49:47" class="time">09:49</a></td></tr>
+<tr id="t2020-12-20T09:50:25"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: its also possible hash equivalence is &quot;infecting&quot; things :( I'm noticing a growing problem with that :(</td><td class="time"><a href="#t2020-12-20T09:50:25" class="time">09:50</a></td></tr>
+<tr id="t2020-12-20T09:50:38"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: I know what you mean about not wanting the list to grow</td><td class="time"><a href="#t2020-12-20T09:50:38" class="time">09:50</a></td></tr>
+<tr id="t2020-12-20T11:23:48"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: somehow the build of u-boot-tools on debian9-ty-2 has the version with &quot;-dirty&quot; on the end, even though when I run the command that should generate that, it doesn't any more :/</td><td class="time"><a href="#t2020-12-20T11:23:48" class="time">11:23</a></td></tr>
+<tr id="t2020-12-20T11:25:19"><td class="action" colspan="2">* RP pauses that worker until he can look properly</td><td><a href="#t2020-12-20T11:25:19" class="time">11:25</a></td></tr>
+<tr id="t2020-12-20T12:14:23"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: you'll love the &quot;fix&quot; for u-boot</td><td class="time"><a href="#t2020-12-20T12:14:23" class="time">12:14</a></td></tr>
+<tr id="t2020-12-20T12:55:10"><th class="nick" style="background: #42427e">kanavin_home</th><td class="text" style="color: #42427e">RP: yikes. I never looked at u-boot, as it never showed up in my tests.</td><td class="time"><a href="#t2020-12-20T12:55:10" class="time">12:55</a></td></tr>
+<tr id="t2020-12-20T14:49:59"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">kanavin_home: found the second grub issue too (I hope)</td><td class="time"><a href="#t2020-12-20T14:49:59" class="time">14:49</a></td></tr>
+<tr id="t2020-12-20T19:18:43"><td class="nickchange" colspan="2">*** dleppich1 is now known as dleppich</td><td><a href="#t2020-12-20T19:18:43" class="time">19:18</a></td></tr>
+<tr id="t2020-12-20T20:36:47"><td class="nickchange" colspan="2">*** grumble is now known as SeasonsBeatings</td><td><a href="#t2020-12-20T20:36:47" class="time">20:36</a></td></tr>
+<tr id="t2020-12-20T22:29:47"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-20T22:29:47" class="time">22:29</a></td></tr>
+<tr id="t2020-12-20T22:55:45"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">jonesv[m]: there is no such thing as a default bootloader. typically someone (or some company) will put in the effort to port one bootloader to a given board/SoC, and that becomes the bootloader for that board</td><td class="time"><a href="#t2020-12-20T22:55:45" class="time">22:55</a></td></tr>
+<tr id="t2020-12-20T22:56:11"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">in theory any bootloader could boot any board… if someone ports it</td><td class="time"><a href="#t2020-12-20T22:56:11" class="time">22:56</a></td></tr>
+<tr id="t2020-12-20T22:56:29"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">but in practice there is generally one bootloader for a given board</td><td class="time"><a href="#t2020-12-20T22:56:29" class="time">22:56</a></td></tr>
+<tr id="t2020-12-20T22:57:32"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">jonesv[m]: *in general* grub is used for x86 boards and u-boot for everything else</td><td class="time"><a href="#t2020-12-20T22:57:32" class="time">22:57</a></td></tr>
+<tr id="t2020-12-20T22:58:12"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">jonesv[m]: every board is special, but with the raspberry pi, it is even more special (special-er?)</td><td class="time"><a href="#t2020-12-20T22:58:12" class="time">22:58</a></td></tr>
+<tr id="t2020-12-20T22:59:02"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">jonesv[m]: when the rpi comes out of reset, it is the GPU that gets run first</td><td class="time"><a href="#t2020-12-20T22:59:02" class="time">22:59</a></td></tr>
+<tr id="t2020-12-20T22:59:29"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">it is then the job of the GPU to start up the CPU(s), then load the next stage of the boot</td><td class="time"><a href="#t2020-12-20T22:59:29" class="time">22:59</a></td></tr>
+<tr id="t2020-12-20T23:00:25"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">on the raspberry pi the GPU can boot linux directly (GPU → linux), or it can optionally chain-load u-boot (GPU → u-boot → linux)</td><td class="time"><a href="#t2020-12-20T23:00:25" class="time">23:00</a></td></tr>
+<tr id="t2020-12-20T23:01:42"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">jonesv[m]: i don't know much about fastboot, that's an android thing. it is used on boards like the dragonboard to load your image into the onboard eMMC via the OTG port</td><td class="time"><a href="#t2020-12-20T23:01:42" class="time">23:01</a></td></tr>
+<tr id="t2020-12-20T23:02:21"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">but that's because fastboot is supported in the SoC's firmware</td><td class="time"><a href="#t2020-12-20T23:02:21" class="time">23:02</a></td></tr>
+<tr id="t2020-12-20T23:03:02"><th class="nick" style="background: #818144">tlwoerner</th><td class="text" style="color: #818144">in the yocto world we rely on the BSP layer for the board to know which bootloader to use and to build and set it up properly</td><td class="time"><a href="#t2020-12-20T23:03:02" class="time">23:03</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-19.log.html">&#171; Saturday, 2020-12-19</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-21.log.html">Monday, 2020-12-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
