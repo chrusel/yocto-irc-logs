@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Thursday, 2020-12-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Thursday, 2020-12-24</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-23.log.html">&#171; Wednesday, 2020-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-25.log.html">Friday, 2020-12-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-24T00:15:44"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">found it; i can make the fifo if i patch insane.bbclass</td><td class="time"><a href="#t2020-12-24T00:15:44" class="time">00:15</a></td></tr>
+<tr id="t2020-12-24T02:48:59"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-24T02:48:59" class="time">02:48</a></td></tr>
+<tr id="t2020-12-24T08:11:20"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">tlwoerner: I think there is an open bug for that now you mention it! :)</td><td class="time"><a href="#t2020-12-24T08:11:20" class="time">08:11</a></td></tr>
+<tr id="t2020-12-24T09:24:15"><td class="nickchange" colspan="2">*** amitk_ is now known as amitk</td><td><a href="#t2020-12-24T09:24:15" class="time">09:24</a></td></tr>
+<tr id="t2020-12-24T12:16:12"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: cool!</td><td class="time"><a href="#t2020-12-24T12:16:12" class="time">12:16</a></td></tr>
+<tr id="t2020-12-24T12:16:21"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: do you want the series against master, or master-next?</td><td class="time"><a href="#t2020-12-24T12:16:21" class="time">12:16</a></td></tr>
+<tr id="t2020-12-24T12:37:27"><td class="nickchange" colspan="2">*** Guest32524 is now known as mischief</td><td><a href="#t2020-12-24T12:37:27" class="time">12:37</a></td></tr>
+<tr id="t2020-12-24T12:43:58"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: <a href="https://bugzilla.yoctoproject.org/show_bug.cgi?id=13891" rel="nofollow">https://bugzilla.yoctoproject.org/show_bug.cgi?id=13891</a></td><td class="time"><a href="#t2020-12-24T12:43:58" class="time">12:43</a></td></tr>
+<tr id="t2020-12-24T12:45:43"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">now i need to figure out how to add an automated test; hints appreciated ;-)</td><td class="time"><a href="#t2020-12-24T12:45:43" class="time">12:45</a></td></tr>
+<tr id="t2020-12-24T12:59:27"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: ah, i see master-next has been cleaned :-D okay, that's nice. i'll re-do my psplash patches</td><td class="time"><a href="#t2020-12-24T12:59:27" class="time">12:59</a></td></tr>
+<tr id="t2020-12-24T12:59:46"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">this way i can clean them up; as submitted, they sort of… wander (lol)</td><td class="time"><a href="#t2020-12-24T12:59:46" class="time">12:59</a></td></tr>
+<tr id="t2020-12-24T13:41:13"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: i'll have to rebase it on master-next since that's where the fifo fix has been added</td><td class="time"><a href="#t2020-12-24T13:41:13" class="time">13:41</a></td></tr>
+<tr id="t2020-12-24T15:09:32"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">tlwoerner: right, that should be fine</td><td class="time"><a href="#t2020-12-24T15:09:32" class="time">15:09</a></td></tr>
+<tr id="t2020-12-24T15:54:04"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">tlwoerner: for an example test, see meta/lib/oeqa/selftest/package.py, test_preserve_ownership, you could probably inject a fifo into that test alongside the other things, or maybe test_preserve_sparse_hardlinks()</td><td class="time"><a href="#t2020-12-24T15:54:04" class="time">15:54</a></td></tr>
+<tr id="t2020-12-24T15:54:28"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: perfect, thank you :-)</td><td class="time"><a href="#t2020-12-24T15:54:28" class="time">15:54</a></td></tr>
+<tr id="t2020-12-24T15:54:42"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">run as oe-selftest -r package.PackageTests.test_preserve_ownership</td><td class="time"><a href="#t2020-12-24T15:54:42" class="time">15:54</a></td></tr>
+<tr id="t2020-12-24T16:00:14"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">meta/lib/oeqa/selftest/*cases*/package.py ?</td><td class="time"><a href="#t2020-12-24T16:00:14" class="time">16:00</a></td></tr>
+<tr id="t2020-12-24T16:04:21"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">tlwoerner: sorry, tes</td><td class="time"><a href="#t2020-12-24T16:04:21" class="time">16:04</a></td></tr>
+<tr id="t2020-12-24T16:04:22"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">yes</td><td class="time"><a href="#t2020-12-24T16:04:22" class="time">16:04</a></td></tr>
+<tr id="t2020-12-24T16:06:44"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-24T16:06:44" class="time">16:06</a></td></tr>
+<tr id="t2020-12-24T20:08:39"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-24T20:08:39" class="time">20:08</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-23.log.html">&#171; Wednesday, 2020-12-23</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-25.log.html">Friday, 2020-12-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
