@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Friday, 2020-12-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Friday, 2020-12-25</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-24.log.html">&#171; Thursday, 2020-12-24</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-26.log.html">Saturday, 2020-12-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-25T00:27:13"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">is there a way to get the oe-selftest's qemu to use slirp? otherwise it looks like i'll have to setup sudoers in order for my tests to potentially succeed</td><td class="time"><a href="#t2020-12-25T00:27:13" class="time">00:27</a></td></tr>
+<tr id="t2020-12-25T00:27:31"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">i get the feeling there's some setup/config that needs arranging before running oe-selftest</td><td class="time"><a href="#t2020-12-25T00:27:31" class="time">00:27</a></td></tr>
+<tr id="t2020-12-25T03:04:47"><th class="nick" style="background: #42427e">moto-timo</th><td class="text" style="color: #42427e">tlwoerner: I think I have a bug open about slirp and qemu... related but not exactly what you might be after <a href="https://bugzilla.yoctoproject.org/show_bug.cgi?id=13690" rel="nofollow">https://bugzilla.yoctoproject.org/show_bug.cgi?id=13690</a></td><td class="time"><a href="#t2020-12-25T03:04:47" class="time">03:04</a></td></tr>
+<tr id="t2020-12-25T05:07:46"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">moto-timo: i'm trying to run the oe-selftests and they fail for me saying that qemu failed to start, but my gut feeling is that it's sitting there waiting for someone to type in the root password</td><td class="time"><a href="#t2020-12-25T05:07:46" class="time">05:07</a></td></tr>
+<tr id="t2020-12-25T05:08:27"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">so i'm wondering if there's a way to tell oe-selftest to use the &quot;slirp&quot; option when starting qemu</td><td class="time"><a href="#t2020-12-25T05:08:27" class="time">05:08</a></td></tr>
+<tr id="t2020-12-25T07:13:03"><th class="nick" style="background: #818144">Cihan</th><td class="text" style="color: #818144">Hello everyone, as a required work, I started to learn about Yocto lately. We developed an app on RasPi4 Ubuntu system. For the final step, this system on imx8mm_iwg34m_2gb is needed. Are there any information or a basic package/roadmap to build a Ubuntu/ish (includes apt-get) system documents?</td><td class="time"><a href="#t2020-12-25T07:13:03" class="time">07:13</a></td></tr>
+<tr id="t2020-12-25T08:46:39"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">tlwoerner: basically no, it doesn't work with slirp. You can use the runqemu-gen-tapdevs script to setup the interface(s) it needs</td><td class="time"><a href="#t2020-12-25T08:46:39" class="time">08:46</a></td></tr>
+<tr id="t2020-12-25T09:02:47"><th class="nick" style="background: #488888">dv</th><td class="text" style="color: #488888">is there kernel developers? I see a strange thing...</td><td class="time"><a href="#t2020-12-25T09:02:47" class="time">09:02</a></td></tr>
+<tr id="t2020-12-25T09:06:43"><th class="nick" style="background: #488888">dv</th><td class="text" style="color: #488888"><a href="https://elixir.bootlin.com/linux/v5.10.2/source/drivers/net/can/spi/mcp251xfd/mcp251xfd-core.c#L2866" rel="nofollow">https://elixir.bootlin.com/linux/v5.10.2/source/drivers/net/can/spi/mcp251xfd/mcp251xfd-core.c#L2866</a> calls can_rx_offload_add_manual() without defining offload-&gt;mailbox_read so it will always fail. Why?</td><td class="time"><a href="#t2020-12-25T09:06:43" class="time">09:06</a></td></tr>
+<tr id="t2020-12-25T09:07:06-2"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-25T09:07:06-2" class="time">09:07</a></td></tr>
+<tr id="t2020-12-25T10:59:34"><th class="nick" style="background: #8c4a4a">santa_mario</th><td class="text" style="color: #8c4a4a">merry christmas and a happy new year!</td><td class="time"><a href="#t2020-12-25T10:59:34" class="time">10:59</a></td></tr>
+<tr id="t2020-12-25T22:07:49"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: okay, thanks</td><td class="time"><a href="#t2020-12-25T22:07:49" class="time">22:07</a></td></tr>
+<tr id="t2020-12-25T22:55:57"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-25T22:55:57" class="time">22:55</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-24.log.html">&#171; Thursday, 2020-12-24</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-26.log.html">Saturday, 2020-12-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
