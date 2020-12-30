@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Tuesday, 2020-12-29</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Tuesday, 2020-12-29</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-28.log.html">&#171; Monday, 2020-12-28</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-30.log.html">Wednesday, 2020-12-30 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2020-12-29T01:01:46"><th class="nick" style="background: #407a40">opello</th><td class="text" style="color: #407a40">when using do_packages_split, is adding an RPROVIDES for one of the generated packages possible?&nbsp;&nbsp;the generated spec file doesn't look to be getting updated</td><td class="time"><a href="#t2020-12-29T01:01:46" class="time">01:01</a></td></tr>
+<tr id="t2020-12-29T01:07:59"><th class="nick" style="background: #407a40">opello</th><td class="text" style="color: #407a40">do_split_packages* sorry</td><td class="time"><a href="#t2020-12-29T01:07:59" class="time">01:07</a></td></tr>
+<tr id="t2020-12-29T02:56:37-2"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-29T02:56:37-2" class="time">02:56</a></td></tr>
+<tr id="t2020-12-29T07:38:21"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-29T07:38:21" class="time">07:38</a></td></tr>
+<tr id="t2020-12-29T08:22:58"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2020-12-29T08:22:58" class="time">08:22</a></td></tr>
+<tr id="t2020-12-29T08:23:02"><th class="nick" style="background: #42427e">mckoan</th><td class="text" style="color: #42427e">good morning</td><td class="time"><a href="#t2020-12-29T08:23:02" class="time">08:23</a></td></tr>
+<tr id="t2020-12-29T08:46:23"><th class="nick" style="background: #818144">museoe</th><td class="text" style="color: #818144">I have modified a recipe and now I want to get that reflected in my work dir.</td><td class="time"><a href="#t2020-12-29T08:46:23" class="time">08:46</a></td></tr>
+<tr id="t2020-12-29T08:46:54"><th class="nick" style="background: #818144">museoe</th><td class="text" style="color: #818144">What would be the optimal way?</td><td class="time"><a href="#t2020-12-29T08:46:54" class="time">08:46</a></td></tr>
+<tr id="t2020-12-29T09:03:20"><td class="nickchange" colspan="2">*** mihai- is now known as mihai</td><td><a href="#t2020-12-29T09:03:20" class="time">09:03</a></td></tr>
+<tr id="t2020-12-29T11:28:53"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-29T11:28:53" class="time">11:28</a></td></tr>
+<tr id="t2020-12-29T11:40:55"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2020-12-29T11:40:55" class="time">11:40</a></td></tr>
+<tr id="t2020-12-29T12:56:42"><td class="part" colspan="2">*** iulian &lt;iulian!4d0944ee@dynamic-077-009-068-238.77.9.pool.telefonica.de&gt; has left #yocto</td><td><a href="#t2020-12-29T12:56:42" class="time">12:56</a></td></tr>
+<tr id="t2020-12-29T14:11:59"><td class="nickchange" colspan="2">*** __ad is now known as ad__</td><td><a href="#t2020-12-29T14:11:59" class="time">14:11</a></td></tr>
+<tr id="t2020-12-29T17:18:06"><td class="part" colspan="2">*** sgw &lt;sgw!~sgw@c-71-238-119-71.hsd1.or.comcast.net&gt; has left #yocto</td><td><a href="#t2020-12-29T17:18:06" class="time">17:18</a></td></tr>
+<tr id="t2020-12-29T19:35:31"><th class="nick" style="background: #407a40">opello</th><td class="text" style="color: #407a40">hi, still trying to figure out why do_split_packages doesn't seem to be honoring the RPROVIDES i set up :/ the recipe is <a href="http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-graphics/xorg-lib/libxcb.inc?h=daisy" rel="nofollow">http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-graphics/xorg-lib/libxcb.inc?h=daisy</a> and i've got RPROVIDES_${PN}-dri2 = &quot;${PN}-dri2&quot; in a .bbappend, because the generated package is libxcb-dri2-0 but was previously manually split: ...</td><td class="time"><a href="#t2020-12-29T19:35:31" class="time">19:35</a></td></tr>
+<tr id="t2020-12-29T19:35:36"><th class="nick" style="background: #407a40">opello</th><td class="text" style="color: #407a40">... <a href="http://cgit.openembedded.org/openembedded-core/commit/meta/recipes-graphics/xorg-lib/libxcb.inc?h=daisy&amp;id=5a70bd7f0da588edbecd13d569635f0c66915b08" rel="nofollow">http://cgit.openembedded.org/openembedded-core/commit/meta/recipes-graphics/xorg-lib/libxcb.inc?h=daisy&amp;id=5a70bd7f0da588edbecd13d569635f0c66915b08</a></td><td class="time"><a href="#t2020-12-29T19:35:36" class="time">19:35</a></td></tr>
+<tr id="t2020-12-29T20:54:05"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">back back back</td><td class="time"><a href="#t2020-12-29T20:54:05" class="time">20:54</a></td></tr>
+<tr id="t2020-12-29T20:54:10"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">hard drive failure :)</td><td class="time"><a href="#t2020-12-29T20:54:10" class="time">20:54</a></td></tr>
+<tr id="t2020-12-29T20:57:03"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: ouch</td><td class="time"><a href="#t2020-12-29T20:57:03" class="time">20:57</a></td></tr>
+<tr id="t2020-12-29T20:57:47"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">it was a typical SSD failure, not instant, but rather gradual loss of write ability</td><td class="time"><a href="#t2020-12-29T20:57:47" class="time">20:57</a></td></tr>
+<tr id="t2020-12-29T20:57:59"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">I had enough time to copy stuff out onto usb sticks</td><td class="time"><a href="#t2020-12-29T20:57:59" class="time">20:57</a></td></tr>
+<tr id="t2020-12-29T20:58:23"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: ah, interesting.&nbsp;&nbsp;I should probably be better at checking SMART stats on mine</td><td class="time"><a href="#t2020-12-29T20:58:23" class="time">20:58</a></td></tr>
+<tr id="t2020-12-29T20:59:02"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">I did run smartctl, and it showed nothing alarming :-/</td><td class="time"><a href="#t2020-12-29T20:59:02" class="time">20:59</a></td></tr>
+<tr id="t2020-12-29T20:59:08"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">gah</td><td class="time"><a href="#t2020-12-29T20:59:08" class="time">20:59</a></td></tr>
+<tr id="t2020-12-29T21:01:33"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: btw, I was tinkering with backporting the CVE-2020-29385 fix for gdk-pixbuf, but one wrinkle is the upstream commit adds a new test image, which a patch wouldn't handle...</td><td class="time"><a href="#t2020-12-29T21:01:33" class="time">21:01</a></td></tr>
+<tr id="t2020-12-29T21:02:06"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">smurray: at this point we should update gdk-pixbuf itself</td><td class="time"><a href="#t2020-12-29T21:02:06" class="time">21:02</a></td></tr>
+<tr id="t2020-12-29T21:02:22"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">I have a wip patch, just waiting for another point release from upstream</td><td class="time"><a href="#t2020-12-29T21:02:22" class="time">21:02</a></td></tr>
+<tr id="t2020-12-29T21:03:04"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: heh, I started looking at the upgrade, sort of looks like we'd maybe need a new -xlib recipe as well now?</td><td class="time"><a href="#t2020-12-29T21:03:04" class="time">21:03</a></td></tr>
+<tr id="t2020-12-29T21:04:33"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">why?</td><td class="time"><a href="#t2020-12-29T21:04:33" class="time">21:04</a></td></tr>
+<tr id="t2020-12-29T21:05:01"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">they pulled the xlib support out into a separate repo</td><td class="time"><a href="#t2020-12-29T21:05:01" class="time">21:05</a></td></tr>
+<tr id="t2020-12-29T21:05:43"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">I figured if there's a packageconfig for it, there might be users that need it...</td><td class="time"><a href="#t2020-12-29T21:05:43" class="time">21:05</a></td></tr>
+<tr id="t2020-12-29T21:08:03"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: if you've got a WIP 2.42.x upgrade in hand, I'll shelve my tinkering and poke at something else</td><td class="time"><a href="#t2020-12-29T21:08:03" class="time">21:08</a></td></tr>
+<tr id="t2020-12-29T21:08:25"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">smurray: autoconf 2.70 :)</td><td class="time"><a href="#t2020-12-29T21:08:25" class="time">21:08</a></td></tr>
+<tr id="t2020-12-29T21:08:45"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">kanavin: heh, isn't rburton the autoconf guy?</td><td class="time"><a href="#t2020-12-29T21:08:45" class="time">21:08</a></td></tr>
+<tr id="t2020-12-29T21:09:15"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">smurray: only reluctantly</td><td class="time"><a href="#t2020-12-29T21:09:15" class="time">21:09</a></td></tr>
+<tr id="t2020-12-29T21:09:45"><th class="nick" style="background: #488888">smurray</th><td class="text" style="color: #488888">how epic is the breakage from 2.70?</td><td class="time"><a href="#t2020-12-29T21:09:45" class="time">21:09</a></td></tr>
+<tr id="t2020-12-29T21:21:04"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">I didn't get that far, I stopped at having to rebase all the patches for autoconf itself</td><td class="time"><a href="#t2020-12-29T21:21:04" class="time">21:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-28.log.html">&#171; Monday, 2020-12-28</a> <a href="index.html">Index</a> <a href="%23yocto.2020-12-30.log.html">Wednesday, 2020-12-30 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
