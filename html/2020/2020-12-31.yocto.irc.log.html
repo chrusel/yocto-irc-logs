@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Thursday, 2020-12-31</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Thursday, 2020-12-31</h1>
+<div class="navigation"> <a href="%23yocto.2020-12-30.log.html">&#171; Wednesday, 2020-12-30</a> <a href="index.html">Index</a> </div>
+<table class="irclog">
+<tr id="t2020-12-31T01:25:19"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">if arm64 is now a valid build host, then SDKMACHINE=qemuarm64 needs to be a valid selection ;-)</td><td class="time"><a href="#t2020-12-31T01:25:19" class="time">01:25</a></td></tr>
+<tr id="t2020-12-31T02:10:14"><th class="nick" style="background: #42427e">moto-timo</th><td class="text" style="color: #42427e">+1</td><td class="time"><a href="#t2020-12-31T02:10:14" class="time">02:10</a></td></tr>
+<tr id="t2020-12-31T02:11:30"><th class="nick" style="background: #42427e">moto-timo</th><td class="text" style="color: #42427e">My solidiron arm64 is now my kubernetes control-plane &lt;wink&gt;</td><td class="time"><a href="#t2020-12-31T02:11:30" class="time">02:11</a></td></tr>
+<tr id="t2020-12-31T02:38:33"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">cphealy: which MACHINE are you building for? which layers are you using in your bblayers.conf and which branches of those layers? what are you building (core-image-??)?</td><td class="time"><a href="#t2020-12-31T02:38:33" class="time">02:38</a></td></tr>
+<tr id="t2020-12-31T04:48:45-2"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2020-12-31T04:48:45-2" class="time">04:48</a></td></tr>
+<tr id="t2020-12-31T07:58:09-2"><td class="nickchange" colspan="2">*** zyga__ is now known as zyga</td><td><a href="#t2020-12-31T07:58:09-2" class="time">07:58</a></td></tr>
+<tr id="t2020-12-31T09:14:45"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">tlwoerner: like <a href="http://git.yoctoproject.org/cgit.cgi/poky/commit/?id=14245dad40d3466c61a87fea52a675e5248508f4" rel="nofollow">http://git.yoctoproject.org/cgit.cgi/poky/commit/?id=14245dad40d3466c61a87fea52a675e5248508f4</a> ? :)</td><td class="time"><a href="#t2020-12-31T09:14:45" class="time">09:14</a></td></tr>
+<tr id="t2020-12-31T11:29:21"><td class="part" colspan="2">*** JEEB &lt;JEEB!~jeeb@unaffiliated/jeeb&gt; has left #yocto</td><td><a href="#t2020-12-31T11:29:21" class="time">11:29</a></td></tr>
+<tr id="t2020-12-31T12:34:51"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">RP: I checked ppp upstream, and submitted what can be upstreamed: <a href="https://github.com/paulusmack/ppp/issues/111#issuecomment-752947070" rel="nofollow">https://github.com/paulusmack/ppp/issues/111#issuecomment-752947070</a></td><td class="time"><a href="#t2020-12-31T12:34:51" class="time">12:34</a></td></tr>
+<tr id="t2020-12-31T12:34:55"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">khem: ^^^</td><td class="time"><a href="#t2020-12-31T12:34:55" class="time">12:34</a></td></tr>
+<tr id="t2020-12-31T14:22:56"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">kanavin: thanks, sounds good!</td><td class="time"><a href="#t2020-12-31T14:22:56" class="time">14:22</a></td></tr>
+<tr id="t2020-12-31T15:07:34"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">RP: oohhh shiny! :-D</td><td class="time"><a href="#t2020-12-31T15:07:34" class="time">15:07</a></td></tr>
+<tr id="t2020-12-31T15:10:12"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">on my x86_64 build machine i built a qemuarm64, run it with runqemu, then am trying to do a core-image-minimal for qemux86 inside the qemuarm64</td><td class="time"><a href="#t2020-12-31T15:10:12" class="time">15:10</a></td></tr>
+<tr id="t2020-12-31T15:11:05"><th class="nick" style="background: #407a40">tlwoerner</th><td class="text" style="color: #407a40">bitbake keeps telling me that the perl Thread::Queue module is not installed, but it is, so that's confusing</td><td class="time"><a href="#t2020-12-31T15:11:05" class="time">15:11</a></td></tr>
+<tr id="t2020-12-31T18:45:59"><td class="nickchange" colspan="2">*** yourfate is now known as yearfate</td><td><a href="#t2020-12-31T18:45:59" class="time">18:45</a></td></tr>
+<tr id="t2020-12-31T20:10:37"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2020-12-31T20:10:37" class="time">20:10</a></td></tr>
+<tr id="t2020-12-31T23:45:40"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">kanavin: I see it was merged, thanks! :)</td><td class="time"><a href="#t2020-12-31T23:45:40" class="time">23:45</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2020-12-30.log.html">&#171; Wednesday, 2020-12-30</a> <a href="index.html">Index</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
