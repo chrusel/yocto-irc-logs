@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-02-27</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-02-27</h1>
+<div class="navigation"> <a href="%23yocto.2021-02-26.log.html">&#171; Friday, 2021-02-26</a> <a href="index.html">Index</a> <a href="%23yocto.2021-02-28.log.html">Sunday, 2021-02-28 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-02-27T05:39:11"><th class="nick" style="background: #407a40">newguy</th><td class="text" style="color: #407a40">I have a question for building a yocto project on a zfs based host.</td><td class="time"><a href="#t2021-02-27T05:39:11" class="time">05:39</a></td></tr>
+<tr id="t2021-02-27T05:39:33"><th class="nick" style="background: #407a40">newguy</th><td class="text" style="color: #407a40">anybody familiar with the territory?</td><td class="time"><a href="#t2021-02-27T05:39:33" class="time">05:39</a></td></tr>
+<tr id="t2021-02-27T05:43:53"><th class="nick" style="background: #407a40">newguy</th><td class="text" style="color: #407a40">I am just running a unmodified example from NXP and fail on the final 2 steps (`do_image_ext2`, and `do_image_ubi`) where its failing on a `mkfs.ext2` call</td><td class="time"><a href="#t2021-02-27T05:43:53" class="time">05:43</a></td></tr>
+<tr id="t2021-02-27T05:45:03"><th class="nick" style="background: #407a40">newguy</th><td class="text" style="color: #407a40">which after some googling, seems to be caused by how zfs handles inodes. Anybody know of any fixes?</td><td class="time"><a href="#t2021-02-27T05:45:03" class="time">05:45</a></td></tr>
+<tr id="t2021-02-27T08:18:53"><td class="nickchange" colspan="2">*** jpnurmi_ is now known as jpnurmi</td><td><a href="#t2021-02-27T08:18:53" class="time">08:18</a></td></tr>
+<tr id="t2021-02-27T08:19:13"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">RP: I am working on the more tricky version updates from the last AUH run, it's looking pretty good, I just need to resolve a couple of ptest regressions. Once a-full passes, I will send them. <a href="http://git.yoctoproject.org/cgit.cgi/poky-contrib/log/?h=akanavin/package-version-updates" rel="nofollow">http://git.yoctoproject.org/cgit.cgi/poky-contrib/log/?h=akanavin/package-version-updates</a></td><td class="time"><a href="#t2021-02-27T08:19:13" class="time">08:19</a></td></tr>
+<tr id="t2021-02-27T11:25:14"><th class="nick" style="background: #818144">gillesm</th><td class="text" style="color: #818144">hello were I can find the definition of operators like ??= in yocto documentation ?</td><td class="time"><a href="#t2021-02-27T11:25:14" class="time">11:25</a></td></tr>
+<tr id="t2021-02-27T11:31:35"><th class="nick" style="background: #854685">manuel__</th><td class="text" style="color: #854685"><a href="https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#bitbake-user-manual-metadata" rel="nofollow">https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#bitbake-user-manual-metadata</a></td><td class="time"><a href="#t2021-02-27T11:31:35" class="time">11:31</a></td></tr>
+<tr id="t2021-02-27T11:32:10"><th class="nick" style="background: #854685">manuel__</th><td class="text" style="color: #854685">Here's a direct link to the ??= operator: <a href="https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#setting-a-weak-default-value" rel="nofollow">https://www.yoctoproject.org/docs/latest/bitbake-user-manual/bitbake-user-manual.html#setting-a-weak-default-value</a></td><td class="time"><a href="#t2021-02-27T11:32:10" class="time">11:32</a></td></tr>
+<tr id="t2021-02-27T11:36:25"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">kanavin: I noticed the builds, thanks! There was a dosfsutils patch on the list I was wondering about, has some locale tweaks yours doesn't...</td><td class="time"><a href="#t2021-02-27T11:36:25" class="time">11:36</a></td></tr>
+<tr id="t2021-02-27T16:44:23"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">RP: I don't mind if that patch goes in first, but I think you'll see some wic failures with it that my patchset addresses</td><td class="time"><a href="#t2021-02-27T16:44:23" class="time">16:44</a></td></tr>
+<tr id="t2021-02-27T18:02:43"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">kanavin: I guess we need a hybrid? :)</td><td class="time"><a href="#t2021-02-27T18:02:43" class="time">18:02</a></td></tr>
+<tr id="t2021-02-27T18:44:28"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">RP: I'm not sure what issues his changes address as I am not seeing those. All tests pass == it's good as it is :)</td><td class="time"><a href="#t2021-02-27T18:44:28" class="time">18:44</a></td></tr>
+<tr id="t2021-02-27T20:07:29"><th class="nick" style="background: #818144">gillesm</th><td class="text" style="color: #818144">Hello I tried bitbake -g core-image-minimal and after dot -Tpdf -o outpout.pdf task-depends.dot I got a small an ugly outputfile ... idem in ps format</td><td class="time"><a href="#t2021-02-27T20:07:29" class="time">20:07</a></td></tr>
+<tr id="t2021-02-27T20:07:34"><th class="nick" style="background: #818144">gillesm</th><td class="text" style="color: #818144">idea ?</td><td class="time"><a href="#t2021-02-27T20:07:34" class="time">20:07</a></td></tr>
+<tr id="t2021-02-27T23:44:33"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">kanavin: the removal of the locale dependencies since they have their own internal code now is the piece I found interesting</td><td class="time"><a href="#t2021-02-27T23:44:33" class="time">23:44</a></td></tr>
+<tr id="t2021-02-27T23:44:57"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">kanavin: tests passing doesn't catch everything</td><td class="time"><a href="#t2021-02-27T23:44:57" class="time">23:44</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-02-26.log.html">&#171; Friday, 2021-02-26</a> <a href="index.html">Index</a> <a href="%23yocto.2021-02-28.log.html">Sunday, 2021-02-28 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
