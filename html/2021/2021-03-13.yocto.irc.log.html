@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-03-13</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-03-13</h1>
+<div class="navigation"> <a href="%23yocto.2021-03-12.log.html">&#171; Friday, 2021-03-12</a> <a href="index.html">Index</a> <a href="%23yocto.2021-03-14.log.html">Sunday, 2021-03-14 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-03-13T00:12:13"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-13T00:12:13" class="time">00:12</a></td></tr>
+<tr id="t2021-03-13T00:15:45"><th class="nick" style="background: #407a40">smurray</th><td class="text" style="color: #407a40">yates: that's no official registration or the like that I've ever heard of.&nbsp;&nbsp;There's a database at layers.openembedded.org that you can submit your layer to for people to be able to look up</td><td class="time"><a href="#t2021-03-13T00:15:45" class="time">00:15</a></td></tr>
+<tr id="t2021-03-13T00:19:14"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">halstead:&nbsp;&nbsp;I am stills seeing error.yp.org isse</td><td class="time"><a href="#t2021-03-13T00:19:14" class="time">00:19</a></td></tr>
+<tr id="t2021-03-13T00:19:28"><td class="action" colspan="2">* khem &lt; <a href="https://matrix.org/_matrix/media/r0/download/matrix.org/MvGjPxdvnGldHuozrjpaOeJo/message.txt" rel="nofollow">https://matrix.org/_matrix/media/r0/download/matrix.org/MvGjPxdvnGldHuozrjpaOeJo/message.txt</a> &gt;</td><td><a href="#t2021-03-13T00:19:28" class="time">00:19</a></td></tr>
+<tr id="t2021-03-13T00:19:46"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">Thanks khem looking now</td><td class="time"><a href="#t2021-03-13T00:19:46" class="time">00:19</a></td></tr>
+<tr id="t2021-03-13T00:20:42"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I just uploaded my error file here <a href="https://uclibc.org/~kraj/error_report_20210312175543.txt" rel="nofollow">https://uclibc.org/~kraj/error_report_20210312175543.txt</a></td><td class="time"><a href="#t2021-03-13T00:20:42" class="time">00:20</a></td></tr>
+<tr id="t2021-03-13T00:20:51"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">it worked well few days ago</td><td class="time"><a href="#t2021-03-13T00:20:51" class="time">00:20</a></td></tr>
+<tr id="t2021-03-13T00:22:28"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">btw. I am carrying a patch <a href="https://git.openembedded.org/openembedded-core-contrib/commit/?h=kraj/gcc-11&amp;id=159cb9fcca93bd53a0bfc4f7ec2617acce71c20d" rel="nofollow">https://git.openembedded.org/openembedded-core-contrib/commit/?h=kraj/gcc-11&amp;id=159cb9fcca93bd53a0bfc4f7ec2617acce71c20d</a></td><td class="time"><a href="#t2021-03-13T00:22:28" class="time">00:22</a></td></tr>
+<tr id="t2021-03-13T00:23:10"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">which fixed similar issue in past but this patch is not applied upstream so I was carrying it locally, but now same error with this patch included is happening so something else changed too</td><td class="time"><a href="#t2021-03-13T00:23:10" class="time">00:23</a></td></tr>
+<tr id="t2021-03-13T00:32:13"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">halstead:&nbsp;&nbsp;I am seeing it from several machines from different networks</td><td class="time"><a href="#t2021-03-13T00:32:13" class="time">00:32</a></td></tr>
+<tr id="t2021-03-13T00:32:26"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">but my distro is common</td><td class="time"><a href="#t2021-03-13T00:32:26" class="time">00:32</a></td></tr>
+<tr id="t2021-03-13T00:36:48"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">khem, I was not testing the receipt of errors. I can probably reproduce with this.</td><td class="time"><a href="#t2021-03-13T00:36:48" class="time">00:36</a></td></tr>
+<tr id="t2021-03-13T00:37:36"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">ok. are you able to reproduce with my errors.txt ?</td><td class="time"><a href="#t2021-03-13T00:37:36" class="time">00:37</a></td></tr>
+<tr id="t2021-03-13T00:46:46"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">khem, Yes. I believe I've found the issue (space and open file handles) and resolved it. Thank you for the additional information.</td><td class="time"><a href="#t2021-03-13T00:46:46" class="time">00:46</a></td></tr>
+<tr id="t2021-03-13T00:47:28"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">cool should I retry on my end ?</td><td class="time"><a href="#t2021-03-13T00:47:28" class="time">00:47</a></td></tr>
+<tr id="t2021-03-13T00:48:21"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">ah cool its working !! thanks halstead</td><td class="time"><a href="#t2021-03-13T00:48:21" class="time">00:48</a></td></tr>
+<tr id="t2021-03-13T00:48:34"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">khem, Yes. Please retry if you can.</td><td class="time"><a href="#t2021-03-13T00:48:34" class="time">00:48</a></td></tr>
+<tr id="t2021-03-13T00:48:51"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">% send-error-report -y error_report_20210312175543.txt</td><td class="time"><a href="#t2021-03-13T00:48:51" class="time">00:48</a></td></tr>
+<tr id="t2021-03-13T00:48:51-2"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">Preparing to send errors to: errors.yoctoproject.org</td><td class="time"><a href="#t2021-03-13T00:48:51-2" class="time">00:48</a></td></tr>
+<tr id="t2021-03-13T00:48:51-3"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">Your entry can be found here: <a href="https://errors.yoctoproject.org/Errors/Build/118398/" rel="nofollow">https://errors.yoctoproject.org/Errors/Build/118398/</a></td><td class="time"><a href="#t2021-03-13T00:48:51-3" class="time">00:48</a></td></tr>
+<tr id="t2021-03-13T00:52:02"><th class="nick" style="background: #818144">halstead</th><td class="text" style="color: #818144">Great. Thank you again khem.</td><td class="time"><a href="#t2021-03-13T00:52:02" class="time">00:52</a></td></tr>
+<tr id="t2021-03-13T00:52:20"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">np thanks for fixing it, now</td><td class="time"><a href="#t2021-03-13T00:52:20" class="time">00:52</a></td></tr>
+<tr id="t2021-03-13T00:52:35"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I can send the links back to developers :)</td><td class="time"><a href="#t2021-03-13T00:52:35" class="time">00:52</a></td></tr>
+<tr id="t2021-03-13T05:45:18"><th class="nick" style="background: #854685">yates</th><td class="text" style="color: #854685">smurray: thank you.</td><td class="time"><a href="#t2021-03-13T05:45:18" class="time">05:45</a></td></tr>
+<tr id="t2021-03-13T06:01:09"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-13T06:01:09" class="time">06:01</a></td></tr>
+<tr id="t2021-03-13T10:30:06"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-13T10:30:06" class="time">10:30</a></td></tr>
+<tr id="t2021-03-13T11:28:24"><td class="nickchange" colspan="2">*** estan_ is now known as estan</td><td><a href="#t2021-03-13T11:28:24" class="time">11:28</a></td></tr>
+<tr id="t2021-03-13T11:29:37"><th class="nick" style="background: #488888">mcburger</th><td class="text" style="color: #488888">hello fellow humans</td><td class="time"><a href="#t2021-03-13T11:29:37" class="time">11:29</a></td></tr>
+<tr id="t2021-03-13T11:29:47"><th class="nick" style="background: #488888">mcburger</th><td class="text" style="color: #488888">is there support on saturdays?</td><td class="time"><a href="#t2021-03-13T11:29:47" class="time">11:29</a></td></tr>
+<tr id="t2021-03-13T13:20:25"><th class="nick" style="background: #8c4a4a">falk0n[m]</th><td class="text" style="color: #8c4a4a">Maybe people are sleeping (still sleeping or going to sleep). Or maybe they are having some time in family on their weekend</td><td class="time"><a href="#t2021-03-13T13:20:25" class="time">13:20</a></td></tr>
+<tr id="t2021-03-13T16:03:18"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-13T16:03:18" class="time">16:03</a></td></tr>
+<tr id="t2021-03-13T19:13:40"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-13T19:13:40" class="time">19:13</a></td></tr>
+<tr id="t2021-03-13T22:46:50"><th class="nick" style="background: #4b904b">jdrol</th><td class="text" style="color: #4b904b">hello I installed toolchain for raspberryPI4 wthe tool chain in /opt is named /opt/poky/3.2.2/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux/x86_64-poky-linux-gcc .. and not arm ... is it goot ?</td><td class="time"><a href="#t2021-03-13T22:46:50" class="time">22:46</a></td></tr>
+<tr id="t2021-03-13T22:46:53"><th class="nick" style="background: #4b904b">jdrol</th><td class="text" style="color: #4b904b">good</td><td class="time"><a href="#t2021-03-13T22:46:53" class="time">22:46</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-03-12.log.html">&#171; Friday, 2021-03-12</a> <a href="index.html">Index</a> <a href="%23yocto.2021-03-14.log.html">Sunday, 2021-03-14 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
