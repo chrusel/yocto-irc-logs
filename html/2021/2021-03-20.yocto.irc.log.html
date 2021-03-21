@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-03-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-03-20</h1>
+<div class="navigation"> <a href="%23yocto.2021-03-19.log.html">&#171; Friday, 2021-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2021-03-21.log.html">Sunday, 2021-03-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-03-20T00:08:18"><th class="nick" style="background: #407a40">hackspider</th><td class="text" style="color: #407a40">Okay then it all makes sense to me :)</td><td class="time"><a href="#t2021-03-20T00:08:18" class="time">00:08</a></td></tr>
+<tr id="t2021-03-20T00:11:11"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">There is the orthogonal concept: MACHINE, DISTRO, IMAGE</td><td class="time"><a href="#t2021-03-20T00:11:11" class="time">00:11</a></td></tr>
+<tr id="t2021-03-20T00:11:36"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">which ideally should be independent of each other</td><td class="time"><a href="#t2021-03-20T00:11:36" class="time">00:11</a></td></tr>
+<tr id="t2021-03-20T00:12:30"><th class="nick" style="background: #407a40">hackspider</th><td class="text" style="color: #407a40">And the combination of those will be set in local conf or env variables?</td><td class="time"><a href="#t2021-03-20T00:12:30" class="time">00:12</a></td></tr>
+<tr id="t2021-03-20T00:14:01"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">MACHINE/DISTRO in local.conf</td><td class="time"><a href="#t2021-03-20T00:14:01" class="time">00:14</a></td></tr>
+<tr id="t2021-03-20T00:14:16"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e">and you will pick one image recipe to build for it</td><td class="time"><a href="#t2021-03-20T00:14:16" class="time">00:14</a></td></tr>
+<tr id="t2021-03-20T00:14:45"><th class="nick" style="background: #42427e">RobertBerger</th><td class="text" style="color: #42427e"> an existing one like core-image-minimal or your own, where you'll add packages of your choice</td><td class="time"><a href="#t2021-03-20T00:14:45" class="time">00:14</a></td></tr>
+<tr id="t2021-03-20T00:20:31"><th class="nick" style="background: #407a40">hackspider</th><td class="text" style="color: #407a40">Thanks Robert and Richard for helping me out. I think that was pretty basic stuff. But you helped me alot getting on the right track. Love OS community for that</td><td class="time"><a href="#t2021-03-20T00:20:31" class="time">00:20</a></td></tr>
+<tr id="t2021-03-20T00:54:10"><th class="nick" style="background: #818144">resoum</th><td class="text" style="color: #818144">~.</td><td class="time"><a href="#t2021-03-20T00:54:10" class="time">00:54</a></td></tr>
+<tr id="t2021-03-20T01:28:08"><td class="part" colspan="2">*** hackspider &lt;hackspider!5dec02a1@p5dec02a1.dip0.t-ipconnect.de&gt; has left #yocto</td><td><a href="#t2021-03-20T01:28:08" class="time">01:28</a></td></tr>
+<tr id="t2021-03-20T08:42:05"><th class="nick" style="background: #854685">t_unix[m]</th><td class="text" style="color: #854685">I’m trying to build latest gatesgarth in a container, but building ncurses is aborted by pseudo. Is there a recommended way to debug such an issue?</td><td class="time"><a href="#t2021-03-20T08:42:05" class="time">08:42</a></td></tr>
+<tr id="t2021-03-20T09:10:27"><th class="nick" style="background: #488888">kanavin_</th><td class="text" style="color: #488888">RP: standalone xwayland's final release is now out, so my latest patchset adds that, just in case it was left out because previously it was a pre-release</td><td class="time"><a href="#t2021-03-20T09:10:27" class="time">09:10</a></td></tr>
+<tr id="t2021-03-20T11:05:29"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">kanavin_: it was more that it seemed like feature development best left to 3.4</td><td class="time"><a href="#t2021-03-20T11:05:29" class="time">11:05</a></td></tr>
+<tr id="t2021-03-20T11:06:08"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">kanavin_: I'm leaning toward the general upgrades even if it is later than normal</td><td class="time"><a href="#t2021-03-20T11:06:08" class="time">11:06</a></td></tr>
+<tr id="t2021-03-20T11:44:05"><th class="nick" style="background: #4b904b">JaMa</th><td class="text" style="color: #4b904b">kanavin_: should we upgrade to development mesa 21.0.0 instead of waiting for stable 21.0.1?</td><td class="time"><a href="#t2021-03-20T11:44:05" class="time">11:44</a></td></tr>
+<tr id="t2021-03-20T15:19:48"><th class="nick" style="background: #4d4d93">khem</th><td class="text" style="color: #4d4d93">RP:&nbsp;&nbsp;I was seeing <a href="https://errors.yoctoproject.org/Errors/Details/574292/" rel="nofollow">https://errors.yoctoproject.org/Errors/Details/574292/</a> from yesterdays master-next I saw you reverted the bitbake.conf patch for pyc file creation in pseudo context does this help thsi issue too ?</td><td class="time"><a href="#t2021-03-20T15:19:48" class="time">15:19</a></td></tr>
+<tr id="t2021-03-20T15:30:45"><th class="nick" style="background: #4d4d93">khem</th><td class="text" style="color: #4d4d93">RP:&nbsp;&nbsp;I tested the report_error issue that&nbsp;&nbsp;the patch fixed <a href="https://lists.openembedded.org/g/openembedded-core/message/149444?p=,,,20,0,0,0::Created,,report-error,20,2,0,81339399" rel="nofollow">https://lists.openembedded.org/g/openembedded-core/message/149444?p=,,,20,0,0,0::Created,,report-error,20,2,0,81339399</a> and the issue still is there sadly, reproducing it is easy add BUILDHISTORY_COMMIT_AUTHOR ?= &quot;Khem Raj &lt;raj.khem@gmail.com&gt;&quot; to conf/local.conf and build a package that generates error repoort and then try to send that report to server it ends up with</td><td class="time"><a href="#t2021-03-20T15:30:45" class="time">15:30</a></td></tr>
+<tr id="t2021-03-20T15:30:45-2"><th class="nick" style="background: #4d4d93">khem</th><td class="text" style="color: #4d4d93">ERROR: HTTP Error 500: OK</td><td class="time"><a href="#t2021-03-20T15:30:45-2" class="time">15:30</a></td></tr>
+<tr id="t2021-03-20T15:31:57"><th class="nick" style="background: #4d4d93">khem</th><td class="text" style="color: #4d4d93">here is sample error file which can reproduce it <a href="http://sprunge.us/Sm4LNZ" rel="nofollow">http://sprunge.us/Sm4LNZ</a></td><td class="time"><a href="#t2021-03-20T15:31:57" class="time">15:31</a></td></tr>
+<tr id="t2021-03-20T16:00:36"><th class="nick" style="background: #97974f">vdl</th><td class="text" style="color: #97974f">hi all -- my build is successful, but I do not have a build/tmp/deploy/images/ directory anymore. Is there something obvious going on/</td><td class="time"><a href="#t2021-03-20T16:00:36" class="time">16:00</a></td></tr>
+<tr id="t2021-03-20T16:00:38"><th class="nick" style="background: #97974f">vdl</th><td class="text" style="color: #97974f">?</td><td class="time"><a href="#t2021-03-20T16:00:38" class="time">16:00</a></td></tr>
+<tr id="t2021-03-20T16:30:55"><th class="nick" style="background: #488888">kanavin_</th><td class="text" style="color: #488888">JaMa, 21.0.1 comes out on the 24th of March, so I do not think we should wait - and tbh, I do not understand why they have that distinction, as 21.0.1 comes out shortly after .0 and is bugfixes only.</td><td class="time"><a href="#t2021-03-20T16:30:55" class="time">16:30</a></td></tr>
+<tr id="t2021-03-20T16:31:27"><th class="nick" style="background: #488888">kanavin_</th><td class="text" style="color: #488888">JaMa, I will of course send a followup patch to bump to .1</td><td class="time"><a href="#t2021-03-20T16:31:27" class="time">16:31</a></td></tr>
+<tr id="t2021-03-20T18:39:11"><td class="part" colspan="2">*** beneth &lt;beneth!~beneth@irc.beneth.fr&gt; has left #yocto</td><td><a href="#t2021-03-20T18:39:11" class="time">18:39</a></td></tr>
+<tr id="t2021-03-20T19:14:26"><th class="nick" style="background: #97974f">vdl</th><td class="text" style="color: #97974f">RP: I've done what you've suggested yesterday, everything works fine: <a href="http://ix.io/2TyM" rel="nofollow">http://ix.io/2TyM</a></td><td class="time"><a href="#t2021-03-20T19:14:26" class="time">19:14</a></td></tr>
+<tr id="t2021-03-20T19:18:26"><th class="nick" style="background: #97974f">vdl</th><td class="text" style="color: #97974f">I think I've found a bug: if I don't specify &quot; before do_build&quot; in my recipe above, the build is successful but its ends up with no build/tmp/deploy/images directory at all!</td><td class="time"><a href="#t2021-03-20T19:18:26" class="time">19:18</a></td></tr>
+<tr id="t2021-03-20T22:28:46"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">vdl:&nbsp;&nbsp;that isn't a bug, it just means the task is an orphan and not connected to anything</td><td class="time"><a href="#t2021-03-20T22:28:46" class="time">22:28</a></td></tr>
+<tr id="t2021-03-20T22:29:01"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">vdl: the default task is do_build so you have to connect to that to make it happen by default</td><td class="time"><a href="#t2021-03-20T22:29:01" class="time">22:29</a></td></tr>
+<tr id="t2021-03-20T22:29:27"><th class="nick" style="background: #8c4a4a">RP</th><td class="text" style="color: #8c4a4a">khem: yes, I think that is related</td><td class="time"><a href="#t2021-03-20T22:29:27" class="time">22:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-03-19.log.html">&#171; Friday, 2021-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2021-03-21.log.html">Sunday, 2021-03-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
