@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-04-17</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-04-17</h1>
+<div class="navigation"> <a href="%23yocto.2021-04-16.log.html">&#171; Friday, 2021-04-16</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-18.log.html">Sunday, 2021-04-18 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-04-17T00:12:09"><th class="nick" style="background: #407a40">jonesv[m]</th><td class="text" style="color: #407a40">just discovered `cfg80211`, but `modprobe cfg80211` does not bring up a wlan0 either...</td><td class="time"><a href="#t2021-04-17T00:12:09" class="time">00:12</a></td></tr>
+<tr id="t2021-04-17T00:28:51"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">RP:&nbsp;&nbsp;my musl/mips patch is still forgotten :(</td><td class="time"><a href="#t2021-04-17T00:28:51" class="time">00:28</a></td></tr>
+<tr id="t2021-04-17T00:30:34"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">jonesv: try. brcmfmac</td><td class="time"><a href="#t2021-04-17T00:30:34" class="time">00:30</a></td></tr>
+<tr id="t2021-04-17T00:31:11"><th class="nick" style="background: #407a40">jonesv[m]</th><td class="text" style="color: #407a40">khem: hehe I was just trying that, it seems to do it :)</td><td class="time"><a href="#t2021-04-17T00:31:11" class="time">00:31</a></td></tr>
+<tr id="t2021-04-17T00:31:17"><th class="nick" style="background: #407a40">jonesv[m]</th><td class="text" style="color: #407a40">khem: thanks a lot!</td><td class="time"><a href="#t2021-04-17T00:31:17" class="time">00:31</a></td></tr>
+<tr id="t2021-04-17T00:32:58"><th class="nick" style="background: #407a40">jonesv[m]</th><td class="text" style="color: #407a40">I always struggle a lot for those kernel modules, I go with trial and error and it takes me a few hours to find which ones to use</td><td class="time"><a href="#t2021-04-17T00:32:58" class="time">00:32</a></td></tr>
+<tr id="t2021-04-17T01:11:30"><th class="nick" style="background: #818144">theodiem</th><td class="text" style="color: #818144">Hello .. I don't know if here is the correct place to mention ... but it seems (to me) that downloads.yoctoproject.org is timing out :)</td><td class="time"><a href="#t2021-04-17T01:11:30" class="time">01:11</a></td></tr>
+<tr id="t2021-04-17T01:30:22"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">theodiem, I believe there maybe some Maintenance occurring right now so it may be affecting downloads.</td><td class="time"><a href="#t2021-04-17T01:30:22" class="time">01:30</a></td></tr>
+<tr id="t2021-04-17T01:32:26"><th class="nick" style="background: #818144">theodiem</th><td class="text" style="color: #818144">thanks. I've managed to get through it and proceeded.</td><td class="time"><a href="#t2021-04-17T01:32:26" class="time">01:32</a></td></tr>
+<tr id="t2021-04-17T03:27:12"><td class="nickchange" colspan="2">*** theodiem70 is now known as theodiem</td><td><a href="#t2021-04-17T03:27:12" class="time">03:27</a></td></tr>
+<tr id="t2021-04-17T08:58:28"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">khem: sorry, it is queued now</td><td class="time"><a href="#t2021-04-17T08:58:28" class="time">08:58</a></td></tr>
+<tr id="t2021-04-17T10:41:32"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">Hi, I was trying to get AUTOREV to work in my build, but either it does not work as expected orI am terribly confused.</td><td class="time"><a href="#t2021-04-17T10:41:32" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-2"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">My recipe contains</td><td class="time"><a href="#t2021-04-17T10:41:32-2" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-3"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">SRCREV = &quot;${AUTOREV}&quot;</td><td class="time"><a href="#t2021-04-17T10:41:32-3" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-4"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">PV = &quot;0.8.35-git${SRCPV}&quot;</td><td class="time"><a href="#t2021-04-17T10:41:32-4" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-5"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">but when I build my folder in tmp/work is labeled</td><td class="time"><a href="#t2021-04-17T10:41:32-5" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-6"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">0.8.35-gitAUTOINC+bd4e78a40d-r0</td><td class="time"><a href="#t2021-04-17T10:41:32-6" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:32-7"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">I had expected something like 0.8.35-git0_bd4e78a40d-r0</td><td class="time"><a href="#t2021-04-17T10:41:32-7" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T10:41:43"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">Is my understanding wrong here? or am I making a silly mistake?</td><td class="time"><a href="#t2021-04-17T10:41:43" class="time">10:41</a></td></tr>
+<tr id="t2021-04-17T11:10:52"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">eFfeM: the build directory will have that name, the output version in the packages will be slightly different with AUTOINC replaced</td><td class="time"><a href="#t2021-04-17T11:10:52" class="time">11:10</a></td></tr>
+<tr id="t2021-04-17T11:11:03"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">so it is expected</td><td class="time"><a href="#t2021-04-17T11:11:03" class="time">11:11</a></td></tr>
+<tr id="t2021-04-17T11:17:22"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">eFfeM: we only bump AUTOINC if the output actually changes iirc which is why we only change AUTOINC in PKGV, not PV</td><td class="time"><a href="#t2021-04-17T11:17:22" class="time">11:17</a></td></tr>
+<tr id="t2021-04-17T11:17:29"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">if I remember rightly anyway</td><td class="time"><a href="#t2021-04-17T11:17:29" class="time">11:17</a></td></tr>
+<tr id="t2021-04-17T11:34:00"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">RP: Thanks for the clarification, sWhen I look into the deploy-rpms dir I indeed see&nbsp;&nbsp;packages whose name ends on 0.8.35+git0+bd4e78a40d-r0.0</td><td class="time"><a href="#t2021-04-17T11:34:00" class="time">11:34</a></td></tr>
+<tr id="t2021-04-17T11:34:51"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">apparently I got the impresion that the number also would show up in the folder name</td><td class="time"><a href="#t2021-04-17T11:34:51" class="time">11:34</a></td></tr>
+<tr id="t2021-04-17T11:35:00"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">(or I just misremembered)</td><td class="time"><a href="#t2021-04-17T11:35:00" class="time">11:35</a></td></tr>
+<tr id="t2021-04-17T11:35:22"><th class="nick" style="background: #8c4a4a">eFfeM</th><td class="text" style="color: #8c4a4a">and of course I do have the PR service running to make that the number bumps</td><td class="time"><a href="#t2021-04-17T11:35:22" class="time">11:35</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-04-16.log.html">&#171; Friday, 2021-04-16</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-18.log.html">Sunday, 2021-04-18 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
