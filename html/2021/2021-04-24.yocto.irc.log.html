@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-04-24</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-04-24</h1>
+<div class="navigation"> <a href="%23yocto.2021-04-23.log.html">&#171; Friday, 2021-04-23</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-25.log.html">Sunday, 2021-04-25 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-04-24T01:11:55"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">vdl: what would be in packagegroup-core-machine-boot&nbsp;&nbsp;?</td><td class="time"><a href="#t2021-04-24T01:11:55" class="time">01:11</a></td></tr>
+<tr id="t2021-04-24T01:43:16"><th class="nick" style="background: #42427e">vdl</th><td class="text" style="color: #42427e">RP: the content of MACHINE_ESSENTIAL_EXTRA_RDEPENDS (i.e. usually kernel image and device tree)</td><td class="time"><a href="#t2021-04-24T01:43:16" class="time">01:43</a></td></tr>
+<tr id="t2021-04-24T03:12:45"><th class="nick" style="background: #818144">lemon36</th><td class="text" style="color: #818144">im getting a warning when i build my virtual/kernel: do_kernel_metadata: defconfig detected in WORKDIR. bcm2709_defconfig skipped. How do I get rid of the defconfig in WORKDIR?</td><td class="time"><a href="#t2021-04-24T03:12:45" class="time">03:12</a></td></tr>
+<tr id="t2021-04-24T10:49:23"><td class="action" colspan="2">* armpit working on seccomp patches</td><td><a href="#t2021-04-24T10:49:23" class="time">10:49</a></td></tr>
+<tr id="t2021-04-24T12:57:45"><th class="nick" style="background: #854685">marex</th><td class="text" style="color: #854685">armpit: hey, are you still in charge of picking up fixed for dunfell or is that someone else ?</td><td class="time"><a href="#t2021-04-24T12:57:45" class="time">12:57</a></td></tr>
+<tr id="t2021-04-24T13:43:21"><th class="nick" style="background: #488888">lemon87</th><td class="text" style="color: #488888">hi.. im applying a kernel patch via devtool. when I build the image in devtool, the patches are applied. however when I exit out of devtool (devtool finish) and build the image, I don't see the patch being applied (even tho the patch file is added to the SRC_URI). Am I missing something?</td><td class="time"><a href="#t2021-04-24T13:43:21" class="time">13:43</a></td></tr>
+<tr id="t2021-04-24T14:37:29"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">marex, dunfell for mete-openembedded and meta-security</td><td class="time"><a href="#t2021-04-24T14:37:29" class="time">14:37</a></td></tr>
+<tr id="t2021-04-24T14:57:12"><th class="nick" style="background: #854685">marex</th><td class="text" style="color: #854685">armpit: who is in charge of oe-core there ?</td><td class="time"><a href="#t2021-04-24T14:57:12" class="time">14:57</a></td></tr>
+<tr id="t2021-04-24T15:08:24"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">see: <a href="https://wiki.yoctoproject.org/wiki/Releases" rel="nofollow">https://wiki.yoctoproject.org/wiki/Releases</a></td><td class="time"><a href="#t2021-04-24T15:08:24" class="time">15:08</a></td></tr>
+<tr id="t2021-04-24T15:18:10"><td class="nickchange" colspan="2">*** opello_ is now known as opello</td><td><a href="#t2021-04-24T15:18:10" class="time">15:18</a></td></tr>
+<tr id="t2021-04-24T15:58:29"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">RP zeddii smurray , libseccomp patches sent</td><td class="time"><a href="#t2021-04-24T15:58:29" class="time">15:58</a></td></tr>
+<tr id="t2021-04-24T16:00:11"><th class="nick" style="background: #4b904b">smurray</th><td class="text" style="color: #4b904b">armpit: cool, thanks!</td><td class="time"><a href="#t2021-04-24T16:00:11" class="time">16:00</a></td></tr>
+<tr id="t2021-04-24T16:29:36"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: thanks. Can I tempt you to add a MAINTAINER entry and a HOMEPAGE to the recipe? :)</td><td class="time"><a href="#t2021-04-24T16:29:36" class="time">16:29</a></td></tr>
+<tr id="t2021-04-24T16:30:05"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">I know about the latter since we tripped over it with another patch already today</td><td class="time"><a href="#t2021-04-24T16:30:05" class="time">16:30</a></td></tr>
+<tr id="t2021-04-24T16:55:47"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: Actually, I'll add them. get this into testing</td><td class="time"><a href="#t2021-04-24T16:55:47" class="time">16:55</a></td></tr>
+<tr id="t2021-04-24T17:26:15"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">RP, sure</td><td class="time"><a href="#t2021-04-24T17:26:15" class="time">17:26</a></td></tr>
+<tr id="t2021-04-24T17:26:41"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">thanks</td><td class="time"><a href="#t2021-04-24T17:26:41" class="time">17:26</a></td></tr>
+<tr id="t2021-04-24T17:28:46"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">I figure we can massage the changes to make life easier going forward.</td><td class="time"><a href="#t2021-04-24T17:28:46" class="time">17:28</a></td></tr>
+<tr id="t2021-04-24T17:29:57"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">FYI, have been building for all the major Arches, some musl and mutli arch con figs for a while so challenge you to find a build failure ; )</td><td class="time"><a href="#t2021-04-24T17:29:57" class="time">17:29</a></td></tr>
+<tr id="t2021-04-24T17:33:07"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">RP, I see build 2072 has those changes. I will keep an eye on it in between my honey-do-list</td><td class="time"><a href="#t2021-04-24T17:33:07" class="time">17:33</a></td></tr>
+<tr id="t2021-04-24T17:44:25"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: challenge accepted and met: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/64/builds/3333/steps/11/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/64/builds/3333/steps/11/logs/stdio</a> :)</td><td class="time"><a href="#t2021-04-24T17:44:25" class="time">17:44</a></td></tr>
+<tr id="t2021-04-24T17:44:52"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: apt for musl</td><td class="time"><a href="#t2021-04-24T17:44:52" class="time">17:44</a></td></tr>
+<tr id="t2021-04-24T20:03:22"><th class="nick" style="background: #8c4a4a">armpit</th><td class="text" style="color: #8c4a4a">hmm. let me look into it</td><td class="time"><a href="#t2021-04-24T20:03:22" class="time">20:03</a></td></tr>
+<tr id="t2021-04-24T20:04:12"><td class="action" colspan="2">* armpit tries to reproduce</td><td><a href="#t2021-04-24T20:04:12" class="time">20:04</a></td></tr>
+<tr id="t2021-04-24T20:08:00"><td class="action" colspan="2">* armpit kicks off local build</td><td><a href="#t2021-04-24T20:08:00" class="time">20:08</a></td></tr>
+<tr id="t2021-04-24T20:41:48"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: also, reproducibility issue in ptest: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/115/builds/195/steps/12/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/115/builds/195/steps/12/logs/stdio</a></td><td class="time"><a href="#t2021-04-24T20:41:48" class="time">20:41</a></td></tr>
+<tr id="t2021-04-24T20:42:59"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">armpit: <a href="https://autobuilder.yocto.io/pub/repro-fail/oe-reproducible-20210424-ff7_25vw/packages/diff-html/" rel="nofollow">https://autobuilder.yocto.io/pub/repro-fail/oe-reproducible-20210424-ff7_25vw/packages/diff-html/</a></td><td class="time"><a href="#t2021-04-24T20:42:59" class="time">20:42</a></td></tr>
+<tr id="t2021-04-24T22:29:02"><td class="nickchange" colspan="2">*** matteo is now known as Guest3539</td><td><a href="#t2021-04-24T22:29:02" class="time">22:29</a></td></tr>
+<tr id="t2021-04-24T22:29:03"><td class="nickchange" colspan="2">*** fury is now known as Guest83628</td><td><a href="#t2021-04-24T22:29:03" class="time">22:29</a></td></tr>
+<tr id="t2021-04-24T22:29:03-2"><td class="nickchange" colspan="2">*** ldts is now known as Guest98029</td><td><a href="#t2021-04-24T22:29:03-2" class="time">22:29</a></td></tr>
+<tr id="t2021-04-24T22:29:03-3"><td class="nickchange" colspan="2">*** ric96 is now known as Guest73870</td><td><a href="#t2021-04-24T22:29:03-3" class="time">22:29</a></td></tr>
+<tr id="t2021-04-24T22:29:03-4"><td class="nickchange" colspan="2">*** khem is now known as Guest8605</td><td><a href="#t2021-04-24T22:29:03-4" class="time">22:29</a></td></tr>
+<tr id="t2021-04-24T22:29:03-5"><td class="nickchange" colspan="2">*** moto-timo is now known as Guest82244</td><td><a href="#t2021-04-24T22:29:03-5" class="time">22:29</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-04-23.log.html">&#171; Friday, 2021-04-23</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-25.log.html">Sunday, 2021-04-25 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
