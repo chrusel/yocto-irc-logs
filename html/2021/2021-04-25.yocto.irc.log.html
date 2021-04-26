@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2021-04-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2021-04-25</h1>
+<div class="navigation"> <a href="%23yocto.2021-04-24.log.html">&#171; Saturday, 2021-04-24</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-26.log.html">Monday, 2021-04-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-04-25T03:14:22"><td class="nickchange" colspan="2">*** Guest83628 is now known as fury</td><td><a href="#t2021-04-25T03:14:22" class="time">03:14</a></td></tr>
+<tr id="t2021-04-25T09:39:13"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2021-04-25T09:39:13" class="time">09:39</a></td></tr>
+<tr id="t2021-04-25T12:07:13"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">Heyho, is `devtool modify` supposed to apply patches from SRC_URI ?</td><td class="time"><a href="#t2021-04-25T12:07:13" class="time">12:07</a></td></tr>
+<tr id="t2021-04-25T14:58:34"><td class="nickchange" colspan="2">*** tprrt is now known as tperrot</td><td><a href="#t2021-04-25T14:58:34" class="time">14:58</a></td></tr>
+<tr id="t2021-04-25T15:54:00-2"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2021-04-25T15:54:00-2" class="time">15:54</a></td></tr>
+<tr id="t2021-04-25T16:30:20"><td class="nickchange" colspan="2">*** camus is now known as kaspter</td><td><a href="#t2021-04-25T16:30:20" class="time">16:30</a></td></tr>
+<tr id="t2021-04-25T16:59:21"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: I chucked I couple of patches into master-next to work around the reproducibility issue and the floating apt dependency.</td><td class="time"><a href="#t2021-04-25T16:59:21" class="time">16:59</a></td></tr>
+<tr id="t2021-04-25T17:00:09"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">I see khem ( Guest8605 ?) sent a musl patch but we also need to fix the determinism issue with a proper PACKAGECONFIG</td><td class="time"><a href="#t2021-04-25T17:00:09" class="time">17:00</a></td></tr>
+<tr id="t2021-04-25T17:19:37"><th class="nick" style="background: #818144">vdl</th><td class="text" style="color: #818144">how can I inherit the RDEPENDS_${PN} dependencies in my ${PN}-split package?</td><td class="time"><a href="#t2021-04-25T17:19:37" class="time">17:19</a></td></tr>
+<tr id="t2021-04-25T17:20:26"><th class="nick" style="background: #818144">vdl</th><td class="text" style="color: #818144">I've added RDEPENDS_${PN}-split = &quot;${PN}&quot; but it doesn't satisfy the dependency (do_package_qa screams)</td><td class="time"><a href="#t2021-04-25T17:20:26" class="time">17:20</a></td></tr>
+<tr id="t2021-04-25T17:20:47"><th class="nick" style="background: #818144">vdl</th><td class="text" style="color: #818144">(with RDEPENDS_${PN} containing the dependencies)</td><td class="time"><a href="#t2021-04-25T17:20:47" class="time">17:20</a></td></tr>
+<tr id="t2021-04-25T18:09:27"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">RP, k. it looks like a syscall issue which is not making sence</td><td class="time"><a href="#t2021-04-25T18:09:27" class="time">18:09</a></td></tr>
+<tr id="t2021-04-25T18:12:05"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">ah, khem sent a patch</td><td class="time"><a href="#t2021-04-25T18:12:05" class="time">18:12</a></td></tr>
+<tr id="t2021-04-25T18:13:51"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">I bet that will work</td><td class="time"><a href="#t2021-04-25T18:13:51" class="time">18:13</a></td></tr>
+<tr id="t2021-04-25T18:46:52"><th class="nick" style="background: #854685">armpit</th><td class="text" style="color: #854685">cool. apt builds now</td><td class="time"><a href="#t2021-04-25T18:46:52" class="time">18:46</a></td></tr>
+<tr id="t2021-04-25T22:22:30"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">Reason I was asking about devtool modify applying patches is that I thought it used to but I'm not seeing a file added via a patch in the workspace source</td><td class="time"><a href="#t2021-04-25T22:22:30" class="time">22:22</a></td></tr>
+<tr id="t2021-04-25T22:23:15"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">though if I supply invalid patches it chokes. Is there some oddness with devtool interacting with a kernel recipe?</td><td class="time"><a href="#t2021-04-25T22:23:15" class="time">22:23</a></td></tr>
+<tr id="t2021-04-25T22:25:13"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">I've checked on all branches of the workspace source that start with &quot;devtool&quot; too</td><td class="time"><a href="#t2021-04-25T22:25:13" class="time">22:25</a></td></tr>
+<tr id="t2021-04-25T23:09:11"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">armpit: we probably still need a proper patch for seccomp PACKAGECONFIG in apt</td><td class="time"><a href="#t2021-04-25T23:09:11" class="time">23:09</a></td></tr>
+<tr id="t2021-04-25T23:57:36"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">hmm `git show` brings up this interesting result: (HEAD -&gt; devtool, tag: devtool-patched, tag: devtool-base, devtool-override-de10-nano, devtool-override-de0-nano, devtool-no-overrides)</td><td class="time"><a href="#t2021-04-25T23:57:36" class="time">23:57</a></td></tr>
+<tr id="t2021-04-25T23:58:09"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">Anyone know if the kernel bbclass does some magic which would mean the patches were applied to a copy of the srcdir which ends up not being the one that's set up in the workspace?</td><td class="time"><a href="#t2021-04-25T23:58:09" class="time">23:58</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-04-24.log.html">&#171; Saturday, 2021-04-24</a> <a href="index.html">Index</a> <a href="%23yocto.2021-04-26.log.html">Monday, 2021-04-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
