@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2021-05-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2021-05-02</h1>
+<div class="navigation"> <a href="%23yocto.2021-05-01.log.html">&#171; Saturday, 2021-05-01</a> <a href="index.html">Index</a> <a href="%23yocto.2021-05-03.log.html">Monday, 2021-05-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-05-02T00:17:07"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">Heyho, I'm on yocto dunfell and I'm seeing two (maybe one?) issues: 1) `devtool modify linux-yocto` results in a src tree in my workdir which has no patches applied. All devtool* branches are on the SRC_REV even though my recipe has patches. 2) If I `git am` a patch into that tree which adds a Kconfig option, this option is not honoured even if specified in the recipe along with others which are</td><td class="time"><a href="#t2021-05-02T00:17:07" class="time">00:17</a></td></tr>
+<tr id="t2021-05-02T00:17:09"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">honoured</td><td class="time"><a href="#t2021-05-02T00:17:09" class="time">00:17</a></td></tr>
+<tr id="t2021-05-02T00:18:03"><th class="nick" style="background: #407a40">dp</th><td class="text" style="color: #407a40">Any tips/ideas on how to dig into this to sort out where the patches are being applied on devtool modify, and if this is related to the Kconfig being ignored stuff?</td><td class="time"><a href="#t2021-05-02T00:18:03" class="time">00:18</a></td></tr>
+<tr id="t2021-05-02T02:30:26"><td class="nickchange" colspan="2">*** f0h_ is now known as f0h</td><td><a href="#t2021-05-02T02:30:26" class="time">02:30</a></td></tr>
+<tr id="t2021-05-02T08:49:03"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">sgw1: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/74/builds/3359/steps/13/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/74/builds/3359/steps/13/logs/stdio</a> might be interesting for qmp?</td><td class="time"><a href="#t2021-05-02T08:49:03" class="time">08:49</a></td></tr>
+<tr id="t2021-05-02T08:52:04"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/115/builds/220" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/115/builds/220</a> - I think there are two issues, a webkitgtk-src one from gcc11 and maybe a busybox one from your busybox patch</td><td class="time"><a href="#t2021-05-02T08:52:04" class="time">08:52</a></td></tr>
+<tr id="t2021-05-02T08:52:38"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: good news is that everything else inc mingw looks ok</td><td class="time"><a href="#t2021-05-02T08:52:38" class="time">08:52</a></td></tr>
+<tr id="t2021-05-02T09:44:12"><th class="nick" style="background: #818144">manuel1985</th><td class="text" style="color: #818144">Searching the mailing list archive for &quot;meta-raspberrypi&quot; and &quot;pxe&quot; brings up zero search results. :(</td><td class="time"><a href="#t2021-05-02T09:44:12" class="time">09:44</a></td></tr>
+<tr id="t2021-05-02T09:44:18-2"><th class="nick" style="background: #818144">manuel1985</th><td class="text" style="color: #818144">Has anyone experience on this?</td><td class="time"><a href="#t2021-05-02T09:44:18-2" class="time">09:44</a></td></tr>
+<tr id="t2021-05-02T09:45:51"><th class="nick" style="background: #818144">manuel1985</th><td class="text" style="color: #818144">I got it to load the kernel and set the kernel cmdline vars so it takes the rootfs from NFS. I used build/tmp/work/raspberrypi4_64-poky-linux/bora-image/1.0-r0/rootfs/ as nfsroot. Boot reports many failing services and stops halfway.</td><td class="time"><a href="#t2021-05-02T09:45:51" class="time">09:45</a></td></tr>
+<tr id="t2021-05-02T09:56:10"><th class="nick" style="background: #818144">manuel1985</th><td class="text" style="color: #818144">When I boot the system, it puts me into emergency mode and asks me for the root password for maintenance. I don't have a root password. When I press Control-D to continue, the same prompt reappears.</td><td class="time"><a href="#t2021-05-02T09:56:10" class="time">09:56</a></td></tr>
+<tr id="t2021-05-02T12:28:50"><th class="nick" style="background: #854685">distcline</th><td class="text" style="color: #854685">just getting started with yocto, and took me way longer than i care to admit that the MACHINE ??= &quot;raspberrypi4-64.conf&quot;&nbsp;&nbsp;from the tutorial i was following did not need to have the &quot;.conf&quot; there. Only when typing out my question was it obvious. thanks.</td><td class="time"><a href="#t2021-05-02T12:28:50" class="time">12:28</a></td></tr>
+<tr id="t2021-05-02T16:25:55"><th class="nick" style="background: #488888">khem</th><td class="text" style="color: #488888">RP:&nbsp;&nbsp;from quick look busybox is due to re-ordering of a line in header file include/applets.h and I think your hunch is right, its due to the busybox patch and the webkitgtk one is due to another generated header called DerivedSources/MiniBrowser/BrowserMarshal.h which has abs paths mentioned inside it for a file called browser-mashal.list</td><td class="time"><a href="#t2021-05-02T16:25:55" class="time">16:25</a></td></tr>
+<tr id="t2021-05-02T20:08:40"><td class="nickchange" colspan="2">*** JaBen1 is now known as JaBen</td><td><a href="#t2021-05-02T20:08:40" class="time">20:08</a></td></tr>
+<tr id="t2021-05-02T22:18:33"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: master-next tested out ok so it is looking like those are gcc11 related</td><td class="time"><a href="#t2021-05-02T22:18:33" class="time">22:18</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-05-01.log.html">&#171; Saturday, 2021-05-01</a> <a href="index.html">Index</a> <a href="%23yocto.2021-05-03.log.html">Monday, 2021-05-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
