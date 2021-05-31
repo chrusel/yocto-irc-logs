@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2021-05-30</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2021-05-30</h1>
+<div class="navigation"> <a href="%23yocto.2021-05-29.log.html">&#171; Saturday, 2021-05-29</a> <a href="index.html">Index</a> <a href="%23yocto.2021-05-31.log.html">Monday, 2021-05-31 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-05-30T08:12:35"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">I was wondering why so quiet.</td><td class="time"><a href="#t2021-05-30T08:12:35" class="time">08:12</a></td></tr>
+<tr id="t2021-05-30T09:58:08"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: holiday weekend maybe?</td><td class="time"><a href="#t2021-05-30T09:58:08" class="time">09:58</a></td></tr>
+<tr id="t2021-05-30T09:59:28"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: maybe. Can I ask you, is this the right way to deal with buildhistory races? <a href="http://git.yoctoproject.org/cgit.cgi/poky-contrib/commit/?h=akanavin/package-version-updates&amp;id=85da3f88f0d4a20d828ed0e03b40da6ae98c2401" rel="nofollow">http://git.yoctoproject.org/cgit.cgi/poky-contrib/commit/?h=akanavin/package-version-updates&amp;id=85da3f88f0d4a20d828ed0e03b40da6ae98c2401</a></td><td class="time"><a href="#t2021-05-30T09:59:28" class="time">09:59</a></td></tr>
+<tr id="t2021-05-30T10:27:25"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: that looks horrible from a dependency point of view :(</td><td class="time"><a href="#t2021-05-30T10:27:25" class="time">10:27</a></td></tr>
+<tr id="t2021-05-30T10:27:34"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: I saw your email but haven't read into the issue yet</td><td class="time"><a href="#t2021-05-30T10:27:34" class="time">10:27</a></td></tr>
+<tr id="t2021-05-30T10:28:17"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: packagedata should not be poking into package-split :(</td><td class="time"><a href="#t2021-05-30T10:28:17" class="time">10:28</a></td></tr>
+<tr id="t2021-05-30T10:39:15"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: Two possible fixes are to rewrite buildhistory to be writing sstate output or to split buildhistory_list_pkg_files into a separate function hooked on do_package instead of packagedata</td><td class="time"><a href="#t2021-05-30T10:39:15" class="time">10:39</a></td></tr>
+<tr id="t2021-05-30T10:39:26"><td class="action" colspan="2">* RP suspects a bigger rewrite might be helpful :/</td><td><a href="#t2021-05-30T10:39:26" class="time">10:39</a></td></tr>
+<tr id="t2021-05-30T10:43:58"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: to be clear, do_packagedata should be self sufficient, it shouldn't ever be looking at the do_package task output once the task is complete. The code is therefore just buggy and shouldn't be doing what it is doing :(</td><td class="time"><a href="#t2021-05-30T10:43:58" class="time">10:43</a></td></tr>
+<tr id="t2021-05-30T12:58:17"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: if this keep thwarting auh, I might disable buildhistory in it for now</td><td class="time"><a href="#t2021-05-30T12:58:17" class="time">12:58</a></td></tr>
+<tr id="t2021-05-30T13:16:23"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: how often have we seen it?</td><td class="time"><a href="#t2021-05-30T13:16:23" class="time">13:16</a></td></tr>
+<tr id="t2021-05-30T13:18:38"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: I saw it for the first time in the very last auh run</td><td class="time"><a href="#t2021-05-30T13:18:38" class="time">13:18</a></td></tr>
+<tr id="t2021-05-30T13:18:48"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: but it did happen for 4 different recipes in there</td><td class="time"><a href="#t2021-05-30T13:18:48" class="time">13:18</a></td></tr>
+<tr id="t2021-05-30T13:19:22"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: all of do_compile fails except cmake</td><td class="time"><a href="#t2021-05-30T13:19:22" class="time">13:19</a></td></tr>
+<tr id="t2021-05-30T13:20:48"><th class="nick" style="background: #407a40">kanavin</th><td class="text" style="color: #407a40">RP: ah, it happened in previous auh too</td><td class="time"><a href="#t2021-05-30T13:20:48" class="time">13:20</a></td></tr>
+<tr id="t2021-05-30T13:22:57"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kanavin: I'll have to try and fix it, I think there are probably related open bugs too :/</td><td class="time"><a href="#t2021-05-30T13:22:57" class="time">13:22</a></td></tr>
+<tr id="t2021-05-30T19:29:27"><th class="nick" style="background: #818144">manuel1985</th><td class="text" style="color: #818144">kanavin: This channel moved to libera.chat.</td><td class="time"><a href="#t2021-05-30T19:29:27" class="time">19:29</a></td></tr>
+<tr id="t2021-05-30T22:35:31"><td class="part" colspan="2">*** [ID] &lt;[ID]!~id@186.128.220.107&gt; has left #yocto</td><td><a href="#t2021-05-30T22:35:31" class="time">22:35</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-05-29.log.html">&#171; Saturday, 2021-05-29</a> <a href="index.html">Index</a> <a href="%23yocto.2021-05-31.log.html">Monday, 2021-05-31 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
