@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Friday, 2021-06-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Friday, 2021-06-04</h1>
+<div class="navigation"> <a href="%23yocto.2021-06-03.log.html">&#171; Thursday, 2021-06-03</a> <a href="index.html">Index</a> <a href="%23yocto.2021-06-05.log.html">Saturday, 2021-06-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-06-04T04:24:58"><th class="nick" style="background: #407a40">Ch^W</th><td class="text" style="color: #407a40">~.</td><td class="time"><a href="#t2021-06-04T04:24:58" class="time">04:24</a></td></tr>
+<tr id="t2021-06-04T07:06:18"><th class="nick" style="background: #42427e">mckoan</th><td class="text" style="color: #42427e">good morning</td><td class="time"><a href="#t2021-06-04T07:06:18" class="time">07:06</a></td></tr>
+<tr id="t2021-06-04T07:16:50"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">Hi all, I just tried to move to dunfell 3.1.8 from a version from late 2020. I'm using meta-tegra, and now when building the initramfs I get QA errors on host contamination and indeed all files in rootfs are from the building user, whereas before they were from root.(as expected)</td><td class="time"><a href="#t2021-06-04T07:16:50" class="time">07:16</a></td></tr>
+<tr id="t2021-06-04T07:16:51"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">anyone an idea what is wrong ?</td><td class="time"><a href="#t2021-06-04T07:16:51" class="time">07:16</a></td></tr>
+<tr id="t2021-06-04T07:50:09"><th class="nick" style="background: #854685">ndec</th><td class="text" style="color: #854685">please read an important IRC announcement: <a href="https://lists.yoctoproject.org/g/yocto/message/53737" rel="nofollow">https://lists.yoctoproject.org/g/yocto/message/53737</a></td><td class="time"><a href="#t2021-06-04T07:50:09" class="time">07:50</a></td></tr>
+<tr id="t2021-06-04T07:58:38"><th class="nick" style="background: #42427e">mckoan</th><td class="text" style="color: #42427e">ndec: thank you</td><td class="time"><a href="#t2021-06-04T07:58:38" class="time">07:58</a></td></tr>
+<tr id="t2021-06-04T08:07:39"><td class="part" colspan="2">*** ilunev &lt;ilunev!~koolkhel@80.72.17.178&gt; has left #yocto</td><td><a href="#t2021-06-04T08:07:39" class="time">08:07</a></td></tr>
+<tr id="t2021-06-04T09:21:20"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">wrt my earlier problem on dunfell host contamination; this happens when building the initramfs; it seems the .deb files are in proper order but the extracted files are not from root; however if I run tar under devshell to extract control.tar.xz the files are from root</td><td class="time"><a href="#t2021-06-04T09:21:20" class="time">09:21</a></td></tr>
+<tr id="t2021-06-04T09:21:50"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">it is unclear to me yet how the actual install works, I assume dpkg;</td><td class="time"><a href="#t2021-06-04T09:21:50" class="time">09:21</a></td></tr>
+<tr id="t2021-06-04T09:22:13"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">and which dpkg givefs me indeed the yocto one, not the native one</td><td class="time"><a href="#t2021-06-04T09:22:13" class="time">09:22</a></td></tr>
+<tr id="t2021-06-04T09:22:19"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">anyone an idea?</td><td class="time"><a href="#t2021-06-04T09:22:19" class="time">09:22</a></td></tr>
+<tr id="t2021-06-04T10:07:11"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2021-06-04T10:07:11" class="time">10:07</a></td></tr>
+<tr id="t2021-06-04T10:26:17"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">hmm, I'm thinking sstate is interfering with me</td><td class="time"><a href="#t2021-06-04T10:26:17" class="time">10:26</a></td></tr>
+<tr id="t2021-06-04T12:55:16"><th class="nick" style="background: #488888">barath[m]</th><td class="text" style="color: #488888">hi, would anyone know if there's any documentation on how package specific variants of global variables like for instance INCOMPATIBLE_LICENSE and INCOMPATIBLE_LICENSE_pn-&lt;packagename&gt; are handled?</td><td class="time"><a href="#t2021-06-04T12:55:16" class="time">12:55</a></td></tr>
+<tr id="t2021-06-04T13:13:34"><th class="nick" style="background: #8c4a4a">Crofton|cloud</th><td class="text" style="color: #8c4a4a">&lt;ndec&gt; Nicolas Dechesne</td><td class="time"><a href="#t2021-06-04T13:13:34" class="time">13:13</a></td></tr>
+<tr id="t2021-06-04T13:13:34-2"><th class="nick" style="background: #8c4a4a">Crofton|cloud</th><td class="text" style="color: #8c4a4a">please read an important IRC announcement: <a href="https://lists.yoctoproject.org/g/yocto/message/53737" rel="nofollow">https://lists.yoctoproject.org/g/yocto/message/53737</a></td><td class="time"><a href="#t2021-06-04T13:13:34-2" class="time">13:13</a></td></tr>
+<tr id="t2021-06-04T13:37:47"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">ok, I found the root cause of my dunfell host contamination warning.</td><td class="time"><a href="#t2021-06-04T13:37:47" class="time">13:37</a></td></tr>
+<tr id="t2021-06-04T13:38:53"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">It appears the directory sstate-build-image_complete is owned by the build user.</td><td class="time"><a href="#t2021-06-04T13:38:53" class="time">13:38</a></td></tr>
+<tr id="t2021-06-04T13:39:21"><th class="nick" style="background: #818144">eFfeM</th><td class="text" style="color: #818144">no idea how to fix this, I am building an initramfs</td><td class="time"><a href="#t2021-06-04T13:39:21" class="time">13:39</a></td></tr>
+<tr id="t2021-06-04T19:12:10-2"><td class="nickchange" colspan="2">*** aidanh_ is now known as aidanh</td><td><a href="#t2021-06-04T19:12:10-2" class="time">19:12</a></td></tr>
+<tr id="t2021-06-04T19:26:06"><th class="nick" style="background: #4b904b">moto-timo</th><td class="text" style="color: #4b904b">Leaving as per announcement</td><td class="time"><a href="#t2021-06-04T19:26:06" class="time">19:26</a></td></tr>
+<tr id="t2021-06-04T19:26:22"><td class="part" colspan="2">*** moto-timo &lt;moto-timo!sid495702@fedora/ttorling&gt; has left #yocto</td><td><a href="#t2021-06-04T19:26:22" class="time">19:26</a></td></tr>
+<tr id="t2021-06-04T19:55:05"><th class="nick" style="background: #4d4d93">dvorkindmitry</th><td class="text" style="color: #4d4d93">what is the correct way to use &quot;formfactor&quot;? what is the logic behind this idea?</td><td class="time"><a href="#t2021-06-04T19:55:05" class="time">19:55</a></td></tr>
+<tr id="t2021-06-04T20:07:23"><td class="servermsg" colspan="2">*** ChanServ sets mode: +o RP</td><td><a href="#t2021-06-04T20:07:23" class="time">20:07</a></td></tr>
+<tr id="t2021-06-04T20:07:34"><td class="servermsg" colspan="2">*** RP changes topic to &quot;Please read an important IRC announcement: <a href="https://lists.yoctoproject.org/g/yocto/message/53737" rel="nofollow">https://lists.yoctoproject.org/g/yocto/message/53737</a>&quot;</td><td><a href="#t2021-06-04T20:07:34" class="time">20:07</a></td></tr>
+<tr id="t2021-06-04T20:18:01"><td class="part" colspan="2">*** jpnurmi &lt;jpnurmi!jpnurmi@qt/jpnurmi&gt; has left #yocto</td><td><a href="#t2021-06-04T20:18:01" class="time">20:18</a></td></tr>
+<tr id="t2021-06-04T21:44:15"><td class="part" colspan="2">*** barath[m] &lt;barath[m]!barathmatr@gateway/shell/matrix.org/x-gbbxycigfirwmdpz&gt; has left #yocto</td><td><a href="#t2021-06-04T21:44:15" class="time">21:44</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-06-03.log.html">&#171; Thursday, 2021-06-03</a> <a href="index.html">Index</a> <a href="%23yocto.2021-06-05.log.html">Saturday, 2021-06-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
