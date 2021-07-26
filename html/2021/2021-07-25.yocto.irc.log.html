@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2021-07-25</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2021-07-25</h1>
+<div class="navigation"> <a href="%23yocto.2021-07-24.log.html">&#171; Saturday, 2021-07-24</a> <a href="index.html">Index</a> <a href="%23yocto.2021-07-26.log.html">Monday, 2021-07-26 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-07-25T08:36:57"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray, dl9pf: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/120/builds/9/steps/13/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/120/builds/9/steps/13/logs/stdio</a></td><td class="time"><a href="#t2021-07-25T08:36:57" class="time">08:36</a></td></tr>
+<tr id="t2021-07-25T11:20:15"><td class="nickchange" colspan="2">*** dti is now known as dtometzki</td><td><a href="#t2021-07-25T11:20:15" class="time">11:20</a></td></tr>
+<tr id="t2021-07-25T13:31:52"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">What happened to trace-cmd in Yocto? The docs still mention the tools but it disappeared here: <a href="https://git.yoctoproject.org/cgit/cgit.cgi/poky/commit/?id=faa46ac06bf1624d0120f1fcfb00b5ad31948b44" rel="nofollow">https://git.yoctoproject.org/cgit/cgit.cgi/poky/commit/?id=faa46ac06bf1624d0120f1fcfb00b5ad31948b44</a></td><td class="time"><a href="#t2021-07-25T13:31:52" class="time">13:31</a></td></tr>
+<tr id="t2021-07-25T13:40:49"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">Ah &quot;perf ftrace&quot; probably replaced trace-cmd. Docs are just not up-to-date. We lost kernel-shark in the process?</td><td class="time"><a href="#t2021-07-25T13:40:49" class="time">13:40</a></td></tr>
+<tr id="t2021-07-25T15:56:44"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: on it; fix is simple, but need to test things still work after that systemd upgrade</td><td class="time"><a href="#t2021-07-25T15:56:44" class="time">15:56</a></td></tr>
+<tr id="t2021-07-25T15:58:03"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: I keep meaning to get this as part of the default builds but timing that with&nbsp;&nbsp;things working and being free to alter the controller's config is surprisingly difficult</td><td class="time"><a href="#t2021-07-25T15:58:03" class="time">15:58</a></td></tr>
+<tr id="t2021-07-25T15:58:26"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">likewise: We haven't really seen much demand for them and you're the first person I've seen miss them :/</td><td class="time"><a href="#t2021-07-25T15:58:26" class="time">15:58</a></td></tr>
+<tr id="t2021-07-25T15:59:50"><td class="part" colspan="2">*** Saber &lt;Saber!~Saber@gateway/tor-sasl/saber&gt; has left #yocto (Bye)</td><td><a href="#t2021-07-25T15:59:50" class="time">15:59</a></td></tr>
+<tr id="t2021-07-25T16:00:19"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: on the pr server front, my testing with things rebased on top of JPEW's fix looked good, I'll send an updated series tomorrow</td><td class="time"><a href="#t2021-07-25T16:00:19" class="time">16:00</a></td></tr>
+<tr id="t2021-07-25T16:00:43"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: great, thanks! I assume that means JPEW's patch should be queued/merged?</td><td class="time"><a href="#t2021-07-25T16:00:43" class="time">16:00</a></td></tr>
+<tr id="t2021-07-25T16:01:25"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: IMO yes.&nbsp;&nbsp;I did reply with a Tested-by on bitbake-devel ;)</td><td class="time"><a href="#t2021-07-25T16:01:25" class="time">16:01</a></td></tr>
+<tr id="t2021-07-25T16:04:19"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: right, I did see that. Just checking</td><td class="time"><a href="#t2021-07-25T16:04:19" class="time">16:04</a></td></tr>
+<tr id="t2021-07-25T16:06:04"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: I did 5 runs of oe-selftest -j 6 with it (load avg maxing out at ~600-700) and didn't see any instances of hung bitbake-server processes</td><td class="time"><a href="#t2021-07-25T16:06:04" class="time">16:06</a></td></tr>
+<tr id="t2021-07-25T16:06:22"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: it happened every time previously</td><td class="time"><a href="#t2021-07-25T16:06:22" class="time">16:06</a></td></tr>
+<tr id="t2021-07-25T16:07:05"><th class="nick" style="background: #818144">smurray</th><td class="text" style="color: #818144">RP: pr server aside, it's a good fix for the BB_HASHSERVE = &quot;auto&quot; case</td><td class="time"><a href="#t2021-07-25T16:07:05" class="time">16:07</a></td></tr>
+<tr id="t2021-07-25T16:21:57"><th class="nick" style="background: #854685">vd</th><td class="text" style="color: #854685">I have the &quot;Unable to install packages.&quot; error, seems to be related to package_deb, but I don't use the package-management feature. Should I still define PACKAGE_CLASSES = &quot;package_ipk&quot; or something?</td><td class="time"><a href="#t2021-07-25T16:21:57" class="time">16:21</a></td></tr>
+<tr id="t2021-07-25T16:22:04"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: sounds like a good fix :)</td><td class="time"><a href="#t2021-07-25T16:22:04" class="time">16:22</a></td></tr>
+<tr id="t2021-07-25T17:29:31"><th class="nick" style="background: #42427e">likewise</th><td class="text" style="color: #42427e">RP: debugging an issue where task isolation (isolcpus= nohz_full=) is broken with the 5.4 real-time kernel, so yes I need the tracing tool. But no issues, the &quot;perf&quot; indeed now has the other tracing wrapping in place.</td><td class="time"><a href="#t2021-07-25T17:29:31" class="time">17:29</a></td></tr>
+<tr id="t2021-07-25T19:37:13"><td class="part" colspan="2">*** lin_hara &lt;lin_hara!~linlin_ha@2804:14d:8083:85fe:1fe4:427a:3013:1262&gt; has left #yocto</td><td><a href="#t2021-07-25T19:37:13" class="time">19:37</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-07-24.log.html">&#171; Saturday, 2021-07-24</a> <a href="index.html">Index</a> <a href="%23yocto.2021-07-26.log.html">Monday, 2021-07-26 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
