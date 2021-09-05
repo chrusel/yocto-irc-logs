@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-09-04</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-09-04</h1>
+<div class="navigation"> <a href="%23yocto.2021-09-03.log.html">&#171; Friday, 2021-09-03</a> <a href="index.html">Index</a> <a href="%23yocto.2021-09-05.log.html">Sunday, 2021-09-05 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-09-04T00:02:37"><td class="nickchange" colspan="2">*** Net147 is now known as Guest504</td><td><a href="#t2021-09-04T00:02:37" class="time">00:02</a></td></tr>
+<tr id="t2021-09-04T11:35:11"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">hello folks</td><td class="time"><a href="#t2021-09-04T11:35:11" class="time">11:35</a></td></tr>
+<tr id="t2021-09-04T11:36:02"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">I had a problem with devtool. I am trying to build my own recipe but I got this error</td><td class="time"><a href="#t2021-09-04T11:36:02" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:34"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">| checking whether to build shared libraries... yes</td><td class="time"><a href="#t2021-09-04T11:36:34" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:35"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">| checking whether to build static libraries... no</td><td class="time"><a href="#t2021-09-04T11:36:35" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:35-2"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">| checking for unzip... no</td><td class="time"><a href="#t2021-09-04T11:36:35-2" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:36"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">| configure: error: You need unzip utility to prepare sources.</td><td class="time"><a href="#t2021-09-04T11:36:36" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:36-2"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">| WARNING: /media/developer/0c31758c-a12b-4e5f-9443-0f9b4b9c9383/framework/yocto/allwinner/build/tmp/work/aarch64-allwinner-linux/libaacplus/2.0.2+git999-r0/temp/run.do_configure.9637:1 exit 1 from 'exit 1'</td><td class="time"><a href="#t2021-09-04T11:36:36-2" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:36:49"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">Does anyone know how to fix it?</td><td class="time"><a href="#t2021-09-04T11:36:49" class="time">11:36</a></td></tr>
+<tr id="t2021-09-04T11:37:32"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">I try my thinks like add unzip-native at DEPENDS at my recipe</td><td class="time"><a href="#t2021-09-04T11:37:32" class="time">11:37</a></td></tr>
+<tr id="t2021-09-04T11:37:44"><th class="nick" style="background: #407a40">oprata</th><td class="text" style="color: #407a40">But it still doesn't work</td><td class="time"><a href="#t2021-09-04T11:37:44" class="time">11:37</a></td></tr>
+<tr id="t2021-09-04T13:36:11"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">oprata, libaacplus is completely obsolete</td><td class="time"><a href="#t2021-09-04T13:36:11" class="time">13:36</a></td></tr>
+<tr id="t2021-09-04T13:36:43"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">doesn't ffmpeg do the same?</td><td class="time"><a href="#t2021-09-04T13:36:43" class="time">13:36</a></td></tr>
+<tr id="t2021-09-04T16:12:47"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">seems we're losing around 1/14th of our parsing speed in python logger init</td><td class="time"><a href="#t2021-09-04T16:12:47" class="time">16:12</a></td></tr>
+<tr id="t2021-09-04T18:18:00"><th class="nick" style="background: #854685">falls</th><td class="text" style="color: #854685">I wanna use a different glibc version in my yocto project.&nbsp;&nbsp;&nbsp;&nbsp; but how can I&nbsp;&nbsp;change the glibc version ?</td><td class="time"><a href="#t2021-09-04T18:18:00" class="time">18:18</a></td></tr>
+<tr id="t2021-09-04T18:18:21"><th class="nick" style="background: #854685">falls</th><td class="text" style="color: #854685">because&nbsp;&nbsp;glibc isn't a regular library</td><td class="time"><a href="#t2021-09-04T18:18:21" class="time">18:18</a></td></tr>
+<tr id="t2021-09-04T18:56:54"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">RP: the trickiest lttng-tools ptest fails are due to tests written in shell and lacking explicit synchronization when orchestrating external binaries execution. They succeed when running from the source tree because helper binaries are executed through libtool wrappers, adding delay, which means the timings miraculously work out.</td><td class="time"><a href="#t2021-09-04T18:56:54" class="time">18:56</a></td></tr>
+<tr id="t2021-09-04T18:57:40"><th class="nick" style="background: #42427e">kanavin</th><td class="text" style="color: #42427e">RP: typical failng sequence is: start tracing, start some app, stop some app, stop tracing - if tracing is stopped without delay the not everything is collected ---&gt; fail</td><td class="time"><a href="#t2021-09-04T18:57:40" class="time">18:57</a></td></tr>
+<tr id="t2021-09-04T19:49:23"><th class="nick" style="background: #488888">vd</th><td class="text" style="color: #488888">hi there -- what would you use to run a web browser on a beaglebone black?</td><td class="time"><a href="#t2021-09-04T19:49:23" class="time">19:49</a></td></tr>
+<tr id="t2021-09-04T21:31:42"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">kanavin: that is definitely something to ask upstream about</td><td class="time"><a href="#t2021-09-04T21:31:42" class="time">21:31</a></td></tr>
+<tr id="t2021-09-04T23:53:01"><th class="nick" style="background: #8c4a4a">vmeson</th><td class="text" style="color: #8c4a4a">vd: doesn't the BBB only have 1/2 GB or ram? I suspect that chromium or firefox would be too much if you want to avoid swap. Try epiphany ?</td><td class="time"><a href="#t2021-09-04T23:53:01" class="time">23:53</a></td></tr>
+<tr id="t2021-09-04T23:55:45"><th class="nick" style="background: #8c4a4a">vmeson</th><td class="text" style="color: #8c4a4a">Huh, I may be wrong. On x86-64, a quick test of epiphany has: 235,924k max resident, whereas chromium is 211,524k max resident (test was just open google, search, go to a simple site, exit)</td><td class="time"><a href="#t2021-09-04T23:55:45" class="time">23:55</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-09-03.log.html">&#171; Friday, 2021-09-03</a> <a href="index.html">Index</a> <a href="%23yocto.2021-09-05.log.html">Sunday, 2021-09-05 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
