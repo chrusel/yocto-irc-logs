@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Monday, 2021-09-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Monday, 2021-09-06</h1>
+<div class="navigation"> <a href="%23yocto.2021-09-05.log.html">&#171; Sunday, 2021-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2021-09-07.log.html">Tuesday, 2021-09-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-09-06T02:21:23"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2021-09-06T02:21:23" class="time">02:21</a></td></tr>
+<tr id="t2021-09-06T02:59:40-2"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2021-09-06T02:59:40-2" class="time">02:59</a></td></tr>
+<tr id="t2021-09-06T05:29:55"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2021-09-06T05:29:55" class="time">05:29</a></td></tr>
+<tr id="t2021-09-06T06:56:57"><td class="nickchange" colspan="2">*** mckoan|away is now known as mckoan</td><td><a href="#t2021-09-06T06:56:57" class="time">06:56</a></td></tr>
+<tr id="t2021-09-06T06:57:05"><th class="nick" style="background: #407a40">mckoan</th><td class="text" style="color: #407a40">good morning</td><td class="time"><a href="#t2021-09-06T06:57:05" class="time">06:57</a></td></tr>
+<tr id="t2021-09-06T07:05:36"><td class="nickchange" colspan="2">*** gsalazar_ is now known as gsalazar</td><td><a href="#t2021-09-06T07:05:36" class="time">07:05</a></td></tr>
+<tr id="t2021-09-06T07:48:40"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">How does Yocto create the rootfs image file without root?</td><td class="time"><a href="#t2021-09-06T07:48:40" class="time">07:48</a></td></tr>
+<tr id="t2021-09-06T08:02:33"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">wCPO fakeroot/pseudo <a href="https://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#fakeroot-and-pseudo" rel="nofollow">https://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#fakeroot-and-pseudo</a></td><td class="time"><a href="#t2021-09-06T08:02:33" class="time">08:02</a></td></tr>
+<tr id="t2021-09-06T08:07:21"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">dwagenk: that explain part of it, but don't you need to mount the root fs image with the relevant kernel module for adding the files?</td><td class="time"><a href="#t2021-09-06T08:07:21" class="time">08:07</a></td></tr>
+<tr id="t2021-09-06T08:17:06"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">wCPO the files are added with the mkfs call already, so the image is not mounted on the build host. See e.g. <a href="https://git.openembedded.org/openembedded-core/tree/meta/classes/image_types.bbclass?h=master-next#n86" rel="nofollow">https://git.openembedded.org/openembedded-core/tree/meta/classes/image_types.bbclass?h=master-next#n86</a></td><td class="time"><a href="#t2021-09-06T08:17:06" class="time">08:17</a></td></tr>
+<tr id="t2021-09-06T08:18:23"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">from mkfs.ext4 man page:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Copy the contents of the given directory into the root directory of the filesystem.</td><td class="time"><a href="#t2021-09-06T08:18:23" class="time">08:18</a></td></tr>
+<tr id="t2021-09-06T08:18:47"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">(for -d root-directory parameter)</td><td class="time"><a href="#t2021-09-06T08:18:47" class="time">08:18</a></td></tr>
+<tr id="t2021-09-06T08:19:29"><td class="nickchange" colspan="2">*** gsalazar_ is now known as gsalazar</td><td><a href="#t2021-09-06T08:19:29" class="time">08:19</a></td></tr>
+<tr id="t2021-09-06T08:34:48"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">dwagenk: make sense, thanks!</td><td class="time"><a href="#t2021-09-06T08:34:48" class="time">08:34</a></td></tr>
+<tr id="t2021-09-06T09:50:17"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">RP: thanks, I was going to add to that bug next, but you beat me to it :)</td><td class="time"><a href="#t2021-09-06T09:50:17" class="time">09:50</a></td></tr>
+<tr id="t2021-09-06T09:53:16"><th class="nick" style="background: #488888">RP</th><td class="text" style="color: #488888">kanavin: might still be worth adding details to the bug. Just wanted to get Jonathan's attention :)</td><td class="time"><a href="#t2021-09-06T09:53:16" class="time">09:53</a></td></tr>
+<tr id="t2021-09-06T09:54:31"><th class="nick" style="background: #854685">kanavin</th><td class="text" style="color: #854685">yeah. they even have a guide for writing tests that warns not to do this :) <a href="https://github.com/lttng/lttng-tools/blob/master/tests/README#L15" rel="nofollow">https://github.com/lttng/lttng-tools/blob/master/tests/README#L15</a></td><td class="time"><a href="#t2021-09-06T09:54:31" class="time">09:54</a></td></tr>
+<tr id="t2021-09-06T10:09:33"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">JosefHolzmayr[m]: it is in <a href="https://git.openembedded.org/openembedded-core/commit/?id=f81b188bcf5aa18746fd622eb7b5c0dcb0b5c93d" rel="nofollow">https://git.openembedded.org/openembedded-core/commit/?id=f81b188bcf5aa18746fd622eb7b5c0dcb0b5c93d</a>, this <a href="https://git.openembedded.org/openembedded-core/commit/?id=a9fb51b75d4536d13734d91222bb0bc612555ae2" rel="nofollow">https://git.openembedded.org/openembedded-core/commit/?id=a9fb51b75d4536d13734d91222bb0bc612555ae2</a> and <a href="https://git.openembedded.org/openembedded-core/commit/?id=fff339b5bd7789db5d0c024fc84490ac17fa4fe9" rel="nofollow">https://git.openembedded.org/openembedded-core/commit/?id=fff339b5bd7789db5d0c024fc84490ac17fa4fe9</a> is also worth</td><td class="time"><a href="#t2021-09-06T10:09:33" class="time">10:09</a></td></tr>
+<tr id="t2021-09-06T10:09:33-2"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">mentioning</td><td class="time"><a href="#t2021-09-06T10:09:33-2" class="time">10:09</a></td></tr>
+<tr id="t2021-09-06T10:15:53"><th class="nick" style="background: #8c4a4a">Guest5</th><td class="text" style="color: #8c4a4a">Hi, does anybody know if zandrey is around today?</td><td class="time"><a href="#t2021-09-06T10:15:53" class="time">10:15</a></td></tr>
+<tr id="t2021-09-06T10:16:16"><th class="nick" style="background: #8c4a4a">Guest5</th><td class="text" style="color: #8c4a4a">...because of a bug in dpaa_eth.c</td><td class="time"><a href="#t2021-09-06T10:16:16" class="time">10:16</a></td></tr>
+<tr id="t2021-09-06T10:41:38"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">So systemd-repart and cryptsetup (?) apparently require lvm2-udevrules for mounting a encrypted partition. Looks like a missing runtime dependency or maybe it is missing for a reason</td><td class="time"><a href="#t2021-09-06T10:41:38" class="time">10:41</a></td></tr>
+<tr id="t2021-09-06T10:43:28"><th class="nick" style="background: #4b904b">user123</th><td class="text" style="color: #4b904b"><a href="https://pastebin.com/xKsHDJJB" rel="nofollow">https://pastebin.com/xKsHDJJB</a> can anyone help me resolving this error,</td><td class="time"><a href="#t2021-09-06T10:43:28" class="time">10:43</a></td></tr>
+<tr id="t2021-09-06T10:44:00"><th class="nick" style="background: #4b904b">user123</th><td class="text" style="color: #4b904b">iam trying to build a multimedia image with multilib support</td><td class="time"><a href="#t2021-09-06T10:44:00" class="time">10:44</a></td></tr>
+<tr id="t2021-09-06T13:20:59-2"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2021-09-06T13:20:59-2" class="time">13:20</a></td></tr>
+<tr id="t2021-09-06T15:41:41"><th class="nick" style="background: #42427e">wCPO</th><td class="text" style="color: #42427e">Am I supposed to use self.target.run(&quot;test -f /foo&quot;) with OERuntimeTestCase to test if a file exists? or is there a smarter way</td><td class="time"><a href="#t2021-09-06T15:41:41" class="time">15:41</a></td></tr>
+<tr id="t2021-09-06T16:05:56"><th class="nick" style="background: #4d4d93">rburton</th><td class="text" style="color: #4d4d93">wCPO: yes</td><td class="time"><a href="#t2021-09-06T16:05:56" class="time">16:05</a></td></tr>
+<tr id="t2021-09-06T16:21:48"><td class="nickchange" colspan="2">*** mckoan is now known as mckoan|away</td><td><a href="#t2021-09-06T16:21:48" class="time">16:21</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-09-05.log.html">&#171; Sunday, 2021-09-05</a> <a href="index.html">Index</a> <a href="%23yocto.2021-09-07.log.html">Tuesday, 2021-09-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
