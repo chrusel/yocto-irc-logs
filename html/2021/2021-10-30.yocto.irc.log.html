@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-10-30</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-10-30</h1>
+<div class="navigation"> <a href="%23yocto.2021-10-29.log.html">&#171; Friday, 2021-10-29</a> <a href="index.html">Index</a> <a href="%23yocto.2021-10-31.log.html">Sunday, 2021-10-31 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-10-30T07:00:10-2"><td class="nickchange" colspan="2">*** vladest1 is now known as vladest</td><td><a href="#t2021-10-30T07:00:10-2" class="time">07:00</a></td></tr>
+<tr id="t2021-10-30T16:03:57"><th class="nick" style="background: #407a40">jonmason</th><td class="text" style="color: #407a40">Looks like the clang13.patch patch doesn't apply for mesa anymore (honister branch)</td><td class="time"><a href="#t2021-10-30T16:03:57" class="time">16:03</a></td></tr>
+<tr id="t2021-10-30T16:09:20"><td class="action" colspan="2">* RP doesn't believe the autobuilder when it says it built a target including a core-image-minimal in 57s</td><td><a href="#t2021-10-30T16:09:20" class="time">16:09</a></td></tr>
+<tr id="t2021-10-30T16:09:24"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">Is honister out today?</td><td class="time"><a href="#t2021-10-30T16:09:24" class="time">16:09</a></td></tr>
+<tr id="t2021-10-30T16:09:35"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: was out earlier in the week</td><td class="time"><a href="#t2021-10-30T16:09:35" class="time">16:09</a></td></tr>
+<tr id="t2021-10-30T16:09:39"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">I'm a little bit confused by the release page</td><td class="time"><a href="#t2021-10-30T16:09:39" class="time">16:09</a></td></tr>
+<tr id="t2021-10-30T16:09:47"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">RP: Thanks. Updating my builds then</td><td class="time"><a href="#t2021-10-30T16:09:47" class="time">16:09</a></td></tr>
+<tr id="t2021-10-30T16:10:21"><th class="nick" style="background: #407a40">jonmason</th><td class="text" style="color: #407a40">RP: can it even scan all the bb files in 57s?</td><td class="time"><a href="#t2021-10-30T16:10:21" class="time">16:10</a></td></tr>
+<tr id="t2021-10-30T16:11:04"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">Under Release Links is sais on the second line: &quot;Yocto Project 2.2&quot;, code name: hardknott. On the first line it reads &quot;Yocto Project 3.4&quot; with codename Hardknott. I assume its a copy paste error.</td><td class="time"><a href="#t2021-10-30T16:11:04" class="time">16:11</a></td></tr>
+<tr id="t2021-10-30T16:11:25"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">*Yocto Project 3.3</td><td class="time"><a href="#t2021-10-30T16:11:25" class="time">16:11</a></td></tr>
+<tr id="t2021-10-30T16:13:52"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">Anyways, congrats are in order! Great work and kudos to those of you who makes this possible</td><td class="time"><a href="#t2021-10-30T16:13:52" class="time">16:13</a></td></tr>
+<tr id="t2021-10-30T16:14:13"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">jonmason: yes! :)</td><td class="time"><a href="#t2021-10-30T16:14:13" class="time">16:14</a></td></tr>
+<tr id="t2021-10-30T16:14:25"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">jonmason: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/15/builds/4560" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/15/builds/4560</a></td><td class="time"><a href="#t2021-10-30T16:14:25" class="time">16:14</a></td></tr>
+<tr id="t2021-10-30T16:15:33"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: thanks. I fixed the reference</td><td class="time"><a href="#t2021-10-30T16:15:33" class="time">16:15</a></td></tr>
+<tr id="t2021-10-30T16:17:18"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">While we're at it: Under the Support Level column it sais that Dunfell is supported until apr 2024, and it also sais that Kirkstone will be supported until Apr 2024 :D Had my boss confused</td><td class="time"><a href="#t2021-10-30T16:17:18" class="time">16:17</a></td></tr>
+<tr id="t2021-10-30T16:17:55"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">^ RP</td><td class="time"><a href="#t2021-10-30T16:17:55" class="time">16:17</a></td></tr>
+<tr id="t2021-10-30T16:19:16"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: that is correct, dunfell was extended from 2 to 4 years</td><td class="time"><a href="#t2021-10-30T16:19:16" class="time">16:19</a></td></tr>
+<tr id="t2021-10-30T16:19:22"><th class="nick" style="background: #407a40">jonmason</th><td class="text" style="color: #407a40">RP: run it on the arm builder, that will fix your &quot;too fast&quot; build times ;-)</td><td class="time"><a href="#t2021-10-30T16:19:22" class="time">16:19</a></td></tr>
+<tr id="t2021-10-30T16:19:50"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">RP: So there haven't been any decision (yet?) if kirkstone will get the same level?</td><td class="time"><a href="#t2021-10-30T16:19:50" class="time">16:19</a></td></tr>
+<tr id="t2021-10-30T16:20:26"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: no decision on that. It is 2 years as things stand. We don't have the funding to commit to 4 years for kirkstone right now</td><td class="time"><a href="#t2021-10-30T16:20:26" class="time">16:20</a></td></tr>
+<tr id="t2021-10-30T16:20:49"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">RP: I see. Thanks.</td><td class="time"><a href="#t2021-10-30T16:20:49" class="time">16:20</a></td></tr>
+<tr id="t2021-10-30T16:21:03"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: new project members welcome to help with that! ;-)</td><td class="time"><a href="#t2021-10-30T16:21:03" class="time">16:21</a></td></tr>
+<tr id="t2021-10-30T16:22:24"><th class="nick" style="background: #407a40">jonmason</th><td class="text" style="color: #407a40">khem: meta-clang patch for mesa (clang13.patch) no longer seems to be applying (honister branch).&nbsp;&nbsp;Mostly likely caused by honister updating mesa to 21.2.4 (from 21.2.1).&nbsp;&nbsp;See <a href="https://gitlab.com/jonmason00/meta-arm/-/jobs/1732242008#L4064" rel="nofollow">https://gitlab.com/jonmason00/meta-arm/-/jobs/1732242008#L4064</a></td><td class="time"><a href="#t2021-10-30T16:22:24" class="time">16:22</a></td></tr>
+<tr id="t2021-10-30T16:23:12"><th class="nick" style="background: #407a40">jonmason</th><td class="text" style="color: #407a40">now I can let all my builds re-run while I go eat lunch :)</td><td class="time"><a href="#t2021-10-30T16:23:12" class="time">16:23</a></td></tr>
+<tr id="t2021-10-30T16:41:37"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">Does it exista a list of the syntatical changes from BB 1.50 -&gt; 1.52? A changelog somewhere? Is it only the :append: and :remove: syntax that have changed?</td><td class="time"><a href="#t2021-10-30T16:41:37" class="time">16:41</a></td></tr>
+<tr id="t2021-10-30T16:46:43"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">I was about to be ashamed of myself for not reading the manual, but I don't think neither the latest bb manual nor the latest mega manual ever mentiones this new syntax :D At least then I can raise the question without getting bad concience</td><td class="time"><a href="#t2021-10-30T16:46:43" class="time">16:46</a></td></tr>
+<tr id="t2021-10-30T16:47:49"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: it is well covered in the migration guide, please go and read that!</td><td class="time"><a href="#t2021-10-30T16:47:49" class="time">16:47</a></td></tr>
+<tr id="t2021-10-30T16:49:20"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">RP: Excellent. Didn't know about that page, and now I do. Bookmarked. Thanks.</td><td class="time"><a href="#t2021-10-30T16:49:20" class="time">16:49</a></td></tr>
+<tr id="t2021-10-30T16:55:49"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">To confirm, I see that layer.conf stull use e.g. `BBFILE_PRIORITY_gnome-layer = &quot;7&quot;`, this means that this is not considered an override as per the new `BBFILE_PRIORITY:gnome_layer`?</td><td class="time"><a href="#t2021-10-30T16:55:49" class="time">16:55</a></td></tr>
+<tr id="t2021-10-30T17:11:18"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">sveinse: correct</td><td class="time"><a href="#t2021-10-30T17:11:18" class="time">17:11</a></td></tr>
+<tr id="t2021-10-30T17:54:47"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">is there any example of u-boot recipe that is using DTB exported from kernel?</td><td class="time"><a href="#t2021-10-30T17:54:47" class="time">17:54</a></td></tr>
+<tr id="t2021-10-30T18:55:51"><th class="nick" style="background: #488888">vmeson</th><td class="text" style="color: #488888">dvorkindmitry: u-boot isn't my thing these days but just greping&nbsp;&nbsp;all u-boot files, turns up: meta-xilinx-tools.git/recipes-bsp/u-boot/u-boot-xlnx_%.bbappend meta-freescale.git/recipes-bsp/u-boot/u-boot-imx_2020.04.bb&nbsp;&nbsp;meta-xilinx.git/meta-xilinx-bsp/recipes-bsp/u-boot/u-boot-zynq-uenv.bb</td><td class="time"><a href="#t2021-10-30T18:55:51" class="time">18:55</a></td></tr>
+<tr id="t2021-10-30T18:56:05"><th class="nick" style="background: #488888">vmeson</th><td class="text" style="color: #488888">versions may be out of date</td><td class="time"><a href="#t2021-10-30T18:56:05" class="time">18:56</a></td></tr>
+<tr id="t2021-10-30T19:17:37"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">vmeson, thank you!</td><td class="time"><a href="#t2021-10-30T19:17:37" class="time">19:17</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-10-29.log.html">&#171; Friday, 2021-10-29</a> <a href="index.html">Index</a> <a href="%23yocto.2021-10-31.log.html">Sunday, 2021-10-31 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
