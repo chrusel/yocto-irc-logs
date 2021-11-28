@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-11-27</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-11-27</h1>
+<div class="navigation"> <a href="%23yocto.2021-11-26.log.html">&#171; Friday, 2021-11-26</a> <a href="index.html">Index</a> <a href="%23yocto.2021-11-28.log.html">Sunday, 2021-11-28 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-11-27T00:55:48"><td class="nickchange" colspan="2">*** phillid is now known as bq</td><td><a href="#t2021-11-27T00:55:48" class="time">00:55</a></td></tr>
+<tr id="t2021-11-27T10:09:08"><th class="nick" style="background: #407a40">kroon</th><td class="text" style="color: #407a40">kanavin, are you familar with the perl recipes ?</td><td class="time"><a href="#t2021-11-27T10:09:08" class="time">10:09</a></td></tr>
+<tr id="t2021-11-27T10:26:03"><th class="nick" style="background: #407a40">kroon</th><td class="text" style="color: #407a40">kanavin, something funny is going in in perl-native. it copies the patches from perlcross-native in do_configure(), but both of them have a patch called &quot;determinism.patch&quot;, so one of them gets overridden</td><td class="time"><a href="#t2021-11-27T10:26:03" class="time">10:26</a></td></tr>
+<tr id="t2021-11-27T14:28:35"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">NOTE: img-tst-test: Performing usermod with [-R /disk2/build.x.honister.0/</td><td class="time"><a href="#t2021-11-27T14:28:35" class="time">14:28</a></td></tr>
+<tr id="t2021-11-27T14:28:35-2"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">tmp/work/raspberrypi0_2w_64-my-linux/img-tst-test/1.0-r1/rootfs -P admin11</td><td class="time"><a href="#t2021-11-27T14:28:35-2" class="time">14:28</a></td></tr>
+<tr id="t2021-11-27T14:28:35-3"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">root]</td><td class="time"><a href="#t2021-11-27T14:28:35-3" class="time">14:28</a></td></tr>
+<tr id="t2021-11-27T14:28:35-4"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">usermod: prefix must be an absolute path</td><td class="time"><a href="#t2021-11-27T14:28:35-4" class="time">14:28</a></td></tr>
+<tr id="t2021-11-27T14:29:07"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">- why usermod says so? the path is absolute!</td><td class="time"><a href="#t2021-11-27T14:29:07" class="time">14:29</a></td></tr>
+<tr id="t2021-11-27T17:01:24"><th class="nick" style="background: #818144">frosteyes</th><td class="text" style="color: #818144">Hi folks - I have created a repo with gutenprint repcipes - <a href="https://github.com/frosteyes/yocto-printing/tree/master/meta-printing/recipes-printing/gutenprint" rel="nofollow">https://github.com/frosteyes/yocto-printing/tree/master/meta-printing/recipes-printing/gutenprint</a></td><td class="time"><a href="#t2021-11-27T17:01:24" class="time">17:01</a></td></tr>
+<tr id="t2021-11-27T17:02:02"><th class="nick" style="background: #818144">frosteyes</th><td class="text" style="color: #818144">I know gutenprint was in the old oe-classic - <a href="https://layers.openembedded.org/layerindex/oe-classic/recipe/12076/" rel="nofollow">https://layers.openembedded.org/layerindex/oe-classic/recipe/12076/</a></td><td class="time"><a href="#t2021-11-27T17:02:02" class="time">17:02</a></td></tr>
+<tr id="t2021-11-27T17:03:06"><th class="nick" style="background: #818144">frosteyes</th><td class="text" style="color: #818144">But not available in any modern layer - <a href="https://layers.openembedded.org/layerindex/branch/master/recipes/?q=gutenprint" rel="nofollow">https://layers.openembedded.org/layerindex/branch/master/recipes/?q=gutenprint</a></td><td class="time"><a href="#t2021-11-27T17:03:06" class="time">17:03</a></td></tr>
+<tr id="t2021-11-27T17:03:54"><th class="nick" style="background: #818144">frosteyes</th><td class="text" style="color: #818144">Would like some feedback on the recipes - and also if it could be of interrest to be included in meta-oe where also cups-filters is.</td><td class="time"><a href="#t2021-11-27T17:03:54" class="time">17:03</a></td></tr>
+<tr id="t2021-11-27T17:37:29"><th class="nick" style="background: #854685">Wulf</th><td class="text" style="color: #854685">Hello. I'm looking for a single board computer (including a casing) based on i.MX6 or i.MX8 and with HDMI output and ethernet (two ports preferred). Any suggestions?</td><td class="time"><a href="#t2021-11-27T17:37:29" class="time">17:37</a></td></tr>
+<tr id="t2021-11-27T17:49:35"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">how to set root password correctly?</td><td class="time"><a href="#t2021-11-27T17:49:35" class="time">17:49</a></td></tr>
+<tr id="t2021-11-27T18:35:19"><th class="nick" style="background: #488888">kanavin</th><td class="text" style="color: #488888">halstead, still uncategorized repos here? <a href="https://git.yoctoproject.org/" rel="nofollow">https://git.yoctoproject.org/</a></td><td class="time"><a href="#t2021-11-27T18:35:19" class="time">18:35</a></td></tr>
+<tr id="t2021-11-27T19:13:53"><th class="nick" style="background: #8c4a4a">halstead</th><td class="text" style="color: #8c4a4a">kanavin:&nbsp;&nbsp;The ones that get uncategorized are mirrored from upstream exactly wiping out the cgit config.&nbsp;&nbsp;I put a script in place that attempts to fix it in a reasonable length of time. But I will get another solution going on Monday.</td><td class="time"><a href="#t2021-11-27T19:13:53" class="time">19:13</a></td></tr>
+<tr id="t2021-11-27T19:14:09"><th class="nick" style="background: #488888">kanavin</th><td class="text" style="color: #488888">halstead, thanks</td><td class="time"><a href="#t2021-11-27T19:14:09" class="time">19:14</a></td></tr>
+<tr id="t2021-11-27T19:46:21"><th class="nick" style="background: #8c4a4a">halstead</th><td class="text" style="color: #8c4a4a">I've tried a new solution. It should stick this time.</td><td class="time"><a href="#t2021-11-27T19:46:21" class="time">19:46</a></td></tr>
+<tr id="t2021-11-27T20:32:58"><th class="nick" style="background: #4b904b">kyrix</th><td class="text" style="color: #4b904b">Hello all. I am trying to write a recipe that embeds a docker store with a docker image into the rootfs roughly inspired by: <a href="https://github.com/savoirfairelinux/meta-embedded-containers/blob/main/recipes-support/container-image/container-image.bb" rel="nofollow">https://github.com/savoirfairelinux/meta-embedded-containers/blob/main/recipes-support/container-image/container-image.bb</a> Recipe builds fine, but `do_rootfs` fails with several errors, including nothing provides perl, python, and dash, which seems to depend on the docker container I use. do_package_qa[noexec], already_stripped and</td><td class="time"><a href="#t2021-11-27T20:32:58" class="time">20:32</a></td></tr>
+<tr id="t2021-11-27T20:32:58-2"><th class="nick" style="background: #4b904b">kyrix</th><td class="text" style="color: #4b904b"> EXCLUDE_FROM_SHILIBS = 1. How can I instruct the package manager to skip the check?</td><td class="time"><a href="#t2021-11-27T20:32:58-2" class="time">20:32</a></td></tr>
+<tr id="t2021-11-27T21:41:48"><th class="nick" style="background: #4d4d93">JPEW</th><td class="text" style="color: #4d4d93">moto-timo: OK, we have published daily builds for meta-phosh now: <a href="http://downloads.wattissoftware.com/publish/meta-phosh/" rel="nofollow">http://downloads.wattissoftware.com/publish/meta-phosh/</a></td><td class="time"><a href="#t2021-11-27T21:41:48" class="time">21:41</a></td></tr>
+<tr id="t2021-11-27T21:42:03"><th class="nick" style="background: #97974f">moto-timo</th><td class="text" style="color: #97974f">JPEW: nice</td><td class="time"><a href="#t2021-11-27T21:42:03" class="time">21:42</a></td></tr>
+<tr id="t2021-11-27T21:42:27"><th class="nick" style="background: #97974f">moto-timo</th><td class="text" style="color: #97974f">JPEW: _just_ finished the kernel-lab slides 131 slides for 90 minute slot</td><td class="time"><a href="#t2021-11-27T21:42:27" class="time">21:42</a></td></tr>
+<tr id="t2021-11-27T21:42:29"><th class="nick" style="background: #97974f">moto-timo</th><td class="text" style="color: #97974f">lol</td><td class="time"><a href="#t2021-11-27T21:42:29" class="time">21:42</a></td></tr>
+<tr id="t2021-11-27T21:42:38"><th class="nick" style="background: #4d4d93">JPEW</th><td class="text" style="color: #4d4d93">Phew!</td><td class="time"><a href="#t2021-11-27T21:42:38" class="time">21:42</a></td></tr>
+<tr id="t2021-11-27T21:46:33"><td class="action" colspan="2">* RP has been a bit distracted by weather. The house is mostly but not entirely in one piece and not entirely watertight :/</td><td><a href="#t2021-11-27T21:46:33" class="time">21:46</a></td></tr>
+<tr id="t2021-11-27T23:37:57"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">what is the correct way to define rootpassword for the image?</td><td class="time"><a href="#t2021-11-27T23:37:57" class="time">23:37</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-11-26.log.html">&#171; Friday, 2021-11-26</a> <a href="index.html">Index</a> <a href="%23yocto.2021-11-28.log.html">Sunday, 2021-11-28 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
