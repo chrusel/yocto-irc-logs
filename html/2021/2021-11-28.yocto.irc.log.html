@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2021-11-28</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2021-11-28</h1>
+<div class="navigation"> <a href="%23yocto.2021-11-27.log.html">&#171; Saturday, 2021-11-27</a> <a href="index.html">Index</a> <a href="%23yocto.2021-11-29.log.html">Monday, 2021-11-29 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-11-28T00:31:42"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry:&nbsp;&nbsp;replace ‘phosh’ with ‘root’ and add your desired password <a href="https://github.com/moto-timo/meta-phosh/blob/timo/phosh-0.13.1/kas/base.yml" rel="nofollow">https://github.com/moto-timo/meta-phosh/blob/timo/phosh-0.13.1/kas/base.yml</a></td><td class="time"><a href="#t2021-11-28T00:31:42" class="time">00:31</a></td></tr>
+<tr id="t2021-11-28T00:32:09"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">d dvorkindmitry : <a href="https://github.com/moto-timo/meta-phosh/blob/9b8c11d7e907a9a45f33ec5a48ae90d7cac73b28/kas/base.yml#L79" rel="nofollow">https://github.com/moto-timo/meta-phosh/blob/9b8c11d7e907a9a45f33ec5a48ae90d7cac73b28/kas/base.yml#L79</a></td><td class="time"><a href="#t2021-11-28T00:32:09" class="time">00:32</a></td></tr>
+<tr id="t2021-11-28T00:35:31"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">moto-timo, it gives an error in Honister: <a href="https://pastebin.com/xrn6kara" rel="nofollow">https://pastebin.com/xrn6kara</a></td><td class="time"><a href="#t2021-11-28T00:35:31" class="time">00:35</a></td></tr>
+<tr id="t2021-11-28T00:35:37"><td class="action" colspan="2">* moto-timo curses fat fingers on phone</td><td><a href="#t2021-11-28T00:35:37" class="time">00:35</a></td></tr>
+<tr id="t2021-11-28T00:37:14"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">it says: usermod command did not succeed</td><td class="time"><a href="#t2021-11-28T00:37:14" class="time">00:37</a></td></tr>
+<tr id="t2021-11-28T00:37:16"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry:&nbsp;&nbsp;show what you put into local.conf or wherever you set the password. That error is useless</td><td class="time"><a href="#t2021-11-28T00:37:16" class="time">00:37</a></td></tr>
+<tr id="t2021-11-28T00:38:03"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">in my image recipe: EXTRA_USERS_PARAMS += &quot;usermod -P 'adm11' root;&quot;</td><td class="time"><a href="#t2021-11-28T00:38:03" class="time">00:38</a></td></tr>
+<tr id="t2021-11-28T00:38:17"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">That’s not what I suggested</td><td class="time"><a href="#t2021-11-28T00:38:17" class="time">00:38</a></td></tr>
+<tr id="t2021-11-28T00:39:11"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Lower case p and the password was hashed</td><td class="time"><a href="#t2021-11-28T00:39:11" class="time">00:39</a></td></tr>
+<tr id="t2021-11-28T00:39:39"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">(And the $ escaped)</td><td class="time"><a href="#t2021-11-28T00:39:39" class="time">00:39</a></td></tr>
+<tr id="t2021-11-28T00:40:19"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">why lowercase?</td><td class="time"><a href="#t2021-11-28T00:40:19" class="time">00:40</a></td></tr>
+<tr id="t2021-11-28T00:40:55"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">my passord is not encrypted</td><td class="time"><a href="#t2021-11-28T00:40:55" class="time">00:40</a></td></tr>
+<tr id="t2021-11-28T00:44:13"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">moto-timo, oh you're right! the problem is that it stop to accept capital -P and I can't give unencrypted password for some reason!</td><td class="time"><a href="#t2021-11-28T00:44:13" class="time">00:44</a></td></tr>
+<tr id="t2021-11-28T00:44:17"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">What I shared is known to work. Continue on your path of learning.</td><td class="time"><a href="#t2021-11-28T00:44:17" class="time">00:44</a></td></tr>
+<tr id="t2021-11-28T00:45:54"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Unencrypted passwords in files are very bad form. Don’t</td><td class="time"><a href="#t2021-11-28T00:45:54" class="time">00:45</a></td></tr>
+<tr id="t2021-11-28T01:04:22"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">is this usermod script a part of yocto? where can I find it?</td><td class="time"><a href="#t2021-11-28T01:04:22" class="time">01:04</a></td></tr>
+<tr id="t2021-11-28T01:05:51"><th class="nick" style="background: #818144">Dhruvagole[m]</th><td class="text" style="color: #818144">tlwoerner: will yocto-project be participating in gsoc 2022 as a solo organization or under LFX or are there no plans as such for gsoc2022?</td><td class="time"><a href="#t2021-11-28T01:05:51" class="time">01:05</a></td></tr>
+<tr id="t2021-11-28T02:15:32"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry:&nbsp;&nbsp;it’s a standard *nix program. ‘man usermod’</td><td class="time"><a href="#t2021-11-28T02:15:32" class="time">02:15</a></td></tr>
+<tr id="t2021-11-28T02:17:26"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry:&nbsp;&nbsp;most stuff is just Linux, don’t make Yocto Project into. black box. Linux, shell, Python. A few wonky variables that are special.</td><td class="time"><a href="#t2021-11-28T02:17:26" class="time">02:17</a></td></tr>
+<tr id="t2021-11-28T10:13:07"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">moto-timo, why it was different in Dunfell? -P was considered to plain password, now it is prefix...</td><td class="time"><a href="#t2021-11-28T10:13:07" class="time">10:13</a></td></tr>
+<tr id="t2021-11-28T18:00:56"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry: that clear-password was always a non-standard (and insecure) customization. It was dropped in upgrade of shadow to 4.9 <a href="https://git.openembedded.org/openembedded-core/commit/meta/recipes-extended/shadow?h=honister&amp;id=759df7395908f18b3b68f28d043ac9ebd42dd0c8" rel="nofollow">https://git.openembedded.org/openembedded-core/commit/meta/recipes-extended/shadow?h=honister&amp;id=759df7395908f18b3b68f28d043ac9ebd42dd0c8</a></td><td class="time"><a href="#t2021-11-28T18:00:56" class="time">18:00</a></td></tr>
+<tr id="t2021-11-28T18:02:01"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">dvorkindmitry: upstream usermod (from shadow) had a —prefix meaning for the same option. For six years.</td><td class="time"><a href="#t2021-11-28T18:02:01" class="time">18:02</a></td></tr>
+<tr id="t2021-11-28T18:12:09"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">moto-timo, now it is clear, thank you!</td><td class="time"><a href="#t2021-11-28T18:12:09" class="time">18:12</a></td></tr>
+<tr id="t2021-11-28T18:16:18"><th class="nick" style="background: #42427e">dvorkindmitry</th><td class="text" style="color: #42427e">I don't feel very flexible to use EXTRA_USERS_PARAM to setup the passwords using &quot;usermod -p $(openssl passwd mypass) root;&quot;, case algo is usually different from the one that is used in the image by default... Feels like a weak piece of yocto. Did anybody thought about the universal solution? Like an options &quot;1) you can setup random password 2) use cleartext one 3) something custom&quot;?</td><td class="time"><a href="#t2021-11-28T18:16:18" class="time">18:16</a></td></tr>
+<tr id="t2021-11-28T18:26:45"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">not that I am aware of, so I’ll let others chime in.</td><td class="time"><a href="#t2021-11-28T18:26:45" class="time">18:26</a></td></tr>
+<tr id="t2021-11-28T18:27:37"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">I long ago (~5 years) figured out the solution I use now, which was the basis of what shared.</td><td class="time"><a href="#t2021-11-28T18:27:37" class="time">18:27</a></td></tr>
+<tr id="t2021-11-28T21:07:44"><th class="nick" style="background: #854685">argonautx</th><td class="text" style="color: #854685">hello, Im using yocto on a Raspberry Pi3, where can I find the vmlinux image for debugging with kgdb?</td><td class="time"><a href="#t2021-11-28T21:07:44" class="time">21:07</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-11-27.log.html">&#171; Saturday, 2021-11-27</a> <a href="index.html">Index</a> <a href="%23yocto.2021-11-29.log.html">Monday, 2021-11-29 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
