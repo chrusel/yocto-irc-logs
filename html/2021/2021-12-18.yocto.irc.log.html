@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2021-12-18</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2021-12-18</h1>
+<div class="navigation"> <a href="%23yocto.2021-12-17.log.html">&#171; Friday, 2021-12-17</a> <a href="index.html">Index</a> <a href="%23yocto.2021-12-19.log.html">Sunday, 2021-12-19 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2021-12-18T03:41:26"><th class="nick" style="background: #407a40">kergoth</th><td class="text" style="color: #407a40">huh, didn't realize python 3.6 was going end of life</td><td class="time"><a href="#t2021-12-18T03:41:26" class="time">03:41</a></td></tr>
+<tr id="t2021-12-18T05:06:45"><th class="nick" style="background: #42427e">Sunny</th><td class="text" style="color: #42427e">Hello All. Can I run a custom task do_foo in a recipe without the bitbake -c do_foo option?</td><td class="time"><a href="#t2021-12-18T05:06:45" class="time">05:06</a></td></tr>
+<tr id="t2021-12-18T05:07:21"><th class="nick" style="background: #42427e">Sunny</th><td class="text" style="color: #42427e">Or do I always have to specify the -c option to run custom tasks?</td><td class="time"><a href="#t2021-12-18T05:07:21" class="time">05:07</a></td></tr>
+<tr id="t2021-12-18T05:09:26"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">the crops containers have &quot;all&quot; (the ones that we support) been updated and (hopefully) set up for weekly builds again</td><td class="time"><a href="#t2021-12-18T05:09:26" class="time">05:09</a></td></tr>
+<tr id="t2021-12-18T08:26:52"><td class="nickchange" colspan="2">*** Guest77 is now known as Smsm</td><td><a href="#t2021-12-18T08:26:52" class="time">08:26</a></td></tr>
+<tr id="t2021-12-18T09:15:01-2"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2021-12-18T09:15:01-2" class="time">09:15</a></td></tr>
+<tr id="t2021-12-18T10:57:02"><th class="nick" style="background: #854685">Herrie</th><td class="text" style="color: #854685">Anyone has any thoughts on this arm-trusted-firmware compile error on honister/kirkstone? ATF 2.6 worked for me on Hardknott: <a href="https://paste.ofcode.org/H6KHe3N6RUffzVuqHuGfHj" rel="nofollow">https://paste.ofcode.org/H6KHe3N6RUffzVuqHuGfHj</a></td><td class="time"><a href="#t2021-12-18T10:57:02" class="time">10:57</a></td></tr>
+<tr id="t2021-12-18T14:48:45"><td class="nickchange" colspan="2">*** jpuhlman is now known as Guest6727</td><td><a href="#t2021-12-18T14:48:45" class="time">14:48</a></td></tr>
+<tr id="t2021-12-18T17:01:32"><th class="nick" style="background: #488888">vd33</th><td class="text" style="color: #488888">is it safe to have the same override 'foo' in both MACHINEOVERRIDES and DISTROOVERRIDES?</td><td class="time"><a href="#t2021-12-18T17:01:32" class="time">17:01</a></td></tr>
+<tr id="t2021-12-18T18:05:47"><th class="nick" style="background: #8c4a4a">sunny</th><td class="text" style="color: #8c4a4a">Hello all. If I enter a custom task ex: do_foo() inside my recipe, should I always invoke the bitbake command with a -c option to execute the task or is there any way around it so I don't have to specify the -c option</td><td class="time"><a href="#t2021-12-18T18:05:47" class="time">18:05</a></td></tr>
+<tr id="t2021-12-18T18:05:49"><th class="nick" style="background: #8c4a4a">sunny</th><td class="text" style="color: #8c4a4a">?</td><td class="time"><a href="#t2021-12-18T18:05:49" class="time">18:05</a></td></tr>
+<tr id="t2021-12-18T18:10:47"><th class="nick" style="background: #4b904b">RP</th><td class="text" style="color: #4b904b">Tartarus: FWIW we very carefully create the files in sstate atomically and the fetcher does use locking very carefully so we've tried to design it properly and it has a ton of real world testing on the autobuilder</td><td class="time"><a href="#t2021-12-18T18:10:47" class="time">18:10</a></td></tr>
+<tr id="t2021-12-18T19:17:41"><th class="nick" style="background: #4d4d93">perdmann_</th><td class="text" style="color: #4d4d93">Hi, i just stumbled upon DRM / FB . I thought i could just use an existing tool (fbi) to print a picture to Framebuffer. Now it turns out that I can't, its all DRM now. Does anyone know a tool or a Framework which i could use? I know about libdrm but its not well documented...</td><td class="time"><a href="#t2021-12-18T19:17:41" class="time">19:17</a></td></tr>
+<tr id="t2021-12-18T19:41:43"><th class="nick" style="background: #97974f">Tartarus</th><td class="text" style="color: #97974f">RP: Good to know :)&nbsp;&nbsp;I'll still invoke my status as person that had multiple ccache collisions ages and ages ago as what makes me be too cautious at times :)</td><td class="time"><a href="#t2021-12-18T19:41:43" class="time">19:41</a></td></tr>
+<tr id="t2021-12-18T21:05:25"><th class="nick" style="background: #9b519b">vladest</th><td class="text" style="color: #9b519b">Hello. After fetching latest honister, have problems building mesa-gl: drm.h not found. machine is rpi4-64. is this something known?</td><td class="time"><a href="#t2021-12-18T21:05:25" class="time">21:05</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2021-12-17.log.html">&#171; Friday, 2021-12-17</a> <a href="index.html">Index</a> <a href="%23yocto.2021-12-19.log.html">Sunday, 2021-12-19 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
