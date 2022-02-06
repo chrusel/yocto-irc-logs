@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-02-05</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-02-05</h1>
+<div class="navigation"> <a href="%23yocto.2022-02-04.log.html">&#171; Friday, 2022-02-04</a> <a href="index.html">Index</a> <a href="%23yocto.2022-02-06.log.html">Sunday, 2022-02-06 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-02-05T03:20:37-2"><td class="nickchange" colspan="2">*** jclsn1 is now known as jclsn</td><td><a href="#t2022-02-05T03:20:37-2" class="time">03:20</a></td></tr>
+<tr id="t2022-02-05T17:46:59"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: I merged the weston upgrade FWIW</td><td class="time"><a href="#t2022-02-05T17:46:59" class="time">17:46</a></td></tr>
+<tr id="t2022-02-05T17:47:46"><th class="nick" style="background: #42427e">smurray</th><td class="text" style="color: #42427e">RP: okay, just got back in from a couple of errands, will push an AGL next branch update to meta-agl shortly</td><td class="time"><a href="#t2022-02-05T17:47:46" class="time">17:47</a></td></tr>
+<tr id="t2022-02-05T17:48:24"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">smurray: thanks, I'm sure we'll manage if it isn't straightaway but figured I'd at least tell you :)</td><td class="time"><a href="#t2022-02-05T17:48:24" class="time">17:48</a></td></tr>
+<tr id="t2022-02-05T17:48:41"><td class="action" colspan="2">* RP is trying to get the backlog of changes under control</td><td><a href="#t2022-02-05T17:48:41" class="time">17:48</a></td></tr>
+<tr id="t2022-02-05T17:49:00"><th class="nick" style="background: #42427e">smurray</th><td class="text" style="color: #42427e">RP: no worries, thanks for the heads up</td><td class="time"><a href="#t2022-02-05T17:49:00" class="time">17:49</a></td></tr>
+<tr id="t2022-02-05T21:35:21"><th class="nick" style="background: #42427e">smurray</th><td class="text" style="color: #42427e">RP: meta-agl-core should be all good now, I believe</td><td class="time"><a href="#t2022-02-05T21:35:21" class="time">21:35</a></td></tr>
+<tr id="t2022-02-05T21:39:03"><th class="nick" style="background: #818144">tonyj</th><td class="text" style="color: #818144">Hi.  I'm trying to debug a bitbake issue.       After a while inside Qt the knotty UI shows I have 15 tasks with assigned pids but none actually exist.   At this point the build is basically dead.   If I enable debugging I can see (for one of the 15 tasks):</td><td class="time"><a href="#t2022-02-05T21:39:03" class="time">21:39</a></td></tr>
+<tr id="t2022-02-05T21:39:06"><th class="nick" style="background: #818144">tonyj</th><td class="text" style="color: #818144">NOTE: recipe qtsensors-5.14.2+gitAUTOINC+92e19711f9-r0: task do_compile: Started</td><td class="time"><a href="#t2022-02-05T21:39:06" class="time">21:39</a></td></tr>
+<tr id="t2022-02-05T21:39:06-2"><th class="nick" style="background: #818144">tonyj</th><td class="text" style="color: #818144">DEBUG: qtsensors-5.14.2+gitAUTOINC+92e19711f9-r0 do_compile: Executing shell function do_compile</td><td class="time"><a href="#t2022-02-05T21:39:06-2" class="time">21:39</a></td></tr>
+<tr id="t2022-02-05T21:39:53"><th class="nick" style="background: #818144">tonyj</th><td class="text" style="color: #818144">and this is the last output.   knotty thinks it's still running but the build is quiescent</td><td class="time"><a href="#t2022-02-05T21:39:53" class="time">21:39</a></td></tr>
+<tr id="t2022-02-05T21:41:28"><th class="nick" style="background: #818144">tonyj</th><td class="text" style="color: #818144">There is no &quot;NOTE: .... do_compile: Succeeded&quot;,  no error, nothing</td><td class="time"><a href="#t2022-02-05T21:41:28" class="time">21:41</a></td></tr>
+<tr id="t2022-02-05T23:52:32"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">tonyj: seems strange. In the qtsensors WORKDIR/temp/ there should be a log.do_compile.&lt;pid&gt; - is that pid around? does the log file show the task finishing or any error?</td><td class="time"><a href="#t2022-02-05T23:52:32" class="time">23:52</a></td></tr>
+<tr id="t2022-02-05T23:52:45"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">also, does that pid match the one knotty shows?</td><td class="time"><a href="#t2022-02-05T23:52:45" class="time">23:52</a></td></tr>
+<tr id="t2022-02-05T23:53:46"><th class="nick" style="background: #407a40">RP</th><td class="text" style="color: #407a40">tonyj: I guess seeing what processes are running with &quot;ps ax&quot; and what state they're in may also be interesting, also the entries in bitbake-cookerdeamon.log</td><td class="time"><a href="#t2022-02-05T23:53:46" class="time">23:53</a></td></tr>
+<tr id="t2022-02-05T23:54:08"><td class="action" colspan="2">* RP is off to sleep but will check back tomorrow</td><td><a href="#t2022-02-05T23:54:08" class="time">23:54</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-02-04.log.html">&#171; Friday, 2022-02-04</a> <a href="index.html">Index</a> <a href="%23yocto.2022-02-06.log.html">Sunday, 2022-02-06 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
