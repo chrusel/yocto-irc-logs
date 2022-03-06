@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-03-05</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-03-05</h1>
+<div class="navigation"> <a href="%23yocto.2022-03-04.log.html">&#171; Friday, 2022-03-04</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-06.log.html">Sunday, 2022-03-06 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-03-05T02:07:19"><th class="nick" style="background: #407a40">khem</th><td class="text" style="color: #407a40">RP:&nbsp;&nbsp;the original patch is to set CFLAGS is not needed anymore for libical</td><td class="time"><a href="#t2022-03-05T02:07:19" class="time">02:07</a></td></tr>
+<tr id="t2022-03-05T03:45:44"><td class="nickchange" colspan="2">*** jclsn70 is now known as jclsn7</td><td><a href="#t2022-03-05T03:45:44" class="time">03:45</a></td></tr>
+<tr id="t2022-03-05T08:16:15"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: thanks, I've queued a revert</td><td class="time"><a href="#t2022-03-05T08:16:15" class="time">08:16</a></td></tr>
+<tr id="t2022-03-05T08:16:30"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">ah, there is one! :)</td><td class="time"><a href="#t2022-03-05T08:16:30" class="time">08:16</a></td></tr>
+<tr id="t2022-03-05T10:03:16"><td class="nickchange" colspan="2">*** barometz_ is now known as barometz</td><td><a href="#t2022-03-05T10:03:16" class="time">10:03</a></td></tr>
+<tr id="t2022-03-05T11:06:18"><th class="nick" style="background: #818144">rburton</th><td class="text" style="color: #818144">RP: will have a v2 for the python series on monday morning</td><td class="time"><a href="#t2022-03-05T11:06:18" class="time">11:06</a></td></tr>
+<tr id="t2022-03-05T11:06:54"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">rburton: ok. I see I can't read with the cd ${S} thing</td><td class="time"><a href="#t2022-03-05T11:06:54" class="time">11:06</a></td></tr>
+<tr id="t2022-03-05T11:06:59"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">er, ${D}</td><td class="time"><a href="#t2022-03-05T11:06:59" class="time">11:06</a></td></tr>
+<tr id="t2022-03-05T11:07:29"><th class="nick" style="background: #818144">rburton</th><td class="text" style="color: #818144">I left my machine doing a build of all of meta-py last night</td><td class="time"><a href="#t2022-03-05T11:07:29" class="time">11:07</a></td></tr>
+<tr id="t2022-03-05T11:24:01"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">rburton: thanks for the headsup. I'll drop those patches for now</td><td class="time"><a href="#t2022-03-05T11:24:01" class="time">11:24</a></td></tr>
+<tr id="t2022-03-05T12:24:16"><td class="part" colspan="2">*** sprado &lt;sprado!~sprado@179.209.47.126&gt; has left #yocto (WeeChat 2.8)</td><td><a href="#t2022-03-05T12:24:16" class="time">12:24</a></td></tr>
+<tr id="t2022-03-05T12:33:29"><td class="part" colspan="2">*** sprado &lt;sprado!~sprado@179.209.47.126&gt; has left #yocto (WeeChat 2.8)</td><td><a href="#t2022-03-05T12:33:29" class="time">12:33</a></td></tr>
+<tr id="t2022-03-05T12:38:35"><td class="part" colspan="2">*** sergioprado &lt;sergioprado!~sprado@179.209.47.126&gt; has left #yocto</td><td><a href="#t2022-03-05T12:38:35" class="time">12:38</a></td></tr>
+<tr id="t2022-03-05T12:59:51"><th class="nick" style="background: #854685">Saur[m]</th><td class="text" style="color: #854685">RP: I'd like to break up the giant anonymous Python function in base.bbclass into smaller, more manageable functions. Any objections or suggestions?</td><td class="time"><a href="#t2022-03-05T12:59:51" class="time">12:59</a></td></tr>
+<tr id="t2022-03-05T13:09:11"><th class="nick" style="background: #488888">jclsn[m]</th><td class="text" style="color: #488888">Can anyone help me here with my personal project? I am having trouble running a Qt application with eglfs on a Raspberry Pi. More here</td><td class="time"><a href="#t2022-03-05T13:09:11" class="time">13:09</a></td></tr>
+<tr id="t2022-03-05T13:09:11-2"><th class="nick" style="background: #488888">jclsn[m]</th><td class="text" style="color: #488888"><a href="https://forum.qt.io/topic/134841/missing-libgl-so-1-on-64-bit-raspberry-pi-with-eglfs" rel="nofollow">https://forum.qt.io/topic/134841/missing-libgl-so-1-on-64-bit-raspberry-pi-with-eglfs</a></td><td class="time"><a href="#t2022-03-05T13:09:11-2" class="time">13:09</a></td></tr>
+<tr id="t2022-03-05T15:41:56"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Saur[m]: mainly just worried about parsing overhead. Ideally some of it would move to function library code in lib/</td><td class="time"><a href="#t2022-03-05T15:41:56" class="time">15:41</a></td></tr>
+<tr id="t2022-03-05T18:14:07"><td class="nickchange" colspan="2">*** armpit is now known as away</td><td><a href="#t2022-03-05T18:14:07" class="time">18:14</a></td></tr>
+<tr id="t2022-03-05T18:34:06"><td class="nickchange" colspan="2">*** away is now known as armpit</td><td><a href="#t2022-03-05T18:34:06" class="time">18:34</a></td></tr>
+<tr id="t2022-03-05T20:47:51"><td class="nickchange" colspan="2">*** Dracos-Carazza_ is now known as Dracos-Carazza</td><td><a href="#t2022-03-05T20:47:51" class="time">20:47</a></td></tr>
+<tr id="t2022-03-05T21:32:59"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kergoth: <a href="https://www.openembedded.org/wiki/New_Bitbake_Syntax_Brainstorm" rel="nofollow">https://www.openembedded.org/wiki/New_Bitbake_Syntax_Brainstorm</a></td><td class="time"><a href="#t2022-03-05T21:32:59" class="time">21:32</a></td></tr>
+<tr id="t2022-03-05T21:42:14"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: toaster might be broken again… was working on the crops containers… troubleshooting locally</td><td class="time"><a href="#t2022-03-05T21:42:14" class="time">21:42</a></td></tr>
+<tr id="t2022-03-05T21:42:49"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: hangs on “Tasks Starting…” sound familiar:/</td><td class="time"><a href="#t2022-03-05T21:42:49" class="time">21:42</a></td></tr>
+<tr id="t2022-03-05T21:44:40"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: AttributeError module bb.server has no attribute xmlrpccllient</td><td class="time"><a href="#t2022-03-05T21:44:40" class="time">21:44</a></td></tr>
+<tr id="t2022-03-05T22:04:09"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: I've been worrying about toaster :/</td><td class="time"><a href="#t2022-03-05T22:04:09" class="time">22:04</a></td></tr>
+<tr id="t2022-03-05T22:05:01"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: same here… got a crops bug this week, so I started looking</td><td class="time"><a href="#t2022-03-05T22:05:01" class="time">22:05</a></td></tr>
+<tr id="t2022-03-05T22:05:53"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: command line mode seems fine, it’s starting a build in the webui that is hanging… again</td><td class="time"><a href="#t2022-03-05T22:05:53" class="time">22:05</a></td></tr>
+<tr id="t2022-03-05T22:51:54"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: given the lack of bug reports nobody is probably using it :(</td><td class="time"><a href="#t2022-03-05T22:51:54" class="time">22:51</a></td></tr>
+<tr id="t2022-03-05T22:52:26"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: looks that way... this would go back to dunfell. so at least the ui mode isn't being used</td><td class="time"><a href="#t2022-03-05T22:52:26" class="time">22:52</a></td></tr>
+<tr id="t2022-03-05T22:52:27"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">which makes me sad as I think there was so much potential in toaster but I'm not sure we can justify keeping it going :(</td><td class="time"><a href="#t2022-03-05T22:52:27" class="time">22:52</a></td></tr>
+<tr id="t2022-03-05T22:53:17"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: I've got the docs links updated (except one that is not valid anymore about &quot;build mode&quot;) and update to Django 3.2... looking for whether I can figure out the xmlrpc issue</td><td class="time"><a href="#t2022-03-05T22:53:17" class="time">22:53</a></td></tr>
+<tr id="t2022-03-05T22:53:33"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: but I agree... we are nearly at a decision point</td><td class="time"><a href="#t2022-03-05T22:53:33" class="time">22:53</a></td></tr>
+<tr id="t2022-03-05T22:54:16"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">(I didn't look prior to dunfell)</td><td class="time"><a href="#t2022-03-05T22:54:16" class="time">22:54</a></td></tr>
+<tr id="t2022-03-05T22:54:39"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">I'll poke around a bit more</td><td class="time"><a href="#t2022-03-05T22:54:39" class="time">22:54</a></td></tr>
+<tr id="t2022-03-05T22:57:02"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: that error sounds like from where I merged the xmlrpc and socket backends together into one server</td><td class="time"><a href="#t2022-03-05T22:57:02" class="time">22:57</a></td></tr>
+<tr id="t2022-03-05T22:57:31"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">RP: right... August 2020</td><td class="time"><a href="#t2022-03-05T22:57:31" class="time">22:57</a></td></tr>
+<tr id="t2022-03-05T22:57:43"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">or earlier? anyway... that's what I'm looking at</td><td class="time"><a href="#t2022-03-05T22:57:43" class="time">22:57</a></td></tr>
+<tr id="t2022-03-05T22:58:45"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">ac2284357f1fc7044dac9c146fad218fc9906412</td><td class="time"><a href="#t2022-03-05T22:58:45" class="time">22:58</a></td></tr>
+<tr id="t2022-03-05T22:59:20"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">just random git log | grep</td><td class="time"><a href="#t2022-03-05T22:59:20" class="time">22:59</a></td></tr>
+<tr id="t2022-03-05T23:00:30"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: I don't remember exactly :/</td><td class="time"><a href="#t2022-03-05T23:00:30" class="time">23:00</a></td></tr>
+<tr id="t2022-03-05T23:00:49"><th class="nick" style="background: #8c4a4a">moto-timo</th><td class="text" style="color: #8c4a4a">I don't expect you to :)... I'll keep poking</td><td class="time"><a href="#t2022-03-05T23:00:49" class="time">23:00</a></td></tr>
+<tr id="t2022-03-05T23:08:50"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">When did our default build's tmpdir become 70GB :(</td><td class="time"><a href="#t2022-03-05T23:08:50" class="time">23:08</a></td></tr>
+<tr id="t2022-03-05T23:09:07"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">and the image time is about double. Think it is rust :(</td><td class="time"><a href="#t2022-03-05T23:09:07" class="time">23:09</a></td></tr>
+<tr id="t2022-03-05T23:09:22"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">build time</td><td class="time"><a href="#t2022-03-05T23:09:22" class="time">23:09</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-03-04.log.html">&#171; Friday, 2022-03-04</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-06.log.html">Sunday, 2022-03-06 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
