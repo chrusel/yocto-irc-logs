@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-03-06</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-03-06</h1>
+<div class="navigation"> <a href="%23yocto.2022-03-05.log.html">&#171; Saturday, 2022-03-05</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-07.log.html">Monday, 2022-03-07 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-03-06T03:44:37-2"><td class="nickchange" colspan="2">*** jclsn76 is now known as jclsn7</td><td><a href="#t2022-03-06T03:44:37-2" class="time">03:44</a></td></tr>
+<tr id="t2022-03-06T06:39:01"><th class="nick" style="background: #407a40">jclsn[m]</th><td class="text" style="color: #407a40">So does anyone know how to get libGL.so.1 without installing X11?</td><td class="time"><a href="#t2022-03-06T06:39:01" class="time">06:39</a></td></tr>
+<tr id="t2022-03-06T07:41:45"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">I did rebuild the SDK now and the libGL.so.1 dependency seems to be fixed.</td><td class="time"><a href="#t2022-03-06T07:41:45" class="time">07:41</a></td></tr>
+<tr id="t2022-03-06T07:42:26"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">Still having some issues running the application though. After setting QT_QPA_PLATFORM=eglfs and DISPLAY=:0, I get</td><td class="time"><a href="#t2022-03-06T07:42:26" class="time">07:42</a></td></tr>
+<tr id="t2022-03-06T07:42:27"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">EGL library doesn't support Emulator extensions</td><td class="time"><a href="#t2022-03-06T07:42:27" class="time">07:42</a></td></tr>
+<tr id="t2022-03-06T07:43:57"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">Do I maybe need to install some additional egl libraries?</td><td class="time"><a href="#t2022-03-06T07:43:57" class="time">07:43</a></td></tr>
+<tr id="t2022-03-06T07:56:55"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">And how can I set environment variables for the target board?</td><td class="time"><a href="#t2022-03-06T07:56:55" class="time">07:56</a></td></tr>
+<tr id="t2022-03-06T07:57:02"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">This doesn't work <a href="https://stackoverflow.com/questions/57015416/how-do-i-set-an-environmental-variable-on-my-target-board-using-a-yocto-recipe" rel="nofollow">https://stackoverflow.com/questions/57015416/how-do-i-set-an-environmental-variable-on-my-target-board-using-a-yocto-recipe</a></td><td class="time"><a href="#t2022-03-06T07:57:02" class="time">07:57</a></td></tr>
+<tr id="t2022-03-06T07:59:45"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">does your target rootfs `/etc/profile` sourse the scripts in `/etc/profile.d`? the suggestion from that link depends on that.</td><td class="time"><a href="#t2022-03-06T07:59:45" class="time">07:59</a></td></tr>
+<tr id="t2022-03-06T08:02:33"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">if you just need the env variables set for a specific program I'd go with an `my-bin-wrapped.sh` script like this:... (full message at <a href="https://libera.ems.host/_matrix/media/r0/download/libera.chat/271c7c775884156c6f4c6c60699feed269541377" rel="nofollow">https://libera.ems.host/_matrix/media/r0/download/libera.chat/271c7c775884156c6f4c6c60699feed269541377</a>)</td><td class="time"><a href="#t2022-03-06T08:02:33" class="time">08:02</a></td></tr>
+<tr id="t2022-03-06T08:04:29"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">dwagenk: Not sure. I just found out that you have to add it as a recipe though. I tried it in local.conf before</td><td class="time"><a href="#t2022-03-06T08:04:29" class="time">08:04</a></td></tr>
+<tr id="t2022-03-06T08:05:02"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">I want to set the environment globally. I was hoping that there would be an official way to do that. Really weird that there isn't</td><td class="time"><a href="#t2022-03-06T08:05:02" class="time">08:05</a></td></tr>
+<tr id="t2022-03-06T08:07:31"><th class="nick" style="background: #818144">dwagenk</th><td class="text" style="color: #818144">It definitely seems like something that shuld be easy. I think I used the /etc/profile approach before but more often the wrapper-script approach was sufficient.</td><td class="time"><a href="#t2022-03-06T08:07:31" class="time">08:07</a></td></tr>
+<tr id="t2022-03-06T08:09:13"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e"> I am just rebuilding and will try it out. Creating a recipe is not difficult, but there should be some varialbe like GLOBAL_ENV_VARIABLES in local.conf</td><td class="time"><a href="#t2022-03-06T08:09:13" class="time">08:09</a></td></tr>
+<tr id="t2022-03-06T08:09:47"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">After all, setting environment variables is a pretty common thing to do</td><td class="time"><a href="#t2022-03-06T08:09:47" class="time">08:09</a></td></tr>
+<tr id="t2022-03-06T08:11:22"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">Setting up Qt in Yocto is really not easy though....</td><td class="time"><a href="#t2022-03-06T08:11:22" class="time">08:11</a></td></tr>
+<tr id="t2022-03-06T08:54:34"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">@dwagenk Seems like it doesn't source the scripts in /etc/profile.d</td><td class="time"><a href="#t2022-03-06T08:54:34" class="time">08:54</a></td></tr>
+<tr id="t2022-03-06T08:54:44"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">Will try adding them to /etc/profile directly</td><td class="time"><a href="#t2022-03-06T08:54:44" class="time">08:54</a></td></tr>
+<tr id="t2022-03-06T10:47:28"><th class="nick" style="background: #42427e">jclsn7</th><td class="text" style="color: #42427e">God this is horrible</td><td class="time"><a href="#t2022-03-06T10:47:28" class="time">10:47</a></td></tr>
+<tr id="t2022-03-06T17:39:48"><td class="action" colspan="2">* RP runs the M3 build</td><td><a href="#t2022-03-06T17:39:48" class="time">17:39</a></td></tr>
+<tr id="t2022-03-06T17:41:02"><td class="action" colspan="2">* moto-timo crosses fingers</td><td><a href="#t2022-03-06T17:41:02" class="time">17:41</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-03-05.log.html">&#171; Saturday, 2022-03-05</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-07.log.html">Monday, 2022-03-07 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
