@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-03-13</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-03-13</h1>
+<div class="navigation"> <a href="%23yocto.2022-03-12.log.html">&#171; Saturday, 2022-03-12</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-14.log.html">Monday, 2022-03-14 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-03-13T09:20:25"><td class="nickchange" colspan="2">*** ad__ is now known as dirtybit</td><td><a href="#t2022-03-13T09:20:25" class="time">09:20</a></td></tr>
+<tr id="t2022-03-13T09:21:38"><td class="nickchange" colspan="2">*** dirtybit is now known as dirtyflag</td><td><a href="#t2022-03-13T09:21:38" class="time">09:21</a></td></tr>
+<tr id="t2022-03-13T10:19:08"><td class="nickchange" colspan="2">*** Dracos-Carazza_ is now known as Dracos-Carazza</td><td><a href="#t2022-03-13T10:19:08" class="time">10:19</a></td></tr>
+<tr id="t2022-03-13T10:23:03"><th class="nick" style="background: #407a40">jclsn551</th><td class="text" style="color: #407a40">Can anyone help me with Qt on a Raspberry Pi and eglfs? I really can't get that to work somehow</td><td class="time"><a href="#t2022-03-13T10:23:03" class="time">10:23</a></td></tr>
+<tr id="t2022-03-13T10:26:17"><td class="nickchange" colspan="2">*** jclsn551 is now known as jclsn</td><td><a href="#t2022-03-13T10:26:17" class="time">10:26</a></td></tr>
+<tr id="t2022-03-13T17:11:52"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">moto-timo: I've revised the crypto move series in -next</td><td class="time"><a href="#t2022-03-13T17:11:52" class="time">17:11</a></td></tr>
+<tr id="t2022-03-13T17:15:01"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">rburton: win this week on CVEs for master :)</td><td class="time"><a href="#t2022-03-13T17:15:01" class="time">17:15</a></td></tr>
+<tr id="t2022-03-13T20:01:25"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">khem: I get the feeling your test matrix is a bit different to what we test on the AB :/</td><td class="time"><a href="#t2022-03-13T20:01:25" class="time">20:01</a></td></tr>
+<tr id="t2022-03-13T20:10:56"><th class="nick" style="background: #818144">moto-timo</th><td class="text" style="color: #818144">RP: thank you… 🤞</td><td class="time"><a href="#t2022-03-13T20:10:56" class="time">20:10</a></td></tr>
+<tr id="t2022-03-13T20:11:45"><td class="action" colspan="2">* moto-timo better do the meta-Python removal patches now…</td><td><a href="#t2022-03-13T20:11:45" class="time">20:11</a></td></tr>
+<tr id="t2022-03-13T20:12:00"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">jclsn798: what problem are you having? I assume you've search for 'eglfs qt yocto&quot; and seen things like: <a href="https://stackoverflow.com/questions/36760009/how-to-enable-eglfs-plugin-in-yocto-setup-using-yoctometa-qt5-for-riotboard" rel="nofollow">https://stackoverflow.com/questions/36760009/how-to-enable-eglfs-plugin-in-yocto-setup-using-yoctometa-qt5-for-riotboard</a></td><td class="time"><a href="#t2022-03-13T20:12:00" class="time">20:12</a></td></tr>
+<tr id="t2022-03-13T20:12:13"><td class="action" colspan="2">* vmeson has not played with eglfs...</td><td><a href="#t2022-03-13T20:12:13" class="time">20:12</a></td></tr>
+<tr id="t2022-03-13T20:16:10"><th class="nick" style="background: #488888">jclsn798</th><td class="text" style="color: #488888">vmeson: Yes, I saw that already. Here is a detailed description of my issue <a href="https://stackoverflow.com/questions/71371673/cant-run-qt-application-o-32-bit-yocto-build-with-eglfs" rel="nofollow">https://stackoverflow.com/questions/71371673/cant-run-qt-application-o-32-bit-yocto-build-with-eglfs</a></td><td class="time"><a href="#t2022-03-13T20:16:10" class="time">20:16</a></td></tr>
+<tr id="t2022-03-13T20:16:51"><th class="nick" style="background: #488888">jclsn798</th><td class="text" style="color: #488888">I am pretty much stuck at this point. Tried guides I found online</td><td class="time"><a href="#t2022-03-13T20:16:51" class="time">20:16</a></td></tr>
+<tr id="t2022-03-13T20:19:13"><td class="nickchange" colspan="2">*** jclsn798 is now known as jclsn</td><td><a href="#t2022-03-13T20:19:13" class="time">20:19</a></td></tr>
+<tr id="t2022-03-13T20:19:46"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">jclsn:&nbsp;&nbsp;good description. I am of no help. :-(&nbsp;&nbsp;&nbsp;&nbsp;You've read this back and forth? <a href="https://doc.qt.io/qt-5/embedded-linux.html#eglfs" rel="nofollow">https://doc.qt.io/qt-5/embedded-linux.html#eglfs</a></td><td class="time"><a href="#t2022-03-13T20:19:46" class="time">20:19</a></td></tr>
+<tr id="t2022-03-13T20:21:03"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">Can you try it on an intel board/laptop to see if you can learn what the proper configuration looks like and trace execution to find out where the config is normally picked up?</td><td class="time"><a href="#t2022-03-13T20:21:03" class="time">20:21</a></td></tr>
+<tr id="t2022-03-13T20:21:17"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">other than that, consult your board vendor?</td><td class="time"><a href="#t2022-03-13T20:21:17" class="time">20:21</a></td></tr>
+<tr id="t2022-03-13T20:21:50"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">vmeson: I skimmed it, but probably should take my time to read the whole thing next weekend.</td><td class="time"><a href="#t2022-03-13T20:21:50" class="time">20:21</a></td></tr>
+<tr id="t2022-03-13T20:23:45"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">I could try on a laptop, but that wouldn't speed up my progress I think, because I would have to recompile Qt every time</td><td class="time"><a href="#t2022-03-13T20:23:45" class="time">20:23</a></td></tr>
+<tr id="t2022-03-13T20:23:51"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">Well at least not flash maybe</td><td class="time"><a href="#t2022-03-13T20:23:51" class="time">20:23</a></td></tr>
+<tr id="t2022-03-13T20:24:11"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">But since I am on KDE, I already have all the Qt stuff installed anyway</td><td class="time"><a href="#t2022-03-13T20:24:11" class="time">20:24</a></td></tr>
+<tr id="t2022-03-13T20:24:45"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">I already got it to work on the Raspbian. There you actually just need to set the QT_QPA_PLATFORM and DISPLAY</td><td class="time"><a href="#t2022-03-13T20:24:45" class="time">20:24</a></td></tr>
+<tr id="t2022-03-13T20:25:57"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">With the minimal Raspbian image those are detected automatically. There are also a lot more libGL files present on Raspbian, but no matter what I do, on Yocto there is only libGLES.so</td><td class="time"><a href="#t2022-03-13T20:25:57" class="time">20:25</a></td></tr>
+<tr id="t2022-03-13T20:26:45"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">I also open a thread on the Raspberry Pi forum, but did not get a reply</td><td class="time"><a href="#t2022-03-13T20:26:45" class="time">20:26</a></td></tr>
+<tr id="t2022-03-13T20:26:58"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">jclsn: how much RAM does your iMX.6 board have? &gt; 2GB ?</td><td class="time"><a href="#t2022-03-13T20:26:58" class="time">20:26</a></td></tr>
+<tr id="t2022-03-13T20:27:21"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">Oh it is a Raspberry Pi actually</td><td class="time"><a href="#t2022-03-13T20:27:21" class="time">20:27</a></td></tr>
+<tr id="t2022-03-13T20:27:44"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">This is for a personal project. It ihas nothing to do with the NXP boards we use at work.</td><td class="time"><a href="#t2022-03-13T20:27:44" class="time">20:27</a></td></tr>
+<tr id="t2022-03-13T20:28:16"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">The Pi has 4GB</td><td class="time"><a href="#t2022-03-13T20:28:16" class="time">20:28</a></td></tr>
+<tr id="t2022-03-13T20:28:36"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">Why? Is something restricted by th available RAM?</td><td class="time"><a href="#t2022-03-13T20:28:36" class="time">20:28</a></td></tr>
+<tr id="t2022-03-13T20:28:48"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">Even 2GB should be more than enough</td><td class="time"><a href="#t2022-03-13T20:28:48" class="time">20:28</a></td></tr>
+<tr id="t2022-03-13T20:28:53"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">I see. If your RPi kernel is still running in as a 32 sysstem, be sure you have CONFIG_HIGHMEM set. That's about all i have ...</td><td class="time"><a href="#t2022-03-13T20:28:53" class="time">20:28</a></td></tr>
+<tr id="t2022-03-13T20:29:28"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">I just tried the 32-bit version to see if it makes any difference</td><td class="time"><a href="#t2022-03-13T20:29:28" class="time">20:29</a></td></tr>
+<tr id="t2022-03-13T20:30:17"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">I actually started with 64-bit, but the error is the same. I just read that the are no user space graphics present on 64-bit. That is why</td><td class="time"><a href="#t2022-03-13T20:30:17" class="time">20:30</a></td></tr>
+<tr id="t2022-03-13T20:30:53"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">If you deactivate kernel space graphics that is. Which I haven't</td><td class="time"><a href="#t2022-03-13T20:30:53" class="time">20:30</a></td></tr>
+<tr id="t2022-03-13T20:32:13"><th class="nick" style="background: #488888">jclsn</th><td class="text" style="color: #488888">Well, thanks for the help. I will see if I find something next weekend.</td><td class="time"><a href="#t2022-03-13T20:32:13" class="time">20:32</a></td></tr>
+<tr id="t2022-03-13T20:33:19"><th class="nick" style="background: #854685">vmeson</th><td class="text" style="color: #854685">jclsn: good luck.</td><td class="time"><a href="#t2022-03-13T20:33:19" class="time">20:33</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-03-12.log.html">&#171; Saturday, 2022-03-12</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-14.log.html">Monday, 2022-03-14 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
