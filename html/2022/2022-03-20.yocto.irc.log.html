@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-03-20</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-03-20</h1>
+<div class="navigation"> <a href="%23yocto.2022-03-19.log.html">&#171; Saturday, 2022-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-21.log.html">Monday, 2022-03-21 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-03-20T00:38:32"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Ryzen 3900x system finally built and running builds :)</td><td class="time"><a href="#t2022-03-20T00:38:32" class="time">00:38</a></td></tr>
+<tr id="t2022-03-20T01:42:35"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">moto-timo nice, what is full spec of system</td><td class="time"><a href="#t2022-03-20T01:42:35" class="time">01:42</a></td></tr>
+<tr id="t2022-03-20T01:46:00"><th class="nick" style="background: #42427e">khem</th><td class="text" style="color: #42427e">I think SSDs on PCIe 4 would be amazing if you have motherboard support for it</td><td class="time"><a href="#t2022-03-20T01:46:00" class="time">01:46</a></td></tr>
+<tr id="t2022-03-20T02:18:57"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">khem: <a href="https://pcpartpicker.com/list/4fqsRT" rel="nofollow">https://pcpartpicker.com/list/4fqsRT</a></td><td class="time"><a href="#t2022-03-20T02:18:57" class="time">02:18</a></td></tr>
+<tr id="t2022-03-20T02:19:40"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">khem: although I ended up having to replace the Mobo with an Asus B550m+</td><td class="time"><a href="#t2022-03-20T02:19:40" class="time">02:19</a></td></tr>
+<tr id="t2022-03-20T02:20:27"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">This was inspired by tgamblin. Our goal was performance with low power consumption and not too expensive.</td><td class="time"><a href="#t2022-03-20T02:20:27" class="time">02:20</a></td></tr>
+<tr id="t2022-03-20T02:21:02"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">I’ll need more disk obviously</td><td class="time"><a href="#t2022-03-20T02:21:02" class="time">02:21</a></td></tr>
+<tr id="t2022-03-20T02:23:10"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">From scratch build of core-image-weston + core-image-full-cmdline 54 minutes. Not bad.</td><td class="time"><a href="#t2022-03-20T02:23:10" class="time">02:23</a></td></tr>
+<tr id="t2022-03-20T02:42:34"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Also, no noctua cooler, the cpu came with a very good one</td><td class="time"><a href="#t2022-03-20T02:42:34" class="time">02:42</a></td></tr>
+<tr id="t2022-03-20T02:50:16"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Bah. And I went with 3900x because I didn’t see a strong benefit.</td><td class="time"><a href="#t2022-03-20T02:50:16" class="time">02:50</a></td></tr>
+<tr id="t2022-03-20T02:57:31"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">Actual build was more like <a href="https://pcpartpicker.com/list/7rZRk9" rel="nofollow">https://pcpartpicker.com/list/7rZRk9</a></td><td class="time"><a href="#t2022-03-20T02:57:31" class="time">02:57</a></td></tr>
+<tr id="t2022-03-20T02:58:53"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">I have paid similar price for an old Dell precision tower with dual Xeons that will heat your office in the winter.</td><td class="time"><a href="#t2022-03-20T02:58:53" class="time">02:58</a></td></tr>
+<tr id="t2022-03-20T12:03:50"><th class="nick" style="background: #818144">Guest47</th><td class="text" style="color: #818144">Hello! Does anybody have a clue on this? <a href="https://lists.yoctoproject.org/g/yocto/message/56485" rel="nofollow">https://lists.yoctoproject.org/g/yocto/message/56485</a></td><td class="time"><a href="#t2022-03-20T12:03:50" class="time">12:03</a></td></tr>
+<tr id="t2022-03-20T15:22:58"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">I deleted deploy/rpm folder. How can I regenerate it?</td><td class="time"><a href="#t2022-03-20T15:22:58" class="time">15:22</a></td></tr>
+<tr id="t2022-03-20T15:30:20-2"><td class="nickchange" colspan="2">*** MWelchUK8 is now known as MWelchUK</td><td><a href="#t2022-03-20T15:30:20-2" class="time">15:30</a></td></tr>
+<tr id="t2022-03-20T16:34:09"><th class="nick" style="background: #407a40">moto-timo</th><td class="text" style="color: #407a40">khem: you made me realize I should upgrade to pci4 980 pro nvme</td><td class="time"><a href="#t2022-03-20T16:34:09" class="time">16:34</a></td></tr>
+<tr id="t2022-03-20T17:33:10"><th class="nick" style="background: #488888">manuel1985</th><td class="text" style="color: #488888">Is there any free image host (you know, something like pastebin but for images) you can recommend?</td><td class="time"><a href="#t2022-03-20T17:33:10" class="time">17:33</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-03-19.log.html">&#171; Saturday, 2022-03-19</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-21.log.html">Monday, 2022-03-21 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
