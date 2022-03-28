@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-03-27</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-03-27</h1>
+<div class="navigation"> <a href="%23yocto.2022-03-26.log.html">&#171; Saturday, 2022-03-26</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-28.log.html">Monday, 2022-03-28 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-03-27T01:35:09"><th class="nick" style="background: #407a40">geoffhp</th><td class="text" style="color: #407a40">khem: smurray: I'm also seeing ducktape do_package QA error on our build which has usrmerge enabled.</td><td class="time"><a href="#t2022-03-27T01:35:09" class="time">01:35</a></td></tr>
+<tr id="t2022-03-27T01:35:27"><th class="nick" style="background: #407a40">geoffhp</th><td class="text" style="color: #407a40">err. duktape</td><td class="time"><a href="#t2022-03-27T01:35:27" class="time">01:35</a></td></tr>
+<tr id="t2022-03-27T02:05:42"><th class="nick" style="background: #42427e">smurray</th><td class="text" style="color: #42427e">geoffhp: I did a test build w/o usrmerge and it worked, so definitely related.&nbsp;&nbsp;I'll poke at it tomorrow</td><td class="time"><a href="#t2022-03-27T02:05:42" class="time">02:05</a></td></tr>
+<tr id="t2022-03-27T05:37:23"><th class="nick" style="background: #818144">Gina</th><td class="text" style="color: #818144">Greetings everyone! My name is Regina Ndze from Cameroon, I am an Outreachy applicant and I would love to contribute to the Yocto Project.</td><td class="time"><a href="#t2022-03-27T05:37:23" class="time">05:37</a></td></tr>
+<tr id="t2022-03-27T05:37:24"><th class="nick" style="background: #818144">Gina</th><td class="text" style="color: #818144">I read about the project and it seems quite exciting</td><td class="time"><a href="#t2022-03-27T05:37:24" class="time">05:37</a></td></tr>
+<tr id="t2022-03-27T05:37:24-2"><th class="nick" style="background: #818144">Gina</th><td class="text" style="color: #818144">I look forward to receiving directives on how to make my first contribution and working with you.</td><td class="time"><a href="#t2022-03-27T05:37:24-2" class="time">05:37</a></td></tr>
+<tr id="t2022-03-27T19:06:32"><th class="nick" style="background: #854685">khem</th><td class="text" style="color: #854685">geoffhp you might want to send a reply in mailing list thread for duktape upgrade with error mesages etc</td><td class="time"><a href="#t2022-03-27T19:06:32" class="time">19:06</a></td></tr>
+<tr id="t2022-03-27T19:31:03"><th class="nick" style="background: #488888">jclsn[m]</th><td class="text" style="color: #488888">Why isn't there an easy way to set environment variables on the target board?</td><td class="time"><a href="#t2022-03-27T19:31:03" class="time">19:31</a></td></tr>
+<tr id="t2022-03-27T19:31:53"><th class="nick" style="background: #488888">jclsn[m]</th><td class="text" style="color: #488888">I would like to set some variables by default but haven't found an easy way when googling</td><td class="time"><a href="#t2022-03-27T19:31:53" class="time">19:31</a></td></tr>
+<tr id="t2022-03-27T20:03:58"><th class="nick" style="background: #407a40">geoffhp</th><td class="text" style="color: #407a40">khem: Thanks, I'll post to the mailing list next time.</td><td class="time"><a href="#t2022-03-27T20:03:58" class="time">20:03</a></td></tr>
+<tr id="t2022-03-27T20:12:42"><th class="nick" style="background: #407a40">geoffhp</th><td class="text" style="color: #407a40">btw, your duktape fix is working. Thanks.</td><td class="time"><a href="#t2022-03-27T20:12:42" class="time">20:12</a></td></tr>
+<tr id="t2022-03-27T20:17:02"><th class="nick" style="background: #407a40">geoffhp</th><td class="text" style="color: #407a40">jclsn[m]: you could override the dot.bashrc and/or the dot.profile file in the base-files recipe to set and export environment variables</td><td class="time"><a href="#t2022-03-27T20:17:02" class="time">20:17</a></td></tr>
+<tr id="t2022-03-27T20:38:39"><th class="nick" style="background: #488888">jclsn[m]</th><td class="text" style="color: #488888">geoffhp: Thanks, will try</td><td class="time"><a href="#t2022-03-27T20:38:39" class="time">20:38</a></td></tr>
+<tr id="t2022-03-27T21:15:08-2"><th class="nick" style="background: #8c4a4a">Amahnui</th><td class="text" style="color: #8c4a4a">Hello everyone,</td><td class="time"><a href="#t2022-03-27T21:15:08-2" class="time">21:15</a></td></tr>
+<tr id="t2022-03-27T21:20:41"><th class="nick" style="background: #8c4a4a">Amahnui</th><td class="text" style="color: #8c4a4a">Please I'm facing issues understanding how the openembedded.org version control site works</td><td class="time"><a href="#t2022-03-27T21:20:41" class="time">21:20</a></td></tr>
+<tr id="t2022-03-27T21:21:23"><th class="nick" style="background: #8c4a4a">Amahnui</th><td class="text" style="color: #8c4a4a">Please I need help going through it 🙏🏽</td><td class="time"><a href="#t2022-03-27T21:21:23" class="time">21:21</a></td></tr>
+<tr id="t2022-03-27T21:27:31"><td class="nickchange" colspan="2">*** camus1 is now known as camus</td><td><a href="#t2022-03-27T21:27:31" class="time">21:27</a></td></tr>
+<tr id="t2022-03-27T22:56:24"><th class="nick" style="background: #4b904b">vvn</th><td class="text" style="color: #4b904b">how can I build the same image with two different .wks files?</td><td class="time"><a href="#t2022-03-27T22:56:24" class="time">22:56</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-03-26.log.html">&#171; Saturday, 2022-03-26</a> <a href="index.html">Index</a> <a href="%23yocto.2022-03-28.log.html">Monday, 2022-03-28 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
