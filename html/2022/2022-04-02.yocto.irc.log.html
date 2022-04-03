@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-04-02</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-04-02</h1>
+<div class="navigation"> <a href="%23yocto.2022-04-01.log.html">&#171; Friday, 2022-04-01</a> <a href="index.html">Index</a> <a href="%23yocto.2022-04-03.log.html">Sunday, 2022-04-03 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-04-02T06:29:18"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Hi guys</td><td class="time"><a href="#t2022-04-02T06:29:18" class="time">06:29</a></td></tr>
+<tr id="t2022-04-02T06:30:34"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">I have a question. Is it possible to actually build custom image with app written in rust which in turn depends on gtk3? I was successful in building custom image that uses c++ and gtk3 but with rust there are problems during compilation. I'm on master branch of poky</td><td class="time"><a href="#t2022-04-02T06:30:34" class="time">06:30</a></td></tr>
+<tr id="t2022-04-02T06:39:36"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">JPEW: it is asyncio: <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/86/builds/3358/steps/14/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/86/builds/3358/steps/14/logs/stdio</a> ! :)</td><td class="time"><a href="#t2022-04-02T06:39:36" class="time">06:39</a></td></tr>
+<tr id="t2022-04-02T06:39:52"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">kergoth: a more informed traceback in the above log</td><td class="time"><a href="#t2022-04-02T06:39:52" class="time">06:39</a></td></tr>
+<tr id="t2022-04-02T06:54:04"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">artie1977: rust is fairly new for us so whilst I'd say yes, it should be possible, it isn't a well used path yet. librsvg is similar and uses rust</td><td class="time"><a href="#t2022-04-02T06:54:04" class="time">06:54</a></td></tr>
+<tr id="t2022-04-02T07:00:20"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">RP Thanks for the answer. I thought so. I was able with literally zero problems build same app where instead of rust C++ was used. It went OK from very first run.</td><td class="time"><a href="#t2022-04-02T07:00:20" class="time">07:00</a></td></tr>
+<tr id="t2022-04-02T07:01:25"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Strange thing is that the error I'm getting doesn't happen when I build that app on host machine: error: failed to run custom build command for `glib-sys v0.15.10`</td><td class="time"><a href="#t2022-04-02T07:01:25" class="time">07:01</a></td></tr>
+<tr id="t2022-04-02T07:01:43"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Really don't know how to understand it</td><td class="time"><a href="#t2022-04-02T07:01:43" class="time">07:01</a></td></tr>
+<tr id="t2022-04-02T07:38:52"><th class="nick" style="background: #818144">amahnui[m]</th><td class="text" style="color: #818144">Hello rburton, qschulz&nbsp;&nbsp;Here is a link to the patch <a href="https://lists.yoctoproject.org/g/docs/message/2747" rel="nofollow">https://lists.yoctoproject.org/g/docs/message/2747</a></td><td class="time"><a href="#t2022-04-02T07:38:52" class="time">07:38</a></td></tr>
+<tr id="t2022-04-02T07:46:40"><th class="nick" style="background: #818144">amahnui[m]</th><td class="text" style="color: #818144">* the patch I created yesterday <a href="https://lists.yoctoproject.org/g/docs/message/2747" rel="nofollow">https://lists.yoctoproject.org/g/docs/message/2747</a></td><td class="time"><a href="#t2022-04-02T07:46:40" class="time">07:46</a></td></tr>
+<tr id="t2022-04-02T12:09:05"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Are there any plans to have gtk4 available for projects build with yocto?</td><td class="time"><a href="#t2022-04-02T12:09:05" class="time">12:09</a></td></tr>
+<tr id="t2022-04-02T12:36:24"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">artie1977: <a href="https://layers.openembedded.org/layerindex/branch/master/layer/meta-gnome/" rel="nofollow">https://layers.openembedded.org/layerindex/branch/master/layer/meta-gnome/</a> - it is in meta-gnome</td><td class="time"><a href="#t2022-04-02T12:36:24" class="time">12:36</a></td></tr>
+<tr id="t2022-04-02T12:41:24"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">RP Thank you</td><td class="time"><a href="#t2022-04-02T12:41:24" class="time">12:41</a></td></tr>
+<tr id="t2022-04-02T13:43:09"><th class="nick" style="background: #854685">Saur[m]</th><td class="text" style="color: #854685">RP: Since you took care of the edge case with excluded variables and contains, please remove the second paragraph from the commit message of dc9ee06a (insane.bbclass: Make do_qa_patch() depend on if patch-fuzz is in ERROR_QA) as it is no longer relevant.</td><td class="time"><a href="#t2022-04-02T13:43:09" class="time">13:43</a></td></tr>
+<tr id="t2022-04-02T17:03:37"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Guys, I really need help with this. I'm so close to actually have the rust app using gtk compiled with yocto. The error I'm getting is:</td><td class="time"><a href="#t2022-04-02T17:03:37" class="time">17:03</a></td></tr>
+<tr id="t2022-04-02T17:03:37-2"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">warning: Could not run `&quot;pkg-config&quot; &quot;--libs&quot; &quot;--cflags&quot; &quot;glib-2.0&quot; &quot;glib-2.0 &gt;= 2.48&quot;`</td><td class="time"><a href="#t2022-04-02T17:03:37-2" class="time">17:03</a></td></tr>
+<tr id="t2022-04-02T17:03:38"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">|</td><td class="time"><a href="#t2022-04-02T17:03:38" class="time">17:03</a></td></tr>
+<tr id="t2022-04-02T17:03:38-2"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">| error: failed to run custom build command for `glib-sys v0.15.10`</td><td class="time"><a href="#t2022-04-02T17:03:38-2" class="time">17:03</a></td></tr>
+<tr id="t2022-04-02T17:03:52"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">I know I don't have some var somewhere set</td><td class="time"><a href="#t2022-04-02T17:03:52" class="time">17:03</a></td></tr>
+<tr id="t2022-04-02T17:04:01"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">I just don't know how to do it.</td><td class="time"><a href="#t2022-04-02T17:04:01" class="time">17:04</a></td></tr>
+<tr id="t2022-04-02T17:04:22"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">The error is from: bitbake recipe</td><td class="time"><a href="#t2022-04-02T17:04:22" class="time">17:04</a></td></tr>
+<tr id="t2022-04-02T17:04:37"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Any help, really appreciate it</td><td class="time"><a href="#t2022-04-02T17:04:37" class="time">17:04</a></td></tr>
+<tr id="t2022-04-02T17:04:37-2"><th class="nick" style="background: #407a40">artie1977</th><td class="text" style="color: #407a40">Thank you</td><td class="time"><a href="#t2022-04-02T17:04:37-2" class="time">17:04</a></td></tr>
+<tr id="t2022-04-02T18:45:25"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">Saur[m]: will do, thanks.</td><td class="time"><a href="#t2022-04-02T18:45:25" class="time">18:45</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-04-01.log.html">&#171; Friday, 2022-04-01</a> <a href="index.html">Index</a> <a href="%23yocto.2022-04-03.log.html">Sunday, 2022-04-03 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
