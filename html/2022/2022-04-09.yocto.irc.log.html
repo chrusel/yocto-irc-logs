@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-04-09</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-04-09</h1>
+<div class="navigation"> <a href="%23yocto.2022-04-08.log.html">&#171; Friday, 2022-04-08</a> <a href="index.html">Index</a> <a href="%23yocto.2022-04-10.log.html">Sunday, 2022-04-10 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-04-09T02:19:01"><th class="nick" style="background: #407a40">rfs613</th><td class="text" style="color: #407a40">sakoman: patches are sent. The gzip one for master could use a sanity check, I had to rework a patch, which interacts with another upstream change.</td><td class="time"><a href="#t2022-04-09T02:19:01" class="time">02:19</a></td></tr>
+<tr id="t2022-04-09T03:15:08"><td class="nickchange" colspan="2">*** jmiehe1 is now known as jmiehe</td><td><a href="#t2022-04-09T03:15:08" class="time">03:15</a></td></tr>
+<tr id="t2022-04-09T10:28:42"><td class="nickchange" colspan="2">*** mario-go` is now known as mario-goulart</td><td><a href="#t2022-04-09T10:28:42" class="time">10:28</a></td></tr>
+<tr id="t2022-04-09T10:54:07"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">I have a build server which runs production builds and I want to share its hashserv and sstate cache to clients, I'd need one RW bitbake-hashserv instance for the official server builds and I need one RO instance of bitbake-hashserv for the other clients. Is this correct?</td><td class="time"><a href="#t2022-04-09T10:54:07" class="time">10:54</a></td></tr>
+<tr id="t2022-04-09T15:04:39"><th class="nick" style="background: #818144">Saur[m]</th><td class="text" style="color: #818144">sveinse: Sounds correct, yes.</td><td class="time"><a href="#t2022-04-09T15:04:39" class="time">15:04</a></td></tr>
+<tr id="t2022-04-09T16:59:31"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">Saur[m]: thanks</td><td class="time"><a href="#t2022-04-09T16:59:31" class="time">16:59</a></td></tr>
+<tr id="t2022-04-09T17:05:55"><th class="nick" style="background: #42427e">sveinse</th><td class="text" style="color: #42427e">What is the relationship between remote SSTATE_MIRRORS and using a local hashserve server with --upstream? Both needs to be used? Because a hashserve with --upstream doesn't really make sense without being able to get the actual sstate objects?</td><td class="time"><a href="#t2022-04-09T17:05:55" class="time">17:05</a></td></tr>
+<tr id="t2022-04-09T17:48:11"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">sveinse: it can still make sense if your local sstate had the original hash</td><td class="time"><a href="#t2022-04-09T17:48:11" class="time">17:48</a></td></tr>
+<tr id="t2022-04-09T17:48:26"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">It is less useful yes, but can still be useful</td><td class="time"><a href="#t2022-04-09T17:48:26" class="time">17:48</a></td></tr>
+<tr id="t2022-04-09T19:09:12"><th class="nick" style="background: #488888">hushmoney</th><td class="text" style="color: #488888">hello what is the different between INIT_MANAGER sysvinit and none?</td><td class="time"><a href="#t2022-04-09T19:09:12" class="time">19:09</a></td></tr>
+<tr id="t2022-04-09T19:09:33"><th class="nick" style="background: #488888">hushmoney</th><td class="text" style="color: #488888">and what is the sysvinit implementation? because it doesn't appear to be busybox</td><td class="time"><a href="#t2022-04-09T19:09:33" class="time">19:09</a></td></tr>
+<tr id="t2022-04-09T19:36:52"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">hushmoney: none means you're taking care of it without the helper code</td><td class="time"><a href="#t2022-04-09T19:36:52" class="time">19:36</a></td></tr>
+<tr id="t2022-04-09T19:37:10"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">hushmoney: the default implementation is sysvinit (as in the recipe)</td><td class="time"><a href="#t2022-04-09T19:37:10" class="time">19:37</a></td></tr>
+<tr id="t2022-04-09T20:18:43"><th class="nick" style="background: #8c4a4a">Guest14</th><td class="text" style="color: #8c4a4a">hello, i have some problems with my quick start, can anoybody help?</td><td class="time"><a href="#t2022-04-09T20:18:43" class="time">20:18</a></td></tr>
+<tr id="t2022-04-09T20:21:00"><th class="nick" style="background: #8c4a4a">Guest14</th><td class="text" style="color: #8c4a4a">wow such a dead community</td><td class="time"><a href="#t2022-04-09T20:21:00" class="time">20:21</a></td></tr>
+<tr id="t2022-04-09T22:13:13"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">rburton: actually this triggers something: TOOLCHAIN_TARGET_TASK = &quot;x11 opengl mesa&quot;</td><td class="time"><a href="#t2022-04-09T22:13:13" class="time">22:13</a></td></tr>
+<tr id="t2022-04-09T22:13:17"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">however I got an error</td><td class="time"><a href="#t2022-04-09T22:13:17" class="time">22:13</a></td></tr>
+<tr id="t2022-04-09T22:13:44"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">ERROR: Nothing RPROVIDES 'x11' NOTE: Runtime target 'x11' is unbuildable, removing...</td><td class="time"><a href="#t2022-04-09T22:13:44" class="time">22:13</a></td></tr>
+<tr id="t2022-04-09T22:14:16"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: you need to use valid recipe/package names, e.g. libx11</td><td class="time"><a href="#t2022-04-09T22:14:16" class="time">22:14</a></td></tr>
+<tr id="t2022-04-09T22:15:00"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">what are the others for openGl and mesa?</td><td class="time"><a href="#t2022-04-09T22:15:00" class="time">22:15</a></td></tr>
+<tr id="t2022-04-09T22:15:29"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">what I need, are the packages necessary to build Qt</td><td class="time"><a href="#t2022-04-09T22:15:29" class="time">22:15</a></td></tr>
+<tr id="t2022-04-09T22:15:40"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">the base requriements</td><td class="time"><a href="#t2022-04-09T22:15:40" class="time">22:15</a></td></tr>
+<tr id="t2022-04-09T22:16:30"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: probably something like libgl but there are other gl libs and I don't know which ones Qt would want</td><td class="time"><a href="#t2022-04-09T22:16:30" class="time">22:16</a></td></tr>
+<tr id="t2022-04-09T22:16:40"><td class="action" colspan="2">* RP doesn't build qt</td><td><a href="#t2022-04-09T22:16:40" class="time">22:16</a></td></tr>
+<tr id="t2022-04-09T22:19:42"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">RP: ERROR: Nothing RPROVIDES 'libx11' libx11 was skipped: missing required distro feature 'x11' (not in DISTRO_FEATURES) NOTE: Runtime target 'libx11'</td><td class="time"><a href="#t2022-04-09T22:19:42" class="time">22:19</a></td></tr>
+<tr id="t2022-04-09T22:20:43"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: you must not have x11 in DISTRO_FEATURES then</td><td class="time"><a href="#t2022-04-09T22:20:43" class="time">22:20</a></td></tr>
+<tr id="t2022-04-09T22:22:12"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">what do I have then?</td><td class="time"><a href="#t2022-04-09T22:22:12" class="time">22:22</a></td></tr>
+<tr id="t2022-04-09T22:24:14"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: how would I know what you have configured?</td><td class="time"><a href="#t2022-04-09T22:24:14" class="time">22:24</a></td></tr>
+<tr id="t2022-04-09T22:24:24"><td class="action" colspan="2">* RP heads to get some sleep</td><td><a href="#t2022-04-09T22:24:24" class="time">22:24</a></td></tr>
+<tr id="t2022-04-09T22:24:35"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">no, where can I look for?</td><td class="time"><a href="#t2022-04-09T22:24:35" class="time">22:24</a></td></tr>
+<tr id="t2022-04-09T22:24:42"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">I am a yocto beginner</td><td class="time"><a href="#t2022-04-09T22:24:42" class="time">22:24</a></td></tr>
+<tr id="t2022-04-09T22:24:54"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">is there a cmd to find out?</td><td class="time"><a href="#t2022-04-09T22:24:54" class="time">22:24</a></td></tr>
+<tr id="t2022-04-09T22:25:47"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: it comes down to a) which DISTRO&nbsp;&nbsp;you're using and then what configuration you put in local.conf or what other changes you made</td><td class="time"><a href="#t2022-04-09T22:25:47" class="time">22:25</a></td></tr>
+<tr id="t2022-04-09T22:26:09"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">the default is to enable x11 so you likely did something which disabled it. What that is, I have no idea as I don't know what you changed</td><td class="time"><a href="#t2022-04-09T22:26:09" class="time">22:26</a></td></tr>
+<tr id="t2022-04-09T22:27:35"><th class="nick" style="background: #4b904b">zen_coder</th><td class="text" style="color: #4b904b">I have a setup which others build</td><td class="time"><a href="#t2022-04-09T22:27:35" class="time">22:27</a></td></tr>
+<tr id="t2022-04-09T22:32:34"><th class="nick" style="background: #854685">RP</th><td class="text" style="color: #854685">zen_coder: &quot;bitbake -e&quot; will show DISTRO_FEATURES= somewhere along with some info about where the values come from</td><td class="time"><a href="#t2022-04-09T22:32:34" class="time">22:32</a></td></tr>
+<tr id="t2022-04-09T22:32:43"><td class="action" colspan="2">* RP -&gt; really gone </td><td><a href="#t2022-04-09T22:32:43" class="time">22:32</a></td></tr>
+<tr id="t2022-04-09T22:52:28"><th class="nick" style="background: #488888">hushmoney</th><td class="text" style="color: #488888">RP thanks. why does poky distro.conf use none? when i boot there is something there</td><td class="time"><a href="#t2022-04-09T22:52:28" class="time">22:52</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-04-08.log.html">&#171; Friday, 2022-04-08</a> <a href="index.html">Index</a> <a href="%23yocto.2022-04-10.log.html">Sunday, 2022-04-10 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
