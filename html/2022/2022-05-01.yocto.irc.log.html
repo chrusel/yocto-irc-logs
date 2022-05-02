@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-05-01</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-05-01</h1>
+<div class="navigation"> <a href="%23yocto.2022-04-30.log.html">&#171; Saturday, 2022-04-30</a> <a href="index.html">Index</a> <a href="%23yocto.2022-05-02.log.html">Monday, 2022-05-02 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-05-01T11:08:25"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">hi</td><td class="time"><a href="#t2022-05-01T11:08:25" class="time">11:08</a></td></tr>
+<tr id="t2022-05-01T11:08:41"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">I'm trying to add part of the linux-firmware package</td><td class="time"><a href="#t2022-05-01T11:08:41" class="time">11:08</a></td></tr>
+<tr id="t2022-05-01T11:09:13"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">to be specific: the rtl_nic (to support rtl8168)</td><td class="time"><a href="#t2022-05-01T11:09:13" class="time">11:09</a></td></tr>
+<tr id="t2022-05-01T11:09:56"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">when I add &quot;linux-firmwre&quot; to DEPENDS it only installs these 2 folders:</td><td class="time"><a href="#t2022-05-01T11:09:56" class="time">11:09</a></td></tr>
+<tr id="t2022-05-01T11:15:33"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">&quot;/rtl_bt&quot;</td><td class="time"><a href="#t2022-05-01T11:15:33" class="time">11:15</a></td></tr>
+<tr id="t2022-05-01T11:15:49"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">&quot;/intel-ucode&quot;</td><td class="time"><a href="#t2022-05-01T11:15:49" class="time">11:15</a></td></tr>
+<tr id="t2022-05-01T11:16:18"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">how do I tell it to install the rtl_nic firmware folder ?</td><td class="time"><a href="#t2022-05-01T11:16:18" class="time">11:16</a></td></tr>
+<tr id="t2022-05-01T11:17:23"><td class="part" colspan="2">*** eternalforms &lt;eternalforms!~obsrwr@46.101.168.131&gt; has left #yocto</td><td><a href="#t2022-05-01T11:17:23" class="time">11:17</a></td></tr>
+<tr id="t2022-05-01T11:41:35"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">when I add a .bbappend file like so:</td><td class="time"><a href="#t2022-05-01T11:41:35" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:41:46"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">linux-firmware_%.bbappend</td><td class="time"><a href="#t2022-05-01T11:41:46" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:41:58"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">PACKAGES =+ &quot;${PN}-rtl_nic&quot;</td><td class="time"><a href="#t2022-05-01T11:41:58" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:41:58-2"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">FILES_${PN}-rtl_nic = &quot; \</td><td class="time"><a href="#t2022-05-01T11:41:58-2" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:41:59"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">  /lib/firmware/rtl_nic/* \</td><td class="time"><a href="#t2022-05-01T11:41:59" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:41:59-2"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">&quot;</td><td class="time"><a href="#t2022-05-01T11:41:59-2" class="time">11:41</a></td></tr>
+<tr id="t2022-05-01T11:42:13"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">as suggested here:</td><td class="time"><a href="#t2022-05-01T11:42:13" class="time">11:42</a></td></tr>
+<tr id="t2022-05-01T11:42:14"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40"><a href="https://www.yoctoproject.org/pipermail/yocto/2016-February/028430.html" rel="nofollow">https://www.yoctoproject.org/pipermail/yocto/2016-February/028430.html</a></td><td class="time"><a href="#t2022-05-01T11:42:14" class="time">11:42</a></td></tr>
+<tr id="t2022-05-01T11:42:31"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">it still wont install the folder /lib/firmware/rtl_nic</td><td class="time"><a href="#t2022-05-01T11:42:31" class="time">11:42</a></td></tr>
+<tr id="t2022-05-01T12:07:57"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">oberonc: Is this with Honister or later? If so, then you need to use `FILES:${PN}-rtl_nic = &quot;...&quot;` instead.</td><td class="time"><a href="#t2022-05-01T12:07:57" class="time">12:07</a></td></tr>
+<tr id="t2022-05-01T12:08:18"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">it is</td><td class="time"><a href="#t2022-05-01T12:08:18" class="time">12:08</a></td></tr>
+<tr id="t2022-05-01T12:08:37"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">if I had it wrong wouldnt it bring an error message during bitbake ?</td><td class="time"><a href="#t2022-05-01T12:08:37" class="time">12:08</a></td></tr>
+<tr id="t2022-05-01T12:09:00"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">No. It only does that for :append, :prepend and :remove.</td><td class="time"><a href="#t2022-05-01T12:09:00" class="time">12:09</a></td></tr>
+<tr id="t2022-05-01T12:10:56"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">I have changed the .bbappend file (&quot;:&quot; instead of &quot;_&quot;) .. did nothing .. during bitbake it says &quot;Tasks Summary: Attempted 4846 tasks of which 4846 didn't need to be rerun and all succeeded&quot;</td><td class="time"><a href="#t2022-05-01T12:10:56" class="time">12:10</a></td></tr>
+<tr id="t2022-05-01T12:15:36"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">another question: How do I change the file /etc/default/grub and update grub ?</td><td class="time"><a href="#t2022-05-01T12:15:36" class="time">12:15</a></td></tr>
+<tr id="t2022-05-01T12:16:00"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">I want to change GRUB_CMDLINE_LINUX_DEFAULT to handle this problem:</td><td class="time"><a href="#t2022-05-01T12:16:00" class="time">12:16</a></td></tr>
+<tr id="t2022-05-01T12:16:11"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40"><a href="https://askubuntu.com/questions/1266668/ubuntu-20-04-very-slow-boot-drmdrm-atomic-helper-wait-for-dependencies-drm-km" rel="nofollow">https://askubuntu.com/questions/1266668/ubuntu-20-04-very-slow-boot-drmdrm-atomic-helper-wait-for-dependencies-drm-km</a></td><td class="time"><a href="#t2022-05-01T12:16:11" class="time">12:16</a></td></tr>
+<tr id="t2022-05-01T12:18:31"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">Do you have an actual runtime dependency on linux-firmware-rtl_nic anywhere? If you only have a build dependency on linux-firmware, then I don't think it will trigger a repackaging even if you change the FILES variable.</td><td class="time"><a href="#t2022-05-01T12:18:31" class="time">12:18</a></td></tr>
+<tr id="t2022-05-01T12:19:53"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">I do, I have rtl8168 hardware on this board</td><td class="time"><a href="#t2022-05-01T12:19:53" class="time">12:19</a></td></tr>
+<tr id="t2022-05-01T12:20:03"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">during boot I get this message in dmesg:</td><td class="time"><a href="#t2022-05-01T12:20:03" class="time">12:20</a></td></tr>
+<tr id="t2022-05-01T12:20:15"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">r8169 0000:01:00.0: Unable to load firmware rtl_nic/rtl8168e-2.fw (-2)</td><td class="time"><a href="#t2022-05-01T12:20:15" class="time">12:20</a></td></tr>
+<tr id="t2022-05-01T12:25:22"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">ok, moving &quot;linux-firmware&quot; from DEPENDS to RDEPENDS fixed the issue</td><td class="time"><a href="#t2022-05-01T12:25:22" class="time">12:25</a></td></tr>
+<tr id="t2022-05-01T12:25:32"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">now the rtl_nic folder is there</td><td class="time"><a href="#t2022-05-01T12:25:32" class="time">12:25</a></td></tr>
+<tr id="t2022-05-01T12:39:06"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">this brings me back to my GRUB problem</td><td class="time"><a href="#t2022-05-01T12:39:06" class="time">12:39</a></td></tr>
+<tr id="t2022-05-01T12:39:19"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">How do I change the file /etc/default/grub and update grub ?</td><td class="time"><a href="#t2022-05-01T12:39:19" class="time">12:39</a></td></tr>
+<tr id="t2022-05-01T12:39:35"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40">I want to change GRUB_CMDLINE_LINUX_DEFAULT to handle this problem:</td><td class="time"><a href="#t2022-05-01T12:39:35" class="time">12:39</a></td></tr>
+<tr id="t2022-05-01T12:39:48"><th class="nick" style="background: #407a40">oberonc</th><td class="text" style="color: #407a40"><a href="https://askubuntu.com/questions/1266668/ubuntu-20-04-very-slow-boot-drmdrm-atomic-helper-wait-for-dependencies-drm-km" rel="nofollow">https://askubuntu.com/questions/1266668/ubuntu-20-04-very-slow-boot-drmdrm-atomic-helper-wait-for-dependencies-drm-km</a></td><td class="time"><a href="#t2022-05-01T12:39:48" class="time">12:39</a></td></tr>
+<tr id="t2022-05-01T15:38:57"><td class="part" colspan="2">*** Anexploringbot[m &lt;Anexploringbot[m!~wybpipmat@2001:470:69fc:105::1:f452&gt; has left #yocto</td><td><a href="#t2022-05-01T15:38:57" class="time">15:38</a></td></tr>
+<tr id="t2022-05-01T23:24:06"><th class="nick" style="background: #818144">khem</th><td class="text" style="color: #818144">zeddii I guess meta-virtualization needs for gcc12 fixing see <a href="https://autobuilder.yoctoproject.org/typhoon/#/builders/128/builds/20/steps/12/logs/stdio" rel="nofollow">https://autobuilder.yoctoproject.org/typhoon/#/builders/128/builds/20/steps/12/logs/stdio</a></td><td class="time"><a href="#t2022-05-01T23:24:06" class="time">23:24</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-04-30.log.html">&#171; Saturday, 2022-04-30</a> <a href="index.html">Index</a> <a href="%23yocto.2022-05-02.log.html">Monday, 2022-05-02 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
