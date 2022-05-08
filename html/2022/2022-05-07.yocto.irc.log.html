@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-05-07</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-05-07</h1>
+<div class="navigation"> <a href="%23yocto.2022-05-06.log.html">&#171; Friday, 2022-05-06</a> <a href="index.html">Index</a> <a href="%23yocto.2022-05-08.log.html">Sunday, 2022-05-08 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-05-07T07:19:12"><td class="nickchange" colspan="2">*** _angelo_ is now known as bigendian</td><td><a href="#t2022-05-07T07:19:12" class="time">07:19</a></td></tr>
+<tr id="t2022-05-07T07:20:27"><td class="action" colspan="2">* RP is worried we have something &quot;bad&quot; on the autobuilders causing git failures :(</td><td><a href="#t2022-05-07T07:20:27" class="time">07:20</a></td></tr>
+<tr id="t2022-05-07T10:34:04"><th class="nick" style="background: #407a40">ccf</th><td class="text" style="color: #407a40">Hi, how to get the directory of the current meta-layer?</td><td class="time"><a href="#t2022-05-07T10:34:04" class="time">10:34</a></td></tr>
+<tr id="t2022-05-07T10:35:09"><th class="nick" style="background: #407a40">ccf</th><td class="text" style="color: #407a40">I do know THISDIR, OEROOT and DL_DIR, ... but how to get the dir of the current meta-layer of this machine conf?</td><td class="time"><a href="#t2022-05-07T10:35:09" class="time">10:35</a></td></tr>
+<tr id="t2022-05-07T10:44:08"><th class="nick" style="background: #407a40">ccf</th><td class="text" style="color: #407a40">*ping*</td><td class="time"><a href="#t2022-05-07T10:44:08" class="time">10:44</a></td></tr>
+<tr id="t2022-05-07T10:45:26"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">We put something like this in our layer.conf files to solve that:</td><td class="time"><a href="#t2022-05-07T10:45:26" class="time">10:45</a></td></tr>
+<tr id="t2022-05-07T10:45:26-2"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">LAYERDIR_foo := &quot;${LAYERDIR}&quot;</td><td class="time"><a href="#t2022-05-07T10:45:26-2" class="time">10:45</a></td></tr>
+<tr id="t2022-05-07T10:45:26-3"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">LAYERDIR_foo[vardepvalue] = &quot;&quot;</td><td class="time"><a href="#t2022-05-07T10:45:26-3" class="time">10:45</a></td></tr>
+<tr id="t2022-05-07T10:46:03"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">where foo matches what is used in `BBFILE_COLLECTIONS += &quot;foo&quot;`.</td><td class="time"><a href="#t2022-05-07T10:46:03" class="time">10:46</a></td></tr>
+<tr id="t2022-05-07T12:17:43"><td class="part" colspan="2">*** ccf &lt;ccf!~ccf@user/ccf&gt; has left #yocto</td><td><a href="#t2022-05-07T12:17:43" class="time">12:17</a></td></tr>
+<tr id="t2022-05-07T12:25:11"><td class="part" colspan="2">*** ccf &lt;ccf!~ccf@user/ccf&gt; has left #yocto</td><td><a href="#t2022-05-07T12:25:11" class="time">12:25</a></td></tr>
+<tr id="t2022-05-07T14:04:04"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">while the reproducibility tests were failing, breakage crept in :(</td><td class="time"><a href="#t2022-05-07T14:04:04" class="time">14:04</a></td></tr>
+<tr id="t2022-05-07T15:31:59"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">I have the recipe that is duplicated. myrecipe_ext.bb and myrecipe_int.bb. _ext means the git is external (github), _int is company git. They are mirrored. I am using PREFFERED_... to choose one or another. How can I get rid of diplicated files better?</td><td class="time"><a href="#t2022-05-07T15:31:59" class="time">15:31</a></td></tr>
+<tr id="t2022-05-07T18:53:55"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">Hi I'm having this error <a href="https://ttm.sh/blT.py" rel="nofollow">https://ttm.sh/blT.py</a> on running bitbake mc:x86-2021-minimal:linux-intel-iot-lts-5.15</td><td class="time"><a href="#t2022-05-07T18:53:55" class="time">18:53</a></td></tr>
+<tr id="t2022-05-07T18:54:30"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">I've tried it and also ran -c cleanstate on this target.</td><td class="time"><a href="#t2022-05-07T18:54:30" class="time">18:54</a></td></tr>
+<tr id="t2022-05-07T19:47:14"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">It was uploaded as a .py script, sorry about that</td><td class="time"><a href="#t2022-05-07T19:47:14" class="time">19:47</a></td></tr>
+<tr id="t2022-05-07T19:48:05"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">also, every time I run bitbake, dmesg says &quot;Out of memory: Killed process 1628 (Cooker)&quot;</td><td class="time"><a href="#t2022-05-07T19:48:05" class="time">19:48</a></td></tr>
+<tr id="t2022-05-07T19:59:58"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">seninha: how much memory has your system got?</td><td class="time"><a href="#t2022-05-07T19:59:58" class="time">19:59</a></td></tr>
+<tr id="t2022-05-07T20:00:19"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">16GB</td><td class="time"><a href="#t2022-05-07T20:00:19" class="time">20:00</a></td></tr>
+<tr id="t2022-05-07T20:00:26"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">10 cores, 20 threads</td><td class="time"><a href="#t2022-05-07T20:00:26" class="time">20:00</a></td></tr>
+<tr id="t2022-05-07T20:12:25"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">i'm back</td><td class="time"><a href="#t2022-05-07T20:12:25" class="time">20:12</a></td></tr>
+<tr id="t2022-05-07T20:12:58"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">RP, I uploaded the error log here: <a href="https://ttm.sh/blT.py" rel="nofollow">https://ttm.sh/blT.py</a></td><td class="time"><a href="#t2022-05-07T20:12:58" class="time">20:12</a></td></tr>
+<tr id="t2022-05-07T20:31:49"><th class="nick" style="background: #818144">RP</th><td class="text" style="color: #818144">seninha: 16GB isn't a lot for 20 threads. I'd try setting BB_NUMBER_THREADS and BB_NUMBER_PARSE_THREADS to say 8</td><td class="time"><a href="#t2022-05-07T20:31:49" class="time">20:31</a></td></tr>
+<tr id="t2022-05-07T20:45:55"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">RP: thanks I'll do it</td><td class="time"><a href="#t2022-05-07T20:45:55" class="time">20:45</a></td></tr>
+<tr id="t2022-05-07T22:23:45"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">I have the recipe that is duplicated. myrecipe_ext.bb and myrecipe_int.bb. _ext means the git is external (github), _int is company git. They are mirrored. I am using PREFFERED_... to choose one or another. How can I get rid of duplicated files? I want to have only one .bb file and choose the mirror somewhere in config file</td><td class="time"><a href="#t2022-05-07T22:23:45" class="time">22:23</a></td></tr>
+<tr id="t2022-05-07T22:33:04"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">dvorkindmitry: If all that differs between the recipes is the SRC_URI, then you can just set it as `SRC_URI:pn-myrecipe = &quot;...&quot;` in your config file. However, if you want to make it easier, you probably want to use a PACKAGECONFIG instead. Add something like `PACKAGECONFIG[internal] = &quot;&quot;`, and then define the SRC_URI as `SRC_URI = &quot;${@bb.utils.contains('PACKAGECONFIG', 'internal', '&lt;the URL to the internal repo&gt;', '&lt;the URL to the external repo&gt;',</td><td class="time"><a href="#t2022-05-07T22:33:04" class="time">22:33</a></td></tr>
+<tr id="t2022-05-07T22:33:04-2"><th class="nick" style="background: #42427e">Saur[m]</th><td class="text" style="color: #42427e">d)}&quot;`.</td><td class="time"><a href="#t2022-05-07T22:33:04-2" class="time">22:33</a></td></tr>
+<tr id="t2022-05-07T22:37:42"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">thank you! interesting idea about SRC_URI:pn-myrecipe... may I see any ref to example?</td><td class="time"><a href="#t2022-05-07T22:37:42" class="time">22:37</a></td></tr>
+<tr id="t2022-05-07T22:38:04"><th class="nick" style="background: #854685">dvorkindmitry</th><td class="text" style="color: #854685">I need to have patches in SRC_URI too</td><td class="time"><a href="#t2022-05-07T22:38:04" class="time">22:38</a></td></tr>
+<tr id="t2022-05-07T22:46:14"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">Again, out of memory. I ran bitbake with BB_NUMBER_THREADS=1.</td><td class="time"><a href="#t2022-05-07T22:46:14" class="time">22:46</a></td></tr>
+<tr id="t2022-05-07T22:46:19"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">Out of memory: Killed process 7965 (Cooker) total-vm:4569316kB, anon-rss:4212168kB, file-rss:0kB, shmem-rss:28kB, UID:1000 pgtables:8760kB oom_score_adj:0</td><td class="time"><a href="#t2022-05-07T22:46:19" class="time">22:46</a></td></tr>
+<tr id="t2022-05-07T22:47:01"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">it always occurs while doing do_package_write_rpm</td><td class="time"><a href="#t2022-05-07T22:47:01" class="time">22:47</a></td></tr>
+<tr id="t2022-05-07T22:47:15"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">on linux-intel-iot-lts-5.15</td><td class="time"><a href="#t2022-05-07T22:47:15" class="time">22:47</a></td></tr>
+<tr id="t2022-05-07T22:56:21"><th class="nick" style="background: #488888">seninha</th><td class="text" style="color: #488888">However, this time bitbake keeps running, waiting for a pid that doesn't even exist.</td><td class="time"><a href="#t2022-05-07T22:56:21" class="time">22:56</a></td></tr>
+<tr id="t2022-05-07T23:47:50"><th class="nick" style="background: #8c4a4a">jaskij[m]</th><td class="text" style="color: #8c4a4a">Quick question, does anyone know what happened to the reproducible LTO builds patch series? Was it merged in time for Kirkstone?</td><td class="time"><a href="#t2022-05-07T23:47:50" class="time">23:47</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-05-06.log.html">&#171; Friday, 2022-05-06</a> <a href="index.html">Index</a> <a href="%23yocto.2022-05-08.log.html">Sunday, 2022-05-08 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
