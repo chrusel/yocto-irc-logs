@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sunday, 2022-06-12</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Sunday, 2022-06-12</h1>
+<div class="navigation"> <a href="%23yocto.2022-06-11.log.html">&#171; Saturday, 2022-06-11</a> <a href="index.html">Index</a> <a href="%23yocto.2022-06-13.log.html">Monday, 2022-06-13 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-06-12T08:59:11"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">I was building a honister branch recently and it threw an error in elfutils (elflint) from a warning about a null pointer dereference.</td><td class="time"><a href="#t2022-06-12T08:59:11" class="time">08:59</a></td></tr>
+<tr id="t2022-06-12T09:00:13"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">this was fixed upstream in 3d9f1288 &quot;elflint.c: Don't dereference databits if bad&quot;, which is included in elfutils version 186, but not in the version 185 that's in honister</td><td class="time"><a href="#t2022-06-12T09:00:13" class="time">09:00</a></td></tr>
+<tr id="t2022-06-12T09:01:57"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">poky has a commit in master 5185608b6 &quot;elfutils: update 0.185 -&gt; 0.186&quot;</td><td class="time"><a href="#t2022-06-12T09:01:57" class="time">09:01</a></td></tr>
+<tr id="t2022-06-12T09:02:23"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">I cherry-picked this onto honister and the build continued. Can we get this update on honister branch?</td><td class="time"><a href="#t2022-06-12T09:02:23" class="time">09:02</a></td></tr>
+<tr id="t2022-06-12T09:16:12"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">btw: it was elfutils-native being built and host gcc is version 12.1.0 which is perhaps why I got the warning/error</td><td class="time"><a href="#t2022-06-12T09:16:12" class="time">09:16</a></td></tr>
+<tr id="t2022-06-12T10:03:37"><th class="nick" style="background: #42427e">rburton</th><td class="text" style="color: #42427e">arkver: send the patch you have to the list with [honister] in the subject</td><td class="time"><a href="#t2022-06-12T10:03:37" class="time">10:03</a></td></tr>
+<tr id="t2022-06-12T10:04:17"><th class="nick" style="background: #42427e">rburton</th><td class="text" style="color: #42427e">Though it’s more likely that a backport of that specific fix is more likely to be accepted into stable branches</td><td class="time"><a href="#t2022-06-12T10:04:17" class="time">10:04</a></td></tr>
+<tr id="t2022-06-12T10:08:59"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">rburton: thanks, will do when I get a moment. I didn't try adding a single patch but went for the easy option. I'll try the patch before submitting it.</td><td class="time"><a href="#t2022-06-12T10:08:59" class="time">10:08</a></td></tr>
+<tr id="t2022-06-12T10:10:50"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">hi</td><td class="time"><a href="#t2022-06-12T10:10:50" class="time">10:10</a></td></tr>
+<tr id="t2022-06-12T10:11:13"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">I'm trying to create a recipe for networkmanager-l2tp</td><td class="time"><a href="#t2022-06-12T10:11:13" class="time">10:11</a></td></tr>
+<tr id="t2022-06-12T10:11:34"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">I want to fetch it from github</td><td class="time"><a href="#t2022-06-12T10:11:34" class="time">10:11</a></td></tr>
+<tr id="t2022-06-12T10:12:01"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">I know the tag (&quot;1.20.4&quot;)</td><td class="time"><a href="#t2022-06-12T10:12:01" class="time">10:12</a></td></tr>
+<tr id="t2022-06-12T10:12:42"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">and I see the commit in the github page (is that the source rev I'm supposed to put in SRCREV?)</td><td class="time"><a href="#t2022-06-12T10:12:42" class="time">10:12</a></td></tr>
+<tr id="t2022-06-12T10:12:54"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">commit 66096bfeddfa4e450819dbefb5e8b0ba2a289bce</td><td class="time"><a href="#t2022-06-12T10:12:54" class="time">10:12</a></td></tr>
+<tr id="t2022-06-12T10:13:18"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">when I put this in the recipe:</td><td class="time"><a href="#t2022-06-12T10:13:18" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:13:19"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">SRCREV = &quot;66096bfeddfa4e450819dbefb5e8b0ba2a289bce&quot;</td><td class="time"><a href="#t2022-06-12T10:13:19" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:13:20"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">SRC_URI = &quot;git://github.com/nm-l2tp/NetworkManager-l2tp.git;protocol=https;branch=master&quot;</td><td class="time"><a href="#t2022-06-12T10:13:20" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:13:25"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">I get the error:</td><td class="time"><a href="#t2022-06-12T10:13:25" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:13:41"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">ERROR: nm-l2tp-1.20.4-r0 do_fetch: Fetcher failure: Unable to find revision 66096bfeddfa4e450819dbefb5e8b0ba2a289bce in branch master even from upstream</td><td class="time"><a href="#t2022-06-12T10:13:41" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:13:50"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">what am I doing wrong ?</td><td class="time"><a href="#t2022-06-12T10:13:50" class="time">10:13</a></td></tr>
+<tr id="t2022-06-12T10:14:07"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">branch is called &quot;main&quot; I think</td><td class="time"><a href="#t2022-06-12T10:14:07" class="time">10:14</a></td></tr>
+<tr id="t2022-06-12T10:15:14"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40"><a href="https://github.com/nm-l2tp/NetworkManager-l2tp/tree/main" rel="nofollow">https://github.com/nm-l2tp/NetworkManager-l2tp/tree/main</a></td><td class="time"><a href="#t2022-06-12T10:15:14" class="time">10:15</a></td></tr>
+<tr id="t2022-06-12T10:16:20"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">you are right .. rookie mistake</td><td class="time"><a href="#t2022-06-12T10:16:20" class="time">10:16</a></td></tr>
+<tr id="t2022-06-12T10:16:57"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">hmm .. now I get a compilation error</td><td class="time"><a href="#t2022-06-12T10:16:57" class="time">10:16</a></td></tr>
+<tr id="t2022-06-12T10:18:05"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">this is the recipe:</td><td class="time"><a href="#t2022-06-12T10:18:05" class="time">10:18</a></td></tr>
+<tr id="t2022-06-12T10:18:06"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144"><a href="https://pastebin.com/AXh3xzAi" rel="nofollow">https://pastebin.com/AXh3xzAi</a></td><td class="time"><a href="#t2022-06-12T10:18:06" class="time">10:18</a></td></tr>
+<tr id="t2022-06-12T10:19:05"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">this is the error:</td><td class="time"><a href="#t2022-06-12T10:19:05" class="time">10:19</a></td></tr>
+<tr id="t2022-06-12T10:19:06"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144"><a href="https://pastebin.com/7ZjdDvpv" rel="nofollow">https://pastebin.com/7ZjdDvpv</a></td><td class="time"><a href="#t2022-06-12T10:19:06" class="time">10:19</a></td></tr>
+<tr id="t2022-06-12T10:19:42"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">yocto hardknott</td><td class="time"><a href="#t2022-06-12T10:19:42" class="time">10:19</a></td></tr>
+<tr id="t2022-06-12T10:19:58"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">any idea what I'm missing ?</td><td class="time"><a href="#t2022-06-12T10:19:58" class="time">10:19</a></td></tr>
+<tr id="t2022-06-12T10:23:44"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">I'd guess the src dir in the build directory doesn't exist for it to put the generated header into, but I've no idea what the fix is for that. Cue someone else. :)</td><td class="time"><a href="#t2022-06-12T10:23:44" class="time">10:23</a></td></tr>
+<tr id="t2022-06-12T10:49:46"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">well, I looked up a package that had to handle the same problem</td><td class="time"><a href="#t2022-06-12T10:49:46" class="time">10:49</a></td></tr>
+<tr id="t2022-06-12T10:49:53"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">(transmission gtk)</td><td class="time"><a href="#t2022-06-12T10:49:53" class="time">10:49</a></td></tr>
+<tr id="t2022-06-12T10:50:29"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">they inherit autotools-brokensep instead of just autotools</td><td class="time"><a href="#t2022-06-12T10:50:29" class="time">10:50</a></td></tr>
+<tr id="t2022-06-12T10:50:37"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">when I did that to - problem solved</td><td class="time"><a href="#t2022-06-12T10:50:37" class="time">10:50</a></td></tr>
+<tr id="t2022-06-12T10:50:42"><th class="nick" style="background: #818144">oneronc</th><td class="text" style="color: #818144">*too</td><td class="time"><a href="#t2022-06-12T10:50:42" class="time">10:50</a></td></tr>
+<tr id="t2022-06-12T11:03:18"><th class="nick" style="background: #407a40">arkver</th><td class="text" style="color: #407a40">Glad you got it sorted</td><td class="time"><a href="#t2022-06-12T11:03:18" class="time">11:03</a></td></tr>
+<tr id="t2022-06-12T12:02:30"><th class="nick" style="background: #42427e">rburton</th><td class="text" style="color: #42427e">oneronc: that’s a bug with the make;&amp;</td><td class="time"><a href="#t2022-06-12T12:02:30" class="time">12:02</a></td></tr>
+<tr id="t2022-06-12T12:03:05"><th class="nick" style="background: #42427e">rburton</th><td class="text" style="color: #42427e">Makefile. File a bug with the project and tell them that out-of-tree builds don’t work, with your log file</td><td class="time"><a href="#t2022-06-12T12:03:05" class="time">12:03</a></td></tr>
+<tr id="t2022-06-12T17:28:24"><td class="nickchange" colspan="2">*** florian__ is now known as florian</td><td><a href="#t2022-06-12T17:28:24" class="time">17:28</a></td></tr>
+<tr id="t2022-06-12T22:14:41-4"><td class="nickchange" colspan="2">*** kriive_ is now known as kriive</td><td><a href="#t2022-06-12T22:14:41-4" class="time">22:14</a></td></tr>
+<tr id="t2022-06-12T22:14:41-5"><td class="nickchange" colspan="2">*** rsalveti_ is now known as rsalveti</td><td><a href="#t2022-06-12T22:14:41-5" class="time">22:14</a></td></tr>
+<tr id="t2022-06-12T22:14:41-6"><td class="nickchange" colspan="2">*** Lihis_ is now known as Lihis</td><td><a href="#t2022-06-12T22:14:41-6" class="time">22:14</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-06-11.log.html">&#171; Saturday, 2022-06-11</a> <a href="index.html">Index</a> <a href="%23yocto.2022-06-13.log.html">Monday, 2022-06-13 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
