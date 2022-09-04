@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Saturday, 2022-09-03</title>
+  <link rel="stylesheet" href="irclog.css" />
+  <meta name="generator" content="irclog2html.py 2.17.2 by Marius Gedminas" />
+  <meta name="version" content="2.17.2 - 2019-04-23" />
+</head>
+<body>
+<h1>Saturday, 2022-09-03</h1>
+<div class="navigation"> <a href="%23yocto.2022-09-02.log.html">&#171; Friday, 2022-09-02</a> <a href="index.html">Index</a> <a href="%23yocto.2022-09-04.log.html">Sunday, 2022-09-04 &#187;</a> </div>
+<table class="irclog">
+<tr id="t2022-09-03T11:56:41"><th class="nick" style="background: #407a40">DvorkinDmitry</th><td class="text" style="color: #407a40">problem while building libtalloc: <a href="https://pastebin.com/Ei8TQQAd" rel="nofollow">https://pastebin.com/Ei8TQQAd</a></td><td class="time"><a href="#t2022-09-03T11:56:41" class="time">11:56</a></td></tr>
+<tr id="t2022-09-03T12:15:37"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">DvorkinDmitry: it is putting the native sysroot on the compiler commandline. You need to stop it doing that</td><td class="time"><a href="#t2022-09-03T12:15:37" class="time">12:15</a></td></tr>
+<tr id="t2022-09-03T12:15:47"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">The -L/disk2/build.tibbo.dunfell.0/tmp/work/cortexa9hf-neon-tps-linux-gnueabi/libtalloc/2.3.0-r0/recipe-sysroot-native/usr/lib</td><td class="time"><a href="#t2022-09-03T12:15:47" class="time">12:15</a></td></tr>
+<tr id="t2022-09-03T12:16:15"><th class="nick" style="background: #407a40">DvorkinDmitry</th><td class="text" style="color: #407a40">RP, I know, but I don't know how to...</td><td class="time"><a href="#t2022-09-03T12:16:15" class="time">12:16</a></td></tr>
+<tr id="t2022-09-03T12:18:23"><th class="nick" style="background: #42427e">RP</th><td class="text" style="color: #42427e">DvorkinDmitry: I doubt anyone here can tell without digging into it to debug it</td><td class="time"><a href="#t2022-09-03T12:18:23" class="time">12:18</a></td></tr>
+<tr id="t2022-09-03T12:19:35"><th class="nick" style="background: #407a40">DvorkinDmitry</th><td class="text" style="color: #407a40">RP, I did not modify anything, just updated my openembedded and poky to latest dunfell and try to rebuild from scratch. It just stopped there</td><td class="time"><a href="#t2022-09-03T12:19:35" class="time">12:19</a></td></tr>
+<tr id="t2022-09-03T12:39:07"><th class="nick" style="background: #407a40">DvorkinDmitry</th><td class="text" style="color: #407a40">RP, is it better to try to replace &quot;waf-samba&quot; with &quot;waf&quot; inside libtalloc recipe?</td><td class="time"><a href="#t2022-09-03T12:39:07" class="time">12:39</a></td></tr>
+<tr id="t2022-09-03T12:41:31"><th class="nick" style="background: #407a40">DvorkinDmitry</th><td class="text" style="color: #407a40">RP, and another problem (from the log) - it can't find -lintl. I can't find which recipe prowides it</td><td class="time"><a href="#t2022-09-03T12:41:31" class="time">12:41</a></td></tr>
+<tr id="t2022-09-03T13:49:14"><th class="nick" style="background: #818144">sotaoverride</th><td class="text" style="color: #818144">I patched ca-certificates to use certhash instead of rehash but for somereason ca-certificates cant find any of these commnds. I'm using openssl 1.0.2u. Here's a detailed log: <a href="https://gist.github.com/sotaoverride/7f3b76a69a938e900b0b748a6a67a877#file-gistfile0-txt" rel="nofollow">https://gist.github.com/sotaoverride/7f3b76a69a938e900b0b748a6a67a877#file-gistfile0-txt</a></td><td class="time"><a href="#t2022-09-03T13:49:14" class="time">13:49</a></td></tr>
+<tr id="t2022-09-03T18:24:22"><th class="nick" style="background: #854685">mischief</th><td class="text" style="color: #854685">something odd going on with my modules getting stripped. oe.package.is_elf doesn't seem to think my files are kernel modules (type '16'). any trick for that besides inhibiting strip?</td><td class="time"><a href="#t2022-09-03T18:24:22" class="time">18:24</a></td></tr>
+<tr id="t2022-09-03T18:24:36"><th class="nick" style="background: #854685">mischief</th><td class="text" style="color: #854685">oe.package.is_elf(&quot;kernel/drivers/usb/usb-common.ko&quot;)</td><td class="time"><a href="#t2022-09-03T18:24:36" class="time">18:24</a></td></tr>
+<tr id="t2022-09-03T18:24:38"><th class="nick" style="background: #854685">mischief</th><td class="text" style="color: #854685">('kernel/drivers/usb/usb-common.ko', 1)</td><td class="time"><a href="#t2022-09-03T18:24:38" class="time">18:24</a></td></tr>
+<tr id="t2022-09-03T18:29:02"><th class="nick" style="background: #854685">mischief</th><td class="text" style="color: #854685">hm.. looks like it tries to find 'vermagic' in the module</td><td class="time"><a href="#t2022-09-03T18:29:02" class="time">18:29</a></td></tr>
+<tr id="t2022-09-03T18:32:18"><th class="nick" style="background: #854685">mischief</th><td class="text" style="color: #854685">oh. i see. CONFIG_MODULE_STRIPPED=y breaks it :-)</td><td class="time"><a href="#t2022-09-03T18:32:18" class="time">18:32</a></td></tr>
+<tr id="t2022-09-03T22:30:40-2"><td class="nickchange" colspan="2">*** chep` is now known as chep</td><td><a href="#t2022-09-03T22:30:40-2" class="time">22:30</a></td></tr>
+<tr id="t2022-09-03T22:48:14-2"><td class="nickchange" colspan="2">*** chep` is now known as chep</td><td><a href="#t2022-09-03T22:48:14-2" class="time">22:48</a></td></tr>
+</table>
+<div class="navigation"> <a href="%23yocto.2022-09-02.log.html">&#171; Friday, 2022-09-02</a> <a href="index.html">Index</a> <a href="%23yocto.2022-09-04.log.html">Sunday, 2022-09-04 &#187;</a> </div>
+
+<div class="generatedby">
+<p>Generated by irclog2html.py 2.17.2 by <a href="mailto:marius@pov.lt">Marius Gedminas</a>
+ - find it at <a href="https://mg.pov.lt/irclog2html/">https://mg.pov.lt/irclog2html/</a>!</p>
+</div>
+</body>
+</html>
